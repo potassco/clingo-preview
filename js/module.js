@@ -35,7 +35,6 @@ function load_example(path) {
 
 function preprocess() {
   output = "";
-  console.log(rewriteLevel)
   rl = parseInt(rewriteLevel.value)
   pm = parseInt(projectMode.value)
   pa = projectAnonymous.checked
