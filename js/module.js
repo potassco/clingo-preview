@@ -4,7 +4,6 @@ var runButton = document.getElementById('run');
 var input = ace.edit("input");
 var ex = document.getElementById("examples");
 var output = "";
-var rewriteLevel = document.getElementById('rewrite_level');
 var projectMode = document.getElementById('project_mode');
 var projectAnonymous = document.getElementById('project_anonymous');
 
@@ -35,10 +34,9 @@ function load_example(path) {
 
 function preprocess() {
   output = "";
-  rl = parseInt(rewriteLevel.value)
   pm = parseInt(projectMode.value)
   pa = projectAnonymous.checked
-  Parser.ccall('run', null, ['string', 'number', 'number', 'bool'], [input.getValue(), rl, pm, pa])
+  Parser.ccall('run', null, ['string', 'number', 'bool'], [input.getValue(), pm, pa])
   updateOutput();
 }
 
