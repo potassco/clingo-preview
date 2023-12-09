@@ -17,21 +17,6 @@ input.setOptions({
   autoScrollEditorIntoView: true
 });
 
-function example() {
-  load_example(ex.value);
-}
-
-function load_example(path) {
-  var request = new XMLHttpRequest();
-  request.onreadystatechange = function() {
-    if (request.readyState == 4 && request.status == 200) {
-      input.setValue(request.responseText.trim(), -1);
-    }
-  }
-  request.open("GET", path, true);
-  request.send();
-}
-
 function preprocess() {
   output = "";
   pm = parseInt(projectMode.value)
@@ -107,8 +92,3 @@ var QueryString = function () {
   }
   return query_string;
 }();
-
-if (QueryString.example !== undefined) {
-  ex.value = "/examples/" + QueryString.example;
-  load_example("/examples/" + QueryString.example);
-}
