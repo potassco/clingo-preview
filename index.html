@@ -48,7 +48,7 @@ p(1..X) :- q(X,@f(X)).
 % rewriting of set aggregates
 { p(X) : q(X); not p(X) : q(X); not not p(X) : q(X); X&lt;Y: q(X,Y) } = 1.
 
-% simplification of expressions
+% simplification of statements
 p :- #false.
 #true :- p.
 p :- p(a+1).
