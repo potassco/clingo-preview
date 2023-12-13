@@ -54,6 +54,10 @@ p :- #false.
 p :- p(a+1).
 p(a+1) :- p.
 
+% non-binary comparisions
+1&lt;=X&lt;=4 :- p(X).
+not 1&lt;=X&lt;=4 :- p(X).
+
 % parametrized programs
 % (and their interaction with const statements)
 #program part(y,u,v).
