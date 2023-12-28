@@ -58,6 +58,9 @@ p(a+1) :- p.
 1&lt;=X&lt;=4 :- p(X).
 not 1&lt;=X&lt;=4 :- p(X).
 
+% bound computation
+h :- X&gt;=0; p(X): X+Y=6, -3*X+Y=2.
+
 % parametrized programs
 % (and their interaction with const statements)
 #program part(y,u,v).
