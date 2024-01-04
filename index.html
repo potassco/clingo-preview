@@ -28,8 +28,8 @@ p(x).
 p(y;z).
 
 % rewriting of minimize constraints
-#minimize { X:p(X); Y:q(Y)  }.
-#maximize { X:p(X); Y:q(Y)  }.
+#minimize { X:p(X); Y:q(Y) }.
+#maximize { X:p(X); Y:q(Y) }.
 
 % projection of pure variables
 p(X) :- q(X,Y).
@@ -40,7 +40,8 @@ p(X) :- q(X,_).
 p(X) :- q(X,_), r(X).
 
 % projection of anonymous variables in negative literals
-p(X) :- q(X), not q(X,_).
+% (must enable option for rule to be safe)
+% p(X) :- q(X), not q(X,_).
 
 % intervals and external functions
 p(1..X) :- q(X,@f(X)).
@@ -54,12 +55,18 @@ p :- #false.
 p :- p(a+1).
 p(a+1) :- p.
 
+% bound computation
+h :- X&gt;=0; p(X): X+Y=6, -3*X+Y=2; q(X).
+
+% shifting
+X&lt;=1 :- X&lt;=2.
+Y&gt;1: Y&lt;=2.
+:- Z&lt;=1: Z&lt;=2.
+Y&gt;1: Y&lt;=X; X&lt;=1 :- X&lt;=2; Z&lt;=1: Z&lt;=X.
+
 % non-binary comparisions
 1&lt;=X&lt;=4 :- p(X).
 not 1&lt;=X&lt;=4 :- p(X).
-
-% bound computation
-h :- X&gt;=0; p(X): X+Y=6, -3*X+Y=2.
 
 % parametrized programs
 % (and their interaction with const statements)
