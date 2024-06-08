@@ -5,6 +5,7 @@ var input = ace.edit("input");
 var ex = document.getElementById("examples");
 var output = "";
 var projectMode = document.getElementById('project_mode');
+var appMode = document.getElementById('mode');
 var projectAnonymous = document.getElementById('project_anonymous');
 var parseOnly = document.getElementById('parse_only');
 var logLevel = document.getElementById('log_level');
@@ -23,13 +24,11 @@ function preprocess() {
   output = "";
 
   vec = new Parser['StringVec']();
+  vec.push_back('--mode=' + appMode.value);
   vec.push_back('--projection-mode=' + projectMode.value);
   vec.push_back('--log-level=' + logLevel.value);
   if (projectAnonymous.checked) {
     vec.push_back('--project-anonymous');
-  }
-  if (parseOnly.checked) {
-    vec.push_back('--parse-only');
   }
 
   res = Parser['run'](input.getValue(), vec)
