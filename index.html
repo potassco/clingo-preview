@@ -3,79 +3,35 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>ASP Preprocessor</title>
+    <title>Clingo 6</title>
     <link rel="stylesheet" href="css/main.css"/>
   </head>
-
   <body>
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
         <article class="post">
           <header class="post-header">
-            <h1 class="post-title">ASP Preprocessor</h1>
+            <h1 class="post-title">Clingo 6</h1>
           </header>
 
           <div class="post-content">
             <div class="center">
               <pre id="input">
-% evaluation of const statements
-#const x=1.
-#const y=x+1.
-#const x=2. [override]
-p(x).
+% select the number of queens
+#const n=6.
 
-% unpooling
-p(y;z).
+% place queens
+{ q(1..n,1..n) }.
 
-% rewriting of minimize constraints
-#minimize { X:p(X); Y:q(Y) }.
-#maximize { X:p(X); Y:q(Y) }.
+% exactly one queen per column
+:- { q(1..n,Y) } != 1, Y=1..n.
 
-% projection of pure variables
-p(X) :- q(X,Y).
-p(X) :- q(X,Y), r(X).
+% exactly one queen per row
+:- { q(X,1..n) } != 1, X=1..n.
 
-% projection of anonymous variables
-p(X) :- q(X,_).
-p(X) :- q(X,_), r(X).
-
-% projection of anonymous variables in negative literals
-% (must enable option for rule to be safe)
-% p(X) :- q(X), not q(X,_).
-
-% intervals and external functions
-p(1..X) :- q(X,@f(X)).
-
-% rewriting of set aggregates
-{ p(X) : q(X); not p(X) : q(X); not not p(X) : q(X); X&lt;Y: q(X,Y) } = 1.
-
-% simplification of statements
-p :- #false.
-#true :- p.
-p :- p(a+1).
-p(a+1) :- p.
-
-% bound computation
-h :- X&gt;=0; p(X): X+Y=6, -3*X+Y=2; q(X).
-
-% shifting
-X&lt;=1 :- X&lt;=2.
-Y&gt;1: Y&lt;=2.
-:- Z&lt;=1: Z&lt;=2.
-Y&gt;1: Y&lt;=X; X&lt;=1 :- X&lt;=2; Z&lt;=1: Z&lt;=X.
-
-% non-binary comparisions
-1&lt;=X&lt;=4 :- p(X).
-not 1&lt;=X&lt;=4 :- p(X).
-
-% parametrized programs
-% (and their interaction with const statements)
-#program part(y,u,v).
-p(y,u,z).
-
-#program part(w,z,y).
-p(v,w,x).</pre>
-
+% at most one queen per diagonal
+:- { q(D-Y,Y) } >= 2, D=2..2*n.
+:- { q(D+Y,Y) } >= 2, D=1-n..n-1.</pre>
               <ul class="hlist">
                 <li><b>Configuration:</b></li>
                 <li>projection
@@ -93,8 +49,9 @@ p(v,w,x).</pre>
                  mode
                  <select id="mode">
                   <option value="parse">parse</option>
-                  <option value="rewrite" selected>rewrite</option>
+                  <option value="rewrite">rewrite</option>
                   <option value="ground">ground</option>
+                  <option value="solve" selected>solve</option>
                  </select>
                 </li>
                 <li>
@@ -107,18 +64,24 @@ p(v,w,x).</pre>
                   <option value="trace">trace</option>
                  </select>
                 </li>
+                <li>
+                 models
+                 <select id="models">
+                  <option value="1">one</option>
+                  <option value="0">all</option>
+                  <option value="-1" selected>auto</option>
+                 </select>
+                </li>
               </ul>
-
-              <input type="button" id="run" value="&#x25ba; Run!" onclick="preprocess()" disabled/>
+              <input type="button" id="run" value="&#x25ba; Run!" onclick="Clingo.run()"/>
               <pre id="output" class="code"></pre>
             </div>
           </div>
         </article>
       </div>
     </main>
-
     <script type="text/javascript" src="js/ace.js" charset="utf-8"></script>
-    <script type="text/javascript" src="js/parser.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/clingo.js" charset="utf-8"></script>
     <script type="text/javascript" src="js/module.js" charset="utf-8"></script>
   </body>
 </html>
