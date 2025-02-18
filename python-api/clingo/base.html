@@ -39,12 +39,6 @@
                     <a class="class" href="#Atom">Atom</a>
                             <ul class="memberlist">
                         <li>
-                                <a class="variable" href="#Atom.external">external</a>
-                        </li>
-                        <li>
-                                <a class="variable" href="#Atom.fact">fact</a>
-                        </li>
-                        <li>
                                 <a class="variable" href="#Atom.literal">literal</a>
                         </li>
                         <li>
@@ -71,6 +65,12 @@
             <li>
                     <a class="class" href="#Base">Base</a>
                             <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#Base.is_external">is_external</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Base.is_fact">is_fact</a>
+                        </li>
                         <li>
                                 <a class="function" href="#Base.items">items</a>
                         </li>
@@ -156,7 +156,7 @@
 <span class="kc">False</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">sig</span> <span class="k">for</span> <span class="n">sig</span> <span class="ow">in</span> <span class="n">ctl</span><span class="o">.</span><span class="n">base</span><span class="p">]</span>
 <span class="p">[(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">False</span><span class="p">)]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="p">[(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">symbol</span><span class="p">),</span> <span class="n">x</span><span class="o">.</span><span class="n">fact</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">external</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">symbol</span><span class="p">),</span> <span class="n">ctl</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">is_fact</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">literal</span><span class="p">),</span> <span class="n">ctl</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">is_external</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">literal</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
 <span class="p">[(</span><span class="s1">&#39;p(1)&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;p(3)&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;p(2)&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">)]</span>
 </code></pre>
 </div>
@@ -180,32 +180,6 @@
 </div>
 
 
-                            <div id="Atom.external" class="classattr">
-                                <div class="attr variable">
-            <span class="name">external</span><span class="annotation">: bool</span>
-
-        
-    </div>
-    <a class="headerlink" href="#Atom.external"></a>
-    
-            <div class="docstring"><p>Whether the atom is external.</p>
-</div>
-
-
-                            </div>
-                            <div id="Atom.fact" class="classattr">
-                                <div class="attr variable">
-            <span class="name">fact</span><span class="annotation">: bool</span>
-
-        
-    </div>
-    <a class="headerlink" href="#Atom.fact"></a>
-    
-            <div class="docstring"><p>Whether the atom is a fact.</p>
-</div>
-
-
-                            </div>
                             <div id="Atom.literal" class="classattr">
                                 <div class="attr variable">
             <span class="name">literal</span><span class="annotation">: int</span>
@@ -309,6 +283,60 @@
 </div>
 
 
+                            <div id="Base.is_external" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">is_external</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">literal</span><span class="p">:</span> <span class="nb">int</span></span><span class="return-annotation">) -> <span class="nb">bool</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Base.is_external"></a>
+    
+            <div class="docstring"><p>Check whether the given program literal corresponds to an external.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>literal:</strong>  The literal to check.</li>
+</ul>
+
+<h6 id="returns">Returns:</h6>
+
+<blockquote>
+  <p>Whether the literal is external.</p>
+</blockquote>
+</div>
+
+
+                            </div>
+                            <div id="Base.is_fact" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">is_fact</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">literal</span><span class="p">:</span> <span class="nb">int</span></span><span class="return-annotation">) -> <span class="nb">bool</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Base.is_fact"></a>
+    
+            <div class="docstring"><p>Check whether the literal is a fact.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>literal:</strong>  The literal to check.</li>
+</ul>
+
+<h6 id="returns">Returns:</h6>
+
+<blockquote>
+  <p>Whether the literal is a fact.</p>
+</blockquote>
+</div>
+
+
+                            </div>
                             <div id="Base.items" class="classattr">
                                 <div class="attr function">
             

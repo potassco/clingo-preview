@@ -39,7 +39,76 @@
                     <a class="class" href="#Model">Model</a>
                             <ul class="memberlist">
                         <li>
+                                <a class="function" href="#Model.contains">contains</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Model.extend">extend</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Model.is_consequence">is_consequence</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Model.is_true">is_true</a>
+                        </li>
+                        <li>
                                 <a class="function" href="#Model.symbols">symbols</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Model.control">control</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Model.cost">cost</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Model.number">number</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Model.optimality_proven">optimality_proven</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Model.priorities">priorities</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Model.thread_id">thread_id</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Model.type">type</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#ModelType">ModelType</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#ModelType.__init__">ModelType</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ModelType.BraveConsequences">BraveConsequences</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ModelType.CautiousConsequences">CautiousConsequences</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ModelType.StableModel">StableModel</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ModelType.name">name</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ModelType.value">value</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#SolveControl">SolveControl</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#SolveControl.add_clause">add_clause</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#SolveControl.base">base</a>
                         </li>
                 </ul>
 
@@ -223,6 +292,121 @@ variants leave room for additional computation before calling blocking functions
 </div>
 
 
+                            <div id="Model.contains" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">contains</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">atom</span><span class="p">:</span> <span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span></span><span class="return-annotation">) -> <span class="nb">bool</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Model.contains"></a>
+    
+            <div class="docstring"><p>Check if the model contains the given atom.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>atom:</strong>  The atom to look up.</li>
+</ul>
+
+<h6 id="returns">Returns:</h6>
+
+<blockquote>
+  <p>Whether the atom is contained.</p>
+</blockquote>
+</div>
+
+
+                            </div>
+                            <div id="Model.extend" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">extend</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">symbols</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span><span class="p">]</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Model.extend"></a>
+    
+            <div class="docstring"><p>Extend a model with the given symbols.</p>
+
+<p>This only has an effect if there is an underlying clingo application, which
+will print the added symbols.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>symbols:</strong>  The symbols to add to the model.</li>
+</ul>
+</div>
+
+
+                            </div>
+                            <div id="Model.is_consequence" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">is_consequence</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">literal</span><span class="p">:</span> <span class="nb">int</span></span><span class="return-annotation">) -> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Model.is_consequence"></a>
+    
+            <div class="docstring"><p>Check if the given program literal is a consequence.</p>
+
+<p>The function returns <code>True</code>, <code>False</code>, or <code>None</code> if the literal is a
+consequence, not a consequence, or it is not yet known whether it is a
+consequence, respectively.</p>
+
+<p>While enumerating cautious or brave consequences, there is partial information
+about which literals are consequences. The current state of a literal can be
+requested using this function. If this function is used during normal model
+enumeration, the function just returns whether a literal is true of false in
+the current model.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>literal:</strong>  The given program literal.</li>
+</ul>
+
+<h6 id="returns">Returns:</h6>
+
+<blockquote>
+  <p>Whether the given program literal is a consequence.</p>
+</blockquote>
+</div>
+
+
+                            </div>
+                            <div id="Model.is_true" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">is_true</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">literal</span><span class="p">:</span> <span class="nb">int</span></span><span class="return-annotation">) -> <span class="nb">bool</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Model.is_true"></a>
+    
+            <div class="docstring"><p>Check if the given program literal is true.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>literal:</strong>  The given program literal.</li>
+</ul>
+
+<h6 id="returns">Returns:</h6>
+
+<blockquote>
+  <p>Whether the given program literal is true.</p>
+</blockquote>
+</div>
+
+
+                            </div>
                             <div id="Model.symbols" class="classattr">
                                 <div class="attr function">
             
@@ -243,6 +427,244 @@ variants leave room for additional computation before calling blocking functions
 <li><strong>terms:</strong>  Include shown terms.</li>
 <li><strong>theory:</strong>  Include terms added by external theories.</li>
 </ul>
+</div>
+
+
+                            </div>
+                            <div id="Model.control" class="classattr">
+                                <div class="attr variable">
+            <span class="name">control</span><span class="annotation">: <a href="#SolveControl">SolveControl</a></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Model.control"></a>
+    
+            <div class="docstring"><p>Get the associated solve control object.</p>
+</div>
+
+
+                            </div>
+                            <div id="Model.cost" class="classattr">
+                                <div class="attr variable">
+            <span class="name">cost</span><span class="annotation">: Sequence[int]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Model.cost"></a>
+    
+            <div class="docstring"><p>Return a sequence of integer cost values of the model.</p>
+</div>
+
+
+                            </div>
+                            <div id="Model.number" class="classattr">
+                                <div class="attr variable">
+            <span class="name">number</span><span class="annotation">: int</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Model.number"></a>
+    
+            <div class="docstring"><p>Get the running number of a model.</p>
+</div>
+
+
+                            </div>
+                            <div id="Model.optimality_proven" class="classattr">
+                                <div class="attr variable">
+            <span class="name">optimality_proven</span><span class="annotation">: bool</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Model.optimality_proven"></a>
+    
+            <div class="docstring"><p>Whether the optimality of the model has been proven.</p>
+</div>
+
+
+                            </div>
+                            <div id="Model.priorities" class="classattr">
+                                <div class="attr variable">
+            <span class="name">priorities</span><span class="annotation">: Sequence[int]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Model.priorities"></a>
+    
+            <div class="docstring"><p>Get the associated priorities of the cost values.</p>
+</div>
+
+
+                            </div>
+                            <div id="Model.thread_id" class="classattr">
+                                <div class="attr variable">
+            <span class="name">thread_id</span><span class="annotation">: int</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Model.thread_id"></a>
+    
+            <div class="docstring"><p>Get the thread/solver id the model was found in.</p>
+</div>
+
+
+                            </div>
+                            <div id="Model.type" class="classattr">
+                                <div class="attr variable">
+            <span class="name">type</span><span class="annotation">: <a href="#ModelType">ModelType</a></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Model.type"></a>
+    
+            <div class="docstring"><p>Get the type of a model.</p>
+</div>
+
+
+                            </div>
+                </section>
+                <section id="ModelType">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">ModelType</span>:
+
+        
+    </div>
+    <a class="headerlink" href="#ModelType"></a>
+    
+            <div class="docstring"><p>Enumeration of model types.</p>
+
+<h6 id="members">Members:</h6>
+
+<blockquote>
+  <p>StableModel : The model captures a stable model.</p>
+  
+  <p>CautiousConsequences : The model stores the set of cautious consequences.</p>
+  
+  <p>BraveConsequences : The model stores the set of brave consequences.</p>
+</blockquote>
+</div>
+
+
+                            <div id="ModelType.__init__" class="classattr">
+                                <div class="attr function">
+            
+        <span class="name">ModelType</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">value</span><span class="p">:</span> <span class="nb">int</span></span>)</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ModelType.__init__"></a>
+    
+    
+
+                            </div>
+                            <div id="ModelType.BraveConsequences" class="classattr">
+                                <div class="attr variable">
+            <span class="name">BraveConsequences</span><span class="annotation">: ClassVar[<a href="#ModelType">ModelType</a>]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ModelType.BraveConsequences"></a>
+    
+            <div class="docstring"><p>The model stores the set of brave consequences.</p>
+</div>
+
+
+                            </div>
+                            <div id="ModelType.CautiousConsequences" class="classattr">
+                                <div class="attr variable">
+            <span class="name">CautiousConsequences</span><span class="annotation">: ClassVar[<a href="#ModelType">ModelType</a>]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ModelType.CautiousConsequences"></a>
+    
+            <div class="docstring"><p>The model stores the set of cautious consequences.</p>
+</div>
+
+
+                            </div>
+                            <div id="ModelType.StableModel" class="classattr">
+                                <div class="attr variable">
+            <span class="name">StableModel</span><span class="annotation">: ClassVar[<a href="#ModelType">ModelType</a>]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ModelType.StableModel"></a>
+    
+            <div class="docstring"><p>The model captures a stable model.</p>
+</div>
+
+
+                            </div>
+                            <div id="ModelType.name" class="classattr">
+                                <div class="attr variable">
+            <span class="name">name</span><span class="annotation">: str</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ModelType.name"></a>
+    
+    
+
+                            </div>
+                            <div id="ModelType.value" class="classattr">
+                                <div class="attr variable">
+            <span class="name">value</span><span class="annotation">: int</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ModelType.value"></a>
+    
+    
+
+                            </div>
+                </section>
+                <section id="SolveControl">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">SolveControl</span>:
+
+        
+    </div>
+    <a class="headerlink" href="#SolveControl"></a>
+    
+            <div class="docstring"><p>A control object to add clauses while solving.</p>
+</div>
+
+
+                            <div id="SolveControl.add_clause" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">add_clause</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">clause</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span><span class="p">,</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">|</span> <span class="nb">int</span><span class="p">]</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#SolveControl.add_clause"></a>
+    
+            <div class="docstring"><p>Add a clause that applies to the current solving step during the search.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>literals:</strong>  The literals of the clause.</li>
+</ul>
+</div>
+
+
+                            </div>
+                            <div id="SolveControl.base" class="classattr">
+                                <div class="attr variable">
+            <span class="name">base</span><span class="annotation">: <a href="base.html#Base">clingo.base.Base</a></span>
+
+        
+    </div>
+    <a class="headerlink" href="#SolveControl.base"></a>
+    
+            <div class="docstring"><p>Get the atom/term bases of the program.</p>
 </div>
 
 
@@ -294,7 +716,7 @@ though.</p>
                                 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">core</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">) -> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>:</span></span>
+        <span class="name">core</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">) -> <span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>:</span></span>
 
         
     </div>
