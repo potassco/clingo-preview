@@ -83,6 +83,9 @@
                         <li>
                                 <a class="variable" href="#Base.terms">terms</a>
                         </li>
+                        <li>
+                                <a class="variable" href="#Base.theory">theory</a>
+                        </li>
                 </ul>
 
             </li>
@@ -109,6 +112,96 @@
                         </li>
                         <li>
                                 <a class="function" href="#TermBase.values">values</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#TheoryAtom">TheoryAtom</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="variable" href="#TheoryAtom.elements">elements</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#TheoryAtom.guard">guard</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#TheoryAtom.literal">literal</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#TheoryAtom.name">name</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#TheoryBase">TheoryBase</a>
+                            <ul class="memberlist">
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#TheoryElement">TheoryElement</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="variable" href="#TheoryElement.condition">condition</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#TheoryElement.condition_id">condition_id</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#TheoryElement.tuple">tuple</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#TheoryTerm">TheoryTerm</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="variable" href="#TheoryTerm.arguments">arguments</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#TheoryTerm.name">name</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#TheoryTerm.number">number</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#TheoryTerm.type">type</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#TheoryTermType">TheoryTermType</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#TheoryTermType.__init__">TheoryTermType</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#TheoryTermType.Function">Function</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#TheoryTermType.List">List</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#TheoryTermType.Number">Number</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#TheoryTermType.Set">Set</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#TheoryTermType.Symbol">Symbol</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#TheoryTermType.Tuple">Tuple</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#TheoryTermType.name">name</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#TheoryTermType.value">value</a>
                         </li>
                 </ul>
 
@@ -147,16 +240,18 @@
 <span class="s2">... q(X) :- p(X).</span>
 <span class="s2">... &quot;&quot;&quot;</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ctl</span><span class="o">.</span><span class="n">ground</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">ctl</span><span class="o">.</span><span class="n">base</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">bse</span> <span class="o">=</span> <span class="n">ctl</span><span class="o">.</span><span class="n">base</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">bse</span><span class="p">)</span>
 <span class="mi">2</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">ctl</span><span class="o">.</span><span class="n">base</span><span class="p">[(</span><span class="s2">&quot;p&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">bse</span><span class="p">[(</span><span class="s2">&quot;p&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">Function</span><span class="p">(</span><span class="n">lib</span><span class="p">,</span> <span class="s2">&quot;p&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">Number</span><span class="p">(</span><span class="n">lib</span><span class="p">,</span> <span class="mi">2</span><span class="p">)])</span> <span class="ow">in</span> <span class="n">p</span>
 <span class="kc">True</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">Function</span><span class="p">(</span><span class="n">lib</span><span class="p">,</span> <span class="s2">&quot;p&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">Number</span><span class="p">(</span><span class="n">lib</span><span class="p">,</span> <span class="mi">4</span><span class="p">)])</span> <span class="ow">in</span> <span class="n">p</span>
 <span class="kc">False</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">sig</span> <span class="k">for</span> <span class="n">sig</span> <span class="ow">in</span> <span class="n">ctl</span><span class="o">.</span><span class="n">base</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">sig</span> <span class="k">for</span> <span class="n">sig</span> <span class="ow">in</span> <span class="n">bse</span><span class="p">]</span>
 <span class="p">[(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">False</span><span class="p">)]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="p">[(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">symbol</span><span class="p">),</span> <span class="n">ctl</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">is_fact</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">literal</span><span class="p">),</span> <span class="n">ctl</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">is_external</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">literal</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">symbol</span><span class="p">),</span> <span class="n">bse</span><span class="o">.</span><span class="n">is_fact</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">literal</span><span class="p">),</span> <span class="n">bse</span><span class="o">.</span><span class="n">is_external</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">literal</span><span class="p">))</span>
+<span class="o">...</span>  <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
 <span class="p">[(</span><span class="s1">&#39;p(1)&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;p(3)&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;p(2)&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">)]</span>
 </code></pre>
 </div>
@@ -277,7 +372,7 @@
     </div>
     <a class="headerlink" href="#Base"></a>
     
-            <div class="docstring"><p>The base provides information about atoms and terms occuring in a program.</p>
+            <div class="docstring"><p>The base provides information about atoms and show term directives occuring in a program.</p>
 
 <p>It implements a map from signatures to atom bases.</p>
 </div>
@@ -390,7 +485,20 @@
     </div>
     <a class="headerlink" href="#Base.terms"></a>
     
-            <div class="docstring"><p>the term base (from shown directives).</p>
+            <div class="docstring"><p>The term base (given by show directives).</p>
+</div>
+
+
+                            </div>
+                            <div id="Base.theory" class="classattr">
+                                <div class="attr variable">
+            <span class="name">theory</span><span class="annotation">: <a href="#TheoryBase">TheoryBase</a></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Base.theory"></a>
+    
+            <div class="docstring"><p>The theory base.</p>
 </div>
 
 
@@ -447,9 +555,11 @@
     </div>
     <a class="headerlink" href="#TermBase"></a>
     
-            <div class="docstring"><p>A term base mapping symbols to terms.</p>
+            <div class="docstring"><p>A base to inspect show term directives in a program.</p>
 
 <p>The base is established by the show directives occurring in a program.</p>
+
+<p>Implements a map form symbols to terms.</p>
 </div>
 
 
@@ -496,6 +606,354 @@
             <div class="docstring"><p>Get an iterator over the values in the map.</p>
 </div>
 
+
+                            </div>
+                </section>
+                <section id="TheoryAtom">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">TheoryAtom</span>:
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryAtom"></a>
+    
+            <div class="docstring"><p>A view to inspect a theory atom.</p>
+</div>
+
+
+                            <div id="TheoryAtom.elements" class="classattr">
+                                <div class="attr variable">
+            <span class="name">elements</span><span class="annotation">: list[<a href="#TheoryElement">TheoryElement</a>]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryAtom.elements"></a>
+    
+            <div class="docstring"><p>Get the elements of a theory atom.</p>
+</div>
+
+
+                            </div>
+                            <div id="TheoryAtom.guard" class="classattr">
+                                <div class="attr variable">
+            <span class="name">guard</span><span class="annotation">: tuple[str, <a href="#TheoryTerm">TheoryTerm</a>] | None</span>
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryAtom.guard"></a>
+    
+            <div class="docstring"><p>Get optional guard of a theory atom.</p>
+</div>
+
+
+                            </div>
+                            <div id="TheoryAtom.literal" class="classattr">
+                                <div class="attr variable">
+            <span class="name">literal</span><span class="annotation">: int</span>
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryAtom.literal"></a>
+    
+            <div class="docstring"><p>Get the literal of the theory atom (zero for directives).</p>
+</div>
+
+
+                            </div>
+                            <div id="TheoryAtom.name" class="classattr">
+                                <div class="attr variable">
+            <span class="name">name</span><span class="annotation">: <a href="#TheoryTerm">TheoryTerm</a></span>
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryAtom.name"></a>
+    
+            <div class="docstring"><p>Get the name of a theory atom.</p>
+</div>
+
+
+                            </div>
+                </section>
+                <section id="TheoryBase">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">TheoryBase</span>:
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryBase"></a>
+    
+            <div class="docstring"><p>A base to inspect theory atoms.</p>
+
+<p>Implements a sequences over theory atoms.</p>
+</div>
+
+
+                </section>
+                <section id="TheoryElement">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">TheoryElement</span>:
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryElement"></a>
+    
+            <div class="docstring"><p>A view to inspect a theory element.</p>
+</div>
+
+
+                            <div id="TheoryElement.condition" class="classattr">
+                                <div class="attr variable">
+            <span class="name">condition</span><span class="annotation">: Sequence[int]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryElement.condition"></a>
+    
+            <div class="docstring"><p>Get the condition of a theory element.</p>
+</div>
+
+
+                            </div>
+                            <div id="TheoryElement.condition_id" class="classattr">
+                                <div class="attr variable">
+            <span class="name">condition_id</span><span class="annotation">: int</span>
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryElement.condition_id"></a>
+    
+            <div class="docstring"><p>Get the condition id of a theory element.</p>
+</div>
+
+
+                            </div>
+                            <div id="TheoryElement.tuple" class="classattr">
+                                <div class="attr variable">
+            <span class="name">tuple</span><span class="annotation">: list[<a href="#TheoryTerm">TheoryTerm</a>]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryElement.tuple"></a>
+    
+            <div class="docstring"><p>Get the term tuple of a theory element.</p>
+</div>
+
+
+                            </div>
+                </section>
+                <section id="TheoryTerm">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">TheoryTerm</span>:
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryTerm"></a>
+    
+            <div class="docstring"><p>A view to inspect a theory term.</p>
+</div>
+
+
+                            <div id="TheoryTerm.arguments" class="classattr">
+                                <div class="attr variable">
+            <span class="name">arguments</span><span class="annotation">: list[<a href="#TheoryTerm">TheoryTerm</a>]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryTerm.arguments"></a>
+    
+            <div class="docstring"><p>Get the arguments of a function, tuple, list, or set theory term.</p>
+</div>
+
+
+                            </div>
+                            <div id="TheoryTerm.name" class="classattr">
+                                <div class="attr variable">
+            <span class="name">name</span><span class="annotation">: str</span>
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryTerm.name"></a>
+    
+            <div class="docstring"><p>Get the name of a theory symbol or function.</p>
+</div>
+
+
+                            </div>
+                            <div id="TheoryTerm.number" class="classattr">
+                                <div class="attr variable">
+            <span class="name">number</span><span class="annotation">: int</span>
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryTerm.number"></a>
+    
+            <div class="docstring"><p>Get the value of a numeric theory term.</p>
+</div>
+
+
+                            </div>
+                            <div id="TheoryTerm.type" class="classattr">
+                                <div class="attr variable">
+            <span class="name">type</span><span class="annotation">: <a href="#TheoryTermType">TheoryTermType</a></span>
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryTerm.type"></a>
+    
+            <div class="docstring"><p>Get the type of the theory term.</p>
+</div>
+
+
+                            </div>
+                </section>
+                <section id="TheoryTermType">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">TheoryTermType</span>:
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryTermType"></a>
+    
+            <div class="docstring"><p>Enumeration of theory term types.</p>
+
+<h6 id="members">Members:</h6>
+
+<blockquote>
+  <p>Number : For numeric theory terms.</p>
+  
+  <p>Symbol : For symbolic theory terms (simple strings).</p>
+  
+  <p>Tuple : For tuple theory terms.</p>
+  
+  <p>List : For list theory term.</p>
+  
+  <p>Set : For set theory terms.</p>
+  
+  <p>Function : For function theory terms.</p>
+</blockquote>
+</div>
+
+
+                            <div id="TheoryTermType.__init__" class="classattr">
+                                <div class="attr function">
+            
+        <span class="name">TheoryTermType</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">value</span><span class="p">:</span> <span class="nb">int</span></span>)</span>
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryTermType.__init__"></a>
+    
+    
+
+                            </div>
+                            <div id="TheoryTermType.Function" class="classattr">
+                                <div class="attr variable">
+            <span class="name">Function</span><span class="annotation">: ClassVar[<a href="#TheoryTermType">TheoryTermType</a>]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryTermType.Function"></a>
+    
+            <div class="docstring"><p>For function theory terms.</p>
+</div>
+
+
+                            </div>
+                            <div id="TheoryTermType.List" class="classattr">
+                                <div class="attr variable">
+            <span class="name">List</span><span class="annotation">: ClassVar[<a href="#TheoryTermType">TheoryTermType</a>]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryTermType.List"></a>
+    
+            <div class="docstring"><p>For list theory term.</p>
+</div>
+
+
+                            </div>
+                            <div id="TheoryTermType.Number" class="classattr">
+                                <div class="attr variable">
+            <span class="name">Number</span><span class="annotation">: ClassVar[<a href="#TheoryTermType">TheoryTermType</a>]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryTermType.Number"></a>
+    
+            <div class="docstring"><p>For numeric theory terms.</p>
+</div>
+
+
+                            </div>
+                            <div id="TheoryTermType.Set" class="classattr">
+                                <div class="attr variable">
+            <span class="name">Set</span><span class="annotation">: ClassVar[<a href="#TheoryTermType">TheoryTermType</a>]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryTermType.Set"></a>
+    
+            <div class="docstring"><p>For set theory terms.</p>
+</div>
+
+
+                            </div>
+                            <div id="TheoryTermType.Symbol" class="classattr">
+                                <div class="attr variable">
+            <span class="name">Symbol</span><span class="annotation">: ClassVar[<a href="#TheoryTermType">TheoryTermType</a>]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryTermType.Symbol"></a>
+    
+            <div class="docstring"><p>For symbolic theory terms (simple strings).</p>
+</div>
+
+
+                            </div>
+                            <div id="TheoryTermType.Tuple" class="classattr">
+                                <div class="attr variable">
+            <span class="name">Tuple</span><span class="annotation">: ClassVar[<a href="#TheoryTermType">TheoryTermType</a>]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryTermType.Tuple"></a>
+    
+            <div class="docstring"><p>For tuple theory terms.</p>
+</div>
+
+
+                            </div>
+                            <div id="TheoryTermType.name" class="classattr">
+                                <div class="attr variable">
+            <span class="name">name</span><span class="annotation">: str</span>
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryTermType.name"></a>
+    
+    
+
+                            </div>
+                            <div id="TheoryTermType.value" class="classattr">
+                                <div class="attr variable">
+            <span class="name">value</span><span class="annotation">: int</span>
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryTermType.value"></a>
+    
+    
 
                             </div>
                 </section>
