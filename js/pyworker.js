@@ -1,4 +1,4 @@
-importScripts("/js/pyodide/pyodide.js");
+importScripts("pyodide/pyodide.js");
 
 const messageSchemas = {
     run: {
