@@ -51,10 +51,19 @@
                                 <a class="function" href="#Control.main">main</a>
                         </li>
                         <li>
+                                <a class="function" href="#Control.observe">observe</a>
+                        </li>
+                        <li>
                                 <a class="function" href="#Control.parse_string">parse_string</a>
                         </li>
                         <li>
+                                <a class="function" href="#Control.register_propagator">register_propagator</a>
+                        </li>
+                        <li>
                                 <a class="function" href="#Control.solve">solve</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Control.backend">backend</a>
                         </li>
                         <li>
                                 <a class="variable" href="#Control.base">base</a>
@@ -238,6 +247,27 @@ there is any.</p>
 
 
                             </div>
+                            <div id="Control.observe" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">observe</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">observer</span><span class="p">:</span> <span class="n"><a href="backend.html#Observer">clingo.backend.Observer</a></span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Control.observe"></a>
+    
+            <div class="docstring"><p>Inspect the ground program of the current step.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>observer:</strong>  The program observer to inspect the program.</li>
+</ul>
+</div>
+
+
+                            </div>
                             <div id="Control.parse_string" class="classattr">
                                 <div class="attr function">
             
@@ -254,6 +284,29 @@ there is any.</p>
 
 <ul>
 <li><strong>program:</strong>  The logic program as string.</li>
+</ul>
+</div>
+
+
+                            </div>
+                            <div id="Control.register_propagator" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">register_propagator</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">propagator</span><span class="p">:</span> <span class="n"><a href="propagate.html#Propagator">clingo.propagate.Propagator</a></span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Control.register_propagator"></a>
+    
+            <div class="docstring"><p>Register the given propagator for theory propagation.</p>
+
+<p>See the <code><a href="propagate.html">clingo.propagate</a></code> module for an example.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>propagator:</strong>  The propagator.</li>
 </ul>
 </div>
 
@@ -321,6 +374,19 @@ of the returned handle are non-blocking.</li>
 <blockquote>
   <p><a href="solve.html">clingo.solve</a>: For more examples how to use this method.</p>
 </blockquote>
+</div>
+
+
+                            </div>
+                            <div id="Control.backend" class="classattr">
+                                <div class="attr variable">
+            <span class="name">backend</span><span class="annotation">: <a href="backend.html#BackendManager">clingo.backend.BackendManager</a></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Control.backend"></a>
+    
+            <div class="docstring"><p>Get a backend manager to extend the ground program.</p>
 </div>
 
 

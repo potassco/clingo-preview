@@ -66,10 +66,19 @@
                     <a class="class" href="#Base">Base</a>
                             <ul class="memberlist">
                         <li>
+                                <a class="function" href="#Base.is_current">is_current</a>
+                        </li>
+                        <li>
                                 <a class="function" href="#Base.is_external">is_external</a>
                         </li>
                         <li>
                                 <a class="function" href="#Base.is_fact">is_fact</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Base.is_projected">is_projected</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Base.is_shown">is_shown</a>
                         </li>
                         <li>
                                 <a class="function" href="#Base.items">items</a>
@@ -378,6 +387,36 @@
 </div>
 
 
+                            <div id="Base.is_current" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">is_current</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">literal</span><span class="p">:</span> <span class="nb">int</span></span><span class="return-annotation">) -> <span class="nb">bool</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Base.is_current"></a>
+    
+            <div class="docstring"><p>Check whether a literal has been introduced in the current step.</p>
+
+<p>Note that all literals introduced before the last solve call are considered
+from a previous step.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>literal:</strong>  The literal to check.</li>
+</ul>
+
+<h6 id="returns">Returns:</h6>
+
+<blockquote>
+  <p>Whether the literal is subject to projection.</p>
+</blockquote>
+</div>
+
+
+                            </div>
                             <div id="Base.is_external" class="classattr">
                                 <div class="attr function">
             
@@ -427,6 +466,60 @@
 
 <blockquote>
   <p>Whether the literal is a fact.</p>
+</blockquote>
+</div>
+
+
+                            </div>
+                            <div id="Base.is_projected" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">is_projected</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">literal</span><span class="p">:</span> <span class="nb">int</span></span><span class="return-annotation">) -> <span class="nb">bool</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Base.is_projected"></a>
+    
+            <div class="docstring"><p>Check whether the literal is part of a <code>#project</code> directive.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>literal:</strong>  The literal to check.</li>
+</ul>
+
+<h6 id="returns">Returns:</h6>
+
+<blockquote>
+  <p>Whether the literal is subject to projection.</p>
+</blockquote>
+</div>
+
+
+                            </div>
+                            <div id="Base.is_shown" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">is_shown</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">literal</span><span class="p">:</span> <span class="nb">int</span></span><span class="return-annotation">) -> <span class="nb">bool</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Base.is_shown"></a>
+    
+            <div class="docstring"><p>Check whether the literal is shown via a <code>#show</code> directive.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>literal:</strong>  The literal to check.</li>
+</ul>
+
+<h6 id="returns">Returns:</h6>
+
+<blockquote>
+  <p>Whether the literal is shown.</p>
 </blockquote>
 </div>
 
