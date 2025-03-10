@@ -39,7 +39,7 @@ const Clingo = (() => {
                 inputElement.setValue(request.responseText.trim(), -1);
             }
         }
-        request.open("GET", `/examples/${path}`, true);
+        request.open("GET", `examples/${path}`, true);
         request.send();
     };
     const load_example = () => load(examples.value);
