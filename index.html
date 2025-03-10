@@ -1,87 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Clingo 6</title>
-    <link rel="stylesheet" href="css/main.css"/>
-  </head>
-  <body>
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <article class="post">
-          <header class="post-header">
-            <h1 class="post-title">Clingo 6</h1>
-          </header>
+---
+layout: page
+title: Running clingo
+css:
+  - /css/clingo.css
+permalink: /clingo/run/
+---
+<div class="center">
 
-          <div class="post-content">
-            <div class="center">
-              <pre id="input">
-% select the number of queens
-#const n=6.
+ <ul class="hlist">
+  <li><b>Examples:</b></li>
+  <li>
+   <select id="examples" onchange="Clingo.load()">
+    <optgroup label="Simple Examples">
+     <option value="harry-and-sally.lp">Harry and Sally</option>
+     <option value="flying-birds.lp">Flying Birds</option>
+     <option value="graph-coloring.lp">Graph Coloring</option>
+     <option value="n-queens.lp">n-Queens</option>
+    </optgroup>
+    <optgroup label="Advanced Examples">
+     <option value="traveling-salesperson.lp">Traveling Salesperson</option>
+     <!--<option value="blocksworld-planning.lp">Blocksworld Planning</option>-->
+     <option value="pigeonator-propagator.lp" class="option-py" hidden>Pigeonator Propagator</option>
+     <option value="dl.lp" class="option-py" hidden>Difference Logic</option>
+    </optgroup>
+   </select>
+  </li>
+ </ul>
 
-% place queens
-{ q(1..n,1..n) }.
+ <pre id="input">
+% instance
+motive(harry).
+motive(sally).
+guilty(harry).
 
-% exactly one queen per column
-:- { q(1..n,Y) } != 1, Y=1..n.
+% encoding
+innocent(Suspect) :- motive(Suspect), not guilty(Suspect).</pre>
 
-% exactly one queen per row
-:- { q(X,1..n) } != 1, X=1..n.
+ <ul class="hlist">
+  <li><b>Configuration:</b></li>
+  <li>reasoning mode
+   <select id="mode">
+    <option value="default" selected>default</option>
+    <option value="brave">brave</option>
+    <option value="cautious">cautious</option>
+    <option value="enumerate">enumerate all</option>
+   </select>
+  </li>
+  <li><input type="checkbox" id="project"/>&nbsp;project</li>
+  <li><input type="checkbox" id="stats"/>&nbsp;statistics</li>
+  <li class="switch-item"><div class="language-switch">
+   <label class="switch"><input type="checkbox"><span class="slider round"></span></label>
+   <span class="label">python</span>
+  </div></li>
+ </ul>
 
-% at most one queen per diagonal
-:- { q(D-Y,Y) } >= 2, D=2..2*n.
-:- { q(D+Y,Y) } >= 2, D=1-n..n-1.</pre>
-              <ul class="hlist">
-                <li><b>Configuration:</b></li>
-                <li>projection
-                 <select id="project_mode">
-                  <option value="none">disabled</option>
-                  <option value="anonymous">anonymous</option>
-                  <option value="pure" selected>pure</option>
-                 </select>
-                </li>
-                <li>
-                 project anonymous in negative
-                 <input type="checkbox" id="project_anonymous">
-                </li>
-                <li>
-                 mode
-                 <select id="mode">
-                  <option value="parse">parse</option>
-                  <option value="rewrite">rewrite</option>
-                  <option value="ground">ground</option>
-                  <option value="solve" selected>solve</option>
-                 </select>
-                </li>
-                <li>
-                 log level
-                 <select id="log_level">
-                  <option value="error">error</option>
-                  <option value="warn">warn</option>
-                  <option value="info" selected>info</option>
-                  <option value="debug">debug</option>
-                  <option value="trace">trace</option>
-                 </select>
-                </li>
-                <li>
-                 models
-                 <select id="models">
-                  <option value="1">one</option>
-                  <option value="0">all</option>
-                  <option value="-1" selected>auto</option>
-                 </select>
-                </li>
-              </ul>
-              <input type="button" id="run" value="&#x25ba; Run!" onclick="Clingo.run()"/>
-              <pre id="output" class="code"></pre>
-            </div>
-          </div>
-        </article>
-      </div>
-    </main>
-    <script type="text/javascript" src="js/ace.js" charset="utf-8"></script>
-    <script type="text/javascript" src="js/clingo.js" charset="utf-8"></script>
-    <script type="text/javascript" src="js/module.js" charset="utf-8"></script>
-  </body>
-</html>
+ <input type="button" id="clingoRun" value="&#9658;&nbsp;Run!" onclick="Clingo.run()">
+ <pre id="output" class="code"></pre>
+
+</div>
+
+<script type="text/javascript" src="/js/ace.js" charset="utf-8"></script>
+<script type="text/javascript" src="/js/module.js" charset="utf-8"></script>

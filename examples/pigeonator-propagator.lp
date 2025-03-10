@@ -1,55 +1,41 @@
-#script (lua)
+#script (python)
 
-require("clingo")
+from clingo.propagate import Assignment, Propagator, PropagateInit, PropagateControl
 
-local Pigeonator = { }
-Pigeonator.__index = Pigeonator
+class Pigeonator(Propagator):
+    def __init__(self):
+        super().__init__()
+        self.place = {}
+        self.states = {}
 
-function Pigeonator.new()
-    local self = setmetatable({ }, Pigeonator)
-    self.place = {} -- shared state
-    return self
-end
+    def init(self, init: PropagateInit):
+        for symbol, atom in init.base[("place", 2)].items():
+            lit = init.solver_literal(atom.literal)
+            # store hole H of each place(P,H) atom
+            self.place[lit] = atom.symbol.arguments[1].number
+            init.add_watch(lit)
+        for i in range(init.number_of_threads):
+            self.states[i] = {}
 
-function Pigeonator:init(init)
-    for atom in init.symbolic_atoms:by_signature("place", 2) do
-        local lit = init:solver_literal(atom.literal)
-        -- store hole H of each place(P,H) atom
-        self.place[lit] = atom.symbol.arguments[2].number
-        init:add_watch(lit)
-    end
-    for i = 1, init.number_of_threads do
-        init:set_state(i, {})
-    end
-end
+    def propagate(self, control: PropagateControl, changes):
+        state = self.states[control.thread_id]
+        for lit in changes:
+            hole = self.place[lit]
+            prev = state.setdefault(hole, lit)
+            if prev != lit and not control.add_nogood([lit, prev]):
+                return
 
-function Pigeonator:propagate(control, changes, holes)
-    for _, lit in ipairs(changes) do
-        local hole = self.place[lit]
-        if holes[hole] == nil then
-            holes[hole] = lit
-        end
-        local prev = holes[hole]
-        if prev ~= lit and not control:add_nogood{{lit, prev}} then
-            return
-        end
-    end
-end
+    def undo(self, thread_id: int, assignment: Assignment, changes):
+        state = self.states[thread_id]
+        for lit in changes:
+            hole = self.place[lit]
+            if state.get(hole, 0) == lit:
+                del state[hole]
 
-function Pigeonator:undo(thread_id, assignment, changes, holes)
-    for _, lit in ipairs(changes) do
-        local hole = self.place[lit]
-        if holes[hole] == lit then
-            holes[hole] = nil
-        end
-    end
-end
-
-function main(prg)
-    prg:register_propagator(Pigeonator.new())
-    prg:ground({{"base", {}}})
-    prg:solve()
-end
+def main(lib, prg):
+    prg.register_propagator(Pigeonator())
+    prg.ground([("base", [])])
+    prg.solve()
 
 #end.
 

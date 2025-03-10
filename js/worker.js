@@ -1,13 +1,13 @@
 importScripts('clingo.js');
 
-let inputElement = '';
-let position = 0;
+let Clingo = null
 
 const messageSchemas = {
     run: {
         args: "array",
         input: "string",
     },
+    init: {}
 };
 
 function validateMessage(msg, schemas) {
@@ -30,38 +30,33 @@ function validateMessage(msg, schemas) {
     return null;
 }
 
-Module({
-    print: (text) => {
-        postMessage({ type: "stdout", value: text });
-    },
-    printErr: (text) => {
-        postMessage({ type: "stderr", value: text });
-    },
-    stdin: () => {
-        if (position < inputElement.length) {
-            return inputElement.charCodeAt(position++);
+self.addEventListener('message', (e) => {
+    const msg = e.data
+    const error = validateMessage(msg, messageSchemas);
+    if (error) {
+        postMessage({ type: "stderr", value: error });
+    }
+    else if (msg.type === 'init') {
+        Module({
+            print: (text) => {
+                postMessage({ type: "stdout", value: text });
+            },
+            printErr: (text) => {
+                postMessage({ type: "stderr", value: text });
+            },
+            monitorRunDependencies: (left) => {
+                postMessage({ type: "progress", value: left });
+            },
+        }).then((m) => { Clingo = m; postMessage({ type: "init" }) });
+    }
+    else if (msg.type === 'run') {
+        const vec = new Clingo.StringVec();
+        for (const arg of msg.args) {
+            vec.push_back(arg);
         }
-        return null;
-    },
-    monitorRunDependencies: (left) => {
-        postMessage({ type: "dependencies", value: left });
-    },
-}).then(function (Clingo) {
-    self.addEventListener('message', (e) => {
-        const msg = e.data
-        const error = validateMessage(msg, messageSchemas);
-        if (error) {
-            postMessage({ type: "stderr", value: error });
-        }
-        else if (msg.type === 'run') {
-            const vec = new Clingo.StringVec();
-            for (const arg of msg.args) {
-                vec.push_back(arg);
-            }
-            inputElement = msg.input;
-            position = 0;
-            Clingo.run(vec);
-        }
-    });
-    postMessage({ type: "ready" })
-});
+        Clingo.run(msg.input, vec);
+        postMessage({ type: "exit" })
+    }
+})
+
+postMessage({ type: "ready" });
