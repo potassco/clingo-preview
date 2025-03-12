@@ -4,6 +4,8 @@ const Clingo = (() => {
     const stats = document.getElementById("stats")
     const project = document.getElementById("project")
     const mode = document.getElementById("mode")
+    const logLevel = document.getElementById("log-level")
+    const reasoningMode = document.getElementById("reasoning-mode")
     const examples = document.getElementById("examples")
     const indicator = document.getElementById('clingoRun')
     const pyOpts = document.getElementsByClassName("option-py");
@@ -79,7 +81,7 @@ const Clingo = (() => {
 
     const buildArgs = () => {
         let args = []
-        switch (mode.value) {
+        switch (reasoningMode.value) {
             case "brave":
                 args.push(...["--opt-mode=optN", "--enum-mode=brave"])
                 break;
@@ -92,6 +94,8 @@ const Clingo = (() => {
             default:
                 break;
         }
+        args.push(...["--mode", mode.value])
+        args.push(...["--log-level", logLevel.value])
         if (stats.checked) {
             args.push("--stats");
         }
