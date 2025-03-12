@@ -34,8 +34,7 @@ class Pigeonator(Propagator):
 
 def main(lib, prg):
     prg.register_propagator(Pigeonator())
-    prg.ground([("base", [])])
-    prg.solve()
+    prg.main()
 
 #end.
 

@@ -347,9 +347,7 @@ def main(lib, control):
     propagator = DLPropagator(lib)
     control.parse_string(THEORY)
     control.register_propagator(propagator)
-    control.ground()
-    with control.solve(on_model=propagator.on_model) as hnd:
-        hnd.get()
+    control.main()
 #end.
 
 1 { cycle(T,U) : task(U), U != T } 1 :- task(T).
