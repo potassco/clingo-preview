@@ -29,31 +29,14 @@ function validateMessage(msg, schemas) {
 }
 
 const code = `
-import __main__
 from clingo.core import Library
-from clingo.app import App, main as clingo_main
-from clingo.script import Script, register
-
-class PyScript(Script):
-    def execute(self, code) -> None:
-        exec(code, __main__.__dict__, __main__.__dict__)
-    def call(self, lib, name: str, arguments):
-        return [getattr(__main__, name)(lib, *arguments)]
-    def callable(self, name, args):
-        return name in __main__.__dict__ and callable(__main__.__dict__[name])
-    def main(self, lib, control) -> None:
-        __main__.main(lib, control)
-    def name(self):
-        return "python"
-
-class ClingoApp(App):
-    def __init__(self, name):
-        super().__init__("clingo", "6.0.0")
+from clingo.app import clingo_main
+from clingo.script import enable_python
 
 def run_clingo_main(args):
-    lib = Library()
-    register(lib, PyScript())
-    clingo_main(lib, args, ClingoApp("clingo"))
+    with Library() as lib:
+        enable_python(lib)
+        clingo_main(lib, args)
 `;
 
 class StdinHandler {
