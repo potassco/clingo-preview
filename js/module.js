@@ -96,7 +96,7 @@ const Clingo = (() => {
             onEnter,
             buildArgs,
             getInput: () => inputElement.getValue(),
-            setInput: (value) => inputElement.setValue(value),
+            setInput: (value) => inputElement.setValue(value, 1),
             getExample: () => examples.value,
             setExample: (value) => examples.value = value
         }
