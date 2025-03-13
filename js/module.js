@@ -8,12 +8,10 @@ const Clingo = (() => {
     const reasoningMode = document.getElementById("reasoning-mode")
     const examples = document.getElementById("examples")
     const indicator = document.getElementById('clingoRun')
-    const pyOpts = document.getElementsByClassName("option-py");
-    const luaOpts = document.getElementsByClassName("option-lua");
+    const pyCheckbox = document.querySelector('.language-switch input[type="checkbox"]');
 
     let worker = null;
-    let output = "";
-    let state = "running";
+    let state = "rujning";
     let stdin = ""
     let args = []
     let work = false
@@ -30,53 +28,18 @@ const Clingo = (() => {
         autoScrollEditorIntoView: true
     });
 
-    const updateButton = () => {
-        indicator.style.opacity = state === "ready" ? '100%' : '60%';
-    }
-
-    const load = (path) => {
-        var request = new XMLHttpRequest();
-        request.onreadystatechange = function () {
-            if (request.readyState == 4 && request.status == 200) {
-                inputElement.setValue(request.responseText.trim(), -1);
-            }
-        }
-        request.open("GET", `examples/${path}`, true);
-        request.send();
-    };
-    const load_example = () => load(examples.value);
-
-    const query_params = Object.fromEntries(
-        Array.from(new URLSearchParams(window.location.search))
-            .map(([key, value]) => [key, decodeURIComponent(value)])
-    );
-    if (query_params.example !== undefined) {
-        examples.value = query_params.example;
-        load(query_params.example);
-    }
-
-    document.querySelector("#input").addEventListener("keydown", (ev) => {
-        if (ev.key === "Enter" && ev.ctrlKey) {
-            run();
-        }
-    })
-
     const stripAnsiCodes = (input) => input.replace(/\x1b\[[0-9;]*m/g, '');
 
     const clearOutput = () => {
-        output = ""
-        if (outputElement) {
-            outputElement.textContent = output;
-        }
+        outputElement.textContent = "";
     }
 
     const updateOutput = (text) => {
-        if (text !== null) {
-            output += text + "\n"
-        }
-        if (outputElement) {
-            outputElement.textContent = output;
-        }
+        outputElement.textContent += `${text}\n`
+    }
+
+    const updateButton = () => {
+        indicator.style.opacity = state === "ready" ? '100%' : '60%';
     }
 
     const buildArgs = () => {
@@ -117,25 +80,6 @@ const Clingo = (() => {
         updateButton()
     }
 
-    document.addEventListener('DOMContentLoaded', function () {
-        const checkbox = document.querySelector('.language-switch input[type="checkbox"]');
-        // const label = document.querySelector('.language-switch .label');
-        checkbox.addEventListener('change', function () {
-            py = this.checked
-            // label.textContent = py ? 'python' : 'lua';
-            if (py != ispy) {
-                state = "running"
-                startWorker()
-            }
-            for (let i = 0; i < pyOpts.length; i++) {
-                pyOpts[i].hidden = !py
-            }
-            for (let i = 0; i < luaOpts.length; i++) {
-                luaOpts[i].hidden = py
-            }
-        });
-    });
-
     const startWorker = () => {
         if (state == "ready" || state == "init") {
             return;
@@ -154,7 +98,7 @@ const Clingo = (() => {
             worker = new Worker('js/worker.js');
         }
 
-        worker.onmessage = function (e) {
+        worker.onmessage = (e) => {
             const msg = e.data
             switch (msg.type) {
                 case "init":
@@ -185,7 +129,50 @@ const Clingo = (() => {
         runClingo()
     }
 
+    const enablePython = (enable) => {
+        py = enable
+        if (py != ispy) {
+            state = "running"
+            startWorker()
+        }
+    }
+
+    const load = (path) => {
+        if (!pyCheckbox.checked && examples.options[examples.selectedIndex].classList.contains('option-py')) {
+            pyCheckbox.checked = true
+            enablePython(true)
+        }
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = () => {
+            if (request.readyState == 4 && request.status == 200) {
+                inputElement.setValue(request.responseText.trim(), -1);
+            }
+        };
+        request.open("GET", `examples/${path}`, true);
+        request.send();
+    };
+    const loadExample = () => load(examples.value);
+
+    document.querySelector("#input").addEventListener("keydown", (ev) => {
+        if (ev.key === "Enter" && ev.ctrlKey) {
+            run();
+        }
+    })
+
+    document.addEventListener('DOMContentLoaded', () =>
+        pyCheckbox.addEventListener('change', (ev) => enablePython(ev.target.checked))
+    );
+
+    const query_params = Object.fromEntries(
+        Array.from(new URLSearchParams(window.location.search))
+            .map(([key, value]) => [key, decodeURIComponent(value)])
+    );
+    if (query_params.example !== undefined) {
+        examples.value = query_params.example;
+        load(query_params.example);
+    }
+
     startWorker()
 
-    return { 'run': run, 'load': load_example };
+    return { 'run': run, 'load': loadExample };
 })();
