@@ -13,7 +13,7 @@ from typing import List, MutableMapping, Optional, Sequence, Set, Tuple
 
 from clingo import ast
 from clingo.base import TheoryTerm, TheoryTermType
-from clingo.control import Control
+from clingo.control import Control, ControlMode
 from clingo.core import Library
 from clingo.propagate import Assignment, PropagateControl, PropagateInit, Propagator
 from clingo.solve import Model
@@ -343,12 +343,52 @@ class DLPropagator(Propagator):
                 return lit
         raise RuntimeError("must not happen")
 
-def main(lib, control):
-    propagator = DLPropagator(lib)
+def main(lib, control, parts):
     control.parse_string(THEORY)
+    # hand over control to main in parse/rewrite mode
+    if control.mode in (ControlMode.Parse, ControlMode.Rewrite):
+        control.main(parts)
+        return
+    propagator = DLPropagator(lib)
     control.register_propagator(propagator)
-    control.main()
+    minimize = control.const_map.get("minimize")
+    # proceed with normal solving no variable is to be minimized
+    if minimize is None:
+        for part in parts:
+            control.ground(part)
+            with control.solve(on_model=propagator.on_model) as hnd:
+                hnd.get()
+        return
+    # minimize the given varibale
+    if len(parts) != 1:
+        raise RuntimeError("minimization supports only one solving step")
+    control.ground(parts[0])
+    control.parse_string("#program __bound(b, v). &diff { v-0 } <= b.")
+    bound = None
+    def on_model(model: Model):
+        nonlocal bound
+        propagator.on_model(model)
+        for symbol in model.symbols(theory=True):
+            if symbol.match("dl", 2):
+                n, v = symbol.arguments
+                if n == minimize:
+                    bound = v.number
+                    return False
+    while True:
+        with control.solve(on_model=on_model) as hnd:
+            if not hnd.get().satisfiable:
+                break
+        if bound is None:
+            break
+        print(f"Found new bound: {bound}")
+        num = Number(lib, bound - 1)
+        control.ground([("__bound", [num, minimize])])
+
+    if bound is not None:
+        print("Optimum found")
 #end.
+
+#const minimize=bound.
 
 1 { cycle(T,U) : task(U), U != T } 1 :- task(T).
 1 { cycle(T,U) : task(T), U != T } 1 :- task(U).
