@@ -1,178 +1,224 @@
 const Clingo = (() => {
-    const outputElement = document.getElementById('output')
-    const inputElement = ace.edit("input")
-    const stats = document.getElementById("stats")
-    const project = document.getElementById("project")
-    const mode = document.getElementById("mode")
-    const logLevel = document.getElementById("log-level")
-    const reasoningMode = document.getElementById("reasoning-mode")
-    const examples = document.getElementById("examples")
-    const indicator = document.getElementById('clingoRun')
-    const pyCheckbox = document.querySelector('.language-switch input[type="checkbox"]');
+    const DomInteraction = (() => {
+        const Args = {
+            stats: document.getElementById("stats"),
+            project: document.getElementById("project"),
+            reasoningMode: document.getElementById("reasoning-mode"),
+            logLevel: document.getElementById("log-level"),
+            mode: document.getElementById("mode")
+        }
+        const runButton = document.getElementById('clingoRun')
+        const outputElement = document.getElementById('output')
+        const pyCheckbox = document.querySelector('.language-switch input[type="checkbox"]')
+        const inputElement = ace.edit("input")
+        const examples = document.getElementById("examples")
 
-    let worker = null;
-    let state = "rujning";
-    let stdin = ""
-    let args = []
-    let work = false
-    let py = false
-    let ispy = false
+        const clearOutput = () => {
+            outputElement.textContent = ""
+        }
 
-    inputElement.setTheme("ace/theme/textmate");
-    inputElement.$blockScrolling = Infinity;
-    inputElement.setOptions({
-        useSoftTabs: true,
-        tabSize: 4,
-        maxLines: Infinity,
-        mode: "ace/mode/clingo",
-        autoScrollEditorIntoView: true
-    });
+        const updateOutput = (text) => {
+            outputElement.textContent += `${text}\n`
+        }
 
-    const stripAnsiCodes = (input) => input.replace(/\x1b\[[0-9;]*m/g, '');
+        const updateButton = (state) => {
+            runButton.style.opacity = state === "ready" ? '100%' : '60%'
+        }
 
-    const clearOutput = () => {
-        outputElement.textContent = "";
-    }
+        const ensurePython = () => {
+            if (!pyCheckbox.checked && examples?.options?.[examples.selectedIndex]?.classList?.contains('option-py')) {
+                pyCheckbox.checked = true
+                return true
+            }
+            return false
+        }
 
-    const updateOutput = (text) => {
-        outputElement.textContent += `${text}\n`
-    }
+        const onEnablePython = (cb) => {
+            document.addEventListener('DOMContentLoaded', () =>
+                pyCheckbox.addEventListener('change', (ev) => cb(ev.target.checked))
+            )
+        }
 
-    const updateButton = () => {
-        indicator.style.opacity = state === "ready" ? '100%' : '60%';
-    }
+        const onEnter = (cb) => {
+            document.querySelector("#input").addEventListener("keydown", (ev) => {
+                if (ev.key === "Enter" && ev.ctrlKey) {
+                    cb()
+                }
+            })
+        }
 
-    const buildArgs = () => {
+        const buildArgs = () => {
+            let args = []
+            switch (Args.reasoningMode.value) {
+                case "brave":
+                    args.push(...["--opt-mode=optN", "--enum-mode=brave"])
+                    break
+                case "cautious":
+                    args.push(...["--opt-mode=optN", "--enum-mode=cautious"])
+                    break
+                case "enumerate":
+                    args.push(...["--opt-mode=optN", "0"])
+                    break
+                default:
+                    break
+            }
+            args.push(...["--mode", Args.mode.value])
+            args.push(...["--log-level", Args.logLevel.value])
+            if (Args.stats.checked) {
+                args.push("--stats")
+            }
+            if (Args.project.checked) {
+                args.push("--project")
+            }
+            return args
+        }
+
+        const init = () => {
+            inputElement.setTheme("ace/theme/textmate")
+            inputElement.$blockScrolling = Infinity
+            inputElement.setOptions({
+                useSoftTabs: true,
+                tabSize: 4,
+                maxLines: Infinity,
+                mode: "ace/mode/clingo",
+                autoScrollEditorIntoView: true
+            })
+        }
+
+        init()
+
+        return {
+            clearOutput,
+            updateOutput,
+            updateButton,
+            ensurePython,
+            onEnablePython,
+            onEnter,
+            buildArgs,
+            getInput: () => inputElement.getValue(),
+            setInput: (value) => inputElement.setValue(value),
+            getExample: () => examples.value,
+            setExample: (value) => examples.value = value
+        }
+    })()
+
+    const Clingo = (() => {
+        let worker = null
+        let state = "running"
+        let stdin = ""
         let args = []
-        switch (reasoningMode.value) {
-            case "brave":
-                args.push(...["--opt-mode=optN", "--enum-mode=brave"])
-                break;
-            case "cautious":
-                args.push(...["--opt-mode=optN", "--enum-mode=cautious"])
-                break;
-            case "enumerate":
-                args.push(...["--opt-mode=optN", "0"]);
-                break;
-            default:
-                break;
-        }
-        args.push(...["--mode", mode.value])
-        args.push(...["--log-level", logLevel.value])
-        if (stats.checked) {
-            args.push("--stats");
-        }
-        if (project.checked) {
-            args.push("--project");
-        }
-        return args;
-    }
+        let work = false
+        let py = false
+        let ispy = false
 
-    const runClingo = () => {
-        if (state == "ready") {
-            if (work) {
-                clearOutput()
-                state = "running"
-                work = false
-                worker.postMessage({ type: 'run', input: stdin, args: args });
+        const stripAnsiCodes = (input) => input.replace(/\x1b\[[0-9;]*m/g, '')
+
+        const runClingo = () => {
+            if (state == "ready") {
+                if (work) {
+                    DomInteraction.clearOutput()
+                    state = "running"
+                    work = false
+                    worker.postMessage({ type: 'run', input: stdin, args: args })
+                }
+            }
+            DomInteraction.updateButton(state)
+        }
+
+        const startWorker = () => {
+            if (state == "ready" || state == "init") {
+                return
+            }
+            state = "init"
+            DomInteraction.updateButton(state)
+            if (worker != null) {
+                worker.terminate()
+            }
+
+            if (py) {
+                ispy = true
+                worker = new Worker('js/pyworker.js')
+            } else {
+                ispy = false
+                worker = new Worker('js/worker.js')
+            }
+
+            worker.onmessage = (e) => {
+                const msg = e.data
+                switch (msg.type) {
+                    case "init":
+                        state = "ready"
+                        runClingo()
+                        break
+                    case "ready":
+                        worker.postMessage({ type: 'init' })
+                        break
+                    case "exit":
+                        setTimeout(startWorker, 0)
+                        break
+                    case "stdout":
+                        DomInteraction.updateOutput(msg.value)
+                        break
+                    case "stderr":
+                        DomInteraction.updateOutput(stripAnsiCodes(msg.value))
+                        break
+                }
             }
         }
-        updateButton()
-    }
 
-    const startWorker = () => {
-        if (state == "ready" || state == "init") {
-            return;
-        }
-        state = "init"
-        updateButton()
-        if (worker != null) {
-            worker.terminate();
-        }
-
-        if (py) {
-            ispy = true
-            worker = new Worker('js/pyworker.js');
-        } else {
-            ispy = false
-            worker = new Worker('js/worker.js');
-        }
-
-        worker.onmessage = (e) => {
-            const msg = e.data
-            switch (msg.type) {
-                case "init":
-                    state = "ready"
-                    runClingo()
-                    break;
-                case "ready":
-                    worker.postMessage({ type: 'init' });
-                    break;
-                case "exit":
-                    setTimeout(startWorker, 0)
-                    break;
-                case "stdout":
-                    updateOutput(msg.value);
-                    break;
-                case "stderr":
-                    updateOutput(stripAnsiCodes(msg.value));
-                    break;
-            }
-        };
-    }
-
-    const run = () => {
-        work = true
-        stdin = inputElement.getValue()
-        args = buildArgs()
-        startWorker()
-        runClingo()
-    }
-
-    const enablePython = (enable) => {
-        py = enable
-        if (py != ispy) {
-            state = "running"
+        const run = () => {
+            work = true
+            stdin = DomInteraction.getInput()
+            args = DomInteraction.buildArgs()
             startWorker()
+            runClingo()
         }
-    }
 
-    const load = (path) => {
-        if (!pyCheckbox.checked && examples.options[examples.selectedIndex].classList.contains('option-py')) {
-            pyCheckbox.checked = true
-            enablePython(true)
-        }
-        var request = new XMLHttpRequest();
-        request.onreadystatechange = () => {
-            if (request.readyState == 4 && request.status == 200) {
-                inputElement.setValue(request.responseText.trim(), -1);
+        const enablePython = (enable) => {
+            py = enable
+            if (py != ispy) {
+                state = "running"
+                startWorker()
             }
-        };
-        request.open("GET", `examples/${path}`, true);
-        request.send();
-    };
-    const loadExample = () => load(examples.value);
-
-    document.querySelector("#input").addEventListener("keydown", (ev) => {
-        if (ev.key === "Enter" && ev.ctrlKey) {
-            run();
         }
-    })
 
-    document.addEventListener('DOMContentLoaded', () =>
-        pyCheckbox.addEventListener('change', (ev) => enablePython(ev.target.checked))
-    );
+        return { run, enablePython, startWorker }
+    })()
 
-    const query_params = Object.fromEntries(
-        Array.from(new URLSearchParams(window.location.search))
-            .map(([key, value]) => [key, decodeURIComponent(value)])
-    );
-    if (query_params.example !== undefined) {
-        examples.value = query_params.example;
-        load(query_params.example);
-    }
+    const Control = (() => {
+        const load = () => {
+            path = DomInteraction.getExample()
+            if (DomInteraction.ensurePython()) {
+                Clingo.enablePython(true)
+            }
+            var request = new XMLHttpRequest()
+            request.onreadystatechange = () => {
+                if (request.readyState == 4 && request.status == 200) {
+                    DomInteraction.setInput(request.responseText.trim(), -1)
+                }
+            }
+            request.open("GET", `examples/${path}`, true)
+            request.send()
+        }
 
-    startWorker()
+        const init = () => {
+            DomInteraction.onEnablePython((enable) => Clingo.enablePython(enable))
+            DomInteraction.onEnter(Clingo.run)
+            const query_params = Object.fromEntries(
+                Array.from(new URLSearchParams(window.location.search))
+                    .map(([key, value]) => [key, decodeURIComponent(value)])
+            )
+            if (query_params.example !== undefined) {
+                DomInteraction.setExample(query_params.example)
+                load()
+            }
+            Clingo.startWorker()
+        }
 
-    return { 'run': run, 'load': loadExample };
-})();
+        init()
+
+        return { load, run: Clingo.run }
+    })()
+
+    return Control
+})()
