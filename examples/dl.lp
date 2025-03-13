@@ -352,7 +352,7 @@ def main(lib, control, parts):
     propagator = DLPropagator(lib)
     control.register_propagator(propagator)
     minimize = control.const_map.get("minimize")
-    # proceed with normal solving no variable is to be minimized
+    # proceed with normal solving if no variable is to be minimized
     if minimize is None:
         for part in parts:
             control.ground(part)
