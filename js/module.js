@@ -26,7 +26,7 @@ const Clingo = (() => {
         }
 
         const ensurePython = () => {
-            if (!pyCheckbox.checked && examples?.options?.[examples.selectedIndex]?.classList?.contains('option-py')) {
+            if (!pyCheckbox.checked && examples.options[examples.selectedIndex].classList.contains('option-py')) {
                 pyCheckbox.checked = true
                 return true
             }
@@ -34,9 +34,7 @@ const Clingo = (() => {
         }
 
         const onEnablePython = (cb) => {
-            document.addEventListener('DOMContentLoaded', () =>
-                pyCheckbox.addEventListener('change', (ev) => cb(ev.target.checked))
-            )
+            pyCheckbox.addEventListener('change', (ev) => cb(ev.target.checked))
         }
 
         const onEnter = (cb) => {
