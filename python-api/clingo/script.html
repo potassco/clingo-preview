@@ -63,6 +63,9 @@
 
             </li>
             <li>
+                    <a class="function" href="#enable_python">enable_python</a>
+            </li>
+            <li>
                     <a class="function" href="#register">register</a>
             </li>
     </ul>
@@ -253,7 +256,7 @@ from the main context (just like the embedded one in the standalone clingo).</p>
                                 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">main</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>, </span><span class="param"><span class="n">control</span><span class="p">:</span> <span class="n"><a href="control.html#Control">clingo.control.Control</a></span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+        <span class="name">main</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">control</span><span class="p">:</span> <span class="n"><a href="control.html#Control">clingo.control.Control</a></span>,</span><span class="param">	<span class="n">parts</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span><span class="p">]]]]</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
 
         
     </div>
@@ -266,6 +269,7 @@ from the main context (just like the embedded one in the standalone clingo).</p>
 <ul>
 <li><strong>lib:</strong>  The (main) library object.</li>
 <li><strong>control:</strong>  The (main) control object.</li>
+<li><strong>parts:</strong>  The parts to ground and solve.</li>
 </ul>
 </div>
 
@@ -301,6 +305,27 @@ from the main context (just like the embedded one in the standalone clingo).</p>
 
 
                             </div>
+                </section>
+                <section id="enable_python">
+                    <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">enable_python</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#enable_python"></a>
+    
+            <div class="docstring"><p>Enable embedded python scripts.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>lib:</strong>  The library to register the script with.</li>
+</ul>
+</div>
+
+
                 </section>
                 <section id="register">
                     <div class="attr function">

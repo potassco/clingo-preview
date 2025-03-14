@@ -26,6 +26,11 @@
             <input type="search" placeholder="Search..." role="searchbox" aria-label="search"
                    pattern=".+" required>
 
+            <h2>Contents</h2>
+            <ul>
+  <li><a href="#examples">Examples</a></li>
+</ul>
+
 
 
             <h2>API Documentation</h2>
@@ -76,7 +81,7 @@
 
             </li>
             <li>
-                    <a class="function" href="#main">main</a>
+                    <a class="function" href="#clingo_main">clingo_main</a>
             </li>
     </ul>
 
@@ -94,7 +99,66 @@
                     <h1 class="modulename">
 <a href="./../clingo.html">clingo</a><wbr>.app    </h1>
 
-                        <div class="docstring"><p>TODO</p>
+                        <div class="docstring"><p>Module to create custom clingo-based applications.</p>
+
+<p>This module provides application-level functionality for working with clingo,
+including an application class, options definitions, and helper routines.</p>
+
+<h1 id="examples">Examples</h1>
+
+<p>The following example shows how to run clingo without customization:</p>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn"><a href="">clingo.app</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">clingo_main</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn"><a href="core.html">clingo.core</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">Library</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn"><a href="script.html">clingo.script</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">enable_python</span>
+
+<span class="k">with</span> <span class="n">Library</span><span class="p">()</span> <span class="k">as</span> <span class="n">lib</span><span class="p">:</span>
+    <span class="n">enable_python</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span>
+        <span class="n">clingo_main</span><span class="p">(</span><span class="n">lib</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+</code></pre>
+</div>
+
+<p>The next example shows how to write a simple clingo-based application that adds
+on option to print atoms in models in order:</p>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Sequence</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn"><a href="">clingo.app</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">App</span><span class="p">,</span> <span class="n">AppOptions</span><span class="p">,</span> <span class="n">Flag</span><span class="p">,</span> <span class="n">clingo_main</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn"><a href="core.html">clingo.core</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">Library</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn"><a href="control.html">clingo.control</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">Control</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn"><a href="solve.html">clingo.solve</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">Model</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MyApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s2">&quot;my-app&quot;</span><span class="p">,</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">=</span> <span class="n">Flag</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">print_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="n">Model</span><span class="p">,</span> <span class="n">default_printer</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="kc">None</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">sym</span><span class="p">)</span> <span class="k">for</span> <span class="n">sym</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="n">shown</span><span class="o">=</span><span class="kc">True</span><span class="p">))))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">default_printer</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">register_options</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">options</span><span class="p">:</span> <span class="n">AppOptions</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">options</span><span class="o">.</span><span class="n">add_flag</span><span class="p">(</span>
+            <span class="s2">&quot;MyApp&quot;</span><span class="p">,</span> <span class="s2">&quot;order&quot;</span><span class="p">,</span> <span class="s2">&quot;Print atoms in models in order.&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">control</span><span class="p">:</span> <span class="n">Control</span><span class="p">,</span> <span class="n">files</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">control</span><span class="o">.</span><span class="n">parse_files</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
+        <span class="n">control</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+
+
+<span class="k">with</span> <span class="n">Library</span><span class="p">()</span> <span class="k">as</span> <span class="n">lib</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">clingo_main</span><span class="p">(</span><span class="n">lib</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">MyApp</span><span class="p">()))</span>
+</code></pre>
+</div>
 </div>
 
                 
@@ -111,20 +175,34 @@
     </div>
     <a class="headerlink" href="#App"></a>
     
-            <div class="docstring"><p>TODO</p>
+            <div class="docstring"><p>Interface to implement a custom Clingo-based application.</p>
+
+<p>This class encapsulates the main execution flow of a Clingo-based application.
+It provides methods for executing the program, printing models, registering
+application options, and validating the configuration.</p>
 </div>
 
 
                             <div id="App.__init__" class="classattr">
                                 <div class="attr function">
             
-        <span class="name">App</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">program_name</span><span class="p">:</span> <span class="nb">str</span>, </span><span class="param"><span class="n">version</span><span class="p">:</span> <span class="nb">str</span></span>)</span>
+        <span class="name">App</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">program_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>, </span><span class="param"><span class="n">version</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></span>)</span>
 
         
     </div>
     <a class="headerlink" href="#App.__init__"></a>
     
-            <div class="docstring"><p>TODO</p>
+            <div class="docstring"><p>Initializes the application with a program name and its version.</p>
+
+<p>If no name is given, <code>"clingo"</code> is used. If no version is given, the current
+clingo version is used.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>program_name:</strong>  The name of the application.</li>
+<li><strong>version:</strong>  The version string of the application.</li>
+</ul>
 </div>
 
 
@@ -133,13 +211,24 @@
                                 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">main</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">control</span><span class="p">:</span> <span class="n"><a href="control.html#Control">clingo.control.Control</a></span>, </span><span class="param"><span class="n">files</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+        <span class="name">main</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">control</span><span class="p">:</span> <span class="n"><a href="control.html#Control">clingo.control.Control</a></span>,</span><span class="param">	<span class="n">files</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>,</span><span class="param">	<span class="n">parts</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span><span class="p">]]]]</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
 
         
     </div>
     <a class="headerlink" href="#App.main"></a>
     
-            <div class="docstring"><p>TODO</p>
+            <div class="docstring"><p>Run the main execution flow of the application.</p>
+
+<p>This method is invoked after Clingo's control object has been configured. It
+processes input files, executes the control flow, and handles output.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>control:</strong>  The Clingo control object for managing grounding and solving.</li>
+<li><strong>files:</strong>  A list of filenames representing the input logic programs.</li>
+<li><strong>parts:</strong>  The program parts to ground and solve.</li>
+</ul>
 </div>
 
 
@@ -154,7 +243,18 @@
     </div>
     <a class="headerlink" href="#App.print_model"></a>
     
-            <div class="docstring"><p>TODO</p>
+            <div class="docstring"><p>Print the given model in a custom format.</p>
+
+<p>The default printer can be used to print the model as clingo would. A possible
+use case would be to use the printer and then print additional information
+below the model.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>model:</strong>  The current model held by the solver.</li>
+<li><strong>default_printer:</strong>  A callable that prints the model in default format.</li>
+</ul>
 </div>
 
 
@@ -169,7 +269,13 @@
     </div>
     <a class="headerlink" href="#App.register_options"></a>
     
-            <div class="docstring"><p>TODO</p>
+            <div class="docstring"><p>Register command-line options for the application.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>options:</strong>  An instance of AppOptions to add new options.</li>
+</ul>
 </div>
 
 
@@ -184,7 +290,10 @@
     </div>
     <a class="headerlink" href="#App.validate_options"></a>
     
-            <div class="docstring"><p>TODO</p>
+            <div class="docstring"><p>Validate the options passed to the application.</p>
+
+<p>Once the application options have been set, this method confirms that they are
+valid. If an error is detected, an exception may be raised.</p>
 </div>
 
 
@@ -200,7 +309,10 @@
     </div>
     <a class="headerlink" href="#AppOptions"></a>
     
-            <div class="docstring"><p>TODO</p>
+            <div class="docstring"><p>Manage application options and their definitions.</p>
+
+<p>This class provides an interface to add various types of options (e.g., with
+arguments, flags) which the application can use for configuration.</p>
 </div>
 
 
@@ -214,7 +326,23 @@
     </div>
     <a class="headerlink" href="#AppOptions.add"></a>
     
-            <div class="docstring"><p>TODO</p>
+            <div class="docstring"><p>Adds an option with a corresponding parser to the options set.</p>
+
+<p>An option's group name acts like a section header; all options with the same
+group name are displayed under it in the help output. The option name is the
+identifier following the two dashes on the command line and it's value is
+parsed by the given parser.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>group:</strong>  The option group.</li>
+<li><strong>option:</strong>  The option name.</li>
+<li><strong>description:</strong>  A brief description of the option.</li>
+<li><strong>parser:</strong>  A callable to process the string input for this option.</li>
+<li><strong>multi:</strong>  Whether the option can accept multiple values (default is False).</li>
+<li><strong>argument:</strong>  An optional string indicating the argument type or format.</li>
+</ul>
 </div>
 
 
@@ -229,7 +357,19 @@
     </div>
     <a class="headerlink" href="#AppOptions.add_flag"></a>
     
-            <div class="docstring"><p>TODO</p>
+            <div class="docstring"><p>Adds a flag option to the options set.</p>
+
+<p>Similar to add_option but used for Boolean options that can be toggled on or
+off.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>group:</strong>  The option group or category.</li>
+<li><strong>option:</strong>  The option name or flag identifier.</li>
+<li><strong>description:</strong>  A brief description of the flag option.</li>
+<li><strong>flag:</strong>  A Flag object that holds the value of the flag.</li>
+</ul>
 </div>
 
 
@@ -245,7 +385,9 @@
     </div>
     <a class="headerlink" href="#Flag"></a>
     
-            <div class="docstring"><p>TODO</p>
+            <div class="docstring"><p>Encapsulates a Boolean flag value with getter/setter functionality.</p>
+
+<p>A flag is used to represent a binary command-line option in the application.</p>
 </div>
 
 
@@ -258,7 +400,13 @@
     </div>
     <a class="headerlink" href="#Flag.__init__"></a>
     
-            <div class="docstring"><p>TODO</p>
+            <div class="docstring"><p>Initializes the flag with the provided value.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>value:</strong>  The initial boolean value of the flag (default is False).</li>
+</ul>
 </div>
 
 
@@ -277,17 +425,30 @@
 
                             </div>
                 </section>
-                <section id="main">
+                <section id="clingo_main">
                     <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">main</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">arguments</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>,</span><span class="param">	<span class="n">app</span><span class="p">:</span> <span class="n"><a href="#App">App</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="nb">int</span>:</span></span>
+        <span class="name">clingo_main</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">arguments</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>,</span><span class="param">	<span class="n">app</span><span class="p">:</span> <span class="n"><a href="#App">App</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="nb">int</span>:</span></span>
 
         
     </div>
-    <a class="headerlink" href="#main"></a>
+    <a class="headerlink" href="#clingo_main"></a>
     
-            <div class="docstring"><p>TODO</p>
+            <div class="docstring"><p>Entry point for running the Clingo application.</p>
+
+<p>This function initializes necessary components, processes input arguments, and
+then executes the main functionality of the Clingo application. It can
+optionally use a provided App instance to customize this behavior.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>lib:</strong>  The Clingo core library interface.</li>
+<li><strong>arguments:</strong>  A list of command-line arguments.</li>
+<li><strong>app:</strong>  An optional App instance containing application-specific logic.</li>
+<li><strong>Returns:</strong>  An integer exit code.</li>
+</ul>
 </div>
 
 

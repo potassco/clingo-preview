@@ -54,6 +54,9 @@
                                 <a class="function" href="#Control.observe">observe</a>
                         </li>
                         <li>
+                                <a class="function" href="#Control.parse_files">parse_files</a>
+                        </li>
+                        <li>
                                 <a class="function" href="#Control.parse_string">parse_string</a>
                         </li>
                         <li>
@@ -75,7 +78,40 @@
                                 <a class="variable" href="#Control.config">config</a>
                         </li>
                         <li>
+                                <a class="variable" href="#Control.const_map">const_map</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Control.mode">mode</a>
+                        </li>
+                        <li>
                                 <a class="variable" href="#Control.stats">stats</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#ControlMode">ControlMode</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#ControlMode.__init__">ControlMode</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ControlMode.Ground">Ground</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ControlMode.Parse">Parse</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ControlMode.Rewrite">Rewrite</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ControlMode.Solve">Solve</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ControlMode.name">name</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ControlMode.value">value</a>
                         </li>
                 </ul>
 
@@ -190,7 +226,7 @@ small test program:</p>
                                 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">ground</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">parts</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span><span class="p">]]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">context</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+        <span class="name">ground</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">parts</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">context</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
 
         
     </div>
@@ -233,7 +269,7 @@ small test program:</p>
                                 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">main</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+        <span class="name">main</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">parts</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span><span class="p">]]]]]</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
 
         
     </div>
@@ -243,6 +279,15 @@ small test program:</p>
 
 <p>This function proceeds as clingo calling the main function from a script if
 there is any.</p>
+
+<p>If the optional parts member is given, each of its elements corresponds to one
+incremental solving step where the elements' parts are grounded.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>parts:</strong>  A sequence of part sequences to ground and solve.</li>
+</ul>
 </div>
 
 
@@ -263,6 +308,27 @@ there is any.</p>
 
 <ul>
 <li><strong>observer:</strong>  The program observer to inspect the program.</li>
+</ul>
+</div>
+
+
+                            </div>
+                            <div id="Control.parse_files" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">parse_files</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">files</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Control.parse_files"></a>
+    
+            <div class="docstring"><p>Parses the logic programs in the given files</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>files:</strong>  The files to parse.</li>
 </ul>
 </div>
 
@@ -430,6 +496,32 @@ of the returned handle are non-blocking.</li>
 
 
                             </div>
+                            <div id="Control.const_map" class="classattr">
+                                <div class="attr variable">
+            <span class="name">const_map</span><span class="annotation">: Mapping[str, <a href="symbol.html#Symbol">clingo.symbol.Symbol</a>]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Control.const_map"></a>
+    
+            <div class="docstring"><p>Get the map of constants defined by <code>#const</code> directives.</p>
+</div>
+
+
+                            </div>
+                            <div id="Control.mode" class="classattr">
+                                <div class="attr variable">
+            <span class="name">mode</span><span class="annotation">: <a href="#ControlMode">ControlMode</a></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Control.mode"></a>
+    
+            <div class="docstring"><p>Get the application mode.</p>
+</div>
+
+
+                            </div>
                             <div id="Control.stats" class="classattr">
                                 <div class="attr variable">
             <span class="name">stats</span><span class="annotation">: dict</span>
@@ -441,6 +533,119 @@ of the returned handle are non-blocking.</li>
             <div class="docstring"><p>Get the solver stats.</p>
 </div>
 
+
+                            </div>
+                </section>
+                <section id="ControlMode">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">ControlMode</span>:
+
+        
+    </div>
+    <a class="headerlink" href="#ControlMode"></a>
+    
+            <div class="docstring"><p>Available control modes.</p>
+
+<h6 id="members">Members:</h6>
+
+<blockquote>
+  <p>Parse : Parse only.</p>
+  
+  <p>Rewrite : Parse and rewrite.</p>
+  
+  <p>Ground : Parse, rewrite, and ground.</p>
+  
+  <p>Solve : Parse, rewrite, ground, and solve.</p>
+</blockquote>
+</div>
+
+
+                            <div id="ControlMode.__init__" class="classattr">
+                                <div class="attr function">
+            
+        <span class="name">ControlMode</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">value</span><span class="p">:</span> <span class="nb">int</span></span>)</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ControlMode.__init__"></a>
+    
+    
+
+                            </div>
+                            <div id="ControlMode.Ground" class="classattr">
+                                <div class="attr variable">
+            <span class="name">Ground</span><span class="annotation">: ClassVar[<a href="#ControlMode">ControlMode</a>]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ControlMode.Ground"></a>
+    
+            <div class="docstring"><p>Parse, rewrite, and ground.</p>
+</div>
+
+
+                            </div>
+                            <div id="ControlMode.Parse" class="classattr">
+                                <div class="attr variable">
+            <span class="name">Parse</span><span class="annotation">: ClassVar[<a href="#ControlMode">ControlMode</a>]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ControlMode.Parse"></a>
+    
+            <div class="docstring"><p>Parse only.</p>
+</div>
+
+
+                            </div>
+                            <div id="ControlMode.Rewrite" class="classattr">
+                                <div class="attr variable">
+            <span class="name">Rewrite</span><span class="annotation">: ClassVar[<a href="#ControlMode">ControlMode</a>]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ControlMode.Rewrite"></a>
+    
+            <div class="docstring"><p>Parse and rewrite.</p>
+</div>
+
+
+                            </div>
+                            <div id="ControlMode.Solve" class="classattr">
+                                <div class="attr variable">
+            <span class="name">Solve</span><span class="annotation">: ClassVar[<a href="#ControlMode">ControlMode</a>]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ControlMode.Solve"></a>
+    
+            <div class="docstring"><p>Parse, rewrite, ground, and solve.</p>
+</div>
+
+
+                            </div>
+                            <div id="ControlMode.name" class="classattr">
+                                <div class="attr variable">
+            <span class="name">name</span><span class="annotation">: str</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ControlMode.name"></a>
+    
+    
+
+                            </div>
+                            <div id="ControlMode.value" class="classattr">
+                                <div class="attr variable">
+            <span class="name">value</span><span class="annotation">: int</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ControlMode.value"></a>
+    
+    
 
                             </div>
                 </section>
