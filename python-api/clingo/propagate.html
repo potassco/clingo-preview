@@ -39,7 +39,13 @@
                     <a class="class" href="#Assignment">Assignment</a>
                             <ul class="memberlist">
                         <li>
+                                <a class="function" href="#Assignment.count">count</a>
+                        </li>
+                        <li>
                                 <a class="function" href="#Assignment.decision">decision</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Assignment.index">index</a>
                         </li>
                         <li>
                                 <a class="function" href="#Assignment.is_false">is_false</a>
@@ -216,7 +222,13 @@
                                 <a class="function" href="#Trail.begin">begin</a>
                         </li>
                         <li>
+                                <a class="function" href="#Trail.count">count</a>
+                        </li>
+                        <li>
                                 <a class="function" href="#Trail.end">end</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Trail.index">index</a>
                         </li>
                         <li>
                                 <a class="function" href="#Trail.level">level</a>
@@ -377,6 +389,21 @@ literals from earlier levels.</li>
 </div>
 
 
+                            <div id="Assignment.count" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">count</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">value</span><span class="p">:</span> <span class="nb">int</span></span><span class="return-annotation">) -> <span class="nb">int</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Assignment.count"></a>
+    
+            <div class="docstring"><p>Count how often the given value occurs in the sequence.</p>
+</div>
+
+
+                            </div>
                             <div id="Assignment.decision" class="classattr">
                                 <div class="attr function">
             
@@ -403,6 +430,21 @@ the same level.</p>
 <blockquote>
   <p>The decision literal.</p>
 </blockquote>
+</div>
+
+
+                            </div>
+                            <div id="Assignment.index" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">index</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">value</span><span class="p">:</span> <span class="nb">int</span></span><span class="return-annotation">) -> <span class="nb">int</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Assignment.index"></a>
+    
+            <div class="docstring"><p>Get the index of the given value in the sequence.</p>
 </div>
 
 
@@ -653,18 +695,6 @@ They include, for example, assumptions.</p>
     <a class="headerlink" href="#CheckMode"></a>
     
             <div class="docstring"><p>Enumeration of check modes.</p>
-
-<h6 id="members">Members:</h6>
-
-<blockquote>
-  <p>Off : Do not call <code><a href="#Propagator.check">Propagator.check()</a></code> at all.</p>
-  
-  <p>Fixpoint : Call <code><a href="#Propagator.check">Propagator.check()</a></code> on propagation fixpoints.</p>
-  
-  <p>Total : Call <code><a href="#Propagator.check">Propagator.check()</a></code> on total assignments.</p>
-  
-  <p>Both : Call <code><a href="#Propagator.check">Propagator.check()</a></code> on propagation fixpoints and total assignments.</p>
-</blockquote>
 </div>
 
 
@@ -682,7 +712,8 @@ They include, for example, assumptions.</p>
                             </div>
                             <div id="CheckMode.Both" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Both</span><span class="annotation">: ClassVar[<a href="#CheckMode">CheckMode</a>]</span>
+            <span class="name">Both</span><span class="annotation">: ClassVar[<a href="#CheckMode">CheckMode</a>]</span>        =
+<span class="default_value"><a href="#CheckMode.Both">CheckMode.Both</a></span>
 
         
     </div>
@@ -695,7 +726,8 @@ They include, for example, assumptions.</p>
                             </div>
                             <div id="CheckMode.Fixpoint" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Fixpoint</span><span class="annotation">: ClassVar[<a href="#CheckMode">CheckMode</a>]</span>
+            <span class="name">Fixpoint</span><span class="annotation">: ClassVar[<a href="#CheckMode">CheckMode</a>]</span>        =
+<span class="default_value"><a href="#CheckMode.Fixpoint">CheckMode.Fixpoint</a></span>
 
         
     </div>
@@ -708,7 +740,8 @@ They include, for example, assumptions.</p>
                             </div>
                             <div id="CheckMode.Off" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Off</span><span class="annotation">: ClassVar[<a href="#CheckMode">CheckMode</a>]</span>
+            <span class="name">Off</span><span class="annotation">: ClassVar[<a href="#CheckMode">CheckMode</a>]</span>        =
+<span class="default_value"><a href="#CheckMode.Off">CheckMode.Off</a></span>
 
         
     </div>
@@ -721,7 +754,8 @@ They include, for example, assumptions.</p>
                             </div>
                             <div id="CheckMode.Total" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Total</span><span class="annotation">: ClassVar[<a href="#CheckMode">CheckMode</a>]</span>
+            <span class="name">Total</span><span class="annotation">: ClassVar[<a href="#CheckMode">CheckMode</a>]</span>        =
+<span class="default_value"><a href="#CheckMode.Total">CheckMode.Total</a></span>
 
         
     </div>
@@ -1033,7 +1067,7 @@ and the underlying problem is unsatisfiable.</p>
                                 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">add_literal</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">freeze</span><span class="p">:</span> <span class="nb">bool</span></span><span class="return-annotation">) -> <span class="nb">int</span>:</span></span>
+        <span class="name">add_literal</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">freeze</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span></span><span class="return-annotation">) -> <span class="nb">int</span>:</span></span>
 
         
     </div>
@@ -1062,7 +1096,7 @@ and the underlying problem is unsatisfiable.</p>
                                 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">add_minimize</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">literal</span><span class="p">:</span> <span class="nb">int</span>, </span><span class="param"><span class="n">weight</span><span class="p">:</span> <span class="nb">int</span>, </span><span class="param"><span class="n">priority</span><span class="p">:</span> <span class="nb">int</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+        <span class="name">add_minimize</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">literal</span><span class="p">:</span> <span class="nb">int</span>, </span><span class="param"><span class="n">weight</span><span class="p">:</span> <span class="nb">int</span>, </span><span class="param"><span class="n">priority</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
 
         
     </div>
@@ -1107,7 +1141,7 @@ and the underlying problem is unsatisfiable.</p>
                                 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">add_weight_constraint</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">literal</span><span class="p">:</span> <span class="nb">int</span>,</span><span class="param">	<span class="n">literals</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span>,</span><span class="param">	<span class="n">bound</span><span class="p">:</span> <span class="nb">int</span>,</span><span class="param">	<span class="nb">type</span><span class="p">:</span> <span class="n"><a href="#WeightConstraintType">WeightConstraintType</a></span>,</span><span class="param">	<span class="n">compare_equal</span><span class="p">:</span> <span class="nb">bool</span></span><span class="return-annotation">) -> <span class="nb">bool</span>:</span></span>
+        <span class="name">add_weight_constraint</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">literal</span><span class="p">:</span> <span class="nb">int</span>,</span><span class="param">	<span class="n">literals</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span>,</span><span class="param">	<span class="n">bound</span><span class="p">:</span> <span class="nb">int</span>,</span><span class="param">	<span class="nb">type</span><span class="p">:</span> <span class="n"><a href="#WeightConstraintType">WeightConstraintType</a></span> <span class="o">=</span> <span class="n"><a href="#WeightConstraintType.Equivalence">WeightConstraintType.Equivalence</a></span>,</span><span class="param">	<span class="n">compare_equal</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span></span><span class="return-annotation">) -> <span class="nb">bool</span>:</span></span>
 
         
     </div>
@@ -1521,6 +1555,21 @@ beginning of its respective sequence.</p>
 
 
                             </div>
+                            <div id="Trail.count" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">count</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">value</span><span class="p">:</span> <span class="nb">int</span></span><span class="return-annotation">) -> <span class="nb">int</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Trail.count"></a>
+    
+            <div class="docstring"><p>Count how often the given value occurs in the sequence.</p>
+</div>
+
+
+                            </div>
                             <div id="Trail.end" class="classattr">
                                 <div class="attr function">
             
@@ -1544,6 +1593,21 @@ beginning of its respective sequence.</p>
 <blockquote>
   <p>The index after the last literal.</p>
 </blockquote>
+</div>
+
+
+                            </div>
+                            <div id="Trail.index" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">index</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">value</span><span class="p">:</span> <span class="nb">int</span></span><span class="return-annotation">) -> <span class="nb">int</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Trail.index"></a>
+    
+            <div class="docstring"><p>Get the index of the given value in the sequence.</p>
 </div>
 
 
@@ -1590,14 +1654,6 @@ order, with the decision literal at the beginning of the sequence.</p>
     <a class="headerlink" href="#UndoMode"></a>
     
             <div class="docstring"><p>Enumeration of undo modes.</p>
-
-<h6 id="members">Members:</h6>
-
-<blockquote>
-  <p>Default : Call <code><a href="#Propagator.undo">Propagator.undo()</a></code> when check has been called.</p>
-  
-  <p>Always : Call <code><a href="#Propagator.undo">Propagator.undo()</a></code> for decision levels with non-emty changes.</p>
-</blockquote>
 </div>
 
 
@@ -1615,7 +1671,8 @@ order, with the decision literal at the beginning of the sequence.</p>
                             </div>
                             <div id="UndoMode.Always" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Always</span><span class="annotation">: ClassVar[<a href="#UndoMode">UndoMode</a>]</span>
+            <span class="name">Always</span><span class="annotation">: ClassVar[<a href="#UndoMode">UndoMode</a>]</span>        =
+<span class="default_value"><a href="#UndoMode.Always">UndoMode.Always</a></span>
 
         
     </div>
@@ -1628,7 +1685,8 @@ order, with the decision literal at the beginning of the sequence.</p>
                             </div>
                             <div id="UndoMode.Default" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Default</span><span class="annotation">: ClassVar[<a href="#UndoMode">UndoMode</a>]</span>
+            <span class="name">Default</span><span class="annotation">: ClassVar[<a href="#UndoMode">UndoMode</a>]</span>        =
+<span class="default_value"><a href="#UndoMode.Default">UndoMode.Default</a></span>
 
         
     </div>
@@ -1673,16 +1731,6 @@ order, with the decision literal at the beginning of the sequence.</p>
     <a class="headerlink" href="#WeightConstraintType"></a>
     
             <div class="docstring"><p>Enumeration of weight constraint types.</p>
-
-<h6 id="members">Members:</h6>
-
-<blockquote>
-  <p>Equivalence : The weight constraint is equal to its literal.</p>
-  
-  <p>LeftImplication : The weight constraint implies its literal.</p>
-  
-  <p>RightImplication : The literal implies the weight constraint.</p>
-</blockquote>
 </div>
 
 
@@ -1700,7 +1748,8 @@ order, with the decision literal at the beginning of the sequence.</p>
                             </div>
                             <div id="WeightConstraintType.Equivalence" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Equivalence</span><span class="annotation">: ClassVar[<a href="#WeightConstraintType">WeightConstraintType</a>]</span>
+            <span class="name">Equivalence</span><span class="annotation">: ClassVar[<a href="#WeightConstraintType">WeightConstraintType</a>]</span>        =
+<span class="default_value"><a href="#WeightConstraintType.Equivalence">WeightConstraintType.Equivalence</a></span>
 
         
     </div>
@@ -1713,7 +1762,8 @@ order, with the decision literal at the beginning of the sequence.</p>
                             </div>
                             <div id="WeightConstraintType.LeftImplication" class="classattr">
                                 <div class="attr variable">
-            <span class="name">LeftImplication</span><span class="annotation">: ClassVar[<a href="#WeightConstraintType">WeightConstraintType</a>]</span>
+            <span class="name">LeftImplication</span><span class="annotation">: ClassVar[<a href="#WeightConstraintType">WeightConstraintType</a>]</span>        =
+<span class="default_value"><a href="#WeightConstraintType.LeftImplication">WeightConstraintType.LeftImplication</a></span>
 
         
     </div>
@@ -1726,7 +1776,8 @@ order, with the decision literal at the beginning of the sequence.</p>
                             </div>
                             <div id="WeightConstraintType.RightImplication" class="classattr">
                                 <div class="attr variable">
-            <span class="name">RightImplication</span><span class="annotation">: ClassVar[<a href="#WeightConstraintType">WeightConstraintType</a>]</span>
+            <span class="name">RightImplication</span><span class="annotation">: ClassVar[<a href="#WeightConstraintType">WeightConstraintType</a>]</span>        =
+<span class="default_value"><a href="#WeightConstraintType.RightImplication">WeightConstraintType.RightImplication</a></span>
 
         
     </div>

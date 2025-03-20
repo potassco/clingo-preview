@@ -51,6 +51,9 @@
                     <a class="class" href="#AtomBase">AtomBase</a>
                             <ul class="memberlist">
                         <li>
+                                <a class="function" href="#AtomBase.get">get</a>
+                        </li>
+                        <li>
                                 <a class="function" href="#AtomBase.items">items</a>
                         </li>
                         <li>
@@ -65,6 +68,9 @@
             <li>
                     <a class="class" href="#Base">Base</a>
                             <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#Base.get">get</a>
+                        </li>
                         <li>
                                 <a class="function" href="#Base.is_current">is_current</a>
                         </li>
@@ -114,6 +120,9 @@
                     <a class="class" href="#TermBase">TermBase</a>
                             <ul class="memberlist">
                         <li>
+                                <a class="function" href="#TermBase.get">get</a>
+                        </li>
+                        <li>
                                 <a class="function" href="#TermBase.items">items</a>
                         </li>
                         <li>
@@ -146,6 +155,12 @@
             <li>
                     <a class="class" href="#TheoryBase">TheoryBase</a>
                             <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#TheoryBase.count">count</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#TheoryBase.index">index</a>
+                        </li>
                 </ul>
 
             </li>
@@ -325,6 +340,21 @@
 </div>
 
 
+                            <div id="AtomBase.get" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">get</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">key</span><span class="p">:</span> <span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span>,</span><span class="param">	<span class="n">default</span><span class="p">:</span> <span class="n"><a href="#Atom">Atom</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="n"><a href="#Atom">Atom</a></span> <span class="o">|</span> <span class="kc">None</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#AtomBase.get"></a>
+    
+            <div class="docstring"><p>Get the value for the given key or the default if absent.</p>
+</div>
+
+
+                            </div>
                             <div id="AtomBase.items" class="classattr">
                                 <div class="attr function">
             
@@ -387,6 +417,21 @@
 </div>
 
 
+                            <div id="Base.get" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">get</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">key</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]</span>,</span><span class="param">	<span class="n">default</span><span class="p">:</span> <span class="n"><a href="#AtomBase">AtomBase</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="n"><a href="#AtomBase">AtomBase</a></span> <span class="o">|</span> <span class="kc">None</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Base.get"></a>
+    
+            <div class="docstring"><p>Get the value for the given key or the default if absent.</p>
+</div>
+
+
+                            </div>
                             <div id="Base.is_current" class="classattr">
                                 <div class="attr function">
             
@@ -656,6 +701,21 @@ from a previous step.</p>
 </div>
 
 
+                            <div id="TermBase.get" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">get</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">key</span><span class="p">:</span> <span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span>,</span><span class="param">	<span class="n">default</span><span class="p">:</span> <span class="n"><a href="#Term">Term</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="n"><a href="#Term">Term</a></span> <span class="o">|</span> <span class="kc">None</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#TermBase.get"></a>
+    
+            <div class="docstring"><p>Get the value for the given key or the default if absent.</p>
+</div>
+
+
+                            </div>
                             <div id="TermBase.items" class="classattr">
                                 <div class="attr function">
             
@@ -785,6 +845,36 @@ from a previous step.</p>
 </div>
 
 
+                            <div id="TheoryBase.count" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">count</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">value</span><span class="p">:</span> <span class="n"><a href="#TheoryAtom">TheoryAtom</a></span></span><span class="return-annotation">) -> <span class="nb">int</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryBase.count"></a>
+    
+            <div class="docstring"><p>Count how often the given value occurs in the sequence.</p>
+</div>
+
+
+                            </div>
+                            <div id="TheoryBase.index" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">index</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">value</span><span class="p">:</span> <span class="n"><a href="#TheoryAtom">TheoryAtom</a></span></span><span class="return-annotation">) -> <span class="nb">int</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryBase.index"></a>
+    
+            <div class="docstring"><p>Get the index of the given value in the sequence.</p>
+</div>
+
+
+                            </div>
                 </section>
                 <section id="TheoryElement">
                     <div class="attr class">
@@ -918,22 +1008,6 @@ from a previous step.</p>
     <a class="headerlink" href="#TheoryTermType"></a>
     
             <div class="docstring"><p>Enumeration of theory term types.</p>
-
-<h6 id="members">Members:</h6>
-
-<blockquote>
-  <p>Number : For numeric theory terms.</p>
-  
-  <p>Symbol : For symbolic theory terms (simple strings).</p>
-  
-  <p>Tuple : For tuple theory terms.</p>
-  
-  <p>List : For list theory term.</p>
-  
-  <p>Set : For set theory terms.</p>
-  
-  <p>Function : For function theory terms.</p>
-</blockquote>
 </div>
 
 
@@ -951,7 +1025,8 @@ from a previous step.</p>
                             </div>
                             <div id="TheoryTermType.Function" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Function</span><span class="annotation">: ClassVar[<a href="#TheoryTermType">TheoryTermType</a>]</span>
+            <span class="name">Function</span><span class="annotation">: ClassVar[<a href="#TheoryTermType">TheoryTermType</a>]</span>        =
+<span class="default_value"><a href="#TheoryTermType.Function">TheoryTermType.Function</a></span>
 
         
     </div>
@@ -964,7 +1039,8 @@ from a previous step.</p>
                             </div>
                             <div id="TheoryTermType.List" class="classattr">
                                 <div class="attr variable">
-            <span class="name">List</span><span class="annotation">: ClassVar[<a href="#TheoryTermType">TheoryTermType</a>]</span>
+            <span class="name">List</span><span class="annotation">: ClassVar[<a href="#TheoryTermType">TheoryTermType</a>]</span>        =
+<span class="default_value"><a href="#TheoryTermType.List">TheoryTermType.List</a></span>
 
         
     </div>
@@ -977,7 +1053,8 @@ from a previous step.</p>
                             </div>
                             <div id="TheoryTermType.Number" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Number</span><span class="annotation">: ClassVar[<a href="#TheoryTermType">TheoryTermType</a>]</span>
+            <span class="name">Number</span><span class="annotation">: ClassVar[<a href="#TheoryTermType">TheoryTermType</a>]</span>        =
+<span class="default_value"><a href="#TheoryTermType.Number">TheoryTermType.Number</a></span>
 
         
     </div>
@@ -990,7 +1067,8 @@ from a previous step.</p>
                             </div>
                             <div id="TheoryTermType.Set" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Set</span><span class="annotation">: ClassVar[<a href="#TheoryTermType">TheoryTermType</a>]</span>
+            <span class="name">Set</span><span class="annotation">: ClassVar[<a href="#TheoryTermType">TheoryTermType</a>]</span>        =
+<span class="default_value"><a href="#TheoryTermType.Set">TheoryTermType.Set</a></span>
 
         
     </div>
@@ -1003,7 +1081,8 @@ from a previous step.</p>
                             </div>
                             <div id="TheoryTermType.Symbol" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Symbol</span><span class="annotation">: ClassVar[<a href="#TheoryTermType">TheoryTermType</a>]</span>
+            <span class="name">Symbol</span><span class="annotation">: ClassVar[<a href="#TheoryTermType">TheoryTermType</a>]</span>        =
+<span class="default_value"><a href="#TheoryTermType.Symbol">TheoryTermType.Symbol</a></span>
 
         
     </div>
@@ -1016,7 +1095,8 @@ from a previous step.</p>
                             </div>
                             <div id="TheoryTermType.Tuple" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Tuple</span><span class="annotation">: ClassVar[<a href="#TheoryTermType">TheoryTermType</a>]</span>
+            <span class="name">Tuple</span><span class="annotation">: ClassVar[<a href="#TheoryTermType">TheoryTermType</a>]</span>        =
+<span class="default_value"><a href="#TheoryTermType.Tuple">TheoryTermType.Tuple</a></span>
 
         
     </div>

@@ -226,7 +226,7 @@ small test program:</p>
                                 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">ground</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">parts</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">context</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+        <span class="name">ground</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">parts</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span><span class="p">]]]]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">context</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
 
         
     </div>
@@ -296,7 +296,7 @@ incremental solving step where the elements' parts are grounded.</p>
                                 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">observe</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">observer</span><span class="p">:</span> <span class="n"><a href="backend.html#Observer">clingo.backend.Observer</a></span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+        <span class="name">observe</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">observer</span><span class="p">:</span> <span class="n"><a href="backend.html#Observer">clingo.backend.Observer</a></span>, </span><span class="param"><span class="n">preprocess</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
 
         
     </div>
@@ -308,6 +308,7 @@ incremental solving step where the elements' parts are grounded.</p>
 
 <ul>
 <li><strong>observer:</strong>  The program observer to inspect the program.</li>
+<li><strong>preprocess:</strong>  Whether the program should be preprocessed first (default: true).</li>
 </ul>
 </div>
 
@@ -478,7 +479,7 @@ of the returned handle are non-blocking.</li>
     </div>
     <a class="headerlink" href="#Control.buffer"></a>
     
-            <div class="docstring"><p>The content of the output bufer.</p>
+            <div class="docstring"><p>The content of the output buffer.</p>
 </div>
 
 
@@ -547,18 +548,6 @@ of the returned handle are non-blocking.</li>
     <a class="headerlink" href="#ControlMode"></a>
     
             <div class="docstring"><p>Available control modes.</p>
-
-<h6 id="members">Members:</h6>
-
-<blockquote>
-  <p>Parse : Parse only.</p>
-  
-  <p>Rewrite : Parse and rewrite.</p>
-  
-  <p>Ground : Parse, rewrite, and ground.</p>
-  
-  <p>Solve : Parse, rewrite, ground, and solve.</p>
-</blockquote>
 </div>
 
 
@@ -576,7 +565,8 @@ of the returned handle are non-blocking.</li>
                             </div>
                             <div id="ControlMode.Ground" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Ground</span><span class="annotation">: ClassVar[<a href="#ControlMode">ControlMode</a>]</span>
+            <span class="name">Ground</span><span class="annotation">: ClassVar[<a href="#ControlMode">ControlMode</a>]</span>        =
+<span class="default_value"><a href="#ControlMode.Ground">ControlMode.Ground</a></span>
 
         
     </div>
@@ -589,7 +579,8 @@ of the returned handle are non-blocking.</li>
                             </div>
                             <div id="ControlMode.Parse" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Parse</span><span class="annotation">: ClassVar[<a href="#ControlMode">ControlMode</a>]</span>
+            <span class="name">Parse</span><span class="annotation">: ClassVar[<a href="#ControlMode">ControlMode</a>]</span>        =
+<span class="default_value"><a href="#ControlMode.Parse">ControlMode.Parse</a></span>
 
         
     </div>
@@ -602,7 +593,8 @@ of the returned handle are non-blocking.</li>
                             </div>
                             <div id="ControlMode.Rewrite" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Rewrite</span><span class="annotation">: ClassVar[<a href="#ControlMode">ControlMode</a>]</span>
+            <span class="name">Rewrite</span><span class="annotation">: ClassVar[<a href="#ControlMode">ControlMode</a>]</span>        =
+<span class="default_value"><a href="#ControlMode.Rewrite">ControlMode.Rewrite</a></span>
 
         
     </div>
@@ -615,7 +607,8 @@ of the returned handle are non-blocking.</li>
                             </div>
                             <div id="ControlMode.Solve" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Solve</span><span class="annotation">: ClassVar[<a href="#ControlMode">ControlMode</a>]</span>
+            <span class="name">Solve</span><span class="annotation">: ClassVar[<a href="#ControlMode">ControlMode</a>]</span>        =
+<span class="default_value"><a href="#ControlMode.Solve">ControlMode.Solve</a></span>
 
         
     </div>

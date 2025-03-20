@@ -372,7 +372,7 @@ atoms will be used in subequents calls to ground for instantiation.</p>
                                 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">edge</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">node_u</span><span class="p">:</span> <span class="nb">int</span>, </span><span class="param"><span class="n">node_v</span><span class="p">:</span> <span class="nb">int</span>, </span><span class="param"><span class="n">condtition</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+        <span class="name">edge</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">node_u</span><span class="p">:</span> <span class="nb">int</span>, </span><span class="param"><span class="n">node_v</span><span class="p">:</span> <span class="nb">int</span>, </span><span class="param"><span class="n">condition</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
 
         
     </div>
@@ -822,18 +822,6 @@ meets or exceeds the lower bound.</p>
     <a class="headerlink" href="#ExternalType"></a>
     
             <div class="docstring"><p>Available external types.</p>
-
-<h6 id="members">Members:</h6>
-
-<blockquote>
-  <p>True_ : Make an external atom true.</p>
-  
-  <p>False_ : Make an external atom false.</p>
-  
-  <p>Free : Make an external atom a choice.</p>
-  
-  <p>Release : Release an external atom.</p>
-</blockquote>
 </div>
 
 
@@ -851,7 +839,8 @@ meets or exceeds the lower bound.</p>
                             </div>
                             <div id="ExternalType.False_" class="classattr">
                                 <div class="attr variable">
-            <span class="name">False_</span><span class="annotation">: ClassVar[<a href="#ExternalType">ExternalType</a>]</span>
+            <span class="name">False_</span><span class="annotation">: ClassVar[<a href="#ExternalType">ExternalType</a>]</span>        =
+<span class="default_value"><a href="#ExternalType.False_">ExternalType.False_</a></span>
 
         
     </div>
@@ -864,7 +853,8 @@ meets or exceeds the lower bound.</p>
                             </div>
                             <div id="ExternalType.Free" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Free</span><span class="annotation">: ClassVar[<a href="#ExternalType">ExternalType</a>]</span>
+            <span class="name">Free</span><span class="annotation">: ClassVar[<a href="#ExternalType">ExternalType</a>]</span>        =
+<span class="default_value"><a href="#ExternalType.Free">ExternalType.Free</a></span>
 
         
     </div>
@@ -877,7 +867,8 @@ meets or exceeds the lower bound.</p>
                             </div>
                             <div id="ExternalType.Release" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Release</span><span class="annotation">: ClassVar[<a href="#ExternalType">ExternalType</a>]</span>
+            <span class="name">Release</span><span class="annotation">: ClassVar[<a href="#ExternalType">ExternalType</a>]</span>        =
+<span class="default_value"><a href="#ExternalType.Release">ExternalType.Release</a></span>
 
         
     </div>
@@ -890,7 +881,8 @@ meets or exceeds the lower bound.</p>
                             </div>
                             <div id="ExternalType.True_" class="classattr">
                                 <div class="attr variable">
-            <span class="name">True_</span><span class="annotation">: ClassVar[<a href="#ExternalType">ExternalType</a>]</span>
+            <span class="name">True_</span><span class="annotation">: ClassVar[<a href="#ExternalType">ExternalType</a>]</span>        =
+<span class="default_value"><a href="#ExternalType.True_">ExternalType.True_</a></span>
 
         
     </div>
@@ -935,22 +927,6 @@ meets or exceeds the lower bound.</p>
     <a class="headerlink" href="#HeuristicType"></a>
     
             <div class="docstring"><p>Available heuristic types.</p>
-
-<h6 id="members">Members:</h6>
-
-<blockquote>
-  <p>Level : The level modifier.</p>
-  
-  <p>Factor : The factor modifier.</p>
-  
-  <p>True_ : The true modifier.</p>
-  
-  <p>False_ : The false modifier.</p>
-  
-  <p>Init : The init modifier.</p>
-  
-  <p>Sign : The sign modifier.</p>
-</blockquote>
 </div>
 
 
@@ -968,7 +944,8 @@ meets or exceeds the lower bound.</p>
                             </div>
                             <div id="HeuristicType.Factor" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Factor</span><span class="annotation">: ClassVar[<a href="#HeuristicType">HeuristicType</a>]</span>
+            <span class="name">Factor</span><span class="annotation">: ClassVar[<a href="#HeuristicType">HeuristicType</a>]</span>        =
+<span class="default_value"><a href="#HeuristicType.Factor">HeuristicType.Factor</a></span>
 
         
     </div>
@@ -981,7 +958,8 @@ meets or exceeds the lower bound.</p>
                             </div>
                             <div id="HeuristicType.False_" class="classattr">
                                 <div class="attr variable">
-            <span class="name">False_</span><span class="annotation">: ClassVar[<a href="#HeuristicType">HeuristicType</a>]</span>
+            <span class="name">False_</span><span class="annotation">: ClassVar[<a href="#HeuristicType">HeuristicType</a>]</span>        =
+<span class="default_value"><a href="#HeuristicType.False_">HeuristicType.False_</a></span>
 
         
     </div>
@@ -994,7 +972,8 @@ meets or exceeds the lower bound.</p>
                             </div>
                             <div id="HeuristicType.Init" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Init</span><span class="annotation">: ClassVar[<a href="#HeuristicType">HeuristicType</a>]</span>
+            <span class="name">Init</span><span class="annotation">: ClassVar[<a href="#HeuristicType">HeuristicType</a>]</span>        =
+<span class="default_value"><a href="#HeuristicType.Init">HeuristicType.Init</a></span>
 
         
     </div>
@@ -1007,7 +986,8 @@ meets or exceeds the lower bound.</p>
                             </div>
                             <div id="HeuristicType.Level" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Level</span><span class="annotation">: ClassVar[<a href="#HeuristicType">HeuristicType</a>]</span>
+            <span class="name">Level</span><span class="annotation">: ClassVar[<a href="#HeuristicType">HeuristicType</a>]</span>        =
+<span class="default_value"><a href="#HeuristicType.Level">HeuristicType.Level</a></span>
 
         
     </div>
@@ -1020,7 +1000,8 @@ meets or exceeds the lower bound.</p>
                             </div>
                             <div id="HeuristicType.Sign" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Sign</span><span class="annotation">: ClassVar[<a href="#HeuristicType">HeuristicType</a>]</span>
+            <span class="name">Sign</span><span class="annotation">: ClassVar[<a href="#HeuristicType">HeuristicType</a>]</span>        =
+<span class="default_value"><a href="#HeuristicType.Sign">HeuristicType.Sign</a></span>
 
         
     </div>
@@ -1033,7 +1014,8 @@ meets or exceeds the lower bound.</p>
                             </div>
                             <div id="HeuristicType.True_" class="classattr">
                                 <div class="attr variable">
-            <span class="name">True_</span><span class="annotation">: ClassVar[<a href="#HeuristicType">HeuristicType</a>]</span>
+            <span class="name">True_</span><span class="annotation">: ClassVar[<a href="#HeuristicType">HeuristicType</a>]</span>        =
+<span class="default_value"><a href="#HeuristicType.True_">HeuristicType.True_</a></span>
 
         
     </div>
@@ -1132,7 +1114,7 @@ not needed.</p>
                                 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">edge</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">node_u</span><span class="p">:</span> <span class="nb">int</span>, </span><span class="param"><span class="n">node_v</span><span class="p">:</span> <span class="nb">int</span>, </span><span class="param"><span class="n">condtition</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+        <span class="name">edge</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">node_u</span><span class="p">:</span> <span class="nb">int</span>, </span><span class="param"><span class="n">node_v</span><span class="p">:</span> <span class="nb">int</span>, </span><span class="param"><span class="n">condition</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
 
         
     </div>
@@ -1353,16 +1335,6 @@ than one step.</p>
     <a class="headerlink" href="#TheorySequenceType"></a>
     
             <div class="docstring"><p>Available theory sequence types.</p>
-
-<h6 id="members">Members:</h6>
-
-<blockquote>
-  <p>Tuple : Sequences enclosed in parentheses.</p>
-  
-  <p>List : Sequences enclosed in brackets.</p>
-  
-  <p>Set : Sequences enclosed in braces.</p>
-</blockquote>
 </div>
 
 
@@ -1380,7 +1352,8 @@ than one step.</p>
                             </div>
                             <div id="TheorySequenceType.List" class="classattr">
                                 <div class="attr variable">
-            <span class="name">List</span><span class="annotation">: ClassVar[<a href="#TheorySequenceType">TheorySequenceType</a>]</span>
+            <span class="name">List</span><span class="annotation">: ClassVar[<a href="#TheorySequenceType">TheorySequenceType</a>]</span>        =
+<span class="default_value"><a href="#TheorySequenceType.List">TheorySequenceType.List</a></span>
 
         
     </div>
@@ -1393,7 +1366,8 @@ than one step.</p>
                             </div>
                             <div id="TheorySequenceType.Set" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Set</span><span class="annotation">: ClassVar[<a href="#TheorySequenceType">TheorySequenceType</a>]</span>
+            <span class="name">Set</span><span class="annotation">: ClassVar[<a href="#TheorySequenceType">TheorySequenceType</a>]</span>        =
+<span class="default_value"><a href="#TheorySequenceType.Set">TheorySequenceType.Set</a></span>
 
         
     </div>
@@ -1406,7 +1380,8 @@ than one step.</p>
                             </div>
                             <div id="TheorySequenceType.Tuple" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Tuple</span><span class="annotation">: ClassVar[<a href="#TheorySequenceType">TheorySequenceType</a>]</span>
+            <span class="name">Tuple</span><span class="annotation">: ClassVar[<a href="#TheorySequenceType">TheorySequenceType</a>]</span>        =
+<span class="default_value"><a href="#TheorySequenceType.Tuple">TheorySequenceType.Tuple</a></span>
 
         
     </div>
