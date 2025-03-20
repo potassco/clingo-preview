@@ -23,6 +23,12 @@ const Clingo = (() => {
 
         const updateButton = (state) => {
             runButton.style.opacity = state === "ready" ? '100%' : '60%'
+            if (state === "ready") {
+                runButton.classList.remove("button--loading");
+            }
+            else {
+                runButton.classList.add("button--loading");
+            }
         }
 
         const ensurePython = () => {
