@@ -102,6 +102,7 @@ def _evaluate(lib: Library, term: TheoryTerm) -> Symbol:
 
 
 class Graph:
+    # pylint: disable=too-many-instance-attributes
     """
     This class captures a graph with weighted edges that can be extended
     incrementally.
@@ -116,6 +117,8 @@ class Graph:
     _last_edges: MutableMapping[Node, WeightedEdge]
     _previous_edge: MutableMapping[Level, MutableMapping[Edge, Weight]]
     _previous_potential: MutableMapping[Level, MapNodeWeight]
+    _changed: Set[Node]
+    _min_gamma: List[Tuple[Weight, Node]]
 
     def __init__(self, lib: Library):
         self._lib = lib
@@ -125,6 +128,8 @@ class Graph:
         self._last_edges = {}  # {node: edge}
         self._previous_edge = {}  # {level: {(node, node): weight}}
         self._previous_potential = {}  # {level: {node: potential}}
+        self._changed = set()  # {node}
+        self._min_gamma = []  # [(weight, node)]
 
     @staticmethod
     def _set(level, key, val, previous, get_current):
@@ -171,6 +176,60 @@ class Graph:
             lambda key: (self._potential, key),
         )
 
+    def _pop_changed(self):
+        """
+        Advance to the next node that needs processing.
+        """
+        while self._min_gamma and self._min_gamma[0][1] in self._changed:
+            heapq.heappop(self._min_gamma)
+        return bool(self._min_gamma)
+
+    def _init_check(self, level: Level, u: Node, v: Node, d: Weight):
+        """
+        Initialize the potentials and gammas of of nodes `u` and `v`.
+        """
+        if u not in self._potential:
+            self._set_potential(level, u, 0)
+        if v not in self._potential:
+            self._set_potential(level, v, 0)
+        self._gamma[u] = 0
+        self._gamma[v] = self._potential[u] + d - self._potential[v]
+        self._graph.setdefault(u, {})
+        self._graph.setdefault(v, {})
+
+        # enqueue v if its potential became negative
+        if self._gamma[v] < 0:
+            heapq.heappush(self._min_gamma, (self._gamma[v], v))
+            self._last_edges[v] = (u, v, d)
+
+    def _extract_cycle(
+        self, level: Level, u: Node, v: Node, d: Weight
+    ) -> Optional[List[WeightedEdge]]:
+        """
+        Check if there is a negative cycle.
+        """
+        # reset gammas
+        has_cycle = self._gamma[u] < 0
+        self._gamma[v] = 0
+        while self._min_gamma:
+            _, s = heapq.heappop(self._min_gamma)
+            self._gamma[s] = 0
+        self._changed.clear()
+
+        # extract cycle
+        if has_cycle:
+            cycle = []
+            x, y, c = self._last_edges[v]
+            cycle.append((x, y, c))
+            while v != x:
+                x, y, c = self._last_edges[x]
+                cycle.append((x, y, c))
+            return cycle
+
+        # add edge that did not introduce a cycle
+        self._set_edge(level, (u, v), d)
+        return None
+
     def add_edge(
         self, level: Level, edge: WeightedEdge
     ) -> Optional[List[WeightedEdge]]:
@@ -178,66 +237,26 @@ class Graph:
         Add an edge to the graph and return a negative cycle (if there is one).
         """
         u, v, d = edge
-        # If edge already exists from u to v with lower weight, new edge is redundant
+        # prune redundant edges
         if u in self._graph and v in self._graph[u] and self._graph[u][v] <= d:
             return None
 
-        # Initialize potential and graph
-        if u not in self._potential:
-            self._set_potential(level, u, 0)
-        if v not in self._potential:
-            self._set_potential(level, v, 0)
-        self._graph.setdefault(u, {})
-        self._graph.setdefault(v, {})
+        self._init_check(level, u, v, d)
 
-        changed: Set[Node] = set()  # Set of nodes for which potential has been changed
-        min_gamma: List[Tuple[Weight, Node]] = []
-
-        def pop_changed():
-            while min_gamma and min_gamma[0][1] in changed:
-                heapq.heappop(min_gamma)
-            return bool(min_gamma)
-
-        # Update potential change induced by new edge, 0 for other nodes
-        self._gamma[u] = 0
-        self._gamma[v] = self._potential[u] + d - self._potential[v]
-
-        if self._gamma[v] < 0:
-            heapq.heappush(min_gamma, (self._gamma[v], v))
-            self._last_edges[v] = (u, v, d)
-
-        # Propagate negative potential change
-        while pop_changed() and self._gamma[u] == 0:
-            _, s = heapq.heappop(min_gamma)
+        # propagate negative potential changes
+        while self._pop_changed() and self._gamma[u] == 0:
+            _, s = heapq.heappop(self._min_gamma)
             self._set_potential(level, s, self._potential[s] + self._gamma[s])
             self._gamma[s] = 0
-            changed.add(s)
-            for t in filterfalse(changed.__contains__, self._graph[s]):
+            self._changed.add(s)
+            for t in filterfalse(self._changed.__contains__, self._graph[s]):
                 gamma_t = self._potential[s] + self._graph[s][t] - self._potential[t]
                 if gamma_t < self._gamma[t]:
                     self._gamma[t] = gamma_t
-                    heapq.heappush(min_gamma, (gamma_t, t))
+                    heapq.heappush(self._min_gamma, (gamma_t, t))
                     self._last_edges[t] = (s, t, self._graph[s][t])
 
-        cycle = None
-        # Check if there is a negative cycle
-        if self._gamma[u] < 0:
-            cycle = []
-            x, y, c = self._last_edges[v]
-            cycle.append((x, y, c))
-            while v != x:
-                x, y, c = self._last_edges[x]
-                cycle.append((x, y, c))
-        else:
-            self._set_edge(level, (u, v), d)
-
-        # Ensure that all gamma values are zero
-        self._gamma[v] = 0
-        while min_gamma:
-            _, s = heapq.heappop(min_gamma)
-            self._gamma[s] = 0
-
-        return cycle
+        return self._extract_cycle(level, u, v, d)
 
     def get_assignment(self) -> List[Tuple[Node, Weight]]:
         """
