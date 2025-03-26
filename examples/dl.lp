@@ -83,7 +83,7 @@ def _evaluate(lib: Library, term: TheoryTerm) -> Symbol:
                 return Number(lib, -term_a.number)
 
             if term_a.type == SymbolType.Function and term_a.name:
-                return Function(lib, term_a.name, term_a.arguments, not term_a.sign)
+                return Function(lib, term_a.name, term_a.arguments, term_a.is_negative)
 
             raise RuntimeError("Invalid Unary Operation")
 
