@@ -955,7 +955,7 @@ the solve call.</p>
 
 <p>If this function returns False, the propagator must add no further
 clauses/literals and immediately return from the corresponding
-<code>Propagator.propagator()</code> or <code><a href="#Propagator.check">Propagator.check()</a></code> call.</p>
+<code><a href="#Propagator.propagate">Propagator.propagate()</a></code> or <code><a href="#Propagator.check">Propagator.check()</a></code> call.</p>
 
 <h6 id="returns">Returns:</h6>
 
@@ -1678,7 +1678,7 @@ order, with the decision literal at the beginning of the sequence.</p>
     </div>
     <a class="headerlink" href="#UndoMode.Always"></a>
     
-            <div class="docstring"><p>Call <code><a href="#Propagator.undo">Propagator.undo()</a></code> for decision levels with non-emty changes.</p>
+            <div class="docstring"><p>Additionally call <code><a href="#Propagator.undo">Propagator.undo()</a></code> when check has been called.</p>
 </div>
 
 
@@ -1692,7 +1692,7 @@ order, with the decision literal at the beginning of the sequence.</p>
     </div>
     <a class="headerlink" href="#UndoMode.Default"></a>
     
-            <div class="docstring"><p>Call <code><a href="#Propagator.undo">Propagator.undo()</a></code> when check has been called.</p>
+            <div class="docstring"><p>Call <code><a href="#Propagator.undo">Propagator.undo()</a></code> for decision levels with non-emty changes.</p>
 </div>
 
 

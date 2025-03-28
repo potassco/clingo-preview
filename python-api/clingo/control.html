@@ -45,6 +45,9 @@
                                 <a class="function" href="#Control.ground">ground</a>
                         </li>
                         <li>
+                                <a class="function" href="#Control.interrupt">interrupt</a>
+                        </li>
+                        <li>
                                 <a class="function" href="#Control.join">join</a>
                         </li>
                         <li>
@@ -204,7 +207,7 @@ small test program:</p>
                             <div id="Control.__init__" class="classattr">
                                 <div class="attr function">
             
-        <span class="name">Control</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>, </span><span class="param"><span class="n">options</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span></span>)</span>
+        <span class="name">Control</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>, </span><span class="param"><span class="n">options</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span></span>)</span>
 
         
     </div>
@@ -234,12 +237,39 @@ small test program:</p>
     
             <div class="docstring"><p>Ground the given program parts.</p>
 
+<p>Non-ground logic programs must be added before calling this function.  Programs
+can define named sections using <code>#program.</code> directives.  These sections can be
+selectively grounded by specifying their name and binding parameters to
+symbols.</p>
+
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
-<li><strong>parts:</strong>  A list of tuples of part names and their symbolic arguments.</li>
-<li><strong>context:</strong>  An optional object with functions to call during grounding.</li>
+<li><strong>parts:</strong>  A sequence of tuples, each containing a section name and a sequence of
+symbols. The name identifies the program section to ground, and the
+symbols bind its parameters.  If <code>None</code>, the implicit base section
+without arguments is grounded.</li>
+<li><strong>context:</strong>  An optional object providing functions that can be called during
+grounding.</li>
 </ul>
+</div>
+
+
+                            </div>
+                            <div id="Control.interrupt" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">interrupt</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Control.interrupt"></a>
+    
+            <div class="docstring"><p>Interrupt the active solve call.</p>
+
+<p>This function is thread-safe. Prefer using <code><a href="solve.html#SolveHandle.cancel">clingo.solve.SolveHandle.cancel</a></code> if
+possible.</p>
 </div>
 
 
@@ -275,18 +305,29 @@ small test program:</p>
     </div>
     <a class="headerlink" href="#Control.main"></a>
     
-            <div class="docstring"><p>Ground and solver a logic program.</p>
+            <div class="docstring"><p>Ground and solve a logic program based on the current control mode.</p>
 
-<p>This function proceeds as clingo calling the main function from a script if
-there is any.</p>
+<p>This function serves as a high-level entry point for the default
+ground-and-solve process. It considers the current <code><a href="#ControlMode">ControlMode</a></code> and can
+dispatch execution to a script's <code><a href="#Control.main">main</a></code> function if defined.</p>
 
-<p>If the optional parts member is given, each of its elements corresponds to one
-incremental solving step where the elements' parts are grounded.</p>
+<p>If solving, the function proceeds as follows:</p>
+
+<ol>
+<li>Each set of program parts in <code>parts</code> is grounded sequentially.</li>
+<li>After grounding each set, solving is performed immediately.</li>
+</ol>
+
+<p>Before calling <code><a href="#Control.main">main()</a></code>, the control object can be prepared by parsing
+programs, registering propagators, or performing other setup steps.</p>
 
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
-<li><strong>parts:</strong>  A sequence of part sequences to ground and solve.</li>
+<li><strong>parts:</strong>          A sequence of part sets to ground and solve. Each part set consists of
+tuples containing a section name and symbolic arguments. If <code>None</code>,
+the function defaults to grounding and solving the implicit <code><a href="#Control.base">base</a></code>
+program.</li>
 </ul>
 </div>
 
@@ -307,8 +348,9 @@ incremental solving step where the elements' parts are grounded.</p>
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
-<li><strong>observer:</strong>  The program observer to inspect the program.</li>
-<li><strong>preprocess:</strong>  Whether the program should be preprocessed first (default: true).</li>
+<li><strong>observer:</strong>  The program observer to inspect the program.
+preprocess:
+        Whether the program should be preprocessed first (default: true).</li>
 </ul>
 </div>
 
@@ -329,7 +371,7 @@ incremental solving step where the elements' parts are grounded.</p>
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
-<li><strong>files:</strong>  The files to parse.</li>
+<li><strong>files:</strong>  A list of file paths to parse.</li>
 </ul>
 </div>
 
@@ -350,7 +392,7 @@ incremental solving step where the elements' parts are grounded.</p>
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
-<li><strong>program:</strong>  The logic program as string.</li>
+<li><strong>program:</strong>  The logic program as a string.</li>
 </ul>
 </div>
 
@@ -383,7 +425,7 @@ incremental solving step where the elements' parts are grounded.</p>
                                 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">solve</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">assumptions</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span><span class="p">,</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">|</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>,</span><span class="param">	<span class="n">on_model</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n"><a href="solve.html#Model">clingo.solve.Model</a></span><span class="p">],</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">on_stats</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n"><a href="stats.html#Stats">clingo.stats.Stats</a></span><span class="p">,</span> <span class="n"><a href="stats.html#Stats">clingo.stats.Stats</a></span><span class="p">],</span> <span class="n">NoneType</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">yield_</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>,</span><span class="param">	<span class="n">async_</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span></span><span class="return-annotation">) -> <span class="n"><a href="solve.html#SolveHandle">clingo.solve.SolveHandle</a></span>:</span></span>
+        <span class="name">solve</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">assumptions</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span><span class="p">,</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">|</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>,</span><span class="param">	<span class="n">on_model</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n"><a href="solve.html#Model">clingo.solve.Model</a></span><span class="p">],</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">on_stats</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n"><a href="stats.html#Stats">clingo.stats.Stats</a></span><span class="p">,</span> <span class="n"><a href="stats.html#Stats">clingo.stats.Stats</a></span><span class="p">],</span> <span class="n">NoneType</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">yield_</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>,</span><span class="param">	<span class="n">async_</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span></span><span class="return-annotation">) -> <span class="n"><a href="solve.html#SolveHandle">clingo.solve.SolveHandle</a></span>:</span></span>
 
         
     </div>
@@ -391,55 +433,56 @@ incremental solving step where the elements' parts are grounded.</p>
     
             <div class="docstring"><p>Solve the current ground program.</p>
 
+<p>This function runs the solver on the current ground program, optionally  using
+assumptions, callbacks, or asynchronous execution. It returns a  <code>SolveHandle</code>,
+allowing interaction with the solving process.</p>
+
+<p>If asynchronous solving (<code>async_</code>) is enabled, the function returns
+immediately, and solving runs in the background. Otherwise, the function
+blocks until solving is complete.</p>
+
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
-<li><strong>assumptions:</strong>  List of <code>tuple[<a href="symbol.html#Symbol">clingo.symbol.Symbol</a>, bool]</code> or program literals (see
-<code><a href="base.html#Atom.literal">clingo.base.Atom.literal</a></code>) that serve as assumptions for the solve
-call, e.g., solving under assumptions
-<code>[(<a href="symbol.html#Function">clingo.symbol.Function</a>(lib, "a"), True)]</code> only admits answer sets
-that contain atom <code>a</code>.</li>
-<li><strong>on_model:</strong>  Optional callback for intercepting models. A <code><a href="solve.html#Model">clingo.solve.Model</a></code>
-object is passed to the callback. The search can be interruped from the
-model callback by returning <code>False</code>.</li>
+<li><strong>assumptions:</strong>  A list of assumptions that constrain this search. Each assumption is
+either a <code>tuple[<a href="symbol.html#Symbol">clingo.symbol.Symbol</a>, bool]</code> indicating an atom's truth
+value or a program literal (see <code><a href="base.html#Atom.literal">clingo.base.Atom.literal</a></code>). For
+example, using <code>[(<a href="symbol.html#Function">clingo.symbol.Function</a>(lib, "a"), True)]</code> only admits
+answer sets that contain atom <code>a</code>.</li>
+<li><strong>on_model:</strong>  Optional callback that receives a <code><a href="solve.html#Model">clingo.solve.Model</a></code> object when
+a model is found. Returning <code>False</code> from the callback stops solving.</li>
 <li><strong>on_unsat:</strong>  Optional callback to intercept lower bounds during optimization.</li>
-<li><strong>on_stats:</strong>  Optional callback to update stats.
-The step and accumulated stats are passed as arguments.</li>
+<li><strong>on_stats:</strong>  Optional callback that receives statistics updates after each step.
+Two <code><a href="stats.html#Stats">clingo.stats.Stats</a></code> objects are passed: step-specific and
+accumulated stats.</li>
 <li><strong>on_finish:</strong>  Optional callback called once search has finished. A
 <code><a href="solve.html#SolveResult">clingo.solve.SolveResult</a></code> is passed to the callback.</li>
-<li><strong>on_core:</strong>  Optional callback called with the assumptions that made a problem
-unsatisfiable.</li>
-<li><strong>yield_:</strong>  The resulting <code><a href="solve.html#SolveHandle">clingo.solve.SolveHandle</a></code> is iterable yielding
-<code><a href="solve.html#Model">clingo.solve.Model</a></code> objects.</li>
-<li><strong>async_:</strong>  The solve call and the method <code><a href="solve.html#SolveHandle.resume">clingo.solve.SolveHandle.resume</a></code>
-of the returned handle are non-blocking.</li>
+<li><strong>on_core:</strong>  Optional callback invoked when an unsatisfiable core is found.
+It receives the subset of assumptions that caused unsatisfiability.</li>
+<li><strong>yield_:</strong>  If <code>True</code>, the returned <code><a href="solve.html#SolveHandle">clingo.solve.SolveHandle</a></code> is iterable,
+yielding  <code><a href="solve.html#Model">clingo.solve.Model</a></code> objects during solving.</li>
+<li><strong>async_:</strong>  If <code>True</code>, solving runs asynchronously in a separate thread.
+Note: Callbacks (<code>on_model</code>, <code>on_stats</code>, etc.) will also be called
+from a separate thread.</li>
 </ul>
 
 <h6 id="returns">Returns:</h6>
 
 <blockquote>
-  <p>A solve handle to control the search.</p>
+  <p>A <code><a href="solve.html#SolveHandle">clingo.solve.SolveHandle</a></code> to control the search.</p>
 </blockquote>
 
-<h6 id="note">Note:</h6>
+<h6 id="notes">Notes:</h6>
 
 <blockquote>
-  <p>If this function is used in embedded Python code, you might want to start
-  clingo using the <code>--outf=3</code> option to disable all output from clingo.</p>
-  
-  <p>Asynchronous solving is only available if thread support was enabled.
-  Furthermore, the <code>on_model</code> and <code>on_finish</code> callbacks are called from
-  another thread. To ensure that the methods can be called, make sure to not
-  use any functions that block Python's GIL indefinitely.</p>
-  
-  <p>This function as well as blocking functions on the
-  <code><a href="solve.html#SolveHandle">clingo.solve.SolveHandle</a></code> release the GIL but are not thread-safe.</p>
+  <p>Asynchronous solving requires compiling clingo with thread support.
+  Blocking methods on <code>SolveHandle</code> release the GIL but are not thread-safe.</p>
 </blockquote>
 
 <h6 id="see-also">See Also:</h6>
 
 <blockquote>
-  <p><a href="solve.html">clingo.solve</a>: For more examples how to use this method.</p>
+  <p><a href="solve.html">clingo.solve</a>: Contains examples on using this function.</p>
 </blockquote>
 </div>
 

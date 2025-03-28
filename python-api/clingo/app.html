@@ -110,29 +110,29 @@ including an application class, options definitions, and helper routines.</p>
 
 <div class="pdoc-code codehilite">
 <pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-
 <span class="kn">from</span><span class="w"> </span><span class="nn"><a href="">clingo.app</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">clingo_main</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn"><a href="core.html">clingo.core</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">Library</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn"><a href="script.html">clingo.script</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">enable_python</span>
 
 <span class="k">with</span> <span class="n">Library</span><span class="p">()</span> <span class="k">as</span> <span class="n">lib</span><span class="p">:</span>
     <span class="n">enable_python</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span>
-        <span class="n">clingo_main</span><span class="p">(</span><span class="n">lib</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+    <span class="n">clingo_main</span><span class="p">(</span><span class="n">lib</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
 </code></pre>
 </div>
 
 <p>The next example shows how to write a simple clingo-based application that adds
-on option to print atoms in models in order:</p>
+an option to print atoms in models in order:</p>
 
 <div class="pdoc-code codehilite">
 <pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Sequence</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-
 <span class="kn">from</span><span class="w"> </span><span class="nn"><a href="">clingo.app</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">App</span><span class="p">,</span> <span class="n">AppOptions</span><span class="p">,</span> <span class="n">Flag</span><span class="p">,</span> <span class="n">clingo_main</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn"><a href="core.html">clingo.core</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">Library</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn"><a href="control.html">clingo.control</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">Control</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn"><a href="solve.html">clingo.solve</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">Model</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn"><a href="symbol.html">clingo.symbol</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">Symbol</span>
 
+<span class="n">Parts</span> <span class="o">=</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Symbol</span><span class="p">]]]]</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">MyApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -150,10 +150,9 @@ on option to print atoms in models in order:</p>
             <span class="s2">&quot;MyApp&quot;</span><span class="p">,</span> <span class="s2">&quot;order&quot;</span><span class="p">,</span> <span class="s2">&quot;Print atoms in models in order.&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span>
         <span class="p">)</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">control</span><span class="p">:</span> <span class="n">Control</span><span class="p">,</span> <span class="n">files</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">control</span><span class="p">:</span> <span class="n">Control</span><span class="p">,</span> <span class="n">files</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">parts</span><span class="p">:</span> <span class="n">Parts</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">control</span><span class="o">.</span><span class="n">parse_files</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
-        <span class="n">control</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
-
+        <span class="n">control</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span>
 
 <span class="k">with</span> <span class="n">Library</span><span class="p">()</span> <span class="k">as</span> <span class="n">lib</span><span class="p">:</span>
     <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">clingo_main</span><span class="p">(</span><span class="n">lib</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">MyApp</span><span class="p">()))</span>
@@ -293,7 +292,7 @@ below the model.</p>
             <div class="docstring"><p>Validate the options passed to the application.</p>
 
 <p>Once the application options have been set, this method confirms that they are
-valid. If an error is detected, an exception may be raised.</p>
+valid. If an error is detected, a ValueError should be raised.</p>
 </div>
 
 
@@ -309,10 +308,15 @@ valid. If an error is detected, an exception may be raised.</p>
     </div>
     <a class="headerlink" href="#AppOptions"></a>
     
-            <div class="docstring"><p>Manage application options and their definitions.</p>
+            <div class="docstring"><p>Manager for application options and their definitions.</p>
 
-<p>This class provides an interface to add various types of options (e.g., with
-arguments, flags) which the application can use for configuration.</p>
+<p>Provides interface to add/configures various option types:</p>
+
+<ul>
+<li>argument options,</li>
+<li>flag options, and</li>
+<li>multi-value options.</li>
+</ul>
 </div>
 
 
@@ -326,7 +330,7 @@ arguments, flags) which the application can use for configuration.</p>
     </div>
     <a class="headerlink" href="#AppOptions.add"></a>
     
-            <div class="docstring"><p>Adds an option with a corresponding parser to the options set.</p>
+            <div class="docstring"><p>Adds an option with a custom parser.</p>
 
 <p>An option's group name acts like a section header; all options with the same
 group name are displayed under it in the help output. The option name is the
@@ -336,8 +340,8 @@ parsed by the given parser.</p>
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
-<li><strong>group:</strong>  The option group.</li>
-<li><strong>option:</strong>  The option name.</li>
+<li><strong>group:</strong>  The option group or category.</li>
+<li><strong>option:</strong>  The option name (after --).</li>
 <li><strong>description:</strong>  A brief description of the option.</li>
 <li><strong>parser:</strong>  A callable to process the string input for this option.</li>
 <li><strong>multi:</strong>  Whether the option can accept multiple values (default is False).</li>
@@ -357,9 +361,9 @@ parsed by the given parser.</p>
     </div>
     <a class="headerlink" href="#AppOptions.add_flag"></a>
     
-            <div class="docstring"><p>Adds a flag option to the options set.</p>
+            <div class="docstring"><p>Add a Boolean flag option.</p>
 
-<p>Similar to add_option but used for Boolean options that can be toggled on or
+<p>Similar to <code>add_option</code> but used for Boolean options that can be toggled on or
 off.</p>
 
 <h6 id="arguments">Arguments:</h6>
@@ -385,9 +389,9 @@ off.</p>
     </div>
     <a class="headerlink" href="#Flag"></a>
     
-            <div class="docstring"><p>Encapsulates a Boolean flag value with getter/setter functionality.</p>
+            <div class="docstring"><p>Boolean flag with value management.</p>
 
-<p>A flag is used to represent a binary command-line option in the application.</p>
+<p>Represents command-line toggle options.</p>
 </div>
 
 
@@ -429,7 +433,7 @@ off.</p>
                     <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">clingo_main</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">arguments</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>,</span><span class="param">	<span class="n">app</span><span class="p">:</span> <span class="n"><a href="#App">App</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="nb">int</span>:</span></span>
+        <span class="name">clingo_main</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">arguments</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>,</span><span class="param">	<span class="n">app</span><span class="p">:</span> <span class="n"><a href="#App">App</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">raise_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span></span><span class="return-annotation">) -> <span class="nb">int</span>:</span></span>
 
         
     </div>
@@ -441,14 +445,23 @@ off.</p>
 then executes the main functionality of the Clingo application. It can
 optionally use a provided App instance to customize this behavior.</p>
 
+<p>The flag <code>raise_errors</code> might help for debugging purposes to obtain traces
+where errors originated from.</p>
+
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
 <li><strong>lib:</strong>  The Clingo core library interface.</li>
 <li><strong>arguments:</strong>  A list of command-line arguments.</li>
 <li><strong>app:</strong>  An optional App instance containing application-specific logic.</li>
-<li><strong>Returns:</strong>  An integer exit code.</li>
+<li><strong>raise_errors:</strong>  Whether to raise errors instead of just reporting them.</li>
 </ul>
+
+<h6 id="returns">Returns:</h6>
+
+<blockquote>
+  <p>An integer exit code.</p>
+</blockquote>
 </div>
 
 

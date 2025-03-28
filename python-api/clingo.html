@@ -23,10 +23,14 @@
 
             <h2>Contents</h2>
             <ul>
-  <li><a href="#terms">Terms</a></li>
-  <li><a href="#symbolic-atoms-and-literals">Symbolic Atoms and Literals</a></li>
-  <li><a href="#program-literals">Program Literals</a></li>
-  <li><a href="#solver-literals">Solver Literals</a></li>
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#key-concepts">Key Concepts</a>
+  <ul>
+    <li><a href="#terms">Terms</a></li>
+    <li><a href="#symbolic-atoms-and-literals">Symbolic Atoms and Literals</a></li>
+    <li><a href="#program-literals">Program Literals</a></li>
+    <li><a href="#solver-literals">Solver Literals</a></li>
+  </ul></li>
   <li><a href="#embedded-python-code">Embedded Python Code</a></li>
   <li><a href="#examples">Examples</a></li>
 </ul>
@@ -46,6 +50,7 @@
                     <li><a href="clingo/solve.html">solve</a></li>
                     <li><a href="clingo/stats.html">stats</a></li>
                     <li><a href="clingo/symbol.html">symbol</a></li>
+                    <li><a href="clingo/theory.html">theory</a></li>
             </ul>
 
 
@@ -62,12 +67,16 @@
                     <h1 class="modulename">
 clingo    </h1>
 
-                        <div class="docstring"><p>The clingo python module.</p>
+                        <div class="docstring"><p>Module providing functions and classes to control the grounding and solving
+process of Answer Set Programming (ASP).</p>
 
-<p>Module providing functions and classes to control the grounding and solving
-process.</p>
+<h1 id="introduction">Introduction</h1>
 
-<p>Next follow some concepts used throughout the modules of the clingo package.</p>
+<p>This module offers a comprehensive set of tools for interacting with the clingo
+ASP solver, allowing users to control grounding and solving processes
+programmatically.</p>
+
+<h1 id="key-concepts">Key Concepts</h1>
 
 <h2 id="terms">Terms</h2>
 
@@ -100,36 +109,40 @@ introduce fresh symbolic atoms and program literals.</p>
 
 <p>Before solving, programs in aspif format are translated to an internal solver
 representation, where program literals are again mapped to non-zero integers,
-so called <em>solver literals</em>. The <code>clingo.propagator.PropagateInit.solver_literal</code>
+so called <em>solver literals</em>. The <code><a href="clingo/propagate.html#PropagateInit.solver_literal">clingo.propagate.PropagateInit.solver_literal</a></code>
 function can be used to map program literals to solver literals. Note that
 different program literals can share the same solver literal.</p>
 
-<h2 id="embedded-python-code">Embedded Python Code</h2>
+<h1 id="embedded-python-code">Embedded Python Code</h1>
 
-<p>If the clingo application is build with Python support, clingo will also be
+<p>If the clingo application is built with Python support, clingo will also be
 able to execute Python code embedded in logic programs. Functions defined in a
 Python script block are callable during the instantiation process using
 <code>@</code>-syntax. The default grounding/solving process can be customized if a main
 function is provided.</p>
 
-<h2 id="examples">Examples</h2>
+<h1 id="examples">Examples</h1>
 
-<p>The first example shows how to use Python code from clingo.</p>
+<p>The first example shows how to use Python code from clingo:</p>
 
 <div class="pdoc-code codehilite">
 <pre><span></span><code><span class="c1">#script (python)</span>
 
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Sequence</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn"><a href="clingo/core.html">clingo.core</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">Library</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn"><a href="clingo/control.html">clingo.control</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">Control</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn"><a href="clingo/symbol.html">clingo.symbol</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">Number</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn"><a href="clingo/symbol.html">clingo.symbol</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">Number</span><span class="p">,</span> <span class="n">Symbol</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">Number</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">number</span><span class="p">)</span>
+<span class="n">Parts</span> <span class="o">=</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Symbol</span><span class="p">]]]]</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">lib</span><span class="p">:</span> <span class="n">Library</span><span class="p">,</span> <span class="n">ctl</span><span class="p">:</span> <span class="n">Control</span><span class="p">):</span>
-    <span class="n">ctl</span><span class="o">.</span><span class="n">ground</span><span class="p">()</span>
-    <span class="k">with</span> <span class="n">ctl</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span> <span class="k">as</span> <span class="n">hnd</span><span class="p">:</span>
-        <span class="n">hnd</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">lib</span><span class="p">:</span> <span class="n">Library</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">Symbol</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Number</span><span class="p">(</span><span class="n">lib</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">number</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">lib</span><span class="p">:</span> <span class="n">Library</span><span class="p">,</span> <span class="n">ctl</span><span class="p">:</span> <span class="n">Control</span><span class="p">,</span> <span class="n">parts</span><span class="p">:</span> <span class="n">Parts</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">parts</span><span class="p">:</span>
+        <span class="n">ctl</span><span class="o">.</span><span class="n">ground</span><span class="p">(</span><span class="n">part</span><span class="p">)</span>
+        <span class="k">with</span> <span class="n">ctl</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span> <span class="k">as</span> <span class="n">hnd</span><span class="p">:</span>
+            <span class="n">hnd</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
 
 <span class="c1">#end.</span>
 
@@ -146,23 +159,20 @@ information.</p>
 <div class="pdoc-code codehilite">
 <pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span><span class="w"> </span><span class="nn"><a href="clingo/core.html">clingo.core</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">Library</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span><span class="w"> </span><span class="nn"><a href="clingo/control.html">clingo.control</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">Control</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span><span class="w"> </span><span class="nn"><a href="clingo/symbol.html">clingo.symbol</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">Number</span>
-<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span><span class="w"> </span><span class="nn"><a href="clingo/symbol.html">clingo.symbol</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">Number</span><span class="p">,</span> <span class="n">Symbol</span>
+<span class="o">...</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">class</span><span class="w"> </span><span class="nc">Context</span><span class="p">:</span>
-<span class="o">...</span>     <span class="n">def__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lib</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lib</span><span class="p">:</span> <span class="n">Library</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="o">...</span>         <span class="bp">self</span><span class="o">.</span><span class="n">lib</span> <span class="o">=</span> <span class="n">lib</span>
-<span class="o">...</span>     <span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-<span class="o">...</span>         <span class="k">return</span> <span class="n">Number</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">number</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="o">...</span>     <span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">Symbol</span><span class="p">):</span>
+<span class="o">...</span>         <span class="k">return</span> <span class="n">Number</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lib</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">number</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 <span class="o">...</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">Library</span><span class="p">()</span> <span class="k">as</span> <span class="n">lib</span><span class="p">:</span>
 <span class="o">...</span>     <span class="n">ctl</span> <span class="o">=</span> <span class="n">Control</span><span class="p">(</span><span class="n">lib</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;0&quot;</span><span class="p">])</span>
 <span class="o">...</span>     <span class="n">ctl</span><span class="o">.</span><span class="n">parse_string</span><span class="p">(</span><span class="s2">&quot;1 {p(1..2)} 1. q(@f(X)) :- p(X).&quot;</span><span class="p">)</span>
-<span class="o">...</span>     <span class="n">ctl</span><span class="o">.</span><span class="n">ground</span><span class="p">()</span>
+<span class="o">...</span>     <span class="n">ctl</span><span class="o">.</span><span class="n">ground</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="n">Context</span><span class="p">(</span><span class="n">lib</span><span class="p">))</span>
 <span class="o">...</span>     <span class="k">with</span> <span class="n">ctl</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">on_model</span><span class="o">=</span><span class="nb">print</span><span class="p">)</span> <span class="k">as</span> <span class="n">hnd</span><span class="p">:</span>
 <span class="o">...</span>         <span class="nb">print</span><span class="p">(</span><span class="n">hnd</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-<span class="n">p</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span>
-<span class="n">q</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span>
-<span class="n">SAT</span>
 </code></pre>
 </div>
 </div>

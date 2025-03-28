@@ -336,7 +336,9 @@
     </div>
     <a class="headerlink" href="#AtomBase"></a>
     
-            <div class="docstring"><p>An atom base mapping symbols to atoms.</p>
+            <div class="docstring"><p>An class providing information about symbolic atoms.</p>
+
+<p>Implements <code>Mapping[Symbol, Atom]</code>.</p>
 </div>
 
 
@@ -380,7 +382,7 @@
     </div>
     <a class="headerlink" href="#AtomBase.keys"></a>
     
-            <div class="docstring"><p>Get get an iterator over the keys in the map.</p>
+            <div class="docstring"><p>Get an iterator over the keys in the map.</p>
 </div>
 
 
@@ -411,9 +413,18 @@
     </div>
     <a class="headerlink" href="#Base"></a>
     
-            <div class="docstring"><p>The base provides information about atoms and show term directives occuring in a program.</p>
+            <div class="docstring"><p>A class providing information about symbolic and theory atoms and shown terms.</p>
 
-<p>It implements a map from signatures to atom bases.</p>
+<p>Implements <code>Mapping[tuple[str, int, bool], AtomBase]</code> providing additional
+overloads to directly lookup symbols and short signatures (assuming a positive
+sign):</p>
+
+<ul>
+<li><code>__getitem__: Callable[[Symbol], Atom]</code></li>
+<li><code>__contains__: Callable[[Symbol], bool]</code></li>
+<li><code>__getitem__: Callable[[tuple[str, int]], AtomBase]</code></li>
+<li><code>__contains__: Callable[[tuple[str, int]], bool]</code></li>
+</ul>
 </div>
 
 
@@ -595,7 +606,7 @@ from a previous step.</p>
     </div>
     <a class="headerlink" href="#Base.keys"></a>
     
-            <div class="docstring"><p>Get get an iterator over the keys in the map.</p>
+            <div class="docstring"><p>Get an iterator over the keys in the map.</p>
 </div>
 
 
@@ -693,11 +704,11 @@ from a previous step.</p>
     </div>
     <a class="headerlink" href="#TermBase"></a>
     
-            <div class="docstring"><p>A base to inspect show term directives in a program.</p>
+            <div class="docstring"><p>A class providing information about shown terms.</p>
 
 <p>The base is established by the show directives occurring in a program.</p>
 
-<p>Implements a map form symbols to terms.</p>
+<p>Implements <code>Mapping[Symbol, Term]</code>.</p>
 </div>
 
 
@@ -741,7 +752,7 @@ from a previous step.</p>
     </div>
     <a class="headerlink" href="#TermBase.keys"></a>
     
-            <div class="docstring"><p>Get get an iterator over the keys in the map.</p>
+            <div class="docstring"><p>Get an iterator over the keys in the map.</p>
 </div>
 
 
@@ -778,7 +789,7 @@ from a previous step.</p>
 
                             <div id="TheoryAtom.elements" class="classattr">
                                 <div class="attr variable">
-            <span class="name">elements</span><span class="annotation">: list[<a href="#TheoryElement">TheoryElement</a>]</span>
+            <span class="name">elements</span><span class="annotation">: Sequence[<a href="#TheoryElement">TheoryElement</a>]</span>
 
         
     </div>
@@ -839,9 +850,9 @@ from a previous step.</p>
     </div>
     <a class="headerlink" href="#TheoryBase"></a>
     
-            <div class="docstring"><p>A base to inspect theory atoms.</p>
+            <div class="docstring"><p>A class  prooviding information about theory atoms.</p>
 
-<p>Implements a sequences over theory atoms.</p>
+<p>Implements <code>Sequence[TheoryAtom]</code>.</p>
 </div>
 
 
@@ -918,7 +929,7 @@ from a previous step.</p>
                             </div>
                             <div id="TheoryElement.tuple" class="classattr">
                                 <div class="attr variable">
-            <span class="name">tuple</span><span class="annotation">: list[<a href="#TheoryTerm">TheoryTerm</a>]</span>
+            <span class="name">tuple</span><span class="annotation">: Sequence[<a href="#TheoryTerm">TheoryTerm</a>]</span>
 
         
     </div>
@@ -946,7 +957,7 @@ from a previous step.</p>
 
                             <div id="TheoryTerm.arguments" class="classattr">
                                 <div class="attr variable">
-            <span class="name">arguments</span><span class="annotation">: list[<a href="#TheoryTerm">TheoryTerm</a>]</span>
+            <span class="name">arguments</span><span class="annotation">: Sequence[<a href="#TheoryTerm">TheoryTerm</a>]</span>
 
         
     </div>

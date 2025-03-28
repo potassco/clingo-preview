@@ -66,13 +66,16 @@
                                 <a class="variable" href="#Symbol.arity">arity</a>
                         </li>
                         <li>
+                                <a class="variable" href="#Symbol.is_negative">is_negative</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Symbol.is_positive">is_positive</a>
+                        </li>
+                        <li>
                                 <a class="variable" href="#Symbol.name">name</a>
                         </li>
                         <li>
                                 <a class="variable" href="#Symbol.number">number</a>
-                        </li>
-                        <li>
-                                <a class="variable" href="#Symbol.sign">sign</a>
                         </li>
                         <li>
                                 <a class="variable" href="#Symbol.string">string</a>
@@ -172,7 +175,7 @@
                     <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">Function</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">name</span><span class="p">:</span> <span class="nb">str</span>,</span><span class="param">	<span class="n">arguments</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n"><a href="#Symbol">Symbol</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>,</span><span class="param">	<span class="n">sign</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span></span><span class="return-annotation">) -> <span class="n"><a href="#Symbol">Symbol</a></span>:</span></span>
+        <span class="name">Function</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">name</span><span class="p">:</span> <span class="nb">str</span>,</span><span class="param">	<span class="n">arguments</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n"><a href="#Symbol">Symbol</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>,</span><span class="param">	<span class="n">is_positive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span></span><span class="return-annotation">) -> <span class="n"><a href="#Symbol">Symbol</a></span>:</span></span>
 
         
     </div>
@@ -182,15 +185,15 @@
 
 <p>This includes constants and tuples. Constants have an empty argument list and
 tuples have an empty name. Functions can represent classically negated atoms.
-Argument positive has to be set to false to represent such atoms.</p>
+Argument <code>is_positive</code> has to be set to <code>False</code> to represent such atoms.</p>
 
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
 <li><strong>lib:</strong>  A library object to store the function in.</li>
 <li><strong>name:</strong>  The name of the function.</li>
-<li><strong>arguments:</strong>  The arguments in form of a list of symbols.</li>
-<li><strong>sign:</strong>  The sign of the function.</li>
+<li><strong>arguments:</strong>  The arguments in the form of a list of symbols.</li>
+<li><strong>is_positive:</strong>  Whether the function is positive.</li>
 </ul>
 </div>
 
@@ -222,7 +225,7 @@ Argument positive has to be set to false to represent such atoms.</p>
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
-<li><strong>lib:</strong>  A library object to store the function in.</li>
+<li><strong>lib:</strong>  A library object to store the number in.</li>
 <li><strong>number:</strong>  The given number.</li>
 </ul>
 </div>
@@ -244,7 +247,7 @@ Argument positive has to be set to false to represent such atoms.</p>
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
-<li><strong>lib:</strong>  A library object to store the function in.</li>
+<li><strong>lib:</strong>  A library object to store the string in.</li>
 <li><strong>string:</strong>  The given string.</li>
 </ul>
 </div>
@@ -314,6 +317,8 @@ preconstructed symbols <code><a href="#Infimum">Infimum</a></code> and <code><a 
     
             <div class="docstring"><p>Get the signature of function symbols.</p>
 
+<p>The Boolean in the signature is True if the associated symbol is positive.</p>
+
 <h6 id="returns">Returns:</h6>
 
 <blockquote>
@@ -325,7 +330,7 @@ preconstructed symbols <code><a href="#Infimum">Infimum</a></code> and <code><a 
                             </div>
                             <div id="Symbol.arguments" class="classattr">
                                 <div class="attr variable">
-            <span class="name">arguments</span><span class="annotation">: list</span>
+            <span class="name">arguments</span><span class="annotation">: Sequence[<a href="#Symbol">Symbol</a>]</span>
 
         
     </div>
@@ -345,6 +350,32 @@ preconstructed symbols <code><a href="#Infimum">Infimum</a></code> and <code><a 
     <a class="headerlink" href="#Symbol.arity"></a>
     
             <div class="docstring"><p>The arity of a function or tuple.</p>
+</div>
+
+
+                            </div>
+                            <div id="Symbol.is_negative" class="classattr">
+                                <div class="attr variable">
+            <span class="name">is_negative</span><span class="annotation">: bool</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Symbol.is_negative"></a>
+    
+            <div class="docstring"><p>Whether the symbol is negative, e.g, <code>-1</code> or <code>-p</code>.</p>
+</div>
+
+
+                            </div>
+                            <div id="Symbol.is_positive" class="classattr">
+                                <div class="attr variable">
+            <span class="name">is_positive</span><span class="annotation">: bool</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Symbol.is_positive"></a>
+    
+            <div class="docstring"><p>Whether the symbol is positive, e.g., <code>1</code> or <code>p</code>.</p>
 </div>
 
 
@@ -371,19 +402,6 @@ preconstructed symbols <code><a href="#Infimum">Infimum</a></code> and <code><a 
     <a class="headerlink" href="#Symbol.number"></a>
     
             <div class="docstring"><p>The numeric value.</p>
-</div>
-
-
-                            </div>
-                            <div id="Symbol.sign" class="classattr">
-                                <div class="attr variable">
-            <span class="name">sign</span><span class="annotation">: bool</span>
-
-        
-    </div>
-    <a class="headerlink" href="#Symbol.sign"></a>
-    
-            <div class="docstring"><p>Whether the symbol has a sign.</p>
 </div>
 
 
@@ -552,7 +570,7 @@ preconstructed symbols <code><a href="#Infimum">Infimum</a></code> and <code><a 
                     <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">Tuple_</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">arguments</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n"><a href="#Symbol">Symbol</a></span><span class="p">]</span></span><span class="return-annotation">) -> <span class="n"><a href="#Symbol">Symbol</a></span>:</span></span>
+        <span class="name">Tuple_</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">arguments</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n"><a href="#Symbol">Symbol</a></span><span class="p">]</span></span><span class="return-annotation">) -> <span class="n"><a href="#Symbol">Symbol</a></span>:</span></span>
 
         
     </div>
@@ -560,10 +578,12 @@ preconstructed symbols <code><a href="#Infimum">Infimum</a></code> and <code><a 
     
             <div class="docstring"><p>Construct a tuple symbol.</p>
 
+<p>This is a shortcut for <code>Function(lib, "", arguments)</code>.</p>
+
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
-<li><strong>lib:</strong>  A library object to store the function in.</li>
+<li><strong>lib:</strong>  A library object to store the tuple in.</li>
 <li><strong>arguments:</strong>  The arguments in form of a list of symbols.</li>
 </ul>
 </div>

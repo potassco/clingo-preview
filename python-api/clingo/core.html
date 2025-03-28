@@ -36,6 +36,12 @@
             <h2>API Documentation</h2>
                 <ul class="memberlist">
             <li>
+                    <a class="class" href="#ClingoError">ClingoError</a>
+                            <ul class="memberlist">
+                </ul>
+
+            </li>
+            <li>
                     <a class="class" href="#Library">Library</a>
                             <ul class="memberlist">
                         <li>
@@ -55,6 +61,36 @@
                         </li>
                         <li>
                                 <a class="variable" href="#Location.end">end</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#LogLevel">LogLevel</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#LogLevel.__init__">LogLevel</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#LogLevel.Debug">Debug</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#LogLevel.Error">Error</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#LogLevel.Info">Info</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#LogLevel.Trace">Trace</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#LogLevel.Warn">Warn</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#LogLevel.name">name</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#LogLevel.value">value</a>
                         </li>
                 </ul>
 
@@ -154,6 +190,26 @@
                 
                 
             </section>
+                <section id="ClingoError">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">ClingoError</span><wbr>(<span class="base">builtins.Exception</span>):
+
+        
+    </div>
+    <a class="headerlink" href="#ClingoError"></a>
+    
+            <div class="docstring"><p>Exception class for internal Clingo errors.</p>
+
+<p>This exception is typically used to propagate internal errors. It should
+be forwarded to the outer scope, where it serves as an indicator that an
+error has been logged. The string representation contains an internal
+error code that is <em>not</em> meant to be displayed to the user.</p>
+</div>
+
+
+                </section>
                 <section id="Library">
                     <div class="attr class">
             
@@ -164,21 +220,19 @@
     </div>
     <a class="headerlink" href="#Library"></a>
     
-            <div class="docstring"><p>Library objects are used to store the logger, symbols, strings, and scripts.</p>
+            <div class="docstring"><p>A library object that manages Clingo's core resources.</p>
 
-<p>Any function/or class that needs to create symbols takes this object as a
-parameter.</p>
+<p>This object is responsible for storing the logger, symbols, strings, and scripts.
+Functions and classes that need to create symbols require an instance of this class.</p>
 
-<p>Destroying the library object frees the logger, the symbols, and the scripts.</p>
-
-<p>This class implements the ContextManager interface.</p>
+<p>This class implements the <code>ContextManager</code> interface.</p>
 </div>
 
 
                             <div id="Library.__init__" class="classattr">
                                 <div class="attr function">
             
-        <span class="name">Library</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">shared</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>,</span><span class="param">	<span class="n">slotted</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>,</span><span class="param">	<span class="n">logger</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n"><a href="#MessageType">MessageType</a></span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="n">NoneType</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">message_limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">25</span></span>)</span>
+        <span class="name">Library</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">shared</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>,</span><span class="param">	<span class="n">slotted</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>,</span><span class="param">	<span class="n">log_level</span><span class="p">:</span> <span class="n"><a href="#LogLevel">LogLevel</a></span> <span class="o">=</span> <span class="n"><a href="#LogLevel.Info">LogLevel.Info</a></span>,</span><span class="param">	<span class="n">logger</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n"><a href="#MessageType">MessageType</a></span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="n">NoneType</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">message_limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">25</span></span>)</span>
 
         
     </div>
@@ -194,6 +248,7 @@ might improve performance.</li>
 <li><strong>shared:</strong>  Indicates whether symbols should be created in a thread-safe
 manner. Setting this to false might improve performance in
 single-threaded applications.</li>
+<li><strong>log_level:</strong>  The log level.</li>
 <li><strong>logger:</strong>  A logger to emit/intercept messages.</li>
 <li><strong>message_limit:</strong>  The maximum number of messages to emit.</li>
 </ul>
@@ -212,7 +267,11 @@ single-threaded applications.</li>
     </div>
     <a class="headerlink" href="#Location"></a>
     
-            <div class="docstring"><p>Location tracking object.</p>
+            <div class="docstring"><p>Represents a range of positions in a source file.</p>
+
+<p>The <code><a href="#Location">Location</a></code> object tracks the start and end positions of a region in the
+file. It is used for error reporting and debugging, providing information about
+the source of the program elements.</p>
 </div>
 
 
@@ -261,6 +320,125 @@ single-threaded applications.</li>
             <div class="docstring"><p>The end of the location.</p>
 </div>
 
+
+                            </div>
+                </section>
+                <section id="LogLevel">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">LogLevel</span>:
+
+        
+    </div>
+    <a class="headerlink" href="#LogLevel"></a>
+    
+            <div class="docstring"><p>The available log levels.</p>
+</div>
+
+
+                            <div id="LogLevel.__init__" class="classattr">
+                                <div class="attr function">
+            
+        <span class="name">LogLevel</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">value</span><span class="p">:</span> <span class="nb">int</span></span>)</span>
+
+        
+    </div>
+    <a class="headerlink" href="#LogLevel.__init__"></a>
+    
+    
+
+                            </div>
+                            <div id="LogLevel.Debug" class="classattr">
+                                <div class="attr variable">
+            <span class="name">Debug</span><span class="annotation">: ClassVar[<a href="#LogLevel">LogLevel</a>]</span>        =
+<span class="default_value"><a href="#LogLevel.Debug">LogLevel.Debug</a></span>
+
+        
+    </div>
+    <a class="headerlink" href="#LogLevel.Debug"></a>
+    
+            <div class="docstring"><p>Report debug messages (includes info level).</p>
+</div>
+
+
+                            </div>
+                            <div id="LogLevel.Error" class="classattr">
+                                <div class="attr variable">
+            <span class="name">Error</span><span class="annotation">: ClassVar[<a href="#LogLevel">LogLevel</a>]</span>        =
+<span class="default_value"><a href="#LogLevel.Error">LogLevel.Error</a></span>
+
+        
+    </div>
+    <a class="headerlink" href="#LogLevel.Error"></a>
+    
+            <div class="docstring"><p>Report error messages.</p>
+</div>
+
+
+                            </div>
+                            <div id="LogLevel.Info" class="classattr">
+                                <div class="attr variable">
+            <span class="name">Info</span><span class="annotation">: ClassVar[<a href="#LogLevel">LogLevel</a>]</span>        =
+<span class="default_value"><a href="#LogLevel.Info">LogLevel.Info</a></span>
+
+        
+    </div>
+    <a class="headerlink" href="#LogLevel.Info"></a>
+    
+            <div class="docstring"><p>Report info messages (includes warning level).</p>
+</div>
+
+
+                            </div>
+                            <div id="LogLevel.Trace" class="classattr">
+                                <div class="attr variable">
+            <span class="name">Trace</span><span class="annotation">: ClassVar[<a href="#LogLevel">LogLevel</a>]</span>        =
+<span class="default_value"><a href="#LogLevel.Trace">LogLevel.Trace</a></span>
+
+        
+    </div>
+    <a class="headerlink" href="#LogLevel.Trace"></a>
+    
+            <div class="docstring"><p>Report trace messages (includes debug level).</p>
+</div>
+
+
+                            </div>
+                            <div id="LogLevel.Warn" class="classattr">
+                                <div class="attr variable">
+            <span class="name">Warn</span><span class="annotation">: ClassVar[<a href="#LogLevel">LogLevel</a>]</span>        =
+<span class="default_value"><a href="#LogLevel.Warn">LogLevel.Warn</a></span>
+
+        
+    </div>
+    <a class="headerlink" href="#LogLevel.Warn"></a>
+    
+            <div class="docstring"><p>Report warning messages (includes error level).</p>
+</div>
+
+
+                            </div>
+                            <div id="LogLevel.name" class="classattr">
+                                <div class="attr variable">
+            <span class="name">name</span><span class="annotation">: str</span>
+
+        
+    </div>
+    <a class="headerlink" href="#LogLevel.name"></a>
+    
+    
+
+                            </div>
+                            <div id="LogLevel.value" class="classattr">
+                                <div class="attr variable">
+            <span class="name">value</span><span class="annotation">: int</span>
+
+        
+    </div>
+    <a class="headerlink" href="#LogLevel.value"></a>
+    
+    
 
                             </div>
                 </section>
@@ -449,7 +627,10 @@ single-threaded applications.</li>
     </div>
     <a class="headerlink" href="#Position"></a>
     
-            <div class="docstring"><p>Position object tracking locations in files.</p>
+            <div class="docstring"><p>Represents a position in a source file.</p>
+
+<p>A <code><a href="#Position">Position</a></code> object tracks the location of a symbol or construct
+within a source file, including its file name, line number, and column.</p>
 </div>
 
 
@@ -467,10 +648,10 @@ single-threaded applications.</li>
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
-<li><strong>lib:</strong>  The library to object storing symbols.</li>
-<li><strong>file:</strong>  The file name of the position.</li>
-<li><strong>line:</strong>  The line number of the postion.</li>
-<li><strong>column:</strong>  The column number of the postion.</li>
+<li><strong>lib:</strong>  The library object managing symbols.</li>
+<li><strong>file:</strong>  The file name where the position is located.</li>
+<li><strong>line:</strong>  The line number in the file.</li>
+<li><strong>column:</strong>  The column number in the line.</li>
 </ul>
 </div>
 
@@ -526,7 +707,13 @@ single-threaded applications.</li>
     </div>
     <a class="headerlink" href="#version"></a>
     
-            <div class="docstring"><p>Clingo's version as a tuple (major, minor, revision).</p>
+            <div class="docstring"><p>Get Clingo's version.</p>
+
+<h6 id="returns">Returns:</h6>
+
+<blockquote>
+  <p>A tuple (major, minor, revision) representing the Clingo version.</p>
+</blockquote>
 </div>
 
 

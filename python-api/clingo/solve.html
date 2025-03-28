@@ -218,8 +218,8 @@ variants leave room for additional computation before calling blocking functions
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ctl</span><span class="o">.</span><span class="n">parse_string</span><span class="p">(</span><span class="s2">&quot;1 { a; b } 1.&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ctl</span><span class="o">.</span><span class="n">ground</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">ctl</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">yield_</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">hnd</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">hnd</span><span class="p">:</span>
-<span class="gp">... </span>        <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">for</span> <span class="n">mdl</span> <span class="ow">in</span> <span class="n">hnd</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="nb">print</span><span class="p">(</span><span class="n">mdl</span><span class="p">)</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">hnd</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
 <span class="gp">...</span>
 <span class="go">a</span>
@@ -263,6 +263,7 @@ variants leave room for additional computation before calling blocking functions
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ctl</span><span class="o">.</span><span class="n">ground</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">ctl</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">yield_</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">async_</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">hnd</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="k">while</span> <span class="n">mdl</span> <span class="o">:=</span> <span class="n">hnd</span><span class="o">.</span><span class="n">model</span><span class="p">():</span>
+<span class="gp">... </span>        <span class="nb">print</span><span class="p">(</span><span class="n">mdl</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="n">hnd</span><span class="o">.</span><span class="n">resume</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">hnd</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
 <span class="gp">...</span>
@@ -323,7 +324,7 @@ variants leave room for additional computation before calling blocking functions
                                 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">extend</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">symbols</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span><span class="p">]</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+        <span class="name">extend</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">symbols</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span><span class="p">]</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
 
         
     </div>
@@ -362,8 +363,8 @@ consequence, respectively.</p>
 <p>While enumerating cautious or brave consequences, there is partial information
 about which literals are consequences. The current state of a literal can be
 requested using this function. If this function is used during normal model
-enumeration, the function just returns whether a literal is true of false in
-the current model.</p>
+enumeration, it simply returns whether the literal is true or false in the
+current model.</p>
 
 <h6 id="arguments">Arguments:</h6>
 
@@ -411,7 +412,7 @@ the current model.</p>
                                 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">symbols</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">shown</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>,</span><span class="param">	<span class="n">atoms</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>,</span><span class="param">	<span class="n">terms</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>,</span><span class="param">	<span class="n">theory</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span></span><span class="return-annotation">) -> <span class="nb">list</span><span class="p">[</span><span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span><span class="p">]</span>:</span></span>
+        <span class="name">symbols</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">shown</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>,</span><span class="param">	<span class="n">atoms</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>,</span><span class="param">	<span class="n">terms</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>,</span><span class="param">	<span class="n">theory</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span></span><span class="return-annotation">) -> <span class="n">Sequence</span><span class="p">[</span><span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span><span class="p">]</span>:</span></span>
 
         
     </div>
@@ -423,10 +424,16 @@ the current model.</p>
 
 <ul>
 <li><strong>shown:</strong>  Include shown atoms and terms.</li>
-<li><strong>atoms:</strong>  Include all true atoms including hidden ones.</li>
+<li><strong>atoms:</strong>  Include all true atoms, including hidden ones.</li>
 <li><strong>terms:</strong>  Include shown terms.</li>
 <li><strong>theory:</strong>  Include terms added by external theories.</li>
 </ul>
+
+<h6 id="returns">Returns:</h6>
+
+<blockquote>
+  <p>A sequence of symbols present in the model.</p>
+</blockquote>
 </div>
 
 
@@ -632,7 +639,7 @@ the current model.</p>
                                 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">add_clause</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">clause</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span><span class="p">,</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">|</span> <span class="nb">int</span><span class="p">]</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+        <span class="name">add_clause</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">clause</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span><span class="p">,</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">|</span> <span class="nb">int</span><span class="p">]</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
 
         
     </div>
@@ -643,7 +650,7 @@ the current model.</p>
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
-<li><strong>literals:</strong>  The literals of the clause.</li>
+<li><strong>clause:</strong>  The literals of the clause.</li>
 </ul>
 </div>
 
@@ -700,7 +707,7 @@ though.</p>
     
             <div class="docstring"><p>Cancel the running search.</p>
 
-<p>See also: <code>clingo.control.Control.interrupt</code></p>
+<p>See also: <code><a href="control.html#Control.interrupt">clingo.control.Control.interrupt</a></code></p>
 </div>
 
 
@@ -732,9 +739,9 @@ though.</p>
     
             <div class="docstring"><p>Get the solve result.</p>
 
-<p>This is always the last function that should be called on a handle to ensure
-that the search is properly terminated. It might be preceded by a call to
-cancel to stop a running search.</p>
+<p>This is always the last function to be called on a handle to ensure that the
+search is properly terminated. It might be preceded by a call to cancel to stop
+the search.</p>
 </div>
 
 
@@ -749,7 +756,7 @@ cancel to stop a running search.</p>
     </div>
     <a class="headerlink" href="#SolveHandle.last"></a>
     
-            <div class="docstring"><p>Get the last computed model if there is any.</p>
+            <div class="docstring"><p>Get the last computed model, if any.</p>
 
 <p>If the search is not completed yet or the problem is unsatisfiable, the
 function returns <code>None</code>.</p>
@@ -800,25 +807,23 @@ in the background.</p>
     </div>
     <a class="headerlink" href="#SolveHandle.wait"></a>
     
-            <div class="docstring"><p>Wait for solve call to finish or the next result with an optional timeout.</p>
+            <div class="docstring"><p>Wait for the solve call to finish or the next result with an optional timeout.</p>
 
-<p>If a timeout is given, the behavior of the function changes depending on the
-sign of the timeout. If a postive timeout is given, the function blocks for the
-given amount time or until a result is ready. If the timeout is negative, the
-function will block until a result is ready, which also corresponds to the
-behavior of the function if no timeout is given. A timeout of zero can be used
-to poll if a result is ready.</p>
+<p>If a timeout is provided, the function blocks for the given duration or until a
+result is ready. A positive timeout blocks for that amount of time. A negative
+timeout blocks until a result is available, and a zero timeout allows polling
+for a result.</p>
 
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
-<li><strong>timeout:</strong>  If a timeout is given, the function blocks for at most timeout seconds.</li>
+<li><strong>timeout:</strong>  The maximum time to block in seconds.</li>
 </ul>
 
 <h6 id="returns">Returns:</h6>
 
 <blockquote>
-  <p>Indicates whether the solve call has finished or the next result is ready.</p>
+  <p>Whether the solve call has finished or the next result is ready.</p>
 </blockquote>
 </div>
 
@@ -873,7 +878,7 @@ to poll if a result is ready.</p>
     </div>
     <a class="headerlink" href="#SolveResult.satisfiable"></a>
     
-            <div class="docstring"><p>Whether there was at least one model.</p>
+            <div class="docstring"><p>Whether at least one model was found.</p>
 </div>
 
 

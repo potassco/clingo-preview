@@ -153,27 +153,26 @@ enumerate all models:</p>
 </code></pre>
 </div>
 
-<p>To list the subgroups of an option group, use the <code><a href="#Config.attributes">attributes</a></code> member.
-Furthermore, there are meta options having key <code>configuration</code>. Assigning a
-meta option sets a number of related options. To get further information about
-an option or option group, use <code><a href="#Config.description">description</a></code>.</p>
+<p>Use the <code><a href="#Config.attributes">attributes</a></code> member to list subgroups of an option group. Meta options
+with key <code>configuration</code> set multiple related options when assigned. Use
+<code><a href="#Config.description">description</a></code> for more information about an option or option group.</p>
 
-<p>Note that the first element of a sequence can be accessed directly without
-going through index 0. Furthermore, config objects have a YAML-like string
-representation to inspect the current configuration. To provide full
-information and avoid duplication in the string representation of sequences,
-attributes are only added if the sequence is currently emtpy.</p>
+<p>Notes:</p>
 
-<h2 id="notes">Notes</h2>
-
-<p>The value of an option is always a string and any value assigned to an option
-is automatically converted into a string.</p>
+<ul>
+<li>The first element of a sequence can be accessed directly without index 0.</li>
+<li>Config objects have a YAML-like string representation for inspection.</li>
+<li>In string representations of sequences, attributes (for index 0) are only
+added if the sequence is empty.</li>
+<li>Option values are always strings; assigned values are automatically converted
+to strings.</li>
+</ul>
 </div>
 
 
                             <div id="Config.attributes" class="classattr">
                                 <div class="attr variable">
-            <span class="name">attributes</span><span class="annotation">: list[str]</span>
+            <span class="name">attributes</span><span class="annotation">: Sequence[str]</span>
 
         
     </div>
