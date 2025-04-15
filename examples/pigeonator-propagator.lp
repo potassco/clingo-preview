@@ -32,9 +32,9 @@ class Pigeonator(Propagator):
             if state.get(hole, 0) == lit:
                 del state[hole]
 
-def main(lib, prg, parts):
+def main(lib, prg):
     prg.register_propagator(Pigeonator())
-    prg.main(parts)
+    prg.main()
 
 #end.
 

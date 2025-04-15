@@ -362,26 +362,23 @@ class DLPropagator(Propagator):
                 return lit
         raise RuntimeError("must not happen")
 
-def main(lib, control, parts):
+def main(lib, control):
     control.parse_string(THEORY)
     # hand over control to main in parse/rewrite mode
     if control.mode in (ControlMode.Parse, ControlMode.Rewrite):
-        control.main(parts)
+        control.main()
         return
     propagator = DLPropagator(lib)
     control.register_propagator(propagator)
     minimize = control.const_map.get("minimize")
     # proceed with normal solving if no variable is to be minimized
     if minimize is None:
-        for part in parts:
-            control.ground(part)
-            with control.solve(on_model=propagator.on_model) as hnd:
-                hnd.get()
+        control.ground(control.parts)
+        with control.solve(on_model=propagator.on_model) as hnd:
+            hnd.get()
         return
     # minimize the given varibale
-    if len(parts) != 1:
-        raise RuntimeError("minimization supports only one solving step")
-    control.ground(parts[0])
+    control.ground(control.parts)
     control.parse_string("#program __bound(b, v). &diff { v-0 } <= b.")
     bound = None
     def on_model(model: Model):
