@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="pdoc 15.0.1"/>
+    <meta name="generator" content="pdoc 15.0.0"/>
     <title>clingo.theory API documentation</title>
 
     <style>/*! * Bootstrap Reboot v5.0.0 (https://getbootstrap.com/) * Copyright 2011-2021 The Bootstrap Authors * Copyright 2011-2021 Twitter, Inc. * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE) * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md) */*,::after,::before{box-sizing:border-box}@media (prefers-reduced-motion:no-preference){:root{scroll-behavior:smooth}}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;background-color:#fff;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}hr{margin:1rem 0;color:inherit;background-color:currentColor;border:0;opacity:.25}hr:not([size]){height:1px}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2}h1{font-size:calc(1.375rem + 1.5vw)}@media (min-width:1200px){h1{font-size:2.5rem}}h2{font-size:calc(1.325rem + .9vw)}@media (min-width:1200px){h2{font-size:2rem}}h3{font-size:calc(1.3rem + .6vw)}@media (min-width:1200px){h3{font-size:1.75rem}}h4{font-size:calc(1.275rem + .3vw)}@media (min-width:1200px){h4{font-size:1.5rem}}h5{font-size:1.25rem}h6{font-size:1rem}p{margin-top:0;margin-bottom:1rem}abbr[data-bs-original-title],abbr[title]{-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}ol,ul{padding-left:2rem}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:.875em}mark{padding:.2em;background-color:#fcf8e3}sub,sup{position:relative;font-size:.75em;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#0d6efd;text-decoration:underline}a:hover{color:#0a58ca}a:not([href]):not([class]),a:not([href]):not([class]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em;direction:ltr;unicode-bidi:bidi-override}pre{display:block;margin-top:0;margin-bottom:1rem;overflow:auto;font-size:.875em}pre code{font-size:inherit;color:inherit;word-break:normal}code{font-size:.875em;color:#d63384;word-wrap:break-word}a>code{color:inherit}kbd{padding:.2rem .4rem;font-size:.875em;color:#fff;background-color:#212529;border-radius:.2rem}kbd kbd{padding:0;font-size:1em;font-weight:700}figure{margin:0 0 1rem}img,svg{vertical-align:middle}table{caption-side:bottom;border-collapse:collapse}caption{padding-top:.5rem;padding-bottom:.5rem;color:#6c757d;text-align:left}th{text-align:inherit;text-align:-webkit-match-parent}tbody,td,tfoot,th,thead,tr{border-color:inherit;border-style:solid;border-width:0}label{display:inline-block}button{border-radius:0}button:focus:not(:focus-visible){outline:0}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,select{text-transform:none}[role=button]{cursor:pointer}select{word-wrap:normal}select:disabled{opacity:1}[list]::-webkit-calendar-picker-indicator{display:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}::-moz-focus-inner{padding:0;border-style:none}textarea{resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{float:left;width:100%;padding:0;margin-bottom:.5rem;font-size:calc(1.275rem + .3vw);line-height:inherit}@media (min-width:1200px){legend{font-size:1.5rem}}legend+*{clear:left}::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-fields-wrapper,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-text,::-webkit-datetime-edit-year-field{padding:0}::-webkit-inner-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:textfield}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-color-swatch-wrapper{padding:0}::file-selector-button{font:inherit}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}iframe{border:0}summary{display:list-item;cursor:pointer}progress{vertical-align:baseline}[hidden]{display:none!important}</style>
@@ -46,6 +46,12 @@
                                 <a class="function" href="#Theory.on_model">on_model</a>
                         </li>
                         <li>
+                                <a class="function" href="#Theory.on_stats">on_stats</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Theory.prepare">prepare</a>
+                        </li>
+                        <li>
                                 <a class="function" href="#Theory.register">register</a>
                         </li>
                         <li>
@@ -53,6 +59,12 @@
                         </li>
                         <li>
                                 <a class="function" href="#Theory.rewrite">rewrite</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Theory.rewrite_files">rewrite_files</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Theory.rewrite_string">rewrite_string</a>
                         </li>
                         <li>
                                 <a class="function" href="#Theory.validate_options">validate_options</a>
@@ -68,6 +80,18 @@
                         </li>
                         <li>
                                 <a class="variable" href="#Theory.version">version</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#TheoryAssignment">TheoryAssignment</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#TheoryAssignment.at">at</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#TheoryAssignment.lookup">lookup</a>
                         </li>
                 </ul>
 
@@ -112,18 +136,19 @@
                             <div id="Theory.__init__" class="classattr">
                                 <div class="attr function">
             
-        <span class="name">Theory</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">theory_pointer</span><span class="p">:</span> <span class="n">Any</span></span>)</span>
+        <span class="name">Theory</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">library</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>, </span><span class="param"><span class="n">create</span><span class="p">:</span> <span class="n">Any</span></span>)</span>
 
         
     </div>
     <a class="headerlink" href="#Theory.__init__"></a>
     
-            <div class="docstring"><p>Construct a theory object from the given pointer.</p>
+            <div class="docstring"><p>Construct a theory object.</p>
 
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
-<li><strong>theory_pointer:</strong>  A capsule object holding a clingo_theory_t pointer.</li>
+<li><strong>library:</strong>  Library object to store symbols in.</li>
+<li><strong>create:</strong>  A capsule object holding a function pointer to initialize the theory.</li>
 </ul>
 </div>
 
@@ -133,7 +158,7 @@
                                 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">assignment</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">thread_id</span><span class="p">:</span> <span class="nb">int</span></span><span class="return-annotation">) -> <span class="n">Iterator</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span><span class="p">,</span> <span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span><span class="p">]]</span>:</span></span>
+        <span class="name">assignment</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">thread_id</span><span class="p">:</span> <span class="nb">int</span></span><span class="return-annotation">) -> <span class="n"><a href="#TheoryAssignment">TheoryAssignment</a></span>:</span></span>
 
         
     </div>
@@ -209,6 +234,51 @@ function.</p>
 
 
                             </div>
+                            <div id="Theory.on_stats" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">on_stats</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">step</span><span class="p">:</span> <span class="n"><a href="stats.html#Stats">clingo.stats.Stats</a></span>, </span><span class="param"><span class="n">accu</span><span class="p">:</span> <span class="n"><a href="stats.html#Stats">clingo.stats.Stats</a></span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Theory.on_stats"></a>
+    
+            <div class="docstring"><p>Let the theory update statistics.</p>
+
+<p>Some theories extend the statistics here.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>step:</strong>  The per step statistics.</li>
+<li><strong>accu:</strong>  The accumulated statistics.</li>
+</ul>
+</div>
+
+
+                            </div>
+                            <div id="Theory.prepare" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">prepare</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">control</span><span class="p">:</span> <span class="n"><a href="control.html#Control">clingo.control.Control</a></span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Theory.prepare"></a>
+    
+            <div class="docstring"><p>Prepare the theory for solving.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>control:</strong>  The control object using for solving.</li>
+</ul>
+</div>
+
+
+                            </div>
                             <div id="Theory.register" class="classattr">
                                 <div class="attr function">
             
@@ -276,6 +346,52 @@ control object.</p>
 <ul>
 <li><strong>statement:</strong>  The statement to rewrite.</li>
 <li><strong>callback:</strong>  The callback receiving rewritten statements.</li>
+</ul>
+</div>
+
+
+                            </div>
+                            <div id="Theory.rewrite_files" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">rewrite_files</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">control</span><span class="p">:</span> <span class="n"><a href="control.html#Control">clingo.control.Control</a></span>,</span><span class="param">	<span class="n">files</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Theory.rewrite_files"></a>
+    
+            <div class="docstring"><p>Rewrite the program in the given files and add it to the control.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>lib:</strong>  The library to store symbols.</li>
+<li><strong>control:</strong>  The target control..</li>
+<li><strong>files:</strong>  The files to parse.</li>
+</ul>
+</div>
+
+
+                            </div>
+                            <div id="Theory.rewrite_string" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">rewrite_string</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">control</span><span class="p">:</span> <span class="n"><a href="control.html#Control">clingo.control.Control</a></span>,</span><span class="param">	<span class="n">program</span><span class="p">:</span> <span class="nb">str</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Theory.rewrite_string"></a>
+    
+            <div class="docstring"><p>Rewrite the given program adding it to the control object.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>lib:</strong>  The library to store symbols.</li>
+<li><strong>control:</strong>  The target control..</li>
+<li><strong>program:</strong>  The program to parse.</li>
 </ul>
 </div>
 
@@ -364,6 +480,75 @@ called after <code><a href="#Theory.on_model">on_model</a></code> while the solv
     <a class="headerlink" href="#Theory.version"></a>
     
             <div class="docstring"><p>Get the version of the theory (major, minor, revision).</p>
+</div>
+
+
+                            </div>
+                </section>
+                <section id="TheoryAssignment">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">TheoryAssignment</span>:
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryAssignment"></a>
+    
+            <div class="docstring"><p>Assignment of theory values.</p>
+</div>
+
+
+                            <div id="TheoryAssignment.at" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">at</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">index</span><span class="p">:</span> <span class="nb">int</span></span><span class="return-annotation">) -> <span class="nb">tuple</span><span class="p">[</span><span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span><span class="p">,</span> <span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span><span class="p">]</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryAssignment.at"></a>
+    
+            <div class="docstring"><p>Get the value at the given index in the assignment.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>index:</strong>  The index of the value</li>
+</ul>
+
+<h6 id="returns">Returns:</h6>
+
+<blockquote>
+  <p>The value.</p>
+</blockquote>
+</div>
+
+
+                            </div>
+                            <div id="TheoryAssignment.lookup" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">lookup</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">symbol</span><span class="p">:</span> <span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span></span><span class="return-annotation">) -> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#TheoryAssignment.lookup"></a>
+    
+            <div class="docstring"><p>Get the value index of the symbol in the assignment.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>symbol:</strong>  The symbol to lookup.</li>
+</ul>
+
+<h6 id="returns">Returns:</h6>
+
+<blockquote>
+  <p>The value or None if unnassigned.</p>
+</blockquote>
 </div>
 
 

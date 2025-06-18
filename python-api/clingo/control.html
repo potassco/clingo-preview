@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="pdoc 15.0.1"/>
+    <meta name="generator" content="pdoc 15.0.0"/>
     <title>clingo.control API documentation</title>
 
     <style>/*! * Bootstrap Reboot v5.0.0 (https://getbootstrap.com/) * Copyright 2011-2021 The Bootstrap Authors * Copyright 2011-2021 Twitter, Inc. * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE) * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md) */*,::after,::before{box-sizing:border-box}@media (prefers-reduced-motion:no-preference){:root{scroll-behavior:smooth}}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;background-color:#fff;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}hr{margin:1rem 0;color:inherit;background-color:currentColor;border:0;opacity:.25}hr:not([size]){height:1px}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2}h1{font-size:calc(1.375rem + 1.5vw)}@media (min-width:1200px){h1{font-size:2.5rem}}h2{font-size:calc(1.325rem + .9vw)}@media (min-width:1200px){h2{font-size:2rem}}h3{font-size:calc(1.3rem + .6vw)}@media (min-width:1200px){h3{font-size:1.75rem}}h4{font-size:calc(1.275rem + .3vw)}@media (min-width:1200px){h4{font-size:1.5rem}}h5{font-size:1.25rem}h6{font-size:1rem}p{margin-top:0;margin-bottom:1rem}abbr[data-bs-original-title],abbr[title]{-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}ol,ul{padding-left:2rem}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:.875em}mark{padding:.2em;background-color:#fcf8e3}sub,sup{position:relative;font-size:.75em;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#0d6efd;text-decoration:underline}a:hover{color:#0a58ca}a:not([href]):not([class]),a:not([href]):not([class]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em;direction:ltr;unicode-bidi:bidi-override}pre{display:block;margin-top:0;margin-bottom:1rem;overflow:auto;font-size:.875em}pre code{font-size:inherit;color:inherit;word-break:normal}code{font-size:.875em;color:#d63384;word-wrap:break-word}a>code{color:inherit}kbd{padding:.2rem .4rem;font-size:.875em;color:#fff;background-color:#212529;border-radius:.2rem}kbd kbd{padding:0;font-size:1em;font-weight:700}figure{margin:0 0 1rem}img,svg{vertical-align:middle}table{caption-side:bottom;border-collapse:collapse}caption{padding-top:.5rem;padding-bottom:.5rem;color:#6c757d;text-align:left}th{text-align:inherit;text-align:-webkit-match-parent}tbody,td,tfoot,th,thead,tr{border-color:inherit;border-style:solid;border-width:0}label{display:inline-block}button{border-radius:0}button:focus:not(:focus-visible){outline:0}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,select{text-transform:none}[role=button]{cursor:pointer}select{word-wrap:normal}select:disabled{opacity:1}[list]::-webkit-calendar-picker-indicator{display:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}::-moz-focus-inner{padding:0;border-style:none}textarea{resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{float:left;width:100%;padding:0;margin-bottom:.5rem;font-size:calc(1.275rem + .3vw);line-height:inherit}@media (min-width:1200px){legend{font-size:1.5rem}}legend+*{clear:left}::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-fields-wrapper,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-text,::-webkit-datetime-edit-year-field{padding:0}::-webkit-inner-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:textfield}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-color-swatch-wrapper{padding:0}::file-selector-button{font:inherit}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}iframe{border:0}summary{display:list-item;cursor:pointer}progress{vertical-align:baseline}[hidden]{display:none!important}</style>
@@ -42,6 +42,9 @@
                                 <a class="function" href="#Control.__init__">Control</a>
                         </li>
                         <li>
+                                <a class="function" href="#Control.discard">discard</a>
+                        </li>
+                        <li>
                                 <a class="function" href="#Control.ground">ground</a>
                         </li>
                         <li>
@@ -69,6 +72,9 @@
                                 <a class="function" href="#Control.solve">solve</a>
                         </li>
                         <li>
+                                <a class="function" href="#Control.write_aspif">write_aspif</a>
+                        </li>
+                        <li>
                                 <a class="variable" href="#Control.backend">backend</a>
                         </li>
                         <li>
@@ -85,6 +91,9 @@
                         </li>
                         <li>
                                 <a class="variable" href="#Control.mode">mode</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Control.parts">parts</a>
                         </li>
                         <li>
                                 <a class="variable" href="#Control.stats">stats</a>
@@ -143,8 +152,8 @@
 small test program:</p>
 
 <div class="pdoc-code codehilite">
-<pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span><span class="w"> </span><span class="nn"><a href="core.html">clingo.core</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">Library</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span><span class="w"> </span><span class="nn"><a href="">clingo.control</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">Control</span>
+<pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn"><a href="core.html">clingo.core</a></span> <span class="kn">import</span> <span class="n">Library</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn"><a href="">clingo.control</a></span> <span class="kn">import</span> <span class="n">Control</span>
 <span class="o">&gt;&gt;&gt;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">lib</span> <span class="o">=</span> <span class="n">Library</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ctl</span> <span class="o">=</span> <span class="n">Control</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span>
@@ -159,16 +168,16 @@ small test program:</p>
 <p>The second example shows how to call functions from within a program:</p>
 
 <div class="pdoc-code codehilite">
-<pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span><span class="w"> </span><span class="nn"><a href="core.html">clingo.core</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">Library</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span><span class="w"> </span><span class="nn"><a href="symbol.html">clingo.symbol</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">Number</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span><span class="w"> </span><span class="nn"><a href="">clingo.control</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">Control</span>
+<pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn"><a href="core.html">clingo.core</a></span> <span class="kn">import</span> <span class="n">Library</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn"><a href="symbol.html">clingo.symbol</a></span> <span class="kn">import</span> <span class="n">Number</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn"><a href="">clingo.control</a></span> <span class="kn">import</span> <span class="n">Control</span>
 <span class="o">&gt;&gt;&gt;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span><span class="w"> </span><span class="nc">Context</span><span class="p">:</span>
-<span class="o">...</span>     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lib</span><span class="p">):</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Context</span><span class="p">:</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lib</span><span class="p">):</span>
 <span class="o">...</span>       <span class="bp">self</span><span class="o">.</span><span class="n">lib</span> <span class="o">=</span> <span class="n">lib</span>
-<span class="o">...</span>     <span class="k">def</span><span class="w"> </span><span class="nf">inc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">inc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
 <span class="o">...</span>         <span class="k">return</span> <span class="n">Number</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lib</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">number</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-<span class="o">...</span>     <span class="k">def</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">seq</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
 <span class="o">...</span>         <span class="k">return</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span>
 <span class="o">...</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">lib</span> <span class="o">=</span> <span class="n">Library</span><span class="p">()</span>
@@ -220,6 +229,28 @@ small test program:</p>
 <ul>
 <li><strong>lib:</strong>  The library storing symbols and scripts.</li>
 <li><strong>options:</strong>  The command line options to initialize the control object.</li>
+</ul>
+</div>
+
+
+                            </div>
+                            <div id="Control.discard" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">discard</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">minimize</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>, </span><span class="param"><span class="n">project</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Control.discard"></a>
+    
+            <div class="docstring"><p>Discard statements of the selected types.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>minimize:</strong>  Discard all minimize and weak constraints (default: False).</li>
+<li><strong>project:</strong>  Discard all previously added project  statements (default: False).</li>
 </ul>
 </div>
 
@@ -299,7 +330,7 @@ possible.</p>
                                 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">main</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">parts</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span><span class="p">]]]]]</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+        <span class="name">main</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
 
         
     </div>
@@ -314,21 +345,12 @@ dispatch execution to a script's <code><a href="#Control.main">main</a></code> f
 <p>If solving, the function proceeds as follows:</p>
 
 <ol>
-<li>Each set of program parts in <code>parts</code> is grounded sequentially.</li>
+<li>Each set of program parts in <code><a href="#Control.parts">parts</a></code> is grounded sequentially.</li>
 <li>After grounding each set, solving is performed immediately.</li>
 </ol>
 
 <p>Before calling <code><a href="#Control.main">main()</a></code>, the control object can be prepared by parsing
 programs, registering propagators, or performing other setup steps.</p>
-
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>parts:</strong>          A sequence of part sets to ground and solve. Each part set consists of
-tuples containing a section name and symbolic arguments. If <code>None</code>,
-the function defaults to grounding and solving the implicit <code><a href="#Control.base">base</a></code>
-program.</li>
-</ul>
 </div>
 
 
@@ -350,7 +372,7 @@ program.</li>
 <ul>
 <li><strong>observer:</strong>  The program observer to inspect the program.
 preprocess:
-        Whether the program should be preprocessed first (default: true).</li>
+        Whether the program should be preprocessed first (default: True).</li>
 </ul>
 </div>
 
@@ -425,7 +447,7 @@ preprocess:
                                 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">solve</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">assumptions</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span><span class="p">,</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">|</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>,</span><span class="param">	<span class="n">on_model</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n"><a href="solve.html#Model">clingo.solve.Model</a></span><span class="p">],</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">on_stats</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n"><a href="stats.html#Stats">clingo.stats.Stats</a></span><span class="p">,</span> <span class="n"><a href="stats.html#Stats">clingo.stats.Stats</a></span><span class="p">],</span> <span class="n">NoneType</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">yield_</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>,</span><span class="param">	<span class="n">async_</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span></span><span class="return-annotation">) -> <span class="n"><a href="solve.html#SolveHandle">clingo.solve.SolveHandle</a></span>:</span></span>
+        <span class="name">solve</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">assumptions</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span><span class="p">,</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">|</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>,</span><span class="param">	<span class="n">on_model</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n"><a href="solve.html#Model">clingo.solve.Model</a></span><span class="p">],</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">on_unsat</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">NoneType</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">on_stats</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n"><a href="stats.html#Stats">clingo.stats.Stats</a></span><span class="p">,</span> <span class="n"><a href="stats.html#Stats">clingo.stats.Stats</a></span><span class="p">],</span> <span class="n">NoneType</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">on_finish</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n"><a href="solve.html#SolveResult">clingo.solve.SolveResult</a></span><span class="p">],</span> <span class="n">NoneType</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">yield_</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>,</span><span class="param">	<span class="n">async_</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span></span><span class="return-annotation">) -> <span class="n"><a href="solve.html#SolveHandle">clingo.solve.SolveHandle</a></span>:</span></span>
 
         
     </div>
@@ -457,8 +479,6 @@ Two <code><a href="stats.html#Stats">clingo.stats.Stats</a></code> objects are p
 accumulated stats.</li>
 <li><strong>on_finish:</strong>  Optional callback called once search has finished. A
 <code><a href="solve.html#SolveResult">clingo.solve.SolveResult</a></code> is passed to the callback.</li>
-<li><strong>on_core:</strong>  Optional callback invoked when an unsatisfiable core is found.
-It receives the subset of assumptions that caused unsatisfiability.</li>
 <li><strong>yield_:</strong>  If <code>True</code>, the returned <code><a href="solve.html#SolveHandle">clingo.solve.SolveHandle</a></code> is iterable,
 yielding  <code><a href="solve.html#Model">clingo.solve.Model</a></code> objects during solving.</li>
 <li><strong>async_:</strong>  If <code>True</code>, solving runs asynchronously in a separate thread.
@@ -484,6 +504,34 @@ from a separate thread.</li>
 <blockquote>
   <p><a href="solve.html">clingo.solve</a>: Contains examples on using this function.</p>
 </blockquote>
+</div>
+
+
+                            </div>
+                            <div id="Control.write_aspif" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">write_aspif</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">path</span><span class="p">:</span> <span class="nb">str</span>,</span><span class="param">	<span class="n">symbols</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>,</span><span class="param">	<span class="n">append</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>,</span><span class="param">	<span class="n">preamble</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">preprocess</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Control.write_aspif"></a>
+    
+            <div class="docstring"><p>Write the current logic programs to the given file.</p>
+
+<p>If append is true, a file will be created if none exists yet. If preamble is
+None, then the aspif preamble is written for newly created files and omitted
+for existing files.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>path:</strong>  The path to write the program to.</li>
+<li><strong>append:</strong>  Whether to append to an existing file.</li>
+<li><strong>preamble:</strong>  Whether to write the aspif preamble.</li>
+<li><strong>preprocess:</strong>  Whether to preprocess the program before writing.</li>
+</ul>
 </div>
 
 
@@ -562,6 +610,19 @@ from a separate thread.</li>
     <a class="headerlink" href="#Control.mode"></a>
     
             <div class="docstring"><p>Get the application mode.</p>
+</div>
+
+
+                            </div>
+                            <div id="Control.parts" class="classattr">
+                                <div class="attr variable">
+            <span class="name">parts</span><span class="annotation">: Optional[Sequence[tuple[str, Sequence[<a href="symbol.html#Symbol">clingo.symbol.Symbol</a>]]]]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Control.parts"></a>
+    
+            <div class="docstring"><p>Get/set the program parts to ground.</p>
 </div>
 
 
