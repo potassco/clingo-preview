@@ -1,6 +1,3 @@
 theme: minima
-minima:
-  social_links:
-    - title: "View source on GitHub"
-      icon: github
-      url: "https://github.com/yourusername/your-repo"
+title: Clingo 6
+description: Run clingo 6 in the browser.
