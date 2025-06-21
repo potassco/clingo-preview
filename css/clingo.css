@@ -96,3 +96,17 @@ input:checked + .slider:before {
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
+.site-footer {
+  padding-top: 0;
+  padding-bottom: 0;
+  min-height: 55.95px;
+}
+.site-footer .wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 55.95px;
+}
+.site-footer .wrapper a {
+  color: #000 !important;
+}
