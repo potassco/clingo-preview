@@ -2,6 +2,7 @@ const Clingo = (() => {
     const DomInteraction = (() => {
         const Args = {
             stats: document.getElementById("stats"),
+            profile: document.getElementById("profile"),
             project: document.getElementById("project"),
             reasoningMode: document.getElementById("reasoning-mode"),
             logLevel: document.getElementById("log-level"),
@@ -68,6 +69,16 @@ const Clingo = (() => {
             }
             args.push(...["--mode", Args.mode.value])
             args.push(...["--log-level", Args.logLevel.value])
+            switch (Args.profile.value) {
+                case "compact":
+                    args.push("--profile=compact")
+                    break
+                case "detailed":
+                    args.push("--profile")
+                    break
+                default:
+                    break
+            }
             if (Args.stats.checked) {
                 args.push("--stats")
             }
