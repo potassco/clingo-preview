@@ -1,4 +1,4 @@
-importScripts("https://cdn.jsdelivr.net/pyodide/v0.27.7/full/pyodide.js");
+importScripts("https://cdn.jsdelivr.net/pyodide/v0.28.0/full/pyodide.js");
 
 const messageSchemas = {
     run: {
@@ -59,7 +59,7 @@ async function init() {
     pyodide = await loadPyodide();
     await pyodide.loadPackage("micropip");
     const micropip = pyodide.pyimport("micropip");
-    await micropip.install(new URL("./clingo-6.0.0-cp312-cp312-pyodide_2024_0_wasm32.whl", self.location.href).toString())
+    await micropip.install(new URL("./clingo-6.0.0-cp313-cp313-pyodide_2025_0_wasm32.whl", self.location.href).toString())
     pyodide.setStdout({ batched: (msg) => postMessage({ type: "stdout", value: msg }) });
     pyodide.setStderr({ batched: (msg) => postMessage({ type: "stderr", value: msg }) });
     await pyodide.runPythonAsync(code);
