@@ -377,7 +377,7 @@ def main(lib, control):
         with control.solve(on_model=propagator.on_model) as hnd:
             hnd.get()
         return
-    # minimize the given varibale
+    # minimize the given variable
     control.ground(control.parts)
     control.parse_string("#program __bound(b, v). &diff { v-0 } <= b.")
     bound = None
