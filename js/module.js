@@ -248,10 +248,17 @@ const Clingo = (() => {
 
         const getInput = () => {
             let result = [];
+            let first = true;
             for (const s of sessions) {
                 if (s.type === "python") {
                     result.push(`#script(python)\n${s.session.getValue()}\n#end.`)
                 } else {
+                    if (!first) {
+                        result.push("#program base.")
+                    }
+                    else {
+                        first = false;
+                    }
                     result.push(s.session.getValue())
                 }
             }
