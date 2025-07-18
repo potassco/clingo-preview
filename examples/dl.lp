@@ -1,5 +1,10 @@
+%%% Tab: instance.lp
+            machine(1).      machine(2).
+task(a). duration(a,1,3). duration(a,2,4).
+task(b). duration(b,1,1). duration(b,2,6).
+task(c). duration(c,1,5). duration(c,2,5).
+%%% Tab: dl.py
 #script(python)
-
 """
 This is a scaled down version of clingo-dl show casing how to implement a
 propagator for difference logic.
@@ -403,7 +408,7 @@ def main(lib, control):
     if bound is not None:
         print("Optimum found")
 #end.
-
+%%% Tab: encoding.lp
 #const minimize=bound.
 
 1 { cycle(T,U) : task(U), U != T } 1 :- task(T).
@@ -425,8 +430,3 @@ seq((T1,M),(T2,M),D) :- permutation(T1,T2), duration(T1,M,D).
 &diff { (T,M)-bound } <= -D :- duration(T,M,D).
 
 #show permutation/2.
-
-            machine(1).      machine(2).
-task(a). duration(a,1,3). duration(a,2,4).
-task(b). duration(b,1,1). duration(b,2,6).
-task(c). duration(c,1,5). duration(c,2,5).

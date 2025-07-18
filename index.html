@@ -51,12 +51,11 @@ title: Running clingo
 
  </div>
  <pre id="input">
-% instance
-motive(harry).
+%%% Tab: instance.lp
+motive(harry; sally).
 motive(sally).
 guilty(harry).
-
-% encoding
+%%% Tab: encoding.lp
 innocent(Suspect) :- motive(Suspect), not guilty(Suspect).</pre>
 
  <ul class="hlist">

@@ -1,3 +1,4 @@
+%%% Tab: encoding.lp
 #const n = 8.
 
 % n-Queens encoding

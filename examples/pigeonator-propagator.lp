@@ -1,5 +1,5 @@
-#script (python)
-
+%%% Tab: pigeonator.py
+#script(python)
 from clingo.propagate import Assignment, Propagator, PropagateInit, PropagateControl
 
 class Pigeonator(Propagator):
@@ -37,7 +37,7 @@ def main(lib, prg):
     prg.main()
 
 #end.
-
+%%% Tab: encoding.lp
 #const h = 5.
 #const p = h+1.
 

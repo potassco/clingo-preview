@@ -1,17 +1,4 @@
-% Generate
-{ cycle(X,Y) : edge(X,Y) } = 1 :- node(X).
-{ cycle(X,Y) : edge(X,Y) } = 1 :- node(Y).
-% Define
-reached(Y) :- cycle(1,Y).
-reached(Y) :- cycle(X,Y), reached(X).
-% Test
-:- node(Y), not reached(Y).
-% Display
-#show cycle/2.
-
-% Optimize
-#minimize { C,X,Y : cycle(X,Y), cost(X,Y,C) }.
-
+%%% Tab: instance.lp
 % Nodes
 node(1..6).
 % (Directed) Edges
@@ -25,3 +12,17 @@ cost(3,1,3).  cost(3,4,2).  cost(3,5,2).
 cost(4,1,1).  cost(4,2,2).
 cost(5,3,2).  cost(5,4,2).  cost(5,6,1).
 cost(6,2,4).  cost(6,3,3).  cost(6,5,1).
+%%% Tab: encoding.lp
+% Generate
+{ cycle(X,Y) : edge(X,Y) } = 1 :- node(X).
+{ cycle(X,Y) : edge(X,Y) } = 1 :- node(Y).
+% Define
+reached(Y) :- cycle(1,Y).
+reached(Y) :- cycle(X,Y), reached(X).
+% Test
+:- node(Y), not reached(Y).
+% Display
+#show cycle/2.
+
+% Optimize
+#minimize { C,X,Y : cycle(X,Y), cost(X,Y,C) }.

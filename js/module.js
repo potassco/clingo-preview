@@ -266,12 +266,43 @@ const Clingo = (() => {
         }
 
         const setInput = (value, name) => {
+            // Split value by tab markers
+            const tabRegex = /^%%% Tab: (.+)$/gm;
+            let match, lastIndex = 0, tabs = [];
+            while ((match = tabRegex.exec(value)) !== null) {
+                if (match.index > lastIndex) {
+                    if (tabs.length > 0) {
+                        tabs[tabs.length - 1].content = value.slice(lastIndex, match.index)
+                    } else {
+                        tabs.push({ name, content: value.slice(lastIndex, match.index) });
+                    }
+                }
+                tabs.push({
+                    name: match[1].trim(),
+                    content: ""
+                });
+                lastIndex = tabRegex.lastIndex;
+            }
+            if (tabs.length > 0) {
+                tabs[tabs.length - 1].content = value.slice(lastIndex);
+            } else {
+                tabs = [{ name, content: value }];
+            }
             sessions.forEach(session => {
-                session.tabEl.remove()
-                session.session.destroy()
-            })
-            sessions.length = 0
-            createTab("clingo", name, value)
+                session.tabEl.remove();
+                session.session.destroy();
+            });
+            sessions.length = 0;
+            tabs.forEach(tab => {
+                let lines = tab.content.trim().split('\n');
+                let type = "clingo";
+                if (lines.length >= 2 && lines[0].startsWith("#script(python)") && lines[lines.length - 1].startsWith("#end.")) {
+                    type = "python";
+                    lines.shift();
+                    lines.pop();
+                }
+                createTab(type, tab.name, lines.join('\n'));
+            });
         }
 
         const init = () => {
@@ -283,7 +314,7 @@ const Clingo = (() => {
                 maxLines: Infinity,
                 autoScrollEditorIntoView: true
             })
-            createTab("clingo", "harry-and-sally.lp", inputElement.getValue())
+            setInput(inputElement.getValue(), "harry-and-sally.lp")
             updateWorkspaceDropdown()
             workspaceSaveBtn.onclick = () => {
                 if (selectedWorkspace) {
