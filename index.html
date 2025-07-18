@@ -36,6 +36,19 @@ title: Running clingo
   <ul id="tabs"></ul>
   <button class="tab-add" onclick="Clingo.createTab('clingo', 'Untitled')">🦉</button>
   <button class="tab-add" onclick="Clingo.createTab('python', 'Untitled')">🐍</button>
+  <div class="workspace-menu" style="display:inline-block; position:relative;">
+    <button  class="tab-add" id="workspace-menu-btn" title="Manage Workspaces">🗂️</button>
+    <div id="workspace-menu-dropdown" style="display:none">
+      <div id="workspace-list"></div>
+      <div class="workspace-buttons">
+        <button id="workspace-load" title="Load">⬇️</button>
+        <button id="workspace-save" title="Save">⬆️</button>
+        <button id="workspace-saveas" title="Save As">➡️</button>
+        <button id="workspace-delete" title="Delete">🗑️</button>
+      </div>
+    </div>
+  </div>
+
  </div>
  <pre id="input">
 % instance

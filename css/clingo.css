@@ -203,3 +203,31 @@ input:checked + .slider:before {
 .site-footer .wrapper a {
   color: #000 !important;
 }
+.workspace-list-item.selected {
+  background: #e0e0e0;
+  font-weight: bold;
+}
+#workspace-menu-dropdown {
+  display:none;
+  position:absolute;
+  background:#fff;
+  border:1px solid #ccc;
+  z-index:10;
+  min-width:180px;
+  right:0;
+}
+#workspace-list {
+  max-height:150px;
+  overflow-y:auto;
+  margin-bottom:4px;
+}
+.workspace-buttons {
+  gap: 4px;
+  margin-bottom: 4px;
+  align-items: center;
+}
+.workspace-buttons button:disabled {
+  opacity: 0.5;
+  filter: grayscale(1);
+  cursor: not-allowed;
+}

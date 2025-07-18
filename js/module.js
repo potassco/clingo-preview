@@ -15,7 +15,39 @@ const Clingo = (() => {
         const inputElement = ace.edit("input")
         const examples = document.getElementById("examples")
         const sessions = [];
+        const workspaceList = document.getElementById("workspace-list");
+        const workspaceSaveBtn = document.getElementById("workspace-save");
+        const workspaceSaveAsBtn = document.getElementById("workspace-saveas");
+        const workspaceLoadBtn = document.getElementById("workspace-load");
+        const workspaceDeleteBtn = document.getElementById("workspace-delete");
         let activeTab = null
+        let selectedWorkspace = "";
+
+        const Workspace = {
+            list: () => Object.keys(localStorage).filter(k => k.startsWith("workspace:")).map(k => k.replace("workspace:", "")),
+            save: (name) => {
+                const data = sessions.map(s => ({
+                    type: s.type,
+                    name: s.name,
+                    content: s.session.getValue()
+                }));
+                localStorage.setItem("workspace:" + name, JSON.stringify(data));
+            },
+            load: (name) => {
+                const data = JSON.parse(localStorage.getItem("workspace:" + name) || "[]");
+                sessions.forEach(session => {
+                    session.tabEl.remove();
+                    session.session.destroy();
+                });
+                sessions.length = 0;
+                data.forEach(file => {
+                    DomInteraction.createTab(file.type, file.name, file.content);
+                });
+            },
+            delete: (name) => {
+                localStorage.removeItem("workspace:" + name);
+            }
+        };
 
         const clearOutput = () => {
             outputElement.textContent = ""
@@ -185,6 +217,35 @@ const Clingo = (() => {
             tab.ondblclick = null;
         }
 
+        function updateWorkspaceDropdown() {
+            const list = Workspace.list();
+            workspaceList.innerHTML = "";
+            list.forEach(name => {
+                const item = document.createElement("div");
+                item.textContent = name;
+                item.className = "workspace-list-item";
+                item.style.cursor = "pointer";
+                item.onclick = () => {
+                    selectedWorkspace = name;
+                    document
+                        .querySelectorAll('.workspace-list-item')
+                        .forEach(el => el.classList.remove('selected'));
+                    item.classList.add('selected');
+                    workspaceLoadBtn.disabled = !selectedWorkspace;
+                    workspaceDeleteBtn.disabled = !selectedWorkspace;
+                    workspaceSaveBtn.disabled = !selectedWorkspace;
+                };
+                if (name === selectedWorkspace) {
+                    item.classList.add('selected');
+                }
+                workspaceList.appendChild(item);
+            });
+
+            workspaceLoadBtn.disabled = !selectedWorkspace;
+            workspaceDeleteBtn.disabled = !selectedWorkspace;
+            workspaceSaveBtn.disabled = !selectedWorkspace;
+        }
+
         const getInput = () => {
             let result = [];
             for (const s of sessions) {
@@ -195,7 +256,6 @@ const Clingo = (() => {
                 }
             }
             return result.join('\n');
-
         }
 
         const setInput = (value, name) => {
@@ -217,6 +277,47 @@ const Clingo = (() => {
                 autoScrollEditorIntoView: true
             })
             createTab("clingo", "harry-and-sally.lp", inputElement.getValue())
+            updateWorkspaceDropdown()
+            workspaceSaveBtn.onclick = () => {
+                if (selectedWorkspace) {
+                    Workspace.save(selectedWorkspace);
+                    updateWorkspaceDropdown();
+                }
+            };
+            workspaceSaveAsBtn.onclick = () => {
+                let name = prompt("Enter new workspace name:");
+                if (name) {
+                    Workspace.save(name);
+                    selectedWorkspace = name;
+                    updateWorkspaceDropdown();
+                }
+            };
+
+            workspaceLoadBtn.onclick = () => {
+                if (selectedWorkspace) {
+                    Workspace.load(selectedWorkspace);
+                }
+            };
+            workspaceDeleteBtn.onclick = () => {
+                if (selectedWorkspace) {
+                    Workspace.delete(selectedWorkspace);
+                    selectedWorkspace = "";
+                    updateWorkspaceDropdown();
+                }
+            };
+
+            // Workspace menu dropdown toggle
+            const workspaceMenuBtn = document.getElementById("workspace-menu-btn");
+            const workspaceMenuDropdown = document.getElementById("workspace-menu-dropdown");
+            workspaceMenuBtn.onclick = (e) => {
+                workspaceMenuDropdown.style.display = workspaceMenuDropdown.style.display === "none" ? "block" : "none";
+            };
+            document.addEventListener("click", (e) => {
+                if (!workspaceMenuBtn.contains(e.target) && !workspaceMenuDropdown.contains(e.target)) {
+                    workspaceMenuDropdown.style.display = "none";
+                }
+            });
+
         }
 
         init()
