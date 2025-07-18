@@ -11,8 +11,11 @@ const Clingo = (() => {
         const runButton = document.getElementById('clingoRun')
         const outputElement = document.getElementById('output')
         const pyCheckbox = document.querySelector('.language-switch input[type="checkbox"]')
+        const tabList = document.getElementById("tabs");
         const inputElement = ace.edit("input")
         const examples = document.getElementById("examples")
+        const sessions = [];
+        let activeTab = null
 
         const clearOutput = () => {
             outputElement.textContent = ""
@@ -88,6 +91,118 @@ const Clingo = (() => {
             return args
         }
 
+        const createTab = (type, name, content = null) => {
+            let typeIcon = "";
+            if (type === "python") { typeIcon = "🐍"; }
+            else if (type === "clingo") { typeIcon = "🦉"; }
+            else {
+                return;
+            }
+
+            const tabEl = document.createElement("li");
+            tabEl.className = "tab-item";
+            tabEl.innerHTML = `
+                <span class="tab-icon">${typeIcon}</span>
+                <span class="tab-name">${name}</span>
+                <button class="tab-close" title="Close">&#10005;</button>
+            `;
+
+            inputElement.setOptions({
+                maxLines: Infinity,
+                autoScrollEditorIntoView: true
+            })
+            const session = ace.createEditSession("");
+            session.$blockScrolling = Infinity
+            session.setOptions({
+                useSoftTabs: true,
+                tabSize: 4,
+                mode: `ace/mode/${type}`,
+            })
+
+            sessions.push({ type, session, name, tabEl })
+
+            inputElement.setSession(session);
+            if (content !== null) { inputElement.setValue(content, 1); }
+
+            tabEl.onclick = () => {
+                inputElement.setSession(session)
+                if (activeTab !== null) {
+                    activeTab.classList.remove("active");
+                }
+                tabEl.classList.add("active");
+                activeTab = tabEl;
+                inputElement.focus();
+            }
+            tabEl.ondblclick = () => editTab(tabEl);
+            tabEl.querySelector('.tab-close').onclick = (e) => {
+                e.stopPropagation();
+                const index = sessions.findIndex(s => s.session === session);
+                if (index !== -1) { sessions.splice(index, 1); }
+                session.destroy();
+                if (sessions.length === 0) {
+                    createTab("clingo", "Untitled");
+                }
+                else if (tabEl.classList.contains("active")) {
+                    inputElement.setSession(sessions[0].session);
+                    sessions[0].tabEl.classList.add("active");
+                    activeTab = sessions[0].tabEl;
+                    inputElement.focus();
+                }
+                tabEl.remove();
+            };
+            tabList.appendChild(tabEl);
+
+            tabEl.onclick();
+        }
+
+        const editTab = (tab) => {
+            const nameSpan = tab.querySelector('.tab-name');
+            const currentName = nameSpan.textContent;
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.value = currentName;
+            input.style.width = '80%';
+            nameSpan.textContent = '';
+            nameSpan.appendChild(input);
+            input.focus();
+
+            input.onblur = function () {
+                nameSpan.textContent = input.value;
+                tab.ondblclick = function () { editTab(tab); };
+                inputElement.focus();
+            };
+            input.onkeydown = function (e) {
+                if (e.key === 'Enter') { input.blur(); }
+                if (e.key === 'Escape') {
+                    nameSpan.textContent = currentName;
+                    tab.ondblclick = function () { editTab(tab); };
+                    inputElement.focus();
+                }
+            };
+            tab.ondblclick = null;
+        }
+
+        const getInput = () => {
+            let result = [];
+            for (const s of sessions) {
+                if (s.type === "python") {
+                    result.push(`#script(python)\n${s.session.getValue()}\n#end.`)
+                } else {
+                    result.push(s.session.getValue())
+                }
+            }
+            return result.join('\n');
+
+        }
+
+        const setInput = (value, name) => {
+            sessions.forEach(session => {
+                session.tabEl.remove()
+                session.session.destroy()
+            })
+            createTab("clingo", name, value)
+        }
+
         const init = () => {
             inputElement.setTheme("ace/theme/textmate")
             inputElement.$blockScrolling = Infinity
@@ -95,14 +210,15 @@ const Clingo = (() => {
                 useSoftTabs: true,
                 tabSize: 4,
                 maxLines: Infinity,
-                mode: "ace/mode/clingo",
                 autoScrollEditorIntoView: true
             })
+            createTab("clingo", "harry-and-sally.lp", inputElement.getValue())
         }
 
         init()
 
         return {
+            createTab,
             clearOutput,
             updateOutput,
             updateButton,
@@ -110,8 +226,8 @@ const Clingo = (() => {
             onEnablePython,
             onEnter,
             buildArgs,
-            getInput: () => inputElement.getValue(),
-            setInput: (value) => inputElement.setValue(value, 1),
+            getInput,
+            setInput,
             getExample: () => examples.value,
             setExample: (value) => examples.value = value
         }
@@ -209,7 +325,7 @@ const Clingo = (() => {
             var request = new XMLHttpRequest()
             request.onreadystatechange = () => {
                 if (request.readyState == 4 && request.status == 200) {
-                    DomInteraction.setInput(request.responseText.trim(), -1)
+                    DomInteraction.setInput(request.responseText.trim(), path)
                 }
             }
             request.open("GET", `examples/${path}`, true)
@@ -232,7 +348,7 @@ const Clingo = (() => {
 
         init()
 
-        return { load, run: Clingo.run }
+        return { load, run: Clingo.run, createTab: DomInteraction.createTab }
     })()
 
     return Control

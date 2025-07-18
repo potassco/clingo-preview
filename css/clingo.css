@@ -8,6 +8,99 @@
   text-align:left;
   font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
 }
+.tab-bar {
+  display: flex;
+  align-items: center;
+  background: #f8f8f8;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0.5em 1em;
+  position: relative;
+  z-index: 2;
+}
+.tab-add {
+  margin-left: 0.4em;
+  background: #eaeaea;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.2em 0.4em;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.2s;
+}
+.tab-add:hover {
+  background: #d6d6d6;
+}
+#tabs {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  flex-wrap: wrap;
+}
+#tabs li {
+  margin-right: .5em;
+  padding: 0.1em 0.4em;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px 4px 0 0;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.2s;
+  
+}
+#tabs li.active {
+  background: #f0f0f0;
+  border-bottom: 2px solid #007acc;
+  font-weight: bold;
+}
+.tab-item {
+  display: flex;
+  align-items: center;
+  margin-right: 0.5em;
+  padding: 0.3em 0.8em;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px 4px 0 0;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.2s;
+  position: relative;
+  min-width: 6em;
+}
+.tab-icon {
+  margin-right: 0.5em;
+}
+.tab-name {
+  flex: 1;
+  margin-right: 0.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tab-close {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  background: #ddd;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  color: #888;
+  font-size: .7em;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+.tab-close:hover {
+  color: #d00;
+  color: #fff;
+}
 .hlist {
   display: block;
 }
