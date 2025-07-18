@@ -137,10 +137,13 @@ const Clingo = (() => {
             tabEl.querySelector('.tab-close').onclick = (e) => {
                 e.stopPropagation();
                 const index = sessions.findIndex(s => s.session === session);
-                if (index !== -1) { sessions.splice(index, 1); }
+                if (index !== -1) {
+                    sessions.splice(index, 1);
+                }
                 session.destroy();
                 if (sessions.length === 0) {
-                    createTab("clingo", "Untitled");
+                    activeTab = null;
+                    createTab("clingo", "Untitled", "");
                 }
                 else if (tabEl.classList.contains("active")) {
                     inputElement.setSession(sessions[0].session);
@@ -200,6 +203,7 @@ const Clingo = (() => {
                 session.tabEl.remove()
                 session.session.destroy()
             })
+            sessions.length = 0
             createTab("clingo", name, value)
         }
 
