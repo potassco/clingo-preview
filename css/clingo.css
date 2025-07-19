@@ -20,6 +20,7 @@
   z-index: 2;
   margin: 0;
   padding: 0;
+  align-items: last baseline;
 }
 .tab-add {
   margin-left: 0.2em;
@@ -210,6 +211,10 @@ input:checked + .slider:before {
 .workspace-list-item.selected {
   background: #e0e0e0;
   font-weight: bold;
+}
+.workspace-menu {
+  display:inline-block;
+  position:relative;
 }
 #workspace-menu-dropdown {
   display:none;
