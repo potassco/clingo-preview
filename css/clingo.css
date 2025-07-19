@@ -5,24 +5,28 @@
 }
 #input {
   margin: 10px auto;
+  margin-top: 0;
   text-align:left;
   font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 .tab-bar {
   display: flex;
   align-items: center;
-  background: #f8f8f8;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 0;
   padding: 0.5em 1em;
   position: relative;
   z-index: 2;
+  margin: 0;
+  padding: 0;
 }
 .tab-add {
-  margin-left: 0.4em;
+  margin-left: 0.2em;
   background: #eaeaea;
-  border: 1px solid #ccc;
+  border: 1px solid #e8e8e8;
   border-radius: 4px;
-  padding: 0.2em 0.4em;
+  padding: 0.2em 0.3em;
   cursor: pointer;
   font-size: 1em;
   transition: background 0.2s;
@@ -39,10 +43,10 @@
   flex-wrap: wrap;
 }
 #tabs li {
-  margin-right: .5em;
+  margin-right: .2em;
   padding: 0.1em 0.4em;
   background: #fff;
-  border: 1px solid #ccc;
+  border: 1px solid #e8e8e8;
   border-radius: 4px 4px 0 0;
   cursor: pointer;
   font-size: 1em;
