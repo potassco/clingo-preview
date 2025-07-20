@@ -20,6 +20,7 @@ const Clingo = (() => {
         const workspaceSaveAsBtn = document.getElementById("workspace-saveas");
         const workspaceLoadBtn = document.getElementById("workspace-load");
         const workspaceDeleteBtn = document.getElementById("workspace-delete");
+        const workspaceDownloadBtn = document.getElementById("workspace-download");
         let activeTab = null
         let selectedWorkspace = "";
 
@@ -217,6 +218,40 @@ const Clingo = (() => {
             tab.ondblclick = null;
         }
 
+        const downloadWorkspace = async () => {
+            await loadZipLib();
+            const workspaceNames = Workspace.list();
+            if (workspaceNames.length === 0) {
+                return;
+            }
+            const zip = new window.JSZip();
+            for (const wsName of workspaceNames) {
+                const data = JSON.parse(localStorage.getItem("workspace:" + wsName) || "[]");
+                const folder = zip.folder(`${wsName}`);
+                data.forEach(file => {
+                    let ext = file.type === "python" ? ".py" : ".lp";
+                    folder.file(file.name + ext, file.content);
+                });
+            }
+            const blob = await zip.generateAsync({ type: "blob" });
+            const a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            a.download = `workspaces.zip`;
+            a.click();
+            URL.revokeObjectURL(a.href);
+        };
+
+        const loadZipLib = async () => {
+            if (!window.JSZip) {
+                await new Promise((resolve) => {
+                    const script = document.createElement('script');
+                    script.src = "https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js";
+                    script.onload = resolve;
+                    document.head.appendChild(script);
+                });
+            }
+        };
+
         function updateWorkspaceDropdown() {
             const list = Workspace.list();
             workspaceList.innerHTML = "";
@@ -343,6 +378,8 @@ const Clingo = (() => {
                     updateWorkspaceDropdown();
                 }
             };
+
+            workspaceDownloadBtn.onclick = downloadWorkspace;
 
             // Workspace menu dropdown toggle
             const workspaceMenuBtn = document.getElementById("workspace-menu-btn");
