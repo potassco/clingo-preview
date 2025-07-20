@@ -425,18 +425,6 @@ const Clingo = (() => {
             return false
         }
 
-        const onEnablePython = (cb) => {
-            pyCheckbox.addEventListener('change', (ev) => cb(ev.target.checked))
-        }
-
-        const onEnter = (cb) => {
-            document.querySelector("#input").addEventListener("keydown", (ev) => {
-                if (ev.key === "Enter" && ev.ctrlKey) {
-                    cb()
-                }
-            })
-        }
-
         const buildArgs = () => {
             let args = []
             switch (Args.reasoningMode.value) {
@@ -473,13 +461,24 @@ const Clingo = (() => {
             return args
         }
 
+        const init = (receiver) => {
+            runButton.onclick = () =>
+                receiver.dispatchEvent(new CustomEvent('run-request'));
+            pyCheckbox.onchange = (e) =>
+                receiver.dispatchEvent(new CustomEvent('python-toggle', { detail: e.target.checked }));
+            document.querySelector("#input").addEventListener("keydown", (ev) => {
+                if (ev.key === "Enter" && ev.ctrlKey) {
+                    receiver.dispatchEvent(new CustomEvent('run-request'));
+                }
+            })
+        }
+
         return {
+            init,
             clearOutput,
             updateOutput,
             updateButton,
             ensurePython,
-            onEnablePython,
-            onEnter,
             buildArgs,
             getExample: () => examples.value,
             setExample: (value) => examples.value = value
@@ -566,10 +565,17 @@ const Clingo = (() => {
             }
         }
 
+        // NOTE: that events are handled by Control
         return { run, enablePython, startWorker }
     })()
 
     const Control = (() => {
+        const self = new EventTarget();
+        const query_params = Object.fromEntries(
+            Array.from(new URLSearchParams(window.location.search))
+                .map(([key, value]) => [key, decodeURIComponent(value)])
+        )
+
         const run = () => ClingoControl.run(SessionControl.getContent())
 
         const load = () => {
@@ -587,22 +593,14 @@ const Clingo = (() => {
             request.send()
         }
 
-        const init = () => {
-            ClingoView.onEnablePython((enable) => ClingoControl.enablePython(enable))
-            ClingoView.onEnter(run)
-            const query_params = Object.fromEntries(
-                Array.from(new URLSearchParams(window.location.search))
-                    .map(([key, value]) => [key, decodeURIComponent(value)])
-            )
-            if (query_params.example !== undefined) {
-                ClingoView.setExample(query_params.example)
-                load()
-            }
-            ClingoControl.startWorker()
+        self.addEventListener('run-request', () => run())
+        self.addEventListener('python-toggle', (e) => ClingoControl.enablePython(e.detail))
+        ClingoView.init(self)
+        if (query_params.example !== undefined) {
+            ClingoView.setExample(query_params.example)
+            load()
         }
-
-        init()
-
+        ClingoControl.startWorker()
         return { load, run, createTab: SessionControl.create }
     })()
 
