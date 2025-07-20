@@ -152,7 +152,8 @@ const Clingo = (() => {
                 mode: `ace/mode/${type}`,
             })
 
-            sessions.push({ type, session, name, tabEl })
+            const sessionEntry = { type, session, name, tabEl }
+            sessions.push(sessionEntry)
 
             inputElement.setSession(session);
             if (content !== null) { inputElement.setValue(content, 1); }
@@ -166,7 +167,7 @@ const Clingo = (() => {
                 activeTab = tabEl;
                 inputElement.focus();
             }
-            tabEl.ondblclick = () => editTab(tabEl);
+            tabEl.ondblclick = () => editTab(sessionEntry);
             tabEl.querySelector('.tab-close').onclick = (e) => {
                 e.stopPropagation();
                 const index = sessions.findIndex(s => s.session === session);
@@ -191,8 +192,8 @@ const Clingo = (() => {
             tabEl.onclick();
         }
 
-        const editTab = (tab) => {
-            const nameSpan = tab.querySelector('.tab-name');
+        const editTab = (session) => {
+            const nameSpan = session.tabEl.querySelector('.tab-name');
             const currentName = nameSpan.textContent;
             const input = document.createElement('input');
             input.type = 'text';
@@ -203,43 +204,42 @@ const Clingo = (() => {
             input.focus();
 
             input.onblur = function () {
+                session.name = input.value;
                 nameSpan.textContent = input.value;
-                tab.ondblclick = function () { editTab(tab); };
+                session.tabEl.ondblclick = function () { editTab(session); };
                 inputElement.focus();
             };
             input.onkeydown = function (e) {
                 if (e.key === 'Enter') { input.blur(); }
                 if (e.key === 'Escape') {
                     nameSpan.textContent = currentName;
-                    tab.ondblclick = function () { editTab(tab); };
+                    session.tabEl.ondblclick = function () { editTab(session); };
                     inputElement.focus();
                 }
             };
-            tab.ondblclick = null;
+            session.tabEl.ondblclick = null;
         }
 
-        const downloadWorkspace = async () => {
-            await loadZipLib();
-            const workspaceNames = Workspace.list();
-            if (workspaceNames.length === 0) {
-                return;
+        function splitExt(filename) {
+            const idx = filename.lastIndexOf(".");
+            if (idx <= 0) {
+                return [filename, ""]
             }
-            const zip = new window.JSZip();
-            for (const wsName of workspaceNames) {
-                const data = JSON.parse(localStorage.getItem("workspace:" + wsName) || "[]");
-                const folder = zip.folder(`${wsName}`);
-                data.forEach(file => {
-                    let ext = file.type === "python" ? ".py" : ".lp";
-                    folder.file(file.name + ext, file.content);
-                });
+            return [filename.slice(0, idx), filename.slice(idx)];
+        }
+
+        const sanitizeFileName = (name, existing) => {
+            let base = name.replace(/[^a-zA-Z0-9_\-.]/g, "_").slice(0, 100);
+            let [namePart, extPart] = splitExt(base);
+            let unique = base;
+            let counter = 1;
+            while (existing[unique]) {
+                unique = `${namePart}_${counter}${extPart}`;
+                counter++;
             }
-            const blob = await zip.generateAsync({ type: "blob" });
-            const a = document.createElement("a");
-            a.href = URL.createObjectURL(blob);
-            a.download = `workspaces.zip`;
-            a.click();
-            URL.revokeObjectURL(a.href);
-        };
+            existing[unique] = true;
+            return unique;
+        }
 
         const loadZipLib = async () => {
             if (!window.JSZip) {
@@ -250,6 +250,32 @@ const Clingo = (() => {
                     document.head.appendChild(script);
                 });
             }
+        };
+
+        const downloadWorkspace = async () => {
+            await loadZipLib();
+            const workspaceNames = Workspace.list();
+            if (workspaceNames.length === 0) {
+                return;
+            }
+            const zip = new window.JSZip();
+            const existingWS = {};
+            for (const wsName of workspaceNames) {
+                const data = JSON.parse(localStorage.getItem("workspace:" + wsName) || "[]");
+                const folder = zip.folder(sanitizeFileName(wsName, existingWS));
+                const existingLP = {};
+                const existingPY = {};
+                data.forEach(file => {
+                    let existing = file.type === "python" ? existingPY : existingLP;
+                    folder.file(sanitizeFileName(file.name, existing), file.content);
+                });
+            }
+            const blob = await zip.generateAsync({ type: "blob" });
+            const a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            a.download = `workspaces.zip`;
+            a.click();
+            URL.revokeObjectURL(a.href);
         };
 
         function updateWorkspaceDropdown() {
