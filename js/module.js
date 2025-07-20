@@ -1,65 +1,32 @@
-
 const Clingo = (() => {
-    // TODO: DOM management should be separated from the logic
-    const SessionManager = (() => {
+    const SessionView = (() => {
+        const tabList = document.getElementById("tabs")
         const inputElement = ace.edit("input")
-        const tabList = document.getElementById("tabs");
-        const sessions = []
-        let active = null
 
-        const stringify = () => {
-            const data = sessions.map(s => ({
-                type: s.type,
-                name: s.name,
-                content: s.session.getValue()
-            }));
-            return JSON.stringify(data)
-        }
-
-        const create = (type, name, content = null) => {
-            let typeIcon = "";
-            if (type === "python") { typeIcon = "🐍"; }
-            else if (type === "clingo") { typeIcon = "🦉"; }
-            else {
-                return;
-            }
-
-            const tabEl = document.createElement("li");
-            tabEl.className = "tab-item";
-            tabEl.innerHTML = `
-                    <span class="tab-icon">${typeIcon}</span>
+        const create = (icon, name, entry, receiver) => {
+            const tabElement = document.createElement("li");
+            tabElement.className = "tab-item";
+            tabElement.innerHTML = `
+                    <span class="tab-icon">${icon}</span>
                     <span class="tab-name">${name}</span>
                     <button class="tab-close" title="Close">&#10005;</button>
                 `;
-
-            const session = ace.createEditSession("");
-            session.$blockScrolling = Infinity
-            session.setOptions({
-                useSoftTabs: true,
-                tabSize: 4,
-                mode: `ace/mode/${type}`,
-            })
-            inputElement.setSession(session)
-            if (content !== null) {
-                inputElement.setValue(content, 1);
+            tabList.appendChild(tabElement);
+            tabElement.onclick = () => {
+                receiver.dispatchEvent(new CustomEvent('tab-activate', { detail: entry }));
             }
-
-            const sessionEntry = { type, session, name, tabEl }
-            sessions.push(sessionEntry)
-            setActive(sessionEntry)
-
-            tabEl.onclick = () => setActive(sessionEntry)
-            tabEl.ondblclick = () => edit(sessionEntry);
-            tabEl.querySelector('.tab-close').onclick = (e) => {
-                e.stopPropagation();
-                close(sessionEntry)
+            tabElement.ondblclick = () => {
+                receiver.dispatchEvent(new CustomEvent('tab-edit', { detail: entry }));
+            }
+            tabElement.querySelector('.tab-close').onclick = (event) => {
+                event.stopPropagation();
+                receiver.dispatchEvent(new CustomEvent('tab-close', { detail: entry }));
             };
-            tabList.appendChild(tabEl);
-            tabEl.onclick();
+            return tabElement;
         }
 
-        const edit = (session) => {
-            const nameSpan = session.tabEl.querySelector('.tab-name');
+        const edit = (entry, receiver) => {
+            const nameSpan = entry.tabEl.querySelector('.tab-name');
             const currentName = nameSpan.textContent;
             const input = document.createElement('input');
             input.type = 'text';
@@ -70,63 +37,124 @@ const Clingo = (() => {
             input.focus();
 
             input.onblur = function () {
-                session.name = input.value;
+                receiver.dispatchEvent(new CustomEvent('tab-rename', { detail: { entry, name: input.value } }));
                 nameSpan.textContent = input.value;
-                session.tabEl.ondblclick = function () { edit(session); };
-                inputElement.focus();
-            };
+                entry.tabEl.ondblclick = function () { edit(entry, receiver); };
+                inputElement.focus()
+            }
             input.onkeydown = function (e) {
                 if (e.key === 'Enter') { input.blur(); }
                 if (e.key === 'Escape') {
-                    nameSpan.textContent = currentName;
-                    session.tabEl.ondblclick = function () { edit(session); };
-                    inputElement.focus();
+                    nameSpan.textContent = currentName
+                    entry.tabEl.ondblclick = () => edit(entry, receiver)
+                    inputElement.focus()
                 }
-            };
-            session.tabEl.ondblclick = null;
+            }
+            entry.tabEl.ondblclick = null;
         }
 
-        const close = (session) => {
-            const index = sessions.findIndex(s => s.session === session);
-            if (index !== -1) {
-                sessions.splice(index, 1);
+        const activate = (previous, entry, content = null) => {
+            if (previous !== null) {
+                previous.tabEl.classList.remove("active");
             }
-            session.destroy();
-            if (sessions.length === 0) {
+            entry.tabEl.classList.add("active");
+            inputElement.setSession(entry.session)
+            if (content !== null) {
+                inputElement.setValue(content, 1);
+            }
+            inputElement.focus();
+        }
+
+        const close = (entry) => entry.tabEl.remove()
+
+        const getContent = () => inputElement.getValue()
+
+        inputElement.setTheme("ace/theme/textmate")
+        inputElement.$blockScrolling = Infinity
+        inputElement.setOptions({
+            useSoftTabs: true,
+            tabSize: 4,
+            maxLines: Infinity,
+            autoScrollEditorIntoView: true
+        })
+        return { create, edit, close, activate, getContent }
+    })()
+
+    const SessionControl = (() => {
+        const entries = []
+        let active = null
+
+        const self = new EventTarget();
+        self.addEventListener('tab-activate', (e) => activate(e.detail))
+        self.addEventListener('tab-edit', (e) => edit(e.detail))
+        self.addEventListener('tab-close', (e) => close(e.detail))
+        self.addEventListener('tab-rename', (e) => e.detail.entry.name = e.detail.name)
+
+        const stringify = () => {
+            const data = entries.map(entry => ({
+                type: entry.type,
+                name: entry.name,
+                content: entry.session.getValue()
+            }));
+            return JSON.stringify(data)
+        }
+
+        const create = (type, name, content = null) => {
+            let icon = "";
+            if (type === "python") { icon = "🐍"; }
+            else if (type === "clingo") { icon = "🦉"; }
+            else {
+                return;
+            }
+            const session = ace.createEditSession("");
+            session.$blockScrolling = Infinity
+            session.setOptions({
+                useSoftTabs: true,
+                tabSize: 4,
+                mode: `ace/mode/${type}`,
+            })
+            const entry = { type, session, name }
+            entries.push(entry)
+            entry.tabEl = SessionView.create(icon, name, entry, self);
+            activate(entry, content)
+        }
+
+        const edit = (entry) => SessionView.edit(entry, self);
+
+        const close = (entry) => {
+            const index = entries.findIndex((other) => other === entry);
+            if (index !== -1) {
+                entries.splice(index, 1);
+            }
+            entry.session.destroy();
+            SessionView.close(entry);
+            if (entries.length === 0) {
                 active = null;
                 create("clingo", "Untitled", "");
             }
-            else if (session.tabEl.classList.contains("active")) {
-                inputElement.setSession(sessions[0].session);
-                sessions[0].tabEl.classList.add("active");
-                active = sessions[0]
-                inputElement.focus();
+            else if (active === entry) {
+                active = null
+                activate(entries[0])
             }
-            tabEl.remove();
         }
 
         const clear = () => {
-            sessions.forEach(session => {
-                session.tabEl.remove();
-                session.session.destroy();
+            entries.forEach(entry => {
+                SessionView.close(entry);
+                entry.session.destroy();
             });
-            sessions.length = 0;
+            entries.length = 0;
         }
 
-        const setActive = (session) => {
-            if (active !== null) {
-                active.tabEl.classList.remove("active");
-            }
-            active = session;
-            session.tabEl.classList.add("active");
-            inputElement.setSession(session.session)
-            inputElement.focus();
+        const activate = (entry, content = null) => {
+            SessionView.activate(active, entry, content);
+            active = entry;
         }
 
         const getContent = () => {
             let result = [];
             let first = true;
-            for (const s of sessions) {
+            for (const s of entries) {
                 if (s.type === "python") {
                     result.push(`#script(python)\n${s.session.getValue()}\n#end.`)
                 } else {
@@ -143,7 +171,6 @@ const Clingo = (() => {
         }
 
         const setInput = (value, name) => {
-            // Split value by tab markers
             const tabRegex = /^%%% Tab: (.+)$/gm;
             let match, lastIndex = 0, tabs = [];
             while ((match = tabRegex.exec(value)) !== null) {
@@ -178,97 +205,112 @@ const Clingo = (() => {
             });
         }
 
-        const init = () => {
-            inputElement.setTheme("ace/theme/textmate")
-            inputElement.$blockScrolling = Infinity
-            inputElement.setOptions({
-                useSoftTabs: true,
-                tabSize: 4,
-                maxLines: Infinity,
-                autoScrollEditorIntoView: true
-            })
-            setInput(inputElement.getValue(), "harry-and-sally.lp")
-        }
-
-        init()
-
-        return { clear, stringify, create, getContent }
+        setInput(SessionView.getContent(), "harry-and-sally.lp")
+        return { clear, stringify, create, setInput, getContent }
     })()
 
-    // TODO: DOM management should be separated from the logic
-    const WorkspaceManager = (() => {
+    const WorkspaceView = (() => {
         const workspaceList = document.getElementById("workspace-list");
         const workspaceSaveBtn = document.getElementById("workspace-save");
         const workspaceSaveAsBtn = document.getElementById("workspace-saveas");
         const workspaceLoadBtn = document.getElementById("workspace-load");
         const workspaceDeleteBtn = document.getElementById("workspace-delete");
         const workspaceDownloadBtn = document.getElementById("workspace-download");
+
+        const update = (active, names, receiver) => {
+            workspaceList.innerHTML = "";
+            names.forEach(name => {
+                const item = document.createElement("div");
+                item.textContent = name;
+                item.className = "workspace-list-item";
+                item.style.cursor = "pointer";
+                item.onclick = (e) => {
+                    e.stopPropagation();
+                    receiver.dispatchEvent(new CustomEvent('workspace-select', { detail: name }))
+                }
+                item.classList.toggle('selected', name === active);
+                workspaceList.appendChild(item);
+            });
+            workspaceLoadBtn.disabled = active === null;;
+            workspaceDeleteBtn.disabled = active === null;
+            workspaceSaveBtn.disabled = active === null;
+        }
+
+        const init = (receiver) => {
+            workspaceSaveBtn.onclick = () =>
+                receiver.dispatchEvent(new CustomEvent('workspace-save'));
+            workspaceSaveAsBtn.onclick = () =>
+                receiver.dispatchEvent(new CustomEvent('workspace-save-as'))
+            workspaceLoadBtn.onclick = () =>
+                receiver.dispatchEvent(new CustomEvent('workspace-load'))
+            workspaceDeleteBtn.onclick = () =>
+                receiver.dispatchEvent(new CustomEvent('workspace-remove'))
+            workspaceDownloadBtn.onclick = () =>
+                receiver.dispatchEvent(new CustomEvent('workspace-download'))
+
+            // Workspace menu dropdown toggle
+            const workspaceMenuBtn = document.getElementById("workspace-menu-btn");
+            const workspaceMenuDropdown = document.getElementById("workspace-menu-dropdown");
+            workspaceMenuBtn.onclick = () => {
+                workspaceMenuDropdown.style.display = workspaceMenuDropdown.style.display === "none" ? "block" : "none";
+            };
+            document.addEventListener("click", (e) => {
+                if (!workspaceMenuBtn.contains(e.target) && !workspaceMenuDropdown.contains(e.target)) {
+                    workspaceMenuDropdown.style.display = "none";
+                }
+            });
+        }
+
+        return { init, update }
+    })()
+
+    const WorkspaceState = (() => {
+        const self = new EventTarget();
         let active = null;
 
-        const list = () => Object.keys(localStorage).filter(k => k.startsWith("workspace:")).map(k => k.replace("workspace:", ""))
+        const list = () => Object.keys(localStorage)
+            .filter(k => k.startsWith("workspace:"))
+            .map(k => k.replace("workspace:", ""))
+            .sort();
 
-        const save = (name = null) => {
-            console.log("Saving workspace", name)
-            if (name !== null) {
-                active = name;
-            }
-            console.log("Saving workspace", active)
+        const update = () => {
+            WorkspaceView.update(active, list(), self);
+        }
+
+        const save = () => {
             if (active !== null) {
-                console.log("really Saving workspace", active)
-                localStorage.setItem("workspace:" + active, SessionManager.stringify())
+                localStorage.setItem("workspace:" + active, SessionControl.stringify())
+                update()
+            }
+        };
+
+        const saveAs = () => {
+            let name = prompt("Enter new workspace name:");
+            if (name) {
+                active = name;
+                save(name);
             }
         }
 
         const load = () => {
             if (active !== null) {
                 const data = JSON.parse(localStorage.getItem("workspace:" + active) || "[]");
-                SessionManager.clear();
+                SessionControl.clear();
                 data.forEach(file => {
-                    SessionManager.create(file.type, file.name, file.content);
+                    SessionControl.create(file.type, file.name, file.content);
                 });
             }
-        }
+        };
 
         const remove = () => {
             if (active !== null) {
                 localStorage.removeItem("workspace:" + active);
                 active = null;
+                update()
             }
-        }
+        };
 
-        const select = (name) => {
-            active = name
-            update()
-        }
-
-        const update = () => {
-            document
-                .querySelectorAll('.workspace-list-item')
-                .forEach(el => {
-                    el.classList.toggle('selected', el.getAttribute('aria-name') === active);
-                })
-            workspaceLoadBtn.disabled = active === null;;
-            workspaceDeleteBtn.disabled = active === null;
-            workspaceSaveBtn.disabled = active === null;
-        }
-
-        const updateDropdown = () => {
-            workspaceList.innerHTML = "";
-            list().forEach(name => {
-                const item = document.createElement("div");
-                item.textContent = name;
-                item.className = "workspace-list-item";
-                item.style.cursor = "pointer";
-                item.setAttribute("aria-name", name)
-                item.onclick = () => {
-                    select(name);
-                };
-                workspaceList.appendChild(item);
-            });
-            update();
-        }
-
-        function splitExt(filename) {
+        function split(filename) {
             const idx = filename.lastIndexOf(".");
             if (idx <= 0) {
                 return [filename, ""]
@@ -276,9 +318,9 @@ const Clingo = (() => {
             return [filename.slice(0, idx), filename.slice(idx)];
         }
 
-        const sanitizeFileName = (name, existing) => {
+        const sanitize = (name, existing) => {
             let base = name.replace(/[^a-zA-Z0-9_\-.]/g, "_").slice(0, 100);
-            let [namePart, extPart] = splitExt(base);
+            let [namePart, extPart] = split(base);
             let unique = base;
             let counter = 1;
             while (existing[unique]) {
@@ -300,7 +342,8 @@ const Clingo = (() => {
             }
         };
 
-        const downloadWorkspace = async () => {
+        const download = async () => {
+            console.log("I was happening");
             await loadZipLib();
             const workspaceNames = list();
             if (workspaceNames.length === 0) {
@@ -310,12 +353,12 @@ const Clingo = (() => {
             const existingWS = {};
             for (const wsName of workspaceNames) {
                 const data = JSON.parse(localStorage.getItem("workspace:" + wsName) || "[]");
-                const folder = zip.folder(sanitizeFileName(wsName, existingWS));
+                const folder = zip.folder(sanitize(wsName, existingWS));
                 const existingLP = {};
                 const existingPY = {};
                 data.forEach(file => {
                     let existing = file.type === "python" ? existingPY : existingLP;
-                    folder.file(sanitizeFileName(file.name, existing), file.content);
+                    folder.file(sanitize(file.name, existing), file.content);
                 });
             }
             const blob = await zip.generateAsync({ type: "blob" });
@@ -326,44 +369,23 @@ const Clingo = (() => {
             URL.revokeObjectURL(a.href);
         };
 
-        const init = () => {
-            updateDropdown()
-            workspaceSaveBtn.onclick = () => save()
-            workspaceSaveAsBtn.onclick = () => {
-                let name = prompt("Enter new workspace name:");
-                if (name) {
-                    save(name);
-                    updateDropdown();
-                }
-            };
+        const select = (name) => {
+            active = name;
+            update()
+        };
 
-            workspaceLoadBtn.onclick = load
-            workspaceDeleteBtn.onclick = () => {
-                remove();
-                updateDropdown();
-            };
+        self.addEventListener('workspace-save', () => save())
+        self.addEventListener('workspace-save-as', () => saveAs())
+        self.addEventListener('workspace-remove', () => remove())
+        self.addEventListener('workspace-select', (e) => select(e.detail))
+        self.addEventListener('workspace-load', () => load())
+        self.addEventListener('workspace-download', () => download())
+        WorkspaceView.init(self)
+        update()
+        return {};
+    })();
 
-            workspaceDownloadBtn.onclick = downloadWorkspace;
-
-            // Workspace menu dropdown toggle
-            const workspaceMenuBtn = document.getElementById("workspace-menu-btn");
-            const workspaceMenuDropdown = document.getElementById("workspace-menu-dropdown");
-            workspaceMenuBtn.onclick = (e) => {
-                workspaceMenuDropdown.style.display = workspaceMenuDropdown.style.display === "none" ? "block" : "none";
-            };
-            document.addEventListener("click", (e) => {
-                if (!workspaceMenuBtn.contains(e.target) && !workspaceMenuDropdown.contains(e.target)) {
-                    workspaceMenuDropdown.style.display = "none";
-                }
-            });
-        }
-
-        init()
-
-        return {}
-    })()
-
-    const ClingoManager = (() => {
+    const ClingoView = (() => {
         const Args = {
             stats: document.getElementById("stats"),
             profile: document.getElementById("profile"),
@@ -464,7 +486,7 @@ const Clingo = (() => {
         }
     })()
 
-    const WorkerManager = (() => {
+    const ClingoControl = (() => {
         let worker = null
         let state = "running"
         let stdin = ""
@@ -478,13 +500,13 @@ const Clingo = (() => {
         const runClingo = () => {
             if (state == "ready") {
                 if (work) {
-                    ClingoManager.clearOutput()
+                    ClingoView.clearOutput()
                     state = "running"
                     work = false
                     worker.postMessage({ type: 'run', input: stdin, args: args })
                 }
             }
-            ClingoManager.updateButton(state)
+            ClingoView.updateButton(state)
         }
 
         const startWorker = () => {
@@ -492,7 +514,7 @@ const Clingo = (() => {
                 return
             }
             state = "init"
-            ClingoManager.updateButton(state)
+            ClingoView.updateButton(state)
             if (worker != null) {
                 worker.terminate()
             }
@@ -519,19 +541,19 @@ const Clingo = (() => {
                         setTimeout(startWorker, 0)
                         break
                     case "stdout":
-                        ClingoManager.updateOutput(msg.value)
+                        ClingoView.updateOutput(msg.value)
                         break
                     case "stderr":
-                        ClingoManager.updateOutput(stripAnsiCodes(msg.value))
+                        ClingoView.updateOutput(stripAnsiCodes(msg.value))
                         break
                 }
             }
         }
 
-        const run = () => {
+        const run = (content) => {
             work = true
-            stdin = SessionManager.getContent()
-            args = ClingoManager.buildArgs()
+            args = ClingoView.buildArgs()
+            stdin = content
             startWorker()
             runClingo()
         }
@@ -548,15 +570,17 @@ const Clingo = (() => {
     })()
 
     const Control = (() => {
+        const run = () => ClingoControl.run(SessionControl.getContent())
+
         const load = () => {
-            path = ClingoManager.getExample()
-            if (ClingoManager.ensurePython()) {
-                WorkerManager.enablePython(true)
+            path = ClingoView.getExample()
+            if (ClingoView.ensurePython()) {
+                ClingoControl.enablePython(true)
             }
             var request = new XMLHttpRequest()
             request.onreadystatechange = () => {
                 if (request.readyState == 4 && request.status == 200) {
-                    SessionManager.setInput(request.responseText.trim(), path)
+                    SessionControl.setInput(request.responseText.trim(), path)
                 }
             }
             request.open("GET", `examples/${path}`, true)
@@ -564,22 +588,22 @@ const Clingo = (() => {
         }
 
         const init = () => {
-            ClingoManager.onEnablePython((enable) => WorkerManager.enablePython(enable))
-            ClingoManager.onEnter(WorkerManager.run)
+            ClingoView.onEnablePython((enable) => ClingoControl.enablePython(enable))
+            ClingoView.onEnter(run)
             const query_params = Object.fromEntries(
                 Array.from(new URLSearchParams(window.location.search))
                     .map(([key, value]) => [key, decodeURIComponent(value)])
             )
             if (query_params.example !== undefined) {
-                ClingoManager.setExample(query_params.example)
+                ClingoView.setExample(query_params.example)
                 load()
             }
-            WorkerManager.startWorker()
+            ClingoControl.startWorker()
         }
 
         init()
 
-        return { load, run: WorkerManager.run, createTab: SessionManager.create }
+        return { load, run, createTab: SessionControl.create }
     })()
 
     return Control
