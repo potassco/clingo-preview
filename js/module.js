@@ -430,7 +430,6 @@ const Clingo = (() => {
          * @returns {string} The concatenated content of all entries.
          */
         getContent() {
-            console.log(this.model.getContent())
             return this.model.getContent();
         }
 
@@ -582,7 +581,6 @@ const Clingo = (() => {
         };
 
         const download = async () => {
-            console.log("I was happening");
             await loadZipLib();
             const workspaceNames = list();
             if (workspaceNames.length === 0) {
