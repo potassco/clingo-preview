@@ -8,7 +8,7 @@ class Pigeonator(Propagator):
         self.place = {}
         self.states = {}
 
-    def init(self, init: PropagateInit):
+    def init(self, assignment: Assignment, init: PropagateInit):
         for symbol, atom in init.base[("place", 2)].items():
             lit = init.solver_literal(atom.literal)
             # store hole H of each place(P,H) atom
@@ -17,16 +17,16 @@ class Pigeonator(Propagator):
         for i in range(init.number_of_threads):
             self.states[i] = {}
 
-    def propagate(self, control: PropagateControl, changes):
-        state = self.states[control.thread_id]
+    def propagate(self, assignment: Assignment, control: PropagateControl, changes):
+        state = self.states[assignment.thread_id]
         for lit in changes:
             hole = self.place[lit]
             prev = state.setdefault(hole, lit)
             if prev != lit and not control.add_nogood([lit, prev]):
                 return
 
-    def undo(self, thread_id: int, assignment: Assignment, changes):
-        state = self.states[thread_id]
+    def undo(self, assignment: Assignment, changes):
+        state = self.states[assignment.thread_id]
         for lit in changes:
             hole = self.place[lit]
             if state.get(hole, 0) == lit:
