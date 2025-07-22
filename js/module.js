@@ -842,6 +842,16 @@ const Clingo = (() => {
      * - Allows getting/setting the selected example.
      */
     class ClingoView extends EventTarget {
+        /**
+         * Initializes a new ClingoView instance.
+         *
+         * Sets up references to UI controls for Clingo arguments, output, Python mode,
+         * and example selection. Attaches event listeners to handle user actions:
+         * - Run button click triggers 'run-request' event.
+         * - Example selection triggers 'example-selected' event.
+         * - Python mode toggle triggers 'python-toggle' event.
+         * - Ctrl+Enter in the input editor triggers 'run-request' event.
+         */
         constructor() {
             super();
 
@@ -976,7 +986,30 @@ const Clingo = (() => {
         }
     }
 
+    /**
+     * ClingoModel manages the execution state and worker for running Clingo or Clingo+Python.
+     *
+     * Responsibilities:
+     * - Tracks execution state, arguments, input, and Python mode.
+     * - Manages the Web Worker for Clingo or Python-enabled Clingo.
+     * - Handles starting, restarting, and running the worker.
+     * - Emits events for output, button state, and worker lifecycle.
+     *
+     * Properties:
+     * - worker: The current Web Worker instance.
+     * - state: Current state ("init", "ready", "running").
+     * - stdin: Input string for Clingo.
+     * - args: Arguments array for Clingo.
+     * - work: Boolean flag indicating if a run is requested.
+     * - py: Boolean flag for Python mode.
+     * - ispy: Boolean flag indicating if the worker is Python-enabled.
+     */
     class ClingoModel extends EventTarget {
+        /**
+         * Initializes a new ClingoModel instance.
+         *
+         * Sets up initial state, arguments, input, and Python mode flags.
+         */
         constructor() {
             super();
 
@@ -989,6 +1022,11 @@ const Clingo = (() => {
             this.ispy = false;
         }
 
+        /**
+         * Enables or disables Python mode and restarts the worker if the mode changes.
+         *
+         * @param {boolean} enable - True to enable Python mode, false to disable.
+         */
         enablePython(enable) {
             this.py = enable;
             if (this.py != this.ispy) {
@@ -1000,6 +1038,12 @@ const Clingo = (() => {
             }
         }
 
+        /**
+         * Starts or restarts the Clingo worker based on the current Python mode.
+         *
+         * If a worker is already running, it is terminated. Sets up message handling
+         * for worker events and output.
+         */
         startWorker() {
             if (this.state == "ready" || this.state == "init") {
                 return;
@@ -1041,18 +1085,31 @@ const Clingo = (() => {
             };
         }
 
+        /**
+         * Runs Clingo if the worker is ready and a run is requested.
+         *
+         * Clears output, updates state, and sends run command to the worker.
+         * Emits update-button event to update UI state.
+         */
         runIfReady() {
-            if (this.state == "ready") {
-                if (this.work) {
-                    this.dispatchEvent(new CustomEvent('output-clear'));
-                    this.state = "running";
-                    this.work = false;
-                    this.worker.postMessage({ type: 'run', input: this.stdin, args: this.args });
-                }
+            if (this.state == "ready" && this.work) {
+                this.dispatchEvent(new CustomEvent('output-clear'));
+                this.state = "running";
+                this.work = false;
+                this.worker.postMessage({ type: 'run', input: this.stdin, args: this.args });
             }
             this.dispatchEvent(new CustomEvent('update-button', { detail: this.state }));
         }
 
+        /**
+         * Requests a Clingo run with the given arguments and input content.
+         *
+         * Sets up state and input, restarts the worker, and triggers
+         * runIfReady.
+         *
+         * @param {string[]} args - Arguments for Clingo.
+         * @param {string} content - Input string for Clingo.
+         */
         run(args, content) {
             this.work = true;
             this.args = args;
@@ -1063,7 +1120,27 @@ const Clingo = (() => {
         }
     }
 
+    /**
+     * ClingoController coordinates ClingoModel, ClingoView, and
+     * WorkspaceController.
+     *
+     * Responsibilities:
+     * - Handles UI events for running Clingo, toggling Python mode, and selecting examples.
+     * - Connects model output and state events to the view.
+     * - Loads example files and restores workspace tabs.
+     *
+     * Properties:
+     * - model: Instance of ClingoModel.
+     * - view: Instance of ClingoView.
+     * - workspaceController: Instance of WorkspaceController.
+     */
     class ClingoController {
+        /**
+         * Initializes a new ClingoController instance.
+         *
+         * Sets up event listeners for UI actions and model events. Loads
+         * example from query parameters if present. Starts the Clingo worker.
+         */
         constructor() {
             this.model = new ClingoModel();
             this.view = new ClingoView();
@@ -1094,6 +1171,12 @@ const Clingo = (() => {
             this.model.startWorker();
         }
 
+        /**
+         * Loads the selected example file and restores workspace tabs.
+         *
+         * If Python mode is required, enables it. Fetches the example file via
+         * XMLHttpRequest and restores tabs on success.
+         */
         load() {
             const path = this.view.getExample();
             if (this.view.ensurePython()) {
