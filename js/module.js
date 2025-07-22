@@ -227,6 +227,18 @@ const Clingo = (() => {
                 }
             }).join('\n');
         }
+
+        getFiles() {
+            const existing = {}
+            return this.entries.map(entry => {
+                const name = Utils.sanitize(entry.name, existing)
+                if (entry.type === "python") {
+                    return { name, content: `#script(python)\n${entry.session.getValue()}\n#end.` }
+                } else {
+                    return { name, content: entry.session.getValue() }
+                }
+            })
+        }
     }
 
     /**
@@ -505,6 +517,10 @@ const Clingo = (() => {
             return this.model.getContent();
         }
 
+        getFiles() {
+            return this.model.getFiles();
+        }
+
         /**
          * Parses the input string into tabs and creates them in the model and
          * view.
@@ -760,6 +776,10 @@ const Clingo = (() => {
             return this.session.getContent();
         }
 
+        getFiles() {
+            return this.session.getFiles();
+        }
+
         /**
          * Updates the workspace view with the current active workspace and
          * list.
@@ -998,7 +1018,7 @@ const Clingo = (() => {
      * Properties:
      * - worker: The current Web Worker instance.
      * - state: Current state ("init", "ready", "running").
-     * - stdin: Input string for Clingo.
+     * - files: The input files for Clingo.
      * - args: Arguments array for Clingo.
      * - work: Boolean flag indicating if a run is requested.
      * - py: Boolean flag for Python mode.
@@ -1015,7 +1035,7 @@ const Clingo = (() => {
 
             this.worker = null;
             this.state = "running";
-            this.stdin = "";
+            this.files = [];
             this.args = [];
             this.work = false;
             this.py = false;
@@ -1096,7 +1116,7 @@ const Clingo = (() => {
                 this.dispatchEvent(new CustomEvent('output-clear'));
                 this.state = "running";
                 this.work = false;
-                this.worker.postMessage({ type: 'run', input: this.stdin, args: this.args });
+                this.worker.postMessage({ type: 'run', files: this.files, args: this.args });
             }
             this.dispatchEvent(new CustomEvent('update-button', { detail: this.state }));
         }
@@ -1110,10 +1130,10 @@ const Clingo = (() => {
          * @param {string[]} args - Arguments for Clingo.
          * @param {string} content - Input string for Clingo.
          */
-        run(args, content) {
+        run(args, files) {
             this.work = true;
             this.args = args;
-            this.stdin = content;
+            this.files = files
             // NOTE: this stops currently running worker and starts a new one.
             this.startWorker();
             this.runIfReady();
@@ -1147,7 +1167,7 @@ const Clingo = (() => {
             this.workspaceController = new WorkspaceController();
 
             this.view.addEventListener('run-request', () =>
-                this.model.run(this.view.buildArgs(), this.workspaceController.getContent()));
+                this.model.run(this.view.buildArgs(), this.workspaceController.getFiles()));
             this.view.addEventListener('python-toggle', (e) =>
                 this.model.enablePython(e.detail));
             this.view.addEventListener('example-selected', () =>

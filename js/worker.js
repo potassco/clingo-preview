@@ -5,7 +5,7 @@ let Clingo = null
 const messageSchemas = {
     run: {
         args: "array",
-        input: "string",
+        files: "array",
     },
     init: {}
 };
@@ -51,10 +51,14 @@ self.addEventListener('message', (e) => {
     }
     else if (msg.type === 'run') {
         const vec = new Clingo.StringVec();
+        msg.files.forEach(file => {
+            Clingo.FS.writeFile(file.name, file.content);
+            vec.push_back(file.name);
+        });
         for (const arg of msg.args) {
             vec.push_back(arg);
         }
-        Clingo.run(msg.input, vec);
+        Clingo.run_default(vec);
         postMessage({ type: "exit" })
     }
 })

@@ -3,7 +3,7 @@ importScripts("https://cdn.jsdelivr.net/pyodide/v0.28.0/full/pyodide.js");
 const messageSchemas = {
     run: {
         args: "array",
-        input: "string",
+        files: "array",
     },
     init: {}
 };
@@ -65,9 +65,13 @@ async function init() {
     await pyodide.runPythonAsync(code);
 }
 
-async function run(input, args) {
+async function run(files, args) {
     try {
-        pyodide.setStdin(new StdinHandler(input))
+        pyodide.setStdin(new StdinHandler(""))
+        files.forEach(file => {
+            pyodide.FS.writeFile(file.name, file.content);
+            args.push(file.name);
+        });
         pyodide.globals.get('run_clingo_main')(pyodide.toPy(args))
     } catch (error) {
         postMessage({ type: "stderr", value: error.toString() });
@@ -84,7 +88,7 @@ self.addEventListener('message', (e) => {
         init().then(() => postMessage({ type: "init" }))
     }
     else if (msg.type === 'run') {
-        run(msg.input, msg.args).then(() => postMessage({ type: "exit" }))
+        run(msg.files, msg.args).then(() => postMessage({ type: "exit" }))
     }
 })
 
