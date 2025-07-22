@@ -204,30 +204,13 @@ const Clingo = (() => {
         }
 
         /**
-         * Returns the combined content of all entries as a single string.
+         * Returns an array of file objects for all session entries.
          *
-         * Python entries are wrapped with script markers. Non-python entries
-         * are prefixed with "#program base." except for the first one.
+         * Each file object contains a unique, sanitized name and its content.
+         * Python entries are wrapped with script markers.
          *
-         * @returns {string} The concatenated content of all entries.
+         * @returns {Object[]} Array of file objects: { name, content }
          */
-        getContent() {
-            let first = true;
-            return this.entries.map(entry => {
-                if (entry.type === "python") {
-                    return `#script(python)\n${entry.session.getValue()}\n#end.`;
-                } else {
-                    let prefix = "";
-                    if (!first) {
-                        prefix = "#program base.\n";
-                    } else {
-                        first = false;
-                    }
-                    return prefix + entry.session.getValue();
-                }
-            }).join('\n');
-        }
-
         getFiles() {
             const existing = {}
             return this.entries.map(entry => {
@@ -509,14 +492,13 @@ const Clingo = (() => {
         }
 
         /**
-         * Returns the combined content of all entries/tabs as a single string.
+         * Returns an array of file objects for all session entries.
          *
-         * @returns {string} The concatenated content of all entries.
+         * Each file object contains a unique, sanitized name and its content.
+         * Python entries are wrapped with script markers.
+         *
+         * @returns {Object[]} Array of file objects: { name, content }
          */
-        getContent() {
-            return this.model.getContent();
-        }
-
         getFiles() {
             return this.model.getFiles();
         }
@@ -768,14 +750,13 @@ const Clingo = (() => {
         }
 
         /**
-         * Gets the combined content of all session tabs.
+         * Returns an array of file objects for all session entries.
          *
-         * @returns {string} The concatenated content.
+         * Each file object contains a unique, sanitized name and its content.
+         * Python entries are wrapped with script markers.
+         *
+         * @returns {Object[]} Array of file objects: { name, content }
          */
-        getContent() {
-            return this.session.getContent();
-        }
-
         getFiles() {
             return this.session.getFiles();
         }
