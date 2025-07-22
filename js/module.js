@@ -832,12 +832,20 @@ const Clingo = (() => {
     /**
      * ClingoView manages the UI for Clingo controls and output.
      *
-     * Handles argument selection, output display, run button state, and emits events for user actions.
+     * Responsibilities:
+     * - Handles argument selection for Clingo execution.
+     * - Displays Clingo output and manages output clearing/appending.
+     * - Manages the Run button state and loading indicator.
+     * - Handles Python mode toggle and example selection.
+     * - Emits custom events for user actions (run-request, python-toggle, example-selected).
+     * - Provides methods to build Clingo arguments from UI state.
+     * - Allows getting/setting the selected example.
      */
     class ClingoView extends EventTarget {
         constructor() {
             super();
 
+            // References to argument controls
             this.Args = {
                 stats: document.getElementById("stats"),
                 profile: document.getElementById("profile"),
@@ -851,6 +859,7 @@ const Clingo = (() => {
             this.pyCheckbox = document.querySelector('.language-switch input[type="checkbox"]');
             this.examples = document.getElementById("examples");
 
+            // Event listeners for UI actions
             this.runButton.onclick = () =>
                 this.dispatchEvent(new CustomEvent('run-request'));
             this.examples.onchange = (e) =>
@@ -864,14 +873,27 @@ const Clingo = (() => {
             });
         }
 
+        /**
+         * Clears the Clingo output display.
+         */
         clearOutput() {
             this.outputElement.textContent = "";
         }
 
+        /**
+         * Appends text to the Clingo output display.
+         *
+         * @param {string} text - Text to append.
+         */
         updateOutput(text) {
             this.outputElement.textContent += `${text}\n`;
         }
 
+        /**
+         * Updates the Run button's state and loading indicator.
+         *
+         * @param {string} state - "ready" or other states.
+         */
         updateButton(state) {
             this.runButton.style.opacity = state === "ready" ? '100%' : '60%';
             if (state === "ready") {
@@ -881,6 +903,11 @@ const Clingo = (() => {
             }
         }
 
+        /**
+         * Ensures Python mode is enabled if the selected example requires it.
+         *
+         * @returns {boolean} True if Python mode was enabled, false otherwise.
+         */
         ensurePython() {
             if (!this.pyCheckbox.checked && this.examples.options[this.examples.selectedIndex].classList.contains('option-py')) {
                 this.pyCheckbox.checked = true;
@@ -889,6 +916,11 @@ const Clingo = (() => {
             return false;
         }
 
+        /**
+         * Builds the argument list for Clingo execution from UI controls.
+         *
+         * @returns {string[]} Array of arguments.
+         */
         buildArgs() {
             let args = [];
             switch (this.Args.reasoningMode.value) {
@@ -925,10 +957,20 @@ const Clingo = (() => {
             return args;
         }
 
+        /**
+         * Gets the currently selected example filename.
+         *
+         * @returns {string}
+         */
         getExample() {
             return this.examples.value;
         }
 
+        /**
+         * Sets the selected example in the dropdown.
+         *
+         * @param {string} value - Example filename to select.
+         */
         setExample(value) {
             this.examples.value = value;
         }
@@ -993,7 +1035,7 @@ const Clingo = (() => {
                         this.dispatchEvent(new CustomEvent('output-append', { detail: msg.value }));
                         break;
                     case "stderr":
-                        this.dispatchEvent(new CustomEvent('output-append', { detail: stripAnsiCodes(msg.value) }));
+                        this.dispatchEvent(new CustomEvent('output-append', { detail: Utils.stripAnsiCodes(msg.value) }));
                         break;
                 }
             };
