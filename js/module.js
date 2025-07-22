@@ -251,6 +251,11 @@ const Clingo = (() => {
                 maxLines: Infinity,
                 autoScrollEditorIntoView: true
             });
+
+            document.getElementById("tab-add-clingo").onclick = () =>
+                this.dispatchEvent(new CustomEvent('tab-create', { detail: { type: 'clingo', name: 'Untitled' } }));
+            document.getElementById("tab-add-python").onclick = () =>
+                this.dispatchEvent(new CustomEvent('tab-create', { detail: { type: 'python', name: 'Untitled' } }));
         }
 
         /**
@@ -396,6 +401,7 @@ const Clingo = (() => {
             this.view.addEventListener('tab-edit', (e) => this.edit(e.detail));
             this.view.addEventListener('tab-close', (e) => this.close(e.detail));
             this.view.addEventListener('tab-rename', (e) => e.detail.entry.name = e.detail.name);
+            this.view.addEventListener('tab-create', (e) => this.create(e.detail.type, e.detail.name));
 
             this.restore(this.view.getInitialContent(), "harry-and-sally.lp");
         }
@@ -512,11 +518,25 @@ const Clingo = (() => {
         }
     }
 
+    /**
+     * WorkspaceModel manages workspaces stored in localStorage.
+     *
+     * Provides methods to list, activate, save, load, remove, and archive workspaces.
+     * Each workspace is stored as a JSON string under the key "workspace:<name>".
+     */
     class WorkspaceModel {
+        /**
+         * Initializes a new WorkspaceModel instance.
+         */
         constructor() {
             this.active = null;
         }
 
+        /**
+         * Lists all workspace names stored in localStorage.
+         *
+         * @returns {string[]} Sorted array of workspace names.
+         */
         list() {
             return Object.keys(localStorage)
                 .filter(k => k.startsWith("workspace:"))
@@ -524,25 +544,51 @@ const Clingo = (() => {
                 .sort();
         }
 
+        /**
+         * Sets the active workspace by name.
+         *
+         * @param {string} name - Workspace name to set as active.
+         */
         setActive(name) {
             this.active = name;
         }
 
+        /**
+         * Gets the currently active workspace name.
+         *
+         * @returns {string|null} The active workspace name or null.
+         */
         getActive() {
             return this.active;
         }
 
+        /**
+         * Saves data to the currently active workspace.
+         *
+         * @param {string} data - JSON string to save.
+         */
         save(data) {
             if (this.active !== null) {
                 localStorage.setItem("workspace:" + this.active, data);
             }
         }
 
+        /**
+         * Saves data to a new workspace and sets it as active.
+         *
+         * @param {string} name - Workspace name.
+         * @param {string} data - JSON string to save.
+         */
         saveAs(name, data) {
             this.active = name;
             localStorage.setItem("workspace:" + name, data);
         }
 
+        /**
+         * Loads data from the currently active workspace.
+         *
+         * @returns {string|null} JSON string or null if not found.
+         */
         load() {
             if (this.active !== null) {
                 return localStorage.getItem("workspace:" + this.active);
@@ -550,6 +596,9 @@ const Clingo = (() => {
             return null;
         }
 
+        /**
+         * Removes the currently active workspace from localStorage.
+         */
         remove() {
             if (this.active !== null) {
                 localStorage.removeItem("workspace:" + this.active);
@@ -557,6 +606,11 @@ const Clingo = (() => {
             }
         }
 
+        /**
+         * Archives all workspaces into a zip file blob.
+         *
+         * @returns {Promise<Blob|undefined>} Zip file blob containing all workspaces, or undefined if none.
+         */
         async archive() {
             await Utils.loadZipLib();
             const workspaceNames = this.list();
@@ -579,7 +633,16 @@ const Clingo = (() => {
         }
     }
 
+    /**
+     * WorkspaceView manages the UI for workspace selection and actions.
+     *
+     * Handles displaying the workspace list, enabling/disabling action buttons,
+     * and emitting events for save, load, remove, download, and selection.
+     */
     class WorkspaceView extends EventTarget {
+        /**
+         * Initializes WorkspaceView and sets up UI elements and event listeners.
+         */
         constructor() {
             super();
 
@@ -592,6 +655,7 @@ const Clingo = (() => {
             this.workspaceMenuBtn = document.getElementById("workspace-menu-btn");
             this.workspaceMenuDropdown = document.getElementById("workspace-menu-dropdown");
 
+            // Button event listeners
             this.workspaceSaveBtn.onclick = () =>
                 this.dispatchEvent(new CustomEvent('workspace-save'));
             this.workspaceSaveAsBtn.onclick = () =>
@@ -603,6 +667,7 @@ const Clingo = (() => {
             this.workspaceDownloadBtn.onclick = () =>
                 this.dispatchEvent(new CustomEvent('workspace-download'));
 
+            // Menu dropdown toggle
             this.workspaceMenuBtn.onclick = () => {
                 this.workspaceMenuDropdown.style.display = this.workspaceMenuDropdown.style.display === "none" ? "block" : "none";
             };
@@ -613,6 +678,12 @@ const Clingo = (() => {
             });
         }
 
+        /**
+         * Updates the workspace list UI and button states.
+         *
+         * @param {string|null} active - The currently active workspace name.
+         * @param {string[]} names - Array of workspace names.
+         */
         update(active, names) {
             this.workspaceList.innerHTML = "";
             names.forEach(name => {
@@ -649,10 +720,6 @@ const Clingo = (() => {
             this.view.addEventListener('workspace-download', () => this.download());
 
             this.update();
-        }
-
-        createTab(type, name, content = "") {
-            this.session.create(type, name, content)
         }
 
         restoreTabs(value, name) {
@@ -787,6 +854,8 @@ const Clingo = (() => {
         const init = (receiver) => {
             runButton.onclick = () =>
                 receiver.dispatchEvent(new CustomEvent('run-request'));
+            examples.onchange = (e) =>
+                receiver.dispatchEvent(new CustomEvent('example-selected', { detail: e.target.value }))
             pyCheckbox.onchange = (e) =>
                 receiver.dispatchEvent(new CustomEvent('python-toggle', { detail: e.target.checked }));
             document.querySelector("#input").addEventListener("keydown", (ev) => {
@@ -918,19 +987,15 @@ const Clingo = (() => {
             request.send()
         }
 
-        const createTab = (type, name, content = "") => {
-            workspaceController.createTab(type, name, content)
-        }
-
         self.addEventListener('run-request', () => run())
         self.addEventListener('python-toggle', (e) => ClingoController.enablePython(e.detail))
+        self.addEventListener('example-selected', () => load())
         ClingoView.init(self)
         if (query_params.example !== undefined) {
             ClingoView.setExample(query_params.example)
             load()
         }
         ClingoController.startWorker()
-        return { load, run, createTab }
     })()
 
     return Control

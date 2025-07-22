@@ -13,7 +13,7 @@ title: Running clingo
  <ul class="hlist">
   <li><b>Examples:</b></li>
   <li>
-   <select id="examples" onchange="Clingo.load()">
+   <select id="examples">
     <optgroup label="Simple Examples">
      <option value="harry-and-sally.lp">Harry and Sally</option>
      <option value="flying-birds.lp">Flying Birds</option>
@@ -34,8 +34,8 @@ title: Running clingo
 
  <div class="tab-bar">
   <ul id="tabs"></ul>
-  <button class="tab-add" onclick="Clingo.createTab('clingo', 'Untitled')">🦉</button>
-  <button class="tab-add" onclick="Clingo.createTab('python', 'Untitled')">🐍</button>
+  <button id="tab-add-clingo" class="tab-add">🦉</button>
+  <button id="tab-add-python" class="tab-add">🐍</button>
   <div class="workspace-menu">
     <button  class="tab-add" id="workspace-menu-btn" title="Manage Workspaces">🗂️</button>
     <div id="workspace-menu-dropdown" style="display:none">
@@ -100,7 +100,7 @@ innocent(Suspect) :- motive(Suspect), not guilty(Suspect).</pre>
   </div></li>
  </ul>
 
- <button type="button" class="button" id="clingoRun" onclick="Clingo.run()">&#9658;&nbsp;Run!</button>
+ <button type="button" class="button" id="clingoRun">&#9658;&nbsp;Run!</button>
  <pre id="output" class="code"></pre>
 
 </div>
