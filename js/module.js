@@ -1,5 +1,115 @@
 const Clingo = (() => {
     /**
+     * Utils module provides helper functions for string manipulation,
+     * filename sanitization, and dynamic loading of external libraries.
+     *
+     * Functions:
+     * - splitInput: Splits input string into tab objects based on tab markers.
+     * - split: Splits a filename into name and extension.
+     * - sanitize: Sanitizes and ensures unique filenames.
+     * - loadZipLib: Dynamically loads the JSZip library if not already loaded.
+     */
+    const Utils = (() => {
+        /**
+         * Splits the input string into tab objects based on tab markers.
+         *
+         * Each tab marker should be in the format "%%% Tab: <tab name>".
+         * Determines the type of each tab ("clingo" or "python") based on its
+         * content. For python tabs, removes the script markers from the
+         * content.
+         *
+         * @param {string} value - The input string containing tabbed content.
+         * @param {string} name - The default name for the first tab if no marker is present.
+         * @returns {Object[]} Array of tab objects with type, name, and content.
+         */
+        const splitInput = (value, name) => {
+            const tabRegex = /^%%% Tab: (.+)$/gm;
+            let match, lastIndex = 0, tabs = [];
+            while ((match = tabRegex.exec(value)) !== null) {
+                if (match.index > lastIndex) {
+                    if (tabs.length > 0) {
+                        tabs[tabs.length - 1].content = value.slice(lastIndex, match.index);
+                    } else {
+                        tabs.push({ name, content: value.slice(lastIndex, match.index) });
+                    }
+                }
+                tabs.push({
+                    name: match[1].trim(),
+                    content: ""
+                });
+                lastIndex = tabRegex.lastIndex;
+            }
+            if (tabs.length > 0) {
+                tabs[tabs.length - 1].content = value.slice(lastIndex);
+            } else {
+                tabs = [{ name, content: value }];
+            }
+            tabs = tabs.map(tab => {
+                let lines = tab.content.trim().split('\n');
+                let type = "clingo";
+                if (lines.length >= 2 && lines[0].startsWith("#script(python)") && lines[lines.length - 1].startsWith("#end.")) {
+                    type = "python";
+                    lines.shift();
+                    lines.pop();
+                }
+                return { type, name: tab.name, content: lines.join('\n') }
+            });
+            return tabs;
+        }
+
+        /**
+         * Splits a filename into name and extension.
+         *
+         * @param {string} filename - The filename to split.
+         * @returns {[string, string]} Array with name and extension.
+         */
+        const split = (filename) => {
+            const idx = filename.lastIndexOf(".");
+            if (idx <= 0) {
+                return [filename, ""]
+            }
+            return [filename.slice(0, idx), filename.slice(idx)];
+        }
+
+        /**
+         * Sanitizes a filename and ensures uniqueness within a set.
+         *
+         * @param {string} name - The filename to sanitize.
+         * @param {Object} existing - Object tracking existing filenames.
+         * @returns {string} Unique, sanitized filename.
+         */
+        const sanitize = (name, existing) => {
+            let base = name.replace(/[^a-zA-Z0-9_\-.]/g, "_").slice(0, 100);
+            let [namePart, extPart] = split(base);
+            let unique = base;
+            let counter = 1;
+            while (existing[unique]) {
+                unique = `${namePart}_${counter}${extPart}`;
+                counter++;
+            }
+            existing[unique] = true;
+            return unique;
+        }
+
+        /**
+         * Dynamically loads the JSZip library if not already loaded.
+         *
+         * @returns {Promise<void>} Resolves when JSZip is loaded.
+         */
+        const loadZipLib = async () => {
+            if (!window.JSZip) {
+                await new Promise((resolve) => {
+                    const script = document.createElement('script');
+                    script.src = "https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js";
+                    script.onload = resolve;
+                    document.head.appendChild(script);
+                });
+            }
+        }
+        return { splitInput, sanitize, loadZipLib };
+    })()
+
+    /**
      * SessionModel manages a collection of session/tab entries and tracks the
      * active entry.
      *
@@ -88,53 +198,6 @@ const Clingo = (() => {
         clear() {
             this.entries.length = 0;
             this.active = null;
-        }
-
-        /**
-         * Splits the input string into tab objects based on tab markers.
-         *
-         * Each tab marker should be in the format "%%% Tab: <tab name>".
-         * Determines the type of each tab ("clingo" or "python") based on its
-         * content. For python tabs, removes the script markers from the
-         * content.
-         *
-         * @param {string} value - The input string containing tabbed content.
-         * @param {string} name - The default name for the first tab if no marker is present.
-         * @returns {Object[]} Array of tab objects with type, name, and content.
-         */
-        static splitInput(value, name) {
-            const tabRegex = /^%%% Tab: (.+)$/gm;
-            let match, lastIndex = 0, tabs = [];
-            while ((match = tabRegex.exec(value)) !== null) {
-                if (match.index > lastIndex) {
-                    if (tabs.length > 0) {
-                        tabs[tabs.length - 1].content = value.slice(lastIndex, match.index);
-                    } else {
-                        tabs.push({ name, content: value.slice(lastIndex, match.index) });
-                    }
-                }
-                tabs.push({
-                    name: match[1].trim(),
-                    content: ""
-                });
-                lastIndex = tabRegex.lastIndex;
-            }
-            if (tabs.length > 0) {
-                tabs[tabs.length - 1].content = value.slice(lastIndex);
-            } else {
-                tabs = [{ name, content: value }];
-            }
-            tabs = tabs.map(tab => {
-                let lines = tab.content.trim().split('\n');
-                let type = "clingo";
-                if (lines.length >= 2 && lines[0].startsWith("#script(python)") && lines[lines.length - 1].startsWith("#end.")) {
-                    type = "python";
-                    lines.shift();
-                    lines.pop();
-                }
-                return { type, name: tab.name, content: lines.join('\n') }
-            });
-            return tabs;
         }
 
         /**
@@ -365,8 +428,8 @@ const Clingo = (() => {
         }
 
         /**
-         * Creates a new session/tab with the specified type, name, and content.
-         * Adds it to the model and view, and activates it.
+         * Creates a new session/tab with the specified type, name, and
+         * content. Adds it to the model and view, and activates it.
          *
          * @param {string} type - The type of the session (e.g., "clingo", "python").
          * @param {string} name - The name of the session/tab.
@@ -441,7 +504,7 @@ const Clingo = (() => {
          * @param {string} name - The default name for the first tab if no marker is present.
          */
         restore(value, name) {
-            const tabs = SessionModel.splitInput(value, name);
+            const tabs = Utils.splitInput(value, name);
             this.clear();
             tabs.forEach(tab => {
                 this.create(tab.type, tab.name, tab.content);
@@ -449,140 +512,54 @@ const Clingo = (() => {
         }
     }
 
-    const sessionController = new SessionController();
-
-    const WorkspaceView = (() => {
-        const workspaceList = document.getElementById("workspace-list");
-        const workspaceSaveBtn = document.getElementById("workspace-save");
-        const workspaceSaveAsBtn = document.getElementById("workspace-saveas");
-        const workspaceLoadBtn = document.getElementById("workspace-load");
-        const workspaceDeleteBtn = document.getElementById("workspace-delete");
-        const workspaceDownloadBtn = document.getElementById("workspace-download");
-
-        const update = (active, names, receiver) => {
-            workspaceList.innerHTML = "";
-            names.forEach(name => {
-                const item = document.createElement("div");
-                item.textContent = name;
-                item.className = "workspace-list-item";
-                item.style.cursor = "pointer";
-                item.onclick = (e) => {
-                    e.stopPropagation();
-                    receiver.dispatchEvent(new CustomEvent('workspace-select', { detail: name }))
-                }
-                item.classList.toggle('selected', name === active);
-                workspaceList.appendChild(item);
-            });
-            workspaceLoadBtn.disabled = active === null;;
-            workspaceDeleteBtn.disabled = active === null;
-            workspaceSaveBtn.disabled = active === null;
+    class WorkspaceModel {
+        constructor() {
+            this.active = null;
         }
 
-        const init = (receiver) => {
-            workspaceSaveBtn.onclick = () =>
-                receiver.dispatchEvent(new CustomEvent('workspace-save'));
-            workspaceSaveAsBtn.onclick = () =>
-                receiver.dispatchEvent(new CustomEvent('workspace-save-as'))
-            workspaceLoadBtn.onclick = () =>
-                receiver.dispatchEvent(new CustomEvent('workspace-load'))
-            workspaceDeleteBtn.onclick = () =>
-                receiver.dispatchEvent(new CustomEvent('workspace-remove'))
-            workspaceDownloadBtn.onclick = () =>
-                receiver.dispatchEvent(new CustomEvent('workspace-download'))
-
-            // Workspace menu dropdown toggle
-            const workspaceMenuBtn = document.getElementById("workspace-menu-btn");
-            const workspaceMenuDropdown = document.getElementById("workspace-menu-dropdown");
-            workspaceMenuBtn.onclick = () => {
-                workspaceMenuDropdown.style.display = workspaceMenuDropdown.style.display === "none" ? "block" : "none";
-            };
-            document.addEventListener("click", (e) => {
-                if (!workspaceMenuBtn.contains(e.target) && !workspaceMenuDropdown.contains(e.target)) {
-                    workspaceMenuDropdown.style.display = "none";
-                }
-            });
+        list() {
+            return Object.keys(localStorage)
+                .filter(k => k.startsWith("workspace:"))
+                .map(k => k.replace("workspace:", ""))
+                .sort();
         }
 
-        return { init, update }
-    })()
-
-    const WorkspaceState = (() => {
-        const self = new EventTarget();
-        let active = null;
-
-        const list = () => Object.keys(localStorage)
-            .filter(k => k.startsWith("workspace:"))
-            .map(k => k.replace("workspace:", ""))
-            .sort();
-
-        const update = () => {
-            WorkspaceView.update(active, list(), self);
+        setActive(name) {
+            this.active = name;
         }
 
-        const save = () => {
-            if (active !== null) {
-                localStorage.setItem("workspace:" + active, sessionController.serialize())
-                update()
-            }
-        };
+        getActive() {
+            return this.active;
+        }
 
-        const saveAs = () => {
-            let name = prompt("Enter new workspace name:");
-            if (name) {
-                active = name;
-                save(name);
+        save(data) {
+            if (this.active !== null) {
+                localStorage.setItem("workspace:" + this.active, data);
             }
         }
 
-        const load = () => {
-            if (active !== null) {
-                sessionController.deserialize(localStorage.getItem("workspace:" + active));
-            }
-        };
-
-        const remove = () => {
-            if (active !== null) {
-                localStorage.removeItem("workspace:" + active);
-                active = null;
-                update()
-            }
-        };
-
-        function split(filename) {
-            const idx = filename.lastIndexOf(".");
-            if (idx <= 0) {
-                return [filename, ""]
-            }
-            return [filename.slice(0, idx), filename.slice(idx)];
+        saveAs(name, data) {
+            this.active = name;
+            localStorage.setItem("workspace:" + name, data);
         }
 
-        const sanitize = (name, existing) => {
-            let base = name.replace(/[^a-zA-Z0-9_\-.]/g, "_").slice(0, 100);
-            let [namePart, extPart] = split(base);
-            let unique = base;
-            let counter = 1;
-            while (existing[unique]) {
-                unique = `${namePart}_${counter}${extPart}`;
-                counter++;
+        load() {
+            if (this.active !== null) {
+                return localStorage.getItem("workspace:" + this.active);
             }
-            existing[unique] = true;
-            return unique;
+            return null;
         }
 
-        const loadZipLib = async () => {
-            if (!window.JSZip) {
-                await new Promise((resolve) => {
-                    const script = document.createElement('script');
-                    script.src = "https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js";
-                    script.onload = resolve;
-                    document.head.appendChild(script);
-                });
+        remove() {
+            if (this.active !== null) {
+                localStorage.removeItem("workspace:" + this.active);
+                this.active = null;
             }
-        };
+        }
 
-        const download = async () => {
-            await loadZipLib();
-            const workspaceNames = list();
+        async archive() {
+            await Utils.loadZipLib();
+            const workspaceNames = this.list();
             if (workspaceNames.length === 0) {
                 return;
             }
@@ -590,37 +567,146 @@ const Clingo = (() => {
             const existingWS = {};
             for (const wsName of workspaceNames) {
                 const data = JSON.parse(localStorage.getItem("workspace:" + wsName) || "[]");
-                const folder = zip.folder(sanitize(wsName, existingWS));
+                const folder = zip.folder(Utils.sanitize(wsName, existingWS));
                 const existingLP = {};
                 const existingPY = {};
                 data.forEach(file => {
                     let existing = file.type === "python" ? existingPY : existingLP;
-                    folder.file(sanitize(file.name, existing), file.content);
+                    folder.file(Utils.sanitize(file.name, existing), file.content);
                 });
             }
-            const blob = await zip.generateAsync({ type: "blob" });
+            return await zip.generateAsync({ type: "blob" });
+        }
+    }
+
+    class WorkspaceView extends EventTarget {
+        constructor() {
+            super();
+
+            this.workspaceList = document.getElementById("workspace-list");
+            this.workspaceSaveBtn = document.getElementById("workspace-save");
+            this.workspaceSaveAsBtn = document.getElementById("workspace-saveas");
+            this.workspaceLoadBtn = document.getElementById("workspace-load");
+            this.workspaceDeleteBtn = document.getElementById("workspace-delete");
+            this.workspaceDownloadBtn = document.getElementById("workspace-download");
+            this.workspaceMenuBtn = document.getElementById("workspace-menu-btn");
+            this.workspaceMenuDropdown = document.getElementById("workspace-menu-dropdown");
+
+            this.workspaceSaveBtn.onclick = () =>
+                this.dispatchEvent(new CustomEvent('workspace-save'));
+            this.workspaceSaveAsBtn.onclick = () =>
+                this.dispatchEvent(new CustomEvent('workspace-save-as'));
+            this.workspaceLoadBtn.onclick = () =>
+                this.dispatchEvent(new CustomEvent('workspace-load'));
+            this.workspaceDeleteBtn.onclick = () =>
+                this.dispatchEvent(new CustomEvent('workspace-remove'));
+            this.workspaceDownloadBtn.onclick = () =>
+                this.dispatchEvent(new CustomEvent('workspace-download'));
+
+            this.workspaceMenuBtn.onclick = () => {
+                this.workspaceMenuDropdown.style.display = this.workspaceMenuDropdown.style.display === "none" ? "block" : "none";
+            };
+            document.addEventListener("click", (e) => {
+                if (!this.workspaceMenuBtn.contains(e.target) && !this.workspaceMenuDropdown.contains(e.target)) {
+                    this.workspaceMenuDropdown.style.display = "none";
+                }
+            });
+        }
+
+        update(active, names) {
+            this.workspaceList.innerHTML = "";
+            names.forEach(name => {
+                const item = document.createElement("div");
+                item.textContent = name;
+                item.className = "workspace-list-item";
+                item.style.cursor = "pointer";
+                item.onclick = (e) => {
+                    e.stopPropagation();
+                    this.dispatchEvent(new CustomEvent('workspace-select', { detail: name }))
+                }
+                item.classList.toggle('selected', name === active);
+                this.workspaceList.appendChild(item);
+            });
+            this.workspaceLoadBtn.disabled = active === null;
+            this.workspaceDeleteBtn.disabled = active === null;
+            this.workspaceSaveBtn.disabled = active === null;
+        }
+    }
+
+    class WorkspaceController extends EventTarget {
+        constructor() {
+            super();
+
+            this.session = new SessionController();
+            this.model = new WorkspaceModel();
+            this.view = new WorkspaceView();
+
+            this.view.addEventListener('workspace-save', () => this.save());
+            this.view.addEventListener('workspace-save-as', () => this.saveAs());
+            this.view.addEventListener('workspace-remove', () => this.remove());
+            this.view.addEventListener('workspace-select', (e) => this.select(e.detail));
+            this.view.addEventListener('workspace-load', () => this.load());
+            this.view.addEventListener('workspace-download', () => this.download());
+
+            this.update();
+        }
+
+        createTab(type, name, content = "") {
+            this.session.create(type, name, content)
+        }
+
+        restoreTabs(value, name) {
+            this.session.restore(value, name);
+        }
+
+        getContent() {
+            return this.session.getContent();
+        }
+
+        update() {
+            this.view.update(this.model.getActive(), this.model.list(), this);
+        }
+
+        save() {
+            this.model.save(this.session.serialize());
+            this.update();
+        }
+
+        saveAs() {
+            let name = prompt("Enter new workspace name:");
+            if (name) {
+                this.model.saveAs(name, this.session.serialize());
+                this.update();
+            }
+        }
+
+        load() {
+            const data = this.model.load();
+            if (data) {
+                this.session.deserialize(data);
+            }
+        }
+
+        remove() {
+            this.model.remove();
+            this.update();
+        }
+
+        select(name) {
+            this.model.setActive(name);
+            this.update();
+        }
+
+        async download() {
+            const blob = await this.model.archive();
             const a = document.createElement("a");
             a.href = URL.createObjectURL(blob);
             a.download = `workspaces.zip`;
             a.click();
             URL.revokeObjectURL(a.href);
-        };
+        }
 
-        const select = (name) => {
-            active = name;
-            update()
-        };
-
-        self.addEventListener('workspace-save', () => save())
-        self.addEventListener('workspace-save-as', () => saveAs())
-        self.addEventListener('workspace-remove', () => remove())
-        self.addEventListener('workspace-select', (e) => select(e.detail))
-        self.addEventListener('workspace-load', () => load())
-        self.addEventListener('workspace-download', () => download())
-        WorkspaceView.init(self)
-        update()
-        return {};
-    })();
+    }
 
     const ClingoView = (() => {
         const Args = {
@@ -722,7 +808,7 @@ const Clingo = (() => {
         }
     })()
 
-    const ClingoControl = (() => {
+    const ClingoController = (() => {
         let worker = null
         let state = "running"
         let stdin = ""
@@ -808,22 +894,24 @@ const Clingo = (() => {
 
     const Control = (() => {
         const self = new EventTarget();
+        const workspaceController = new WorkspaceController();
+
         const query_params = Object.fromEntries(
             Array.from(new URLSearchParams(window.location.search))
                 .map(([key, value]) => [key, decodeURIComponent(value)])
         )
 
-        const run = () => ClingoControl.run(sessionController.getContent())
+        const run = () => ClingoController.run(workspaceController.getContent())
 
         const load = () => {
             path = ClingoView.getExample()
             if (ClingoView.ensurePython()) {
-                ClingoControl.enablePython(true)
+                ClingoController.enablePython(true)
             }
             var request = new XMLHttpRequest()
             request.onreadystatechange = () => {
                 if (request.readyState == 4 && request.status == 200) {
-                    sessionController.restore(request.responseText.trim(), path)
+                    workspaceController.restoreTabs(request.responseText.trim(), path)
                 }
             }
             request.open("GET", `examples/${path}`, true)
@@ -831,17 +919,17 @@ const Clingo = (() => {
         }
 
         const createTab = (type, name, content = "") => {
-            sessionController.create(type, name, content)
+            workspaceController.createTab(type, name, content)
         }
 
         self.addEventListener('run-request', () => run())
-        self.addEventListener('python-toggle', (e) => ClingoControl.enablePython(e.detail))
+        self.addEventListener('python-toggle', (e) => ClingoController.enablePython(e.detail))
         ClingoView.init(self)
         if (query_params.example !== undefined) {
             ClingoView.setExample(query_params.example)
             load()
         }
-        ClingoControl.startWorker()
+        ClingoController.startWorker()
         return { load, run, createTab }
     })()
 
