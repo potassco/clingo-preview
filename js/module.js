@@ -106,7 +106,10 @@ const Clingo = (() => {
                 });
             }
         }
-        return { splitInput, sanitize, loadZipLib };
+
+        const stripAnsiCodes = (input) => input.replace(/\x1b\[[0-9;]*m/g, '')
+
+        return { splitInput, sanitize, loadZipLib, stripAnsiCodes };
     })()
 
     /**
@@ -704,7 +707,22 @@ const Clingo = (() => {
         }
     }
 
+    /**
+     * WorkspaceController orchestrates interactions between WorkspaceModel,
+     * WorkspaceView, and SessionController.
+     *
+     * Listens for workspace-related UI events and delegates actions to the
+     * model and session controller. Handles saving, loading, removing,
+     * selecting, and downloading workspaces, and updates the UI accordingly.
+     */
     class WorkspaceController extends EventTarget {
+        /**
+         * Initializes a new WorkspaceController instance.
+         *
+         * Sets up the session, model, and view, and attaches event listeners
+         * for workspace actions (save, save as, remove, select, load,
+         * download). Calls update() to refresh the workspace view.
+         */
         constructor() {
             super();
 
@@ -722,23 +740,46 @@ const Clingo = (() => {
             this.update();
         }
 
+        /**
+         * Restores tabs in the session controller from a string value and
+         * name.
+         *
+         * @param {string} value - Tabbed content to restore.
+         * @param {string} name - Default tab name.
+         */
         restoreTabs(value, name) {
             this.session.restore(value, name);
         }
 
+        /**
+         * Gets the combined content of all session tabs.
+         *
+         * @returns {string} The concatenated content.
+         */
         getContent() {
             return this.session.getContent();
         }
 
+        /**
+         * Updates the workspace view with the current active workspace and
+         * list.
+         */
         update() {
             this.view.update(this.model.getActive(), this.model.list(), this);
         }
 
+        /**
+         * Saves the current session to the active workspace.
+         */
         save() {
             this.model.save(this.session.serialize());
             this.update();
         }
 
+        /**
+         * Prompts for a new workspace name and saves the current session as a
+         * new workspace.
+         */
         saveAs() {
             let name = prompt("Enter new workspace name:");
             if (name) {
@@ -747,6 +788,9 @@ const Clingo = (() => {
             }
         }
 
+        /**
+         * Loads the active workspace into the session controller.
+         */
         load() {
             const data = this.model.load();
             if (data) {
@@ -754,16 +798,27 @@ const Clingo = (() => {
             }
         }
 
+        /**
+         * Removes the active workspace and updates the view.
+         */
         remove() {
             this.model.remove();
             this.update();
         }
 
+        /**
+         * Sets the specified workspace as active and updates the view.
+         *
+         * @param {string} name - Workspace name to activate.
+         */
         select(name) {
             this.model.setActive(name);
             this.update();
         }
 
+        /**
+         * Archives all workspaces and triggers a download of the zip file.
+         */
         async download() {
             const blob = await this.model.archive();
             const a = document.createElement("a");
@@ -772,231 +827,246 @@ const Clingo = (() => {
             a.click();
             URL.revokeObjectURL(a.href);
         }
-
     }
 
-    const ClingoView = (() => {
-        const Args = {
-            stats: document.getElementById("stats"),
-            profile: document.getElementById("profile"),
-            project: document.getElementById("project"),
-            reasoningMode: document.getElementById("reasoning-mode"),
-            logLevel: document.getElementById("log-level"),
-            mode: document.getElementById("mode")
-        }
-        const runButton = document.getElementById('clingoRun')
-        const outputElement = document.getElementById('output')
-        const pyCheckbox = document.querySelector('.language-switch input[type="checkbox"]')
-        const examples = document.getElementById("examples")
+    /**
+     * ClingoView manages the UI for Clingo controls and output.
+     *
+     * Handles argument selection, output display, run button state, and emits events for user actions.
+     */
+    class ClingoView extends EventTarget {
+        constructor() {
+            super();
 
-        const clearOutput = () => {
-            outputElement.textContent = ""
-        }
+            this.Args = {
+                stats: document.getElementById("stats"),
+                profile: document.getElementById("profile"),
+                project: document.getElementById("project"),
+                reasoningMode: document.getElementById("reasoning-mode"),
+                logLevel: document.getElementById("log-level"),
+                mode: document.getElementById("mode")
+            };
+            this.runButton = document.getElementById('clingoRun');
+            this.outputElement = document.getElementById('output');
+            this.pyCheckbox = document.querySelector('.language-switch input[type="checkbox"]');
+            this.examples = document.getElementById("examples");
 
-        const updateOutput = (text) => {
-            outputElement.textContent += `${text}\n`
-        }
-
-        const updateButton = (state) => {
-            runButton.style.opacity = state === "ready" ? '100%' : '60%'
-            if (state === "ready") {
-                runButton.classList.remove("button--loading");
-            }
-            else {
-                runButton.classList.add("button--loading");
-            }
-        }
-
-        const ensurePython = () => {
-            if (!pyCheckbox.checked && examples.options[examples.selectedIndex].classList.contains('option-py')) {
-                pyCheckbox.checked = true
-                return true
-            }
-            return false
-        }
-
-        const buildArgs = () => {
-            let args = []
-            switch (Args.reasoningMode.value) {
-                case "brave":
-                    args.push(...["--opt-mode=optN", "--enum-mode=brave"])
-                    break
-                case "cautious":
-                    args.push(...["--opt-mode=optN", "--enum-mode=cautious"])
-                    break
-                case "enumerate":
-                    args.push(...["--opt-mode=optN", "0"])
-                    break
-                default:
-                    break
-            }
-            args.push(...["--mode", Args.mode.value])
-            args.push(...["--log-level", Args.logLevel.value])
-            switch (Args.profile.value) {
-                case "compact":
-                    args.push("--profile=compact")
-                    break
-                case "detailed":
-                    args.push("--profile")
-                    break
-                default:
-                    break
-            }
-            if (Args.stats.checked) {
-                args.push("--stats")
-            }
-            if (Args.project.checked) {
-                args.push("--project")
-            }
-            return args
-        }
-
-        const init = (receiver) => {
-            runButton.onclick = () =>
-                receiver.dispatchEvent(new CustomEvent('run-request'));
-            examples.onchange = (e) =>
-                receiver.dispatchEvent(new CustomEvent('example-selected', { detail: e.target.value }))
-            pyCheckbox.onchange = (e) =>
-                receiver.dispatchEvent(new CustomEvent('python-toggle', { detail: e.target.checked }));
+            this.runButton.onclick = () =>
+                this.dispatchEvent(new CustomEvent('run-request'));
+            this.examples.onchange = (e) =>
+                this.dispatchEvent(new CustomEvent('example-selected', { detail: e.target.value }));
+            this.pyCheckbox.onchange = (e) =>
+                this.dispatchEvent(new CustomEvent('python-toggle', { detail: e.target.checked }));
             document.querySelector("#input").addEventListener("keydown", (ev) => {
                 if (ev.key === "Enter" && ev.ctrlKey) {
-                    receiver.dispatchEvent(new CustomEvent('run-request'));
+                    this.dispatchEvent(new CustomEvent('run-request'));
                 }
-            })
+            });
         }
 
-        return {
-            init,
-            clearOutput,
-            updateOutput,
-            updateButton,
-            ensurePython,
-            buildArgs,
-            getExample: () => examples.value,
-            setExample: (value) => examples.value = value
-        }
-    })()
-
-    const ClingoController = (() => {
-        let worker = null
-        let state = "running"
-        let stdin = ""
-        let args = []
-        let work = false
-        let py = false
-        let ispy = false
-
-        const stripAnsiCodes = (input) => input.replace(/\x1b\[[0-9;]*m/g, '')
-
-        const runClingo = () => {
-            if (state == "ready") {
-                if (work) {
-                    ClingoView.clearOutput()
-                    state = "running"
-                    work = false
-                    worker.postMessage({ type: 'run', input: stdin, args: args })
-                }
-            }
-            ClingoView.updateButton(state)
+        clearOutput() {
+            this.outputElement.textContent = "";
         }
 
-        const startWorker = () => {
-            if (state == "ready" || state == "init") {
-                return
-            }
-            state = "init"
-            ClingoView.updateButton(state)
-            if (worker != null) {
-                worker.terminate()
-            }
+        updateOutput(text) {
+            this.outputElement.textContent += `${text}\n`;
+        }
 
-            if (py) {
-                ispy = true
-                worker = new Worker('js/pyworker.js')
+        updateButton(state) {
+            this.runButton.style.opacity = state === "ready" ? '100%' : '60%';
+            if (state === "ready") {
+                this.runButton.classList.remove("button--loading");
             } else {
-                ispy = false
-                worker = new Worker('js/worker.js')
+                this.runButton.classList.add("button--loading");
+            }
+        }
+
+        ensurePython() {
+            if (!this.pyCheckbox.checked && this.examples.options[this.examples.selectedIndex].classList.contains('option-py')) {
+                this.pyCheckbox.checked = true;
+                return true;
+            }
+            return false;
+        }
+
+        buildArgs() {
+            let args = [];
+            switch (this.Args.reasoningMode.value) {
+                case "brave":
+                    args.push(...["--opt-mode=optN", "--enum-mode=brave"]);
+                    break;
+                case "cautious":
+                    args.push(...["--opt-mode=optN", "--enum-mode=cautious"]);
+                    break;
+                case "enumerate":
+                    args.push(...["--opt-mode=optN", "0"]);
+                    break;
+                default:
+                    break;
+            }
+            args.push(...["--mode", this.Args.mode.value]);
+            args.push(...["--log-level", this.Args.logLevel.value]);
+            switch (this.Args.profile.value) {
+                case "compact":
+                    args.push("--profile=compact");
+                    break;
+                case "detailed":
+                    args.push("--profile");
+                    break;
+                default:
+                    break;
+            }
+            if (this.Args.stats.checked) {
+                args.push("--stats");
+            }
+            if (this.Args.project.checked) {
+                args.push("--project");
+            }
+            return args;
+        }
+
+        getExample() {
+            return this.examples.value;
+        }
+
+        setExample(value) {
+            this.examples.value = value;
+        }
+    }
+
+    class ClingoModel extends EventTarget {
+        constructor() {
+            super();
+
+            this.worker = null;
+            this.state = "running";
+            this.stdin = "";
+            this.args = [];
+            this.work = false;
+            this.py = false;
+            this.ispy = false;
+        }
+
+        enablePython(enable) {
+            this.py = enable;
+            if (this.py != this.ispy) {
+                // NOTE: we set the state to running here to pretend the worker
+                // is running. This will terminate the worker on the following
+                // startWorker call.
+                this.state = "running";
+                this.startWorker();
+            }
+        }
+
+        startWorker() {
+            if (this.state == "ready" || this.state == "init") {
+                return;
+            }
+            this.state = "init";
+            this.dispatchEvent(new CustomEvent('update-button', { detail: this.state }));
+            if (this.worker != null) {
+                this.worker.terminate();
             }
 
-            worker.onmessage = (e) => {
-                const msg = e.data
+            if (this.py) {
+                this.ispy = true;
+                this.worker = new Worker('js/pyworker.js');
+            } else {
+                this.ispy = false;
+                this.worker = new Worker('js/worker.js');
+            }
+
+            this.worker.onmessage = (e) => {
+                const msg = e.data;
                 switch (msg.type) {
                     case "init":
-                        state = "ready"
-                        runClingo()
-                        break
+                        this.state = "ready";
+                        this.runIfReady();
+                        break;
                     case "ready":
-                        worker.postMessage({ type: 'init' })
-                        break
+                        this.worker.postMessage({ type: 'init' });
+                        break;
                     case "exit":
-                        setTimeout(startWorker, 0)
-                        break
+                        setTimeout(() => this.startWorker(), 0);
+                        break;
                     case "stdout":
-                        ClingoView.updateOutput(msg.value)
-                        break
+                        this.dispatchEvent(new CustomEvent('output-append', { detail: msg.value }));
+                        break;
                     case "stderr":
-                        ClingoView.updateOutput(stripAnsiCodes(msg.value))
-                        break
+                        this.dispatchEvent(new CustomEvent('output-append', { detail: stripAnsiCodes(msg.value) }));
+                        break;
+                }
+            };
+        }
+
+        runIfReady() {
+            if (this.state == "ready") {
+                if (this.work) {
+                    this.dispatchEvent(new CustomEvent('output-clear'));
+                    this.state = "running";
+                    this.work = false;
+                    this.worker.postMessage({ type: 'run', input: this.stdin, args: this.args });
                 }
             }
+            this.dispatchEvent(new CustomEvent('update-button', { detail: this.state }));
         }
 
-        const run = (content) => {
-            work = true
-            args = ClingoView.buildArgs()
-            stdin = content
-            startWorker()
-            runClingo()
+        run(args, content) {
+            this.work = true;
+            this.args = args;
+            this.stdin = content;
+            // NOTE: this stops currently running worker and starts a new one.
+            this.startWorker();
+            this.runIfReady();
         }
+    }
 
-        const enablePython = (enable) => {
-            py = enable
-            if (py != ispy) {
-                state = "running"
-                startWorker()
+    class ClingoController {
+        constructor() {
+            this.model = new ClingoModel();
+            this.view = new ClingoView();
+            this.workspaceController = new WorkspaceController();
+
+            this.view.addEventListener('run-request', () =>
+                this.model.run(this.view.buildArgs(), this.workspaceController.getContent()));
+            this.view.addEventListener('python-toggle', (e) =>
+                this.model.enablePython(e.detail));
+            this.view.addEventListener('example-selected', () =>
+                this.load());
+
+            this.model.addEventListener('output-append', (e) =>
+                this.view.updateOutput(e.detail));
+            this.model.addEventListener('output-clear', () =>
+                this.view.clearOutput());
+            this.model.addEventListener('update-button', (e) =>
+                this.view.updateButton(e.detail));
+
+            const query_params = Object.fromEntries(
+                Array.from(new URLSearchParams(window.location.search))
+                    .map(([key, value]) => [key, decodeURIComponent(value)])
+            );
+            if (query_params.example !== undefined) {
+                this.view.setExample(query_params.example);
+                this.load();
             }
+            this.model.startWorker();
         }
 
-        // NOTE: that events are handled by Control
-        return { run, enablePython, startWorker }
-    })()
-
-    const Control = (() => {
-        const self = new EventTarget();
-        const workspaceController = new WorkspaceController();
-
-        const query_params = Object.fromEntries(
-            Array.from(new URLSearchParams(window.location.search))
-                .map(([key, value]) => [key, decodeURIComponent(value)])
-        )
-
-        const run = () => ClingoController.run(workspaceController.getContent())
-
-        const load = () => {
-            path = ClingoView.getExample()
-            if (ClingoView.ensurePython()) {
-                ClingoController.enablePython(true)
+        load() {
+            const path = this.view.getExample();
+            if (this.view.ensurePython()) {
+                this.model.enablePython(true);
             }
-            var request = new XMLHttpRequest()
+            var request = new XMLHttpRequest();
             request.onreadystatechange = () => {
                 if (request.readyState == 4 && request.status == 200) {
-                    workspaceController.restoreTabs(request.responseText.trim(), path)
+                    this.workspaceController.restoreTabs(request.responseText.trim(), path);
                 }
-            }
-            request.open("GET", `examples/${path}`, true)
-            request.send()
+            };
+            request.open("GET", `examples/${path}`, true);
+            request.send();
         }
+    }
 
-        self.addEventListener('run-request', () => run())
-        self.addEventListener('python-toggle', (e) => ClingoController.enablePython(e.detail))
-        self.addEventListener('example-selected', () => load())
-        ClingoView.init(self)
-        if (query_params.example !== undefined) {
-            ClingoView.setExample(query_params.example)
-            load()
-        }
-        ClingoController.startWorker()
-    })()
-
-    return Control
+    return new ClingoController();
 })()
