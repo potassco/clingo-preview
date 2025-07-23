@@ -209,17 +209,13 @@ const Clingo = (() => {
          * Each file object contains a unique, sanitized name and its content.
          * Python entries are wrapped with script markers.
          *
-         * @returns {Object[]} Array of file objects: { name, content }
+         * @returns {Object[]} Array of file objects: { name, type, content }
          */
         getFiles() {
             const existing = {}
             return this.entries.map(entry => {
                 const name = Utils.sanitize(entry.name, existing)
-                if (entry.type === "python") {
-                    return { name, content: `#script(python)\n${entry.session.getValue()}\n#end.` }
-                } else {
-                    return { name, content: entry.session.getValue() }
-                }
+                return { name, type: entry.type, content: entry.session.getValue() }
             })
         }
     }
@@ -497,7 +493,7 @@ const Clingo = (() => {
          * Each file object contains a unique, sanitized name and its content.
          * Python entries are wrapped with script markers.
          *
-         * @returns {Object[]} Array of file objects: { name, content }
+         * @returns {Object[]} Array of file objects: { name, type, content }
          */
         getFiles() {
             return this.model.getFiles();
@@ -755,7 +751,7 @@ const Clingo = (() => {
          * Each file object contains a unique, sanitized name and its content.
          * Python entries are wrapped with script markers.
          *
-         * @returns {Object[]} Array of file objects: { name, content }
+         * @returns {Object[]} Array of file objects: { name, type, content }
          */
         getFiles() {
             return this.session.getFiles();
@@ -925,6 +921,15 @@ const Clingo = (() => {
                 return true;
             }
             return false;
+        }
+
+        /**
+         * Set the value of the Python checkbox without triggering an event.
+         *
+         * @param {boolean} enable - True to enable Python mode, false to disable.
+         */
+        setPython(enable) {
+            this.pyCheckbox.checked = enable;
         }
 
         /**
@@ -1115,6 +1120,9 @@ const Clingo = (() => {
             this.work = true;
             this.args = args;
             this.files = files
+            if (files.find(file => file.type === "python")) {
+                this.enablePython(true);
+            }
             // NOTE: this stops currently running worker and starts a new one.
             this.startWorker();
             this.runIfReady();
@@ -1147,8 +1155,11 @@ const Clingo = (() => {
             this.view = new ClingoView();
             this.workspaceController = new WorkspaceController();
 
-            this.view.addEventListener('run-request', () =>
-                this.model.run(this.view.buildArgs(), this.workspaceController.getFiles()));
+            this.view.addEventListener('run-request', () => {
+                this.model.run(this.view.buildArgs(), this.workspaceController.getFiles())
+                // NOTE: Triggering a run might implicitely enable Python.
+                this.view.setPython(this.model.py);
+            });
             this.view.addEventListener('python-toggle', (e) =>
                 this.model.enablePython(e.detail));
             this.view.addEventListener('example-selected', () =>

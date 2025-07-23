@@ -33,9 +33,13 @@ from clingo.core import Library
 from clingo.app import clingo_main
 from clingo.script import enable_python
 
-def run_clingo_main(args):
+def run_clingo_main(args, python):
     with Library() as lib:
         enable_python(lib)
+        for name in python:
+            with open(name, "r") as hnd:
+                compiled = compile(hnd.read(), name, "exec")
+                exec(compiled, globals())
         clingo_main(lib, args)
 `;
 
@@ -67,12 +71,18 @@ async function init() {
 
 async function run(files, args) {
     try {
+        const python = []
         pyodide.setStdin(new StdinHandler(""))
         files.forEach(file => {
             pyodide.FS.writeFile(file.name, file.content);
-            args.push(file.name);
+            if (file.type == "python") {
+                python.push(file.name);
+            }
+            else {
+                args.push(file.name);
+            }
         });
-        pyodide.globals.get('run_clingo_main')(pyodide.toPy(args))
+        pyodide.globals.get('run_clingo_main')(pyodide.toPy(args), pyodide.toPy(python))
     } catch (error) {
         postMessage({ type: "stderr", value: error.toString() });
     }
