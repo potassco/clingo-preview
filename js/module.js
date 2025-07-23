@@ -24,7 +24,9 @@ const Clingo = (() => {
          */
         const splitInput = (value, name) => {
             const tabRegex = /^%%% Tab: (.+)$/gm;
-            let match, lastIndex = 0, tabs = [];
+            let match,
+                lastIndex = 0,
+                tabs = [];
             while ((match = tabRegex.exec(value)) !== null) {
                 if (match.index > lastIndex) {
                     if (tabs.length > 0) {
@@ -35,7 +37,7 @@ const Clingo = (() => {
                 }
                 tabs.push({
                     name: match[1].trim(),
-                    content: ""
+                    content: "",
                 });
                 lastIndex = tabRegex.lastIndex;
             }
@@ -44,18 +46,18 @@ const Clingo = (() => {
             } else {
                 tabs = [{ name, content: value }];
             }
-            tabs = tabs.map(tab => {
-                let lines = tab.content.trim().split('\n');
+            tabs = tabs.map((tab) => {
+                let lines = tab.content.trim().split("\n");
                 let type = "clingo";
                 if (lines.length >= 2 && lines[0].startsWith("#script(python)") && lines[lines.length - 1].startsWith("#end.")) {
                     type = "python";
                     lines.shift();
                     lines.pop();
                 }
-                return { type, name: tab.name, content: lines.join('\n') }
+                return { type, name: tab.name, content: lines.join("\n") };
             });
             return tabs;
-        }
+        };
 
         /**
          * Splits a filename into name and extension.
@@ -66,10 +68,10 @@ const Clingo = (() => {
         const split = (filename) => {
             const idx = filename.lastIndexOf(".");
             if (idx <= 0) {
-                return [filename, ""]
+                return [filename, ""];
             }
             return [filename.slice(0, idx), filename.slice(idx)];
-        }
+        };
 
         /**
          * Sanitizes a filename and ensures uniqueness within a set.
@@ -89,7 +91,7 @@ const Clingo = (() => {
             }
             existing[unique] = true;
             return unique;
-        }
+        };
 
         /**
          * Dynamically loads the JSZip library if not already loaded.
@@ -99,18 +101,18 @@ const Clingo = (() => {
         const loadZipLib = async () => {
             if (!window.JSZip) {
                 await new Promise((resolve) => {
-                    const script = document.createElement('script');
+                    const script = document.createElement("script");
                     script.src = "https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js";
                     script.onload = resolve;
                     document.head.appendChild(script);
                 });
             }
-        }
+        };
 
-        const stripAnsiCodes = (input) => input.replace(/\x1b\[[0-9;]*m/g, '')
+        const stripAnsiCodes = (input) => input.replace(/\x1b\[[0-9;]*m/g, "");
 
         return { splitInput, sanitize, loadZipLib, stripAnsiCodes };
-    })()
+    })();
 
     /**
      * SessionModel manages a collection of session/tab entries and tracks the
@@ -156,12 +158,11 @@ const Clingo = (() => {
          * @param {Object} entry - The entry object to be removed.
          */
         close(entry) {
-            this.entries = this.entries.filter(e => e !== entry);
+            this.entries = this.entries.filter((e) => e !== entry);
             if (entry === this.active) {
                 if (this.entries.length > 0) {
                     this.active = this.entries[this.entries.length - 1];
-                }
-                else {
+                } else {
                     this.active = null;
                 }
             }
@@ -212,11 +213,11 @@ const Clingo = (() => {
          * @returns {Object[]} Array of file objects: { name, type, content }
          */
         getFiles() {
-            const existing = {}
-            return this.entries.map(entry => {
-                const name = Utils.sanitize(entry.name, existing)
-                return { name, type: entry.type, content: entry.session.getValue() }
-            })
+            const existing = {};
+            return this.entries.map((entry) => {
+                const name = Utils.sanitize(entry.name, existing);
+                return { name, type: entry.type, content: entry.session.getValue() };
+            });
         }
     }
 
@@ -243,13 +244,13 @@ const Clingo = (() => {
                 useSoftTabs: true,
                 tabSize: 4,
                 maxLines: Infinity,
-                autoScrollEditorIntoView: true
+                autoScrollEditorIntoView: true,
             });
 
             document.getElementById("tab-add-clingo").onclick = () =>
-                this.dispatchEvent(new CustomEvent('tab-create', { detail: { type: 'clingo', name: 'Untitled' } }));
+                this.dispatchEvent(new CustomEvent("tab-create", { detail: { type: "clingo", name: "Untitled" } }));
             document.getElementById("tab-add-python").onclick = () =>
-                this.dispatchEvent(new CustomEvent('tab-create', { detail: { type: 'python', name: 'Untitled' } }));
+                this.dispatchEvent(new CustomEvent("tab-create", { detail: { type: "python", name: "Untitled" } }));
         }
 
         /**
@@ -265,9 +266,8 @@ const Clingo = (() => {
             let icon = "";
             if (entry.type === "python") {
                 icon = "🐍";
-            }
-            else {
-                entry.type = "clingo"
+            } else {
+                entry.type = "clingo";
                 icon = "🦉";
             }
 
@@ -288,14 +288,14 @@ const Clingo = (() => {
             `;
             this.tabList.appendChild(entry.tabEl);
             entry.tabEl.onclick = () => {
-                this.dispatchEvent(new CustomEvent('tab-activate', { detail: entry }));
+                this.dispatchEvent(new CustomEvent("tab-activate", { detail: entry }));
             };
             entry.tabEl.ondblclick = () => {
-                this.dispatchEvent(new CustomEvent('tab-edit', { detail: entry }));
+                this.dispatchEvent(new CustomEvent("tab-edit", { detail: entry }));
             };
-            entry.tabEl.querySelector('.tab-close').onclick = (event) => {
+            entry.tabEl.querySelector(".tab-close").onclick = (event) => {
                 event.stopPropagation();
-                this.dispatchEvent(new CustomEvent('tab-close', { detail: entry }));
+                this.dispatchEvent(new CustomEvent("tab-close", { detail: entry }));
             };
         }
 
@@ -307,25 +307,27 @@ const Clingo = (() => {
          * @param {Object} entry - The entry object associated with the tab.
          */
         edit(entry) {
-            const nameSpan = entry.tabEl.querySelector('.tab-name');
+            const nameSpan = entry.tabEl.querySelector(".tab-name");
             const currentName = nameSpan.textContent;
-            const input = document.createElement('input');
-            input.type = 'text';
+            const input = document.createElement("input");
+            input.type = "text";
             input.value = currentName;
-            input.style.width = '80%';
-            nameSpan.textContent = '';
+            input.style.width = "80%";
+            nameSpan.textContent = "";
             nameSpan.appendChild(input);
             input.focus();
 
             input.onblur = () => {
-                this.dispatchEvent(new CustomEvent('tab-rename', { detail: { entry, name: input.value } }));
+                this.dispatchEvent(new CustomEvent("tab-rename", { detail: { entry, name: input.value } }));
                 nameSpan.textContent = input.value;
                 entry.tabEl.ondblclick = () => this.edit(entry);
                 this.inputElement.focus();
             };
             input.onkeydown = (e) => {
-                if (e.key === 'Enter') { input.blur(); }
-                if (e.key === 'Escape') {
+                if (e.key === "Enter") {
+                    input.blur();
+                }
+                if (e.key === "Escape") {
                     nameSpan.textContent = currentName;
                     entry.tabEl.ondblclick = () => this.edit(entry);
                     this.inputElement.focus();
@@ -391,11 +393,11 @@ const Clingo = (() => {
             this.model = new SessionModel();
             this.view = new SessionView();
 
-            this.view.addEventListener('tab-activate', (e) => this.activate(e.detail));
-            this.view.addEventListener('tab-edit', (e) => this.edit(e.detail));
-            this.view.addEventListener('tab-close', (e) => this.close(e.detail));
-            this.view.addEventListener('tab-rename', (e) => e.detail.entry.name = e.detail.name);
-            this.view.addEventListener('tab-create', (e) => this.create(e.detail.type, e.detail.name));
+            this.view.addEventListener("tab-activate", (e) => this.activate(e.detail));
+            this.view.addEventListener("tab-edit", (e) => this.edit(e.detail));
+            this.view.addEventListener("tab-close", (e) => this.close(e.detail));
+            this.view.addEventListener("tab-rename", (e) => (e.detail.entry.name = e.detail.name));
+            this.view.addEventListener("tab-create", (e) => this.create(e.detail.type, e.detail.name));
 
             this.restore(this.view.getInitialContent(), "harry-and-sally.lp");
         }
@@ -406,10 +408,10 @@ const Clingo = (() => {
          * @returns {string} JSON representation of all session entries.
          */
         serialize() {
-            const data = this.model.getEntries().map(entry => ({
+            const data = this.model.getEntries().map((entry) => ({
                 type: entry.type,
                 name: entry.name,
-                content: entry.session.getValue()
+                content: entry.session.getValue(),
             }));
             return JSON.stringify(data);
         }
@@ -422,7 +424,7 @@ const Clingo = (() => {
         deserialize(repr) {
             const data = JSON.parse(repr || "[]");
             this.clear();
-            data.forEach(tab => {
+            data.forEach((tab) => {
                 this.create(tab.type, tab.name, tab.content);
             });
         }
@@ -470,7 +472,7 @@ const Clingo = (() => {
          * Removes all entries/tabs from the model and view.
          */
         clear() {
-            this.model.getEntries().forEach(entry => this.view.close(entry));
+            this.model.getEntries().forEach((entry) => this.view.close(entry));
             this.model.clear();
         }
 
@@ -509,7 +511,7 @@ const Clingo = (() => {
         restore(value, name) {
             const tabs = Utils.splitInput(value, name);
             this.clear();
-            tabs.forEach(tab => {
+            tabs.forEach((tab) => {
                 this.create(tab.type, tab.name, tab.content);
             });
         }
@@ -536,8 +538,8 @@ const Clingo = (() => {
          */
         list() {
             return Object.keys(localStorage)
-                .filter(k => k.startsWith("workspace:"))
-                .map(k => k.replace("workspace:", ""))
+                .filter((k) => k.startsWith("workspace:"))
+                .map((k) => k.replace("workspace:", ""))
                 .sort();
         }
 
@@ -621,7 +623,7 @@ const Clingo = (() => {
                 const folder = zip.folder(Utils.sanitize(wsName, existingWS));
                 const existingLP = {};
                 const existingPY = {};
-                data.forEach(file => {
+                data.forEach((file) => {
                     let existing = file.type === "python" ? existingPY : existingLP;
                     folder.file(Utils.sanitize(file.name, existing), file.content);
                 });
@@ -653,16 +655,11 @@ const Clingo = (() => {
             this.workspaceMenuDropdown = document.getElementById("workspace-menu-dropdown");
 
             // Button event listeners
-            this.workspaceSaveBtn.onclick = () =>
-                this.dispatchEvent(new CustomEvent('workspace-save'));
-            this.workspaceSaveAsBtn.onclick = () =>
-                this.dispatchEvent(new CustomEvent('workspace-save-as'));
-            this.workspaceLoadBtn.onclick = () =>
-                this.dispatchEvent(new CustomEvent('workspace-load'));
-            this.workspaceDeleteBtn.onclick = () =>
-                this.dispatchEvent(new CustomEvent('workspace-remove'));
-            this.workspaceDownloadBtn.onclick = () =>
-                this.dispatchEvent(new CustomEvent('workspace-download'));
+            this.workspaceSaveBtn.onclick = () => this.dispatchEvent(new CustomEvent("workspace-save"));
+            this.workspaceSaveAsBtn.onclick = () => this.dispatchEvent(new CustomEvent("workspace-save-as"));
+            this.workspaceLoadBtn.onclick = () => this.dispatchEvent(new CustomEvent("workspace-load"));
+            this.workspaceDeleteBtn.onclick = () => this.dispatchEvent(new CustomEvent("workspace-remove"));
+            this.workspaceDownloadBtn.onclick = () => this.dispatchEvent(new CustomEvent("workspace-download"));
 
             // Menu dropdown toggle
             this.workspaceMenuBtn.onclick = () => {
@@ -683,16 +680,16 @@ const Clingo = (() => {
          */
         update(active, names) {
             this.workspaceList.innerHTML = "";
-            names.forEach(name => {
+            names.forEach((name) => {
                 const item = document.createElement("div");
                 item.textContent = name;
                 item.className = "workspace-list-item";
                 item.style.cursor = "pointer";
                 item.onclick = (e) => {
                     e.stopPropagation();
-                    this.dispatchEvent(new CustomEvent('workspace-select', { detail: name }))
-                }
-                item.classList.toggle('selected', name === active);
+                    this.dispatchEvent(new CustomEvent("workspace-select", { detail: name }));
+                };
+                item.classList.toggle("selected", name === active);
                 this.workspaceList.appendChild(item);
             });
             this.workspaceLoadBtn.disabled = active === null;
@@ -724,12 +721,12 @@ const Clingo = (() => {
             this.model = new WorkspaceModel();
             this.view = new WorkspaceView();
 
-            this.view.addEventListener('workspace-save', () => this.save());
-            this.view.addEventListener('workspace-save-as', () => this.saveAs());
-            this.view.addEventListener('workspace-remove', () => this.remove());
-            this.view.addEventListener('workspace-select', (e) => this.select(e.detail));
-            this.view.addEventListener('workspace-load', () => this.load());
-            this.view.addEventListener('workspace-download', () => this.download());
+            this.view.addEventListener("workspace-save", () => this.save());
+            this.view.addEventListener("workspace-save-as", () => this.saveAs());
+            this.view.addEventListener("workspace-remove", () => this.remove());
+            this.view.addEventListener("workspace-select", (e) => this.select(e.detail));
+            this.view.addEventListener("workspace-load", () => this.load());
+            this.view.addEventListener("workspace-download", () => this.download());
 
             this.update();
         }
@@ -859,23 +856,20 @@ const Clingo = (() => {
                 project: document.getElementById("project"),
                 reasoningMode: document.getElementById("reasoning-mode"),
                 logLevel: document.getElementById("log-level"),
-                mode: document.getElementById("mode")
+                mode: document.getElementById("mode"),
             };
-            this.runButton = document.getElementById('clingoRun');
-            this.outputElement = document.getElementById('output');
+            this.runButton = document.getElementById("clingoRun");
+            this.outputElement = document.getElementById("output");
             this.pyCheckbox = document.querySelector('.language-switch input[type="checkbox"]');
             this.examples = document.getElementById("examples");
 
             // Event listeners for UI actions
-            this.runButton.onclick = () =>
-                this.dispatchEvent(new CustomEvent('run-request'));
-            this.examples.onchange = (e) =>
-                this.dispatchEvent(new CustomEvent('example-selected', { detail: e.target.value }));
-            this.pyCheckbox.onchange = (e) =>
-                this.dispatchEvent(new CustomEvent('python-toggle', { detail: e.target.checked }));
+            this.runButton.onclick = () => this.dispatchEvent(new CustomEvent("run-request"));
+            this.examples.onchange = (e) => this.dispatchEvent(new CustomEvent("example-selected", { detail: e.target.value }));
+            this.pyCheckbox.onchange = (e) => this.dispatchEvent(new CustomEvent("python-toggle", { detail: e.target.checked }));
             document.querySelector("#input").addEventListener("keydown", (ev) => {
                 if (ev.key === "Enter" && ev.ctrlKey) {
-                    this.dispatchEvent(new CustomEvent('run-request'));
+                    this.dispatchEvent(new CustomEvent("run-request"));
                 }
             });
         }
@@ -902,7 +896,7 @@ const Clingo = (() => {
          * @param {string} state - "ready" or other states.
          */
         updateButton(state) {
-            this.runButton.style.opacity = state === "ready" ? '100%' : '60%';
+            this.runButton.style.opacity = state === "ready" ? "100%" : "60%";
             if (state === "ready") {
                 this.runButton.classList.remove("button--loading");
             } else {
@@ -916,7 +910,7 @@ const Clingo = (() => {
          * @returns {boolean} True if Python mode was enabled, false otherwise.
          */
         ensurePython() {
-            if (!this.pyCheckbox.checked && this.examples.options[this.examples.selectedIndex].classList.contains('option-py')) {
+            if (!this.pyCheckbox.checked && this.examples.options[this.examples.selectedIndex].classList.contains("option-py")) {
                 this.pyCheckbox.checked = true;
                 return true;
             }
@@ -1055,17 +1049,17 @@ const Clingo = (() => {
                 return;
             }
             this.state = "init";
-            this.dispatchEvent(new CustomEvent('update-button', { detail: this.state }));
+            this.dispatchEvent(new CustomEvent("update-button", { detail: this.state }));
             if (this.worker != null) {
                 this.worker.terminate();
             }
 
             if (this.py) {
                 this.ispy = true;
-                this.worker = new Worker('js/pyworker.js');
+                this.worker = new Worker("js/pyworker.js");
             } else {
                 this.ispy = false;
-                this.worker = new Worker('js/worker.js');
+                this.worker = new Worker("js/worker.js");
             }
 
             this.worker.onmessage = (e) => {
@@ -1076,16 +1070,16 @@ const Clingo = (() => {
                         this.runIfReady();
                         break;
                     case "ready":
-                        this.worker.postMessage({ type: 'init' });
+                        this.worker.postMessage({ type: "init" });
                         break;
                     case "exit":
                         setTimeout(() => this.startWorker(), 0);
                         break;
                     case "stdout":
-                        this.dispatchEvent(new CustomEvent('output-append', { detail: msg.value }));
+                        this.dispatchEvent(new CustomEvent("output-append", { detail: msg.value }));
                         break;
                     case "stderr":
-                        this.dispatchEvent(new CustomEvent('output-append', { detail: Utils.stripAnsiCodes(msg.value) }));
+                        this.dispatchEvent(new CustomEvent("output-append", { detail: Utils.stripAnsiCodes(msg.value) }));
                         break;
                 }
             };
@@ -1099,12 +1093,12 @@ const Clingo = (() => {
          */
         runIfReady() {
             if (this.state == "ready" && this.work) {
-                this.dispatchEvent(new CustomEvent('output-clear'));
+                this.dispatchEvent(new CustomEvent("output-clear"));
                 this.state = "running";
                 this.work = false;
-                this.worker.postMessage({ type: 'run', files: this.files, args: this.args });
+                this.worker.postMessage({ type: "run", files: this.files, args: this.args });
             }
-            this.dispatchEvent(new CustomEvent('update-button', { detail: this.state }));
+            this.dispatchEvent(new CustomEvent("update-button", { detail: this.state }));
         }
 
         /**
@@ -1119,8 +1113,8 @@ const Clingo = (() => {
         run(args, files) {
             this.work = true;
             this.args = args;
-            this.files = files
-            if (files.find(file => file.type === "python")) {
+            this.files = files;
+            if (files.find((file) => file.type === "python")) {
                 this.enablePython(true);
             }
             // NOTE: this stops currently running worker and starts a new one.
@@ -1155,26 +1149,20 @@ const Clingo = (() => {
             this.view = new ClingoView();
             this.workspaceController = new WorkspaceController();
 
-            this.view.addEventListener('run-request', () => {
-                this.model.run(this.view.buildArgs(), this.workspaceController.getFiles())
+            this.view.addEventListener("run-request", () => {
+                this.model.run(this.view.buildArgs(), this.workspaceController.getFiles());
                 // NOTE: Triggering a run might implicitely enable Python.
                 this.view.setPython(this.model.py);
             });
-            this.view.addEventListener('python-toggle', (e) =>
-                this.model.enablePython(e.detail));
-            this.view.addEventListener('example-selected', () =>
-                this.load());
+            this.view.addEventListener("python-toggle", (e) => this.model.enablePython(e.detail));
+            this.view.addEventListener("example-selected", () => this.load());
 
-            this.model.addEventListener('output-append', (e) =>
-                this.view.updateOutput(e.detail));
-            this.model.addEventListener('output-clear', () =>
-                this.view.clearOutput());
-            this.model.addEventListener('update-button', (e) =>
-                this.view.updateButton(e.detail));
+            this.model.addEventListener("output-append", (e) => this.view.updateOutput(e.detail));
+            this.model.addEventListener("output-clear", () => this.view.clearOutput());
+            this.model.addEventListener("update-button", (e) => this.view.updateButton(e.detail));
 
             const query_params = Object.fromEntries(
-                Array.from(new URLSearchParams(window.location.search))
-                    .map(([key, value]) => [key, decodeURIComponent(value)])
+                Array.from(new URLSearchParams(window.location.search)).map(([key, value]) => [key, decodeURIComponent(value)]),
             );
             if (query_params.example !== undefined) {
                 this.view.setExample(query_params.example);
@@ -1206,4 +1194,4 @@ const Clingo = (() => {
     }
 
     return new ClingoController();
-})()
+})();

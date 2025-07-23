@@ -5,14 +5,14 @@ const messageSchemas = {
         args: "array",
         files: "array",
     },
-    init: {}
+    init: {},
 };
 
 function validateMessage(msg, schemas) {
-    if (!msg || typeof msg !== 'object') {
+    if (!msg || typeof msg !== "object") {
         return "Invalid message format: Expected an object.";
     }
-    if (!msg.type || typeof msg.type !== 'string') {
+    if (!msg.type || typeof msg.type !== "string") {
         return "Invalid message: 'type' must be a string.";
     }
     const schema = schemas[msg.type];
@@ -45,25 +45,25 @@ def run_clingo_main(args, python):
 
 class StdinHandler {
     constructor(input) {
-        this.lines = input.split('\n');
-        this.current = 0
+        this.lines = input.split("\n");
+        this.current = 0;
     }
     stdin() {
         if (this.current < this.lines.length) {
-            return this.lines[this.current++] + '\n';
+            return this.lines[this.current++] + "\n";
         }
         return null;
     }
-};
+}
 
-let pyodide = null
+let pyodide = null;
 
 async function init() {
     postMessage({ type: "progress", value: "pyodide" });
     pyodide = await loadPyodide();
     await pyodide.loadPackage("micropip");
     const micropip = pyodide.pyimport("micropip");
-    await micropip.install(new URL("./clingo-6.0.0-cp313-cp313-pyodide_2025_0_wasm32.whl", self.location.href).toString())
+    await micropip.install(new URL("./clingo-6.0.0-cp313-cp313-pyodide_2025_0_wasm32.whl", self.location.href).toString());
     pyodide.setStdout({ batched: (msg) => postMessage({ type: "stdout", value: msg }) });
     pyodide.setStderr({ batched: (msg) => postMessage({ type: "stderr", value: msg }) });
     await pyodide.runPythonAsync(code);
@@ -71,35 +71,32 @@ async function init() {
 
 async function run(files, args) {
     try {
-        const python = []
-        pyodide.setStdin(new StdinHandler(""))
-        files.forEach(file => {
+        const python = [];
+        pyodide.setStdin(new StdinHandler(""));
+        files.forEach((file) => {
             pyodide.FS.writeFile(file.name, file.content);
             if (file.type == "python") {
                 python.push(file.name);
-            }
-            else {
+            } else {
                 args.push(file.name);
             }
         });
-        pyodide.globals.get('run_clingo_main')(pyodide.toPy(args), pyodide.toPy(python))
+        pyodide.globals.get("run_clingo_main")(pyodide.toPy(args), pyodide.toPy(python));
     } catch (error) {
         postMessage({ type: "stderr", value: error.toString() });
     }
 }
 
-self.addEventListener('message', (e) => {
-    const msg = e.data
+self.addEventListener("message", (e) => {
+    const msg = e.data;
     const error = validateMessage(msg, messageSchemas);
     if (error) {
         postMessage({ type: "stderr", value: error });
+    } else if (msg.type === "init") {
+        init().then(() => postMessage({ type: "init" }));
+    } else if (msg.type === "run") {
+        run(msg.files, msg.args).then(() => postMessage({ type: "exit" }));
     }
-    else if (msg.type === 'init') {
-        init().then(() => postMessage({ type: "init" }))
-    }
-    else if (msg.type === 'run') {
-        run(msg.files, msg.args).then(() => postMessage({ type: "exit" }))
-    }
-})
+});
 
-postMessage({ type: "ready" })
+postMessage({ type: "ready" });
