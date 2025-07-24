@@ -10,13 +10,10 @@ This is a scaled down version of clingo-dl show casing how to implement a
 propagator for difference logic.
 """
 
-import gc
 import heapq
-import sys
 from itertools import filterfalse
 from typing import List, MutableMapping, Optional, Sequence, Set, Tuple
 
-from clingo import ast
 from clingo.base import TheoryTerm, TheoryTermType
 from clingo.control import Control, ControlMode
 from clingo.core import Library
@@ -321,7 +318,9 @@ class DLPropagator(Propagator):
                 lit = init.solver_literal(atom.literal)
                 self._add_edge(init, lit, u, v, w)
 
-    def propagate(self, assignment: Assignment, control: PropagateControl, changes: Sequence[int]):
+    def propagate(
+        self, assignment: Assignment, control: PropagateControl, changes: Sequence[int]
+    ):
         """
         Add edges that became true to the graph to check for negative cycles.
         """
@@ -361,13 +360,17 @@ class DLPropagator(Propagator):
             self._states.append(Graph(self._lib))
         return self._states[thread_id]
 
-    def _literal(self, assignment, edge):
+    def _literal(self, assignment: Assignment, edge: WeightedEdge) -> int:
         for lit in self._e2l[edge]:
             if assignment.is_true(lit):
                 return lit
         raise RuntimeError("must not happen")
 
-def main(lib, control):
+
+def main(lib: Library, control: Control):
+    """
+    Register the dl propagator and start the solving process.
+    """
     control.parse_string(THEORY)
     # hand over control to main in parse/rewrite mode
     if control.mode in (ControlMode.Parse, ControlMode.Rewrite):
@@ -386,6 +389,7 @@ def main(lib, control):
     control.ground(control.parts)
     control.parse_string("#program __bound(b, v). &diff { v-0 } <= b.")
     bound = None
+
     def on_model(model: Model):
         nonlocal bound
         propagator.on_model(model)
@@ -395,6 +399,8 @@ def main(lib, control):
                 if n == minimize:
                     bound = v.number
                     return False
+        return True
+
     while True:
         with control.solve(on_model=on_model) as hnd:
             if not hnd.get().satisfiable:
