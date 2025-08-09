@@ -243,6 +243,7 @@ const Clingo = (() => {
             this.inputElement.setOptions({
                 useSoftTabs: true,
                 tabSize: 4,
+                minLines: 10,
                 maxLines: Infinity,
                 autoScrollEditorIntoView: true,
             });
