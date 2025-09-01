@@ -58,13 +58,13 @@ var group__ground__theory =
       [ "LitMatchTheory", "classCppClingo_1_1Ground_1_1LitMatchTheory.html#a8d63fc756779123f5ab8f15593432d22", null ]
     ] ],
     [ "CppClingo::Ground::StmTheoryElement", "classCppClingo_1_1Ground_1_1StmTheoryElement.html", [
-      [ "StmTheoryElement", "classCppClingo_1_1Ground_1_1StmTheoryElement.html#a1493b753236d6e3151bf0cca04ea7f1a", null ]
+      [ "StmTheoryElement", "classCppClingo_1_1Ground_1_1StmTheoryElement.html#a67fb8ff47f33fe52a53c9154fcf7a830", null ]
     ] ],
     [ "CppClingo::Ground::LitBdTheory", "classCppClingo_1_1Ground_1_1LitBdTheory.html", [
       [ "LitBdTheory", "classCppClingo_1_1Ground_1_1LitBdTheory.html#aee08d3af6bb781b700609c816a3ad308", null ]
     ] ],
     [ "CppClingo::Ground::StmHdTheory", "classCppClingo_1_1Ground_1_1StmHdTheory.html", [
-      [ "StmHdTheory", "classCppClingo_1_1Ground_1_1StmHdTheory.html#ae4fcd9004ac5e759ddb51fa03b81e576", null ]
+      [ "StmHdTheory", "classCppClingo_1_1Ground_1_1StmHdTheory.html#ab56b322604de8b16c167b5fbe76cb0a1", null ]
     ] ],
     [ "CppClingo::Ground::TheoryTerm", "classCppClingo_1_1Ground_1_1TheoryTerm.html", [
       [ "~TheoryTerm", "classCppClingo_1_1Ground_1_1TheoryTerm.html#aca4c49a12e2e3c9aded35d1f540a4bc3", null ],

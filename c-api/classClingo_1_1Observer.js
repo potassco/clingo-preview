@@ -11,6 +11,7 @@ var classClingo_1_1Observer =
     [ "heuristic", "classClingo_1_1Observer.html#a3b6267c42a382b4585dda230476bf6df", null ],
     [ "init_program", "classClingo_1_1Observer.html#a21c05b90d01e052a0447d79c5bdfcc3f", null ],
     [ "minimize", "classClingo_1_1Observer.html#a38750cd0c4f1bd8eea01b82c25f1397e", null ],
+    [ "operator=", "classClingo_1_1Observer.html#a420c3ad58f779ce41f1a5a5aea684aa3", null ],
     [ "project", "classClingo_1_1Observer.html#a7cc48cb735f1ed5ccd72169568b911bf", null ],
     [ "rule", "classClingo_1_1Observer.html#acf213511a45e0e9445ab8039c5917ada", null ],
     [ "weight_rule", "classClingo_1_1Observer.html#ab70acd857b88bd2485d00e58f728d902", null ]

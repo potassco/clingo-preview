@@ -110,11 +110,11 @@ $(document).ready(function(){initNavTree('symbol_8h_source.html',''); initResiza
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef CLINGO_SYMBOL_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define CLINGO_SYMBOL_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;clingo/core.h&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;clingo/core.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
@@ -196,8 +196,8 @@ $(document).ready(function(){initNavTree('symbol_8h_source.html',''); initResiza
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
 <div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="agroup__c__core_html_ga55d91caa8f1b3bbb375e9e8741616088"><div class="ttname"><a href="group__c__core.html#ga55d91caa8f1b3bbb375e9e8741616088">clingo_lib_t</a></div><div class="ttdeci">struct clingo_lib clingo_lib_t</div><div class="ttdoc">A library object storing global information.</div><div class="ttdef"><b>Definition</b> core.h:176</div></div>
-<div class="ttc" id="agroup__c__core_html_ga7053acefbc6f7f7dc7e6d6398c7bbc5d"><div class="ttname"><a href="group__c__core.html#ga7053acefbc6f7f7dc7e6d6398c7bbc5d">clingo_string_builder_t</a></div><div class="ttdeci">struct clingo_string_builder clingo_string_builder_t</div><div class="ttdoc">A builder for strings.</div><div class="ttdef"><b>Definition</b> core.h:257</div></div>
+<div class="ttc" id="agroup__c__core_html_ga55d91caa8f1b3bbb375e9e8741616088"><div class="ttname"><a href="group__c__core.html#ga55d91caa8f1b3bbb375e9e8741616088">clingo_lib_t</a></div><div class="ttdeci">struct clingo_lib clingo_lib_t</div><div class="ttdoc">A library object storing global information.</div><div class="ttdef"><b>Definition</b> core.h:171</div></div>
+<div class="ttc" id="agroup__c__core_html_ga7053acefbc6f7f7dc7e6d6398c7bbc5d"><div class="ttname"><a href="group__c__core.html#ga7053acefbc6f7f7dc7e6d6398c7bbc5d">clingo_string_builder_t</a></div><div class="ttdeci">struct clingo_string_builder clingo_string_builder_t</div><div class="ttdoc">A builder for strings.</div><div class="ttdef"><b>Definition</b> core.h:252</div></div>
 <div class="ttc" id="agroup__c__symbol_html_ga0232762a6e5e1ce9c09b824ab27f4823"><div class="ttname"><a href="group__c__symbol.html#ga0232762a6e5e1ce9c09b824ab27f4823">clingo_symbol_name</a></div><div class="ttdeci">CLINGO_VISIBILITY_DEFAULT bool clingo_symbol_name(clingo_symbol_t symbol, clingo_string_t *name)</div><div class="ttdoc">Get the name of a symbol.</div></div>
 <div class="ttc" id="agroup__c__symbol_html_ga05064956261d98a0a757e271abb75650"><div class="ttname"><a href="group__c__symbol.html#ga05064956261d98a0a757e271abb75650">clingo_symbol_compare</a></div><div class="ttdeci">CLINGO_VISIBILITY_DEFAULT int clingo_symbol_compare(clingo_symbol_t a, clingo_symbol_t b)</div><div class="ttdoc">Check if a symbol is less than another symbol.</div></div>
 <div class="ttc" id="agroup__c__symbol_html_ga0e741302a2daf2c0ade9d37ad8bf5bbf"><div class="ttname"><a href="group__c__symbol.html#ga0e741302a2daf2c0ade9d37ad8bf5bbf">clingo_symbol_create_supremum</a></div><div class="ttdeci">CLINGO_VISIBILITY_DEFAULT clingo_symbol_t clingo_symbol_create_supremum(void)</div><div class="ttdoc">Construct a symbol representing #sup.</div></div>
@@ -229,7 +229,7 @@ $(document).ready(function(){initNavTree('symbol_8h_source.html',''); initResiza
 <div class="ttc" id="agroup__c__symbol_html_gga6a10b046b6426fd2955dfa72e266faaba6ad9a95a9ec5fde1e6078ebae2fa3b48"><div class="ttname"><a href="group__c__symbol.html#gga6a10b046b6426fd2955dfa72e266faaba6ad9a95a9ec5fde1e6078ebae2fa3b48">clingo_symbol_type_supremum</a></div><div class="ttdeci">@ clingo_symbol_type_supremum</div><div class="ttdoc">the #sup symbol</div><div class="ttdef"><b>Definition</b> symbol.h:38</div></div>
 <div class="ttc" id="agroup__c__symbol_html_gga6a10b046b6426fd2955dfa72e266faaba911396db3d22a77d82cf52b6f159979e"><div class="ttname"><a href="group__c__symbol.html#gga6a10b046b6426fd2955dfa72e266faaba911396db3d22a77d82cf52b6f159979e">clingo_symbol_type_tuple</a></div><div class="ttdeci">@ clingo_symbol_type_tuple</div><div class="ttdoc">a tuple symbol, e.g., (1, &quot;a&quot;)`</div><div class="ttdef"><b>Definition</b> symbol.h:41</div></div>
 <div class="ttc" id="agroup__c__symbol_html_gga6a10b046b6426fd2955dfa72e266faabaa67c716e8002666c3fb216fc8358041d"><div class="ttname"><a href="group__c__symbol.html#gga6a10b046b6426fd2955dfa72e266faabaa67c716e8002666c3fb216fc8358041d">clingo_symbol_type_infimum</a></div><div class="ttdeci">@ clingo_symbol_type_infimum</div><div class="ttdoc">the #inf symbol</div><div class="ttdef"><b>Definition</b> symbol.h:39</div></div>
-<div class="ttc" id="astructclingo__string_html"><div class="ttname"><a href="structclingo__string.html">clingo_string</a></div><div class="ttdoc">Struct to capture strings that are not null-terminated.</div><div class="ttdef"><b>Definition</b> core.h:91</div></div>
+<div class="ttc" id="astructclingo__string_html"><div class="ttname"><a href="structclingo__string.html">clingo_string</a></div><div class="ttdoc">Struct to capture strings that are not null-terminated.</div><div class="ttdef"><b>Definition</b> core.h:86</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

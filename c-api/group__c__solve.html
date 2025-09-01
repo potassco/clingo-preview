@@ -137,14 +137,19 @@ typedef struct <a class="el" href="structclingo__solve__event__handler.html">cli
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ga152eeb260a8162fbf9bc432a1b912bc7" id="r_ga152eeb260a8162fbf9bc432a1b912bc7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__solve.html#ga152eeb260a8162fbf9bc432a1b912bc7">clingo_solve_result_e</a> { <a class="el" href="group__c__solve.html#gga152eeb260a8162fbf9bc432a1b912bc7a18d55ddbfc94a31472a741d5b2b8b874">clingo_solve_result_satisfiable</a> = 1
+<tr class="memitem:ga152eeb260a8162fbf9bc432a1b912bc7" id="r_ga152eeb260a8162fbf9bc432a1b912bc7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__solve.html#ga152eeb260a8162fbf9bc432a1b912bc7">clingo_solve_result_e</a> { <br />
+&#160;&#160;<a class="el" href="group__c__solve.html#gga152eeb260a8162fbf9bc432a1b912bc7a6ef1dfc011eb1a6d3847cd8ef2b8d9a5">clingo_solve_result_empty</a> = 0
+, <a class="el" href="group__c__solve.html#gga152eeb260a8162fbf9bc432a1b912bc7a18d55ddbfc94a31472a741d5b2b8b874">clingo_solve_result_satisfiable</a> = 1
 , <a class="el" href="group__c__solve.html#gga152eeb260a8162fbf9bc432a1b912bc7aaa9f89813922a3a4f7ab1e35040bc2cf">clingo_solve_result_unsatisfiable</a> = 2
 , <a class="el" href="group__c__solve.html#gga152eeb260a8162fbf9bc432a1b912bc7a6f2d70dfaa05d13a2cc9f45bdca0b4a7">clingo_solve_result_exhausted</a> = 4
-, <a class="el" href="group__c__solve.html#gga152eeb260a8162fbf9bc432a1b912bc7a381c0328c5a426fd6ce84a3eae1063b8">clingo_solve_result_interrupted</a> = 8
+, <br />
+&#160;&#160;<a class="el" href="group__c__solve.html#gga152eeb260a8162fbf9bc432a1b912bc7a381c0328c5a426fd6ce84a3eae1063b8">clingo_solve_result_interrupted</a> = 8
+<br />
  }</td></tr>
 <tr class="memdesc:ga152eeb260a8162fbf9bc432a1b912bc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of bit masks for solve call results.  <a href="group__c__solve.html#ga152eeb260a8162fbf9bc432a1b912bc7">More...</a><br /></td></tr>
 <tr class="separator:ga152eeb260a8162fbf9bc432a1b912bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga63eb87834deebecdf9c799d64a3c65a2" id="r_ga63eb87834deebecdf9c799d64a3c65a2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__solve.html#ga63eb87834deebecdf9c799d64a3c65a2">clingo_solve_mode_e</a> { <a class="el" href="group__c__solve.html#gga63eb87834deebecdf9c799d64a3c65a2af5a772f277ce9f5bcc442502033ddee5">clingo_solve_mode_async</a> = 1
+<tr class="memitem:ga63eb87834deebecdf9c799d64a3c65a2" id="r_ga63eb87834deebecdf9c799d64a3c65a2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__solve.html#ga63eb87834deebecdf9c799d64a3c65a2">clingo_solve_mode_e</a> { <a class="el" href="group__c__solve.html#gga63eb87834deebecdf9c799d64a3c65a2aaaa338cec7a66764ce812737d6ca301a">clingo_solve_mode_default</a> = 0
+, <a class="el" href="group__c__solve.html#gga63eb87834deebecdf9c799d64a3c65a2af5a772f277ce9f5bcc442502033ddee5">clingo_solve_mode_async</a> = 1
 , <a class="el" href="group__c__solve.html#gga63eb87834deebecdf9c799d64a3c65a2a60a9c133be636e68a7d02680c8b9d47e">clingo_solve_mode_yield</a> = 2
 , <a class="el" href="group__c__solve.html#gga63eb87834deebecdf9c799d64a3c65a2a1b365fa26b7f01a71e8ca2716d7124d9">clingo_solve_mode_lock</a> = 4
  }</td></tr>
@@ -218,7 +223,9 @@ Functions</h2></td></tr>
 
 <p>Enumeration of solve modes. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga63eb87834deebecdf9c799d64a3c65a2af5a772f277ce9f5bcc442502033ddee5" name="gga63eb87834deebecdf9c799d64a3c65a2af5a772f277ce9f5bcc442502033ddee5"></a>clingo_solve_mode_async&#160;</td><td class="fielddoc"><p>Enable non-blocking search. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga63eb87834deebecdf9c799d64a3c65a2aaaa338cec7a66764ce812737d6ca301a" name="gga63eb87834deebecdf9c799d64a3c65a2aaaa338cec7a66764ce812737d6ca301a"></a>clingo_solve_mode_default&#160;</td><td class="fielddoc"><p>The defalut solve mode. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga63eb87834deebecdf9c799d64a3c65a2af5a772f277ce9f5bcc442502033ddee5" name="gga63eb87834deebecdf9c799d64a3c65a2af5a772f277ce9f5bcc442502033ddee5"></a>clingo_solve_mode_async&#160;</td><td class="fielddoc"><p>Enable non-blocking search. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga63eb87834deebecdf9c799d64a3c65a2a60a9c133be636e68a7d02680c8b9d47e" name="gga63eb87834deebecdf9c799d64a3c65a2a60a9c133be636e68a7d02680c8b9d47e"></a>clingo_solve_mode_yield&#160;</td><td class="fielddoc"><p>Yield models in calls to clingo_solve_handle_model. </p>
 </td></tr>
@@ -244,7 +251,9 @@ Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>Neither <a class="el" href="group__c__solve.html#gga152eeb260a8162fbf9bc432a1b912bc7a18d55ddbfc94a31472a741d5b2b8b874" title="The last solve call found a solution.">clingo_solve_result_satisfiable</a> nor <a class="el" href="group__c__solve.html#gga152eeb260a8162fbf9bc432a1b912bc7a6f2d70dfaa05d13a2cc9f45bdca0b4a7" title="The last solve call completely exhausted the search space.">clingo_solve_result_exhausted</a> is set if the search is interrupted and no model was found.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__c__control.html#ga68d85962372b1258bc6726753cdecaa8" title="Interrupt the running search.">clingo_control_interrupt()</a> </dd></dl>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga152eeb260a8162fbf9bc432a1b912bc7a18d55ddbfc94a31472a741d5b2b8b874" name="gga152eeb260a8162fbf9bc432a1b912bc7a18d55ddbfc94a31472a741d5b2b8b874"></a>clingo_solve_result_satisfiable&#160;</td><td class="fielddoc"><p>The last solve call found a solution. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga152eeb260a8162fbf9bc432a1b912bc7a6ef1dfc011eb1a6d3847cd8ef2b8d9a5" name="gga152eeb260a8162fbf9bc432a1b912bc7a6ef1dfc011eb1a6d3847cd8ef2b8d9a5"></a>clingo_solve_result_empty&#160;</td><td class="fielddoc"><p>An uninitialized solve result. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga152eeb260a8162fbf9bc432a1b912bc7a18d55ddbfc94a31472a741d5b2b8b874" name="gga152eeb260a8162fbf9bc432a1b912bc7a18d55ddbfc94a31472a741d5b2b8b874"></a>clingo_solve_result_satisfiable&#160;</td><td class="fielddoc"><p>The last solve call found a solution. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga152eeb260a8162fbf9bc432a1b912bc7aaa9f89813922a3a4f7ab1e35040bc2cf" name="gga152eeb260a8162fbf9bc432a1b912bc7aaa9f89813922a3a4f7ab1e35040bc2cf"></a>clingo_solve_result_unsatisfiable&#160;</td><td class="fielddoc"><p>The last solve call did not find a solution. </p>
 </td></tr>
@@ -327,8 +336,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="control_8c-example.html#a19">control.c</a>.</dd>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="ast_8c-example.html#a25">ast.c</a>, <a class="el" href="backend_8c-example.html#a10">backend.c</a>, and <a class="el" href="control_8c-example.html#a19">control.c</a>.</dd>
 </dl>
 
 </div>
@@ -356,7 +365,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -384,7 +393,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="ast_8c-example.html#a30">ast.c</a>, and <a class="el" href="backend_8c-example.html#a14">backend.c</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -430,7 +441,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -469,8 +480,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="control_8c-example.html#a21">control.c</a>.</dd>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="ast_8c-example.html#a27">ast.c</a>, <a class="el" href="backend_8c-example.html#a12">backend.c</a>, and <a class="el" href="control_8c-example.html#a21">control.c</a>.</dd>
 </dl>
 
 </div>
@@ -510,7 +521,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -548,7 +559,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -577,7 +588,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -623,7 +634,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>

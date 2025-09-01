@@ -23,6 +23,7 @@ var classClingo_1_1Assignment =
     [ "operator[]", "classClingo_1_1Assignment.html#afaf107e4002abd657bc5054362bfee2b", null ],
     [ "root_level", "classClingo_1_1Assignment.html#aa44e4a143929e4bc4373181b2ef8cf07", null ],
     [ "size", "classClingo_1_1Assignment.html#a294ca12e7b3b945098c5d4dc7145a8c5", null ],
+    [ "thread_id", "classClingo_1_1Assignment.html#a0fe721eb9e8c71b721abc4fd3065958b", null ],
     [ "trail", "classClingo_1_1Assignment.html#a1b960ccc6fb74e8c4471f503d48943a4", null ],
     [ "value", "classClingo_1_1Assignment.html#a495bc0767bc8583e823ae6c0c88dc372", null ]
 ];

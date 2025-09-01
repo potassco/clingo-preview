@@ -12,7 +12,7 @@ var group__c__app =
     [ "clingo_default_model_printer_t", "group__c__app.html#ga28813b724b16c0261abbef7459284d14", null ],
     [ "clingo_main_function_t", "group__c__app.html#gac19e9d1a039f65540bcfd12c4085f41a", null ],
     [ "clingo_model_printer_t", "group__c__app.html#ga7e8435c4f6707cabea49f800eaff21f4", null ],
-    [ "clingo_option_parser_t", "group__c__app.html#ga24e749394d033cb886d4ec50e7946c61", null ],
+    [ "clingo_option_parser_t", "group__c__app.html#gaed9e554c485adc70ed1ed1fbf89b13c7", null ],
     [ "clingo_options_t", "group__c__app.html#ga2b159cfef1bc326a9e25617095be39cf", null ],
     [ "clingo_main", "group__c__app.html#gab12267017f17328363c916249a2bad61", null ],
     [ "clingo_options_add", "group__c__app.html#gac7faf5ef02eafe5573b574e99c3d46d9", null ],

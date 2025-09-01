@@ -1,7 +1,7 @@
 var searchData=
 [
   ['data_0',['data',['../classCppClingo_1_1Util_1_1small__vector.html#aa204e963a1b7b6d8f70858e0f44a0eb4',1,'CppClingo::Util::small_vector::data() -&gt; iterator'],['../classCppClingo_1_1Util_1_1small__vector.html#a34710ebb2f18d851532a471eba540e74',1,'CppClingo::Util::small_vector::data() const -&gt; const_iterator'],['../classCppClingo_1_1String.html#a7881fd23f1f84a29b7872e5d1a7e5355',1,'CppClingo::String::data()'],['../classCppClingo_1_1Util_1_1immutable__array.html#aa81e0f0bdff17d53e5cf5f3ae39035f4',1,'CppClingo::Util::immutable_array::data()']]],
-  ['decide_1',['decide',['../classClingo_1_1Heuristic.html#a4a09f4926e19d55541b367d7c01604b4',1,'Clingo::Heuristic']]],
+  ['decide_1',['decide',['../classClingo_1_1Heuristic.html#a9088179bf71c59f9b3374434f29528b3',1,'Clingo::Heuristic']]],
   ['decision_2',['decision',['../classClingo_1_1Assignment.html#a3f481ea6ae40510dd690baa13dc108ba',1,'Clingo::Assignment']]],
   ['decision_5flevel_3',['decision_level',['../classClingo_1_1Assignment.html#a9ff710724db8963122b0b343b9b8232f',1,'Clingo::Assignment']]],
   ['def_5fmap_4',['def_map',['../classCppClingo_1_1Control_1_1BuildContext.html#a1b70bf81702d6abf64173096ca3d3753',1,'CppClingo::Control::BuildContext']]],
@@ -10,7 +10,7 @@ var searchData=
   ['dequeue_7',['dequeue',['../classCppClingo_1_1Ground_1_1AtomDisjunction.html#a675743b88c469b6ef8294462339fd21e',1,'CppClingo::Ground::AtomDisjunction::dequeue()'],['../classCppClingo_1_1Ground_1_1AtomAssignAggr.html#a41c0ff88926c03c19065571f834e38b9',1,'CppClingo::Ground::AtomAssignAggr::dequeue()'],['../classCppClingo_1_1Ground_1_1AtomHdAggr.html#aa19557cd6651e941978ae2da1b68e1ef',1,'CppClingo::Ground::AtomHdAggr::dequeue()'],['../classCppClingo_1_1Ground_1_1AtomBdAggr.html#ac36aa77ba53d22fe2ffee879a472f6ba',1,'CppClingo::Ground::AtomBdAggr::dequeue()']]],
   ['derived_8',['derived',['../classCppClingo_1_1Ground_1_1BaseAssignAggr.html#a09b91ef21cff205542ad02f2def27882',1,'CppClingo::Ground::BaseAssignAggr']]],
   ['derived_5fidx_9',['derived_idx',['../classCppClingo_1_1Ground_1_1AtomBdAggr.html#a4b426b2e1b260fdf4cff2da8d276142d',1,'CppClingo::Ground::AtomBdAggr::derived_idx(size_t idx)'],['../classCppClingo_1_1Ground_1_1AtomBdAggr.html#ab8c16daa8e21583c589ccaa72d9065ee',1,'CppClingo::Ground::AtomBdAggr::derived_idx() const -&gt; size_t']]],
-  ['description_10',['description',['../classClingo_1_1ConstConfig.html#a4214cefef4edc7f1ea10ad5f5fd5f7db',1,'Clingo::ConstConfig']]],
+  ['description_10',['description',['../classCppClingo_1_1Control_1_1ClingoConfig.html#a702530acf6fb7f29c8b8ae79e6b89897',1,'CppClingo::Control::ClingoConfig::description()'],['../classClingo_1_1ConstConfig.html#a4214cefef4edc7f1ea10ad5f5fd5f7db',1,'Clingo::ConstConfig::description()']]],
   ['difference_11',['difference',['../classCppClingo_1_1Util_1_1interval__set.html#a4d6af2e889c53851ae27ffd99fa2d95d',1,'CppClingo::Util::interval_set']]],
   ['discard_12',['discard',['../classClingo_1_1Control.html#a099a4e19a507b7f94d506546b6713e1c',1,'Clingo::Control']]],
   ['disjunction_13',['disjunction',['../classCppClingo_1_1OutputStm.html#a21f23b59462053ce7f324f600fd0e802',1,'CppClingo::OutputStm']]],

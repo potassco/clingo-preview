@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['weight_0',['weight',['../structclingo__weighted__literal.html#a477d0f1e6c6618296c943ca837cfe81c',1,'clingo_weighted_literal']]],
-  ['weight_5frule_1',['weight_rule',['../structclingo__observer.html#aee539c7e43bd71d66e9dbf2aa4f0e7a8',1,'clingo_observer']]]
+  ['undo_0',['undo',['../structclingo__propagator.html#ab2eb116bb25f10ee39147abef071e9cd',1,'clingo_propagator']]],
+  ['unsat_1',['unsat',['../structclingo__solve__event__handler.html#a2d207715ca8ad3920d384d1d8f690183',1,'clingo_solve_event_handler']]]
 ];

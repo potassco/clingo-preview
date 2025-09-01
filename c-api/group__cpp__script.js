@@ -9,6 +9,7 @@ var group__cpp__script =
       [ "execute", "classClingo_1_1Script.html#a9d7c3dfd6c0a6d9486b4b1060b1d232a", null ],
       [ "main", "classClingo_1_1Script.html#af8a53ba3680e3d75fcf83ce21976a0c8", null ],
       [ "name", "classClingo_1_1Script.html#a166007079d2833cbc6510209b3be20f8", null ],
+      [ "operator=", "classClingo_1_1Script.html#ab94d42da0db869a6cae02cc06f3dc566", null ],
       [ "version", "classClingo_1_1Script.html#a139f63b07e3d4d5fb05560a97d6c10b0", null ]
     ] ]
 ];

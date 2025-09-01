@@ -135,13 +135,13 @@ typedef struct clingo_options&#160;</td><td class="memItemRight" valign="bottom"
 typedef struct <a class="el" href="structclingo__application.html">clingo_application</a>&#160;</td><td class="memItemRight" valign="bottom"><b>clingo_application_t</b></td></tr>
 <tr class="memdesc:gae7c48dd1214af43e005947beea794df7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This struct contains a set of functions to customize the clingo application. <br /></td></tr>
 <tr class="separator:gae7c48dd1214af43e005947beea794df7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga24e749394d033cb886d4ec50e7946c61" id="r_ga24e749394d033cb886d4ec50e7946c61"><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__app.html#ga24e749394d033cb886d4ec50e7946c61">clingo_option_parser_t</a>) (char const *value, size_t size, void *data, bool *result)</td></tr>
-<tr class="memdesc:ga24e749394d033cb886d4ec50e7946c61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback to parse the value of a command-line option.  <br /></td></tr>
-<tr class="separator:ga24e749394d033cb886d4ec50e7946c61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaed9e554c485adc70ed1ed1fbf89b13c7" id="r_gaed9e554c485adc70ed1ed1fbf89b13c7"><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__app.html#gaed9e554c485adc70ed1ed1fbf89b13c7">clingo_option_parser_t</a>) (char const *value, size_t size, void *data)</td></tr>
+<tr class="memdesc:gaed9e554c485adc70ed1ed1fbf89b13c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback to parse the value of a command-line option.  <br /></td></tr>
+<tr class="separator:gaed9e554c485adc70ed1ed1fbf89b13c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gac7faf5ef02eafe5573b574e99c3d46d9" id="r_gac7faf5ef02eafe5573b574e99c3d46d9"><td class="memItemLeft" align="right" valign="top">CLINGO_VISIBILITY_DEFAULT bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__app.html#gac7faf5ef02eafe5573b574e99c3d46d9">clingo_options_add</a> (<a class="el" href="group__c__app.html#ga2b159cfef1bc326a9e25617095be39cf">clingo_options_t</a> *options, char const *group, size_t group_size, char const *option, size_t option_size, char const *description, size_t description_size, <a class="el" href="group__c__app.html#ga24e749394d033cb886d4ec50e7946c61">clingo_option_parser_t</a> parser, void *data, bool multi, char const *argument, size_t argument_size)</td></tr>
+<tr class="memitem:gac7faf5ef02eafe5573b574e99c3d46d9" id="r_gac7faf5ef02eafe5573b574e99c3d46d9"><td class="memItemLeft" align="right" valign="top">CLINGO_VISIBILITY_DEFAULT bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__app.html#gac7faf5ef02eafe5573b574e99c3d46d9">clingo_options_add</a> (<a class="el" href="group__c__app.html#ga2b159cfef1bc326a9e25617095be39cf">clingo_options_t</a> *options, char const *group, size_t group_size, char const *option, size_t option_size, char const *description, size_t description_size, <a class="el" href="group__c__app.html#gaed9e554c485adc70ed1ed1fbf89b13c7">clingo_option_parser_t</a> parser, void *data, bool multi, char const *argument, size_t argument_size)</td></tr>
 <tr class="memdesc:gac7faf5ef02eafe5573b574e99c3d46d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an option that is processed with a custom parser.  <br /></td></tr>
 <tr class="separator:gac7faf5ef02eafe5573b574e99c3d46d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa030815ddf9996de8a122d30f4d15ae7" id="r_gaa030815ddf9996de8a122d30f4d15ae7"><td class="memItemLeft" align="right" valign="top">CLINGO_VISIBILITY_DEFAULT bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__app.html#gaa030815ddf9996de8a122d30f4d15ae7">clingo_options_add_flag</a> (<a class="el" href="group__c__app.html#ga2b159cfef1bc326a9e25617095be39cf">clingo_options_t</a> *options, char const *group, size_t group_size, char const *option, size_t option_size, char const *description, size_t description_size, bool *target)</td></tr>
@@ -173,7 +173,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="app_8c-example.html#a5">app.c</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -199,7 +201,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -225,33 +227,35 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="app_8c-example.html#a4">app.c</a>.</dd>
+</dl>
 
 </div>
 </div>
-<a id="ga24e749394d033cb886d4ec50e7946c61" name="ga24e749394d033cb886d4ec50e7946c61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga24e749394d033cb886d4ec50e7946c61">&#9670;&#160;</a></span>clingo_option_parser_t</h2>
+<a id="gaed9e554c485adc70ed1ed1fbf89b13c7" name="gaed9e554c485adc70ed1ed1fbf89b13c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaed9e554c485adc70ed1ed1fbf89b13c7">&#9670;&#160;</a></span>clingo_option_parser_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef bool(* clingo_option_parser_t) (char const *value, size_t size, void *data, bool *result)</td>
+          <td class="memname">typedef bool(* clingo_option_parser_t) (char const *value, size_t size, void *data)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Callback to parse the value of a command-line option. </p>
+<p>If an options fails to parse, the function should set a clingo_result_invalid error and return false.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>the value to parse </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>the size of the value </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>the user data of the callback </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">result</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -320,7 +324,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="app_8c-example.html#a17">app.c</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -375,7 +381,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__c__app.html#ga24e749394d033cb886d4ec50e7946c61">clingo_option_parser_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__c__app.html#gaed9e554c485adc70ed1ed1fbf89b13c7">clingo_option_parser_t</a>&#160;</td>
           <td class="paramname"><em>parser</em>, </td>
         </tr>
         <tr>
@@ -430,7 +436,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="app_8c-example.html#a3">app.c</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -511,7 +519,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>

@@ -54,10 +54,10 @@ var group__ground__hdaggr =
       [ "symbols", "classCppClingo_1_1Ground_1_1StateHdAggr.html#ac7edd43c55a90c575b1d71e30179e635", null ]
     ] ],
     [ "CppClingo::Ground::StmHdAggr", "classCppClingo_1_1Ground_1_1StmHdAggr.html", [
-      [ "StmHdAggr", "classCppClingo_1_1Ground_1_1StmHdAggr.html#af1a831be12221d568399634af530410a", null ]
+      [ "StmHdAggr", "classCppClingo_1_1Ground_1_1StmHdAggr.html#ae6b5ab8bcf5158841b0eebc740e96cae", null ]
     ] ],
     [ "CppClingo::Ground::StmHdAggrElem", "classCppClingo_1_1Ground_1_1StmHdAggrElem.html", [
-      [ "StmHdAggrElem", "classCppClingo_1_1Ground_1_1StmHdAggrElem.html#a14322b39c1393ab9977daf5bc3e13355", null ]
+      [ "StmHdAggrElem", "classCppClingo_1_1Ground_1_1StmHdAggrElem.html#a43e03d4cef8e3e9956527e25d1229686", null ]
     ] ],
     [ "CppClingo::Ground::MatchHdAggr", "classCppClingo_1_1Ground_1_1MatchHdAggr.html", [
       [ "Key", "classCppClingo_1_1Ground_1_1MatchHdAggr.html#a693447f8482c0e99f1fe083c4b9650ce", null ],

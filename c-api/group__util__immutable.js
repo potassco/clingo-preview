@@ -37,7 +37,7 @@ var group__util__immutable =
       [ "element_type", "classCppClingo_1_1Util_1_1immutable__value.html#a50f03a9ff0c26a1bcf1fb27283bdac5b", null ],
       [ "immutable_value", "classCppClingo_1_1Util_1_1immutable__value.html#a816c860c80623841e6fc2437ef4b92d9", null ],
       [ "immutable_value", "classCppClingo_1_1Util_1_1immutable__value.html#aa70f20e00a7afea625988fea7687fc81", null ],
-      [ "immutable_value", "classCppClingo_1_1Util_1_1immutable__value.html#ab5a679a9ad6fc6db3cd6d1f648d83ce4", null ],
+      [ "immutable_value", "classCppClingo_1_1Util_1_1immutable__value.html#af6fb481ccdf2ea993688d50fee8ccf3c", null ],
       [ "immutable_value", "classCppClingo_1_1Util_1_1immutable__value.html#a8f15df16c3adad89f78804679881e380", null ],
       [ "immutable_value", "classCppClingo_1_1Util_1_1immutable__value.html#abf24cd9b1913deecab826727fbaa2568", null ],
       [ "immutable_value", "classCppClingo_1_1Util_1_1immutable__value.html#ab0bd89c537a287f4da768c55d2948bc9", null ],

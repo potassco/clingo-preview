@@ -1,4 +1,4 @@
 var classCppClingo_1_1Ground_1_1LitCondLitStrat =
 [
-    [ "LitCondLitStrat", "classCppClingo_1_1Ground_1_1LitCondLitStrat.html#a8c9b1a1a5f54e1f05186dc4d380cefd3", null ]
+    [ "LitCondLitStrat", "classCppClingo_1_1Ground_1_1LitCondLitStrat.html#a9357c6f99745531c533d21ee97ae020a", null ]
 ];

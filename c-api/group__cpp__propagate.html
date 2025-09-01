@@ -118,11 +118,11 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Assignment.html">Clingo::Assignment</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a (partial) assignment of a particular solver.  <a href="classClingo_1_1Assignment.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1PropagateControl.html">Clingo::PropagateControl</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to control a user-defined propagator.  <a href="classClingo_1_1PropagateControl.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1PropagateInit.html">Clingo::PropagateInit</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Object to initialize a user-defined propagator before each solving step.  <a href="classClingo_1_1PropagateInit.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1PropagateControl.html">Clingo::PropagateControl</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to control propagation of a user-defined propagator.  <a href="classClingo_1_1PropagateControl.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Propagator.html">Clingo::Propagator</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface for user-defined propagators.  <a href="classClingo_1_1Propagator.html#details">More...</a><br /></td></tr>
@@ -175,7 +175,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">enum</a> <a class="el" href="group__cpp__propagate.html#ga3496cb0a07cdb9bd13b49db7fd2ee8da">Clingo::ClauseFlags</a> : <a class="el" href="group__c__propagate.html#gac68cd9a38909ef2d08376f4e9a6352dd">clingo_clause_type_t</a></td>
+          <td class="memname">enum <a class="el" href="group__cpp__propagate.html#ga3496cb0a07cdb9bd13b49db7fd2ee8da">Clingo::ClauseFlags</a> : <a class="el" href="group__c__propagate.html#gac68cd9a38909ef2d08376f4e9a6352dd">clingo_clause_type_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -202,7 +202,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">enum</a> <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">class</a> <a class="el" href="group__cpp__propagate.html#ga64cdaabee186410e187b8cae03402296">Clingo::PropagatorCheckMode</a> : <a class="el" href="group__c__propagate.html#ga84a31c95e48053589feecff95f00d894">clingo_propagator_check_mode_t</a></td>
+          <td class="memname">enum class <a class="el" href="group__cpp__propagate.html#ga64cdaabee186410e187b8cae03402296">Clingo::PropagatorCheckMode</a> : <a class="el" href="group__c__propagate.html#ga84a31c95e48053589feecff95f00d894">clingo_propagator_check_mode_t</a></td>
         </tr>
       </table>
   </td>
@@ -236,7 +236,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">enum</a> <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">class</a> <a class="el" href="group__cpp__propagate.html#gad78cdf1c37dfe3fa6a23d6aa91216688">Clingo::PropagatorUndoMode</a> : <a class="el" href="group__c__propagate.html#ga4d75efb6765b345d2ad01beff931e940">clingo_propagator_undo_mode_t</a></td>
+          <td class="memname">enum class <a class="el" href="group__cpp__propagate.html#gad78cdf1c37dfe3fa6a23d6aa91216688">Clingo::PropagatorUndoMode</a> : <a class="el" href="group__c__propagate.html#ga4d75efb6765b345d2ad01beff931e940">clingo_propagator_undo_mode_t</a></td>
         </tr>
       </table>
   </td>
@@ -263,7 +263,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">enum</a> <a class="el" href="group__cpp__propagate.html#ga017aa793e466bc6febee50ec40e88ec5">Clingo::WeightConstraintType</a> : <a class="el" href="group__c__propagate.html#ga2aead2bec3850de40ef5febf71bce40d">clingo_weight_constraint_type_t</a></td>
+          <td class="memname">enum <a class="el" href="group__cpp__propagate.html#ga017aa793e466bc6febee50ec40e88ec5">Clingo::WeightConstraintType</a> : <a class="el" href="group__c__propagate.html#ga2aead2bec3850de40ef5febf71bce40d">clingo_weight_constraint_type_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">

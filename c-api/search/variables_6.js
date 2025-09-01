@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['has_5fsign_0',['has_sign',['../structCppClingo_1_1Input_1_1CheckTypeResult.html#a2346d6f9ef388e8c093a1c22bdb38b89',1,'CppClingo::Input::CheckTypeResult']]],
-  ['heuristic_1',['heuristic',['../structclingo__observer.html#a74f720957dce6201994b786a26d649e7',1,'clingo_observer']]]
+  ['get_0',['get',['../structclingo__config__entry.html#a0a8ce41f2884b4d585d56d71f94ce9fb',1,'clingo_config_entry']]]
 ];

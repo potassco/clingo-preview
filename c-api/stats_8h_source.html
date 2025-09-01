@@ -110,11 +110,11 @@ $(document).ready(function(){initNavTree('stats_8h_source.html',''); initResizab
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef CLINGO_STATS_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define CLINGO_STATS_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;clingo/core.h&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;clingo/core.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">typedef</span> <span class="keyword">struct </span>clingo_control clingo_control_t;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
@@ -168,7 +168,7 @@ $(document).ready(function(){initNavTree('stats_8h_source.html',''); initResizab
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="agroup__c__core_html_ga7053acefbc6f7f7dc7e6d6398c7bbc5d"><div class="ttname"><a href="group__c__core.html#ga7053acefbc6f7f7dc7e6d6398c7bbc5d">clingo_string_builder_t</a></div><div class="ttdeci">struct clingo_string_builder clingo_string_builder_t</div><div class="ttdoc">A builder for strings.</div><div class="ttdef"><b>Definition</b> core.h:257</div></div>
+<div class="ttc" id="agroup__c__core_html_ga7053acefbc6f7f7dc7e6d6398c7bbc5d"><div class="ttname"><a href="group__c__core.html#ga7053acefbc6f7f7dc7e6d6398c7bbc5d">clingo_string_builder_t</a></div><div class="ttdeci">struct clingo_string_builder clingo_string_builder_t</div><div class="ttdoc">A builder for strings.</div><div class="ttdef"><b>Definition</b> core.h:252</div></div>
 <div class="ttc" id="agroup__c__stats_html_ga0519b0fbdd34be8f405f898f24506abf"><div class="ttname"><a href="group__c__stats.html#ga0519b0fbdd34be8f405f898f24506abf">clingo_stats_map_add_subkey</a></div><div class="ttdeci">CLINGO_VISIBILITY_DEFAULT bool clingo_stats_map_add_subkey(clingo_stats_t *stats, uint64_t key, char const *name, size_t size, clingo_stats_type_t type, uint64_t *subkey)</div><div class="ttdoc">Add a subkey with the given name.</div></div>
 <div class="ttc" id="agroup__c__stats_html_ga198939f1d4d1dd680fef61eeef7987f8"><div class="ttname"><a href="group__c__stats.html#ga198939f1d4d1dd680fef61eeef7987f8">clingo_stats_type</a></div><div class="ttdeci">CLINGO_VISIBILITY_DEFAULT bool clingo_stats_type(clingo_stats_t const *stats, uint64_t key, clingo_stats_type_t *type)</div><div class="ttdoc">Get the type of a key.</div></div>
 <div class="ttc" id="agroup__c__stats_html_ga2e839e24ac1977ad1014c9a1e30ec605"><div class="ttname"><a href="group__c__stats.html#ga2e839e24ac1977ad1014c9a1e30ec605">clingo_stats_map_size</a></div><div class="ttdeci">CLINGO_VISIBILITY_DEFAULT bool clingo_stats_map_size(clingo_stats_t const *stats, uint64_t key, size_t *size)</div><div class="ttdoc">Get the number of subkeys of a map entry.</div></div>
@@ -189,7 +189,7 @@ $(document).ready(function(){initNavTree('stats_8h_source.html',''); initResizab
 <div class="ttc" id="agroup__c__stats_html_ggab405aff801abd17b589055bee52aab6da421275b009ece7b65003ff6fcf7826fa"><div class="ttname"><a href="group__c__stats.html#ggab405aff801abd17b589055bee52aab6da421275b009ece7b65003ff6fcf7826fa">clingo_stats_type_map</a></div><div class="ttdeci">@ clingo_stats_type_map</div><div class="ttdoc">the entry is a map</div><div class="ttdef"><b>Definition</b> stats.h:53</div></div>
 <div class="ttc" id="agroup__c__stats_html_ggab405aff801abd17b589055bee52aab6da813f3cf8737d53e066912a50b6b10862"><div class="ttname"><a href="group__c__stats.html#ggab405aff801abd17b589055bee52aab6da813f3cf8737d53e066912a50b6b10862">clingo_stats_type_value</a></div><div class="ttdeci">@ clingo_stats_type_value</div><div class="ttdoc">the entry is a (double) value</div><div class="ttdef"><b>Definition</b> stats.h:51</div></div>
 <div class="ttc" id="agroup__c__stats_html_ggab405aff801abd17b589055bee52aab6dac8a8326dc36936956e9fe949d86ca892"><div class="ttname"><a href="group__c__stats.html#ggab405aff801abd17b589055bee52aab6dac8a8326dc36936956e9fe949d86ca892">clingo_stats_type_array</a></div><div class="ttdeci">@ clingo_stats_type_array</div><div class="ttdoc">the entry is an array</div><div class="ttdef"><b>Definition</b> stats.h:52</div></div>
-<div class="ttc" id="astructclingo__string_html"><div class="ttname"><a href="structclingo__string.html">clingo_string</a></div><div class="ttdoc">Struct to capture strings that are not null-terminated.</div><div class="ttdef"><b>Definition</b> core.h:91</div></div>
+<div class="ttc" id="astructclingo__string_html"><div class="ttname"><a href="structclingo__string.html">clingo_string</a></div><div class="ttdoc">Struct to capture strings that are not null-terminated.</div><div class="ttdef"><b>Definition</b> core.h:86</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

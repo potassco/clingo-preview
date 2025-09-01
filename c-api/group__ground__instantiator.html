@@ -131,6 +131,24 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Ground_1_1Queue.html">CppClingo::Ground::Queue</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A queue to process instantiators.  <a href="classCppClingo_1_1Ground_1_1Queue.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCppClingo_1_1Ground_1_1ProfileIndent.html">CppClingo::Ground::ProfileIndent</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper to print indentation.  <a href="structCppClingo_1_1Ground_1_1ProfileIndent.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCppClingo_1_1Ground_1_1ProfileStats.html">CppClingo::Ground::ProfileStats</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The profiling data.  <a href="structCppClingo_1_1Ground_1_1ProfileStats.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Ground_1_1ProfileNode.html">CppClingo::Ground::ProfileNode</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for profiling data.  <a href="classCppClingo_1_1Ground_1_1ProfileNode.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Ground_1_1ProfileNodeInternal.html">CppClingo::Ground::ProfileNodeInternal</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Profile node that can hold children.  <a href="classCppClingo_1_1Ground_1_1ProfileNodeInternal.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Ground_1_1ProfileNodeExpression.html">CppClingo::Ground::ProfileNodeExpression&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A profile node that holds a printable expression and children.  <a href="classCppClingo_1_1Ground_1_1ProfileNodeExpression.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Ground_1_1ProfileData.html">CppClingo::Ground::ProfileData</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This profile node holds the profiling data for a single step and accumulated data.  <a href="classCppClingo_1_1Ground_1_1ProfileData.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -155,6 +173,16 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:ga5c4db6a3049cc6d139c8bef5a9fa6c93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of matcher types.  <a href="group__ground__instantiator.html#ga5c4db6a3049cc6d139c8bef5a9fa6c93">More...</a><br /></td></tr>
 <tr class="separator:ga5c4db6a3049cc6d139c8bef5a9fa6c93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga023bb51dd4466e2dce631c4d7e0b9876" id="r_ga023bb51dd4466e2dce631c4d7e0b9876"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ground__instantiator.html#ga023bb51dd4466e2dce631c4d7e0b9876">CppClingo::Ground::ProfileType</a> : uint8_t { <a class="el" href="group__ground__instantiator.html#gga023bb51dd4466e2dce631c4d7e0b9876a2764ca9d34e90313978d044f27ae433b">ProfileType::step</a>
+, <a class="el" href="group__ground__instantiator.html#gga023bb51dd4466e2dce631c4d7e0b9876a076602efe3af5d4fa2b47d8d3f8c8c1c">ProfileType::accu</a>
+ }</td></tr>
+<tr class="memdesc:ga023bb51dd4466e2dce631c4d7e0b9876"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to process per step or accumulated profiling data.  <a href="group__ground__instantiator.html#ga023bb51dd4466e2dce631c4d7e0b9876">More...</a><br /></td></tr>
+<tr class="separator:ga023bb51dd4466e2dce631c4d7e0b9876"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga86aa9dbadcab1f7803caa30008a1ffbd" id="r_ga86aa9dbadcab1f7803caa30008a1ffbd"><td class="memItemLeft" align="right" valign="top"><a id="ga86aa9dbadcab1f7803caa30008a1ffbd" name="ga86aa9dbadcab1f7803caa30008a1ffbd"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ground__instantiator.html#ga86aa9dbadcab1f7803caa30008a1ffbd">CppClingo::Ground::ProfileDetail</a> : uint8_t { <b>compact</b> = 0
+, <b>detailed</b> = 1
+ }</td></tr>
+<tr class="memdesc:ga86aa9dbadcab1f7803caa30008a1ffbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to print profile data into a compact or detailed form. <br /></td></tr>
+<tr class="separator:ga86aa9dbadcab1f7803caa30008a1ffbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -192,6 +220,36 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Ground::op
 </td></tr>
 <tr><td class="fieldname"><a id="gga5c4db6a3049cc6d139c8bef5a9fa6c93a4823bf8cad059e5cd9da97fc596886b9" name="gga5c4db6a3049cc6d139c8bef5a9fa6c93a4823bf8cad059e5cd9da97fc596886b9"></a>all_atoms&#160;</td><td class="fielddoc"><p>Indicates a matcher for previously added atoms. </p>
 <p>Indicates a matcher for all atoms. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="ga023bb51dd4466e2dce631c4d7e0b9876" name="ga023bb51dd4466e2dce631c4d7e0b9876"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga023bb51dd4466e2dce631c4d7e0b9876">&#9670;&#160;</a></span>ProfileType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="group__ground__instantiator.html#ga023bb51dd4466e2dce631c4d7e0b9876">CppClingo::Ground::ProfileType</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether to process per step or accumulated profiling data. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga023bb51dd4466e2dce631c4d7e0b9876a2764ca9d34e90313978d044f27ae433b" name="gga023bb51dd4466e2dce631c4d7e0b9876a2764ca9d34e90313978d044f27ae433b"></a>step&#160;</td><td class="fielddoc"><p>Profile data for a single step. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga023bb51dd4466e2dce631c4d7e0b9876a076602efe3af5d4fa2b47d8d3f8c8c1c" name="gga023bb51dd4466e2dce631c4d7e0b9876a076602efe3af5d4fa2b47d8d3f8c8c1c"></a>accu&#160;</td><td class="fielddoc"><p>Profile data accumulated over all steps. </p>
 </td></tr>
 </table>
 

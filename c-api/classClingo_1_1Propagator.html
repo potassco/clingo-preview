@@ -123,35 +123,42 @@ Inheritance diagram for Clingo::Propagator:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a4fbb54c0cce49c323e73b2363353a918" id="r_a4fbb54c0cce49c323e73b2363353a918"><td class="memItemLeft" align="right" valign="top"><a id="a4fbb54c0cce49c323e73b2363353a918" name="a4fbb54c0cce49c323e73b2363353a918"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Propagator</b> ()=<a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">default</a></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Propagator</b> ()=default</td></tr>
 <tr class="memdesc:a4fbb54c0cce49c323e73b2363353a918"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default constructor. <br /></td></tr>
 <tr class="separator:a4fbb54c0cce49c323e73b2363353a918"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9880980a4c309fb82c2f9a0feec746c6" id="r_a9880980a4c309fb82c2f9a0feec746c6"><td class="memItemLeft" align="right" valign="top"><a id="a9880980a4c309fb82c2f9a0feec746c6" name="a9880980a4c309fb82c2f9a0feec746c6"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Propagator</b> (<a class="el" href="classClingo_1_1Propagator.html">Propagator</a> &amp;&amp;<a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">other</a>)=<a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">delete</a></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Propagator</b> (<a class="el" href="classClingo_1_1Propagator.html">Propagator</a> &amp;&amp;other)=delete</td></tr>
 <tr class="memdesc:a9880980a4c309fb82c2f9a0feec746c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable copy and move operations. <br /></td></tr>
 <tr class="separator:a9880980a4c309fb82c2f9a0feec746c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab401e68d0a1991cbe96c04f9182b0064" id="r_ab401e68d0a1991cbe96c04f9182b0064"><td class="memItemLeft" align="right" valign="top"><a id="ab401e68d0a1991cbe96c04f9182b0064" name="ab401e68d0a1991cbe96c04f9182b0064"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classClingo_1_1Propagator.html">Propagator</a> &amp;&amp;other) -&gt; <a class="el" href="classClingo_1_1Propagator.html">Propagator</a> &amp;=delete</td></tr>
+<tr class="memdesc:ab401e68d0a1991cbe96c04f9182b0064"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable copy and move operations. <br /></td></tr>
+<tr class="separator:ab401e68d0a1991cbe96c04f9182b0064"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd084a85ffbcd8b90b8f13a0f9ccb92c" id="r_acd084a85ffbcd8b90b8f13a0f9ccb92c"><td class="memItemLeft" align="right" valign="top"><a id="acd084a85ffbcd8b90b8f13a0f9ccb92c" name="acd084a85ffbcd8b90b8f13a0f9ccb92c"></a>
-<a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">virtual</a>&#160;</td><td class="memItemRight" valign="bottom"><b>~Propagator</b> ()=<a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">default</a></td></tr>
-<tr class="memdesc:acd084a85ffbcd8b90b8f13a0f9ccb92c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default destructor. <br /></td></tr>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Propagator</b> ()=default</td></tr>
+<tr class="memdesc:acd084a85ffbcd8b90b8f13a0f9ccb92c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The destructor. <br /></td></tr>
 <tr class="separator:acd084a85ffbcd8b90b8f13a0f9ccb92c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49e1c9e992416ef8e3c534850fb37944" id="r_a49e1c9e992416ef8e3c534850fb37944"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Propagator.html#a49e1c9e992416ef8e3c534850fb37944">init</a> (<a class="el" href="classClingo_1_1PropagateInit.html">PropagateInit</a> init)</td></tr>
-<tr class="memdesc:a49e1c9e992416ef8e3c534850fb37944"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback to initialize the propagator before each solving step.  <br /></td></tr>
-<tr class="separator:a49e1c9e992416ef8e3c534850fb37944"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8826ee57e376aa2aed85bc698c7fde22" id="r_a8826ee57e376aa2aed85bc698c7fde22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Propagator.html#a8826ee57e376aa2aed85bc698c7fde22">propagate</a> (<a class="el" href="classClingo_1_1PropagateControl.html">PropagateControl</a> <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">ctl</a>, <a class="el" href="group__cpp__core.html#gae2fd5bed61bbbd84fe1d50483b56d84f">ProgramLiteralSpan</a> <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">changes</a>)</td></tr>
-<tr class="memdesc:a8826ee57e376aa2aed85bc698c7fde22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback to propagate consequences of the given literals.  <br /></td></tr>
-<tr class="separator:a8826ee57e376aa2aed85bc698c7fde22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe2196d58a53557dd4055d3019b0a6fe" id="r_abe2196d58a53557dd4055d3019b0a6fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Propagator.html#abe2196d58a53557dd4055d3019b0a6fe">undo</a> (<a class="el" href="group__cpp__core.html#gae2dbda916d0278a57b7d692392f3840e">ProgramId</a> thread_id, <a class="el" href="classClingo_1_1Assignment.html">Assignment</a> assignment, <a class="el" href="group__cpp__core.html#gae2fd5bed61bbbd84fe1d50483b56d84f">ProgramLiteralSpan</a> <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">changes</a>)</td></tr>
-<tr class="memdesc:abe2196d58a53557dd4055d3019b0a6fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the solver backtracks to a previous decision level.  <br /></td></tr>
-<tr class="separator:abe2196d58a53557dd4055d3019b0a6fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c5fa942c14594c92e40d774ff74fc3c" id="r_a2c5fa942c14594c92e40d774ff74fc3c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Propagator.html#a2c5fa942c14594c92e40d774ff74fc3c">check</a> (<a class="el" href="classClingo_1_1PropagateControl.html">PropagateControl</a> <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">ctl</a>)</td></tr>
-<tr class="memdesc:a2c5fa942c14594c92e40d774ff74fc3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback that is called on propagation fixpoints or total assignments.  <br /></td></tr>
-<tr class="separator:a2c5fa942c14594c92e40d774ff74fc3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb5a3d17db5a73c249330597565a9e06" id="r_afb5a3d17db5a73c249330597565a9e06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Propagator.html#afb5a3d17db5a73c249330597565a9e06">init</a> (<a class="el" href="classClingo_1_1Assignment.html">Assignment</a> assignment, <a class="el" href="classClingo_1_1PropagateInit.html">PropagateInit</a> init)</td></tr>
+<tr class="memdesc:afb5a3d17db5a73c249330597565a9e06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback to initialize the propagator before each solving step.  <br /></td></tr>
+<tr class="separator:afb5a3d17db5a73c249330597565a9e06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3b82e0ac358ebbe2709bc4823d751c4" id="r_aa3b82e0ac358ebbe2709bc4823d751c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Propagator.html#aa3b82e0ac358ebbe2709bc4823d751c4">attach</a> (<a class="el" href="classClingo_1_1Assignment.html">Assignment</a> assignment, <a class="el" href="classClingo_1_1PropagateControl.html">PropagateControl</a> ctl)</td></tr>
+<tr class="memdesc:aa3b82e0ac358ebbe2709bc4823d751c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback to initialize/setup thread-specific data for the propagator.  <br /></td></tr>
+<tr class="separator:aa3b82e0ac358ebbe2709bc4823d751c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad32bb21331319e250405a8145316b0c6" id="r_ad32bb21331319e250405a8145316b0c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Propagator.html#ad32bb21331319e250405a8145316b0c6">propagate</a> (<a class="el" href="classClingo_1_1Assignment.html">Assignment</a> assignment, <a class="el" href="classClingo_1_1PropagateControl.html">PropagateControl</a> ctl, <a class="el" href="group__cpp__core.html#gae2fd5bed61bbbd84fe1d50483b56d84f">ProgramLiteralSpan</a> changes)</td></tr>
+<tr class="memdesc:ad32bb21331319e250405a8145316b0c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback to propagate consequences of the given literals.  <br /></td></tr>
+<tr class="separator:ad32bb21331319e250405a8145316b0c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade4dc63991595e0aa97f9d1034b6c9ba" id="r_ade4dc63991595e0aa97f9d1034b6c9ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Propagator.html#ade4dc63991595e0aa97f9d1034b6c9ba">undo</a> (<a class="el" href="classClingo_1_1Assignment.html">Assignment</a> assignment, <a class="el" href="group__cpp__core.html#gae2fd5bed61bbbd84fe1d50483b56d84f">ProgramLiteralSpan</a> changes)</td></tr>
+<tr class="memdesc:ade4dc63991595e0aa97f9d1034b6c9ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the solver backtracks to a previous decision level.  <br /></td></tr>
+<tr class="separator:ade4dc63991595e0aa97f9d1034b6c9ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a728d739e566b96775523e51be564e883" id="r_a728d739e566b96775523e51be564e883"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Propagator.html#a728d739e566b96775523e51be564e883">check</a> (<a class="el" href="classClingo_1_1Assignment.html">Assignment</a> assignment, <a class="el" href="classClingo_1_1PropagateControl.html">PropagateControl</a> ctl)</td></tr>
+<tr class="memdesc:a728d739e566b96775523e51be564e883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback that is called on propagation fixpoints or total assignments.  <br /></td></tr>
+<tr class="separator:a728d739e566b96775523e51be564e883"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interface for user-defined propagators. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2c5fa942c14594c92e40d774ff74fc3c" name="a2c5fa942c14594c92e40d774ff74fc3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c5fa942c14594c92e40d774ff74fc3c">&#9670;&#160;</a></span>check()</h2>
+<a id="aa3b82e0ac358ebbe2709bc4823d751c4" name="aa3b82e0ac358ebbe2709bc4823d751c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3b82e0ac358ebbe2709bc4823d751c4">&#9670;&#160;</a></span>attach()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,11 +167,67 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">void</a> Clingo::Propagator::check </td>
+          <td class="memname">void Clingo::Propagator::attach </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classClingo_1_1PropagateControl.html">PropagateControl</a>&#160;</td>
-          <td class="paramname"><em>ctl</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classClingo_1_1Assignment.html">Assignment</a>&#160;</td>
+          <td class="paramname"><em>assignment</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="classClingo_1_1PropagateControl.html">PropagateControl</a>&#160;</td>
+          <td class="paramname"><em>ctl</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Callback to initialize/setup thread-specific data for the propagator. </p>
+<p>This function is called once for each solving thread before solving of the current step is started.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">assignment</td><td>the current assignment of the solver </td></tr>
+    <tr><td class="paramname">ctl</td><td>the propagate control object </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a728d739e566b96775523e51be564e883" name="a728d739e566b96775523e51be564e883"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a728d739e566b96775523e51be564e883">&#9670;&#160;</a></span>check()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Clingo::Propagator::check </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classClingo_1_1Assignment.html">Assignment</a>&#160;</td>
+          <td class="paramname"><em>assignment</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classClingo_1_1PropagateControl.html">PropagateControl</a>&#160;</td>
+          <td class="paramname"><em>ctl</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -179,6 +242,7 @@ Public Member Functions</h2></td></tr>
 <p>Like in Clingo::Propagator::Propagate(), a propagator can add clauses here to propagate consequences or discard the current assignment.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">assignment</td><td>the current assignment of the solver </td></tr>
     <tr><td class="paramname">ctl</td><td>the propagate control object </td></tr>
   </table>
   </dd>
@@ -186,8 +250,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a49e1c9e992416ef8e3c534850fb37944" name="a49e1c9e992416ef8e3c534850fb37944"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49e1c9e992416ef8e3c534850fb37944">&#9670;&#160;</a></span>init()</h2>
+<a id="afb5a3d17db5a73c249330597565a9e06" name="afb5a3d17db5a73c249330597565a9e06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb5a3d17db5a73c249330597565a9e06">&#9670;&#160;</a></span>init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -196,11 +260,21 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">void</a> Clingo::Propagator::init </td>
+          <td class="memname">void Clingo::Propagator::init </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classClingo_1_1PropagateInit.html">PropagateInit</a>&#160;</td>
-          <td class="paramname"><em>init</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classClingo_1_1Assignment.html">Assignment</a>&#160;</td>
+          <td class="paramname"><em>assignment</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="classClingo_1_1PropagateInit.html">PropagateInit</a>&#160;</td>
+          <td class="paramname"><em>init</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -213,6 +287,7 @@ Public Member Functions</h2></td></tr>
 <p>Callback to initialize the propagator before each solving step. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">assignment</td><td>the current assignment of the solver </td></tr>
     <tr><td class="paramname">init</td><td>the initialization object </td></tr>
   </table>
   </dd>
@@ -220,8 +295,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a8826ee57e376aa2aed85bc698c7fde22" name="a8826ee57e376aa2aed85bc698c7fde22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8826ee57e376aa2aed85bc698c7fde22">&#9670;&#160;</a></span>propagate()</h2>
+<a id="ad32bb21331319e250405a8145316b0c6" name="ad32bb21331319e250405a8145316b0c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad32bb21331319e250405a8145316b0c6">&#9670;&#160;</a></span>propagate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -230,8 +305,14 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">void</a> Clingo::Propagator::propagate </td>
+          <td class="memname">void Clingo::Propagator::propagate </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="classClingo_1_1Assignment.html">Assignment</a>&#160;</td>
+          <td class="paramname"><em>assignment</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype"><a class="el" href="classClingo_1_1PropagateControl.html">PropagateControl</a>&#160;</td>
           <td class="paramname"><em>ctl</em>, </td>
         </tr>
@@ -255,10 +336,11 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Callback to propagate consequences of the given literals. </p>
-<p>The function is only called for watched literals that were assigned on the current decision level.</p>
+<p>The function is only called for watched literals assigned on the current decision level.</p>
 <p>A propagator can add clauses here to propagate consequences of the underlying theory.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">assignment</td><td>the current assignment of the solver </td></tr>
     <tr><td class="paramname">ctl</td><td>the propagate control object </td></tr>
     <tr><td class="paramname">changes</td><td>the literals that were assigned on the current decision level </td></tr>
   </table>
@@ -267,8 +349,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="abe2196d58a53557dd4055d3019b0a6fe" name="abe2196d58a53557dd4055d3019b0a6fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe2196d58a53557dd4055d3019b0a6fe">&#9670;&#160;</a></span>undo()</h2>
+<a id="ade4dc63991595e0aa97f9d1034b6c9ba" name="ade4dc63991595e0aa97f9d1034b6c9ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade4dc63991595e0aa97f9d1034b6c9ba">&#9670;&#160;</a></span>undo()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -277,14 +359,8 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">void</a> Clingo::Propagator::undo </td>
+          <td class="memname">void Clingo::Propagator::undo </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__cpp__core.html#gae2dbda916d0278a57b7d692392f3840e">ProgramId</a>&#160;</td>
-          <td class="paramname"><em>thread_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype"><a class="el" href="classClingo_1_1Assignment.html">Assignment</a>&#160;</td>
           <td class="paramname"><em>assignment</em>, </td>
         </tr>
@@ -312,7 +388,6 @@ Public Member Functions</h2></td></tr>
 <p><a class="el" href="classClingo_1_1PropagateInit.html#ae549968948abca7f9248abd26cdbeb3e" title="Get the undo mode of the propagator.">Clingo::PropagateInit::undo_mode()</a> can be used to control when this function is called.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">thread_id</td><td>the id of the current solver thread </td></tr>
     <tr><td class="paramname">assignment</td><td>the current assignment of the solver </td></tr>
     <tr><td class="paramname">changes</td><td>the literals that were assigned on the current decision level </td></tr>
   </table>

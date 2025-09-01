@@ -1,6 +1,6 @@
 var classCppClingo_1_1Control_1_1BuildContext =
 [
-    [ "BuildContext", "classCppClingo_1_1Control_1_1BuildContext.html#af2fae625238fe8b7d0f340208505b90c", null ],
+    [ "BuildContext", "classCppClingo_1_1Control_1_1BuildContext.html#adf37e094aedf40eaae331cc01d78ac1d", null ],
     [ "add_base", "classCppClingo_1_1Control_1_1BuildContext.html#a6c5a5bbfd968d9e6d9c98bf06985a704", null ],
     [ "add_project", "classCppClingo_1_1Control_1_1BuildContext.html#a80d6c535914c639ee528c31b15d0abf9", null ],
     [ "body", "classCppClingo_1_1Control_1_1BuildContext.html#afc3dacbf0ef1bf618c834ed8b66241e9", null ],
@@ -13,6 +13,7 @@ var classCppClingo_1_1Control_1_1BuildContext =
     [ "logger", "classCppClingo_1_1Control_1_1BuildContext.html#a8b9c1abc0b5cc57b1fa195d76dc60a9a", null ],
     [ "mbr", "classCppClingo_1_1Control_1_1BuildContext.html#aa028d1d055547a2b3eb3c5eee45508c4", null ],
     [ "next_index", "classCppClingo_1_1Control_1_1BuildContext.html#a081bd01b235d6a004064f2882e714fbe", null ],
+    [ "profile", "classCppClingo_1_1Control_1_1BuildContext.html#aea85a7bec81b4a0b962ceb51b95385d2", null ],
     [ "simple_lit", "classCppClingo_1_1Control_1_1BuildContext.html#a02d3e3c90068cabbeac935013101e267", null ],
     [ "simple_lit", "classCppClingo_1_1Control_1_1BuildContext.html#afdcdede2b7a565b16512c8e40b51c536", null ],
     [ "single_pass", "classCppClingo_1_1Control_1_1BuildContext.html#a210521f5ade1c47799660a5946485ba9", null ],

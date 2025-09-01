@@ -24,6 +24,7 @@ var group__ground__instantiator =
       [ "is_important", "classCppClingo_1_1Ground_1_1InstanceCallback.html#ab290b63e3520d2cd6e6f7b042f7e8d44", null ],
       [ "print_head", "classCppClingo_1_1Ground_1_1InstanceCallback.html#a9d56a6fc066649b38a11c71f7734a08f", null ],
       [ "priority", "classCppClingo_1_1Ground_1_1InstanceCallback.html#a76cd0857242e152e61816e9e7f7dca4a", null ],
+      [ "profile_node", "classCppClingo_1_1Ground_1_1InstanceCallback.html#a84927c9c1d851a5f1dc321d66c78c2e0", null ],
       [ "propagate", "classCppClingo_1_1Ground_1_1InstanceCallback.html#a15d4ee7ed99c039cb1194888e440e430", null ],
       [ "report", "classCppClingo_1_1Ground_1_1InstanceCallback.html#a0d0f1668695c8cc2e1d803242bead1e9", null ]
     ] ],
@@ -47,12 +48,57 @@ var group__ground__instantiator =
       [ "propagate", "classCppClingo_1_1Ground_1_1Queue.html#a83e005c8465511032a3520319dafb707", null ],
       [ "release", "classCppClingo_1_1Ground_1_1Queue.html#a733e07a84146ed0df49e0dcf23caed91", null ]
     ] ],
+    [ "CppClingo::Ground::ProfileIndent", "structCppClingo_1_1Ground_1_1ProfileIndent.html", [
+      [ "ProfileIndent", "structCppClingo_1_1Ground_1_1ProfileIndent.html#a2355c74709cbc4c007811e744163e40e", null ],
+      [ "operator+", "structCppClingo_1_1Ground_1_1ProfileIndent.html#a292fc5574cf5c2ea607bc0dc28ed697f", null ],
+      [ "operator+=", "structCppClingo_1_1Ground_1_1ProfileIndent.html#aca86f94bf60aae7dc7a0cc76d8a4329a", null ],
+      [ "operator<<", "structCppClingo_1_1Ground_1_1ProfileIndent.html#aa45b6724e629d45757366b4204fe922a", null ]
+    ] ],
+    [ "CppClingo::Ground::ProfileStats", "structCppClingo_1_1Ground_1_1ProfileStats.html", [
+      [ "ProfileStats", "structCppClingo_1_1Ground_1_1ProfileStats.html#aebb74486055a976ded018b11f760fa82", null ],
+      [ "accumulate", "structCppClingo_1_1Ground_1_1ProfileStats.html#a925679c0974ba9f08cbe1a3092be624f", null ],
+      [ "print", "structCppClingo_1_1Ground_1_1ProfileStats.html#a0cc82ef7baf2222309a1d428d6dfca18", null ],
+      [ "reset", "structCppClingo_1_1Ground_1_1ProfileStats.html#aa776c2279d6c5e807b784022a220b8c0", null ],
+      [ "score", "structCppClingo_1_1Ground_1_1ProfileStats.html#ae186391f84bf7084067c52f83e220669", null ],
+      [ "instances", "structCppClingo_1_1Ground_1_1ProfileStats.html#ab2284d69ce5bc5165ea637b631da3882", null ],
+      [ "matches", "structCppClingo_1_1Ground_1_1ProfileStats.html#aa24ac2a819f64850e03eedbb30d2070b", null ],
+      [ "time_instantiate", "structCppClingo_1_1Ground_1_1ProfileStats.html#a0809f7f0d9015466dc34da9eb307db1a", null ],
+      [ "time_propagate", "structCppClingo_1_1Ground_1_1ProfileStats.html#ae105792085715267740955856a336f72", null ]
+    ] ],
+    [ "CppClingo::Ground::ProfileNode", "classCppClingo_1_1Ground_1_1ProfileNode.html", [
+      [ "Visitor", "classCppClingo_1_1Ground_1_1ProfileNode.html#a824fb0cb4c1c0e924b38c1e9e1591249", null ],
+      [ "ProfileNode", "classCppClingo_1_1Ground_1_1ProfileNode.html#a147c7111809b94242fbedc46d2c169e8", null ],
+      [ "ProfileNode", "classCppClingo_1_1Ground_1_1ProfileNode.html#a8cbe4e5ea9043f3b9b39d97e4076f0d1", null ],
+      [ "~ProfileNode", "classCppClingo_1_1Ground_1_1ProfileNode.html#a94488edf3dfe9f5023dd160bc0da6bbd", null ],
+      [ "accept", "classCppClingo_1_1Ground_1_1ProfileNode.html#a958ab91c8b0e918e68046937a47f81f0", null ],
+      [ "begin_step", "classCppClingo_1_1Ground_1_1ProfileNode.html#ac361704339209677679a900ed8ef50d8", null ],
+      [ "combine", "classCppClingo_1_1Ground_1_1ProfileNode.html#a8259903f75fdea55329042e9e729b348", null ],
+      [ "end_step", "classCppClingo_1_1Ground_1_1ProfileNode.html#a9bb50b2ffc15c6f03c566ba279b89250", null ],
+      [ "equal", "classCppClingo_1_1Ground_1_1ProfileNode.html#ad9cd26ce1c8bc271f971c7da7f4df6d2", null ],
+      [ "operator=", "classCppClingo_1_1Ground_1_1ProfileNode.html#ae4b64eb09eea54051f32455d752a93cb", null ],
+      [ "print", "classCppClingo_1_1Ground_1_1ProfileNode.html#a32cb12cbf9e559f163d9ce39972800e9", null ],
+      [ "score", "classCppClingo_1_1Ground_1_1ProfileNode.html#a7988fc434e8d6482679e0b77d9a86a86", null ]
+    ] ],
+    [ "CppClingo::Ground::ProfileNodeInternal", "classCppClingo_1_1Ground_1_1ProfileNodeInternal.html", [
+      [ "add_child", "classCppClingo_1_1Ground_1_1ProfileNodeInternal.html#a06d819370b15ccde6e5630233dab1ad1", null ]
+    ] ],
+    [ "CppClingo::Ground::ProfileNodeExpression< T >", "classCppClingo_1_1Ground_1_1ProfileNodeExpression.html", [
+      [ "ProfileNodeExpression", "classCppClingo_1_1Ground_1_1ProfileNodeExpression.html#ad21474a20d0e7282f3af9ffebec903f4", null ]
+    ] ],
+    [ "CppClingo::Ground::ProfileData", "classCppClingo_1_1Ground_1_1ProfileData.html", [
+      [ "ProfileData", "classCppClingo_1_1Ground_1_1ProfileData.html#afabc6920a3eed65a8d1769e35d445961", null ]
+    ] ],
     [ "CppClingo::Ground::InstantiatorVec", "group__ground__instantiator.html#ga47698d2b9bdb1a13cbcf6d04df8ebd5f", null ],
     [ "CppClingo::Ground::UMatcher", "group__ground__instantiator.html#ga77b447b18de1c1e381ff197a3bf6a144", null ],
     [ "CppClingo::Ground::UMatcherVec", "group__ground__instantiator.html#ga12cc29cdcc8902f1d26d9f1db6be5b0e", null ],
     [ "CppClingo::Ground::MatcherType", "group__ground__instantiator.html#ga5c4db6a3049cc6d139c8bef5a9fa6c93", [
       [ "CppClingo::Ground::MatcherType::old_atoms", "group__ground__instantiator.html#gga5c4db6a3049cc6d139c8bef5a9fa6c93a9042f9499ab63897c9ec69fac599e4cf", null ],
       [ "CppClingo::Ground::MatcherType::all_atoms", "group__ground__instantiator.html#gga5c4db6a3049cc6d139c8bef5a9fa6c93a4823bf8cad059e5cd9da97fc596886b9", null ]
+    ] ],
+    [ "CppClingo::Ground::ProfileDetail", "group__ground__instantiator.html#ga86aa9dbadcab1f7803caa30008a1ffbd", null ],
+    [ "CppClingo::Ground::ProfileType", "group__ground__instantiator.html#ga023bb51dd4466e2dce631c4d7e0b9876", [
+      [ "CppClingo::Ground::ProfileType::step", "group__ground__instantiator.html#gga023bb51dd4466e2dce631c4d7e0b9876a2764ca9d34e90313978d044f27ae433b", null ],
+      [ "CppClingo::Ground::ProfileType::accu", "group__ground__instantiator.html#gga023bb51dd4466e2dce631c4d7e0b9876a076602efe3af5d4fa2b47d8d3f8c8c1c", null ]
     ] ],
     [ "CppClingo::Ground::operator<<", "group__ground__instantiator.html#gab5fc0c476231bf25e0c4b459e0fba24b", null ]
 ];

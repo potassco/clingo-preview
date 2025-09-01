@@ -123,7 +123,7 @@ Inheritance diagram for CppClingo::Control::Solver:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9e73aab76ddfbff99251f8bab496b333" id="r_a9e73aab76ddfbff99251f8bab496b333"><td class="memItemLeft" align="right" valign="top"><a id="a9e73aab76ddfbff99251f8bab496b333" name="a9e73aab76ddfbff99251f8bab496b333"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Solver</b> (Clasp::ClaspFacade &amp;clasp, Clasp::Cli::ClaspCliConfig &amp;config, <a class="el" href="classCppClingo_1_1Logger.html">Logger</a> &amp;log, <a class="el" href="classCppClingo_1_1SymbolStore.html">SymbolStore</a> &amp;store, <a class="el" href="classCppClingo_1_1Control_1_1Scripts.html">Scripts</a> &amp;scripts, <a class="el" href="structCppClingo_1_1Input_1_1RewriteOptions.html">Input::RewriteOptions</a> ropts, <a class="el" href="structCppClingo_1_1Control_1_1SolverOptions.html">SolverOptions</a> sopts, FILE *out=stdout)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Solver</b> (Clasp::ClaspFacade &amp;clasp, Clasp::Cli::ClaspCliConfig &amp;<a class="el" href="classCppClingo_1_1Control_1_1Solver.html#ac0ef1929df87caedd1246dccaf6dd354">config</a>, <a class="el" href="classCppClingo_1_1Logger.html">Logger</a> &amp;log, <a class="el" href="classCppClingo_1_1SymbolStore.html">SymbolStore</a> &amp;store, <a class="el" href="classCppClingo_1_1Control_1_1Scripts.html">Scripts</a> &amp;scripts, <a class="el" href="structCppClingo_1_1Input_1_1RewriteOptions.html">Input::RewriteOptions</a> ropts, <a class="el" href="structCppClingo_1_1Control_1_1SolverOptions.html">SolverOptions</a> sopts, FILE *out=stdout)</td></tr>
 <tr class="memdesc:a9e73aab76ddfbff99251f8bab496b333"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a solver object. <br /></td></tr>
 <tr class="separator:a9e73aab76ddfbff99251f8bab496b333"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a263253e270758363a2b416a861beebcf" id="r_a263253e270758363a2b416a861beebcf"><td class="memItemLeft" align="right" valign="top"><a id="a263253e270758363a2b416a861beebcf" name="a263253e270758363a2b416a861beebcf"></a>
@@ -191,10 +191,10 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><b>clasp_facade</b> () -
 auto&#160;</td><td class="memItemRight" valign="bottom"><b>clasp_facade</b> () const -&gt; Clasp::ClaspFacade const &amp;</td></tr>
 <tr class="memdesc:aa2a04bbc119ecce23a477c43f1714b39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a pointer to the underlying clasp facade. <br /></td></tr>
 <tr class="separator:aa2a04bbc119ecce23a477c43f1714b39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cfa38c7a124b0ef2f5492b1748c9cad" id="r_a3cfa38c7a124b0ef2f5492b1748c9cad"><td class="memItemLeft" align="right" valign="top"><a id="a3cfa38c7a124b0ef2f5492b1748c9cad" name="a3cfa38c7a124b0ef2f5492b1748c9cad"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>clasp_config</b> () -&gt; Clasp::Cli::ClaspCliConfig &amp;</td></tr>
-<tr class="memdesc:a3cfa38c7a124b0ef2f5492b1748c9cad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Only non-null in solving mode. <br /></td></tr>
-<tr class="separator:a3cfa38c7a124b0ef2f5492b1748c9cad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0ef1929df87caedd1246dccaf6dd354" id="r_ac0ef1929df87caedd1246dccaf6dd354"><td class="memItemLeft" align="right" valign="top"><a id="ac0ef1929df87caedd1246dccaf6dd354" name="ac0ef1929df87caedd1246dccaf6dd354"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>config</b> () -&gt; <a class="el" href="classCppClingo_1_1Control_1_1ClingoConfig.html">ClingoConfig</a> &amp;</td></tr>
+<tr class="memdesc:ac0ef1929df87caedd1246dccaf6dd354"><td class="mdescLeft">&#160;</td><td class="mdescRight">Only non-null in solving mode. <br /></td></tr>
+<tr class="separator:ac0ef1929df87caedd1246dccaf6dd354"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65b20dfb5579d990f12a4744fa747cd8" id="r_a65b20dfb5579d990f12a4744fa747cd8"><td class="memItemLeft" align="right" valign="top"><a id="a65b20dfb5579d990f12a4744fa747cd8" name="a65b20dfb5579d990f12a4744fa747cd8"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><b>clasp_stats</b> () -&gt; Potassco::AbstractStatistics const &amp;</td></tr>
 <tr class="memdesc:a65b20dfb5579d990f12a4744fa747cd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the statistics. <br /></td></tr>
@@ -242,6 +242,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>show</b> (<a class="e
 auto&#160;</td><td class="memItemRight" valign="bottom"><b>sym_tab</b> () -&gt; <a class="el" href="classCppClingo_1_1Control_1_1SymbolTable.html">SymbolTable</a> &amp;</td></tr>
 <tr class="memdesc:a9938aea4f5e68e07ff5088805a4864b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the symbol table. <br /></td></tr>
 <tr class="separator:a9938aea4f5e68e07ff5088805a4864b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cc115a2e46d87439fb6ce8042a94a5c" id="r_a5cc115a2e46d87439fb6ce8042a94a5c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Control_1_1Solver.html#a5cc115a2e46d87439fb6ce8042a94a5c">print_summary</a> (bool final)</td></tr>
+<tr class="memdesc:a5cc115a2e46d87439fb6ce8042a94a5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print per step summaries.  <br /></td></tr>
+<tr class="separator:a5cc115a2e46d87439fb6ce8042a94a5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83638d794f719660b482c1c6806371a7" id="r_a83638d794f719660b482c1c6806371a7"><td class="memItemLeft" align="right" valign="top"><a id="a83638d794f719660b482c1c6806371a7" name="a83638d794f719660b482c1c6806371a7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>accept</b> (<a class="el" href="classCppClingo_1_1Ground_1_1ProfileNode.html#a824fb0cb4c1c0e924b38c1e9e1591249">Ground::ProfileNode::Visitor</a> const &amp;visit) const</td></tr>
+<tr class="memdesc:a83638d794f719660b482c1c6806371a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accept a visitor for the profile nodes. <br /></td></tr>
+<tr class="separator:a83638d794f719660b482c1c6806371a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classCppClingo_1_1Control_1_1BaseView"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classCppClingo_1_1Control_1_1BaseView')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classCppClingo_1_1Control_1_1BaseView.html">CppClingo::Control::BaseView</a></td></tr>
 <tr class="memitem:a06dc8d88fc3e31693bce53ae7138e3de inherit pub_methods_classCppClingo_1_1Control_1_1BaseView" id="r_a06dc8d88fc3e31693bce53ae7138e3de"><td class="memItemLeft" align="right" valign="top">
 virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~BaseView</b> ()=default</td></tr>
@@ -313,6 +320,35 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><b>clasp_theory</b> () c
 
 <p>Get the output buffer. </p>
 <p>If the control object has been constructed without a null output FILE, this buffer contains the output of the textoutput. </p>
+
+</div>
+</div>
+<a id="a5cc115a2e46d87439fb6ce8042a94a5c" name="a5cc115a2e46d87439fb6ce8042a94a5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cc115a2e46d87439fb6ce8042a94a5c">&#9670;&#160;</a></span>print_summary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto CppClingo::Control::Solver::print_summary </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>final</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Print per step summaries. </p>
+<p>Currently, outputs profiling data if enabled. </p>
 
 </div>
 </div>

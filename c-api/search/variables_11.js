@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['val_0',['val',['../structCppClingo_1_1Util_1_1Record_1_1AttributeValue.html#a4fe332b4046a8d3cbb23c6a36a5bfd0b',1,'CppClingo::Util::Record::AttributeValue']]],
-  ['validate_5foptions_1',['validate_options',['../structclingo__application.html#a2e959a107d7b9f3604ac2bbba1328382',1,'clingo_application::validate_options'],['../structclingo__theory.html#a2c1f3e819d02699b82c67541b1780de6',1,'clingo_theory::validate_options']]],
-  ['value_2',['value',['../structCppClingo_1_1Util_1_1ResultState.html#a6496a08be3ef099c4864b2a2daf6f226',1,'CppClingo::Util::ResultState']]],
-  ['variable_3',['variable',['../structCppClingo_1_1Input_1_1IETerm.html#a30e8f45be08fee54d6d1241af41e68d6',1,'CppClingo::Input::IETerm']]],
-  ['version_4',['version',['../structclingo__application.html#acc4006ea0e5a724c85c37c34b4a400ba',1,'clingo_application::version'],['../structclingo__script.html#a2a42a23a88abec704c178f56417d1b82',1,'clingo_script::version']]]
+  ['tag_0',['tag',['../structCppClingo_1_1Util_1_1Record_1_1AttributeValue.html#ab87785779117b093575b5975467568d0',1,'CppClingo::Util::Record::AttributeValue::tag'],['../structCppClingo_1_1Util_1_1Record_1_1AttributeName.html#ae11a13bcf506ea2028e39ac7ddaf8c21',1,'CppClingo::Util::Record::AttributeName::tag']]],
+  ['terms_1',['terms',['../structCppClingo_1_1Input_1_1IE.html#ae2cc09e55c0363256eb9c86ab93ab75e',1,'CppClingo::Input::IE']]],
+  ['time_5finstantiate_2',['time_instantiate',['../structCppClingo_1_1Ground_1_1ProfileStats.html#a0809f7f0d9015466dc34da9eb307db1a',1,'CppClingo::Ground::ProfileStats::time_instantiate'],['../structclingo__profile__data.html#a5140edc106b88f8b6f0c400a133a8cdf',1,'clingo_profile_data::time_instantiate'],['../structClingo_1_1ProfileNodeLeaf.html#a37ee53e2ab27a64c677cc7d55b2024e0',1,'Clingo::ProfileNodeLeaf::time_instantiate']]],
+  ['time_5fpropagate_3',['time_propagate',['../structCppClingo_1_1Ground_1_1ProfileStats.html#ae105792085715267740955856a336f72',1,'CppClingo::Ground::ProfileStats::time_propagate'],['../structclingo__profile__data.html#a3b8196ee703731b4ac627b05e1d5a0c6',1,'clingo_profile_data::time_propagate'],['../structClingo_1_1ProfileNodeLeaf.html#aaaa9dba0a7991786e132ff6975098fc0',1,'Clingo::ProfileNodeLeaf::time_propagate']]],
+  ['type_4',['type',['../structCppClingo_1_1Input_1_1Component.html#abf713200cdf206ec0745297bcc9dba22',1,'CppClingo::Input::Component::type'],['../structclingo__theory__value.html#a1c3119d2425da189712677e2a8d4d985',1,'clingo_theory_value::type'],['../structClingo_1_1ProfileNodeLeaf.html#a2f7ff5e74389c8783e1488b52b4b0bd8',1,'Clingo::ProfileNodeLeaf::type']]]
 ];

@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['hdlitaggregate_0',['HdLitAggregate',['../classCppClingo_1_1Input_1_1HdLitAggregate.html',1,'CppClingo::Input']]],
-  ['hdlitaggregateelement_1',['HdLitAggregateElement',['../classCppClingo_1_1Input_1_1HdLitAggregateElement.html',1,'CppClingo::Input']]],
-  ['hdlitdisjunction_2',['HdLitDisjunction',['../classCppClingo_1_1Input_1_1HdLitDisjunction.html',1,'CppClingo::Input']]],
-  ['hdlitsimple_3',['HdLitSimple',['../classCppClingo_1_1Input_1_1HdLitSimple.html',1,'CppClingo::Input']]],
-  ['heuristic_4',['Heuristic',['../classClingo_1_1Heuristic.html',1,'Clingo']]]
+  ['gclock_0',['GCLock',['../classCppClingo_1_1GCLock.html',1,'CppClingo']]],
+  ['generationcounts_1',['GenerationCounts',['../classCppClingo_1_1Ground_1_1GenerationCounts.html',1,'CppClingo::Ground']]],
+  ['graph_2',['Graph',['../classCppClingo_1_1Util_1_1Graph.html',1,'CppClingo::Util']]],
+  ['grounded_3',['Grounded',['../classCppClingo_1_1Control_1_1Grounded.html',1,'CppClingo::Control']]],
+  ['grounder_4',['Grounder',['../classCppClingo_1_1Control_1_1Grounder.html',1,'CppClingo::Control']]]
 ];

@@ -113,6 +113,9 @@ $(document).ready(function(){initNavTree('group__control.html',''); initResizabl
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Control_1_1ProfileProgram.html">CppClingo::Control::ProfileProgram</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class storing profiling data for a program.  <a href="classCppClingo_1_1Control_1_1ProfileProgram.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Control_1_1BuildContext.html">CppClingo::Control::BuildContext</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Context object holding necessary data for translating from input to ground representation.  <a href="classCppClingo_1_1Control_1_1BuildContext.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -163,6 +166,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Control_1_1SymbolTable.html">CppClingo::Control::SymbolTable</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper to output symbols.  <a href="classCppClingo_1_1Control_1_1SymbolTable.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Control_1_1Grounded.html">CppClingo::Control::Grounded</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event emitted by a solver after the program is grounded.  <a href="classCppClingo_1_1Control_1_1Grounded.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Control_1_1Solver.html">CppClingo::Control::Solver</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A grounder and solver for logic programs.  <a href="classCppClingo_1_1Control_1_1Solver.html#details">More...</a><br /></td></tr>
@@ -283,22 +289,22 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gaa72cd0fa05908cf8a63d46b9b9640c5b" id="r_gaa72cd0fa05908cf8a63d46b9b9640c5b"><td class="memItemLeft" align="right" valign="top"><a id="gaa72cd0fa05908cf8a63d46b9b9640c5b" name="gaa72cd0fa05908cf8a63d46b9b9640c5b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Control::build_hd_lit</b> (<a class="el" href="classCppClingo_1_1Control_1_1BuildContext.html">BuildContext</a> &amp;ctx, <a class="el" href="classCppClingo_1_1Input_1_1HdLitAggregate.html">Input::HdLitAggregate</a> const &amp;lit)</td></tr>
-<tr class="memdesc:gaa72cd0fa05908cf8a63d46b9b9640c5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translate head aggregates. <br /></td></tr>
-<tr class="separator:gaa72cd0fa05908cf8a63d46b9b9640c5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa5a4db07256737925d494525b00c825c" id="r_gaa5a4db07256737925d494525b00c825c"><td class="memItemLeft" align="right" valign="top"><a id="gaa5a4db07256737925d494525b00c825c" name="gaa5a4db07256737925d494525b00c825c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Control::build_bd_lit</b> (<a class="el" href="classCppClingo_1_1Control_1_1BuildContext.html">BuildContext</a> &amp;ctx, <a class="el" href="classCppClingo_1_1Input_1_1BdLitAggregate.html">Input::BdLitAggregate</a> const &amp;lit)</td></tr>
-<tr class="memdesc:gaa5a4db07256737925d494525b00c825c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translate body aggregates. <br /></td></tr>
-<tr class="separator:gaa5a4db07256737925d494525b00c825c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga80e82d05165e8c174f1d5b1467839009" id="r_ga80e82d05165e8c174f1d5b1467839009"><td class="memItemLeft" align="right" valign="top"><a id="ga80e82d05165e8c174f1d5b1467839009" name="ga80e82d05165e8c174f1d5b1467839009"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Control::build_hd_lit</b> (<a class="el" href="classCppClingo_1_1Control_1_1BuildContext.html">BuildContext</a> &amp;ctx, <a class="el" href="classCppClingo_1_1Input_1_1HdLitDisjunction.html">Input::HdLitDisjunction</a> const &amp;lit)</td></tr>
-<tr class="memdesc:ga80e82d05165e8c174f1d5b1467839009"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translate disjunctions. <br /></td></tr>
-<tr class="separator:ga80e82d05165e8c174f1d5b1467839009"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga60a3b8175ed5a628906d1a1bb2865889" id="r_ga60a3b8175ed5a628906d1a1bb2865889"><td class="memItemLeft" align="right" valign="top"><a id="ga60a3b8175ed5a628906d1a1bb2865889" name="ga60a3b8175ed5a628906d1a1bb2865889"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Control::build_bd_lit</b> (<a class="el" href="classCppClingo_1_1Control_1_1BuildContext.html">BuildContext</a> &amp;ctx, <a class="el" href="classCppClingo_1_1Input_1_1BdLitConjunction.html">Input::BdLitConjunction</a> const &amp;lit)</td></tr>
-<tr class="memdesc:ga60a3b8175ed5a628906d1a1bb2865889"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translate conditional literals. <br /></td></tr>
-<tr class="separator:ga60a3b8175ed5a628906d1a1bb2865889"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga58f8b28be08d91d8198d519007ffd6b8" id="r_ga58f8b28be08d91d8198d519007ffd6b8"><td class="memItemLeft" align="right" valign="top"><a id="ga58f8b28be08d91d8198d519007ffd6b8" name="ga58f8b28be08d91d8198d519007ffd6b8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Control::build_hd_lit</b> (<a class="el" href="classCppClingo_1_1Control_1_1BuildContext.html">BuildContext</a> &amp;ctx, <a class="el" href="classCppClingo_1_1Input_1_1HdLitAggregate.html">Input::HdLitAggregate</a> const &amp;lit, <a class="el" href="classCppClingo_1_1Ground_1_1ProfileNodeInternal.html">Ground::ProfileNodeInternal</a> *node)</td></tr>
+<tr class="memdesc:ga58f8b28be08d91d8198d519007ffd6b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translate head aggregates. <br /></td></tr>
+<tr class="separator:ga58f8b28be08d91d8198d519007ffd6b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga895a6859c58f4933418423427a6eed2d" id="r_ga895a6859c58f4933418423427a6eed2d"><td class="memItemLeft" align="right" valign="top"><a id="ga895a6859c58f4933418423427a6eed2d" name="ga895a6859c58f4933418423427a6eed2d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Control::build_bd_lit</b> (<a class="el" href="classCppClingo_1_1Control_1_1BuildContext.html">BuildContext</a> &amp;ctx, <a class="el" href="classCppClingo_1_1Input_1_1BdLitAggregate.html">Input::BdLitAggregate</a> const &amp;lit, <a class="el" href="classCppClingo_1_1Ground_1_1ProfileNodeInternal.html">Ground::ProfileNodeInternal</a> *node)</td></tr>
+<tr class="memdesc:ga895a6859c58f4933418423427a6eed2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translate body aggregates. <br /></td></tr>
+<tr class="separator:ga895a6859c58f4933418423427a6eed2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6083bc44ba0481c12c24dae100e33a56" id="r_ga6083bc44ba0481c12c24dae100e33a56"><td class="memItemLeft" align="right" valign="top"><a id="ga6083bc44ba0481c12c24dae100e33a56" name="ga6083bc44ba0481c12c24dae100e33a56"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Control::build_hd_lit</b> (<a class="el" href="classCppClingo_1_1Control_1_1BuildContext.html">BuildContext</a> &amp;ctx, <a class="el" href="classCppClingo_1_1Input_1_1HdLitDisjunction.html">Input::HdLitDisjunction</a> const &amp;lit, <a class="el" href="classCppClingo_1_1Ground_1_1ProfileNodeInternal.html">Ground::ProfileNodeInternal</a> *node)</td></tr>
+<tr class="memdesc:ga6083bc44ba0481c12c24dae100e33a56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translate disjunctions. <br /></td></tr>
+<tr class="separator:ga6083bc44ba0481c12c24dae100e33a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab67a3be1ee8cb61e1839ba2bc1adf308" id="r_gab67a3be1ee8cb61e1839ba2bc1adf308"><td class="memItemLeft" align="right" valign="top"><a id="gab67a3be1ee8cb61e1839ba2bc1adf308" name="gab67a3be1ee8cb61e1839ba2bc1adf308"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Control::build_bd_lit</b> (<a class="el" href="classCppClingo_1_1Control_1_1BuildContext.html">BuildContext</a> &amp;ctx, <a class="el" href="classCppClingo_1_1Input_1_1BdLitConjunction.html">Input::BdLitConjunction</a> const &amp;lit, <a class="el" href="classCppClingo_1_1Ground_1_1ProfileNodeInternal.html">Ground::ProfileNodeInternal</a> *node)</td></tr>
+<tr class="memdesc:gab67a3be1ee8cb61e1839ba2bc1adf308"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translate conditional literals. <br /></td></tr>
+<tr class="separator:gab67a3be1ee8cb61e1839ba2bc1adf308"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaca02aa64761d027442407a19691cbdf6" id="r_gaca02aa64761d027442407a19691cbdf6"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
 <tr class="memitem:gaca02aa64761d027442407a19691cbdf6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__control.html#gaca02aa64761d027442407a19691cbdf6">CppClingo::Control::build_lit</a> (<a class="el" href="classCppClingo_1_1Control_1_1BuildContext.html">BuildContext</a> &amp;ctx, <a class="el" href="group__input__literal.html#ga632f5e7e731fffca3abe49f0c56d4f69">Input::Lit</a> const &amp;lit, F &amp;&amp;fun)</td></tr>
 <tr class="memdesc:gaca02aa64761d027442407a19691cbdf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translate input literals to their ground representation.  <br /></td></tr>
@@ -323,10 +329,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Control::b
 &#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Control::CLINGO_ENABLE_BITSET_ENUM</b> (<a class="el" href="group__control.html#ga486c16bce80ca8dbea9d8778040f1c11">SolveMode</a>)</td></tr>
 <tr class="memdesc:ga71e8e7acbb82e3c44b18eb4cdf6a924f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable bit set operations. <br /></td></tr>
 <tr class="separator:ga71e8e7acbb82e3c44b18eb4cdf6a924f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5f66a5271060595adc45be8f1c30dce7" id="r_ga5f66a5271060595adc45be8f1c30dce7"><td class="memItemLeft" align="right" valign="top"><a id="ga5f66a5271060595adc45be8f1c30dce7" name="ga5f66a5271060595adc45be8f1c30dce7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Control::build_stm</b> (<a class="el" href="classCppClingo_1_1Control_1_1BuildContext.html">BuildContext</a> &amp;ctx, <a class="el" href="group__input__statement.html#ga33b293d9d1ef5539903470d1e13049a6">Input::Stm</a> const &amp;stm)</td></tr>
-<tr class="memdesc:ga5f66a5271060595adc45be8f1c30dce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translate input statements to their ground representation. <br /></td></tr>
-<tr class="separator:ga5f66a5271060595adc45be8f1c30dce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga856ea77fa7ca317a0f9377143e74db20" id="r_ga856ea77fa7ca317a0f9377143e74db20"><td class="memItemLeft" align="right" valign="top"><a id="ga856ea77fa7ca317a0f9377143e74db20" name="ga856ea77fa7ca317a0f9377143e74db20"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Control::build_stm</b> (<a class="el" href="classCppClingo_1_1Control_1_1BuildContext.html">BuildContext</a> &amp;ctx, <a class="el" href="group__input__statement.html#ga33b293d9d1ef5539903470d1e13049a6">Input::Stm</a> const &amp;stm, <a class="el" href="group__input__statement.html#ga33b293d9d1ef5539903470d1e13049a6">Input::Stm</a> const *src)</td></tr>
+<tr class="memdesc:ga856ea77fa7ca317a0f9377143e74db20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translate input statements to their ground representation. <br /></td></tr>
+<tr class="separator:ga856ea77fa7ca317a0f9377143e74db20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3e433dda4b16a36de738d5c41cab7da7" id="r_ga3e433dda4b16a36de738d5c41cab7da7"><td class="memItemLeft" align="right" valign="top"><a id="ga3e433dda4b16a36de738d5c41cab7da7" name="ga3e433dda4b16a36de738d5c41cab7da7"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Control::build_term</b> (<a class="el" href="group__util__container.html#gaa47f6dbf125b7e9ec84c1e7fc0549cab">Util::unordered_map</a>&lt; <a class="el" href="classCppClingo_1_1String.html">String</a>, size_t &gt; const &amp;var_map, <a class="el" href="group__input__term.html#ga451cb369602c19edf9fd1e96802d4961">Input::Term</a> const &amp;term, bool &amp;has_projection) -&gt; <a class="el" href="group__ground__term.html#ga318ae223e66d9f04f129fcc7d83e07e1">Ground::UTerm</a></td></tr>
 <tr class="memdesc:ga3e433dda4b16a36de738d5c41cab7da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translates input theory terms to their ground representation. <br /></td></tr>
@@ -339,14 +345,14 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Control::b
 auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Control::build_theory_term</b> (<a class="el" href="group__util__container.html#gaa47f6dbf125b7e9ec84c1e7fc0549cab">Util::unordered_map</a>&lt; <a class="el" href="classCppClingo_1_1String.html">String</a>, size_t &gt; const &amp;var_map, <a class="el" href="group__input__theory.html#ga2c08a28d86e9b7b88777783ceb5306bb">Input::TheoryTerm</a> const &amp;term) -&gt; <a class="el" href="group__ground__theory.html#ga6e9b58bdf4058f559913513d2350bcf6">Ground::UTheoryTerm</a></td></tr>
 <tr class="memdesc:ga1201e8e9d138067608cad00125589f89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translates input theory terms to their ground representation. <br /></td></tr>
 <tr class="separator:ga1201e8e9d138067608cad00125589f89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaeca5f676d569f1827e18743a60a991c9" id="r_gaeca5f676d569f1827e18743a60a991c9"><td class="memItemLeft" align="right" valign="top"><a id="gaeca5f676d569f1827e18743a60a991c9" name="gaeca5f676d569f1827e18743a60a991c9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Control::build_hd_lit</b> (<a class="el" href="classCppClingo_1_1Control_1_1BuildContext.html">BuildContext</a> &amp;ctx, <a class="el" href="group__input__theory.html#ga824f36c1ceaeebec16da42266f974407">Input::HdLitTheoryAtom</a> const &amp;lit)</td></tr>
-<tr class="memdesc:gaeca5f676d569f1827e18743a60a991c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translate a head theory atom. <br /></td></tr>
-<tr class="separator:gaeca5f676d569f1827e18743a60a991c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabc6feadf1b006ffc7b3be89c8b053ee1" id="r_gabc6feadf1b006ffc7b3be89c8b053ee1"><td class="memItemLeft" align="right" valign="top"><a id="gabc6feadf1b006ffc7b3be89c8b053ee1" name="gabc6feadf1b006ffc7b3be89c8b053ee1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Control::build_bd_lit</b> (<a class="el" href="classCppClingo_1_1Control_1_1BuildContext.html">BuildContext</a> &amp;ctx, <a class="el" href="group__input__theory.html#ga23ce2c986458982469caf51e124bbd84">Input::BdLitTheoryAtom</a> const &amp;lit)</td></tr>
-<tr class="memdesc:gabc6feadf1b006ffc7b3be89c8b053ee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translate a body theory atom. <br /></td></tr>
-<tr class="separator:gabc6feadf1b006ffc7b3be89c8b053ee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae980cd4c9240c610ebdde05ac41b487d" id="r_gae980cd4c9240c610ebdde05ac41b487d"><td class="memItemLeft" align="right" valign="top"><a id="gae980cd4c9240c610ebdde05ac41b487d" name="gae980cd4c9240c610ebdde05ac41b487d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Control::build_hd_lit</b> (<a class="el" href="classCppClingo_1_1Control_1_1BuildContext.html">BuildContext</a> &amp;ctx, <a class="el" href="group__input__theory.html#ga824f36c1ceaeebec16da42266f974407">Input::HdLitTheoryAtom</a> const &amp;lit, <a class="el" href="classCppClingo_1_1Ground_1_1ProfileNodeInternal.html">Ground::ProfileNodeInternal</a> *node)</td></tr>
+<tr class="memdesc:gae980cd4c9240c610ebdde05ac41b487d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translate a head theory atom. <br /></td></tr>
+<tr class="separator:gae980cd4c9240c610ebdde05ac41b487d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga092edc304c1f9a00bfc3b2c0b2de16a2" id="r_ga092edc304c1f9a00bfc3b2c0b2de16a2"><td class="memItemLeft" align="right" valign="top"><a id="ga092edc304c1f9a00bfc3b2c0b2de16a2" name="ga092edc304c1f9a00bfc3b2c0b2de16a2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Control::build_bd_lit</b> (<a class="el" href="classCppClingo_1_1Control_1_1BuildContext.html">BuildContext</a> &amp;ctx, <a class="el" href="group__input__theory.html#ga23ce2c986458982469caf51e124bbd84">Input::BdLitTheoryAtom</a> const &amp;lit, <a class="el" href="classCppClingo_1_1Ground_1_1ProfileNodeInternal.html">Ground::ProfileNodeInternal</a> *node)</td></tr>
+<tr class="memdesc:ga092edc304c1f9a00bfc3b2c0b2de16a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translate a body theory atom. <br /></td></tr>
+<tr class="separator:ga092edc304c1f9a00bfc3b2c0b2de16a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Library combining input, ground, and output. </p>

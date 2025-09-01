@@ -211,10 +211,10 @@ Functions</h2></td></tr>
 auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::compute_bounds</b> (<a class="el" href="classCppClingo_1_1Input_1_1RewriteContext.html">RewriteContext</a> &amp;ctx, <a class="el" href="group__input__statement.html#ga33b293d9d1ef5539903470d1e13049a6">Stm</a> const &amp;stm) -&gt; <a class="el" href="structCppClingo_1_1Util_1_1ResultState.html">Util::ResultState</a>&lt; <a class="el" href="group__input__statement.html#ga33b293d9d1ef5539903470d1e13049a6">Stm</a> &gt;</td></tr>
 <tr class="memdesc:ga3c74fdfe8fdbadfda8c6fdb8e2a2e100"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute bounds from comparisons and intervals. <br /></td></tr>
 <tr class="separator:ga3c74fdfe8fdbadfda8c6fdb8e2a2e100"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab96735d9b49dbdfbd530029d9e5fb3b9" id="r_gab96735d9b49dbdfbd530029d9e5fb3b9"><td class="memItemLeft" align="right" valign="top"><a id="gab96735d9b49dbdfbd530029d9e5fb3b9" name="gab96735d9b49dbdfbd530029d9e5fb3b9"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::analyze</b> (<a class="el" href="classCppClingo_1_1SymbolStore.html">SymbolStore</a> &amp;store, std::vector&lt; <a class="el" href="group__input__statement.html#ga33b293d9d1ef5539903470d1e13049a6">Stm</a> &gt; const &amp;stms) -&gt; <a class="el" href="group__input__program.html#ga771af9d457c82eb52ce1a277346b8087">Components</a></td></tr>
-<tr class="memdesc:gab96735d9b49dbdfbd530029d9e5fb3b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analyze the given statements organizing them in components for grounding. <br /></td></tr>
-<tr class="separator:gab96735d9b49dbdfbd530029d9e5fb3b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafec0d8d6d158f0727ed0f94c15b04566" id="r_gafec0d8d6d158f0727ed0f94c15b04566"><td class="memItemLeft" align="right" valign="top"><a id="gafec0d8d6d158f0727ed0f94c15b04566" name="gafec0d8d6d158f0727ed0f94c15b04566"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::analyze</b> (<a class="el" href="classCppClingo_1_1SymbolStore.html">SymbolStore</a> &amp;store, std::vector&lt; <a class="el" href="group__input__statement.html#ga33b293d9d1ef5539903470d1e13049a6">Stm</a> &gt; const &amp;stms, std::vector&lt; <a class="el" href="group__input__statement.html#ga33b293d9d1ef5539903470d1e13049a6">Stm</a> const * &gt; *srcs) -&gt; <a class="el" href="group__input__program.html#ga771af9d457c82eb52ce1a277346b8087">Components</a></td></tr>
+<tr class="memdesc:gafec0d8d6d158f0727ed0f94c15b04566"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analyze the given statements organizing them in components for grounding. <br /></td></tr>
+<tr class="separator:gafec0d8d6d158f0727ed0f94c15b04566"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8c497ebdace144400493fd4836e09ccd" id="r_ga8c497ebdace144400493fd4836e09ccd"><td class="memItemLeft" align="right" valign="top"><a id="ga8c497ebdace144400493fd4836e09ccd" name="ga8c497ebdace144400493fd4836e09ccd"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::analyze</b> (<a class="el" href="group__input__statement.html#ga33b293d9d1ef5539903470d1e13049a6">Stm</a> const &amp;stm, <a class="el" href="group__input__term.html#ga5bbfe5a5aa54c8bfd88a846e91237be5">SharedSigSet</a> &amp;provide, <a class="el" href="group__util__container.html#ga8b882c38d82c3c3019ce4aee06b90faf">Util::ordered_map</a>&lt; <a class="el" href="group__input__term.html#gad2f709167461133f722c54cf5483c5aa">SharedSig</a>, <a class="el" href="classCppClingo_1_1Location.html">Location</a> &gt; &amp;depend)</td></tr>
 <tr class="memdesc:ga8c497ebdace144400493fd4836e09ccd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analyze the given statement adding provided and dependent predicates. <br /></td></tr>
@@ -392,9 +392,8 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::neg
 auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::unpool_relations</b> (<a class="el" href="group__input__literal.html#ga632f5e7e731fffca3abe49f0c56d4f69">Lit</a> const &amp;lit, bool conjunctive) -&gt; std::optional&lt; <a class="el" href="group__input__literal.html#gab4b1fcf0cf14d7e26dfdc0801f783f51">LitArray</a> &gt;</td></tr>
 <tr class="memdesc:ga545586ad8ac615a098c2fafcececbebc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unpool non-binary relation literals. <br /></td></tr>
 <tr class="separator:ga545586ad8ac615a098c2fafcececbebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga511589753800dd6b0c4e81152f17ec3a" id="r_ga511589753800dd6b0c4e81152f17ec3a"><td class="memItemLeft" align="right" valign="top"><a id="ga511589753800dd6b0c4e81152f17ec3a" name="ga511589753800dd6b0c4e81152f17ec3a"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::unpool_relations</b> (<a class="el" href="classCppClingo_1_1Input_1_1RewriteContext.html">RewriteContext</a> &amp;ctx, <a class="el" href="group__input__statement.html#ga33b293d9d1ef5539903470d1e13049a6">Stm</a> const &amp;stm) -&gt; std::optional&lt; <a class="el" href="group__input__statement.html#ga93d3e2c912501957e4d1288e64ddc4a6">StmVec</a> &gt;</td></tr>
-<tr class="memdesc:ga511589753800dd6b0c4e81152f17ec3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unpool all non-binary relation in the statement. <br /></td></tr>
+<tr class="memitem:ga511589753800dd6b0c4e81152f17ec3a" id="r_ga511589753800dd6b0c4e81152f17ec3a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__input__rewrite.html#ga511589753800dd6b0c4e81152f17ec3a">CppClingo::Input::unpool_relations</a> (<a class="el" href="classCppClingo_1_1Input_1_1RewriteContext.html">RewriteContext</a> &amp;ctx, <a class="el" href="group__input__statement.html#ga33b293d9d1ef5539903470d1e13049a6">Stm</a> const &amp;stm) -&gt; std::optional&lt; <a class="el" href="group__input__statement.html#ga93d3e2c912501957e4d1288e64ddc4a6">StmVec</a> &gt;</td></tr>
+<tr class="memdesc:ga511589753800dd6b0c4e81152f17ec3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unpool all non-binary relation in the statement.  <br /></td></tr>
 <tr class="separator:ga511589753800dd6b0c4e81152f17ec3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -896,6 +895,37 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::unp
 
 <p>Try to unify the two terms. </p>
 <p>The function also accepts terms with arithmetic terms, which except for special cases are assumed to unify with anything that is not a function or tuple. The store object is required to add auxiliary symbols during unification. </p>
+
+</div>
+</div>
+<a id="ga511589753800dd6b0c4e81152f17ec3a" name="ga511589753800dd6b0c4e81152f17ec3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga511589753800dd6b0c4e81152f17ec3a">&#9670;&#160;</a></span>unpool_relations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto CppClingo::Input::unpool_relations </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classCppClingo_1_1Input_1_1RewriteContext.html">RewriteContext</a> &amp;&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__input__statement.html#ga33b293d9d1ef5539903470d1e13049a6">Stm</a> const &amp;&#160;</td>
+          <td class="paramname"><em>stm</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  std::optional&lt; <a class="el" href="group__input__statement.html#ga93d3e2c912501957e4d1288e64ddc4a6">StmVec</a> &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Unpool all non-binary relation in the statement. </p>
+<p>This also shifts disjunctions with non-atomic literals into the rule body. And removes signs of binary relations by complementing their relations. </p>
 
 </div>
 </div>

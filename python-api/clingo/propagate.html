@@ -78,6 +78,9 @@
                                 <a class="variable" href="#Assignment.root_level">root_level</a>
                         </li>
                         <li>
+                                <a class="variable" href="#Assignment.thread_id">thread_id</a>
+                        </li>
+                        <li>
                                 <a class="variable" href="#Assignment.trail">trail</a>
                         </li>
                 </ul>
@@ -126,6 +129,9 @@
                                 <a class="function" href="#PropagateControl.add_watch">add_watch</a>
                         </li>
                         <li>
+                                <a class="function" href="#PropagateControl.add_weight_constraint">add_weight_constraint</a>
+                        </li>
+                        <li>
                                 <a class="function" href="#PropagateControl.has_watch">has_watch</a>
                         </li>
                         <li>
@@ -134,12 +140,6 @@
                         <li>
                                 <a class="function" href="#PropagateControl.remove_watch">remove_watch</a>
                         </li>
-                        <li>
-                                <a class="variable" href="#PropagateControl.assignment">assignment</a>
-                        </li>
-                        <li>
-                                <a class="variable" href="#PropagateControl.thread_id">thread_id</a>
-                        </li>
                 </ul>
 
             </li>
@@ -147,34 +147,13 @@
                     <a class="class" href="#PropagateInit">PropagateInit</a>
                             <ul class="memberlist">
                         <li>
-                                <a class="function" href="#PropagateInit.add_clause">add_clause</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#PropagateInit.add_literal">add_literal</a>
-                        </li>
-                        <li>
                                 <a class="function" href="#PropagateInit.add_minimize">add_minimize</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#PropagateInit.add_watch">add_watch</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#PropagateInit.add_weight_constraint">add_weight_constraint</a>
                         </li>
                         <li>
                                 <a class="function" href="#PropagateInit.freeze_literal">freeze_literal</a>
                         </li>
                         <li>
-                                <a class="function" href="#PropagateInit.propagate">propagate</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#PropagateInit.remove_watch">remove_watch</a>
-                        </li>
-                        <li>
                                 <a class="function" href="#PropagateInit.solver_literal">solver_literal</a>
-                        </li>
-                        <li>
-                                <a class="variable" href="#PropagateInit.assignment">assignment</a>
                         </li>
                         <li>
                                 <a class="variable" href="#PropagateInit.base">base</a>
@@ -197,6 +176,9 @@
             <li>
                     <a class="class" href="#Propagator">Propagator</a>
                             <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#Propagator.attach">attach</a>
+                        </li>
                         <li>
                                 <a class="function" href="#Propagator.check">check</a>
                         </li>
@@ -305,7 +287,7 @@
 <pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Sequence</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn"><a href="control.html">clingo.control</a></span> <span class="kn">import</span> <span class="n">Control</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn"><a href="core.html">clingo.core</a></span> <span class="kn">import</span> <span class="n">Library</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn"><a href="">clingo.propagate</a></span> <span class="kn">import</span> <span class="n">PropagateControl</span><span class="p">,</span> <span class="n">PropagateInit</span><span class="p">,</span> <span class="n">Propagator</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn"><a href="">clingo.propagate</a></span> <span class="kn">import</span> <span class="n">Assignment</span><span class="p">,</span> <span class="n">PropagateControl</span><span class="p">,</span> <span class="n">PropagateInit</span><span class="p">,</span> <span class="n">Propagator</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn"><a href="symbol.html">clingo.symbol</a></span> <span class="kn">import</span> <span class="n">Function</span>
 <span class="o">&gt;&gt;&gt;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">LIB</span> <span class="o">=</span> <span class="n">Library</span><span class="p">()</span>
@@ -320,7 +302,7 @@
 <span class="o">...</span>         <span class="bp">self</span><span class="o">.</span><span class="n">slit_b</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="o">...</span>
 <span class="o">...</span>     <span class="c1"># add watches for atoms `a` and `b`</span>
-<span class="o">...</span>     <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">init</span><span class="p">:</span> <span class="n">PropagateInit</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">assignment</span><span class="p">:</span> <span class="n">Assignment</span><span class="p">,</span> <span class="n">init</span><span class="p">:</span> <span class="n">PropagateInit</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="o">...</span>         <span class="c1"># get program literals for atoms `a` and `b`</span>
 <span class="o">...</span>         <span class="n">plit_a</span> <span class="o">=</span> <span class="n">init</span><span class="o">.</span><span class="n">base</span><span class="p">[</span><span class="n">Function</span><span class="p">(</span><span class="n">LIB</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)]</span><span class="o">.</span><span class="n">literal</span>
 <span class="o">...</span>         <span class="n">plit_b</span> <span class="o">=</span> <span class="n">init</span><span class="o">.</span><span class="n">base</span><span class="p">[</span><span class="n">Function</span><span class="p">(</span><span class="n">LIB</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">)]</span><span class="o">.</span><span class="n">literal</span>
@@ -332,14 +314,14 @@
 <span class="o">...</span>         <span class="n">init</span><span class="o">.</span><span class="n">add_watch</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">slit_b</span><span class="p">)</span>
 <span class="o">...</span>
 <span class="o">...</span>     <span class="c1"># propagate solver literals `a` and `b`</span>
-<span class="o">...</span>     <span class="k">def</span> <span class="nf">propagate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">control</span><span class="p">:</span> <span class="n">PropagateControl</span><span class="p">,</span> <span class="n">changes</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">propagate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">assignment</span><span class="p">:</span> <span class="n">Assignment</span><span class="p">,</span> <span class="n">control</span><span class="p">:</span> <span class="n">PropagateControl</span><span class="p">,</span> <span class="n">changes</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="o">...</span>         <span class="c1"># if `a` is true imply `b`</span>
 <span class="o">...</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">slit_a</span> <span class="ow">in</span> <span class="n">changes</span><span class="p">:</span>
-<span class="o">...</span>             <span class="k">assert</span> <span class="n">control</span><span class="o">.</span><span class="n">assignment</span><span class="o">.</span><span class="n">is_true</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">slit_a</span><span class="p">)</span>
+<span class="o">...</span>             <span class="k">assert</span> <span class="n">assignment</span><span class="o">.</span><span class="n">is_true</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">slit_a</span><span class="p">)</span>
 <span class="o">...</span>             <span class="n">control</span><span class="o">.</span><span class="n">add_clause</span><span class="p">([</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">slit_a</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">slit_b</span><span class="p">])</span>
 <span class="o">...</span>         <span class="c1"># if `b` is true imply `a`</span>
 <span class="o">...</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">slit_b</span> <span class="ow">in</span> <span class="n">changes</span><span class="p">:</span>
-<span class="o">...</span>             <span class="k">assert</span> <span class="n">control</span><span class="o">.</span><span class="n">assignment</span><span class="o">.</span><span class="n">is_true</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">slit_b</span><span class="p">)</span>
+<span class="o">...</span>             <span class="k">assert</span> <span class="n">assignment</span><span class="o">.</span><span class="n">is_true</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">slit_b</span><span class="p">)</span>
 <span class="o">...</span>             <span class="n">control</span><span class="o">.</span><span class="n">add_clause</span><span class="p">([</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">slit_b</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">slit_a</span><span class="p">])</span>
 <span class="o">...</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ctl</span> <span class="o">=</span> <span class="n">Control</span><span class="p">(</span><span class="n">LIB</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;0&quot;</span><span class="p">])</span>
@@ -670,6 +652,21 @@ They include, for example, assumptions.</p>
 
 
                             </div>
+                            <div id="Assignment.thread_id" class="classattr">
+                                <div class="attr variable">
+            <span class="name">thread_id</span><span class="annotation">: int</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Assignment.thread_id"></a>
+    
+            <div class="docstring"><p>Get the id of the thread to which the assignment belongs.</p>
+
+<p>Thread ids are consecutive numbers starting with zero.</p>
+</div>
+
+
+                            </div>
                             <div id="Assignment.trail" class="classattr">
                                 <div class="attr variable">
             <span class="name">trail</span><span class="annotation">: <a href="#Trail">Trail</a></span>
@@ -799,7 +796,7 @@ They include, for example, assumptions.</p>
     </div>
     <a class="headerlink" href="#PropagateControl"></a>
     
-            <div class="docstring"><p>Class for controlling propagation.</p>
+            <div class="docstring"><p>Class for controlling propagators.</p>
 
 <p>This class provides methods for adding clauses, literals, and nogoods, as well
 as managing watches and performing propagation.</p>
@@ -844,7 +841,7 @@ clauses are exempt from the solvers clause deletion strategy.</p>
                                 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">add_literal</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">) -> <span class="nb">int</span>:</span></span>
+        <span class="name">add_literal</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">freeze</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span></span><span class="return-annotation">) -> <span class="nb">int</span>:</span></span>
 
         
     </div>
@@ -852,8 +849,14 @@ clauses are exempt from the solvers clause deletion strategy.</p>
     
             <div class="docstring"><p>Add a literal to the solver.</p>
 
-<p>This literal is only added to the associated solving thread and deleted after
-the solve call.</p>
+<p>If the function is called in the context of a particular solver thread, the literal is only added to
+that thread and deleted after the active solve call.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>freeze:</strong>  Whether to freeze the literal.</li>
+</ul>
 
 <h6 id="returns">Returns:</h6>
 
@@ -914,6 +917,38 @@ the solve call.</p>
 
 
                             </div>
+                            <div id="PropagateControl.add_weight_constraint" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">add_weight_constraint</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">literal</span><span class="p">:</span> <span class="nb">int</span>,</span><span class="param">	<span class="n">literals</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span>,</span><span class="param">	<span class="n">bound</span><span class="p">:</span> <span class="nb">int</span>,</span><span class="param">	<span class="nb">type</span><span class="p">:</span> <span class="n"><a href="#WeightConstraintType">WeightConstraintType</a></span> <span class="o">=</span> <span class="n"><a href="#WeightConstraintType.Equivalence">WeightConstraintType.Equivalence</a></span></span><span class="return-annotation">) -> <span class="nb">bool</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#PropagateControl.add_weight_constraint"></a>
+    
+            <div class="docstring"><p>Add a weight constraint to the solver.</p>
+
+<p>See <code><a href="#PropagateControl.add_clause">add_clause</a></code> for how to interpret the return value.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>literal:</strong>  The literal associated with the constraint.</li>
+<li><strong>literals:</strong>  A sequence of (literal, weight) tuples.</li>
+<li><strong>bound:</strong>  The bound of the weight constraint.</li>
+<li><strong>type:</strong>  The type of the weight constraint.</li>
+</ul>
+
+<h6 id="returns">Returns:</h6>
+
+<blockquote>
+  <p>Whether the weight constraint could be added without conflict.</p>
+</blockquote>
+</div>
+
+
+                            </div>
                             <div id="PropagateControl.has_watch" class="classattr">
                                 <div class="attr function">
             
@@ -955,7 +990,7 @@ the solve call.</p>
 
 <p>If this function returns False, the propagator must add no further
 clauses/literals and immediately return from the corresponding
-<code><a href="#Propagator.propagate">Propagator.propagate()</a></code> or <code><a href="#Propagator.check">Propagator.check()</a></code> call.</p>
+<code><a href="#Propagator.init">Propagator.init()</a></code>, <code><a href="#Propagator.propagate">Propagator.propagate()</a></code> or <code><a href="#Propagator.check">Propagator.check()</a></code> call.</p>
 
 <h6 id="returns">Returns:</h6>
 
@@ -989,38 +1024,12 @@ clauses/literals and immediately return from the corresponding
 
 
                             </div>
-                            <div id="PropagateControl.assignment" class="classattr">
-                                <div class="attr variable">
-            <span class="name">assignment</span><span class="annotation">: <a href="#Assignment">Assignment</a></span>
-
-        
-    </div>
-    <a class="headerlink" href="#PropagateControl.assignment"></a>
-    
-            <div class="docstring"><p>The current assignment.</p>
-</div>
-
-
-                            </div>
-                            <div id="PropagateControl.thread_id" class="classattr">
-                                <div class="attr variable">
-            <span class="name">thread_id</span><span class="annotation">: int</span>
-
-        
-    </div>
-    <a class="headerlink" href="#PropagateControl.thread_id"></a>
-    
-            <div class="docstring"><p>The id of the current solving thread.</p>
-</div>
-
-
-                            </div>
                 </section>
                 <section id="PropagateInit">
                     <div class="attr class">
             
     <span class="def">class</span>
-    <span class="name">PropagateInit</span>:
+    <span class="name">PropagateInit</span><wbr>(<span class="base"><a href="#PropagateControl">PropagateControl</a></span>):
 
         
     </div>
@@ -1028,70 +1037,11 @@ clauses/literals and immediately return from the corresponding
     
             <div class="docstring"><p>Class for initializing a propagator.</p>
 
-<p>This class provides methods for setting up propagation, including adding
-clauses, literals, watches, and constraints.</p>
+<p>This class extends PropagateControl and additionally provides methods for freezing and looking up literals, adding
+constraints, and configuring the propagator's behavior.</p>
 </div>
 
 
-                            <div id="PropagateInit.add_clause" class="classattr">
-                                <div class="attr function">
-            
-        <span class="def">def</span>
-        <span class="name">add_clause</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">literals</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span></span><span class="return-annotation">) -> <span class="nb">bool</span>:</span></span>
-
-        
-    </div>
-    <a class="headerlink" href="#PropagateInit.add_clause"></a>
-    
-            <div class="docstring"><p>Add a clause to the solver.</p>
-
-<p>If the clause could not be added to the solver, there is a top-level conflict
-and the underlying problem is unsatisfiable.</p>
-
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>literals:</strong>  A sequence of solver literals representing the clause.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Whether the clause could be added without conflict.</p>
-</blockquote>
-</div>
-
-
-                            </div>
-                            <div id="PropagateInit.add_literal" class="classattr">
-                                <div class="attr function">
-            
-        <span class="def">def</span>
-        <span class="name">add_literal</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">freeze</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span></span><span class="return-annotation">) -> <span class="nb">int</span>:</span></span>
-
-        
-    </div>
-    <a class="headerlink" href="#PropagateInit.add_literal"></a>
-    
-            <div class="docstring"><p>Add a new literal to the solver.</p>
-
-<p>See also <code><a href="#PropagateInit.freeze_literal">freeze_literal()</a></code>.</p>
-
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>freeze:</strong>  Whether to freeze the literal.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>The newly added solver literal.</p>
-</blockquote>
-</div>
-
-
-                            </div>
                             <div id="PropagateInit.add_minimize" class="classattr">
                                 <div class="attr function">
             
@@ -1111,61 +1061,6 @@ and the underlying problem is unsatisfiable.</p>
 <li><strong>weight:</strong>  The weight of the literal.</li>
 <li><strong>priority:</strong>  The priority of the literal.</li>
 </ul>
-</div>
-
-
-                            </div>
-                            <div id="PropagateInit.add_watch" class="classattr">
-                                <div class="attr function">
-            
-        <span class="def">def</span>
-        <span class="name">add_watch</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">literal</span><span class="p">:</span> <span class="nb">int</span>, </span><span class="param"><span class="n">thread_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
-
-        
-    </div>
-    <a class="headerlink" href="#PropagateInit.add_watch"></a>
-    
-            <div class="docstring"><p>Add a watch for the given solver literal.</p>
-
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>literal:</strong>  The literal to watch.</li>
-<li><strong>thread_id:</strong>  The id of the thread to add the watch to. If None, adds to all threads.</li>
-</ul>
-</div>
-
-
-                            </div>
-                            <div id="PropagateInit.add_weight_constraint" class="classattr">
-                                <div class="attr function">
-            
-        <span class="def">def</span>
-        <span class="name">add_weight_constraint</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">literal</span><span class="p">:</span> <span class="nb">int</span>,</span><span class="param">	<span class="n">literals</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span>,</span><span class="param">	<span class="n">bound</span><span class="p">:</span> <span class="nb">int</span>,</span><span class="param">	<span class="nb">type</span><span class="p">:</span> <span class="n"><a href="#WeightConstraintType">WeightConstraintType</a></span> <span class="o">=</span> <span class="n"><a href="#WeightConstraintType.Equivalence">WeightConstraintType.Equivalence</a></span>,</span><span class="param">	<span class="n">compare_equal</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span></span><span class="return-annotation">) -> <span class="nb">bool</span>:</span></span>
-
-        
-    </div>
-    <a class="headerlink" href="#PropagateInit.add_weight_constraint"></a>
-    
-            <div class="docstring"><p>Add a weight constraint to the solver.</p>
-
-<p>See <code><a href="#PropagateInit.add_clause">add_clause</a></code> for how to interpret the return value.</p>
-
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>literal:</strong>  The literal associated with the constraint.</li>
-<li><strong>literals:</strong>  A sequence of (literal, weight) tuples.</li>
-<li><strong>bound:</strong>  The bound of the weight constraint.</li>
-<li><strong>type:</strong>  The type of the weight constraint.</li>
-<li><strong>compare_equal:</strong>  Whether to use equality comparison.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Whether the weight constraint could be added without conflict.</p>
-</blockquote>
 </div>
 
 
@@ -1194,52 +1089,6 @@ whose truth values a propagator has to track.</p>
 
 
                             </div>
-                            <div id="PropagateInit.propagate" class="classattr">
-                                <div class="attr function">
-            
-        <span class="def">def</span>
-        <span class="name">propagate</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">) -> <span class="nb">bool</span>:</span></span>
-
-        
-    </div>
-    <a class="headerlink" href="#PropagateInit.propagate"></a>
-    
-            <div class="docstring"><p>Perform initial propagation.</p>
-
-<p>See the <code><a href="#PropagateInit.add_clause">add_clause()</a></code> for how to intepret the return value.</p>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>True if propagation was successful, False otherwise.</p>
-</blockquote>
-</div>
-
-
-                            </div>
-                            <div id="PropagateInit.remove_watch" class="classattr">
-                                <div class="attr function">
-            
-        <span class="def">def</span>
-        <span class="name">remove_watch</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">literal</span><span class="p">:</span> <span class="nb">int</span>, </span><span class="param"><span class="n">thread_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
-
-        
-    </div>
-    <a class="headerlink" href="#PropagateInit.remove_watch"></a>
-    
-            <div class="docstring"><p>Remove the watch for the given literal.</p>
-
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>literal:</strong>  The literal to remove the watch for.</li>
-<li><strong>thread_id:</strong>  The id of the thread to remove the watch from. If None, removes from
-all threads.</li>
-</ul>
-</div>
-
-
-                            </div>
                             <div id="PropagateInit.solver_literal" class="classattr">
                                 <div class="attr function">
             
@@ -1263,19 +1112,6 @@ all threads.</li>
 <blockquote>
   <p>The corresponding solver literal.</p>
 </blockquote>
-</div>
-
-
-                            </div>
-                            <div id="PropagateInit.assignment" class="classattr">
-                                <div class="attr variable">
-            <span class="name">assignment</span><span class="annotation">: <a href="#Assignment">Assignment</a></span>
-
-        
-    </div>
-    <a class="headerlink" href="#PropagateInit.assignment"></a>
-    
-            <div class="docstring"><p>The current assignment.</p>
 </div>
 
 
@@ -1345,6 +1181,22 @@ all threads.</li>
 
 
                             </div>
+                            <div class="inherited">
+                                <h5>Inherited Members</h5>
+                                <dl>
+                                    <div><dt><a href="#PropagateControl">PropagateControl</a></dt>
+                                <dd id="PropagateInit.add_clause" class="function"><a href="#PropagateControl.add_clause">add_clause</a></dd>
+                <dd id="PropagateInit.add_literal" class="function"><a href="#PropagateControl.add_literal">add_literal</a></dd>
+                <dd id="PropagateInit.add_nogood" class="function"><a href="#PropagateControl.add_nogood">add_nogood</a></dd>
+                <dd id="PropagateInit.add_watch" class="function"><a href="#PropagateControl.add_watch">add_watch</a></dd>
+                <dd id="PropagateInit.add_weight_constraint" class="function"><a href="#PropagateControl.add_weight_constraint">add_weight_constraint</a></dd>
+                <dd id="PropagateInit.has_watch" class="function"><a href="#PropagateControl.has_watch">has_watch</a></dd>
+                <dd id="PropagateInit.propagate" class="function"><a href="#PropagateControl.propagate">propagate</a></dd>
+                <dd id="PropagateInit.remove_watch" class="function"><a href="#PropagateControl.remove_watch">remove_watch</a></dd>
+
+            </div>
+                                </dl>
+                            </div>
                 </section>
                 <section id="Propagator">
                     <div class="attr class">
@@ -1364,11 +1216,38 @@ implementation.</p>
 </div>
 
 
+                            <div id="Propagator.attach" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">attach</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">assignment</span><span class="p">:</span> <span class="n"><a href="#Assignment">Assignment</a></span>,</span><span class="param">	<span class="n">control</span><span class="p">:</span> <span class="n"><a href="#PropagateControl">PropagateControl</a></span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Propagator.attach"></a>
+    
+            <div class="docstring"><p>Initialize solver thread with given id.</p>
+
+<p>This function is called once for each solving thread before solving of the
+current step is started.
+It can be used to add thread-specific watches and literals, or
+initialize thread-specific data structures.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>assignment:</strong>  The current assignment.</li>
+<li><strong>control:</strong>  The propagate control object for managing propagation.</li>
+</ul>
+</div>
+
+
+                            </div>
                             <div id="Propagator.check" class="classattr">
                                 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">check</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">control</span><span class="p">:</span> <span class="n"><a href="#PropagateControl">PropagateControl</a></span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+        <span class="name">check</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">assignment</span><span class="p">:</span> <span class="n"><a href="#Assignment">Assignment</a></span>,</span><span class="param">	<span class="n">control</span><span class="p">:</span> <span class="n"><a href="#PropagateControl">PropagateControl</a></span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
 
         
     </div>
@@ -1383,6 +1262,7 @@ constraints here.</p>
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
+<li><strong>assignment:</strong>  The current assignment.</li>
 <li><strong>control:</strong>  The propagate control object for managing propagation.</li>
 </ul>
 </div>
@@ -1393,7 +1273,7 @@ constraints here.</p>
                                 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">decide</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">thread_id</span><span class="p">:</span> <span class="nb">int</span>,</span><span class="param">	<span class="n">assignment</span><span class="p">:</span> <span class="n"><a href="#Assignment">Assignment</a></span>,</span><span class="param">	<span class="n">fallback</span><span class="p">:</span> <span class="nb">int</span></span><span class="return-annotation">) -> <span class="nb">int</span>:</span></span>
+        <span class="name">decide</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">assignment</span><span class="p">:</span> <span class="n"><a href="#Assignment">Assignment</a></span>, </span><span class="param"><span class="n">fallback</span><span class="p">:</span> <span class="nb">int</span></span><span class="return-annotation">) -> <span class="nb">int</span>:</span></span>
 
         
     </div>
@@ -1406,7 +1286,6 @@ constraints here.</p>
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
-<li><strong>thread_id:</strong>  The id of the current solver thread.</li>
 <li><strong>assignment:</strong>  The current assignment.</li>
 <li><strong>fallback:</strong>  The literal choosen by the solver's heuristic.</li>
 </ul>
@@ -1424,7 +1303,7 @@ constraints here.</p>
                                 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">init</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">init</span><span class="p">:</span> <span class="n"><a href="#PropagateInit">PropagateInit</a></span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+        <span class="name">init</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">assignment</span><span class="p">:</span> <span class="n"><a href="#Assignment">Assignment</a></span>,</span><span class="param">	<span class="n">init</span><span class="p">:</span> <span class="n"><a href="#PropagateInit">PropagateInit</a></span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
 
         
     </div>
@@ -1439,6 +1318,7 @@ literals, and initialize the propagator's internal state.</p>
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
+<li><strong>assignment:</strong>  The current assignment.</li>
 <li><strong>init:</strong>  The propagate init object for initializing the propagator.</li>
 </ul>
 </div>
@@ -1449,15 +1329,15 @@ literals, and initialize the propagator's internal state.</p>
                                 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">propagate</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">control</span><span class="p">:</span> <span class="n"><a href="#PropagateControl">PropagateControl</a></span>,</span><span class="param">	<span class="n">changes</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+        <span class="name">propagate</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">assignment</span><span class="p">:</span> <span class="n"><a href="#Assignment">Assignment</a></span>,</span><span class="param">	<span class="n">control</span><span class="p">:</span> <span class="n"><a href="#PropagateControl">PropagateControl</a></span>,</span><span class="param">	<span class="n">changes</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
 
         
     </div>
     <a class="headerlink" href="#Propagator.propagate"></a>
     
-            <div class="docstring"><p>Propagate given a set of changes.</p>
+            <div class="docstring"><p>Propagate given set of changes.</p>
 
-<p>This method is called during propagation with a non-empty list watched literals
+<p>This method is called during propagation with a non-empty list of watched literals
 that have been assigned truth values. A propagator should add clauses to
 propagate literals and to implement its constraints.</p>
 
@@ -1466,6 +1346,7 @@ propagate literals and to implement its constraints.</p>
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
+<li><strong>assignment:</strong>  The current assignment.</li>
 <li><strong>control:</strong>  The propagate control object for managing propagation.</li>
 <li><strong>changes:</strong>  A list of literals that have changed.</li>
 </ul>
@@ -1477,7 +1358,7 @@ propagate literals and to implement its constraints.</p>
                                 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">undo</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">thread_id</span><span class="p">:</span> <span class="nb">int</span>,</span><span class="param">	<span class="n">assignment</span><span class="p">:</span> <span class="n"><a href="#Assignment">Assignment</a></span>,</span><span class="param">	<span class="n">changes</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+        <span class="name">undo</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">assignment</span><span class="p">:</span> <span class="n"><a href="#Assignment">Assignment</a></span>,</span><span class="param">	<span class="n">changes</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
 
         
     </div>
@@ -1492,7 +1373,6 @@ propagate literals and to implement its constraints.</p>
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
-<li><strong>thread_id:</strong>  The id of the current solver thread.</li>
 <li><strong>assignment:</strong>  The current assignment.</li>
 <li><strong>changes:</strong>  The literals whose assignment is undone.</li>
 </ul>

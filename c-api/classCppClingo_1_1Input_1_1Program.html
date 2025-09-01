@@ -127,10 +127,10 @@ Public Member Functions</h2></td></tr>
 auto&#160;</td><td class="memItemRight" valign="bottom"><b>meta_stms</b> () -&gt; <a class="el" href="group__input__statement.html#ga93d3e2c912501957e4d1288e64ddc4a6">StmVec</a> const &amp;</td></tr>
 <tr class="memdesc:ae75c140f1033901fefe34708eb0deff0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the meta statements in the program. <br /></td></tr>
 <tr class="separator:ae75c140f1033901fefe34708eb0deff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94d47cccfe82c25c6c3e35590366a368" id="r_a94d47cccfe82c25c6c3e35590366a368"><td class="memItemLeft" align="right" valign="top"><a id="a94d47cccfe82c25c6c3e35590366a368" name="a94d47cccfe82c25c6c3e35590366a368"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>analyze</b> (<a class="el" href="classCppClingo_1_1SymbolStore.html">SymbolStore</a> &amp;store, <a class="el" href="group__input__statement.html#ga27d97fbc2160967d8d5453e73a043d10">ProgramParamVec</a> const &amp;params, <a class="el" href="classCppClingo_1_1Input_1_1DependencyBuilder.html">DependencyBuilder</a> &amp;bld) const -&gt; bool</td></tr>
-<tr class="memdesc:a94d47cccfe82c25c6c3e35590366a368"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepare the statements in a program for grounding. <br /></td></tr>
-<tr class="separator:a94d47cccfe82c25c6c3e35590366a368"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a799c1fdafd70a41daac614c4f7d1b221" id="r_a799c1fdafd70a41daac614c4f7d1b221"><td class="memItemLeft" align="right" valign="top"><a id="a799c1fdafd70a41daac614c4f7d1b221" name="a799c1fdafd70a41daac614c4f7d1b221"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>analyze</b> (<a class="el" href="classCppClingo_1_1SymbolStore.html">SymbolStore</a> &amp;store, <a class="el" href="group__input__statement.html#ga27d97fbc2160967d8d5453e73a043d10">ProgramParamVec</a> const &amp;params, <a class="el" href="classCppClingo_1_1Input_1_1DependencyBuilder.html">DependencyBuilder</a> &amp;bld) -&gt; bool</td></tr>
+<tr class="memdesc:a799c1fdafd70a41daac614c4f7d1b221"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepare the statements in a program for grounding. <br /></td></tr>
+<tr class="separator:a799c1fdafd70a41daac614c4f7d1b221"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76d04cb1d267f174fa34f218ef1cdeae" id="r_a76d04cb1d267f174fa34f218ef1cdeae"><td class="memItemLeft" align="right" valign="top"><a id="a76d04cb1d267f174fa34f218ef1cdeae" name="a76d04cb1d267f174fa34f218ef1cdeae"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>mark</b> (<a class="el" href="classCppClingo_1_1SymbolCollector.html">SymbolCollector</a> &amp;gc) const</td></tr>
 <tr class="memdesc:a76d04cb1d267f174fa34f218ef1cdeae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark symbols occurring in the program. <br /></td></tr>
@@ -155,6 +155,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mark_sig</b> (<a clas
 auto&#160;</td><td class="memItemRight" valign="bottom"><b>default_parts</b> () -&gt; std::optional&lt; <a class="el" href="classCppClingo_1_1Input_1_1StmParts.html">StmParts</a> &gt; &amp;</td></tr>
 <tr class="memdesc:ae6103f527e1c9c826185505d9d3399cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the default parts. <br /></td></tr>
 <tr class="separator:ae6103f527e1c9c826185505d9d3399cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab28e271660df845dc570ffcb89d0fb24" id="r_ab28e271660df845dc570ffcb89d0fb24"><td class="memItemLeft" align="right" valign="top"><a id="ab28e271660df845dc570ffcb89d0fb24" name="ab28e271660df845dc570ffcb89d0fb24"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>profile</b> () const -&gt; <a class="el" href="group__input__program.html#gabd2ff48e7b974cbe4e813abb2e9cffc3">ProfileFlags</a></td></tr>
+<tr class="memdesc:ab28e271660df845dc570ffcb89d0fb24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether profiling is enabled. <br /></td></tr>
+<tr class="separator:ab28e271660df845dc570ffcb89d0fb24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A program consisting of parts. </p>

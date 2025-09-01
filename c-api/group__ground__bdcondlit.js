@@ -88,10 +88,10 @@ var group__ground__bdcondlit =
       [ "LitCondLit", "classCppClingo_1_1Ground_1_1LitCondLit.html#a96abc3ca89ad18843fbba5e33b1e120a", null ]
     ] ],
     [ "CppClingo::Ground::LitCondLitStrat", "classCppClingo_1_1Ground_1_1LitCondLitStrat.html", [
-      [ "LitCondLitStrat", "classCppClingo_1_1Ground_1_1LitCondLitStrat.html#a8c9b1a1a5f54e1f05186dc4d380cefd3", null ]
+      [ "LitCondLitStrat", "classCppClingo_1_1Ground_1_1LitCondLitStrat.html#a9357c6f99745531c533d21ee97ae020a", null ]
     ] ],
     [ "CppClingo::Ground::StmCondLit", "classCppClingo_1_1Ground_1_1StmCondLit.html", [
-      [ "StmCondLit", "classCppClingo_1_1Ground_1_1StmCondLit.html#a2074ae54990a5b51fe70ff85bb7c8de7", null ]
+      [ "StmCondLit", "classCppClingo_1_1Ground_1_1StmCondLit.html#a040e4c1f78f5935feb91f831b3c2dd2a", null ]
     ] ],
     [ "CppClingo::Ground::MapAtomCondLit", "group__ground__bdcondlit.html#ga1410e5eea3eb3ed127e89f8c15fc9646", null ],
     [ "CppClingo::Ground::MapElemCondLit", "group__ground__bdcondlit.html#ga706c39d1e1a2aef46854fb23bff8dbdd", null ],

@@ -134,9 +134,6 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a2c1f3e819d02699b82c67541b1780de6" id="r_a2c1f3e819d02699b82c67541b1780de6"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structclingo__theory.html#a2c1f3e819d02699b82c67541b1780de6">validate_options</a> )(void *<a class="el" href="structclingo__theory.html#af200f72a042bdcd20cba44825c2b2ef3">self</a>)</td></tr>
 <tr class="memdesc:a2c1f3e819d02699b82c67541b1780de6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate the options of the theory.  <br /></td></tr>
 <tr class="separator:a2c1f3e819d02699b82c67541b1780de6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac824d0374683605635acfca8a0ba51d2" id="r_ac824d0374683605635acfca8a0ba51d2"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structclingo__theory.html#ac824d0374683605635acfca8a0ba51d2">configure</a> )(void *<a class="el" href="structclingo__theory.html#af200f72a042bdcd20cba44825c2b2ef3">self</a>, char const *key, size_t key_size, char const *value, size_t value_size)</td></tr>
-<tr class="memdesc:ac824d0374683605635acfca8a0ba51d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure the theory passing key value pairs.  <br /></td></tr>
-<tr class="separator:ac824d0374683605635acfca8a0ba51d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa87f2bbb3c731e7d67dd8cfd4e8b2af9" id="r_aa87f2bbb3c731e7d67dd8cfd4e8b2af9"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structclingo__theory.html#aa87f2bbb3c731e7d67dd8cfd4e8b2af9">on_model</a> )(void *<a class="el" href="structclingo__theory.html#af200f72a042bdcd20cba44825c2b2ef3">self</a>, <a class="el" href="group__c__model.html#gaaf9a93819f023f3cb8aa80598c46556b">clingo_model_t</a> *model)</td></tr>
 <tr class="memdesc:aa87f2bbb3c731e7d67dd8cfd4e8b2af9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inform the theory that a model has been found.  <br /></td></tr>
 <tr class="separator:aa87f2bbb3c731e7d67dd8cfd4e8b2af9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -185,7 +182,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>self</b></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -214,34 +211,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>self</b></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
-
-</div>
-</div>
-<a id="ac824d0374683605635acfca8a0ba51d2" name="ac824d0374683605635acfca8a0ba51d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac824d0374683605635acfca8a0ba51d2">&#9670;&#160;</a></span>configure</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool(* clingo_theory::configure) (void *<a class="el" href="structclingo__theory.html#af200f72a042bdcd20cba44825c2b2ef3">self</a>, char const *key, size_t key_size, char const *value, size_t value_size)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Configure the theory passing key value pairs. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">self</td><td>the self pointer </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>the name of the option to set </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">key_size</td><td>the size of the name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>the value to set </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">value_size</td><td>the size of the value </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -290,7 +260,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>self</b></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -317,7 +287,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>self</b></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -341,7 +311,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>self</b></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -365,7 +335,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>self</b></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -390,7 +360,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>self</b></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -414,7 +384,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>self</b></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -439,7 +409,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>self</b></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -466,7 +436,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>self</b></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -489,7 +459,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>self</b></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>

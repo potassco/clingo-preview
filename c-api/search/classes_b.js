@@ -1,12 +1,6 @@
 var searchData=
 [
-  ['observer_0',['Observer',['../classClingo_1_1Observer.html',1,'Clingo']]],
-  ['oncematcher_1',['OnceMatcher',['../classCppClingo_1_1Ground_1_1OnceMatcher.html',1,'CppClingo::Ground']]],
-  ['optimizeelement_2',['OptimizeElement',['../classCppClingo_1_1Input_1_1OptimizeElement.html',1,'CppClingo::Input']]],
-  ['optimizetuple_3',['OptimizeTuple',['../classCppClingo_1_1Input_1_1OptimizeTuple.html',1,'CppClingo::Input']]],
-  ['options_4',['Options',['../classClingo_1_1Options.html',1,'Clingo']]],
-  ['outputbuffer_5',['OutputBuffer',['../classCppClingo_1_1Util_1_1OutputBuffer.html',1,'CppClingo::Util']]],
-  ['outputlit_6',['OutputLit',['../classCppClingo_1_1OutputLit.html',1,'CppClingo']]],
-  ['outputstm_7',['OutputStm',['../classCppClingo_1_1OutputStm.html',1,'CppClingo']]],
-  ['outputtheory_8',['OutputTheory',['../classCppClingo_1_1OutputTheory.html',1,'CppClingo']]]
+  ['namegen_0',['NameGen',['../classCppClingo_1_1NameGen.html',1,'CppClingo']]],
+  ['node_1',['Node',['../classClingo_1_1AST_1_1Node.html',1,'Clingo::AST']]],
+  ['number_2',['Number',['../classCppClingo_1_1Number.html',1,'CppClingo']]]
 ];

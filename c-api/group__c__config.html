@@ -100,6 +100,7 @@ $(document).ready(function(){initNavTree('group__c__config.html',''); initResiza
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
@@ -110,6 +111,12 @@ $(document).ready(function(){initNavTree('group__c__config.html',''); initResiza
 <p>Configuration of search and enumeration algorithms.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structclingo__config__entry.html">clingo_config_entry</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback interface for custom configuration entries.  <a href="structclingo__config__entry.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:ga533ea7107f6165c6b4522ee41abbea58" id="r_ga533ea7107f6165c6b4522ee41abbea58"><td class="memItemLeft" align="right" valign="top"><a id="ga533ea7107f6165c6b4522ee41abbea58" name="ga533ea7107f6165c6b4522ee41abbea58"></a>
@@ -120,6 +127,9 @@ typedef unsigned&#160;</td><td class="memItemRight" valign="bottom"><b>clingo_co
 typedef struct clingo_config&#160;</td><td class="memItemRight" valign="bottom"><b>clingo_config_t</b></td></tr>
 <tr class="memdesc:ga01315bb503ff3ee7cd21e820de60c546"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle for to the solver configuration. <br /></td></tr>
 <tr class="separator:ga01315bb503ff3ee7cd21e820de60c546"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeec95848b1543ab1a45df479480b3c2b" id="r_gaeec95848b1543ab1a45df479480b3c2b"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structclingo__config__entry.html">clingo_config_entry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__config.html#gaeec95848b1543ab1a45df479480b3c2b">clingo_config_entry_t</a></td></tr>
+<tr class="memdesc:gaeec95848b1543ab1a45df479480b3c2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback interface for custom configuration entries.  <br /></td></tr>
+<tr class="separator:gaeec95848b1543ab1a45df479480b3c2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -132,6 +142,9 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:gaae8035303ae621ad3138afa899acaf94" id="r_gaae8035303ae621ad3138afa899acaf94"><td class="memItemLeft" align="right" valign="top">CLINGO_VISIBILITY_DEFAULT bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__config.html#gaae8035303ae621ad3138afa899acaf94">clingo_config_add</a> (<a class="el" href="group__c__config.html#ga01315bb503ff3ee7cd21e820de60c546">clingo_config_t</a> *config, <a class="el" href="group__c__core.html#gac7aaf88deb591e91b94ff38aa1e3472e">clingo_id_t</a> parent, char const *name, size_t name_size, char const *description, size_t description_size, <a class="el" href="group__c__config.html#gaeec95848b1543ab1a45df479480b3c2b">clingo_config_entry_t</a> const *entry, void *data)</td></tr>
+<tr class="memdesc:gaae8035303ae621ad3138afa899acaf94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a custom configuration entry under a parent key.  <br /></td></tr>
+<tr class="separator:gaae8035303ae621ad3138afa899acaf94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga445aea22b540df8598a8251b1478b3d2" id="r_ga445aea22b540df8598a8251b1478b3d2"><td class="memItemLeft" align="right" valign="top">CLINGO_VISIBILITY_DEFAULT bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__config.html#ga445aea22b540df8598a8251b1478b3d2">clingo_config_root</a> (<a class="el" href="group__c__config.html#ga01315bb503ff3ee7cd21e820de60c546">clingo_config_t</a> const *config, <a class="el" href="group__c__core.html#gac7aaf88deb591e91b94ff38aa1e3472e">clingo_id_t</a> *key)</td></tr>
 <tr class="memdesc:ga445aea22b540df8598a8251b1478b3d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the root key of the configuration.  <br /></td></tr>
 <tr class="separator:ga445aea22b540df8598a8251b1478b3d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,15 +170,12 @@ Functions</h2></td></tr>
 <tr class="memitem:gaa0d0c6a109862a697cf274fc2aaa308e" id="r_gaa0d0c6a109862a697cf274fc2aaa308e"><td class="memItemLeft" align="right" valign="top">CLINGO_VISIBILITY_DEFAULT bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__config.html#gaa0d0c6a109862a697cf274fc2aaa308e">clingo_config_map_size</a> (<a class="el" href="group__c__config.html#ga01315bb503ff3ee7cd21e820de60c546">clingo_config_t</a> const *config, <a class="el" href="group__c__core.html#gac7aaf88deb591e91b94ff38aa1e3472e">clingo_id_t</a> key, size_t *size)</td></tr>
 <tr class="memdesc:gaa0d0c6a109862a697cf274fc2aaa308e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of subkeys of a map entry.  <br /></td></tr>
 <tr class="separator:gaa0d0c6a109862a697cf274fc2aaa308e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga384f7ac6b17df87ec156ee087e9a5b77" id="r_ga384f7ac6b17df87ec156ee087e9a5b77"><td class="memItemLeft" align="right" valign="top">CLINGO_VISIBILITY_DEFAULT bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__config.html#ga384f7ac6b17df87ec156ee087e9a5b77">clingo_config_map_has_subkey</a> (<a class="el" href="group__c__config.html#ga01315bb503ff3ee7cd21e820de60c546">clingo_config_t</a> const *config, <a class="el" href="group__c__core.html#gac7aaf88deb591e91b94ff38aa1e3472e">clingo_id_t</a> key, char const *name, size_t size, bool *result)</td></tr>
-<tr class="memdesc:ga384f7ac6b17df87ec156ee087e9a5b77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query whether the map has a key.  <br /></td></tr>
-<tr class="separator:ga384f7ac6b17df87ec156ee087e9a5b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga73cea0741905793822d162077ca7a863" id="r_ga73cea0741905793822d162077ca7a863"><td class="memItemLeft" align="right" valign="top">CLINGO_VISIBILITY_DEFAULT bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__config.html#ga73cea0741905793822d162077ca7a863">clingo_config_map_subkey_name</a> (<a class="el" href="group__c__config.html#ga01315bb503ff3ee7cd21e820de60c546">clingo_config_t</a> const *config, <a class="el" href="group__c__core.html#gac7aaf88deb591e91b94ff38aa1e3472e">clingo_id_t</a> key, size_t offset, <a class="el" href="group__c__core.html#ga1dd94b40a774164966e4eef8793a12dd">clingo_string_t</a> *name)</td></tr>
 <tr class="memdesc:ga73cea0741905793822d162077ca7a863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name associated with the offset-th subkey.  <br /></td></tr>
 <tr class="separator:ga73cea0741905793822d162077ca7a863"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga42ec12ac28e00a5dc5dec64fc56166ca" id="r_ga42ec12ac28e00a5dc5dec64fc56166ca"><td class="memItemLeft" align="right" valign="top">CLINGO_VISIBILITY_DEFAULT bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__config.html#ga42ec12ac28e00a5dc5dec64fc56166ca">clingo_config_map_at</a> (<a class="el" href="group__c__config.html#ga01315bb503ff3ee7cd21e820de60c546">clingo_config_t</a> const *config, <a class="el" href="group__c__core.html#gac7aaf88deb591e91b94ff38aa1e3472e">clingo_id_t</a> key, char const *name, size_t size, <a class="el" href="group__c__core.html#gac7aaf88deb591e91b94ff38aa1e3472e">clingo_id_t</a> *subkey)</td></tr>
-<tr class="memdesc:ga42ec12ac28e00a5dc5dec64fc56166ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lookup a subkey under the given name.  <br /></td></tr>
-<tr class="separator:ga42ec12ac28e00a5dc5dec64fc56166ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf4d3315ecc1b5d5b83a0acd446bdce25" id="r_gaf4d3315ecc1b5d5b83a0acd446bdce25"><td class="memItemLeft" align="right" valign="top">CLINGO_VISIBILITY_DEFAULT bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__config.html#gaf4d3315ecc1b5d5b83a0acd446bdce25">clingo_config_map_at</a> (<a class="el" href="group__c__config.html#ga01315bb503ff3ee7cd21e820de60c546">clingo_config_t</a> const *config, <a class="el" href="group__c__core.html#gac7aaf88deb591e91b94ff38aa1e3472e">clingo_id_t</a> key, char const *name, size_t size, <a class="el" href="group__c__core.html#gac7aaf88deb591e91b94ff38aa1e3472e">clingo_id_t</a> *subkey, bool *has_subkey)</td></tr>
+<tr class="memdesc:gaf4d3315ecc1b5d5b83a0acd446bdce25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lookup a subkey under the given name.  <br /></td></tr>
+<tr class="separator:gaf4d3315ecc1b5d5b83a0acd446bdce25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Functions to access values</h2></td></tr>
 <tr class="memitem:ga2cba29035c9923ec2c3b11e622d303d6" id="r_ga2cba29035c9923ec2c3b11e622d303d6"><td class="memItemLeft" align="right" valign="top">CLINGO_VISIBILITY_DEFAULT bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__config.html#ga2cba29035c9923ec2c3b11e622d303d6">clingo_config_value_get</a> (<a class="el" href="group__c__config.html#ga01315bb503ff3ee7cd21e820de60c546">clingo_config_t</a> const *config, <a class="el" href="group__c__core.html#gac7aaf88deb591e91b94ff38aa1e3472e">clingo_id_t</a> key, <a class="el" href="group__c__core.html#ga1dd94b40a774164966e4eef8793a12dd">clingo_string_t</a> *value, bool *has_value)</td></tr>
@@ -182,6 +192,26 @@ Functions</h2></td></tr>
 <p>Configuration of search and enumeration algorithms. </p>
 <p>Entries in a configuration are organized hierarchically. Subentries are either accessed by name for map entries or by offset for array entries. Value entries have a string value that can be inspected or modified.</p>
 <p>For an example, see <a class="el" href="config_8c-example.html">config.c</a>. </p>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="gaeec95848b1543ab1a45df479480b3c2b" name="gaeec95848b1543ab1a45df479480b3c2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeec95848b1543ab1a45df479480b3c2b">&#9670;&#160;</a></span>clingo_config_entry_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structclingo__config__entry.html">clingo_config_entry</a> <a class="el" href="group__c__config.html#gaeec95848b1543ab1a45df479480b3c2b">clingo_config_entry_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Callback interface for custom configuration entries. </p>
+<p>This struct allows users to define custom configuration entries by providing function pointers for querying and manipulating the entry. The <code>data</code> pointer is passed to each callback and can be used to store user-defined state.</p>
+<p>On each configuration path, there can be at most one array entry. If present, the array index is passed to all entries following an array entry in the path. It is up to the entry implementation to interpret an absent index (i.e., when <code>index</code> is NULL).</p>
+<p>All callbacks are optional; if a callback is NULL, the corresponding operation is not supported for this entry. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="ga9879fc4fb812fca0776bd214a13f36b4" name="ga9879fc4fb812fca0776bd214a13f36b4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga9879fc4fb812fca0776bd214a13f36b4">&#9670;&#160;</a></span>clingo_config_type_e</h2>
@@ -208,6 +238,87 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="gaae8035303ae621ad3138afa899acaf94" name="gaae8035303ae621ad3138afa899acaf94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaae8035303ae621ad3138afa899acaf94">&#9670;&#160;</a></span>clingo_config_add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CLINGO_VISIBILITY_DEFAULT bool clingo_config_add </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__c__config.html#ga01315bb503ff3ee7cd21e820de60c546">clingo_config_t</a> *&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__c__core.html#gac7aaf88deb591e91b94ff38aa1e3472e">clingo_id_t</a>&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char const *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>name_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char const *&#160;</td>
+          <td class="paramname"><em>description</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>description_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__c__config.html#gaeec95848b1543ab1a45df479480b3c2b">clingo_config_entry_t</a> const *&#160;</td>
+          <td class="paramname"><em>entry</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add a custom configuration entry under a parent key. </p>
+<p>The entry is defined by the provided callbacks and user data. The API takes ownership of the <code>data</code> pointer and will call the <code>free</code> callback (if non-NULL) when the entry is removed or the configuration is destroyed.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">config</td><td>the configuration object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">parent</td><td>the parent key under which to add the entry </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>the name of the new entry (not null-terminated) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name_size</td><td>the length of the name string </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">description</td><td>the description of the entry (not null-terminated) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">description_size</td><td>the length of the description string </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">entry</td><td>pointer to the entry callbacks struct </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>user data pointer for the entry callbacks </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true on success, false on error </dd></dl>
+
+</div>
+</div>
 <a id="ga1d6718bcbd19b8cbf7c762079fa89f8a" name="ga1d6718bcbd19b8cbf7c762079fa89f8a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga1d6718bcbd19b8cbf7c762079fa89f8a">&#9670;&#160;</a></span>clingo_config_array_at()</h2>
 
@@ -258,7 +369,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -304,7 +415,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -349,12 +460,12 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
-<a id="ga42ec12ac28e00a5dc5dec64fc56166ca" name="ga42ec12ac28e00a5dc5dec64fc56166ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga42ec12ac28e00a5dc5dec64fc56166ca">&#9670;&#160;</a></span>clingo_config_map_at()</h2>
+<a id="gaf4d3315ecc1b5d5b83a0acd446bdce25" name="gaf4d3315ecc1b5d5b83a0acd446bdce25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf4d3315ecc1b5d5b83a0acd446bdce25">&#9670;&#160;</a></span>clingo_config_map_at()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -387,7 +498,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="group__c__core.html#gac7aaf88deb591e91b94ff38aa1e3472e">clingo_id_t</a> *&#160;</td>
-          <td class="paramname"><em>subkey</em>&#160;</td>
+          <td class="paramname"><em>subkey</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>has_subkey</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -407,71 +524,11 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>the name to look up the subkey </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>the size of the name </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">subkey</td><td>the resulting subkey </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">has_subkey</td><td>whether the map has the subkey </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
-
-</div>
-</div>
-<a id="ga384f7ac6b17df87ec156ee087e9a5b77" name="ga384f7ac6b17df87ec156ee087e9a5b77"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga384f7ac6b17df87ec156ee087e9a5b77">&#9670;&#160;</a></span>clingo_config_map_has_subkey()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">CLINGO_VISIBILITY_DEFAULT bool clingo_config_map_has_subkey </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__c__config.html#ga01315bb503ff3ee7cd21e820de60c546">clingo_config_t</a> const *&#160;</td>
-          <td class="paramname"><em>config</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__c__core.html#gac7aaf88deb591e91b94ff38aa1e3472e">clingo_id_t</a>&#160;</td>
-          <td class="paramname"><em>key</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char const *&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool *&#160;</td>
-          <td class="paramname"><em>result</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Query whether the map has a key. </p>
-<dl class="section pre"><dt>Precondition</dt><dd>The <a class="el" href="group__c__config.html#ga4e11272a6a5d4b04ac6e20af4443f550">type</a> of the entry must be <a class="el" href="group__c__config.html#gga9879fc4fb812fca0776bd214a13f36b4af1fdc880d92542902fd635f316a9d07a">clingo_config_type_map</a>. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Multiple levels can be looked up by concatenating keys with a period. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">config</td><td>the target configuration </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>the key </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>the name to look up the subkey </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>the size of the name </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">result</td><td>whether the key is in the map </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -517,7 +574,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -570,7 +627,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -608,7 +665,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -653,7 +710,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -699,7 +756,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -752,7 +809,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -805,7 +862,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -843,7 +900,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>

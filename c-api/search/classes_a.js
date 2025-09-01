@@ -1,6 +1,11 @@
 var searchData=
 [
-  ['namegen_0',['NameGen',['../classCppClingo_1_1NameGen.html',1,'CppClingo']]],
-  ['node_1',['Node',['../classClingo_1_1AST_1_1Node.html',1,'Clingo::AST']]],
-  ['number_2',['Number',['../classCppClingo_1_1Number.html',1,'CppClingo']]]
+  ['matchassignaggr_0',['MatchAssignAggr',['../classCppClingo_1_1Ground_1_1MatchAssignAggr.html',1,'CppClingo::Ground']]],
+  ['matchbdaggr_1',['MatchBdAggr',['../classCppClingo_1_1Ground_1_1MatchBdAggr.html',1,'CppClingo::Ground']]],
+  ['matchcondlit_2',['MatchCondLit',['../classCppClingo_1_1Ground_1_1MatchCondLit.html',1,'CppClingo::Ground']]],
+  ['matchdisjunction_3',['MatchDisjunction',['../classCppClingo_1_1Ground_1_1MatchDisjunction.html',1,'CppClingo::Ground']]],
+  ['matcher_4',['Matcher',['../classCppClingo_1_1Ground_1_1Matcher.html',1,'CppClingo::Ground']]],
+  ['matchhdaggr_5',['MatchHdAggr',['../classCppClingo_1_1Ground_1_1MatchHdAggr.html',1,'CppClingo::Ground']]],
+  ['matchtheory_6',['MatchTheory',['../classCppClingo_1_1Ground_1_1MatchTheory.html',1,'CppClingo::Ground']]],
+  ['model_7',['model',['../classClingo_1_1Model.html',1,'Clingo::Model'],['../classCppClingo_1_1Control_1_1Model.html',1,'CppClingo::Control::Model']]]
 ];

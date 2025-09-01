@@ -36,5 +36,6 @@ var searchData=
   ['arity_33',['arity',['../structclingo__signature.html#ae84a6206edbac53b0a10eca0d44ad113',1,'clingo_signature']]],
   ['assignment_5fget_5fvalue_34',['assignment_get_value',['../structclingo__theory.html#a080af6da1f70a3ab018ddfed9e7905c3',1,'clingo_theory']]],
   ['assignment_5fnext_35',['assignment_next',['../structclingo__theory.html#a28012620349062fe455a2695dd30340e',1,'clingo_theory']]],
-  ['assume_36',['assume',['../structclingo__observer.html#a3d7ded94dd3103a73f17fc601ba8d909',1,'clingo_observer']]]
+  ['assume_36',['assume',['../structclingo__observer.html#a3d7ded94dd3103a73f17fc601ba8d909',1,'clingo_observer']]],
+  ['attach_37',['attach',['../structclingo__propagator.html#a1421565211e5fe569071b06abe145ebb',1,'clingo_propagator']]]
 ];

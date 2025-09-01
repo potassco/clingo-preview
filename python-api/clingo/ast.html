@@ -2191,6 +2191,79 @@
 <span class="sd">&quot;&quot;&quot;</span>
 </code></pre>
 </div>
+
+<p>The next example hows how to visit and AST and collect variables.</p>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">singledispatch</span>
+
+<span class="kn">from</span> <span class="nn"><a href="core.html">clingo.core</a></span> <span class="kn">import</span> <span class="n">Library</span>
+<span class="kn">from</span> <span class="nn">clingo</span> <span class="kn">import</span> <span class="n">ast</span>
+
+<span class="nd">@singledispatch</span>
+<span class="k">def</span> <span class="nf">collect</span><span class="p">(</span><span class="n">stm</span><span class="p">,</span> <span class="nb">vars</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Collect all variables occurring in statements.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">stm</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">collect</span><span class="p">,</span> <span class="nb">vars</span><span class="p">)</span>
+
+<span class="nd">@collect</span><span class="o">.</span><span class="n">register</span>
+<span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="n">var</span><span class="p">:</span> <span class="n">ast</span><span class="o">.</span><span class="n">TermVariable</span> <span class="o">|</span> <span class="n">ast</span><span class="o">.</span><span class="n">TheoryTermVariable</span><span class="p">,</span> <span class="nb">vars</span><span class="p">):</span>
+    <span class="nb">vars</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+<span class="n">lib</span> <span class="o">=</span> <span class="n">Library</span><span class="p">()</span>
+<span class="nb">vars</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+<span class="n">ast</span><span class="o">.</span><span class="n">parse_string</span><span class="p">(</span>
+    <span class="n">lib</span><span class="p">,</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;\</span>
+<span class="sd">    a(X) :- b(X,Y).</span>
+<span class="sd">    b(Z).</span>
+<span class="sd">    &quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="k">lambda</span> <span class="n">stm</span><span class="p">:</span> <span class="n">collect</span><span class="p">(</span><span class="n">stm</span><span class="p">,</span> <span class="nb">vars</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">vars</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>The last example shows how to use a transformer to modify an AST.</p>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">singledispatch</span>
+
+<span class="kn">from</span> <span class="nn"><a href="core.html">clingo.core</a></span> <span class="kn">import</span> <span class="n">Library</span>
+<span class="kn">from</span> <span class="nn">clingo</span> <span class="kn">import</span> <span class="n">ast</span>
+
+<span class="nd">@singledispatch</span>
+<span class="k">def</span> <span class="nf">rename</span><span class="p">(</span><span class="n">stm</span><span class="p">,</span> <span class="n">lib</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Replaces all occurrences of variable `X` with `Y` in the given statement</span>
+<span class="sd">    returning a new statement. If no replacement was made, `None` is returned.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">stm</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">lib</span><span class="p">,</span> <span class="n">rename</span><span class="p">,</span> <span class="n">lib</span><span class="p">)</span>
+
+<span class="nd">@rename</span><span class="o">.</span><span class="n">register</span>
+<span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="n">var</span><span class="p">:</span> <span class="n">ast</span><span class="o">.</span><span class="n">TermVariable</span><span class="p">,</span> <span class="n">lib</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">var</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">lib</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Y&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;X&quot;</span> <span class="k">else</span> <span class="kc">None</span>
+
+<span class="n">lib</span> <span class="o">=</span> <span class="n">Library</span><span class="p">()</span>
+<span class="n">stms</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">ast</span><span class="o">.</span><span class="n">parse_string</span><span class="p">(</span>
+    <span class="n">lib</span><span class="p">,</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;\</span>
+<span class="sd">    b(1,1).</span>
+<span class="sd">    b(2,3).</span>
+<span class="sd">    a(X) :- b(X,Y).</span>
+<span class="sd">    &quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="n">stms</span><span class="o">.</span><span class="n">append</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="k">for</span> <span class="n">stm</span> <span class="ow">in</span> <span class="n">stms</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">rename</span><span class="p">(</span><span class="n">stm</span><span class="p">,</span> <span class="n">lib</span><span class="p">)</span> <span class="ow">or</span> <span class="n">stm</span><span class="p">)</span>
+</code></pre>
+</div>
 </div>
 
                 
@@ -2345,7 +2418,7 @@
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>arguments:</strong>      The arguments of the tuple.</li>
+<li><strong>arguments:</strong>  The arguments of the tuple.</li>
 </ul>
 </div>
 
@@ -2649,12 +2722,12 @@
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the element.</li>
-<li><strong>sign:</strong>      The sign of the literal.</li>
-<li><strong>left:</strong>      The left guard of the aggregate.</li>
-<li><strong>function:</strong>      The aggregate function.</li>
-<li><strong>elements:</strong>      The aggregate elements.</li>
-<li><strong>right:</strong>      The right guard of the aggregate.</li>
+<li><strong>location:</strong>  The location of the element.</li>
+<li><strong>sign:</strong>  The sign of the literal.</li>
+<li><strong>left:</strong>  The left guard of the aggregate.</li>
+<li><strong>function:</strong>  The aggregate function.</li>
+<li><strong>elements:</strong>  The aggregate elements.</li>
+<li><strong>right:</strong>  The right guard of the aggregate.</li>
 </ul>
 </div>
 
@@ -2848,9 +2921,9 @@
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the element.</li>
-<li><strong>tuple:</strong>      The term tuple of the element.</li>
-<li><strong>condition:</strong>      The condition of the element.</li>
+<li><strong>location:</strong>  The location of the element.</li>
+<li><strong>tuple:</strong>  The term tuple of the element.</li>
+<li><strong>condition:</strong>  The condition of the element.</li>
 </ul>
 </div>
 
@@ -3005,9 +3078,9 @@
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the element.</li>
-<li><strong>literal:</strong>      The literal of the element.</li>
-<li><strong>condition:</strong>      The condition of the element.</li>
+<li><strong>location:</strong>  The location of the element.</li>
+<li><strong>literal:</strong>  The literal of the element.</li>
+<li><strong>condition:</strong>  The condition of the element.</li>
 </ul>
 </div>
 
@@ -3162,11 +3235,11 @@
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the element.</li>
-<li><strong>sign:</strong>      The sign of the literal.</li>
-<li><strong>left:</strong>      The left guard of the aggregate.</li>
-<li><strong>elements:</strong>      The aggregate elements.</li>
-<li><strong>right:</strong>      The right guard of the aggregate.</li>
+<li><strong>location:</strong>  The location of the element.</li>
+<li><strong>sign:</strong>  The sign of the literal.</li>
+<li><strong>left:</strong>  The left guard of the aggregate.</li>
+<li><strong>elements:</strong>  The aggregate elements.</li>
+<li><strong>right:</strong>  The right guard of the aggregate.</li>
 </ul>
 </div>
 
@@ -3347,7 +3420,7 @@
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>literal:</strong>      The literal.</li>
+<li><strong>literal:</strong>  The literal.</li>
 </ul>
 </div>
 
@@ -3476,11 +3549,11 @@
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the element.</li>
-<li><strong>sign:</strong>      The sign of the literal.</li>
-<li><strong>name:</strong>      The name of the theory atom.</li>
-<li><strong>elements:</strong>      The aggregate elements.</li>
-<li><strong>right:</strong>      The right guard of the theory atom.</li>
+<li><strong>location:</strong>  The location of the element.</li>
+<li><strong>sign:</strong>  The sign of the literal.</li>
+<li><strong>name:</strong>  The name of the theory atom.</li>
+<li><strong>elements:</strong>  The aggregate elements.</li>
+<li><strong>right:</strong>  The right guard of the theory atom.</li>
 </ul>
 </div>
 
@@ -3738,8 +3811,8 @@
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>u:</strong>      The start vertex.</li>
-<li><strong>v:</strong>      The end vertex.</li>
+<li><strong>u:</strong>  The start vertex.</li>
+<li><strong>v:</strong>  The end vertex.</li>
 </ul>
 </div>
 
@@ -3881,11 +3954,11 @@
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the element.</li>
-<li><strong>left:</strong>      The left guard of the aggregate.</li>
-<li><strong>function:</strong>      The aggregate function.</li>
-<li><strong>elements:</strong>      The aggregate elements.</li>
-<li><strong>right:</strong>      The right guard of the aggregate.</li>
+<li><strong>location:</strong>  The location of the element.</li>
+<li><strong>left:</strong>  The left guard of the aggregate.</li>
+<li><strong>function:</strong>  The aggregate function.</li>
+<li><strong>elements:</strong>  The aggregate elements.</li>
+<li><strong>right:</strong>  The right guard of the aggregate.</li>
 </ul>
 </div>
 
@@ -4066,10 +4139,10 @@
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the element.</li>
-<li><strong>tuple:</strong>      The term tuple of the element.</li>
-<li><strong>literal:</strong>      The literal of the element.</li>
-<li><strong>condition:</strong>      The condition of the element.</li>
+<li><strong>location:</strong>  The location of the element.</li>
+<li><strong>tuple:</strong>  The term tuple of the element.</li>
+<li><strong>literal:</strong>  The literal of the element.</li>
+<li><strong>condition:</strong>  The condition of the element.</li>
 </ul>
 </div>
 
@@ -4237,9 +4310,9 @@
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the element.</li>
-<li><strong>literal:</strong>      The literal of the element.</li>
-<li><strong>condition:</strong>      The condition of the element.</li>
+<li><strong>location:</strong>  The location of the element.</li>
+<li><strong>literal:</strong>  The literal of the element.</li>
+<li><strong>condition:</strong>  The condition of the element.</li>
 </ul>
 </div>
 
@@ -4394,8 +4467,8 @@
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the element.</li>
-<li><strong>elements:</strong>      The elements of the disjunction.</li>
+<li><strong>location:</strong>  The location of the element.</li>
+<li><strong>elements:</strong>  The elements of the disjunction.</li>
 </ul>
 </div>
 
@@ -4537,10 +4610,10 @@
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the element.</li>
-<li><strong>left:</strong>      The left guard of the aggregate.</li>
-<li><strong>elements:</strong>      The aggregate elements.</li>
-<li><strong>right:</strong>      The right guard of the aggregate.</li>
+<li><strong>location:</strong>  The location of the element.</li>
+<li><strong>left:</strong>  The left guard of the aggregate.</li>
+<li><strong>elements:</strong>  The aggregate elements.</li>
+<li><strong>right:</strong>  The right guard of the aggregate.</li>
 </ul>
 </div>
 
@@ -4708,7 +4781,7 @@
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>literal:</strong>      The literal.</li>
+<li><strong>literal:</strong>  The literal.</li>
 </ul>
 </div>
 
@@ -4837,10 +4910,10 @@
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the element.</li>
-<li><strong>name:</strong>      The name of the theory atom.</li>
-<li><strong>elements:</strong>      The aggregate elements.</li>
-<li><strong>right:</strong>      The right guard of the theory atom.</li>
+<li><strong>location:</strong>  The location of the element.</li>
+<li><strong>name:</strong>  The name of the theory atom.</li>
+<li><strong>elements:</strong>  The aggregate elements.</li>
+<li><strong>right:</strong>  The right guard of the theory atom.</li>
 </ul>
 </div>
 
@@ -5066,7 +5139,7 @@
     </div>
     <a class="headerlink" href="#LeftGuard"></a>
     
-            <div class="docstring"><p>A right hand side guard consisting of a term and a relation.</p>
+            <div class="docstring"><p>A left hand side guard consisting of a term and relation.</p>
 </div>
 
 
@@ -5085,8 +5158,8 @@
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>term:</strong>      The term of the guard.</li>
-<li><strong>relation:</strong>      The relation of the guard.</li>
+<li><strong>term:</strong>  The term of the guard.</li>
+<li><strong>relation:</strong>  The relation of the guard.</li>
 </ul>
 </div>
 
@@ -5228,9 +5301,9 @@
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the symbol.</li>
-<li><strong>sign:</strong>      The sign of the literal.</li>
-<li><strong>value:</strong>      The fixed value of the literal.</li>
+<li><strong>location:</strong>  The location of the symbol.</li>
+<li><strong>sign:</strong>  The sign of the literal.</li>
+<li><strong>value:</strong>  The fixed value of the literal.</li>
 </ul>
 </div>
 
@@ -5385,11 +5458,12 @@
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the symbol.</li>
-<li><strong>sign:</strong>      The sign of the literal.</li>
-<li><strong>left:</strong>      The first term of the comparison.</li>
-<li><strong>right:</strong>      The chain of comparisons.</li>
-<li>Note that the chain must have at least length one.</li>
+<li><strong>location:</strong>  The location of the symbol.</li>
+<li><strong>sign:</strong>  The sign of the literal.</li>
+<li><strong>left:</strong>  The first term of the comparison.</li>
+<li><p><strong>right:</strong>  The chain of comparisons.</p>
+
+<p>Note that the chain must have at least length one.</p></li>
 </ul>
 </div>
 
@@ -5558,9 +5632,9 @@ Note that the chain must have at least length one.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the symbol.</li>
-<li><strong>sign:</strong>      The sign of the literal.</li>
-<li><strong>atom:</strong>      The term representing the atom.</li>
+<li><strong>location:</strong>  The location of the symbol.</li>
+<li><strong>sign:</strong>  The sign of the literal.</li>
+<li><strong>atom:</strong>  The term representing the atom.</li>
 </ul>
 </div>
 
@@ -5715,8 +5789,8 @@ Note that the chain must have at least length one.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>tuple:</strong>      The tuple of the element.</li>
-<li><strong>condition:</strong>      The condition of the element.</li>
+<li><strong>tuple:</strong>  The tuple of the element.</li>
+<li><strong>condition:</strong>  The condition of the element.</li>
 </ul>
 </div>
 
@@ -5858,9 +5932,9 @@ Note that the chain must have at least length one.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>weight:</strong>      The weight of the tuple.</li>
-<li><strong>priority:</strong>      An optional priority.</li>
-<li><strong>terms:</strong>      The remaining terms in the tuple.</li>
+<li><strong>weight:</strong>  The weight of the tuple.</li>
+<li><strong>priority:</strong>  An optional priority.</li>
+<li><strong>terms:</strong>  The remaining terms in the tuple.</li>
 </ul>
 </div>
 
@@ -6225,8 +6299,8 @@ Note that the chain must have at least length one.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>name:</strong>      The name of the program part.</li>
-<li><strong>arguments:</strong>      The arguments of the program part.</li>
+<li><strong>name:</strong>  The name of the program part.</li>
+<li><strong>arguments:</strong>  The arguments of the program part.</li>
 </ul>
 </div>
 
@@ -6368,7 +6442,7 @@ Note that the chain must have at least length one.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the placeholder.</li>
+<li><strong>location:</strong>  The location of the placeholder.</li>
 </ul>
 </div>
 
@@ -6843,8 +6917,8 @@ Note that the chain must have at least length one.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>relation:</strong>      The relation of the guard.</li>
-<li><strong>term:</strong>      The term of the guard.</li>
+<li><strong>relation:</strong>  The relation of the guard.</li>
+<li><strong>term:</strong>  The term of the guard.</li>
 </ul>
 </div>
 
@@ -6986,9 +7060,9 @@ Note that the chain must have at least length one.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the element.</li>
-<li><strong>literal:</strong>      The literal of the element.</li>
-<li><strong>condition:</strong>      The condition of the element.</li>
+<li><strong>location:</strong>  The location of the element.</li>
+<li><strong>literal:</strong>  The literal of the element.</li>
+<li><strong>condition:</strong>  The condition of the element.</li>
 </ul>
 </div>
 
@@ -7234,9 +7308,9 @@ Note that the chain must have at least length one.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the comment.</li>
-<li><strong>value:</strong>      The value of the comment.</li>
-<li><strong>comment_type:</strong>      The type of the comment.</li>
+<li><strong>location:</strong>  The location of the comment.</li>
+<li><strong>value:</strong>  The value of the comment.</li>
+<li><strong>comment_type:</strong>  The type of the comment.</li>
 </ul>
 </div>
 
@@ -7391,10 +7465,10 @@ Note that the chain must have at least length one.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the statement.</li>
-<li><strong>name:</strong>      The name of the statement.</li>
-<li><strong>value:</strong>      The term of the statement.</li>
-<li><strong>precedence:</strong>      The precedence of the statement.</li>
+<li><strong>location:</strong>  The location of the statement.</li>
+<li><strong>name:</strong>  The name of the statement.</li>
+<li><strong>value:</strong>  The term of the statement.</li>
+<li><strong>precedence:</strong>  The precedence of the statement.</li>
 </ul>
 </div>
 
@@ -7562,10 +7636,10 @@ Note that the chain must have at least length one.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the statement.</li>
-<li><strong>name:</strong>      The name of the atom to project.</li>
-<li><strong>arity:</strong>      The arity of the atom to project.</li>
-<li><strong>sign:</strong>      The classical sign of the atom.</li>
+<li><strong>location:</strong>  The location of the statement.</li>
+<li><strong>name:</strong>  The name of the atom to project.</li>
+<li><strong>arity:</strong>  The arity of the atom to project.</li>
+<li><strong>sign:</strong>  The classical sign of the atom.</li>
 </ul>
 </div>
 
@@ -7733,9 +7807,9 @@ Note that the chain must have at least length one.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the statement.</li>
-<li><strong>pool:</strong>      The edge pool of the statement.</li>
-<li><strong>body:</strong>      The body of the statement.</li>
+<li><strong>location:</strong>  The location of the statement.</li>
+<li><strong>pool:</strong>  The edge pool of the statement.</li>
+<li><strong>body:</strong>  The body of the statement.</li>
 </ul>
 </div>
 
@@ -7890,10 +7964,10 @@ Note that the chain must have at least length one.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the statement.</li>
-<li><strong>atom:</strong>      The atom to project.</li>
-<li><strong>body:</strong>      The body of the statement.</li>
-<li><strong>external_type:</strong>      The type of the external.</li>
+<li><strong>location:</strong>  The location of the statement.</li>
+<li><strong>atom:</strong>  The atom to project.</li>
+<li><strong>body:</strong>  The body of the statement.</li>
+<li><strong>external_type:</strong>  The type of the external.</li>
 </ul>
 </div>
 
@@ -8061,12 +8135,12 @@ Note that the chain must have at least length one.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the statement.</li>
-<li><strong>atom:</strong>      The atom to heuristically modify.</li>
-<li><strong>body:</strong>      The body of the statement.</li>
-<li><strong>weight:</strong>      The weight of the heuristic modification.</li>
-<li><strong>modifier:</strong>      The heuristic modifier.</li>
-<li><strong>priority:</strong>      An optional priority.</li>
+<li><strong>location:</strong>  The location of the statement.</li>
+<li><strong>atom:</strong>  The atom to heuristically modify.</li>
+<li><strong>body:</strong>  The body of the statement.</li>
+<li><strong>weight:</strong>  The weight of the heuristic modification.</li>
+<li><strong>modifier:</strong>  The heuristic modifier.</li>
+<li><strong>priority:</strong>  An optional priority.</li>
 </ul>
 </div>
 
@@ -8260,9 +8334,9 @@ Note that the chain must have at least length one.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the statement.</li>
-<li><strong>value:</strong>      The path of the statement.</li>
-<li><strong>include_type:</strong>      The type of the include.</li>
+<li><strong>location:</strong>  The location of the statement.</li>
+<li><strong>value:</strong>  The path of the statement.</li>
+<li><strong>include_type:</strong>  The type of the include.</li>
 </ul>
 </div>
 
@@ -8417,9 +8491,9 @@ Note that the chain must have at least length one.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the statement.</li>
-<li><strong>elements:</strong>      The elements of the statement.</li>
-<li><strong>optimize_type:</strong>      The type of the statement.</li>
+<li><strong>location:</strong>  The location of the statement.</li>
+<li><strong>elements:</strong>  The elements of the statement.</li>
+<li><strong>optimize_type:</strong>  The type of the statement.</li>
 </ul>
 </div>
 
@@ -8574,9 +8648,9 @@ Note that the chain must have at least length one.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the statement.</li>
-<li><strong>elements:</strong>      The program parts to ground.</li>
-<li><strong>precedence:</strong>      The precedence of the statement.</li>
+<li><strong>location:</strong>  The location of the statement.</li>
+<li><strong>elements:</strong>  The program parts to ground.</li>
+<li><strong>precedence:</strong>  The precedence of the statement.</li>
 </ul>
 </div>
 
@@ -8731,9 +8805,9 @@ Note that the chain must have at least length one.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the statement.</li>
-<li><strong>name:</strong>      The name of the program.</li>
-<li><strong>arguments:</strong>      The arguments of the program.</li>
+<li><strong>location:</strong>  The location of the statement.</li>
+<li><strong>name:</strong>  The name of the program.</li>
+<li><strong>arguments:</strong>  The arguments of the program.</li>
 </ul>
 </div>
 
@@ -8888,9 +8962,9 @@ Note that the chain must have at least length one.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the statement.</li>
-<li><strong>atom:</strong>      The atom to project.</li>
-<li><strong>body:</strong>      The body of the statement.</li>
+<li><strong>location:</strong>  The location of the statement.</li>
+<li><strong>atom:</strong>  The atom to project.</li>
+<li><strong>body:</strong>  The body of the statement.</li>
 </ul>
 </div>
 
@@ -9045,10 +9119,10 @@ Note that the chain must have at least length one.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the statement.</li>
-<li><strong>name:</strong>      The name of the atom to project.</li>
-<li><strong>arity:</strong>      The arity of the atom to project.</li>
-<li><strong>sign:</strong>      The classical sign of the atom.</li>
+<li><strong>location:</strong>  The location of the statement.</li>
+<li><strong>name:</strong>  The name of the atom to project.</li>
+<li><strong>arity:</strong>  The arity of the atom to project.</li>
+<li><strong>sign:</strong>  The classical sign of the atom.</li>
 </ul>
 </div>
 
@@ -9216,9 +9290,9 @@ Note that the chain must have at least length one.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the statement.</li>
-<li><strong>head:</strong>      The head literal.</li>
-<li><strong>body:</strong>      The body of the statement.</li>
+<li><strong>location:</strong>  The location of the statement.</li>
+<li><strong>head:</strong>  The head literal.</li>
+<li><strong>body:</strong>  The body of the statement.</li>
 </ul>
 </div>
 
@@ -9373,9 +9447,9 @@ Note that the chain must have at least length one.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the statement.</li>
-<li><strong>value:</strong>      The content of the script.</li>
-<li><strong>script_type:</strong>      The type of the script.</li>
+<li><strong>location:</strong>  The location of the statement.</li>
+<li><strong>value:</strong>  The content of the script.</li>
+<li><strong>script_type:</strong>  The type of the script.</li>
 </ul>
 </div>
 
@@ -9530,9 +9604,9 @@ Note that the chain must have at least length one.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the statement.</li>
-<li><strong>term:</strong>      The term to show.</li>
-<li><strong>body:</strong>      The body of the statement.</li>
+<li><strong>location:</strong>  The location of the statement.</li>
+<li><strong>term:</strong>  The term to show.</li>
+<li><strong>body:</strong>  The body of the statement.</li>
 </ul>
 </div>
 
@@ -9687,7 +9761,7 @@ Note that the chain must have at least length one.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the statement.</li>
+<li><strong>location:</strong>  The location of the statement.</li>
 </ul>
 </div>
 
@@ -9816,10 +9890,10 @@ Note that the chain must have at least length one.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the statement.</li>
-<li><strong>name:</strong>      The name of the atom to show.</li>
-<li><strong>arity:</strong>      The arity of the atom to show.</li>
-<li><strong>sign:</strong>      The classical sign of the atom.</li>
+<li><strong>location:</strong>  The location of the statement.</li>
+<li><strong>name:</strong>  The name of the atom to show.</li>
+<li><strong>arity:</strong>  The arity of the atom to show.</li>
+<li><strong>sign:</strong>  The classical sign of the atom.</li>
 </ul>
 </div>
 
@@ -9987,10 +10061,10 @@ Note that the chain must have at least length one.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the statement.</li>
-<li><strong>name:</strong>      The name of the theory.</li>
-<li><strong>terms:</strong>      A list of term definitions.</li>
-<li><strong>atoms:</strong>      A list of atom definitions.</li>
+<li><strong>location:</strong>  The location of the statement.</li>
+<li><strong>name:</strong>  The name of the theory.</li>
+<li><strong>terms:</strong>  A list of term definitions.</li>
+<li><strong>atoms:</strong>  A list of atom definitions.</li>
 </ul>
 </div>
 
@@ -10158,9 +10232,9 @@ Note that the chain must have at least length one.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the statement.</li>
-<li><strong>body:</strong>      The body of the statement.</li>
-<li><strong>tuple:</strong>      The tuple of the statement.</li>
+<li><strong>location:</strong>  The location of the statement.</li>
+<li><strong>body:</strong>  The body of the statement.</li>
+<li><strong>tuple:</strong>  The tuple of the statement.</li>
 </ul>
 </div>
 
@@ -10315,10 +10389,11 @@ Note that the chain must have at least length one.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the operation.</li>
-<li><strong>pool:</strong>      The argument pool.</li>
-<li>If there is more than one argument in the pool, the term is</li>
-<li>unpooled during preprocessing.</li>
+<li><strong>location:</strong>  The location of the operation.</li>
+<li><p><strong>pool:</strong>  The argument pool.</p>
+
+<p>If there is more than one argument in the pool, the term is
+unpooled during preprocessing.</p></li>
 </ul>
 </div>
 
@@ -10461,10 +10536,10 @@ If there is more than one argument in the pool, the term is unpooled during prep
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the operation.</li>
-<li><strong>left:</strong>      The left argument of the operation.</li>
-<li><strong>operator_type:</strong>      The type of the operation.</li>
-<li><strong>right:</strong>      The right argument of the operation.</li>
+<li><strong>location:</strong>  The location of the operation.</li>
+<li><strong>left:</strong>  The left argument of the operation.</li>
+<li><strong>operator_type:</strong>  The type of the operation.</li>
+<li><strong>right:</strong>  The right argument of the operation.</li>
 </ul>
 </div>
 
@@ -10632,12 +10707,13 @@ If there is more than one argument in the pool, the term is unpooled during prep
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the function.</li>
-<li><strong>name:</strong>      The name of the function.</li>
-<li><strong>pool:</strong>      The argument pool of the function.</li>
-<li>If there is more than one element in the pool, the term is</li>
-<li>unpooled during preprocessing.</li>
-<li><strong>external:</strong>      Whether the function is external.</li>
+<li><strong>location:</strong>  The location of the function.</li>
+<li><strong>name:</strong>  The name of the function.</li>
+<li><p><strong>pool:</strong>  The argument pool of the function.</p>
+
+<p>If there is more than one element in the pool, the term is
+unpooled during preprocessing.</p></li>
+<li><strong>external:</strong>  Whether the function is external.</li>
 </ul>
 </div>
 
@@ -10806,8 +10882,8 @@ If there is more than one element in the pool, the term is unpooled during prepr
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the symbol.</li>
-<li><strong>symbol:</strong>      The symbol.</li>
+<li><strong>location:</strong>  The location of the symbol.</li>
+<li><strong>symbol:</strong>  The symbol.</li>
 </ul>
 </div>
 
@@ -10949,10 +11025,11 @@ If there is more than one element in the pool, the term is unpooled during prepr
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the tuple.</li>
-<li><strong>pool:</strong>      The argument pool of the tuple.</li>
-<li>If there is more than one element in the pool, the term is</li>
-<li>unpooled during preprocessing.</li>
+<li><strong>location:</strong>  The location of the tuple.</li>
+<li><p><strong>pool:</strong>  The argument pool of the tuple.</p>
+
+<p>If there is more than one element in the pool, the term is
+unpooled during preprocessing.</p></li>
 </ul>
 </div>
 
@@ -11095,9 +11172,9 @@ If there is more than one element in the pool, the term is unpooled during prepr
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the operation.</li>
-<li><strong>operator_type:</strong>      The type of the operation.</li>
-<li><strong>right:</strong>      The argument of the operation.</li>
+<li><strong>location:</strong>  The location of the operation.</li>
+<li><strong>operator_type:</strong>  The type of the operation.</li>
+<li><strong>right:</strong>  The argument of the operation.</li>
 </ul>
 </div>
 
@@ -11252,10 +11329,12 @@ If there is more than one element in the pool, the term is unpooled during prepr
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the variable.</li>
-<li><strong>name:</strong>      The name of the variable.</li>
-<li><strong>anonymous:</strong>      Whether the variable is anonymous.</li>
-<li>Anonymous variables receive a unique name during preprocessing.</li>
+<li><strong>location:</strong>  The location of the variable.</li>
+<li><strong>name:</strong>  The name of the variable.</li>
+<li><p><strong>anonymous:</strong>  Whether the variable is anonymous.</p>
+
+<p>Anonymous variables receive a unique name during
+preprocessing.</p></li>
 </ul>
 </div>
 
@@ -11411,12 +11490,12 @@ Anonymous variables receive a unique name during preprocessing.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the definition.</li>
-<li><strong>name:</strong>      The name of the atom.</li>
-<li><strong>arity:</strong>      The arity of the atom.</li>
-<li><strong>term:</strong>      The name of a term definition.</li>
-<li><strong>guard:</strong>      An optional guard definition.</li>
-<li><strong>atom_type:</strong>      The type of the atom definition.</li>
+<li><strong>location:</strong>  The location of the definition.</li>
+<li><strong>name:</strong>  The name of the atom.</li>
+<li><strong>arity:</strong>  The arity of the atom.</li>
+<li><strong>term:</strong>  The name of a term definition.</li>
+<li><strong>guard:</strong>  An optional guard definition.</li>
+<li><strong>atom_type:</strong>  The type of the atom definition.</li>
 </ul>
 </div>
 
@@ -11610,9 +11689,9 @@ Anonymous variables receive a unique name during preprocessing.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the element.</li>
-<li><strong>tuple:</strong>      The theory term tuple of the element.</li>
-<li><strong>condition:</strong>      The condition of the element.</li>
+<li><strong>location:</strong>  The location of the element.</li>
+<li><strong>tuple:</strong>  The theory term tuple of the element.</li>
+<li><strong>condition:</strong>  The condition of the element.</li>
 </ul>
 </div>
 
@@ -11872,8 +11951,8 @@ Anonymous variables receive a unique name during preprocessing.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>operators:</strong>      A list of operator definition names.</li>
-<li><strong>term:</strong>      The name of a term definition.</li>
+<li><strong>operators:</strong>  A list of operator definition names.</li>
+<li><strong>term:</strong>  The name of a term definition.</li>
 </ul>
 </div>
 
@@ -12015,10 +12094,10 @@ Anonymous variables receive a unique name during preprocessing.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the definition.</li>
-<li><strong>name:</strong>      The name of the definition.</li>
-<li><strong>priority:</strong>      The priority of the operator.</li>
-<li><strong>operator_type:</strong>      The type of the operator.</li>
+<li><strong>location:</strong>  The location of the definition.</li>
+<li><strong>name:</strong>  The name of the definition.</li>
+<li><strong>priority:</strong>  The priority of the operator.</li>
+<li><strong>operator_type:</strong>  The type of the operator.</li>
 </ul>
 </div>
 
@@ -12278,8 +12357,8 @@ term.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>theory_operator:</strong>      The operator of the guard.</li>
-<li><strong>term:</strong>      The theory term of the guard.</li>
+<li><strong>theory_operator:</strong>  The operator of the guard.</li>
+<li><strong>term:</strong>  The theory term of the guard.</li>
 </ul>
 </div>
 
@@ -12421,9 +12500,9 @@ term.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the definition.</li>
-<li><strong>name:</strong>      The name of the definition.</li>
-<li><strong>operators:</strong>      The operator definitions to construct terms.</li>
+<li><strong>location:</strong>  The location of the definition.</li>
+<li><strong>name:</strong>  The name of the definition.</li>
+<li><strong>operators:</strong>  The operator definitions to construct terms.</li>
 </ul>
 </div>
 
@@ -12578,9 +12657,9 @@ term.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the function.</li>
-<li><strong>name:</strong>      The name of the function.</li>
-<li><strong>arguments:</strong>      The arguments of the function.</li>
+<li><strong>location:</strong>  The location of the function.</li>
+<li><strong>name:</strong>  The name of the function.</li>
+<li><strong>arguments:</strong>  The arguments of the function.</li>
 </ul>
 </div>
 
@@ -12735,8 +12814,8 @@ term.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the symbol.</li>
-<li><strong>symbol:</strong>      The symbol.</li>
+<li><strong>location:</strong>  The location of the symbol.</li>
+<li><strong>symbol:</strong>  The symbol.</li>
 </ul>
 </div>
 
@@ -12878,9 +12957,9 @@ term.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the tuple.</li>
-<li><strong>tuple_type:</strong>      The type of the tuple.</li>
-<li><strong>arguments:</strong>      The arguments of the tuple.</li>
+<li><strong>location:</strong>  The location of the tuple.</li>
+<li><strong>tuple_type:</strong>  The type of the tuple.</li>
+<li><strong>arguments:</strong>  The arguments of the tuple.</li>
 </ul>
 </div>
 
@@ -13035,8 +13114,8 @@ term.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the theory term.</li>
-<li><strong>elements:</strong>      The unparsed theory elements.</li>
+<li><strong>location:</strong>  The location of the theory term.</li>
+<li><strong>elements:</strong>  The unparsed theory elements.</li>
 </ul>
 </div>
 
@@ -13178,10 +13257,12 @@ term.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>location:</strong>      The location of the variable.</li>
-<li><strong>name:</strong>      The name of the variable.</li>
-<li><strong>anonymous:</strong>      Whether the variable is anonymous.</li>
-<li>Anonymous variables receive a unique name during preprocessing.</li>
+<li><strong>location:</strong>  The location of the variable.</li>
+<li><strong>name:</strong>  The name of the variable.</li>
+<li><p><strong>anonymous:</strong>  Whether the variable is anonymous.</p>
+
+<p>Anonymous variables receive a unique name during
+preprocessing.</p></li>
 </ul>
 </div>
 
@@ -13505,8 +13586,8 @@ Anonymous variables receive a unique name during preprocessing.</p>
 
 <ul>
 <li><strong>lib:</strong>  The library object for storing symbols.</li>
-<li><strong>operators:</strong>      The list of theory operators.</li>
-<li><strong>term:</strong>      The theory term.</li>
+<li><strong>operators:</strong>  The list of theory operators.</li>
+<li><strong>term:</strong>  The theory term.</li>
 </ul>
 </div>
 

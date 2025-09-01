@@ -106,53 +106,62 @@ $(document).ready(function(){initNavTree('classClingo_1_1PropagateControl.html',
 </div><!--header-->
 <div class="contents">
 
-<p>Class to control propagation of a user-defined propagator.  
+<p>Class to control a user-defined propagator.  
  <a href="classClingo_1_1PropagateControl.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="propagate_8hh_source.html">propagate.hh</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Clingo::PropagateControl:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classClingo_1_1PropagateControl.png" usemap="#Clingo::PropagateControl_map" alt=""/>
+  <map id="Clingo::PropagateControl_map" name="Clingo::PropagateControl_map">
+<area href="classClingo_1_1PropagateInit.html" title="Object to initialize a user-defined propagator before each solving step." alt="Clingo::PropagateInit" shape="rect" coords="0,56,153,80"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a97d4424121517e4767ccbe39e7ef403b" id="r_a97d4424121517e4767ccbe39e7ef403b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1PropagateControl.html#a97d4424121517e4767ccbe39e7ef403b">PropagateControl</a> (<a class="el" href="group__c__propagate.html#ga1cf43bea08101abb8b8cc7711c4c7165">clingo_propagate_control_t</a> *<a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">ctl</a>)</td></tr>
+<tr class="memitem:a97d4424121517e4767ccbe39e7ef403b" id="r_a97d4424121517e4767ccbe39e7ef403b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1PropagateControl.html#a97d4424121517e4767ccbe39e7ef403b">PropagateControl</a> (<a class="el" href="group__c__propagate.html#ga1cf43bea08101abb8b8cc7711c4c7165">clingo_propagate_control_t</a> *ctl)</td></tr>
 <tr class="memdesc:a97d4424121517e4767ccbe39e7ef403b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from the underlying C representation.  <br /></td></tr>
 <tr class="separator:a97d4424121517e4767ccbe39e7ef403b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9dd967b9a8a8c56655aab5d625469547" id="r_a9dd967b9a8a8c56655aab5d625469547"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">auto</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1PropagateControl.html#a9dd967b9a8a8c56655aab5d625469547">add_literal</a> () <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">const</a> -&gt; <a class="el" href="group__cpp__core.html#ga1261fd187c2ab2937f60835eec4f66e4">SolverLiteral</a></td></tr>
-<tr class="memdesc:a9dd967b9a8a8c56655aab5d625469547"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add solver local literal to the solver.  <br /></td></tr>
-<tr class="separator:a9dd967b9a8a8c56655aab5d625469547"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59b407be37c128f8fa05bf800d6f58f2" id="r_a59b407be37c128f8fa05bf800d6f58f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">auto</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1PropagateControl.html#a59b407be37c128f8fa05bf800d6f58f2">add_clause</a> (<a class="el" href="group__cpp__core.html#gad5a6b8374641b8241fef8d1608ee2022">SolverLiteralSpan</a> <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">literals</a>, <a class="el" href="group__cpp__propagate.html#ga3496cb0a07cdb9bd13b49db7fd2ee8da">ClauseFlags</a> <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">flags</a>=<a class="el" href="group__cpp__propagate.html#gga3496cb0a07cdb9bd13b49db7fd2ee8daa72551a5b5a8e2e8381ec68e24e1307e9">ClauseFlags::none</a>) <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">const</a> -&gt; <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">bool</a></td></tr>
+<tr class="memitem:a2b35b63b34e998aab82ba373b6007994" id="r_a2b35b63b34e998aab82ba373b6007994"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1PropagateControl.html#a2b35b63b34e998aab82ba373b6007994">PropagateControl</a> (<a class="el" href="group__c__propagate.html#ga640db8ba73adaddd5dbe50b572b77f25">clingo_propagate_init_t</a> *<a class="el" href="group__cpp__core.html#gga75c7931009e9a58b832418ee36229198ae37f0136aa3ffaf149b351f6a4c948e9">init</a>)</td></tr>
+<tr class="memdesc:a2b35b63b34e998aab82ba373b6007994"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from the underlying C representation.  <br /></td></tr>
+<tr class="separator:a2b35b63b34e998aab82ba373b6007994"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad03e9dd68b14412b656d50d96e478b48" id="r_ad03e9dd68b14412b656d50d96e478b48"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1PropagateControl.html#ad03e9dd68b14412b656d50d96e478b48">add_literal</a> (bool freeze=true) const -&gt; <a class="el" href="group__cpp__core.html#ga1261fd187c2ab2937f60835eec4f66e4">SolverLiteral</a></td></tr>
+<tr class="memdesc:ad03e9dd68b14412b656d50d96e478b48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a literal to the problem or the active solver thread.  <br /></td></tr>
+<tr class="separator:ad03e9dd68b14412b656d50d96e478b48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59b407be37c128f8fa05bf800d6f58f2" id="r_a59b407be37c128f8fa05bf800d6f58f2"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1PropagateControl.html#a59b407be37c128f8fa05bf800d6f58f2">add_clause</a> (<a class="el" href="group__cpp__core.html#gad5a6b8374641b8241fef8d1608ee2022">SolverLiteralSpan</a> literals, <a class="el" href="group__cpp__propagate.html#ga3496cb0a07cdb9bd13b49db7fd2ee8da">ClauseFlags</a> flags=<a class="el" href="group__cpp__propagate.html#gga3496cb0a07cdb9bd13b49db7fd2ee8daa72551a5b5a8e2e8381ec68e24e1307e9">ClauseFlags::none</a>) const -&gt; bool</td></tr>
 <tr class="memdesc:a59b407be37c128f8fa05bf800d6f58f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a clause to the solver.  <br /></td></tr>
 <tr class="separator:a59b407be37c128f8fa05bf800d6f58f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e946ac68d9206268dde54d3c30bf47c" id="r_a7e946ac68d9206268dde54d3c30bf47c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">auto</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1PropagateControl.html#a7e946ac68d9206268dde54d3c30bf47c">add_clause</a> (<a class="el" href="group__cpp__core.html#ga72009d19546c257a488d565390c60359">SolverLiteralList</a> <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">literals</a>, <a class="el" href="group__cpp__propagate.html#ga3496cb0a07cdb9bd13b49db7fd2ee8da">ClauseFlags</a> <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">flags</a>=<a class="el" href="group__cpp__propagate.html#gga3496cb0a07cdb9bd13b49db7fd2ee8daa72551a5b5a8e2e8381ec68e24e1307e9">ClauseFlags::none</a>) <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">const</a> -&gt; <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">bool</a></td></tr>
+<tr class="memitem:a7e946ac68d9206268dde54d3c30bf47c" id="r_a7e946ac68d9206268dde54d3c30bf47c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1PropagateControl.html#a7e946ac68d9206268dde54d3c30bf47c">add_clause</a> (<a class="el" href="group__cpp__core.html#ga72009d19546c257a488d565390c60359">SolverLiteralList</a> literals, <a class="el" href="group__cpp__propagate.html#ga3496cb0a07cdb9bd13b49db7fd2ee8da">ClauseFlags</a> flags=<a class="el" href="group__cpp__propagate.html#gga3496cb0a07cdb9bd13b49db7fd2ee8daa72551a5b5a8e2e8381ec68e24e1307e9">ClauseFlags::none</a>) const -&gt; bool</td></tr>
 <tr class="memdesc:a7e946ac68d9206268dde54d3c30bf47c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a clause to the solver.  <br /></td></tr>
 <tr class="separator:a7e946ac68d9206268dde54d3c30bf47c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3d7bd82aa611ec933b18802e4646edc" id="r_ab3d7bd82aa611ec933b18802e4646edc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">auto</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1PropagateControl.html#ab3d7bd82aa611ec933b18802e4646edc">add_nogood</a> (<a class="el" href="group__cpp__core.html#gad5a6b8374641b8241fef8d1608ee2022">SolverLiteralSpan</a> <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">literals</a>, <a class="el" href="group__cpp__propagate.html#ga3496cb0a07cdb9bd13b49db7fd2ee8da">ClauseFlags</a> <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">flags</a>=<a class="el" href="group__cpp__propagate.html#gga3496cb0a07cdb9bd13b49db7fd2ee8daa72551a5b5a8e2e8381ec68e24e1307e9">ClauseFlags::none</a>) <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">const</a> -&gt; <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">bool</a></td></tr>
+<tr class="memitem:ad41904fbe044657a8e601fe656b0635e" id="r_ad41904fbe044657a8e601fe656b0635e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1PropagateControl.html#ad41904fbe044657a8e601fe656b0635e">add_weight_constraint</a> (<a class="el" href="group__cpp__core.html#ga1261fd187c2ab2937f60835eec4f66e4">SolverLiteral</a> literal, <a class="el" href="group__cpp__core.html#gaddaa4802e1f0e28f5a5f8481330adacd">WeightedLiteralSpan</a> literals, <a class="el" href="group__cpp__core.html#gaaccc0782a15ca329c11061103c9f5518">Weight</a> bound, <a class="el" href="group__cpp__propagate.html#ga017aa793e466bc6febee50ec40e88ec5">WeightConstraintType</a> type) const -&gt; bool</td></tr>
+<tr class="memdesc:ad41904fbe044657a8e601fe656b0635e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a weight constraint to the solver.  <br /></td></tr>
+<tr class="separator:ad41904fbe044657a8e601fe656b0635e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3d7bd82aa611ec933b18802e4646edc" id="r_ab3d7bd82aa611ec933b18802e4646edc"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1PropagateControl.html#ab3d7bd82aa611ec933b18802e4646edc">add_nogood</a> (<a class="el" href="group__cpp__core.html#gad5a6b8374641b8241fef8d1608ee2022">SolverLiteralSpan</a> literals, <a class="el" href="group__cpp__propagate.html#ga3496cb0a07cdb9bd13b49db7fd2ee8da">ClauseFlags</a> flags=<a class="el" href="group__cpp__propagate.html#gga3496cb0a07cdb9bd13b49db7fd2ee8daa72551a5b5a8e2e8381ec68e24e1307e9">ClauseFlags::none</a>) const -&gt; bool</td></tr>
 <tr class="memdesc:ab3d7bd82aa611ec933b18802e4646edc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a nogood to the solver.  <br /></td></tr>
 <tr class="separator:ab3d7bd82aa611ec933b18802e4646edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0247f0f327ee18d4a765107ff764716" id="r_ac0247f0f327ee18d4a765107ff764716"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1PropagateControl.html#ac0247f0f327ee18d4a765107ff764716">add_watch</a> (<a class="el" href="group__cpp__core.html#ga1261fd187c2ab2937f60835eec4f66e4">SolverLiteral</a> literal) <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">const</a></td></tr>
+<tr class="memitem:ac0247f0f327ee18d4a765107ff764716" id="r_ac0247f0f327ee18d4a765107ff764716"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1PropagateControl.html#ac0247f0f327ee18d4a765107ff764716">add_watch</a> (<a class="el" href="group__cpp__core.html#ga1261fd187c2ab2937f60835eec4f66e4">SolverLiteral</a> literal) const</td></tr>
 <tr class="memdesc:ac0247f0f327ee18d4a765107ff764716"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a watch for the given solver literal.  <br /></td></tr>
 <tr class="separator:ac0247f0f327ee18d4a765107ff764716"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecf317d4538c6dbbd55b6b7c040c6b38" id="r_aecf317d4538c6dbbd55b6b7c040c6b38"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">auto</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1PropagateControl.html#aecf317d4538c6dbbd55b6b7c040c6b38">has_watch</a> (<a class="el" href="group__cpp__core.html#ga1261fd187c2ab2937f60835eec4f66e4">SolverLiteral</a> literal) <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">const</a> -&gt; <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">bool</a></td></tr>
-<tr class="memdesc:aecf317d4538c6dbbd55b6b7c040c6b38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the given solver literal is watched.  <br /></td></tr>
+<tr class="memitem:aecf317d4538c6dbbd55b6b7c040c6b38" id="r_aecf317d4538c6dbbd55b6b7c040c6b38"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1PropagateControl.html#aecf317d4538c6dbbd55b6b7c040c6b38">has_watch</a> (<a class="el" href="group__cpp__core.html#ga1261fd187c2ab2937f60835eec4f66e4">SolverLiteral</a> literal) const -&gt; bool</td></tr>
+<tr class="memdesc:aecf317d4538c6dbbd55b6b7c040c6b38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the given solver literal is watched in the current context.  <br /></td></tr>
 <tr class="separator:aecf317d4538c6dbbd55b6b7c040c6b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92529c3d02a3dfd1a99ff1b2cccd9f44" id="r_a92529c3d02a3dfd1a99ff1b2cccd9f44"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">auto</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1PropagateControl.html#a92529c3d02a3dfd1a99ff1b2cccd9f44">propagate</a> () <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">const</a> -&gt; <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">bool</a></td></tr>
-<tr class="memdesc:a92529c3d02a3dfd1a99ff1b2cccd9f44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Propagate consequences of previously added clauses.  <br /></td></tr>
-<tr class="separator:a92529c3d02a3dfd1a99ff1b2cccd9f44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1668058863324ca702df5a1bed3e332" id="r_aa1668058863324ca702df5a1bed3e332"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1PropagateControl.html#aa1668058863324ca702df5a1bed3e332">remove_watch</a> (<a class="el" href="group__cpp__core.html#ga1261fd187c2ab2937f60835eec4f66e4">SolverLiteral</a> lit) <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">const</a></td></tr>
+<tr class="memitem:aa1668058863324ca702df5a1bed3e332" id="r_aa1668058863324ca702df5a1bed3e332"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1PropagateControl.html#aa1668058863324ca702df5a1bed3e332">remove_watch</a> (<a class="el" href="group__cpp__core.html#ga1261fd187c2ab2937f60835eec4f66e4">SolverLiteral</a> lit) const</td></tr>
 <tr class="memdesc:aa1668058863324ca702df5a1bed3e332"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a watch for the given solver literal.  <br /></td></tr>
 <tr class="separator:aa1668058863324ca702df5a1bed3e332"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa296c330a50f52eee0c7f78fa720aeef" id="r_aa296c330a50f52eee0c7f78fa720aeef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">auto</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1PropagateControl.html#aa296c330a50f52eee0c7f78fa720aeef">assignment</a> () <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">const</a> -&gt; <a class="el" href="classClingo_1_1Assignment.html">Assignment</a></td></tr>
-<tr class="memdesc:aa296c330a50f52eee0c7f78fa720aeef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the assignment of the current solver.  <br /></td></tr>
-<tr class="separator:aa296c330a50f52eee0c7f78fa720aeef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ef75833d2f8cb7447ec0560e414a8b7" id="r_a6ef75833d2f8cb7447ec0560e414a8b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">auto</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1PropagateControl.html#a6ef75833d2f8cb7447ec0560e414a8b7">thread_id</a> () <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">const</a> -&gt; <a class="el" href="group__cpp__core.html#gae2dbda916d0278a57b7d692392f3840e">ProgramId</a></td></tr>
-<tr class="memdesc:a6ef75833d2f8cb7447ec0560e414a8b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the thread id of the current solver.  <br /></td></tr>
-<tr class="separator:a6ef75833d2f8cb7447ec0560e414a8b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92529c3d02a3dfd1a99ff1b2cccd9f44" id="r_a92529c3d02a3dfd1a99ff1b2cccd9f44"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1PropagateControl.html#a92529c3d02a3dfd1a99ff1b2cccd9f44">propagate</a> () const -&gt; bool</td></tr>
+<tr class="memdesc:a92529c3d02a3dfd1a99ff1b2cccd9f44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Propagate consequences of previously added clauses.  <br /></td></tr>
+<tr class="separator:a92529c3d02a3dfd1a99ff1b2cccd9f44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class to control propagation of a user-defined propagator. </p>
+<div class="textblock"><p>Class to control a user-defined propagator. </p>
 <p>This class provides methods for adding clauses, literals, and nogoods, as well as managing watches and performing propagation. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a97d4424121517e4767ccbe39e7ef403b" name="a97d4424121517e4767ccbe39e7ef403b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97d4424121517e4767ccbe39e7ef403b">&#9670;&#160;</a></span>PropagateControl()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a97d4424121517e4767ccbe39e7ef403b">&#9670;&#160;</a></span>PropagateControl() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -185,6 +194,40 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a2b35b63b34e998aab82ba373b6007994" name="a2b35b63b34e998aab82ba373b6007994"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b35b63b34e998aab82ba373b6007994">&#9670;&#160;</a></span>PropagateControl() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Clingo::PropagateControl::PropagateControl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__c__propagate.html#ga640db8ba73adaddd5dbe50b572b77f25">clingo_propagate_init_t</a> *&#160;</td>
+          <td class="paramname"><em>init</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor from the underlying C representation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">init</td><td>the C representation of the init object </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a7e946ac68d9206268dde54d3c30bf47c" name="a7e946ac68d9206268dde54d3c30bf47c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7e946ac68d9206268dde54d3c30bf47c">&#9670;&#160;</a></span>add_clause() <span class="overload">[1/2]</span></h2>
@@ -196,7 +239,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">auto</a> Clingo::PropagateControl::add_clause </td>
+          <td class="memname">auto Clingo::PropagateControl::add_clause </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__cpp__core.html#ga72009d19546c257a488d565390c60359">SolverLiteralList</a>&#160;</td>
           <td class="paramname"><em>literals</em>, </td>
@@ -210,7 +253,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> const -&gt; <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">bool</a> </td>
+          <td></td><td> const -&gt; bool </td>
         </tr>
       </table>
   </td>
@@ -221,7 +264,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Add a clause to the solver. </p>
-<p>If adding the clause results in a conflict, the function returns false and the calling propagator must not add further clauses from the current callback.</p>
+<p>If adding the clause results in a conflict or requires backtracking, the function returns false and the calling propagator must not add further clauses from the current callback.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">literals</td><td>the literals of the clause to add </td></tr>
@@ -243,7 +286,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">auto</a> Clingo::PropagateControl::add_clause </td>
+          <td class="memname">auto Clingo::PropagateControl::add_clause </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__cpp__core.html#gad5a6b8374641b8241fef8d1608ee2022">SolverLiteralSpan</a>&#160;</td>
           <td class="paramname"><em>literals</em>, </td>
@@ -257,7 +300,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> const -&gt; <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">bool</a> </td>
+          <td></td><td> const -&gt; bool </td>
         </tr>
       </table>
   </td>
@@ -268,7 +311,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Add a clause to the solver. </p>
-<p>If adding the clause results in a conflict, the function returns false and the calling propagator must not add further clauses from the current callback.</p>
+<p>If adding the clause results in a conflict or requires backtracking, the function returns false and the calling propagator must not add further clauses from the current callback.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">literals</td><td>the literals of the clause to add </td></tr>
@@ -280,8 +323,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a9dd967b9a8a8c56655aab5d625469547" name="a9dd967b9a8a8c56655aab5d625469547"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9dd967b9a8a8c56655aab5d625469547">&#9670;&#160;</a></span>add_literal()</h2>
+<a id="ad03e9dd68b14412b656d50d96e478b48" name="ad03e9dd68b14412b656d50d96e478b48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad03e9dd68b14412b656d50d96e478b48">&#9670;&#160;</a></span>add_literal()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -290,9 +333,10 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">auto</a> Clingo::PropagateControl::add_literal </td>
+          <td class="memname">auto Clingo::PropagateControl::add_literal </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>freeze</em> = <code>true</code></td><td>)</td>
           <td> const -&gt; <a class="el" href="group__cpp__core.html#ga1261fd187c2ab2937f60835eec4f66e4">SolverLiteral</a> </td>
         </tr>
       </table>
@@ -303,8 +347,14 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Add solver local literal to the solver. </p>
-<p>Solver local literals are not shared between solvers and are removed at the end of the current solving step.</p>
+<p>Adds a literal to the problem or the active solver thread. </p>
+<dl class="section note"><dt>Note</dt><dd>If the function is called in the context of a particular solver thread, the literal is solver local: solver local literals are not shared between solvers and are removed at the end of the current solving step. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">freeze</td><td>whether to freeze the literal </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>the added literal </dd></dl>
 
 </div>
@@ -319,7 +369,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">auto</a> Clingo::PropagateControl::add_nogood </td>
+          <td class="memname">auto Clingo::PropagateControl::add_nogood </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__cpp__core.html#gad5a6b8374641b8241fef8d1608ee2022">SolverLiteralSpan</a>&#160;</td>
           <td class="paramname"><em>literals</em>, </td>
@@ -333,7 +383,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> const -&gt; <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">bool</a> </td>
+          <td></td><td> const -&gt; bool </td>
         </tr>
       </table>
   </td>
@@ -344,7 +394,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Add a nogood to the solver. </p>
-<p>This is the same as calling add clause with the negated literals.</p>
+<p>This is the same as calling <a class="el" href="classClingo_1_1PropagateControl.html#a59b407be37c128f8fa05bf800d6f58f2" title="Add a clause to the solver.">add_clause()</a> with the negated literals.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">literals</td><td>the literals of the nogood to add </td></tr>
@@ -366,7 +416,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">void</a> Clingo::PropagateControl::add_watch </td>
+          <td class="memname">void Clingo::PropagateControl::add_watch </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__cpp__core.html#ga1261fd187c2ab2937f60835eec4f66e4">SolverLiteral</a>&#160;</td>
           <td class="paramname"><em>literal</em></td><td>)</td>
@@ -381,6 +431,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Add a watch for the given solver literal. </p>
+<dl class="section note"><dt>Note</dt><dd>If called in the context of initialization, the watch is added to all current and future solving threads. Otherwise, the watch is only added to the active solving thread.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">literal</td><td>the literal to watch </td></tr>
@@ -390,8 +441,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa296c330a50f52eee0c7f78fa720aeef" name="aa296c330a50f52eee0c7f78fa720aeef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa296c330a50f52eee0c7f78fa720aeef">&#9670;&#160;</a></span>assignment()</h2>
+<a id="ad41904fbe044657a8e601fe656b0635e" name="ad41904fbe044657a8e601fe656b0635e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad41904fbe044657a8e601fe656b0635e">&#9670;&#160;</a></span>add_weight_constraint()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -400,10 +451,33 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">auto</a> Clingo::PropagateControl::assignment </td>
+          <td class="memname">auto Clingo::PropagateControl::add_weight_constraint </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const -&gt; <a class="el" href="classClingo_1_1Assignment.html">Assignment</a> </td>
+          <td class="paramtype"><a class="el" href="group__cpp__core.html#ga1261fd187c2ab2937f60835eec4f66e4">SolverLiteral</a>&#160;</td>
+          <td class="paramname"><em>literal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__cpp__core.html#gaddaa4802e1f0e28f5a5f8481330adacd">WeightedLiteralSpan</a>&#160;</td>
+          <td class="paramname"><em>literals</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__cpp__core.html#gaaccc0782a15ca329c11061103c9f5518">Weight</a>&#160;</td>
+          <td class="paramname"><em>bound</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__cpp__propagate.html#ga017aa793e466bc6febee50ec40e88ec5">WeightConstraintType</a>&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const -&gt; bool </td>
         </tr>
       </table>
   </td>
@@ -413,8 +487,17 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Get the assignment of the current solver. </p>
-<dl class="section return"><dt>Returns</dt><dd>the assignment of the current solver </dd></dl>
+<p>Add a weight constraint to the solver. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">literal</td><td>the literal associated with the constraint </td></tr>
+    <tr><td class="paramname">literals</td><td>the weighted literals of the constraint </td></tr>
+    <tr><td class="paramname">bound</td><td>the bound of the constraint </td></tr>
+    <tr><td class="paramname">type</td><td>the type of the weight constraint </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the constraint was added without a conflict </dd></dl>
 
 </div>
 </div>
@@ -428,11 +511,11 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">auto</a> Clingo::PropagateControl::has_watch </td>
+          <td class="memname">auto Clingo::PropagateControl::has_watch </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__cpp__core.html#ga1261fd187c2ab2937f60835eec4f66e4">SolverLiteral</a>&#160;</td>
           <td class="paramname"><em>literal</em></td><td>)</td>
-          <td> const -&gt; <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">bool</a> </td>
+          <td> const -&gt; bool </td>
         </tr>
       </table>
   </td>
@@ -442,7 +525,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Check whether the given solver literal is watched. </p>
+<p>Check whether the given solver literal is watched in the current context. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">literal</td><td>the literal to check </td></tr>
@@ -463,10 +546,10 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">auto</a> Clingo::PropagateControl::propagate </td>
+          <td class="memname">auto Clingo::PropagateControl::propagate </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> const -&gt; <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">bool</a> </td>
+          <td> const -&gt; bool </td>
         </tr>
       </table>
   </td>
@@ -477,7 +560,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Propagate consequences of previously added clauses. </p>
-<p>If a confilct is detected during propagation, the function returns false and the calling propagator must not add further clauses from the current callback.</p>
+<p>If a conflict is detected during propagation, the function returns false and the calling propagator must not add further clauses from the current callback.</p>
 <dl class="section return"><dt>Returns</dt><dd>whether propagation succeeded without conflict </dd></dl>
 
 </div>
@@ -492,7 +575,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">void</a> Clingo::PropagateControl::remove_watch </td>
+          <td class="memname">void Clingo::PropagateControl::remove_watch </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__cpp__core.html#ga1261fd187c2ab2937f60835eec4f66e4">SolverLiteral</a>&#160;</td>
           <td class="paramname"><em>lit</em></td><td>)</td>
@@ -513,34 +596,6 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="a6ef75833d2f8cb7447ec0560e414a8b7" name="a6ef75833d2f8cb7447ec0560e414a8b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ef75833d2f8cb7447ec0560e414a8b7">&#9670;&#160;</a></span>thread_id()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">auto</a> Clingo::PropagateControl::thread_id </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const -&gt; <a class="el" href="group__cpp__core.html#gae2dbda916d0278a57b7d692392f3840e">ProgramId</a> </td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the thread id of the current solver. </p>
-<dl class="section return"><dt>Returns</dt><dd>the thread id of the current solver </dd></dl>
 
 </div>
 </div>

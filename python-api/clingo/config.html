@@ -39,6 +39,9 @@
                     <a class="class" href="#Config">Config</a>
                             <ul class="memberlist">
                         <li>
+                                <a class="function" href="#Config.add_entry">add_entry</a>
+                        </li>
+                        <li>
                                 <a class="variable" href="#Config.attributes">attributes</a>
                         </li>
                         <li>
@@ -105,7 +108,7 @@ enumerate all models:</p>
 <span class="sd">opt_stop: &quot;-1,opt,no&quot;\</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ctl</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">solve</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">description</span>
-<span class="s2">&quot;Compute at most %A models (0 for all)&quot;</span>
+<span class="s2">&quot;Compute at most &lt;n&gt; models (0 for all)&quot;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ctl</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">solve</span><span class="o">.</span><span class="n">models</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ctl</span><span class="o">.</span><span class="n">parse_string</span><span class="p">(</span><span class="s2">&quot;1 {a; b}.&quot;</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ctl</span><span class="o">.</span><span class="n">ground</span><span class="p">()</span>
@@ -117,6 +120,71 @@ enumerate all models:</p>
 <span class="n">SAT</span>
 </code></pre>
 </div>
+
+<p>The next example shows how to extend the configuration with a custom entry:</p>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code><span class="kn">from</span> <span class="nn"><a href="core.html">clingo.core</a></span> <span class="kn">import</span> <span class="n">Library</span>
+<span class="kn">from</span> <span class="nn"><a href="control.html">clingo.control</a></span> <span class="kn">import</span> <span class="n">Control</span>
+
+
+<span class="k">class</span> <span class="nc">CustomConfig</span><span class="p">:</span>
+    <span class="n">value</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">array</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">array</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">set_val</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">def</span> <span class="nf">get_val</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span>
+
+    <span class="k">def</span> <span class="nf">get_arr_len</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">set_arr_val</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">index</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">def</span> <span class="nf">get_arr_val</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+
+<span class="n">lib</span> <span class="o">=</span> <span class="n">Library</span><span class="p">()</span>
+<span class="n">ctl</span> <span class="o">=</span> <span class="n">Control</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span>
+<span class="n">cfg</span> <span class="o">=</span> <span class="n">ctl</span><span class="o">.</span><span class="n">config</span>
+<span class="n">ctm</span> <span class="o">=</span> <span class="n">CustomConfig</span><span class="p">()</span>
+
+<span class="n">cfg</span><span class="o">.</span><span class="n">add_entry</span><span class="p">(</span><span class="s2">&quot;custom&quot;</span><span class="p">,</span> <span class="s2">&quot;simple example config&quot;</span><span class="p">)</span>
+<span class="n">cfg</span><span class="o">.</span><span class="n">add_entry</span><span class="p">(</span><span class="s2">&quot;custom.val&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">,</span> <span class="n">ctm</span><span class="o">.</span><span class="n">get_val</span><span class="p">,</span> <span class="n">ctm</span><span class="o">.</span><span class="n">set_val</span><span class="p">)</span>
+<span class="n">cfg</span><span class="o">.</span><span class="n">add_entry</span><span class="p">(</span><span class="s2">&quot;custom.arr[]&quot;</span><span class="p">,</span> <span class="s2">&quot;array&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">ctm</span><span class="o">.</span><span class="n">get_arr_len</span><span class="p">)</span>
+<span class="n">cfg</span><span class="o">.</span><span class="n">add_entry</span><span class="p">(</span>
+    <span class="s2">&quot;custom.arr[].val&quot;</span><span class="p">,</span> <span class="s2">&quot;value in array&quot;</span><span class="p">,</span> <span class="n">get</span><span class="o">=</span><span class="n">ctm</span><span class="o">.</span><span class="n">get_arr_val</span><span class="p">,</span> <span class="nb">set</span><span class="o">=</span><span class="n">ctm</span><span class="o">.</span><span class="n">set_arr_val</span>
+<span class="p">)</span>
+
+<span class="n">cfg</span><span class="o">.</span><span class="n">custom</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="s2">&quot;a&quot;</span>
+<span class="n">cfg</span><span class="o">.</span><span class="n">custom</span><span class="o">.</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="s2">&quot;b&quot;</span>
+<span class="n">cfg</span><span class="o">.</span><span class="n">custom</span><span class="o">.</span><span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="s2">&quot;c&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">custom</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>Running the above code produces the following output:</p>
+
+<pre><code>arr:
+  - val: "b"
+  - val: "c"
+val: "a"
+</code></pre>
 </div>
 
                 
@@ -170,6 +238,46 @@ to strings.</li>
 </div>
 
 
+                            <div id="Config.add_entry" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">add_entry</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">name</span><span class="p">:</span> <span class="nb">str</span>,</span><span class="param">	<span class="n">description</span><span class="p">:</span> <span class="nb">str</span>,</span><span class="param">	<span class="n">get</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[],</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">],</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">],</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">],</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="nb">set</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">],</span> <span class="n">NoneType</span><span class="p">],</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">],</span> <span class="n">NoneType</span><span class="p">],</span> <span class="n">NoneType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">size</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[],</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Config.add_entry"></a>
+    
+            <div class="docstring"><p>Add a custom configuration entry.</p>
+
+<p>Entries that have a value should pass get and/or set callbacks; entries with
+values under an array must implement get/set with an optional integer index.
+Array entries must give a size callback.</p>
+
+<p>Notes:</p>
+
+<ul>
+<li>Entries can have at most one array parent entry.</li>
+<li>It is up to the user to handle array insertion. Possible options include
+increasing the size of an array upon assignment of values or by setting a
+special size field that controls the size of the array.</li>
+<li>Custom entries can be added under the root key. Existing solver configuration
+entries cannot be extened.</li>
+</ul>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>name:</strong>  Name of the new entry.</li>
+<li><strong>description:</strong>  Description of the new entry.</li>
+<li><strong>get:</strong>  Callable to get the value.</li>
+<li><strong>set:</strong>  Callable to set the value.</li>
+<li><strong>size:</strong>  Callable to get the size (for array entries).</li>
+</ul>
+</div>
+
+
+                            </div>
                             <div id="Config.attributes" class="classattr">
                                 <div class="attr variable">
             <span class="name">attributes</span><span class="annotation">: Sequence[str]</span>

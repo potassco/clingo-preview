@@ -1,15 +1,6 @@
 var searchData=
 [
-  ['params_0',['params',['../structclingo__part.html#ac8584fc2e44e50415dda8a0d4d86e1be',1,'clingo_part::params'],['../structClingo_1_1Part.html#ad300fee33eac05baf0ee8a0b13ee836e',1,'Clingo::Part::params']]],
-  ['params_5fsize_1',['params_size',['../structclingo__part.html#ac90cdb1f8822cfd94289f9f377c5573f',1,'clingo_part']]],
-  ['part_2',['part',['../structCppClingo_1_1Input_1_1ProgramPart.html#aba742c2d00d76e2cd5415c661de3c0ce',1,'CppClingo::Input::ProgramPart']]],
-  ['pos_5fnumber_3',['pos_number',['../structCppClingo_1_1Input_1_1CheckTypeResult.html#a05d642bc89a7198e4ce4909b1392387e',1,'CppClingo::Input::CheckTypeResult']]],
-  ['prepare_4',['prepare',['../structclingo__theory.html#a2d3b654bd8f60d5dc50e433edb21ad54',1,'clingo_theory']]],
-  ['print_5fmodel_5',['print_model',['../structclingo__application.html#a0419a43a7c8b6498f4041b0185fc5acd',1,'clingo_application']]],
-  ['profile_6',['profile',['../structCppClingo_1_1Control_1_1SolverOptions.html#a905f3df217f139fc45e4cd3e4434a1af',1,'CppClingo::Control::SolverOptions']]],
-  ['program_5fname_7',['program_name',['../structclingo__application.html#a4f808ebe6ca32ceb715eab0d9e14989a',1,'clingo_application']]],
-  ['project_8',['project',['../structclingo__observer.html#a7a6ce12129753bca7688a701b9856b21',1,'clingo_observer']]],
-  ['project_5fanonymous_9',['project_anonymous',['../structCppClingo_1_1Input_1_1RewriteOptions.html#a5ee4257238d58e5cb30385fb7672a982',1,'CppClingo::Input::RewriteOptions']]],
-  ['project_5fmode_10',['project_mode',['../structCppClingo_1_1Input_1_1RewriteOptions.html#a30ea1dd36ab11ee06a82759b412fda94',1,'CppClingo::Input::RewriteOptions']]],
-  ['propagate_11',['propagate',['../structclingo__propagator.html#a666b871bab495a9e5904b6109c92feda',1,'clingo_propagator']]]
+  ['name_0',['name',['../structclingo__signature.html#ac3d3e0acf9348c6fed0c286cc632d689',1,'clingo_signature::name'],['../structclingo__part.html#a1fc1ac9371d6974212731c0f1a29cccb',1,'clingo_part::name'],['../structclingo__script.html#a07cd9495327fdcad274356416f10b37d',1,'clingo_script::name'],['../structClingo_1_1Part.html#a5abb2fd4f0ecdd7a7a45f9a4afbd2b19',1,'Clingo::Part::name']]],
+  ['name_5fsize_1',['name_size',['../structclingo__part.html#ad6859e04a4006bdfcd4bc514bca23cba',1,'clingo_part']]],
+  ['nested_2',['nested',['../structClingo_1_1ProfileNodeInternal.html#a003a31a1bee875afc12d39e48f610423',1,'Clingo::ProfileNodeInternal']]]
 ];

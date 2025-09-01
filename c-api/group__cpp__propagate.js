@@ -41,55 +41,50 @@ var group__cpp__propagate =
       [ "operator[]", "classClingo_1_1Assignment.html#afaf107e4002abd657bc5054362bfee2b", null ],
       [ "root_level", "classClingo_1_1Assignment.html#aa44e4a143929e4bc4373181b2ef8cf07", null ],
       [ "size", "classClingo_1_1Assignment.html#a294ca12e7b3b945098c5d4dc7145a8c5", null ],
+      [ "thread_id", "classClingo_1_1Assignment.html#a0fe721eb9e8c71b721abc4fd3065958b", null ],
       [ "trail", "classClingo_1_1Assignment.html#a1b960ccc6fb74e8c4471f503d48943a4", null ],
       [ "value", "classClingo_1_1Assignment.html#a495bc0767bc8583e823ae6c0c88dc372", null ]
     ] ],
+    [ "Clingo::PropagateControl", "classClingo_1_1PropagateControl.html", [
+      [ "PropagateControl", "classClingo_1_1PropagateControl.html#a97d4424121517e4767ccbe39e7ef403b", null ],
+      [ "PropagateControl", "classClingo_1_1PropagateControl.html#a2b35b63b34e998aab82ba373b6007994", null ],
+      [ "add_clause", "classClingo_1_1PropagateControl.html#a7e946ac68d9206268dde54d3c30bf47c", null ],
+      [ "add_clause", "classClingo_1_1PropagateControl.html#a59b407be37c128f8fa05bf800d6f58f2", null ],
+      [ "add_literal", "classClingo_1_1PropagateControl.html#ad03e9dd68b14412b656d50d96e478b48", null ],
+      [ "add_nogood", "classClingo_1_1PropagateControl.html#ab3d7bd82aa611ec933b18802e4646edc", null ],
+      [ "add_watch", "classClingo_1_1PropagateControl.html#ac0247f0f327ee18d4a765107ff764716", null ],
+      [ "add_weight_constraint", "classClingo_1_1PropagateControl.html#ad41904fbe044657a8e601fe656b0635e", null ],
+      [ "has_watch", "classClingo_1_1PropagateControl.html#aecf317d4538c6dbbd55b6b7c040c6b38", null ],
+      [ "propagate", "classClingo_1_1PropagateControl.html#a92529c3d02a3dfd1a99ff1b2cccd9f44", null ],
+      [ "remove_watch", "classClingo_1_1PropagateControl.html#aa1668058863324ca702df5a1bed3e332", null ]
+    ] ],
     [ "Clingo::PropagateInit", "classClingo_1_1PropagateInit.html", [
       [ "PropagateInit", "classClingo_1_1PropagateInit.html#a1613ed303886f51f3890b2b77834b00f", null ],
-      [ "add_clause", "classClingo_1_1PropagateInit.html#af8511fcb0eab36f0bd18af7860669bf2", null ],
-      [ "add_clause", "classClingo_1_1PropagateInit.html#a11130cfe3d31bba06b43eb799c958211", null ],
-      [ "add_literal", "classClingo_1_1PropagateInit.html#a47e3d70c7167f8fc9f547c703feaa009", null ],
       [ "add_minimize", "classClingo_1_1PropagateInit.html#a713acedebf95cda8d6b5bfc29c03002e", null ],
-      [ "add_watch", "classClingo_1_1PropagateInit.html#afaceb3ac5f3eab48840a515a43482d90", null ],
-      [ "add_weight_constraint", "classClingo_1_1PropagateInit.html#ab6aa7c2d4d1f7076fad9162a03c849e1", null ],
-      [ "assignment", "classClingo_1_1PropagateInit.html#aa2927b072a9437343878627f04f54ac8", null ],
       [ "base", "classClingo_1_1PropagateInit.html#af192ebac053d5c68b5b94238793054b1", null ],
       [ "check_mode", "classClingo_1_1PropagateInit.html#a766c5c1805f6079e618e0b60ac6bcc77", null ],
       [ "check_mode", "classClingo_1_1PropagateInit.html#af2fc3a9d128cad8d7d9cf1d5744799e0", null ],
       [ "freeze_literal", "classClingo_1_1PropagateInit.html#a70979f399dc95dcca45e897f499ab387", null ],
       [ "library", "classClingo_1_1PropagateInit.html#a5d7ddfa8b57feb01c299a4ff99021e4d", null ],
       [ "number_of_threads", "classClingo_1_1PropagateInit.html#af43e33b053d8c26609401243e36a34a3", null ],
-      [ "propagate", "classClingo_1_1PropagateInit.html#a211ff0133c43c4318f337a99a890f8c2", null ],
-      [ "remove_watch", "classClingo_1_1PropagateInit.html#a74f543f22774cda64b17adc4efb7079e", null ],
       [ "solver_literal", "classClingo_1_1PropagateInit.html#ad34968d7f2e9a58dcc8bc8b754b00a1d", null ],
       [ "undo_mode", "classClingo_1_1PropagateInit.html#ae549968948abca7f9248abd26cdbeb3e", null ],
       [ "undo_mode", "classClingo_1_1PropagateInit.html#a9e8a27d284ea781cfd94f47a5edf11d2", null ]
-    ] ],
-    [ "Clingo::PropagateControl", "classClingo_1_1PropagateControl.html", [
-      [ "PropagateControl", "classClingo_1_1PropagateControl.html#a97d4424121517e4767ccbe39e7ef403b", null ],
-      [ "add_clause", "classClingo_1_1PropagateControl.html#a7e946ac68d9206268dde54d3c30bf47c", null ],
-      [ "add_clause", "classClingo_1_1PropagateControl.html#a59b407be37c128f8fa05bf800d6f58f2", null ],
-      [ "add_literal", "classClingo_1_1PropagateControl.html#a9dd967b9a8a8c56655aab5d625469547", null ],
-      [ "add_nogood", "classClingo_1_1PropagateControl.html#ab3d7bd82aa611ec933b18802e4646edc", null ],
-      [ "add_watch", "classClingo_1_1PropagateControl.html#ac0247f0f327ee18d4a765107ff764716", null ],
-      [ "assignment", "classClingo_1_1PropagateControl.html#aa296c330a50f52eee0c7f78fa720aeef", null ],
-      [ "has_watch", "classClingo_1_1PropagateControl.html#aecf317d4538c6dbbd55b6b7c040c6b38", null ],
-      [ "propagate", "classClingo_1_1PropagateControl.html#a92529c3d02a3dfd1a99ff1b2cccd9f44", null ],
-      [ "remove_watch", "classClingo_1_1PropagateControl.html#aa1668058863324ca702df5a1bed3e332", null ],
-      [ "thread_id", "classClingo_1_1PropagateControl.html#a6ef75833d2f8cb7447ec0560e414a8b7", null ]
     ] ],
     [ "Clingo::Propagator", "classClingo_1_1Propagator.html", [
       [ "Propagator", "classClingo_1_1Propagator.html#a4fbb54c0cce49c323e73b2363353a918", null ],
       [ "Propagator", "classClingo_1_1Propagator.html#a9880980a4c309fb82c2f9a0feec746c6", null ],
       [ "~Propagator", "classClingo_1_1Propagator.html#acd084a85ffbcd8b90b8f13a0f9ccb92c", null ],
-      [ "check", "classClingo_1_1Propagator.html#a2c5fa942c14594c92e40d774ff74fc3c", null ],
-      [ "init", "classClingo_1_1Propagator.html#a49e1c9e992416ef8e3c534850fb37944", null ],
-      [ "propagate", "classClingo_1_1Propagator.html#a8826ee57e376aa2aed85bc698c7fde22", null ],
-      [ "undo", "classClingo_1_1Propagator.html#abe2196d58a53557dd4055d3019b0a6fe", null ]
+      [ "attach", "classClingo_1_1Propagator.html#aa3b82e0ac358ebbe2709bc4823d751c4", null ],
+      [ "check", "classClingo_1_1Propagator.html#a728d739e566b96775523e51be564e883", null ],
+      [ "init", "classClingo_1_1Propagator.html#afb5a3d17db5a73c249330597565a9e06", null ],
+      [ "operator=", "classClingo_1_1Propagator.html#ab401e68d0a1991cbe96c04f9182b0064", null ],
+      [ "propagate", "classClingo_1_1Propagator.html#ad32bb21331319e250405a8145316b0c6", null ],
+      [ "undo", "classClingo_1_1Propagator.html#ade4dc63991595e0aa97f9d1034b6c9ba", null ]
     ] ],
     [ "Clingo::Heuristic", "classClingo_1_1Heuristic.html", [
       [ "Heuristic", "classClingo_1_1Heuristic.html#a292b808da17669b296f184b7890b9472", null ],
-      [ "decide", "classClingo_1_1Heuristic.html#a4a09f4926e19d55541b367d7c01604b4", null ]
+      [ "decide", "classClingo_1_1Heuristic.html#a9088179bf71c59f9b3374434f29528b3", null ]
     ] ],
     [ "Clingo::ClauseFlags", "group__cpp__propagate.html#ga3496cb0a07cdb9bd13b49db7fd2ee8da", [
       [ "Clingo::none", "group__cpp__propagate.html#gga3496cb0a07cdb9bd13b49db7fd2ee8daa72551a5b5a8e2e8381ec68e24e1307e9", null ],

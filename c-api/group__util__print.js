@@ -24,6 +24,10 @@ var group__util__print =
       [ "operator<<", "classCppClingo_1_1Util_1_1OutputBuffer.html#a8edbc4571b2cf9b4e5f521c1e60fbd4f", null ],
       [ "operator<<", "classCppClingo_1_1Util_1_1OutputBuffer.html#a22fdaee0dd371609615d0f85ed3a808a", null ]
     ] ],
+    [ "CppClingo::Util::fill", "classCppClingo_1_1Util_1_1fill.html", [
+      [ "fill", "classCppClingo_1_1Util_1_1fill.html#a477ae93f935be3c72b6e2abbfbbc3888", null ],
+      [ "operator<<", "classCppClingo_1_1Util_1_1fill.html#affe2b2163f24cd706d18ede37828a71c", null ]
+    ] ],
     [ "CppClingo::Util::p_fun", "group__util__print.html#gac960c05a90343578671de326163175d0", null ],
     [ "CppClingo::Util::p_quoted", "group__util__print.html#ga5c1e5f420f9baa4744370cb9795b8416", null ],
     [ "CppClingo::Util::p_range", "group__util__print.html#ga82b845f2a3e49bb8a9eb6dca30491e34", null ],

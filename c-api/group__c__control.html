@@ -141,6 +141,9 @@ Modules</h2></td></tr>
 <tr class="memitem:group__c__propagate" id="r_group__c__propagate"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__propagate.html">Theory Propagation</a></td></tr>
 <tr class="memdesc:group__c__propagate"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extend the search with propagators for arbitrary theories. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__c__profile" id="r_group__c__profile"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__profile.html">Profile Grounding</a></td></tr>
+<tr class="memdesc:group__c__profile"><td class="mdescLeft">&#160;</td><td class="mdescRight">Profile the grounding process. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -294,9 +297,9 @@ Functions</h2></td></tr>
 <div class="line">  <span class="keywordflow">return</span> <a class="code hl_function" href="group__c__core.html#ga317e484b7a60aa996556141893bc0ac8">clingo_set_error</a>(lib, <a class="code hl_enumvalue" href="group__c__core.html#ggabd55c566925881b7257bb42b8e93163ca68fd35c18eb1a479338f568efc4c993a">clingo_result_runtime</a>, <span class="stringliteral">&quot;function not found&quot;</span>, 18);</div>
 <div class="line">}</div>
 <div class="ttc" id="agroup__c__core_html_ga317e484b7a60aa996556141893bc0ac8"><div class="ttname"><a href="group__c__core.html#ga317e484b7a60aa996556141893bc0ac8">clingo_set_error</a></div><div class="ttdeci">CLINGO_VISIBILITY_DEFAULT bool clingo_set_error(clingo_result_t code, char const *message, size_t size)</div><div class="ttdoc">Set an error in the current thread.</div></div>
-<div class="ttc" id="agroup__c__core_html_ga55d91caa8f1b3bbb375e9e8741616088"><div class="ttname"><a href="group__c__core.html#ga55d91caa8f1b3bbb375e9e8741616088">clingo_lib_t</a></div><div class="ttdeci">struct clingo_lib clingo_lib_t</div><div class="ttdoc">A library object storing global information.</div><div class="ttdef"><b>Definition</b> core.h:176</div></div>
-<div class="ttc" id="agroup__c__core_html_ga571fc9a06d35671fd38b134b4e502633"><div class="ttname"><a href="group__c__core.html#ga571fc9a06d35671fd38b134b4e502633">clingo_location_t</a></div><div class="ttdeci">struct clingo_location clingo_location_t</div><div class="ttdoc">Represents a source code location marking its beginning and end.</div><div class="ttdef"><b>Definition</b> core.h:359</div></div>
-<div class="ttc" id="agroup__c__core_html_ggabd55c566925881b7257bb42b8e93163ca68fd35c18eb1a479338f568efc4c993a"><div class="ttname"><a href="group__c__core.html#ggabd55c566925881b7257bb42b8e93163ca68fd35c18eb1a479338f568efc4c993a">clingo_result_runtime</a></div><div class="ttdeci">@ clingo_result_runtime</div><div class="ttdoc">errors only detectable at runtime like invalid input</div><div class="ttdef"><b>Definition</b> core.h:104</div></div>
+<div class="ttc" id="agroup__c__core_html_ga55d91caa8f1b3bbb375e9e8741616088"><div class="ttname"><a href="group__c__core.html#ga55d91caa8f1b3bbb375e9e8741616088">clingo_lib_t</a></div><div class="ttdeci">struct clingo_lib clingo_lib_t</div><div class="ttdoc">A library object storing global information.</div><div class="ttdef"><b>Definition</b> core.h:171</div></div>
+<div class="ttc" id="agroup__c__core_html_ga571fc9a06d35671fd38b134b4e502633"><div class="ttname"><a href="group__c__core.html#ga571fc9a06d35671fd38b134b4e502633">clingo_location_t</a></div><div class="ttdeci">struct clingo_location clingo_location_t</div><div class="ttdoc">Represents a source code location marking its beginning and end.</div><div class="ttdef"><b>Definition</b> core.h:354</div></div>
+<div class="ttc" id="agroup__c__core_html_ggabd55c566925881b7257bb42b8e93163ca68fd35c18eb1a479338f568efc4c993a"><div class="ttname"><a href="group__c__core.html#ggabd55c566925881b7257bb42b8e93163ca68fd35c18eb1a479338f568efc4c993a">clingo_result_runtime</a></div><div class="ttdeci">@ clingo_result_runtime</div><div class="ttdoc">errors only detectable at runtime like invalid input</div><div class="ttdef"><b>Definition</b> core.h:99</div></div>
 <div class="ttc" id="agroup__c__symbol_html_ga2b90cb7057487f8ad261a42bc0977d60"><div class="ttname"><a href="group__c__symbol.html#ga2b90cb7057487f8ad261a42bc0977d60">clingo_symbol_callback_t</a></div><div class="ttdeci">bool(* clingo_symbol_callback_t)(clingo_symbol_t const *symbols, size_t symbols_size, void *data)</div><div class="ttdoc">Callback function to inject symbols.</div><div class="ttdef"><b>Definition</b> symbol.h:60</div></div>
 <div class="ttc" id="agroup__c__symbol_html_ga6c75c60fa57c3b97505265ff08f6f951"><div class="ttname"><a href="group__c__symbol.html#ga6c75c60fa57c3b97505265ff08f6f951">clingo_symbol_t</a></div><div class="ttdeci">uint64_t clingo_symbol_t</div><div class="ttdoc">Type to represent a symbol.</div><div class="ttdef"><b>Definition</b> symbol.h:51</div></div>
 <div class="ttc" id="agroup__c__symbol_html_gadb3966e28aade92377de0d7beef4c715"><div class="ttname"><a href="group__c__symbol.html#gadb3966e28aade92377de0d7beef4c715">clingo_symbol_create_number</a></div><div class="ttdeci">CLINGO_VISIBILITY_DEFAULT clingo_symbol_t clingo_symbol_create_number(int32_t number)</div><div class="ttdoc">Construct a symbol representing a number.</div></div>
@@ -398,7 +401,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -457,7 +460,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -495,7 +498,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -560,7 +563,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -598,7 +601,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -687,7 +690,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -748,8 +751,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="control_8c-example.html#a17">control.c</a>.</dd>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="ast_8c-example.html#a24">ast.c</a>, <a class="el" href="backend_8c-example.html#a22">backend.c</a>, and <a class="el" href="control_8c-example.html#a17">control.c</a>.</dd>
 </dl>
 
 </div>
@@ -804,7 +807,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="app_8c-example.html#a9">app.c</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -842,7 +847,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -896,8 +901,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="control_8c-example.html#a14">control.c</a>.</dd>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="ast_8c-example.html#a18">ast.c</a>, <a class="el" href="backend_8c-example.html#a20">backend.c</a>, and <a class="el" href="control_8c-example.html#a14">control.c</a>.</dd>
 </dl>
 
 </div>
@@ -943,7 +948,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="app_8c-example.html#a7">app.c</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -989,8 +996,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="control_8c-example.html#a15">control.c</a>.</dd>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="backend_8c-example.html#a21">backend.c</a>, and <a class="el" href="control_8c-example.html#a15">control.c</a>.</dd>
 </dl>
 
 </div>
@@ -1018,7 +1025,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="control_8c-example.html#a1">control.c</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="ast_8c-example.html#a31">ast.c</a>, <a class="el" href="backend_8c-example.html#a38">backend.c</a>, and <a class="el" href="control_8c-example.html#a1">control.c</a>.</dd>
 </dl>
 
 </div>
@@ -1071,7 +1078,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="app_8c-example.html#a8">app.c</a>.</dd>
+</dl>
 
 </div>
 </div>

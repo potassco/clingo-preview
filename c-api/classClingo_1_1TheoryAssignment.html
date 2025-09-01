@@ -124,22 +124,22 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3e745c5a1628e73eec437bf7f9ae5514" id="r_a3e745c5a1628e73eec437bf7f9ae5514"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1TheoryAssignment.html#a3e745c5a1628e73eec437bf7f9ae5514">TheoryAssignment</a> (<a class="el" href="group__c__theory.html#gaf5da757a590cdd9f8aad6f73af147e85">clingo_theory_t</a> <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">const</a> *<a class="el" href="group__cpp__solve.html#gga8d1dafece2032624dfa6085594de9d34aaf5443b3a2c16990166ab234f3bfb569">theory</a>, <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">uint32_t</a> thread_id)</td></tr>
+<tr class="memitem:a3e745c5a1628e73eec437bf7f9ae5514" id="r_a3e745c5a1628e73eec437bf7f9ae5514"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1TheoryAssignment.html#a3e745c5a1628e73eec437bf7f9ae5514">TheoryAssignment</a> (<a class="el" href="group__c__theory.html#gaf5da757a590cdd9f8aad6f73af147e85">clingo_theory_t</a> const *<a class="el" href="group__cpp__solve.html#gga8d1dafece2032624dfa6085594de9d34aaf5443b3a2c16990166ab234f3bfb569">theory</a>, uint32_t thread_id)</td></tr>
 <tr class="memdesc:a3e745c5a1628e73eec437bf7f9ae5514"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a theory assignment from its C representation and a thread id.  <br /></td></tr>
 <tr class="separator:a3e745c5a1628e73eec437bf7f9ae5514"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9f38b1aba7339547021540a060911c3" id="r_ab9f38b1aba7339547021540a060911c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">auto</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1TheoryAssignment.html#ab9f38b1aba7339547021540a060911c3">lookup</a> (<a class="el" href="classClingo_1_1Symbol.html">Symbol</a> <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">const</a> &amp;sym) <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">const</a> -&gt; std::optional&lt; <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">size_t</a> &gt;</td></tr>
+<tr class="memitem:ab9f38b1aba7339547021540a060911c3" id="r_ab9f38b1aba7339547021540a060911c3"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1TheoryAssignment.html#ab9f38b1aba7339547021540a060911c3">lookup</a> (<a class="el" href="classClingo_1_1Symbol.html">Symbol</a> const &amp;sym) const -&gt; std::optional&lt; size_t &gt;</td></tr>
 <tr class="memdesc:ab9f38b1aba7339547021540a060911c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lookup a symbol in the theory assignment.  <br /></td></tr>
 <tr class="separator:ab9f38b1aba7339547021540a060911c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b2b9ebbea36afbf7edebdf2c9c64e66" id="r_a3b2b9ebbea36afbf7edebdf2c9c64e66"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">auto</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1TheoryAssignment.html#a3b2b9ebbea36afbf7edebdf2c9c64e66">at</a> (<a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">size_t</a> index) <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">const</a> -&gt; std::pair&lt; <a class="el" href="classClingo_1_1Symbol.html">Symbol</a>, std::variant&lt; <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">int</a>, <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">double</a>, <a class="el" href="classClingo_1_1Symbol.html">Symbol</a> &gt; &gt;</td></tr>
+<tr class="memitem:a3b2b9ebbea36afbf7edebdf2c9c64e66" id="r_a3b2b9ebbea36afbf7edebdf2c9c64e66"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1TheoryAssignment.html#a3b2b9ebbea36afbf7edebdf2c9c64e66">at</a> (size_t index) const -&gt; std::pair&lt; <a class="el" href="classClingo_1_1Symbol.html">Symbol</a>, std::variant&lt; int, double, <a class="el" href="classClingo_1_1Symbol.html">Symbol</a> &gt; &gt;</td></tr>
 <tr class="memdesc:a3b2b9ebbea36afbf7edebdf2c9c64e66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the symbol value pair at the given index in the theory assignment.  <br /></td></tr>
 <tr class="separator:a3b2b9ebbea36afbf7edebdf2c9c64e66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3466073bec92f39ab711b13bff2d834b" id="r_a3466073bec92f39ab711b13bff2d834b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">auto</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1TheoryAssignment.html#a3466073bec92f39ab711b13bff2d834b">begin</a> () <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">const</a> -&gt; <a class="el" href="classClingo_1_1TheoryAssignment_1_1iterator.html">iterator</a></td></tr>
+<tr class="memitem:a3466073bec92f39ab711b13bff2d834b" id="r_a3466073bec92f39ab711b13bff2d834b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1TheoryAssignment.html#a3466073bec92f39ab711b13bff2d834b">begin</a> () const -&gt; <a class="el" href="classClingo_1_1TheoryAssignment_1_1iterator.html">iterator</a></td></tr>
 <tr class="memdesc:a3466073bec92f39ab711b13bff2d834b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an iterator pointing to the first element of the theory assignment.  <br /></td></tr>
 <tr class="separator:a3466073bec92f39ab711b13bff2d834b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a4be6d0bbda46de80e8ca6b3c435b47dd" id="r_a4be6d0bbda46de80e8ca6b3c435b47dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">static</a> <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">auto</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1TheoryAssignment.html#a4be6d0bbda46de80e8ca6b3c435b47dd">end</a> () -&gt; <a class="el" href="structClingo_1_1TheoryAssignment_1_1sentinel.html">sentinel</a></td></tr>
+<tr class="memitem:a4be6d0bbda46de80e8ca6b3c435b47dd" id="r_a4be6d0bbda46de80e8ca6b3c435b47dd"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1TheoryAssignment.html#a4be6d0bbda46de80e8ca6b3c435b47dd">end</a> () -&gt; <a class="el" href="structClingo_1_1TheoryAssignment_1_1sentinel.html">sentinel</a></td></tr>
 <tr class="memdesc:a4be6d0bbda46de80e8ca6b3c435b47dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get sentinel marking the end of the theory assignment.  <br /></td></tr>
 <tr class="separator:a4be6d0bbda46de80e8ca6b3c435b47dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -158,13 +158,13 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">Clingo::TheoryAssignment::TheoryAssignment </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__c__theory.html#gaf5da757a590cdd9f8aad6f73af147e85">clingo_theory_t</a> <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">const</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__c__theory.html#gaf5da757a590cdd9f8aad6f73af147e85">clingo_theory_t</a> const *&#160;</td>
           <td class="paramname"><em>theory</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">uint32_t</a>&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>thread_id</em>&#160;</td>
         </tr>
         <tr>
@@ -202,11 +202,11 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">auto</a> Clingo::TheoryAssignment::at </td>
+          <td class="memname">auto Clingo::TheoryAssignment::at </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
-          <td> const -&gt; std::pair&lt;<a class="el" href="classClingo_1_1Symbol.html">Symbol</a>, std::variant&lt;<a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">int</a>, <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">double</a>, <a class="el" href="classClingo_1_1Symbol.html">Symbol</a>&gt;&gt; </td>
+          <td> const -&gt; std::pair&lt;<a class="el" href="classClingo_1_1Symbol.html">Symbol</a>, std::variant&lt;int, double, <a class="el" href="classClingo_1_1Symbol.html">Symbol</a>&gt;&gt; </td>
         </tr>
       </table>
   </td>
@@ -237,7 +237,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">auto</a> Clingo::TheoryAssignment::begin </td>
+          <td class="memname">auto Clingo::TheoryAssignment::begin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const -&gt; <a class="el" href="classClingo_1_1TheoryAssignment_1_1iterator.html">iterator</a> </td>
@@ -265,7 +265,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">static</a> <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">auto</a> Clingo::TheoryAssignment::end </td>
+          <td class="memname">static auto Clingo::TheoryAssignment::end </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> -&gt; <a class="el" href="structClingo_1_1TheoryAssignment_1_1sentinel.html">sentinel</a> </td>
@@ -293,11 +293,11 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">auto</a> Clingo::TheoryAssignment::lookup </td>
+          <td class="memname">auto Clingo::TheoryAssignment::lookup </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classClingo_1_1Symbol.html">Symbol</a> <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">const</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classClingo_1_1Symbol.html">Symbol</a> const &amp;&#160;</td>
           <td class="paramname"><em>sym</em></td><td>)</td>
-          <td> const -&gt; std::optional&lt;<a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">size_t</a>&gt; </td>
+          <td> const -&gt; std::optional&lt;size_t&gt; </td>
         </tr>
       </table>
   </td>

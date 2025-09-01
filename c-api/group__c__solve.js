@@ -12,11 +12,13 @@ var group__c__solve =
     [ "clingo_solve_mode_bitset_t", "group__c__solve.html#gad429252492888205c9de9a295a724496", null ],
     [ "clingo_solve_result_bitset_t", "group__c__solve.html#ga631bec7df66648ef794fa6a1e9402130", null ],
     [ "clingo_solve_mode_e", "group__c__solve.html#ga63eb87834deebecdf9c799d64a3c65a2", [
+      [ "clingo_solve_mode_default", "group__c__solve.html#gga63eb87834deebecdf9c799d64a3c65a2aaaa338cec7a66764ce812737d6ca301a", null ],
       [ "clingo_solve_mode_async", "group__c__solve.html#gga63eb87834deebecdf9c799d64a3c65a2af5a772f277ce9f5bcc442502033ddee5", null ],
       [ "clingo_solve_mode_yield", "group__c__solve.html#gga63eb87834deebecdf9c799d64a3c65a2a60a9c133be636e68a7d02680c8b9d47e", null ],
       [ "clingo_solve_mode_lock", "group__c__solve.html#gga63eb87834deebecdf9c799d64a3c65a2a1b365fa26b7f01a71e8ca2716d7124d9", null ]
     ] ],
     [ "clingo_solve_result_e", "group__c__solve.html#ga152eeb260a8162fbf9bc432a1b912bc7", [
+      [ "clingo_solve_result_empty", "group__c__solve.html#gga152eeb260a8162fbf9bc432a1b912bc7a6ef1dfc011eb1a6d3847cd8ef2b8d9a5", null ],
       [ "clingo_solve_result_satisfiable", "group__c__solve.html#gga152eeb260a8162fbf9bc432a1b912bc7a18d55ddbfc94a31472a741d5b2b8b874", null ],
       [ "clingo_solve_result_unsatisfiable", "group__c__solve.html#gga152eeb260a8162fbf9bc432a1b912bc7aaa9f89813922a3a4f7ab1e35040bc2cf", null ],
       [ "clingo_solve_result_exhausted", "group__c__solve.html#gga152eeb260a8162fbf9bc432a1b912bc7a6f2d70dfaa05d13a2cc9f45bdca0b4a7", null ],

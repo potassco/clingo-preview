@@ -159,6 +159,13 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:gac1caa28c522d9720f942c513b480edc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration to select variables to project.  <a href="group__input__program.html#gac1caa28c522d9720f942c513b480edc4">More...</a><br /></td></tr>
 <tr class="separator:gac1caa28c522d9720f942c513b480edc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabd2ff48e7b974cbe4e813abb2e9cffc3" id="r_gabd2ff48e7b974cbe4e813abb2e9cffc3"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__input__program.html#gabd2ff48e7b974cbe4e813abb2e9cffc3">CppClingo::Input::ProfileFlags</a> : uint8_t { <a class="el" href="group__input__program.html#ggabd2ff48e7b974cbe4e813abb2e9cffc3a3262d48df5d75e3452f0f16b313b7808">ProfileFlags::off</a> = 0
+, <a class="el" href="group__input__program.html#ggabd2ff48e7b974cbe4e813abb2e9cffc3ae9ec7f4e74efce2a94f55ed09bab9fce">ProfileFlags::detailed</a> = 1
+, <a class="el" href="group__input__program.html#ggabd2ff48e7b974cbe4e813abb2e9cffc3a2764ca9d34e90313978d044f27ae433b">ProfileFlags::step</a> = 2
+, <a class="el" href="group__input__program.html#ggabd2ff48e7b974cbe4e813abb2e9cffc3a076602efe3af5d4fa2b47d8d3f8c8c1c">ProfileFlags::accu</a> = 4
+ }</td></tr>
+<tr class="memdesc:gabd2ff48e7b974cbe4e813abb2e9cffc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags to control how profiling information is output.  <a href="group__input__program.html#gabd2ff48e7b974cbe4e813abb2e9cffc3">More...</a><br /></td></tr>
+<tr class="separator:gabd2ff48e7b974cbe4e813abb2e9cffc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0f7c9c32244ca3f4bec475f3f4fbd284" id="r_ga0f7c9c32244ca3f4bec475f3f4fbd284"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__input__program.html#ga0f7c9c32244ca3f4bec475f3f4fbd284">CppClingo::Input::ComponentType</a> : uint8_t { <a class="el" href="group__input__program.html#gga0f7c9c32244ca3f4bec475f3f4fbd284a82082716189f80fd070b89ac716570ba">ComponentType::positive</a> = 1
 , <a class="el" href="group__input__program.html#gga0f7c9c32244ca3f4bec475f3f4fbd284ab9b5ff3d522a1398ce9dfc98029de04e">ComponentType::single_pass</a> = 2
  }</td></tr>
@@ -167,6 +174,10 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ga70cce535e30f6a61b946516eacc524a6" id="r_ga70cce535e30f6a61b946516eacc524a6"><td class="memItemLeft" align="right" valign="top"><a id="ga70cce535e30f6a61b946516eacc524a6" name="ga70cce535e30f6a61b946516eacc524a6"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::CLINGO_ENABLE_BITSET_ENUM</b> (<a class="el" href="group__input__program.html#gabd2ff48e7b974cbe4e813abb2e9cffc3">ProfileFlags</a>)</td></tr>
+<tr class="memdesc:ga70cce535e30f6a61b946516eacc524a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable bitset operations for ProfileFlags. <br /></td></tr>
+<tr class="separator:ga70cce535e30f6a61b946516eacc524a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6542387f51c52596c36130918e593d8e" id="r_ga6542387f51c52596c36130918e593d8e"><td class="memItemLeft" align="right" valign="top"><a id="ga6542387f51c52596c36130918e593d8e" name="ga6542387f51c52596c36130918e593d8e"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::CLINGO_ENABLE_BITSET_ENUM</b> (<a class="el" href="group__input__program.html#ga0f7c9c32244ca3f4bec475f3f4fbd284">ComponentType</a>)</td></tr>
 <tr class="memdesc:ga6542387f51c52596c36130918e593d8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate that the component type is a bitset. <br /></td></tr>
@@ -201,6 +212,40 @@ Functions</h2></td></tr>
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga0f7c9c32244ca3f4bec475f3f4fbd284a82082716189f80fd070b89ac716570ba" name="gga0f7c9c32244ca3f4bec475f3f4fbd284a82082716189f80fd070b89ac716570ba"></a>positive&#160;</td><td class="fielddoc"><p>The component does not contain a negative cycle. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga0f7c9c32244ca3f4bec475f3f4fbd284ab9b5ff3d522a1398ce9dfc98029de04e" name="gga0f7c9c32244ca3f4bec475f3f4fbd284ab9b5ff3d522a1398ce9dfc98029de04e"></a>single_pass&#160;</td><td class="fielddoc"><p>The component can be grounded in one pass. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="gabd2ff48e7b974cbe4e813abb2e9cffc3" name="gabd2ff48e7b974cbe4e813abb2e9cffc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabd2ff48e7b974cbe4e813abb2e9cffc3">&#9670;&#160;</a></span>ProfileFlags</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="group__input__program.html#gabd2ff48e7b974cbe4e813abb2e9cffc3">CppClingo::Input::ProfileFlags</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Flags to control how profiling information is output. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggabd2ff48e7b974cbe4e813abb2e9cffc3a3262d48df5d75e3452f0f16b313b7808" name="ggabd2ff48e7b974cbe4e813abb2e9cffc3a3262d48df5d75e3452f0f16b313b7808"></a>off&#160;</td><td class="fielddoc"><p>Disable profiling. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggabd2ff48e7b974cbe4e813abb2e9cffc3ae9ec7f4e74efce2a94f55ed09bab9fce" name="ggabd2ff48e7b974cbe4e813abb2e9cffc3ae9ec7f4e74efce2a94f55ed09bab9fce"></a>detailed&#160;</td><td class="fielddoc"><p>Output detailed profiling information. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggabd2ff48e7b974cbe4e813abb2e9cffc3a2764ca9d34e90313978d044f27ae433b" name="ggabd2ff48e7b974cbe4e813abb2e9cffc3a2764ca9d34e90313978d044f27ae433b"></a>step&#160;</td><td class="fielddoc"><p>Output profiling information for each step. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggabd2ff48e7b974cbe4e813abb2e9cffc3a076602efe3af5d4fa2b47d8d3f8c8c1c" name="ggabd2ff48e7b974cbe4e813abb2e9cffc3a076602efe3af5d4fa2b47d8d3f8c8c1c"></a>accu&#160;</td><td class="fielddoc"><p>Output accumulated profiling information. </p>
 </td></tr>
 </table>
 

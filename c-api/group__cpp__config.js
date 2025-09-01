@@ -17,6 +17,8 @@ var group__cpp__config =
     ] ],
     [ "Clingo::Config", "classClingo_1_1Config.html", [
       [ "Config", "classClingo_1_1Config.html#adf03efd91f982ab17bf21f5d4c2d5872", null ],
+      [ "add", "classClingo_1_1Config.html#a287d1577215d547db82a50e1e07fa118", null ],
+      [ "add", "classClingo_1_1Config.html#af19dc6af25a19f72665546c6493551ad", null ],
       [ "array", "group__cpp__config.html#ga492eacd18a034be52b0118b092898235", null ],
       [ "at", "group__cpp__config.html#ga63ca19704e03a0754dceccff9fd7ae7f", null ],
       [ "get", "group__cpp__config.html#ga3a89788fcc0eb4c7a1d98f1a1c5b23c3", null ],

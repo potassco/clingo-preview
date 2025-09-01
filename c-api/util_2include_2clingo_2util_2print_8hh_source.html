@@ -342,70 +342,86 @@ $(document).ready(function(){initNavTree('util_2include_2clingo_2util_2print_8hh
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>  <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    PrintQuoted(std::string_view str) : str_{str} {}</div>
 <div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Out&gt; <span class="keyword">friend</span> <span class="keyword">auto</span> <a class="code hl_function" href="group__core.html#ga4c90e3fb7b82b25abec3559296461d6c">operator&lt;&lt;</a>(Out &amp;out, PrintQuoted x) -&gt; Out &amp; {</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        <span class="comment">// TODO: in principle there are the codepoints too...</span></div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        out &lt;&lt; <span class="charliteral">&#39;&quot;&#39;</span>;</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> c : x.str_) {</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>            <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;\\&#39;</span>) {</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>                out &lt;&lt; <span class="stringliteral">&quot;\\\\&quot;</span>;</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;\n&#39;</span>) {</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>                out &lt;&lt; <span class="stringliteral">&quot;\\n&quot;</span>;</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;\t&#39;</span>) {</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>                out &lt;&lt; <span class="stringliteral">&quot;\\t&quot;</span>;</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;&quot;&#39;</span>) {</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>                out &lt;&lt; <span class="stringliteral">&quot;\\\&quot;&quot;</span>;</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>                out &lt;&lt; c;</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>            }</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        }</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        out &lt;&lt; <span class="charliteral">&#39;&quot;&#39;</span>;</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        <span class="keywordflow">return</span> out;</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    }</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> </div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>  <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    std::string_view str_;</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>};</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>} <span class="comment">// namespace Detail</span></div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span> </div>
-<div class="foldopen" id="foldopen00276" data-start="{" data-end="}">
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno"><a class="line" href="group__util__print.html#gac960c05a90343578671de326163175d0">  276</a></span><span class="keyword">template</span> &lt;<span class="keyword">class</span> F&gt; <span class="keyword">auto</span> <a class="code hl_function" href="group__util__print.html#gac960c05a90343578671de326163175d0">p_fun</a>(F &amp;&amp;fun) {</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    <span class="keywordflow">return</span> Detail::PrintFun(0, std::forward&lt;F&gt;(fun));</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>}</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        out &lt;&lt; <span class="charliteral">&#39;&quot;&#39;</span>;</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> c : x.str_) {</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>            <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;\\&#39;</span>) {</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>                out &lt;&lt; <span class="stringliteral">&quot;\\\\&quot;</span>;</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;\n&#39;</span>) {</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>                out &lt;&lt; <span class="stringliteral">&quot;\\n&quot;</span>;</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;\t&#39;</span>) {</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>                out &lt;&lt; <span class="stringliteral">&quot;\\t&quot;</span>;</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;&quot;&#39;</span>) {</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>                out &lt;&lt; <span class="stringliteral">&quot;\\\&quot;&quot;</span>;</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>                out &lt;&lt; c;</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>            }</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        }</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        out &lt;&lt; <span class="charliteral">&#39;&quot;&#39;</span>;</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        <span class="keywordflow">return</span> out;</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    }</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>  <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    std::string_view str_;</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>};</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span> </div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>} <span class="comment">// namespace Detail</span></div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
+<div class="foldopen" id="foldopen00275" data-start="{" data-end="};">
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno"><a class="line" href="classCppClingo_1_1Util_1_1fill.html">  275</a></span><span class="keyword">class </span><a class="code hl_class" href="classCppClingo_1_1Util_1_1fill.html">fill</a> {</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno"><a class="line" href="classCppClingo_1_1Util_1_1fill.html#a477ae93f935be3c72b6e2abbfbbc3888">  278</a></span>    <a class="code hl_function" href="classCppClingo_1_1Util_1_1fill.html#a477ae93f935be3c72b6e2abbfbbc3888">fill</a>(<span class="keywordtype">size_t</span> n, <span class="keywordtype">char</span> c = <span class="charliteral">&#39; &#39;</span>) : n_{n}, c_{c} {}</div>
+<div class="foldopen" id="foldopen00280" data-start="{" data-end="};">
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno"><a class="line" href="classCppClingo_1_1Util_1_1fill.html#affe2b2163f24cd706d18ede37828a71c">  280</a></span>    <span class="keyword">friend</span> <span class="keyword">auto</span> <a class="code hl_friend" href="classCppClingo_1_1Util_1_1fill.html#affe2b2163f24cd706d18ede37828a71c">operator&lt;&lt;</a>(<a class="code hl_class" href="classCppClingo_1_1Util_1_1OutputBuffer.html">CppClingo::Util::OutputBuffer</a> &amp;out, <a class="code hl_class" href="classCppClingo_1_1Util_1_1fill.html">fill</a> <span class="keyword">const</span> &amp;x) -&gt; <a class="code hl_class" href="classCppClingo_1_1Util_1_1OutputBuffer.html">CppClingo::Util::OutputBuffer</a> &amp; {</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        std::ranges::fill(out.reserve(<span class="keyword">static_cast&lt;</span>std::ptrdiff_t<span class="keyword">&gt;</span>(x.n_)), x.c_);</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        <span class="keywordflow">return</span> out;</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    }</div>
 </div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span> </div>
-<div class="foldopen" id="foldopen00281" data-start="{" data-end="}">
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno"><a class="line" href="group__util__print.html#gaffb489a280e94712d58fb8cd9a9ce75a">  281</a></span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keyword">class</span> F&gt; <span class="keyword">auto</span> <a class="code hl_function" href="group__util__print.html#gaffb489a280e94712d58fb8cd9a9ce75a">p_range</a>(T <span class="keyword">const</span> &amp;rng, <span class="keywordtype">char</span> <span class="keyword">const</span> *sep, F &amp;&amp;fun) {</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    <span class="keyword">using </span>std::begin, std::end;</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    <span class="keywordflow">return</span> Detail::PrintRange{begin(rng), end(rng), sep, std::forward&lt;F&gt;(fun)};</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>}</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    <span class="keywordtype">size_t</span> n_;</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    <span class="keywordtype">char</span> c_;</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>};</div>
 </div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span> </div>
-<div class="foldopen" id="foldopen00287" data-start="{" data-end="}">
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno"><a class="line" href="group__util__print.html#ga82b845f2a3e49bb8a9eb6dca30491e34">  287</a></span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; <span class="keyword">auto</span> <a class="code hl_function" href="group__util__print.html#gaffb489a280e94712d58fb8cd9a9ce75a">p_range</a>(T <span class="keyword">const</span> &amp;rng) {</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="group__util__print.html#gaffb489a280e94712d58fb8cd9a9ce75a">p_range</a>(rng, <span class="stringliteral">&quot;,&quot;</span>, Detail::PrintSelf{});</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>}</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
+<div class="foldopen" id="foldopen00291" data-start="{" data-end="}">
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno"><a class="line" href="group__util__print.html#gac960c05a90343578671de326163175d0">  291</a></span><span class="keyword">template</span> &lt;<span class="keyword">class</span> F&gt; <span class="keyword">auto</span> <a class="code hl_function" href="group__util__print.html#gac960c05a90343578671de326163175d0">p_fun</a>(F &amp;&amp;fun) {</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    <span class="keywordflow">return</span> Detail::PrintFun(0, std::forward&lt;F&gt;(fun));</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>}</div>
 </div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span> </div>
-<div class="foldopen" id="foldopen00292" data-start="{" data-end="}">
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno"><a class="line" href="group__util__print.html#ga5aa38bd984eef4ee01e31cdd837436a9">  292</a></span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keyword">class</span> F&gt; <span class="keyword">auto</span> <a class="code hl_function" href="group__util__print.html#gaffb489a280e94712d58fb8cd9a9ce75a">p_range</a>(T <span class="keyword">const</span> &amp;rng, F &amp;&amp;fun) {</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="group__util__print.html#gaffb489a280e94712d58fb8cd9a9ce75a">p_range</a>(rng, <span class="stringliteral">&quot;,&quot;</span>, std::forward&lt;F&gt;(fun));</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>}</div>
-</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span> </div>
-<div class="foldopen" id="foldopen00297" data-start="{" data-end="}">
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno"><a class="line" href="group__util__print.html#ga554bdd92f51360cf14d257fe2c1f9c0b">  297</a></span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; <span class="keyword">auto</span> <a class="code hl_function" href="group__util__print.html#gaffb489a280e94712d58fb8cd9a9ce75a">p_range</a>(T <span class="keyword">const</span> &amp;rng, <span class="keywordtype">char</span> <span class="keyword">const</span> *sep) {</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="group__util__print.html#gaffb489a280e94712d58fb8cd9a9ce75a">p_range</a>(rng, sep, Detail::PrintSelf{});</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span> </div>
+<div class="foldopen" id="foldopen00296" data-start="{" data-end="}">
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno"><a class="line" href="group__util__print.html#gaffb489a280e94712d58fb8cd9a9ce75a">  296</a></span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keyword">class</span> F&gt; <span class="keyword">auto</span> <a class="code hl_function" href="group__util__print.html#gaffb489a280e94712d58fb8cd9a9ce75a">p_range</a>(T <span class="keyword">const</span> &amp;rng, <span class="keywordtype">char</span> <span class="keyword">const</span> *sep, F &amp;&amp;fun) {</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    <span class="keyword">using </span>std::begin, std::end;</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    <span class="keywordflow">return</span> Detail::PrintRange{begin(rng), end(rng), sep, std::forward&lt;F&gt;(fun)};</div>
 <div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>}</div>
 </div>
 <div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span> </div>
 <div class="foldopen" id="foldopen00302" data-start="{" data-end="}">
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno"><a class="line" href="group__util__print.html#ga5c1e5f420f9baa4744370cb9795b8416">  302</a></span><span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code hl_function" href="group__util__print.html#ga5c1e5f420f9baa4744370cb9795b8416">p_quoted</a>(std::string_view str) {</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    <span class="keywordflow">return</span> Detail::PrintQuoted{str};</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno"><a class="line" href="group__util__print.html#ga82b845f2a3e49bb8a9eb6dca30491e34">  302</a></span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; <span class="keyword">auto</span> <a class="code hl_function" href="group__util__print.html#gaffb489a280e94712d58fb8cd9a9ce75a">p_range</a>(T <span class="keyword">const</span> &amp;rng) {</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="group__util__print.html#gaffb489a280e94712d58fb8cd9a9ce75a">p_range</a>(rng, <span class="stringliteral">&quot;,&quot;</span>, Detail::PrintSelf{});</div>
 <div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>}</div>
 </div>
 <div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span> </div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>} <span class="comment">// namespace CppClingo::Util</span></div>
+<div class="foldopen" id="foldopen00307" data-start="{" data-end="}">
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno"><a class="line" href="group__util__print.html#ga5aa38bd984eef4ee01e31cdd837436a9">  307</a></span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keyword">class</span> F&gt; <span class="keyword">auto</span> <a class="code hl_function" href="group__util__print.html#gaffb489a280e94712d58fb8cd9a9ce75a">p_range</a>(T <span class="keyword">const</span> &amp;rng, F &amp;&amp;fun) {</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="group__util__print.html#gaffb489a280e94712d58fb8cd9a9ce75a">p_range</a>(rng, <span class="stringliteral">&quot;,&quot;</span>, std::forward&lt;F&gt;(fun));</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>}</div>
+</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span> </div>
+<div class="foldopen" id="foldopen00312" data-start="{" data-end="}">
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno"><a class="line" href="group__util__print.html#ga554bdd92f51360cf14d257fe2c1f9c0b">  312</a></span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; <span class="keyword">auto</span> <a class="code hl_function" href="group__util__print.html#gaffb489a280e94712d58fb8cd9a9ce75a">p_range</a>(T <span class="keyword">const</span> &amp;rng, <span class="keywordtype">char</span> <span class="keyword">const</span> *sep) {</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="group__util__print.html#gaffb489a280e94712d58fb8cd9a9ce75a">p_range</a>(rng, sep, Detail::PrintSelf{});</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>}</div>
+</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span> </div>
+<div class="foldopen" id="foldopen00317" data-start="{" data-end="}">
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno"><a class="line" href="group__util__print.html#ga5c1e5f420f9baa4744370cb9795b8416">  317</a></span><span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code hl_function" href="group__util__print.html#ga5c1e5f420f9baa4744370cb9795b8416">p_quoted</a>(std::string_view str) {</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>    <span class="keywordflow">return</span> Detail::PrintQuoted{str};</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>}</div>
+</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span> </div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span> </div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>} <span class="comment">// namespace CppClingo::Util</span></div>
 <div class="ttc" id="aclassCppClingo_1_1Util_1_1OutputBuffer_html"><div class="ttname"><a href="classCppClingo_1_1Util_1_1OutputBuffer.html">CppClingo::Util::OutputBuffer</a></div><div class="ttdoc">Create an output buffer that bears some similarities with C++'s iostreams.</div><div class="ttdef"><b>Definition</b> print.hh:24</div></div>
 <div class="ttc" id="aclassCppClingo_1_1Util_1_1OutputBuffer_html_a0bc23feff6500b7fff65c8f91e647567"><div class="ttname"><a href="classCppClingo_1_1Util_1_1OutputBuffer.html#a0bc23feff6500b7fff65c8f91e647567">CppClingo::Util::OutputBuffer::size</a></div><div class="ttdeci">auto size() const -&gt; size_t</div><div class="ttdoc">Get the number of bytes currently stored in the buffer.</div><div class="ttdef"><b>Definition</b> print.hh:52</div></div>
 <div class="ttc" id="aclassCppClingo_1_1Util_1_1OutputBuffer_html_a17ceac47a7f78bbc71e68df7f4c963c3"><div class="ttname"><a href="classCppClingo_1_1Util_1_1OutputBuffer.html#a17ceac47a7f78bbc71e68df7f4c963c3">CppClingo::Util::OutputBuffer::release</a></div><div class="ttdeci">auto release() -&gt; std::vector&lt; char &gt;</div><div class="ttdoc">Empty the buffer and return a vector with the previous content.</div><div class="ttdef"><b>Definition</b> print.hh:78</div></div>
@@ -429,10 +445,13 @@ $(document).ready(function(){initNavTree('util_2include_2clingo_2util_2print_8hh
 <div class="ttc" id="aclassCppClingo_1_1Util_1_1OutputBuffer_html_ad17da15409d5fd33f9965b0527f5d305"><div class="ttname"><a href="classCppClingo_1_1Util_1_1OutputBuffer.html#ad17da15409d5fd33f9965b0527f5d305">CppClingo::Util::OutputBuffer::reset</a></div><div class="ttdeci">auto reset() -&gt; OutputBuffer &amp;</div><div class="ttdoc">Empty the buffer.</div><div class="ttdef"><b>Definition</b> print.hh:72</div></div>
 <div class="ttc" id="aclassCppClingo_1_1Util_1_1OutputBuffer_html_adea555152e1d4465eea6d579b301938d"><div class="ttname"><a href="classCppClingo_1_1Util_1_1OutputBuffer.html#adea555152e1d4465eea6d579b301938d">CppClingo::Util::OutputBuffer::append</a></div><div class="ttdeci">void append(T num)</div><div class="ttdoc">Append an integral to the buffer.</div><div class="ttdef"><b>Definition</b> print.hh:111</div></div>
 <div class="ttc" id="aclassCppClingo_1_1Util_1_1OutputBuffer_html_afe6c39c31b2029b8c2ee12cb0281a9fd"><div class="ttname"><a href="classCppClingo_1_1Util_1_1OutputBuffer.html#afe6c39c31b2029b8c2ee12cb0281a9fd">CppClingo::Util::OutputBuffer::append</a></div><div class="ttdeci">void append(char const *str)</div><div class="ttdoc">Append a string to the buffer.</div><div class="ttdef"><b>Definition</b> print.hh:88</div></div>
+<div class="ttc" id="aclassCppClingo_1_1Util_1_1fill_html"><div class="ttname"><a href="classCppClingo_1_1Util_1_1fill.html">CppClingo::Util::fill</a></div><div class="ttdoc">Helper for iostreams to fill with a fixed number of characters.</div><div class="ttdef"><b>Definition</b> print.hh:275</div></div>
+<div class="ttc" id="aclassCppClingo_1_1Util_1_1fill_html_a477ae93f935be3c72b6e2abbfbbc3888"><div class="ttname"><a href="classCppClingo_1_1Util_1_1fill.html#a477ae93f935be3c72b6e2abbfbbc3888">CppClingo::Util::fill::fill</a></div><div class="ttdeci">fill(size_t n, char c=' ')</div><div class="ttdoc">The constructor.</div><div class="ttdef"><b>Definition</b> print.hh:278</div></div>
+<div class="ttc" id="aclassCppClingo_1_1Util_1_1fill_html_affe2b2163f24cd706d18ede37828a71c"><div class="ttname"><a href="classCppClingo_1_1Util_1_1fill.html#affe2b2163f24cd706d18ede37828a71c">CppClingo::Util::fill::operator&lt;&lt;</a></div><div class="ttdeci">friend auto operator&lt;&lt;(CppClingo::Util::OutputBuffer &amp;out, fill const &amp;x) -&gt; CppClingo::Util::OutputBuffer &amp;</div><div class="ttdoc">Operator to print the fill helper.</div><div class="ttdef"><b>Definition</b> print.hh:280</div></div>
 <div class="ttc" id="agroup__core_html_ga4c90e3fb7b82b25abec3559296461d6c"><div class="ttname"><a href="group__core.html#ga4c90e3fb7b82b25abec3559296461d6c">CppClingo::operator&lt;&lt;</a></div><div class="ttdeci">auto operator&lt;&lt;(std::ostream &amp;out, Sign sign) -&gt; std::ostream &amp;</div><div class="ttdoc">Output the given sign.</div></div>
-<div class="ttc" id="agroup__util__print_html_ga5c1e5f420f9baa4744370cb9795b8416"><div class="ttname"><a href="group__util__print.html#ga5c1e5f420f9baa4744370cb9795b8416">CppClingo::Util::p_quoted</a></div><div class="ttdeci">auto p_quoted(std::string_view str)</div><div class="ttdoc">Quote and print the given string.</div><div class="ttdef"><b>Definition</b> print.hh:302</div></div>
-<div class="ttc" id="agroup__util__print_html_gac960c05a90343578671de326163175d0"><div class="ttname"><a href="group__util__print.html#gac960c05a90343578671de326163175d0">CppClingo::Util::p_fun</a></div><div class="ttdeci">auto p_fun(F &amp;&amp;fun)</div><div class="ttdoc">Print with a function.</div><div class="ttdef"><b>Definition</b> print.hh:276</div></div>
-<div class="ttc" id="agroup__util__print_html_gaffb489a280e94712d58fb8cd9a9ce75a"><div class="ttname"><a href="group__util__print.html#gaffb489a280e94712d58fb8cd9a9ce75a">CppClingo::Util::p_range</a></div><div class="ttdeci">auto p_range(T const &amp;rng, char const *sep, F &amp;&amp;fun)</div><div class="ttdoc">Print a range with a separator.</div><div class="ttdef"><b>Definition</b> print.hh:281</div></div>
+<div class="ttc" id="agroup__util__print_html_ga5c1e5f420f9baa4744370cb9795b8416"><div class="ttname"><a href="group__util__print.html#ga5c1e5f420f9baa4744370cb9795b8416">CppClingo::Util::p_quoted</a></div><div class="ttdeci">auto p_quoted(std::string_view str)</div><div class="ttdoc">Quote and print the given string.</div><div class="ttdef"><b>Definition</b> print.hh:317</div></div>
+<div class="ttc" id="agroup__util__print_html_gac960c05a90343578671de326163175d0"><div class="ttname"><a href="group__util__print.html#gac960c05a90343578671de326163175d0">CppClingo::Util::p_fun</a></div><div class="ttdeci">auto p_fun(F &amp;&amp;fun)</div><div class="ttdoc">Print with a function.</div><div class="ttdef"><b>Definition</b> print.hh:291</div></div>
+<div class="ttc" id="agroup__util__print_html_gaffb489a280e94712d58fb8cd9a9ce75a"><div class="ttname"><a href="group__util__print.html#gaffb489a280e94712d58fb8cd9a9ce75a">CppClingo::Util::p_range</a></div><div class="ttdeci">auto p_range(T const &amp;rng, char const *sep, F &amp;&amp;fun)</div><div class="ttdoc">Print a range with a separator.</div><div class="ttdef"><b>Definition</b> print.hh:296</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

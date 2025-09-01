@@ -1,9 +1,10 @@
 var structclingo__propagator =
 [
-    [ "check", "structclingo__propagator.html#a3a883ef32f49030ae701550bbdbcf4a0", null ],
-    [ "decide", "structclingo__propagator.html#acc8e2a5bc6f4f5839f2c12085be922b1", null ],
+    [ "attach", "structclingo__propagator.html#a1421565211e5fe569071b06abe145ebb", null ],
+    [ "check", "structclingo__propagator.html#acc8b628d1e55288fdb743f24aa1f56b4", null ],
+    [ "decide", "structclingo__propagator.html#ade78e1aa78e24e96f373e253ca1555e3", null ],
     [ "free", "structclingo__propagator.html#a2f31453fce91efadbec128cf119b2926", null ],
-    [ "init", "structclingo__propagator.html#a456c4c0e3ed629e8b548f7cc4fd830a1", null ],
-    [ "propagate", "structclingo__propagator.html#a666b871bab495a9e5904b6109c92feda", null ],
-    [ "undo", "structclingo__propagator.html#a5d6b913592f2664af6abe4ed4146ef8a", null ]
+    [ "init", "structclingo__propagator.html#aa940f99b798451541685dc47674e332d", null ],
+    [ "propagate", "structclingo__propagator.html#a49aa23e41e166e2ae70a1e4cba3205e1", null ],
+    [ "undo", "structclingo__propagator.html#ab2eb116bb25f10ee39147abef071e9cd", null ]
 ];

@@ -115,44 +115,44 @@ $(document).ready(function(){initNavTree('classClingo_1_1Options.html',''); init
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a29b0c1aa88d685cf015221c6e0c923b3" id="r_a29b0c1aa88d685cf015221c6e0c923b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Options.html#a29b0c1aa88d685cf015221c6e0c923b3">Parser</a> = std::function&lt; <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">bool</a>(std::string_view <a class="el" href="group__cpp__config.html#gga14b7804c314db5fccda3492d7fad52f2a2063c1608d6e0baf80249c42e2be5804">value</a>)&gt;</td></tr>
-<tr class="memdesc:a29b0c1aa88d685cf015221c6e0c923b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">An option parser.  <br /></td></tr>
-<tr class="separator:a29b0c1aa88d685cf015221c6e0c923b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0097ecc6c4d3239c4a617ddc0b7b51f" id="r_aa0097ecc6c4d3239c4a617ddc0b7b51f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Options.html#aa0097ecc6c4d3239c4a617ddc0b7b51f">Parser</a> = std::function&lt; void(std::string_view <a class="el" href="group__cpp__config.html#gga14b7804c314db5fccda3492d7fad52f2a2063c1608d6e0baf80249c42e2be5804">value</a>)&gt;</td></tr>
+<tr class="memdesc:aa0097ecc6c4d3239c4a617ddc0b7b51f"><td class="mdescLeft">&#160;</td><td class="mdescRight">An option parser.  <br /></td></tr>
+<tr class="separator:aa0097ecc6c4d3239c4a617ddc0b7b51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abea65191993131d69df40e5c85adbd82" id="r_abea65191993131d69df40e5c85adbd82"><td class="memItemLeft" align="right" valign="top"><a id="abea65191993131d69df40e5c85adbd82" name="abea65191993131d69df40e5c85adbd82"></a>
-<a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">using</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ParserList</b> = std::forward_list&lt; <a class="el" href="classClingo_1_1Options.html#a29b0c1aa88d685cf015221c6e0c923b3">Parser</a> &gt;</td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ParserList</b> = std::forward_list&lt; <a class="el" href="classClingo_1_1Options.html#aa0097ecc6c4d3239c4a617ddc0b7b51f">Parser</a> &gt;</td></tr>
 <tr class="memdesc:abea65191993131d69df40e5c85adbd82"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of option parsers. <br /></td></tr>
 <tr class="separator:abea65191993131d69df40e5c85adbd82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a97a6fee374d6f0ece37430e0146ef299" id="r_a97a6fee374d6f0ece37430e0146ef299"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Options.html#a97a6fee374d6f0ece37430e0146ef299">Options</a> (<a class="el" href="group__c__app.html#ga2b159cfef1bc326a9e25617095be39cf">clingo_options_t</a> *<a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">opts</a>, <a class="el" href="classClingo_1_1Options.html#abea65191993131d69df40e5c85adbd82">ParserList</a> &amp;parsers)</td></tr>
+<tr class="memitem:a97a6fee374d6f0ece37430e0146ef299" id="r_a97a6fee374d6f0ece37430e0146ef299"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Options.html#a97a6fee374d6f0ece37430e0146ef299">Options</a> (<a class="el" href="group__c__app.html#ga2b159cfef1bc326a9e25617095be39cf">clingo_options_t</a> *opts, <a class="el" href="classClingo_1_1Options.html#abea65191993131d69df40e5c85adbd82">ParserList</a> &amp;parsers)</td></tr>
 <tr class="memdesc:a97a6fee374d6f0ece37430e0146ef299"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an options object.  <br /></td></tr>
 <tr class="separator:a97a6fee374d6f0ece37430e0146ef299"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26ac70963533cc96311a793d9f70c657" id="r_a26ac70963533cc96311a793d9f70c657"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Options.html#a26ac70963533cc96311a793d9f70c657">add</a> (std::string_view <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">group</a>, std::string_view <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">option</a>, std::string_view description, <a class="el" href="classClingo_1_1Options.html#a29b0c1aa88d685cf015221c6e0c923b3">Parser</a> parser, <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">bool</a> <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">multi</a>=<a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">false</a>, std::optional&lt; std::string_view &gt; <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">argument</a>=std::nullopt)</td></tr>
+<tr class="memitem:a26ac70963533cc96311a793d9f70c657" id="r_a26ac70963533cc96311a793d9f70c657"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Options.html#a26ac70963533cc96311a793d9f70c657">add</a> (std::string_view group, std::string_view option, std::string_view description, <a class="el" href="classClingo_1_1Options.html#aa0097ecc6c4d3239c4a617ddc0b7b51f">Parser</a> parser, bool multi=false, std::optional&lt; std::string_view &gt; argument=std::nullopt)</td></tr>
 <tr class="memdesc:a26ac70963533cc96311a793d9f70c657"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an option that is processed with a custom parser.  <br /></td></tr>
 <tr class="separator:a26ac70963533cc96311a793d9f70c657"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae44f2973a02d0ea49e21a21ee99e98d0" id="r_ae44f2973a02d0ea49e21a21ee99e98d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Options.html#ae44f2973a02d0ea49e21a21ee99e98d0">add_flag</a> (std::string_view <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">group</a>, std::string_view <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">option</a>, std::string_view description, <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">bool</a> &amp;<a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">flag</a>)</td></tr>
+<tr class="memitem:ae44f2973a02d0ea49e21a21ee99e98d0" id="r_ae44f2973a02d0ea49e21a21ee99e98d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Options.html#ae44f2973a02d0ea49e21a21ee99e98d0">add_flag</a> (std::string_view group, std::string_view option, std::string_view description, bool &amp;flag)</td></tr>
 <tr class="memdesc:ae44f2973a02d0ea49e21a21ee99e98d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an option that is a simple flag.  <br /></td></tr>
 <tr class="separator:ae44f2973a02d0ea49e21a21ee99e98d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:ab3605bac53c9b667e739abdf99199a42" id="r_ab3605bac53c9b667e739abdf99199a42"><td class="memItemLeft" align="right" valign="top"><a id="ab3605bac53c9b667e739abdf99199a42" name="ab3605bac53c9b667e739abdf99199a42"></a>
-<a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">auto</a>&#160;</td><td class="memItemRight" valign="bottom"><b>c_cast</b> (<a class="el" href="classClingo_1_1Options.html">Options</a> <a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">const</a> &amp;x) -&gt; <a class="el" href="group__c__app.html#ga2b159cfef1bc326a9e25617095be39cf">clingo_options_t</a> *</td></tr>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>c_cast</b> (<a class="el" href="classClingo_1_1Options.html">Options</a> const &amp;x) -&gt; <a class="el" href="group__c__app.html#ga2b159cfef1bc326a9e25617095be39cf">clingo_options_t</a> *</td></tr>
 <tr class="memdesc:ab3605bac53c9b667e739abdf99199a42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the class to it's underlying C type. <br /></td></tr>
 <tr class="separator:ab3605bac53c9b667e739abdf99199a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Object to add command-line options. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a29b0c1aa88d685cf015221c6e0c923b3" name="a29b0c1aa88d685cf015221c6e0c923b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a29b0c1aa88d685cf015221c6e0c923b3">&#9670;&#160;</a></span>Parser</h2>
+<a id="aa0097ecc6c4d3239c4a617ddc0b7b51f" name="aa0097ecc6c4d3239c4a617ddc0b7b51f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0097ecc6c4d3239c4a617ddc0b7b51f">&#9670;&#160;</a></span>Parser</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">using</a> <a class="el" href="classClingo_1_1Options.html#a29b0c1aa88d685cf015221c6e0c923b3">Clingo::Options::Parser</a> =  std::function&lt;<a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">bool</a>(std::string_view <a class="el" href="group__cpp__config.html#gga14b7804c314db5fccda3492d7fad52f2a2063c1608d6e0baf80249c42e2be5804">value</a>)&gt;</td>
+          <td class="memname">using <a class="el" href="classClingo_1_1Options.html#aa0097ecc6c4d3239c4a617ddc0b7b51f">Clingo::Options::Parser</a> =  std::function&lt;void(std::string_view <a class="el" href="group__cpp__config.html#gga14b7804c314db5fccda3492d7fad52f2a2063c1608d6e0baf80249c42e2be5804">value</a>)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -220,7 +220,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">void</a> Clingo::Options::add </td>
+          <td class="memname">void Clingo::Options::add </td>
           <td>(</td>
           <td class="paramtype">std::string_view&#160;</td>
           <td class="paramname"><em>group</em>, </td>
@@ -240,14 +240,14 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classClingo_1_1Options.html#a29b0c1aa88d685cf015221c6e0c923b3">Parser</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classClingo_1_1Options.html#aa0097ecc6c4d3239c4a617ddc0b7b51f">Parser</a>&#160;</td>
           <td class="paramname"><em>parser</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">bool</a>&#160;</td>
-          <td class="paramname"><em>multi</em> = <code><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">false</a></code>, </td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>multi</em> = <code>false</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -295,7 +295,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">void</a> Clingo::Options::add_flag </td>
+          <td class="memname">void Clingo::Options::add_flag </td>
           <td>(</td>
           <td class="paramtype">std::string_view&#160;</td>
           <td class="paramname"><em>group</em>, </td>
@@ -315,7 +315,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3a0636f7c1e41a18679ab958368587c630">bool</a> &amp;&#160;</td>
+          <td class="paramtype">bool &amp;&#160;</td>
           <td class="paramname"><em>flag</em>&#160;</td>
         </tr>
         <tr>

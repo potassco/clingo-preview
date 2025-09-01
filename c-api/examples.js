@@ -9,6 +9,7 @@ var examples =
     [ "control.c", "control_8c-example.html", null ],
     [ "version.c", "version_8c-example.html", null ],
     [ "model.c", "model_8c-example.html", null ],
+    [ "profile.c", "profile_8c-example.html", null ],
     [ "propagate.c", "propagate_8c-example.html", null ],
     [ "solve.c", "solve_8c-example.html", null ],
     [ "stats.c", "stats_8c-example.html", null ],

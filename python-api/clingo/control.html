@@ -96,6 +96,9 @@
                                 <a class="variable" href="#Control.parts">parts</a>
                         </li>
                         <li>
+                                <a class="variable" href="#Control.profile">profile</a>
+                        </li>
+                        <li>
                                 <a class="variable" href="#Control.stats">stats</a>
                         </li>
                 </ul>
@@ -623,6 +626,25 @@ for existing files.</p>
     <a class="headerlink" href="#Control.parts"></a>
     
             <div class="docstring"><p>Get/set the program parts to ground.</p>
+</div>
+
+
+                            </div>
+                            <div id="Control.profile" class="classattr">
+                                <div class="attr variable">
+            <span class="name">profile</span><span class="annotation">: list</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Control.profile"></a>
+    
+            <div class="docstring"><p>Get the profiling information as a list of profile nodes.</p>
+
+<p>Each node is a dictionary with keys such as "type", "key", "depth", "nested",
+"children", etc. Returns a list of top-level profile nodes representing the
+profiling tree.</p>
+
+<p>The result is directly convertible to JSON using Python's <code>json</code> module.</p>
 </div>
 
 

@@ -131,11 +131,12 @@ constexpr&#160;</td><td class="memItemRight" valign="bottom"><b>immutable_value<
 constexpr&#160;</td><td class="memItemRight" valign="bottom"><b>immutable_value</b> (std::nullptr_t) noexcept</td></tr>
 <tr class="memdesc:aa70f20e00a7afea625988fea7687fc81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly construct a null pointer. <br /></td></tr>
 <tr class="separator:aa70f20e00a7afea625988fea7687fc81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5a679a9ad6fc6db3cd6d1f648d83ce4" id="r_ab5a679a9ad6fc6db3cd6d1f648d83ce4"><td class="memTemplParams" colspan="2"><a id="ab5a679a9ad6fc6db3cd6d1f648d83ce4" name="ab5a679a9ad6fc6db3cd6d1f648d83ce4"></a>
-template&lt;class U &gt; </td></tr>
-<tr class="memitem:ab5a679a9ad6fc6db3cd6d1f648d83ce4"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>immutable_value</b> (U &amp;&amp;value)</td></tr>
-<tr class="memdesc:ab5a679a9ad6fc6db3cd6d1f648d83ce4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a value. <br /></td></tr>
-<tr class="separator:ab5a679a9ad6fc6db3cd6d1f648d83ce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6fb481ccdf2ea993688d50fee8ccf3c" id="r_af6fb481ccdf2ea993688d50fee8ccf3c"><td class="memTemplParams" colspan="2"><a id="af6fb481ccdf2ea993688d50fee8ccf3c" name="af6fb481ccdf2ea993688d50fee8ccf3c"></a>
+template&lt;class U &gt; <br />
+requires (!std::same_as&lt;std::remove_cvref_t&lt;U&gt;, <a class="el" href="classCppClingo_1_1Util_1_1immutable__value.html">immutable_value</a>&gt;)</td></tr>
+<tr class="memitem:af6fb481ccdf2ea993688d50fee8ccf3c"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>immutable_value</b> (U &amp;&amp;value)</td></tr>
+<tr class="memdesc:af6fb481ccdf2ea993688d50fee8ccf3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a value. <br /></td></tr>
+<tr class="separator:af6fb481ccdf2ea993688d50fee8ccf3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f15df16c3adad89f78804679881e380" id="r_a8f15df16c3adad89f78804679881e380"><td class="memTemplParams" colspan="2"><a id="a8f15df16c3adad89f78804679881e380" name="a8f15df16c3adad89f78804679881e380"></a>
 template&lt;class... Args&gt; </td></tr>
 <tr class="memitem:a8f15df16c3adad89f78804679881e380"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>immutable_value</b> (std::in_place_t tag, Args &amp;&amp;...args)</td></tr>

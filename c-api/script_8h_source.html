@@ -110,13 +110,13 @@ $(document).ready(function(){initNavTree('script_8h_source.html',''); initResiza
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef CLINGO_SCRIPT_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define CLINGO_SCRIPT_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;clingo/control.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;clingo/core.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;clingo/symbol.h&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;clingo/control.h&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;clingo/core.h&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;clingo/symbol.h&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
@@ -141,8 +141,8 @@ $(document).ready(function(){initNavTree('script_8h_source.html',''); initResiza
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="agroup__c__core_html_ga55d91caa8f1b3bbb375e9e8741616088"><div class="ttname"><a href="group__c__core.html#ga55d91caa8f1b3bbb375e9e8741616088">clingo_lib_t</a></div><div class="ttdeci">struct clingo_lib clingo_lib_t</div><div class="ttdoc">A library object storing global information.</div><div class="ttdef"><b>Definition</b> core.h:176</div></div>
-<div class="ttc" id="agroup__c__core_html_ga571fc9a06d35671fd38b134b4e502633"><div class="ttname"><a href="group__c__core.html#ga571fc9a06d35671fd38b134b4e502633">clingo_location_t</a></div><div class="ttdeci">struct clingo_location clingo_location_t</div><div class="ttdoc">Represents a source code location marking its beginning and end.</div><div class="ttdef"><b>Definition</b> core.h:359</div></div>
+<div class="ttc" id="agroup__c__core_html_ga55d91caa8f1b3bbb375e9e8741616088"><div class="ttname"><a href="group__c__core.html#ga55d91caa8f1b3bbb375e9e8741616088">clingo_lib_t</a></div><div class="ttdeci">struct clingo_lib clingo_lib_t</div><div class="ttdoc">A library object storing global information.</div><div class="ttdef"><b>Definition</b> core.h:171</div></div>
+<div class="ttc" id="agroup__c__core_html_ga571fc9a06d35671fd38b134b4e502633"><div class="ttname"><a href="group__c__core.html#ga571fc9a06d35671fd38b134b4e502633">clingo_location_t</a></div><div class="ttdeci">struct clingo_location clingo_location_t</div><div class="ttdoc">Represents a source code location marking its beginning and end.</div><div class="ttdef"><b>Definition</b> core.h:354</div></div>
 <div class="ttc" id="agroup__c__script_html_ga12291b8ae5e5c67fe89d9a091b634e1b"><div class="ttname"><a href="group__c__script.html#ga12291b8ae5e5c67fe89d9a091b634e1b">clingo_script_t</a></div><div class="ttdeci">struct clingo_script clingo_script_t</div><div class="ttdoc">Custom scripting language to run functions during grounding.</div></div>
 <div class="ttc" id="agroup__c__script_html_gacd544344f226756f3b50622ab07b5d00"><div class="ttname"><a href="group__c__script.html#gacd544344f226756f3b50622ab07b5d00">clingo_script_register</a></div><div class="ttdeci">CLINGO_VISIBILITY_DEFAULT bool clingo_script_register(clingo_lib_t *lib, clingo_script_t const *script, void *data)</div><div class="ttdoc">Add a custom scripting language to a control object.</div></div>
 <div class="ttc" id="agroup__c__symbol_html_ga2b90cb7057487f8ad261a42bc0977d60"><div class="ttname"><a href="group__c__symbol.html#ga2b90cb7057487f8ad261a42bc0977d60">clingo_symbol_callback_t</a></div><div class="ttdeci">bool(* clingo_symbol_callback_t)(clingo_symbol_t const *symbols, size_t symbols_size, void *data)</div><div class="ttdoc">Callback function to inject symbols.</div><div class="ttdef"><b>Definition</b> symbol.h:60</div></div>
@@ -155,7 +155,7 @@ $(document).ready(function(){initNavTree('script_8h_source.html',''); initResiza
 <div class="ttc" id="astructclingo__script_html_a65df01ad1165f6a5a50d0046404fccdf"><div class="ttname"><a href="structclingo__script.html#a65df01ad1165f6a5a50d0046404fccdf">clingo_script::execute</a></div><div class="ttdeci">bool(* execute)(char const *code, size_t size, void *data)</div><div class="ttdoc">Evaluate the given source code.</div><div class="ttdef"><b>Definition</b> script.h:23</div></div>
 <div class="ttc" id="astructclingo__script_html_a799c9eb56b4672735286b2e3bb9443cc"><div class="ttname"><a href="structclingo__script.html#a799c9eb56b4672735286b2e3bb9443cc">clingo_script::free</a></div><div class="ttdeci">void(* free)(void *data)</div><div class="ttdoc">This function is called once when the script is deleted.</div><div class="ttdef"><b>Definition</b> script.h:56</div></div>
 <div class="ttc" id="astructclingo__script_html_abcc4d09334a01434df672e963ea52f0e"><div class="ttname"><a href="structclingo__script.html#abcc4d09334a01434df672e963ea52f0e">clingo_script::main</a></div><div class="ttdeci">bool(* main)(clingo_lib_t *lib, clingo_control_t *control, void *data)</div><div class="ttdoc">Run the main function.</div><div class="ttdef"><b>Definition</b> script.h:47</div></div>
-<div class="ttc" id="astructclingo__string_html"><div class="ttname"><a href="structclingo__string.html">clingo_string</a></div><div class="ttdoc">Struct to capture strings that are not null-terminated.</div><div class="ttdef"><b>Definition</b> core.h:91</div></div>
+<div class="ttc" id="astructclingo__string_html"><div class="ttname"><a href="structclingo__string.html">clingo_string</a></div><div class="ttdoc">Struct to capture strings that are not null-terminated.</div><div class="ttdef"><b>Definition</b> core.h:86</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

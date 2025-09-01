@@ -9,6 +9,7 @@ var group__c__control =
     [ "Solver Configuration", "group__c__config.html", "group__c__config" ],
     [ "Statistics", "group__c__stats.html", "group__c__stats" ],
     [ "Theory Propagation", "group__c__propagate.html", "group__c__propagate" ],
+    [ "Profile Grounding", "group__c__profile.html", "group__c__profile" ],
     [ "clingo_part", "structclingo__part.html", [
       [ "name", "structclingo__part.html#a1fc1ac9371d6974212731c0f1a29cccb", null ],
       [ "name_size", "structclingo__part.html#ad6859e04a4006bdfcd4bc514bca23cba", null ],

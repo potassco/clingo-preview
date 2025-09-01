@@ -2,7 +2,7 @@ var searchData=
 [
   ['sat_0',['sat',['../group__control.html#gga435f05e0701f6918bfaa38a92221809ca53e8254b3222a33f42b5a6b3d156056c',1,'CppClingo::Control']]],
   ['satisfiable_1',['satisfiable',['../group__control.html#ggaa0093c6cf15fb4085eaf65e2a9e4908da57ca29f73c8be442863a1bd199e5ab0c',1,'CppClingo::Control']]],
-  ['set_2',['set',['../group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3acdaeeeba9b4a4c5ebf042c0215a7bb0e',1,'setClingo'],['../group__cpp__base.html#gga77490795fab59524ca5534916b4428faacdaeeeba9b4a4c5ebf042c0215a7bb0e',1,'setClingo']]],
+  ['set_2',['set',['../group__cpp__backend.html#gga04e6df2ac5df1d1a43f5a6a110c1c0c3acdaeeeba9b4a4c5ebf042c0215a7bb0e',1,'setClingo'],['../group__cpp__base.html#gga77490795fab59524ca5534916b4428faacdaeeeba9b4a4c5ebf042c0215a7bb0e',1,'setClingo'],['../classCppClingo_1_1Control_1_1ClingoConfig.html#a4000fa9c8b4d408755ba1ecaa16a0408acdaeeeba9b4a4c5ebf042c0215a7bb0e',1,'CppClingo::Control::ClingoConfig::set']]],
   ['shared_3',['shared',['../group__cpp__core.html#gga3d4f2b051f3b971dc020db53091f6da4a9e81e7b963c71363e2fb3eefcfecfc0e',1,'Clingo']]],
   ['shown_4',['shown',['../group__control.html#gga4eff488dacd0394bbdbd1f4b15f38343a3fdec1ddf038c12af81ea185ed8c8083',1,'shownCppClingo::Control'],['../group__cpp__solve.html#gga8d1dafece2032624dfa6085594de9d34a3fdec1ddf038c12af81ea185ed8c8083',1,'shownClingo']]],
   ['sig_5',['sig',['../group__input__analyze.html#gga20b704ed5b50300ad4ed6fe99d927de5a3311842a74c4736836a29eefbc1ea464',1,'CppClingo::Input']]],
@@ -13,10 +13,11 @@ var searchData=
   ['solve_10',['solve',['../group__control.html#gga542a6445871beb19ed9da9253925d615aa6d7ccb276ae142a8814d71751908bce',1,'solveCppClingo::Control'],['../group__cpp__control.html#gga702af514f321bd741ddeb074bc8f7107aa6d7ccb276ae142a8814d71751908bce',1,'solveClingo']]],
   ['stable_5fmodel_11',['stable_model',['../group__cpp__solve.html#gga94fd766b10b644181dd355c4b48e897aa6cce8543304f7ccbe5e4add93187822d',1,'Clingo']]],
   ['statement_12',['statement',['../group__cpp__ast.html#gga92fda7a179b8c7d80b9146e409e1bd8ba4245bf56d28f22197a4b30b46c809626',1,'Clingo::AST']]],
-  ['string_13',['string',['../group__cpp__symbol.html#ggacd72cb64fde6890c67281376f8458b3aab45cffe084dd3d20d928bee85e7b0f21',1,'Clingo']]],
-  ['sum_14',['sum',['../group__core.html#ggaecaa8b35eff7e55a148b48f1ffb9569ba1d623b89683f9ce4e074de1676d12416',1,'CppClingo']]],
-  ['sump_15',['sump',['../group__core.html#ggaecaa8b35eff7e55a148b48f1ffb9569baf50bea1c7f31f95979bb1d222e70a50c',1,'CppClingo']]],
-  ['supremum_16',['supremum',['../group__cpp__symbol.html#ggacd72cb64fde6890c67281376f8458b3aa75db85cbc1d0287f38b616a65f677355',1,'Clingo']]],
-  ['symbol_17',['symbol',['../group__cpp__base.html#gga77490795fab59524ca5534916b4428faa97bff26855a8bfa63e05d5477e794b24',1,'Clingo']]],
-  ['symbols_18',['symbols',['../group__cpp__control.html#gga4105f64f8259bab344ace2f5bf794af8a5503577415fc1d8d6b3818212a1745bc',1,'Clingo']]]
+  ['step_13',['step',['../group__input__program.html#ggabd2ff48e7b974cbe4e813abb2e9cffc3a2764ca9d34e90313978d044f27ae433b',1,'stepCppClingo::Input'],['../group__ground__instantiator.html#gga023bb51dd4466e2dce631c4d7e0b9876a2764ca9d34e90313978d044f27ae433b',1,'stepCppClingo::Ground'],['../group__cpp__control.html#gga84232f849ebaea181e7c6a185f3470aba2764ca9d34e90313978d044f27ae433b',1,'stepClingo']]],
+  ['string_14',['string',['../group__cpp__symbol.html#ggacd72cb64fde6890c67281376f8458b3aab45cffe084dd3d20d928bee85e7b0f21',1,'Clingo']]],
+  ['sum_15',['sum',['../group__core.html#ggaecaa8b35eff7e55a148b48f1ffb9569ba1d623b89683f9ce4e074de1676d12416',1,'CppClingo']]],
+  ['sump_16',['sump',['../group__core.html#ggaecaa8b35eff7e55a148b48f1ffb9569baf50bea1c7f31f95979bb1d222e70a50c',1,'CppClingo']]],
+  ['supremum_17',['supremum',['../group__cpp__symbol.html#ggacd72cb64fde6890c67281376f8458b3aa75db85cbc1d0287f38b616a65f677355',1,'Clingo']]],
+  ['symbol_18',['symbol',['../group__cpp__base.html#gga77490795fab59524ca5534916b4428faa97bff26855a8bfa63e05d5477e794b24',1,'Clingo']]],
+  ['symbols_19',['symbols',['../group__cpp__control.html#gga4105f64f8259bab344ace2f5bf794af8a5503577415fc1d8d6b3818212a1745bc',1,'Clingo']]]
 ];

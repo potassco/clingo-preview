@@ -48,22 +48,23 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"classClingo_1_1ConstStatsArray.html#ad77e7e4ff20f6a4598894109910c1f65",
-"classClingo_1_1StatsMap.html#aaa45185545865f31b67f6cea01128edd",
-"classCppClingo_1_1Control_1_1Scripts.html",
-"classCppClingo_1_1Ground_1_1GenerationCounts.html#af176b17a3885bdda24023f4608560d8d",
-"classCppClingo_1_1Ground_1_1StateCondLit.html#ae4cb7f232c4d44c18da61bc379e52476",
-"classCppClingo_1_1Input_1_1LinearTerm.html",
-"classCppClingo_1_1Input_1_1TermVariable.html#a256f4a5af6fef63f19fc297acfca151e",
-"classCppClingo_1_1OutputTheory.html",
-"classCppClingo_1_1Util_1_1enumerate_3_01T_01_4.html#a8201378d0abfcc059085b90f348317e1",
-"functions_type_m.html",
-"group__c__core.html#gaea86b8f5e2a39790f4b1ddc0c5379fc4",
-"group__c__symbol.html#gga6a10b046b6426fd2955dfa72e266faabaa67c716e8002666c3fb216fc8358041d",
-"group__cpp__config.html#ga14b7804c314db5fccda3492d7fad52f2",
-"group__ground__term.html#ga88d7fb66ef78fd5bed25dc979a2d71ab",
-"group__input__print.html#gaf7d9d8415fa50b99344f53a39600dfeb",
-"group__util__optional.html#ga5c47701c62448d907102f43dc708ac3f"
+"classClingo_1_1ConstStatsArray.html#a97503a9944dc8df19c934f2e7dbb7c4f",
+"classClingo_1_1StatsMap.html#a8476525ca20da5486f6817bfb64d4a13",
+"classCppClingo_1_1Control_1_1Grounder.html#a755048735bcca679b730c1bbc0f332d7",
+"classCppClingo_1_1Ground_1_1BaseHdAggr.html#aa149b09f126fa484ced3c3b5a433d08d",
+"classCppClingo_1_1Ground_1_1StateAssignAggr.html#af5770c21db330546dc8bfbcdb6e207cf",
+"classCppClingo_1_1Input_1_1BdLitConjunction.html#ae729132e2c77fefdf6d613ee38b58b3c",
+"classCppClingo_1_1Input_1_1StmRule.html",
+"classCppClingo_1_1Number.html#abc9ac23cb86cc98a1c148d2db95d4d6f",
+"classCppClingo_1_1Util_1_1Graph.html#ad574f2fb8f6a6b8bdee39040a7156059",
+"conceptCppClingo_1_1Util_1_1iterable.html",
+"group__c__control.html#ga54822638b1c4ba243a08b176a91f0233",
+"group__c__solve.html#ga3ca184768ef788ca10f0f76bb7ad1353",
+"group__core__symbol.html",
+"group__ground__base.html#gaa2f0cfc97598bd641323f6cf2352c346",
+"group__input__print.html#ga479f9cd9ba277d1257a7d3925e21f316",
+"group__input__visit__variables.html#ga67bd57dc50279f305fe196f36a17d4e0",
+"structCppClingo_1_1Util_1_1value__equal__to.html#a6ab05fc8eb291e82a4ed115663b89166"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

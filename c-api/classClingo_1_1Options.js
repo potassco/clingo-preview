@@ -1,6 +1,6 @@
 var classClingo_1_1Options =
 [
-    [ "Parser", "classClingo_1_1Options.html#a29b0c1aa88d685cf015221c6e0c923b3", null ],
+    [ "Parser", "classClingo_1_1Options.html#aa0097ecc6c4d3239c4a617ddc0b7b51f", null ],
     [ "ParserList", "classClingo_1_1Options.html#abea65191993131d69df40e5c85adbd82", null ],
     [ "Options", "classClingo_1_1Options.html#a97a6fee374d6f0ece37430e0146ef299", null ],
     [ "add", "classClingo_1_1Options.html#a26ac70963533cc96311a793d9f70c657", null ],

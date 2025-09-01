@@ -23,6 +23,7 @@ var classClingo_1_1Control =
     [ "parts", "classClingo_1_1Control.html#a43b1ba1fee9b3edba4c0c6b3e9810f20", null ],
     [ "parts", "classClingo_1_1Control.html#a6f721f3841de1e04baa3f81d6bbef74a", null ],
     [ "parts", "classClingo_1_1Control.html#a0d1a210bf2fdfe18e8383a192203a132", null ],
+    [ "profile", "classClingo_1_1Control.html#af1ed6de6eace4fb6e94b1ec83ab8e571", null ],
     [ "register_propagator", "classClingo_1_1Control.html#a54105664e2973da8c683ee76e4a27446", null ],
     [ "solve", "classClingo_1_1Control.html#a4e3496bc5ddf62a413821c0fd4a50b5b", null ],
     [ "solve", "classClingo_1_1Control.html#ab2bbc5dcb1c994af5a627e279ce6ab00", null ],

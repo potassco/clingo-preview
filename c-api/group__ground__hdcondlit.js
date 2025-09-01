@@ -41,10 +41,10 @@ var group__ground__hdcondlit =
       [ "symbols", "classCppClingo_1_1Ground_1_1StateDisjunction.html#a67f757c40df8ceed8f68d13ceb967688", null ]
     ] ],
     [ "CppClingo::Ground::StmDisjunction", "classCppClingo_1_1Ground_1_1StmDisjunction.html", [
-      [ "StmDisjunction", "classCppClingo_1_1Ground_1_1StmDisjunction.html#a286135a9f9f637903ad5d94702e195d9", null ]
+      [ "StmDisjunction", "classCppClingo_1_1Ground_1_1StmDisjunction.html#a5508af068927d2596afb3551b8df4d8b", null ]
     ] ],
     [ "CppClingo::Ground::StmDisjunctionElem", "classCppClingo_1_1Ground_1_1StmDisjunctionElem.html", [
-      [ "StmDisjunctionElem", "classCppClingo_1_1Ground_1_1StmDisjunctionElem.html#a75863b3570ddc50ff93cc637f0c52d39", null ]
+      [ "StmDisjunctionElem", "classCppClingo_1_1Ground_1_1StmDisjunctionElem.html#a9daf9ce4d13378a46cd3786554890292", null ]
     ] ],
     [ "CppClingo::Ground::MatchDisjunction", "classCppClingo_1_1Ground_1_1MatchDisjunction.html", [
       [ "Key", "classCppClingo_1_1Ground_1_1MatchDisjunction.html#a30f142b1ef085eb02b4a325cfbf40d18", null ],

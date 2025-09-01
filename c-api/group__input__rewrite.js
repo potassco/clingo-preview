@@ -105,7 +105,7 @@ var group__input__rewrite =
     ] ],
     [ "CppClingo::Input::add_term", "group__input__rewrite.html#gaab38cc4d18fccb18172aa8c27909e599", null ],
     [ "CppClingo::Input::analyze", "group__input__rewrite.html#ga8c497ebdace144400493fd4836e09ccd", null ],
-    [ "CppClingo::Input::analyze", "group__input__rewrite.html#gab96735d9b49dbdfbd530029d9e5fb3b9", null ],
+    [ "CppClingo::Input::analyze", "group__input__rewrite.html#gafec0d8d6d158f0727ed0f94c15b04566", null ],
     [ "CppClingo::Input::check_safety", "group__input__rewrite.html#ga01654f418f7d06401d29f76de946fb93", null ],
     [ "CppClingo::Input::CLINGO_ENABLE_BITSET_ENUM", "group__input__rewrite.html#gaf3156979f242b85ddcf5bf8408434a26", null ],
     [ "CppClingo::Input::CLINGO_ENABLE_BITSET_ENUM", "group__input__rewrite.html#ga797fa858e3bc614c0e2b575320b1c720", null ],

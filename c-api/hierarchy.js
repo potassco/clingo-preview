@@ -298,9 +298,12 @@ var hierarchy =
     [ "CppClingo::Control::CallbackLock", "classCppClingo_1_1Control_1_1CallbackLock.html", null ],
     [ "CppClingo::Input::CheckTypeResult", "structCppClingo_1_1Input_1_1CheckTypeResult.html", null ],
     [ "clingo_application", "structclingo__application.html", null ],
+    [ "clingo_config_entry", "structclingo__config__entry.html", null ],
     [ "clingo_logger", "structclingo__logger.html", null ],
     [ "clingo_observer", "structclingo__observer.html", null ],
     [ "clingo_part", "structclingo__part.html", null ],
+    [ "clingo_profile_data", "structclingo__profile__data.html", null ],
+    [ "clingo_profile_visitor", "structclingo__profile__visitor.html", null ],
     [ "clingo_propagator", "structclingo__propagator.html", null ],
     [ "clingo_script", "structclingo__script.html", null ],
     [ "clingo_signature", "structclingo__signature.html", null ],
@@ -309,6 +312,7 @@ var hierarchy =
     [ "clingo_theory", "structclingo__theory.html", null ],
     [ "clingo_theory_value", "structclingo__theory__value.html", null ],
     [ "clingo_weighted_literal", "structclingo__weighted__literal.html", null ],
+    [ "CppClingo::Control::ClingoConfig", "classCppClingo_1_1Control_1_1ClingoConfig.html", null ],
     [ "CppClingo::Ground::Component", "classCppClingo_1_1Ground_1_1Component.html", null ],
     [ "CppClingo::Input::Component", "structCppClingo_1_1Input_1_1Component.html", null ],
     [ "std::conditional_t", null, [
@@ -343,9 +347,14 @@ var hierarchy =
     [ "CppClingo::Ground::StateBdAggr::ElementKey", "classCppClingo_1_1Ground_1_1StateBdAggr_1_1ElementKey.html", null ],
     [ "CppClingo::Ground::StateHdAggr::ElementKey", "classCppClingo_1_1Ground_1_1StateHdAggr_1_1ElementKey.html", null ],
     [ "CppClingo::Ground::StateTheory::ElementKey", "classCppClingo_1_1Ground_1_1StateTheory_1_1ElementKey.html", null ],
+    [ "CppClingo::Control::ClingoConfig::Entry", "classCppClingo_1_1Control_1_1ClingoConfig_1_1Entry.html", null ],
     [ "CppClingo::Util::enumerate< T >", "classCppClingo_1_1Util_1_1enumerate.html", null ],
     [ "CppClingo::Util::enumerate< T >", "classCppClingo_1_1Util_1_1enumerate_3_01T_01_4.html", null ],
+    [ "Clasp::Event", null, [
+      [ "CppClingo::Control::Grounded", "classCppClingo_1_1Control_1_1Grounded.html", null ]
+    ] ],
     [ "CppClingo::Control::EventHandler", "classCppClingo_1_1Control_1_1EventHandler.html", null ],
+    [ "CppClingo::Util::fill", "classCppClingo_1_1Util_1_1fill.html", null ],
     [ "CppClingo::GCLock", "classCppClingo_1_1GCLock.html", null ],
     [ "CppClingo::Ground::GenerationCounts", "classCppClingo_1_1Ground_1_1GenerationCounts.html", null ],
     [ "CppClingo::Util::Graph", "classCppClingo_1_1Util_1_1Graph.html", null ],
@@ -479,14 +488,26 @@ var hierarchy =
     [ "CppClingo::Input::RewriteContext::pop_", "structCppClingo_1_1Input_1_1RewriteContext_1_1pop__.html", null ],
     [ "Clingo::Position", "classClingo_1_1Position.html", null ],
     [ "CppClingo::Position", "classCppClingo_1_1Position.html", null ],
+    [ "CppClingo::Ground::ProfileIndent", "structCppClingo_1_1Ground_1_1ProfileIndent.html", null ],
+    [ "CppClingo::Ground::ProfileNode", "classCppClingo_1_1Ground_1_1ProfileNode.html", [
+      [ "CppClingo::Ground::ProfileData", "classCppClingo_1_1Ground_1_1ProfileData.html", null ],
+      [ "CppClingo::Ground::ProfileNodeInternal", "classCppClingo_1_1Ground_1_1ProfileNodeInternal.html", [
+        [ "CppClingo::Ground::ProfileNodeExpression< T >", "classCppClingo_1_1Ground_1_1ProfileNodeExpression.html", null ]
+      ] ]
+    ] ],
+    [ "Clingo::ProfileNodeInternal", "structClingo_1_1ProfileNodeInternal.html", null ],
+    [ "Clingo::ProfileNodeLeaf", "structClingo_1_1ProfileNodeLeaf.html", null ],
+    [ "CppClingo::Control::ProfileProgram", "classCppClingo_1_1Control_1_1ProfileProgram.html", null ],
+    [ "CppClingo::Ground::ProfileStats", "structCppClingo_1_1Ground_1_1ProfileStats.html", null ],
     [ "Clingo::AST::Program", "classClingo_1_1AST_1_1Program.html", null ],
     [ "CppClingo::Input::Program", "classCppClingo_1_1Input_1_1Program.html", null ],
     [ "CppClingo::ProgramBackend", "classCppClingo_1_1ProgramBackend.html", null ],
     [ "CppClingo::Input::ProgramPart", "structCppClingo_1_1Input_1_1ProgramPart.html", null ],
     [ "CppClingo::Input::ProjectionMap", "classCppClingo_1_1Input_1_1ProjectionMap.html", null ],
     [ "CppClingo::Ground::ProjectState", "classCppClingo_1_1Ground_1_1ProjectState.html", null ],
-    [ "Clingo::PropagateControl", "classClingo_1_1PropagateControl.html", null ],
-    [ "Clingo::PropagateInit", "classClingo_1_1PropagateInit.html", null ],
+    [ "Clingo::PropagateControl", "classClingo_1_1PropagateControl.html", [
+      [ "Clingo::PropagateInit", "classClingo_1_1PropagateInit.html", null ]
+    ] ],
     [ "Clingo::Propagator", "classClingo_1_1Propagator.html", [
       [ "Clingo::Heuristic", "classClingo_1_1Heuristic.html", null ]
     ] ],

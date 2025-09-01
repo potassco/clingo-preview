@@ -113,21 +113,24 @@ $(document).ready(function(){initNavTree('structclingo__propagator.html',''); in
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a456c4c0e3ed629e8b548f7cc4fd830a1" id="r_a456c4c0e3ed629e8b548f7cc4fd830a1"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structclingo__propagator.html#a456c4c0e3ed629e8b548f7cc4fd830a1">init</a> )(<a class="el" href="group__c__propagate.html#ga640db8ba73adaddd5dbe50b572b77f25">clingo_propagate_init_t</a> *init, void *data)</td></tr>
-<tr class="memdesc:a456c4c0e3ed629e8b548f7cc4fd830a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called once before each solving step.  <br /></td></tr>
-<tr class="separator:a456c4c0e3ed629e8b548f7cc4fd830a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a666b871bab495a9e5904b6109c92feda" id="r_a666b871bab495a9e5904b6109c92feda"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structclingo__propagator.html#a666b871bab495a9e5904b6109c92feda">propagate</a> )(<a class="el" href="group__c__propagate.html#ga1cf43bea08101abb8b8cc7711c4c7165">clingo_propagate_control_t</a> *control, <a class="el" href="group__c__core.html#gaa95dd19334e536397bbad174c8fa4ff8">clingo_literal_t</a> const *changes, size_t size, void *data)</td></tr>
-<tr class="memdesc:a666b871bab495a9e5904b6109c92feda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can be used to propagate solver literals given a <a class="el" href="group__c__propagate.html#ga6198e3190869e937ca7135e5314ddf26">partial assignment</a>.  <br /></td></tr>
-<tr class="separator:a666b871bab495a9e5904b6109c92feda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d6b913592f2664af6abe4ed4146ef8a" id="r_a5d6b913592f2664af6abe4ed4146ef8a"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structclingo__propagator.html#a5d6b913592f2664af6abe4ed4146ef8a">undo</a> )(<a class="el" href="group__c__propagate.html#ga1cf43bea08101abb8b8cc7711c4c7165">clingo_propagate_control_t</a> const *control, <a class="el" href="group__c__core.html#gaa95dd19334e536397bbad174c8fa4ff8">clingo_literal_t</a> const *changes, size_t size, void *data)</td></tr>
-<tr class="memdesc:a5d6b913592f2664af6abe4ed4146ef8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called whenever a solver undoes assignments to watched solver literals.  <br /></td></tr>
-<tr class="separator:a5d6b913592f2664af6abe4ed4146ef8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a883ef32f49030ae701550bbdbcf4a0" id="r_a3a883ef32f49030ae701550bbdbcf4a0"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structclingo__propagator.html#a3a883ef32f49030ae701550bbdbcf4a0">check</a> )(<a class="el" href="group__c__propagate.html#ga1cf43bea08101abb8b8cc7711c4c7165">clingo_propagate_control_t</a> *control, void *data)</td></tr>
-<tr class="memdesc:a3a883ef32f49030ae701550bbdbcf4a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is similar to <a class="el" href="group__c__propagate.html#ga1e5504a8332ed8c453197046d201cd4b">clingo_propagate_control_propagate()</a> but is called without a change set on propagation fixpoints.  <br /></td></tr>
-<tr class="separator:a3a883ef32f49030ae701550bbdbcf4a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc8e2a5bc6f4f5839f2c12085be922b1" id="r_acc8e2a5bc6f4f5839f2c12085be922b1"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structclingo__propagator.html#acc8e2a5bc6f4f5839f2c12085be922b1">decide</a> )(<a class="el" href="group__c__core.html#gac7aaf88deb591e91b94ff38aa1e3472e">clingo_id_t</a> thread_id, <a class="el" href="group__c__propagate.html#ga6198e3190869e937ca7135e5314ddf26">clingo_assignment_t</a> const *assignment, <a class="el" href="group__c__core.html#gaa95dd19334e536397bbad174c8fa4ff8">clingo_literal_t</a> fallback, void *data, <a class="el" href="group__c__core.html#gaa95dd19334e536397bbad174c8fa4ff8">clingo_literal_t</a> *decision)</td></tr>
-<tr class="memdesc:acc8e2a5bc6f4f5839f2c12085be922b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function allows a propagator to implement domain-specific heuristics.  <br /></td></tr>
-<tr class="separator:acc8e2a5bc6f4f5839f2c12085be922b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa940f99b798451541685dc47674e332d" id="r_aa940f99b798451541685dc47674e332d"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structclingo__propagator.html#aa940f99b798451541685dc47674e332d">init</a> )(<a class="el" href="group__c__propagate.html#ga6198e3190869e937ca7135e5314ddf26">clingo_assignment_t</a> const *assignment, <a class="el" href="group__c__propagate.html#ga640db8ba73adaddd5dbe50b572b77f25">clingo_propagate_init_t</a> *init, void *data)</td></tr>
+<tr class="memdesc:aa940f99b798451541685dc47674e332d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called once before each solving step.  <br /></td></tr>
+<tr class="separator:aa940f99b798451541685dc47674e332d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1421565211e5fe569071b06abe145ebb" id="r_a1421565211e5fe569071b06abe145ebb"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structclingo__propagator.html#a1421565211e5fe569071b06abe145ebb">attach</a> )(<a class="el" href="group__c__propagate.html#ga6198e3190869e937ca7135e5314ddf26">clingo_assignment_t</a> const *assignment, <a class="el" href="group__c__propagate.html#ga1cf43bea08101abb8b8cc7711c4c7165">clingo_propagate_control_t</a> *control, void *data)</td></tr>
+<tr class="memdesc:a1421565211e5fe569071b06abe145ebb"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called once for each solving thread before solving of the current step is started.  <br /></td></tr>
+<tr class="separator:a1421565211e5fe569071b06abe145ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49aa23e41e166e2ae70a1e4cba3205e1" id="r_a49aa23e41e166e2ae70a1e4cba3205e1"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structclingo__propagator.html#a49aa23e41e166e2ae70a1e4cba3205e1">propagate</a> )(<a class="el" href="group__c__propagate.html#ga6198e3190869e937ca7135e5314ddf26">clingo_assignment_t</a> const *assignment, <a class="el" href="group__c__propagate.html#ga1cf43bea08101abb8b8cc7711c4c7165">clingo_propagate_control_t</a> *control, <a class="el" href="group__c__core.html#gaa95dd19334e536397bbad174c8fa4ff8">clingo_literal_t</a> const *changes, size_t size, void *data)</td></tr>
+<tr class="memdesc:a49aa23e41e166e2ae70a1e4cba3205e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can be used to propagate solver literals given a <a class="el" href="group__c__propagate.html#ga6198e3190869e937ca7135e5314ddf26">partial assignment</a>.  <br /></td></tr>
+<tr class="separator:a49aa23e41e166e2ae70a1e4cba3205e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2eb116bb25f10ee39147abef071e9cd" id="r_ab2eb116bb25f10ee39147abef071e9cd"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structclingo__propagator.html#ab2eb116bb25f10ee39147abef071e9cd">undo</a> )(<a class="el" href="group__c__propagate.html#ga6198e3190869e937ca7135e5314ddf26">clingo_assignment_t</a> const *assignment, <a class="el" href="group__c__core.html#gaa95dd19334e536397bbad174c8fa4ff8">clingo_literal_t</a> const *changes, size_t size, void *data)</td></tr>
+<tr class="memdesc:ab2eb116bb25f10ee39147abef071e9cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called whenever a solver undoes assignments to watched solver literals.  <br /></td></tr>
+<tr class="separator:ab2eb116bb25f10ee39147abef071e9cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc8b628d1e55288fdb743f24aa1f56b4" id="r_acc8b628d1e55288fdb743f24aa1f56b4"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structclingo__propagator.html#acc8b628d1e55288fdb743f24aa1f56b4">check</a> )(<a class="el" href="group__c__propagate.html#ga6198e3190869e937ca7135e5314ddf26">clingo_assignment_t</a> const *assignment, <a class="el" href="group__c__propagate.html#ga1cf43bea08101abb8b8cc7711c4c7165">clingo_propagate_control_t</a> *control, void *data)</td></tr>
+<tr class="memdesc:acc8b628d1e55288fdb743f24aa1f56b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is similar to <a class="el" href="group__c__propagate.html#ga1e5504a8332ed8c453197046d201cd4b">clingo_propagate_control_propagate()</a> but is called without a change set on propagation fixpoints.  <br /></td></tr>
+<tr class="separator:acc8b628d1e55288fdb743f24aa1f56b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade78e1aa78e24e96f373e253ca1555e3" id="r_ade78e1aa78e24e96f373e253ca1555e3"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structclingo__propagator.html#ade78e1aa78e24e96f373e253ca1555e3">decide</a> )(<a class="el" href="group__c__propagate.html#ga6198e3190869e937ca7135e5314ddf26">clingo_assignment_t</a> const *assignment, <a class="el" href="group__c__core.html#gaa95dd19334e536397bbad174c8fa4ff8">clingo_literal_t</a> fallback, void *data, <a class="el" href="group__c__core.html#gaa95dd19334e536397bbad174c8fa4ff8">clingo_literal_t</a> *decision)</td></tr>
+<tr class="memdesc:ade78e1aa78e24e96f373e253ca1555e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function allows a propagator to implement domain-specific heuristics.  <br /></td></tr>
+<tr class="separator:ade78e1aa78e24e96f373e253ca1555e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f31453fce91efadbec128cf119b2926" id="r_a2f31453fce91efadbec128cf119b2926"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structclingo__propagator.html#a2f31453fce91efadbec128cf119b2926">free</a> )(void *data)</td></tr>
 <tr class="memdesc:a2f31453fce91efadbec128cf119b2926"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the propagator.  <br /></td></tr>
 <tr class="separator:a2f31453fce91efadbec128cf119b2926"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,14 +139,42 @@ Public Attributes</h2></td></tr>
 <div class="textblock"><p>An instance of this struct has to be registered with a solver to implement a custom propagator. </p>
 <p>Not all callbacks have to be implemented and can be set to NULL if not needed. </p><dl class="section see"><dt>See also</dt><dd>Propagator </dd></dl>
 </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a3a883ef32f49030ae701550bbdbcf4a0" name="a3a883ef32f49030ae701550bbdbcf4a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a883ef32f49030ae701550bbdbcf4a0">&#9670;&#160;</a></span>check</h2>
+<a id="a1421565211e5fe569071b06abe145ebb" name="a1421565211e5fe569071b06abe145ebb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1421565211e5fe569071b06abe145ebb">&#9670;&#160;</a></span>attach</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool(* clingo_propagator::check) (<a class="el" href="group__c__propagate.html#ga1cf43bea08101abb8b8cc7711c4c7165">clingo_propagate_control_t</a> *control, void *data)</td>
+          <td class="memname">bool(* clingo_propagator::attach) (<a class="el" href="group__c__propagate.html#ga6198e3190869e937ca7135e5314ddf26">clingo_assignment_t</a> const *assignment, <a class="el" href="group__c__propagate.html#ga1cf43bea08101abb8b8cc7711c4c7165">clingo_propagate_control_t</a> *control, void *data)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function is called once for each solving thread before solving of the current step is started. </p>
+<p>It can be used to add thread-specific watches and literals, or initialize thread-specific data structures.</p>
+<dl class="section attention"><dt>Attention</dt><dd>Literals and watches added in this function are only valid within the current solving thread. Furthermore, added literals and clauses involving such literals are deleted after the current search.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">assignment</td><td>the current assignment of the target solver </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">control</td><td>control object for the target solver </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>user data for the callback </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__c__propagate.html#ga5f994f822de54b1621d137fc6eb7a20d" title="Typedef for clingo_propagator::init().">clingo_propagator_init_callback_t</a> </dd></dl>
+
+</div>
+</div>
+<a id="acc8b628d1e55288fdb743f24aa1f56b4" name="acc8b628d1e55288fdb743f24aa1f56b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc8b628d1e55288fdb743f24aa1f56b4">&#9670;&#160;</a></span>check</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool(* clingo_propagator::check) (<a class="el" href="group__c__propagate.html#ga6198e3190869e937ca7135e5314ddf26">clingo_assignment_t</a> const *assignment, <a class="el" href="group__c__propagate.html#ga1cf43bea08101abb8b8cc7711c4c7165">clingo_propagate_control_t</a> *control, void *data)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -153,33 +184,33 @@ Public Attributes</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>This function is called even if no watches have been added.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">assignment</td><td>current assignment of the target solver </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">control</td><td>control object for the target solver </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>user data for the callback </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__c__propagate.html#gaa1073f823a56901887b3c387481ce4be" title="Typedef for clingo_propagator::check().">clingo_propagator_check_callback_t</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__c__propagate.html#ga50b97b69f859a3c9d0a8ec7c1694a88b" title="Typedef for clingo_propagator::check().">clingo_propagator_check_callback_t</a> </dd></dl>
 
 </div>
 </div>
-<a id="acc8e2a5bc6f4f5839f2c12085be922b1" name="acc8e2a5bc6f4f5839f2c12085be922b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc8e2a5bc6f4f5839f2c12085be922b1">&#9670;&#160;</a></span>decide</h2>
+<a id="ade78e1aa78e24e96f373e253ca1555e3" name="ade78e1aa78e24e96f373e253ca1555e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade78e1aa78e24e96f373e253ca1555e3">&#9670;&#160;</a></span>decide</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool(* clingo_propagator::decide) (<a class="el" href="group__c__core.html#gac7aaf88deb591e91b94ff38aa1e3472e">clingo_id_t</a> thread_id, <a class="el" href="group__c__propagate.html#ga6198e3190869e937ca7135e5314ddf26">clingo_assignment_t</a> const *assignment, <a class="el" href="group__c__core.html#gaa95dd19334e536397bbad174c8fa4ff8">clingo_literal_t</a> fallback, void *data, <a class="el" href="group__c__core.html#gaa95dd19334e536397bbad174c8fa4ff8">clingo_literal_t</a> *decision)</td>
+          <td class="memname">bool(* clingo_propagator::decide) (<a class="el" href="group__c__propagate.html#ga6198e3190869e937ca7135e5314ddf26">clingo_assignment_t</a> const *assignment, <a class="el" href="group__c__core.html#gaa95dd19334e536397bbad174c8fa4ff8">clingo_literal_t</a> fallback, void *data, <a class="el" href="group__c__core.html#gaa95dd19334e536397bbad174c8fa4ff8">clingo_literal_t</a> *decision)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>This function allows a propagator to implement domain-specific heuristics. </p>
-<p>It is called whenever propagation reaches a fixed point and should return a free solver literal that is to be assigned true. In case multiple propagators are registered, this function can return 0 to let a propagator registered later make a decision. If all propagators return 0, then the fallback literal is</p>
+<p>It is called whenever propagation reaches a fixed point and should return a free solver literal that is to be assigned true. In case multiple propagators are registered, this function can return 0 to let a propagator registered later make a decision. If all propagators return 0, then the fallback literal is used.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">thread_id</td><td>the solver's thread id </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">assignment</td><td>the assignment of the solver </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">fallback</td><td>the literal chosen by the solver's heuristic </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>user data for the callback </td></tr>
@@ -187,7 +218,7 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 
 </div>
 </div>
@@ -213,14 +244,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a456c4c0e3ed629e8b548f7cc4fd830a1" name="a456c4c0e3ed629e8b548f7cc4fd830a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a456c4c0e3ed629e8b548f7cc4fd830a1">&#9670;&#160;</a></span>init</h2>
+<a id="aa940f99b798451541685dc47674e332d" name="aa940f99b798451541685dc47674e332d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa940f99b798451541685dc47674e332d">&#9670;&#160;</a></span>init</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool(* clingo_propagator::init) (<a class="el" href="group__c__propagate.html#ga640db8ba73adaddd5dbe50b572b77f25">clingo_propagate_init_t</a> *init, void *data)</td>
+          <td class="memname">bool(* clingo_propagator::init) (<a class="el" href="group__c__propagate.html#ga6198e3190869e937ca7135e5314ddf26">clingo_assignment_t</a> const *assignment, <a class="el" href="group__c__propagate.html#ga640db8ba73adaddd5dbe50b572b77f25">clingo_propagate_init_t</a> *init, void *data)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -230,30 +261,31 @@ Public Attributes</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>This is the last point to access symbolic and theory atoms. Once the search has started, they are no longer accessible.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">assignment</td><td>the current assignment </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">init</td><td>initialization object </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>user data for the callback </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__c__propagate.html#ga67bdda9d9d2ddaa31acc41e5a569db33" title="Typedef for clingo_propagator::init().">clingo_propagator_init_callback_t</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__c__propagate.html#ga5f994f822de54b1621d137fc6eb7a20d" title="Typedef for clingo_propagator::init().">clingo_propagator_init_callback_t</a> </dd></dl>
 
 </div>
 </div>
-<a id="a666b871bab495a9e5904b6109c92feda" name="a666b871bab495a9e5904b6109c92feda"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a666b871bab495a9e5904b6109c92feda">&#9670;&#160;</a></span>propagate</h2>
+<a id="a49aa23e41e166e2ae70a1e4cba3205e1" name="a49aa23e41e166e2ae70a1e4cba3205e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49aa23e41e166e2ae70a1e4cba3205e1">&#9670;&#160;</a></span>propagate</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool(* clingo_propagator::propagate) (<a class="el" href="group__c__propagate.html#ga1cf43bea08101abb8b8cc7711c4c7165">clingo_propagate_control_t</a> *control, <a class="el" href="group__c__core.html#gaa95dd19334e536397bbad174c8fa4ff8">clingo_literal_t</a> const *changes, size_t size, void *data)</td>
+          <td class="memname">bool(* clingo_propagator::propagate) (<a class="el" href="group__c__propagate.html#ga6198e3190869e937ca7135e5314ddf26">clingo_assignment_t</a> const *assignment, <a class="el" href="group__c__propagate.html#ga1cf43bea08101abb8b8cc7711c4c7165">clingo_propagate_control_t</a> *control, <a class="el" href="group__c__core.html#gaa95dd19334e536397bbad174c8fa4ff8">clingo_literal_t</a> const *changes, size_t size, void *data)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Can be used to propagate solver literals given a <a class="el" href="group__c__propagate.html#ga6198e3190869e937ca7135e5314ddf26">partial assignment</a>. </p>
-<p>Called during propagation with a non-empty array of <a class="el" href="group__c__propagate.html#gab4a0f0767529ad000f5d80b56b74104f">watched solver literals</a> that have been assigned to true since the last call to either propagate, undo, (or the start of the search) - the change set. Only watched solver literals are contained in the change set. Each literal in the change set is true w.r.t. the current <a class="el" href="group__c__propagate.html#ga6198e3190869e937ca7135e5314ddf26">assignment</a>. <a class="el" href="group__c__propagate.html#gadfa00ccf51768346d23320873b5a9239">clingo_propagate_control_add_clause()</a> can be used to add clauses. If a clause is unit resulting, it can be propagated using <a class="el" href="group__c__propagate.html#ga1e5504a8332ed8c453197046d201cd4b">clingo_propagate_control_propagate()</a>. If the result of either of the two methods is false, the propagate function must return immediately.</p>
+<p>Called during propagation with a non-empty array of <a class="el" href="group__c__propagate.html#ga0d0af5f7f445bddfa1b262efd14150b0">watched solver literals</a> that have been assigned to true since the last call to either propagate, undo, (or the start of the search) - the change set. Only watched solver literals are contained in the change set. Each literal in the change set is true w.r.t. the current <a class="el" href="group__c__propagate.html#ga6198e3190869e937ca7135e5314ddf26">assignment</a>. <a class="el" href="group__c__propagate.html#gadfa00ccf51768346d23320873b5a9239">clingo_propagate_control_add_clause()</a> can be used to add clauses. If a clause is unit resulting, it can be propagated using <a class="el" href="group__c__propagate.html#ga1e5504a8332ed8c453197046d201cd4b">clingo_propagate_control_propagate()</a>. If the result of either of the two methods is false, the propagate function must return immediately.</p>
 <p>The following snippet shows how to use the methods to add clauses and propagate consequences within the callback. The important point is to return true (true to indicate there was no error) if the result of either of the methods is false. </p><div class="fragment"><div class="line"><span class="keywordtype">bool</span> result;</div>
 <div class="line"><a class="code hl_typedef" href="group__c__core.html#gaa95dd19334e536397bbad174c8fa4ff8">clingo_literal_t</a> clause[] = { ... };</div>
 <div class="line"> </div>
@@ -268,13 +300,14 @@ Public Attributes</h2></td></tr>
 <div class="line">...</div>
 <div class="line"> </div>
 <div class="line">return <span class="keyword">true</span>;</div>
-<div class="ttc" id="agroup__c__core_html_gaa95dd19334e536397bbad174c8fa4ff8"><div class="ttname"><a href="group__c__core.html#gaa95dd19334e536397bbad174c8fa4ff8">clingo_literal_t</a></div><div class="ttdeci">int32_t clingo_literal_t</div><div class="ttdoc">Signed integer type used for aspif and solver literals.</div><div class="ttdef"><b>Definition</b> core.h:78</div></div>
+<div class="ttc" id="agroup__c__core_html_gaa95dd19334e536397bbad174c8fa4ff8"><div class="ttname"><a href="group__c__core.html#gaa95dd19334e536397bbad174c8fa4ff8">clingo_literal_t</a></div><div class="ttdeci">int32_t clingo_literal_t</div><div class="ttdoc">Signed integer type used for aspif and solver literals.</div><div class="ttdef"><b>Definition</b> core.h:73</div></div>
 <div class="ttc" id="agroup__c__propagate_html_ga1e5504a8332ed8c453197046d201cd4b"><div class="ttname"><a href="group__c__propagate.html#ga1e5504a8332ed8c453197046d201cd4b">clingo_propagate_control_propagate</a></div><div class="ttdeci">CLINGO_VISIBILITY_DEFAULT bool clingo_propagate_control_propagate(clingo_propagate_control_t *control, bool *result)</div><div class="ttdoc">Propagate implied literals (resulting from added clauses).</div></div>
 <div class="ttc" id="agroup__c__propagate_html_gadfa00ccf51768346d23320873b5a9239"><div class="ttname"><a href="group__c__propagate.html#gadfa00ccf51768346d23320873b5a9239">clingo_propagate_control_add_clause</a></div><div class="ttdeci">CLINGO_VISIBILITY_DEFAULT bool clingo_propagate_control_add_clause(clingo_propagate_control_t *control, clingo_literal_t const *literals, size_t size, clingo_clause_type_t type, bool *result)</div><div class="ttdoc">Add the given clause to the solver.</div></div>
-<div class="ttc" id="agroup__c__propagate_html_ggac97452376bdf24c42dc27a5738445b35a35c9cfe61e2130b0292866860218ee58"><div class="ttname"><a href="group__c__propagate.html#ggac97452376bdf24c42dc27a5738445b35a35c9cfe61e2130b0292866860218ee58">clingo_clause_type_learnt</a></div><div class="ttdeci">@ clingo_clause_type_learnt</div><div class="ttdoc">clause is subject to the solvers deletion policy</div><div class="ttdef"><b>Definition</b> propagate.h:439</div></div>
-</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>This function can be called from different solving threads. Each thread has its own assignment and id, which can be obtained using <a class="el" href="group__c__propagate.html#ga89486338a069fe3233d51d0ce4430bec">clingo_propagate_control_thread_id()</a>.</dd></dl>
+<div class="ttc" id="agroup__c__propagate_html_ggac97452376bdf24c42dc27a5738445b35a35c9cfe61e2130b0292866860218ee58"><div class="ttname"><a href="group__c__propagate.html#ggac97452376bdf24c42dc27a5738445b35a35c9cfe61e2130b0292866860218ee58">clingo_clause_type_learnt</a></div><div class="ttdeci">@ clingo_clause_type_learnt</div><div class="ttdoc">clause is subject to the solvers deletion policy</div><div class="ttdef"><b>Definition</b> propagate.h:366</div></div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>This function can be called from different solving threads. Each thread has its own assignment and id, where thread ids are consecutive numbers starting with zero.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">assignment</td><td>current assignment of the target solver </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">control</td><td>control object for the target solver </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">changes</td><td>the change set </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>the size of the change set </td></tr>
@@ -282,37 +315,36 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__c__propagate.html#gae870d426cc8f9c3db7b5aabb958c5931" title="Typedef for clingo_propagator::propagate().">clingo_propagator_propagate_callback_t</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__c__propagate.html#gafbd3498e4400d19567296837bb1ff41c" title="Typedef for clingo_propagator::propagate().">clingo_propagator_propagate_callback_t</a> </dd></dl>
 
 </div>
 </div>
-<a id="a5d6b913592f2664af6abe4ed4146ef8a" name="a5d6b913592f2664af6abe4ed4146ef8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d6b913592f2664af6abe4ed4146ef8a">&#9670;&#160;</a></span>undo</h2>
+<a id="ab2eb116bb25f10ee39147abef071e9cd" name="ab2eb116bb25f10ee39147abef071e9cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2eb116bb25f10ee39147abef071e9cd">&#9670;&#160;</a></span>undo</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* clingo_propagator::undo) (<a class="el" href="group__c__propagate.html#ga1cf43bea08101abb8b8cc7711c4c7165">clingo_propagate_control_t</a> const *control, <a class="el" href="group__c__core.html#gaa95dd19334e536397bbad174c8fa4ff8">clingo_literal_t</a> const *changes, size_t size, void *data)</td>
+          <td class="memname">void(* clingo_propagator::undo) (<a class="el" href="group__c__propagate.html#ga6198e3190869e937ca7135e5314ddf26">clingo_assignment_t</a> const *assignment, <a class="el" href="group__c__core.html#gaa95dd19334e536397bbad174c8fa4ff8">clingo_literal_t</a> const *changes, size_t size, void *data)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Called whenever a solver undoes assignments to watched solver literals. </p>
 <p>This callback is meant to update assignment dependent state in the propagator.</p>
-<dl class="section note"><dt>Note</dt><dd>No clauses must be propagated in this callback and no errors should be set.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">control</td><td>control object for the target solver </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">assignment</td><td>current assignment of the target solver </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">changes</td><td>the change set </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>the size of the change set </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>user data for the callback </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wether the call was successful </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__c__propagate.html#ga49f9e37e1d82d4f61a4a6e3d4b5664ea" title="Typedef for clingo_propagator::undo().">clingo_propagator_undo_callback_t</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__c__propagate.html#ga5e204600ee80cbd9f6ae19018ddeb1df" title="Typedef for clingo_propagator::undo().">clingo_propagator_undo_callback_t</a> </dd></dl>
 
 </div>
 </div>
