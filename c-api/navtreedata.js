@@ -53,18 +53,18 @@ var NAVTREEINDEX =
 "classCppClingo_1_1Control_1_1Grounder.html#a755048735bcca679b730c1bbc0f332d7",
 "classCppClingo_1_1Ground_1_1BaseHdAggr.html#aa149b09f126fa484ced3c3b5a433d08d",
 "classCppClingo_1_1Ground_1_1StateAssignAggr.html#af5770c21db330546dc8bfbcdb6e207cf",
-"classCppClingo_1_1Input_1_1BdLitConjunction.html#ae729132e2c77fefdf6d613ee38b58b3c",
-"classCppClingo_1_1Input_1_1StmRule.html",
-"classCppClingo_1_1Number.html#abc9ac23cb86cc98a1c148d2db95d4d6f",
-"classCppClingo_1_1Util_1_1Graph.html#ad574f2fb8f6a6b8bdee39040a7156059",
-"conceptCppClingo_1_1Util_1_1iterable.html",
-"group__c__control.html#ga54822638b1c4ba243a08b176a91f0233",
-"group__c__solve.html#ga3ca184768ef788ca10f0f76bb7ad1353",
-"group__core__symbol.html",
-"group__ground__base.html#gaa2f0cfc97598bd641323f6cf2352c346",
-"group__input__print.html#ga479f9cd9ba277d1257a7d3925e21f316",
-"group__input__visit__variables.html#ga67bd57dc50279f305fe196f36a17d4e0",
-"structCppClingo_1_1Util_1_1value__equal__to.html#a6ab05fc8eb291e82a4ed115663b89166"
+"classCppClingo_1_1Input_1_1BdLitConjunction.html#a0357e7a282733a150d0d7906ebdcbcc6",
+"classCppClingo_1_1Input_1_1StmProgram.html#aeb8f7d7853adf596573d18771ae8cbea",
+"classCppClingo_1_1Number.html#a87afa61e66a5311baca3e98f5a356e06",
+"classCppClingo_1_1SymbolStore.html#aabb6b521917344d624e06d730f01ebe9",
+"classCppClingo_1_1Util_1_1small__vector.html#abd076d68fb0ac7145a77e43964fe1adc",
+"group__c__config.html#gaa0d0c6a109862a697cf274fc2aaa308e",
+"group__c__script.html#ga12291b8ae5e5c67fe89d9a091b634e1b",
+"group__core__number.html#gga6d834c1a2d71d2df5ca761b67fb24ca2ab8d1b43eae73587ba56baef574709ecb",
+"group__cpp__symbol.html#gabea84dd1a137547ef1bfd7b1ca98c5fd",
+"group__input__print.html#ga1d41a60512b334a05a7fd8f346376d3b",
+"group__input__term.html#gad2f709167461133f722c54cf5483c5aa",
+"structCppClingo_1_1Ground_1_1StateCondLitElem.html#abc71d5b6837dff490d29bd9383ac721e"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

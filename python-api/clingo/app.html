@@ -432,7 +432,7 @@ off.</p>
                     <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">clingo_main</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">arguments</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>,</span><span class="param">	<span class="n">app</span><span class="p">:</span> <span class="n"><a href="#App">App</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">raise_errors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span></span><span class="return-annotation">) -> <span class="nb">int</span>:</span></span>
+        <span class="name">clingo_main</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">arguments</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>,</span><span class="param">	<span class="n">app</span><span class="p">:</span> <span class="n"><a href="#App">App</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="nb">int</span>:</span></span>
 
         
     </div>
@@ -444,16 +444,12 @@ off.</p>
 then executes the main functionality of the Clingo application. It can
 optionally use a provided App instance to customize this behavior.</p>
 
-<p>The flag <code>raise_errors</code> might help for debugging purposes to obtain traces
-where errors originated from.</p>
-
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
 <li><strong>lib:</strong>  The Clingo core library interface.</li>
 <li><strong>arguments:</strong>  A list of command-line arguments.</li>
 <li><strong>app:</strong>  An optional App instance containing application-specific logic.</li>
-<li><strong>raise_errors:</strong>  Whether to raise errors instead of just reporting them.</li>
 </ul>
 
 <h6 id="returns">Returns:</h6>

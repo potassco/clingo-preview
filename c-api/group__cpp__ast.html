@@ -192,83 +192,87 @@ Enumerations</h2></td></tr>
 <tr class="memdesc:ga27eaa5977fd09449c416572a1f334b32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of available ast attributes. <br /></td></tr>
 <tr class="separator:ga27eaa5977fd09449c416572a1f334b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaceb3fb295f91d3d152732a09f5806909" id="r_gaceb3fb295f91d3d152732a09f5806909"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__ast.html#gaceb3fb295f91d3d152732a09f5806909">Clingo::AST::NodeType</a> : clingo_ast_type_t { <br />
-&#160;&#160;<b>projection</b> = clingo_ast_type_projection
-, <b>term_variable</b> = clingo_ast_type_term_variable
+&#160;&#160;<b>format_field_literal</b> = clingo_ast_type_format_field_literal
+, <b>format_field_expression</b> = clingo_ast_type_format_field_expression
+, <b>projection</b> = clingo_ast_type_projection
+, <b>term_format_string</b> = clingo_ast_type_term_format_string
+, <br />
+&#160;&#160;<b>term_variable</b> = clingo_ast_type_term_variable
 , <b>term_symbolic</b> = clingo_ast_type_term_symbolic
 , <b>term_absolute</b> = clingo_ast_type_term_absolute
+, <b>term_unary_operation</b> = clingo_ast_type_term_unary_operation
 , <br />
-&#160;&#160;<b>term_unary_operation</b> = clingo_ast_type_term_unary_operation
-, <b>term_binary_operation</b> = clingo_ast_type_term_binary_operation
+&#160;&#160;<b>term_binary_operation</b> = clingo_ast_type_term_binary_operation
 , <b>term_tuple</b> = clingo_ast_type_term_tuple
 , <b>term_function</b> = clingo_ast_type_term_function
+, <b>argument_tuple</b> = clingo_ast_type_argument_tuple
 , <br />
-&#160;&#160;<b>argument_tuple</b> = clingo_ast_type_argument_tuple
-, <b>unparsed_element</b> = clingo_ast_type_unparsed_element
+&#160;&#160;<b>unparsed_element</b> = clingo_ast_type_unparsed_element
 , <b>theory_term_variable</b> = clingo_ast_type_theory_term_variable
 , <b>theory_term_symbolic</b> = clingo_ast_type_theory_term_symbolic
+, <b>theory_term_tuple</b> = clingo_ast_type_theory_term_tuple
 , <br />
-&#160;&#160;<b>theory_term_tuple</b> = clingo_ast_type_theory_term_tuple
-, <b>theory_term_function</b> = clingo_ast_type_theory_term_function
+&#160;&#160;<b>theory_term_function</b> = clingo_ast_type_theory_term_function
 , <b>theory_term_unparsed</b> = clingo_ast_type_theory_term_unparsed
 , <b>left_guard</b> = clingo_ast_type_left_guard
+, <b>right_guard</b> = clingo_ast_type_right_guard
 , <br />
-&#160;&#160;<b>right_guard</b> = clingo_ast_type_right_guard
-, <b>literal_boolean</b> = clingo_ast_type_literal_boolean
+&#160;&#160;<b>literal_boolean</b> = clingo_ast_type_literal_boolean
 , <b>literal_comparison</b> = clingo_ast_type_literal_comparison
 , <b>literal_symbolic</b> = clingo_ast_type_literal_symbolic
+, <b>set_aggregate_element</b> = clingo_ast_type_set_aggregate_element
 , <br />
-&#160;&#160;<b>set_aggregate_element</b> = clingo_ast_type_set_aggregate_element
-, <b>theory_atom_element</b> = clingo_ast_type_theory_atom_element
+&#160;&#160;<b>theory_atom_element</b> = clingo_ast_type_theory_atom_element
 , <b>theory_right_guard</b> = clingo_ast_type_theory_right_guard
 , <b>body_simple_literal</b> = clingo_ast_type_body_simple_literal
+, <b>body_aggregate_element</b> = clingo_ast_type_body_aggregate_element
 , <br />
-&#160;&#160;<b>body_aggregate_element</b> = clingo_ast_type_body_aggregate_element
-, <b>body_aggregate</b> = clingo_ast_type_body_aggregate
+&#160;&#160;<b>body_aggregate</b> = clingo_ast_type_body_aggregate
 , <b>body_set_aggregate</b> = clingo_ast_type_body_set_aggregate
 , <b>body_theory_atom</b> = clingo_ast_type_body_theory_atom
+, <b>body_conditional_literal</b> = clingo_ast_type_body_conditional_literal
 , <br />
-&#160;&#160;<b>body_conditional_literal</b> = clingo_ast_type_body_conditional_literal
-, <b>head_simple_literal</b> = clingo_ast_type_head_simple_literal
+&#160;&#160;<b>head_simple_literal</b> = clingo_ast_type_head_simple_literal
 , <b>head_aggregate_element</b> = clingo_ast_type_head_aggregate_element
 , <b>head_aggregate</b> = clingo_ast_type_head_aggregate
+, <b>head_set_aggregate</b> = clingo_ast_type_head_set_aggregate
 , <br />
-&#160;&#160;<b>head_set_aggregate</b> = clingo_ast_type_head_set_aggregate
-, <b>head_theory_atom</b> = clingo_ast_type_head_theory_atom
+&#160;&#160;<b>head_theory_atom</b> = clingo_ast_type_head_theory_atom
 , <b>head_conditional_literal</b> = clingo_ast_type_head_conditional_literal
 , <b>head_disjunction</b> = clingo_ast_type_head_disjunction
+, <b>theory_operator_definition</b> = clingo_ast_type_theory_operator_definition
 , <br />
-&#160;&#160;<b>theory_operator_definition</b> = clingo_ast_type_theory_operator_definition
-, <b>theory_term_definition</b> = clingo_ast_type_theory_term_definition
+&#160;&#160;<b>theory_term_definition</b> = clingo_ast_type_theory_term_definition
 , <b>theory_guard_definition</b> = clingo_ast_type_theory_guard_definition
 , <b>theory_atom_definition</b> = clingo_ast_type_theory_atom_definition
+, <b>optimize_tuple</b> = clingo_ast_type_optimize_tuple
 , <br />
-&#160;&#160;<b>optimize_tuple</b> = clingo_ast_type_optimize_tuple
-, <b>optimize_element</b> = clingo_ast_type_optimize_element
+&#160;&#160;<b>optimize_element</b> = clingo_ast_type_optimize_element
 , <b>edge</b> = clingo_ast_type_edge
 , <b>program_part</b> = clingo_ast_type_program_part
+, <b>statement_rule</b> = clingo_ast_type_statement_rule
 , <br />
-&#160;&#160;<b>statement_rule</b> = clingo_ast_type_statement_rule
-, <b>statement_theory</b> = clingo_ast_type_statement_theory
+&#160;&#160;<b>statement_theory</b> = clingo_ast_type_statement_theory
 , <b>statement_optimize</b> = clingo_ast_type_statement_optimize
 , <b>statement_weak_constraint</b> = clingo_ast_type_statement_weak_constraint
+, <b>statement_show</b> = clingo_ast_type_statement_show
 , <br />
-&#160;&#160;<b>statement_show</b> = clingo_ast_type_statement_show
-, <b>statement_show_nothing</b> = clingo_ast_type_statement_show_nothing
+&#160;&#160;<b>statement_show_nothing</b> = clingo_ast_type_statement_show_nothing
 , <b>statement_show_signature</b> = clingo_ast_type_statement_show_signature
 , <b>statement_project</b> = clingo_ast_type_statement_project
+, <b>statement_project_signature</b> = clingo_ast_type_statement_project_signature
 , <br />
-&#160;&#160;<b>statement_project_signature</b> = clingo_ast_type_statement_project_signature
-, <b>statement_defined</b> = clingo_ast_type_statement_defined
+&#160;&#160;<b>statement_defined</b> = clingo_ast_type_statement_defined
 , <b>statement_external</b> = clingo_ast_type_statement_external
 , <b>statement_edge</b> = clingo_ast_type_statement_edge
+, <b>statement_heuristic</b> = clingo_ast_type_statement_heuristic
 , <br />
-&#160;&#160;<b>statement_heuristic</b> = clingo_ast_type_statement_heuristic
-, <b>statement_script</b> = clingo_ast_type_statement_script
+&#160;&#160;<b>statement_script</b> = clingo_ast_type_statement_script
 , <b>statement_program</b> = clingo_ast_type_statement_program
 , <b>statement_include</b> = clingo_ast_type_statement_include
+, <b>statement_const</b> = clingo_ast_type_statement_const
 , <br />
-&#160;&#160;<b>statement_const</b> = clingo_ast_type_statement_const
-, <b>statement_parts</b> = clingo_ast_type_statement_parts
+&#160;&#160;<b>statement_parts</b> = clingo_ast_type_statement_parts
 , <b>statement_comment</b> = clingo_ast_type_statement_comment
 <br />
  }</td></tr>

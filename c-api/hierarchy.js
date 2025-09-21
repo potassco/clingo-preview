@@ -41,6 +41,9 @@ var hierarchy =
       [ "CppClingo::Input::Expression< Edge >", "classCppClingo_1_1Input_1_1Expression.html", [
         [ "CppClingo::Input::Edge", "classCppClingo_1_1Input_1_1Edge.html", null ]
       ] ],
+      [ "CppClingo::Input::Expression< FormatFieldLiteral >", "classCppClingo_1_1Input_1_1Expression.html", [
+        [ "CppClingo::Input::FormatFieldLiteral", "classCppClingo_1_1Input_1_1FormatFieldLiteral.html", null ]
+      ] ],
       [ "CppClingo::Input::Expression< HdLitAggregate >", "classCppClingo_1_1Input_1_1Expression.html", [
         [ "CppClingo::Input::HdLitAggregate", "classCppClingo_1_1Input_1_1HdLitAggregate.html", null ]
       ] ],
@@ -134,6 +137,9 @@ var hierarchy =
       [ "CppClingo::Input::Expression< StmWeakConstraint >", "classCppClingo_1_1Input_1_1Expression.html", [
         [ "CppClingo::Input::StmWeakConstraint", "classCppClingo_1_1Input_1_1StmWeakConstraint.html", null ]
       ] ],
+      [ "CppClingo::Input::Expression< TermFormatString >", "classCppClingo_1_1Input_1_1Expression.html", [
+        [ "CppClingo::Input::TermFormatString", "classCppClingo_1_1Input_1_1TermFormatString.html", null ]
+      ] ],
       [ "CppClingo::Input::Expression< TermSymbol >", "classCppClingo_1_1Input_1_1Expression.html", [
         [ "CppClingo::Input::TermSymbol", "classCppClingo_1_1Input_1_1TermSymbol.html", null ]
       ] ],
@@ -173,6 +179,9 @@ var hierarchy =
       [ "CppClingo::Input::RecursiveExpression< ArgumentTuple >", "classCppClingo_1_1Input_1_1RecursiveExpression.html", [
         [ "CppClingo::Input::ArgumentTuple", "classCppClingo_1_1Input_1_1ArgumentTuple.html", null ]
       ] ],
+      [ "CppClingo::Input::RecursiveExpression< FormatFieldExpression >", "classCppClingo_1_1Input_1_1RecursiveExpression.html", [
+        [ "CppClingo::Input::FormatFieldExpression", "classCppClingo_1_1Input_1_1FormatFieldExpression.html", null ]
+      ] ],
       [ "CppClingo::Input::RecursiveExpression< TermAbs >", "classCppClingo_1_1Input_1_1RecursiveExpression.html", [
         [ "CppClingo::Input::TermAbs", "classCppClingo_1_1Input_1_1TermAbs.html", null ]
       ] ],
@@ -205,6 +214,8 @@ var hierarchy =
     [ "CppClingo::Util::Record::Base< BdLitSimple >", "classCppClingo_1_1Util_1_1Record_1_1Base.html", null ],
     [ "CppClingo::Util::Record::Base< CondLit >", "classCppClingo_1_1Util_1_1Record_1_1Base.html", null ],
     [ "CppClingo::Util::Record::Base< Edge >", "classCppClingo_1_1Util_1_1Record_1_1Base.html", null ],
+    [ "CppClingo::Util::Record::Base< FormatFieldExpression >", "classCppClingo_1_1Util_1_1Record_1_1Base.html", null ],
+    [ "CppClingo::Util::Record::Base< FormatFieldLiteral >", "classCppClingo_1_1Util_1_1Record_1_1Base.html", null ],
     [ "CppClingo::Util::Record::Base< HdLitAggregate >", "classCppClingo_1_1Util_1_1Record_1_1Base.html", null ],
     [ "CppClingo::Util::Record::Base< HdLitAggregateElement >", "classCppClingo_1_1Util_1_1Record_1_1Base.html", null ],
     [ "CppClingo::Util::Record::Base< HdLitDisjunction >", "classCppClingo_1_1Util_1_1Record_1_1Base.html", null ],
@@ -242,6 +253,7 @@ var hierarchy =
     ] ],
     [ "CppClingo::Util::Record::Base< TermAbs >", "classCppClingo_1_1Util_1_1Record_1_1Base.html", null ],
     [ "CppClingo::Util::Record::Base< TermBinary >", "classCppClingo_1_1Util_1_1Record_1_1Base.html", null ],
+    [ "CppClingo::Util::Record::Base< TermFormatString >", "classCppClingo_1_1Util_1_1Record_1_1Base.html", null ],
     [ "CppClingo::Util::Record::Base< TermFunction >", "classCppClingo_1_1Util_1_1Record_1_1Base.html", null ],
     [ "CppClingo::Util::Record::Base< TermSymbol >", "classCppClingo_1_1Util_1_1Record_1_1Base.html", null ],
     [ "CppClingo::Util::Record::Base< TermTuple >", "classCppClingo_1_1Util_1_1Record_1_1Base.html", null ],
@@ -355,6 +367,7 @@ var hierarchy =
     ] ],
     [ "CppClingo::Control::EventHandler", "classCppClingo_1_1Control_1_1EventHandler.html", null ],
     [ "CppClingo::Util::fill", "classCppClingo_1_1Util_1_1fill.html", null ],
+    [ "CppClingo::FormatSpec", "structCppClingo_1_1FormatSpec.html", null ],
     [ "CppClingo::GCLock", "classCppClingo_1_1GCLock.html", null ],
     [ "CppClingo::Ground::GenerationCounts", "classCppClingo_1_1Ground_1_1GenerationCounts.html", null ],
     [ "CppClingo::Util::Graph", "classCppClingo_1_1Util_1_1Graph.html", null ],
@@ -369,6 +382,7 @@ var hierarchy =
     [ "CppClingo::Util::immutable_array< BdLit >", "classCppClingo_1_1Util_1_1immutable__array.html", null ],
     [ "CppClingo::Util::immutable_array< BdLitAggregateElement >", "classCppClingo_1_1Util_1_1immutable__array.html", null ],
     [ "CppClingo::Util::immutable_array< Edge >", "classCppClingo_1_1Util_1_1immutable__array.html", null ],
+    [ "CppClingo::Util::immutable_array< FormatField >", "classCppClingo_1_1Util_1_1immutable__array.html", null ],
     [ "CppClingo::Util::immutable_array< Guard >", "classCppClingo_1_1Util_1_1immutable__array.html", null ],
     [ "CppClingo::Util::immutable_array< HdLitAggregateElement >", "classCppClingo_1_1Util_1_1immutable__array.html", null ],
     [ "CppClingo::Util::immutable_array< HdLitDisjunctionElement >", "classCppClingo_1_1Util_1_1immutable__array.html", null ],
@@ -566,6 +580,7 @@ var hierarchy =
     [ "Clingo::Term", "classClingo_1_1Term.html", null ],
     [ "CppClingo::Ground::Term", "classCppClingo_1_1Ground_1_1Term.html", [
       [ "CppClingo::Ground::TermBinary", "classCppClingo_1_1Ground_1_1TermBinary.html", null ],
+      [ "CppClingo::Ground::TermFormatString", "classCppClingo_1_1Ground_1_1TermFormatString.html", null ],
       [ "CppClingo::Ground::TermFunction", "classCppClingo_1_1Ground_1_1TermFunction.html", null ],
       [ "CppClingo::Ground::TermLinear", "classCppClingo_1_1Ground_1_1TermLinear.html", null ],
       [ "CppClingo::Ground::TermProjection", "classCppClingo_1_1Ground_1_1TermProjection.html", null ],

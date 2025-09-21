@@ -24,6 +24,9 @@ var group__ground__term =
       [ "TermSymbol", "classCppClingo_1_1Ground_1_1TermSymbol.html#ac3c409abe23b84add53ac5aef1d85112", null ],
       [ "symbol", "classCppClingo_1_1Ground_1_1TermSymbol.html#a4eb750e685e868e665db3b1aa30d18cb", null ]
     ] ],
+    [ "CppClingo::Ground::TermFormatString", "classCppClingo_1_1Ground_1_1TermFormatString.html", [
+      [ "TermFormatString", "classCppClingo_1_1Ground_1_1TermFormatString.html#a26aa4371b47d63d168a5e69ed9ca1117", null ]
+    ] ],
     [ "CppClingo::Ground::TermVariable", "classCppClingo_1_1Ground_1_1TermVariable.html", [
       [ "TermVariable", "classCppClingo_1_1Ground_1_1TermVariable.html#a7ee91ae5131f918bf502dd6a079ecbd6", null ]
     ] ],
@@ -42,6 +45,8 @@ var group__ground__term =
     [ "CppClingo::Ground::TermFunction", "classCppClingo_1_1Ground_1_1TermFunction.html", [
       [ "TermFunction", "classCppClingo_1_1Ground_1_1TermFunction.html#a56df8a0207ef707fb2f6a276d394e193", null ]
     ] ],
+    [ "CppClingo::Ground::FormatField", "group__ground__term.html#ga88cea3472e387c2ead9ce03c0a4b252f", null ],
+    [ "CppClingo::Ground::FormatFieldVec", "group__ground__term.html#ga06af75b60a921fc137b24e411ba6ac7c", null ],
     [ "CppClingo::Ground::GuardVec", "group__ground__term.html#ga1b18f1edd8811d1dbc5a9bea8640f8cc", null ],
     [ "CppClingo::Ground::UTerm", "group__ground__term.html#ga318ae223e66d9f04f129fcc7d83e07e1", null ],
     [ "CppClingo::Ground::UTermVec", "group__ground__term.html#gae5eb3e9da096c2e37baa4ea5225eee5f", null ],

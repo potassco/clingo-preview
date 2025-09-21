@@ -1,7 +1,7 @@
 var searchData=
 [
   ['bin_0',['bin',['../group__core__number.html#gga6d834c1a2d71d2df5ca761b67fb24ca2ac1111bd512b29e821b120b86446026b8',1,'CppClingo']]],
-  ['binary_1',['binary',['../group__input__rewrite.html#gga77d3487b22e60759ffdb4c6ebf2dd2b0a9d7183f16acce70658f686ae7f1a4d20',1,'CppClingo::Input']]],
+  ['binary_1',['binary',['../structCppClingo_1_1FormatSpec.html#aa0d31ced1bb6cc19448c362d1fdd9c0ca9d7183f16acce70658f686ae7f1a4d20',1,'CppClingo::FormatSpec::binary'],['../group__input__rewrite.html#gga77d3487b22e60759ffdb4c6ebf2dd2b0a9d7183f16acce70658f686ae7f1a4d20',1,'binaryCppClingo::Input']]],
   ['binary_5fleft_2',['binary_left',['../group__input__statement.html#ggae5c8f9ece4b382f8e929bf399cc022f6a95cb158a1a81331a09a99bc45f4325fe',1,'CppClingo::Input']]],
   ['binary_5fright_3',['binary_right',['../group__input__statement.html#ggae5c8f9ece4b382f8e929bf399cc022f6ace642976a7958ab9a3ba822417157cae',1,'CppClingo::Input']]],
   ['body_4',['body',['../classCppClingo_1_1OutputTheory.html#ab5eb13c054f180d37873c83dfc1d66e7a841a2d689ad86bd1611447453c22c6fc',1,'CppClingo::OutputTheory::body'],['../group__input__statement.html#gga497335dbf0265ef3216c7a7a6d9d1e8ba841a2d689ad86bd1611447453c22c6fc',1,'bodyCppClingo::Input']]],

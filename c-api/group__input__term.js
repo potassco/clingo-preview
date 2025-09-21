@@ -19,6 +19,23 @@ var group__input__term =
       [ "loc", "classCppClingo_1_1Input_1_1TermSymbol.html#ae50f72326861eb7b032ae82eeca8f825", null ],
       [ "value", "classCppClingo_1_1Input_1_1TermSymbol.html#ac85f0d45bfc7e9df06f5e25ebf224dbe", null ]
     ] ],
+    [ "CppClingo::Input::FormatFieldExpression", "classCppClingo_1_1Input_1_1FormatFieldExpression.html", [
+      [ "FormatFieldExpression", "classCppClingo_1_1Input_1_1FormatFieldExpression.html#ad4de5235be7ae69800f3601e149c6688", null ],
+      [ "lhs", "classCppClingo_1_1Input_1_1FormatFieldExpression.html#ae6590b6ae8eb2a7fe69396d8d48c5d37", null ],
+      [ "loc", "classCppClingo_1_1Input_1_1FormatFieldExpression.html#a11f5adbd9616efe2a2c89bccf986f5b9", null ],
+      [ "rhs", "classCppClingo_1_1Input_1_1FormatFieldExpression.html#a462093854b07af11c956bef03348aa16", null ],
+      [ "rhs_str", "classCppClingo_1_1Input_1_1FormatFieldExpression.html#a5484f6ba0ab20528b3a69b8aee0abef1", null ]
+    ] ],
+    [ "CppClingo::Input::FormatFieldLiteral", "classCppClingo_1_1Input_1_1FormatFieldLiteral.html", [
+      [ "FormatFieldLiteral", "classCppClingo_1_1Input_1_1FormatFieldLiteral.html#ac8d156fd0349503be54e6735acd25c23", null ],
+      [ "loc", "classCppClingo_1_1Input_1_1FormatFieldLiteral.html#a726cf517cfd642f69620031772aa3d1c", null ],
+      [ "value", "classCppClingo_1_1Input_1_1FormatFieldLiteral.html#a6aeb9424cb6a9b1320f7f278bd66ff54", null ]
+    ] ],
+    [ "CppClingo::Input::TermFormatString", "classCppClingo_1_1Input_1_1TermFormatString.html", [
+      [ "TermFormatString", "classCppClingo_1_1Input_1_1TermFormatString.html#a69b14d1b33ac0b07091b2d15e309c8a6", null ],
+      [ "elems", "classCppClingo_1_1Input_1_1TermFormatString.html#a081235d685f22828261ba6f57f9b9831", null ],
+      [ "loc", "classCppClingo_1_1Input_1_1TermFormatString.html#a78738773695d963d28b05a6691695488", null ]
+    ] ],
     [ "CppClingo::Input::TermTuple", "classCppClingo_1_1Input_1_1TermTuple.html", [
       [ "TermTuple", "classCppClingo_1_1Input_1_1TermTuple.html#ac07e9c454c174f04904afe4825958124", null ],
       [ "loc", "classCppClingo_1_1Input_1_1TermTuple.html#a124c02ebe8f6192bf2a54397506b4e45", null ],
@@ -53,11 +70,13 @@ var group__input__term =
     ] ],
     [ "CppClingo::Input::Argument", "group__input__term.html#gada28181173b6835f5093f963a552b0db", null ],
     [ "CppClingo::Input::ArgumentArray", "group__input__term.html#ga2a31f58193bf30b0c7a81a93f3bc4ebc", null ],
+    [ "CppClingo::Input::FormatField", "group__input__term.html#gae5c2f5494c95989d29ab08af8356e71d", null ],
+    [ "CppClingo::Input::FormatFieldArray", "group__input__term.html#ga8e7c2809c6857a9a9daad6c0785686fe", null ],
     [ "CppClingo::Input::PoolArray", "group__input__term.html#ga11bea3c744c56c076bb53faf867321c6", null ],
     [ "CppClingo::Input::SharedSig", "group__input__term.html#gad2f709167461133f722c54cf5483c5aa", null ],
     [ "CppClingo::Input::SharedSigSet", "group__input__term.html#ga5bbfe5a5aa54c8bfd88a846e91237be5", null ],
     [ "CppClingo::Input::Sig", "group__input__term.html#ga73d756ca560d4efda0984f313db263a0", null ],
-    [ "CppClingo::Input::Term", "group__input__term.html#ga451cb369602c19edf9fd1e96802d4961", null ],
+    [ "CppClingo::Input::Term", "group__input__term.html#gab1082566f069606f58c6153e01349324", null ],
     [ "CppClingo::Input::TermArray", "group__input__term.html#ga6dfac81c2c650ea65632a88c6a4dd280", null ],
     [ "CppClingo::Input::TupleElement", "group__input__term.html#gad9be744523b75c87f78ff0e08bc887a9", null ],
     [ "CppClingo::Input::TupleElementArray", "group__input__term.html#gaad36c9345f5886da273ca68f38fa192e", null ],

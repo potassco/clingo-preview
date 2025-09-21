@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['weightconstrainttype_0',['WeightConstraintType',['../group__cpp__propagate.html#ga017aa793e466bc6febee50ec40e88ec5',1,'Clingo']]],
-  ['writeaspifflags_1',['WriteAspifFlags',['../group__cpp__control.html#ga4105f64f8259bab344ace2f5bf794af8',1,'Clingo']]]
+  ['valueflags_0',['ValueFlags',['../classCppClingo_1_1Control_1_1ClingoConfig.html#a4000fa9c8b4d408755ba1ecaa16a0408',1,'CppClingo::Control::ClingoConfig']]],
+  ['variablecontext_1',['VariableContext',['../group__input__visit__variables.html#ga649c0a8d0a3d658042deef23b03a7053',1,'CppClingo::Input']]],
+  ['varselectmode_2',['VarSelectMode',['../group__ground__literal.html#ga842b483899342d97dcda5733b663eccd',1,'CppClingo::Ground']]]
 ];

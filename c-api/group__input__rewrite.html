@@ -153,7 +153,7 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::IE
 <tr class="memdesc:gab9c2d675bcb3658065c2919b1d53060c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A map from variables to intervals. <br /></td></tr>
 <tr class="separator:gab9c2d675bcb3658065c2919b1d53060c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab71e2de978f9599c2f5d9644773789b7" id="r_gab71e2de978f9599c2f5d9644773789b7"><td class="memItemLeft" align="right" valign="top"><a id="gab71e2de978f9599c2f5d9644773789b7" name="gab71e2de978f9599c2f5d9644773789b7"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::AuxTermVec</b> = std::vector&lt; std::pair&lt; <a class="el" href="group__input__term.html#ga451cb369602c19edf9fd1e96802d4961">Term</a>, <a class="el" href="group__input__term.html#ga451cb369602c19edf9fd1e96802d4961">Term</a> &gt; &gt;</td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::AuxTermVec</b> = std::vector&lt; std::pair&lt; <a class="el" href="group__input__term.html#gab1082566f069606f58c6153e01349324">Term</a>, <a class="el" href="group__input__term.html#gab1082566f069606f58c6153e01349324">Term</a> &gt; &gt;</td></tr>
 <tr class="memdesc:gab71e2de978f9599c2f5d9644773789b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vector of term pairs where the second has been substituted by the first in some other term. <br /></td></tr>
 <tr class="separator:gab71e2de978f9599c2f5d9644773789b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6f5abd10bcc8174dfe7548f173e39a9a" id="r_ga6f5abd10bcc8174dfe7548f173e39a9a"><td class="memItemLeft" align="right" valign="top"><a id="ga6f5abd10bcc8174dfe7548f173e39a9a" name="ga6f5abd10bcc8174dfe7548f173e39a9a"></a>
@@ -166,7 +166,7 @@ template&lt;class E &gt; </td></tr>
 <tr class="memdesc:ga4d27779e217e0fedb64cee0adb06094a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The result of a simplification. <br /></td></tr>
 <tr class="separator:ga4d27779e217e0fedb64cee0adb06094a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga67bd5abf2d4c316cc6caf1558fbd4bfa" id="r_ga67bd5abf2d4c316cc6caf1558fbd4bfa"><td class="memItemLeft" align="right" valign="top"><a id="ga67bd5abf2d4c316cc6caf1558fbd4bfa" name="ga67bd5abf2d4c316cc6caf1558fbd4bfa"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::SimplifyTermResult</b> = <a class="el" href="structCppClingo_1_1Util_1_1ResultState.html">Util::ResultState</a>&lt; <a class="el" href="group__input__term.html#ga451cb369602c19edf9fd1e96802d4961">Term</a>, bool &gt;</td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::SimplifyTermResult</b> = <a class="el" href="structCppClingo_1_1Util_1_1ResultState.html">Util::ResultState</a>&lt; <a class="el" href="group__input__term.html#gab1082566f069606f58c6153e01349324">Term</a>, bool &gt;</td></tr>
 <tr class="memdesc:ga67bd5abf2d4c316cc6caf1558fbd4bfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">The result of a simplification. <br /></td></tr>
 <tr class="separator:ga67bd5abf2d4c316cc6caf1558fbd4bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -219,7 +219,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::ana
 void&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::analyze</b> (<a class="el" href="group__input__statement.html#ga33b293d9d1ef5539903470d1e13049a6">Stm</a> const &amp;stm, <a class="el" href="group__input__term.html#ga5bbfe5a5aa54c8bfd88a846e91237be5">SharedSigSet</a> &amp;provide, <a class="el" href="group__util__container.html#ga8b882c38d82c3c3019ce4aee06b90faf">Util::ordered_map</a>&lt; <a class="el" href="group__input__term.html#gad2f709167461133f722c54cf5483c5aa">SharedSig</a>, <a class="el" href="classCppClingo_1_1Location.html">Location</a> &gt; &amp;depend)</td></tr>
 <tr class="memdesc:ga8c497ebdace144400493fd4836e09ccd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analyze the given statement adding provided and dependent predicates. <br /></td></tr>
 <tr class="separator:ga8c497ebdace144400493fd4836e09ccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga082f27fc12dbdf9aaa1a85480a58dcbd" id="r_ga082f27fc12dbdf9aaa1a85480a58dcbd"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__input__rewrite.html#ga082f27fc12dbdf9aaa1a85480a58dcbd">CppClingo::Input::unify</a> (<a class="el" href="classCppClingo_1_1SymbolStore.html">SymbolStore</a> &amp;store, <a class="el" href="group__input__term.html#ga451cb369602c19edf9fd1e96802d4961">Term</a> const &amp;a, <a class="el" href="group__input__term.html#ga451cb369602c19edf9fd1e96802d4961">Term</a> const &amp;b) -&gt; bool</td></tr>
+<tr class="memitem:ga082f27fc12dbdf9aaa1a85480a58dcbd" id="r_ga082f27fc12dbdf9aaa1a85480a58dcbd"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__input__rewrite.html#ga082f27fc12dbdf9aaa1a85480a58dcbd">CppClingo::Input::unify</a> (<a class="el" href="classCppClingo_1_1SymbolStore.html">SymbolStore</a> &amp;store, <a class="el" href="group__input__term.html#gab1082566f069606f58c6153e01349324">Term</a> const &amp;a, <a class="el" href="group__input__term.html#gab1082566f069606f58c6153e01349324">Term</a> const &amp;b) -&gt; bool</td></tr>
 <tr class="memdesc:ga082f27fc12dbdf9aaa1a85480a58dcbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to unify the two terms.  <br /></td></tr>
 <tr class="separator:ga082f27fc12dbdf9aaa1a85480a58dcbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga66194a5713edf982cbf131d7c00208d7" id="r_ga66194a5713edf982cbf131d7c00208d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__input__rewrite.html#ga66194a5713edf982cbf131d7c00208d7">CppClingo::Input::visualize</a> (<a class="el" href="group__input__program.html#ga771af9d457c82eb52ce1a277346b8087">Components</a> const &amp;comps, std::ostream &amp;out)</td></tr>
@@ -233,7 +233,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::add
 <tr class="memdesc:gae1ab09dbcf89b45fe3b333f2be9ade50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simplify the given sum of terms.  <br /></td></tr>
 <tr class="separator:gae1ab09dbcf89b45fe3b333f2be9ade50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafb0ed9400aa7718c86a4e316a08d2238" id="r_gafb0ed9400aa7718c86a4e316a08d2238"><td class="memItemLeft" align="right" valign="top"><a id="gafb0ed9400aa7718c86a4e316a08d2238" name="gafb0ed9400aa7718c86a4e316a08d2238"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::project</b> (<a class="el" href="group__input__term.html#ga451cb369602c19edf9fd1e96802d4961">Term</a> const &amp;term, <a class="el" href="classCppClingo_1_1Input_1_1ProjectionMap.html">ProjectionMap</a> project) -&gt; std::optional&lt; <a class="el" href="group__input__term.html#ga451cb369602c19edf9fd1e96802d4961">Term</a> &gt;</td></tr>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::project</b> (<a class="el" href="group__input__term.html#gab1082566f069606f58c6153e01349324">Term</a> const &amp;term, <a class="el" href="classCppClingo_1_1Input_1_1ProjectionMap.html">ProjectionMap</a> project) -&gt; std::optional&lt; <a class="el" href="group__input__term.html#gab1082566f069606f58c6153e01349324">Term</a> &gt;</td></tr>
 <tr class="memdesc:gafb0ed9400aa7718c86a4e316a08d2238"><td class="mdescLeft">&#160;</td><td class="mdescRight">Project variables according to given projection mode. <br /></td></tr>
 <tr class="separator:gafb0ed9400aa7718c86a4e316a08d2238"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1b43fc85156c6c6a8512ef7ddfa3fc42" id="r_ga1b43fc85156c6c6a8512ef7ddfa3fc42"><td class="memItemLeft" align="right" valign="top"><a id="ga1b43fc85156c6c6a8512ef7ddfa3fc42" name="ga1b43fc85156c6c6a8512ef7ddfa3fc42"></a>
@@ -251,7 +251,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::pro
 <tr class="memdesc:gad7804b88f3fa3848dd75333735b703f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Project variables according to given projection mode.  <br /></td></tr>
 <tr class="separator:gad7804b88f3fa3848dd75333735b703f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9c125e5a98650d312244203cc82d7e55" id="r_ga9c125e5a98650d312244203cc82d7e55"><td class="memItemLeft" align="right" valign="top"><a id="ga9c125e5a98650d312244203cc82d7e55" name="ga9c125e5a98650d312244203cc82d7e55"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::project_anonymous</b> (<a class="el" href="group__input__term.html#ga451cb369602c19edf9fd1e96802d4961">Term</a> const &amp;term) -&gt; std::optional&lt; <a class="el" href="group__input__term.html#ga451cb369602c19edf9fd1e96802d4961">Term</a> &gt;</td></tr>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::project_anonymous</b> (<a class="el" href="group__input__term.html#gab1082566f069606f58c6153e01349324">Term</a> const &amp;term) -&gt; std::optional&lt; <a class="el" href="group__input__term.html#gab1082566f069606f58c6153e01349324">Term</a> &gt;</td></tr>
 <tr class="memdesc:ga9c125e5a98650d312244203cc82d7e55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Project positional anonymous variables in the term. <br /></td></tr>
 <tr class="separator:ga9c125e5a98650d312244203cc82d7e55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad70707ce6bbcfeff6ad282dc40d558d1" id="r_gad70707ce6bbcfeff6ad282dc40d558d1"><td class="memItemLeft" align="right" valign="top"><a id="gad70707ce6bbcfeff6ad282dc40d558d1" name="gad70707ce6bbcfeff6ad282dc40d558d1"></a>
@@ -271,7 +271,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::pro
 <tr class="memdesc:gaa99b00dc2a07f3fdb2998ee41d87ba3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Project anonymous variables in (nested) negated symbolic literals. <br /></td></tr>
 <tr class="separator:gaa99b00dc2a07f3fdb2998ee41d87ba3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa3199518a7c59d2ec5cf5fefafd3dffe" id="r_gaa3199518a7c59d2ec5cf5fefafd3dffe"><td class="memItemLeft" align="right" valign="top"><a id="gaa3199518a7c59d2ec5cf5fefafd3dffe" name="gaa3199518a7c59d2ec5cf5fefafd3dffe"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::rewrite_anonymous</b> (<a class="el" href="group__input__term.html#ga451cb369602c19edf9fd1e96802d4961">Term</a> const &amp;term, <a class="el" href="classCppClingo_1_1NameGen.html">NameGen</a> &amp;gen) -&gt; std::optional&lt; <a class="el" href="group__input__term.html#ga451cb369602c19edf9fd1e96802d4961">Term</a> &gt;</td></tr>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::rewrite_anonymous</b> (<a class="el" href="group__input__term.html#gab1082566f069606f58c6153e01349324">Term</a> const &amp;term, <a class="el" href="classCppClingo_1_1NameGen.html">NameGen</a> &amp;gen) -&gt; std::optional&lt; <a class="el" href="group__input__term.html#gab1082566f069606f58c6153e01349324">Term</a> &gt;</td></tr>
 <tr class="memdesc:gaa3199518a7c59d2ec5cf5fefafd3dffe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Give anonymous variables a unique name. <br /></td></tr>
 <tr class="separator:gaa3199518a7c59d2ec5cf5fefafd3dffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga48f3d1bd6ce0e4b46e9961c30bc34a78" id="r_ga48f3d1bd6ce0e4b46e9961c30bc34a78"><td class="memItemLeft" align="right" valign="top"><a id="ga48f3d1bd6ce0e4b46e9961c30bc34a78" name="ga48f3d1bd6ce0e4b46e9961c30bc34a78"></a>
@@ -309,7 +309,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::rew
 &#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::CLINGO_ENABLE_BITSET_ENUM</b> (<a class="el" href="group__input__rewrite.html#ga1a7c06d9fc632bc97b2127d4cd179505">SimplifyLiteralFlags</a>)</td></tr>
 <tr class="memdesc:gaf3156979f242b85ddcf5bf8408434a26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate that the enum is a bitset. <br /></td></tr>
 <tr class="separator:gaf3156979f242b85ddcf5bf8408434a26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacf645136109e68f5049d98153443b5d5" id="r_gacf645136109e68f5049d98153443b5d5"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__input__rewrite.html#gacf645136109e68f5049d98153443b5d5">CppClingo::Input::simplify</a> (<a class="el" href="group__input__rewrite.html#ga4a3097cd90e08903c5cb8402c7b090db">SimplifyTermFlags</a> flags, <a class="el" href="classCppClingo_1_1Input_1_1RewriteContext.html">RewriteContext</a> &amp;ctx, <a class="el" href="group__input__term.html#ga451cb369602c19edf9fd1e96802d4961">Term</a> const &amp;term) -&gt; <a class="el" href="group__input__rewrite.html#ga67bd5abf2d4c316cc6caf1558fbd4bfa">SimplifyTermResult</a></td></tr>
+<tr class="memitem:gacf645136109e68f5049d98153443b5d5" id="r_gacf645136109e68f5049d98153443b5d5"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__input__rewrite.html#gacf645136109e68f5049d98153443b5d5">CppClingo::Input::simplify</a> (<a class="el" href="group__input__rewrite.html#ga4a3097cd90e08903c5cb8402c7b090db">SimplifyTermFlags</a> flags, <a class="el" href="classCppClingo_1_1Input_1_1RewriteContext.html">RewriteContext</a> &amp;ctx, <a class="el" href="group__input__term.html#gab1082566f069606f58c6153e01349324">Term</a> const &amp;term) -&gt; <a class="el" href="group__input__rewrite.html#ga67bd5abf2d4c316cc6caf1558fbd4bfa">SimplifyTermResult</a></td></tr>
 <tr class="memdesc:gacf645136109e68f5049d98153443b5d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simplifies the given term.  <br /></td></tr>
 <tr class="separator:gacf645136109e68f5049d98153443b5d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1fc19545ad844883a15b49f11b692e05" id="r_ga1fc19545ad844883a15b49f11b692e05"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__input__rewrite.html#ga1fc19545ad844883a15b49f11b692e05">CppClingo::Input::simplify</a> (<a class="el" href="group__input__rewrite.html#ga1a7c06d9fc632bc97b2127d4cd179505">SimplifyLiteralFlags</a> flags, <a class="el" href="classCppClingo_1_1Input_1_1RewriteContext.html">RewriteContext</a> &amp;ctx, <a class="el" href="group__input__literal.html#ga632f5e7e731fffca3abe49f0c56d4f69">Lit</a> const &amp;lit) -&gt; <a class="el" href="group__input__rewrite.html#ga4d27779e217e0fedb64cee0adb06094a">SimplifyResult</a>&lt; <a class="el" href="group__input__literal.html#ga632f5e7e731fffca3abe49f0c56d4f69">Lit</a> &gt;</td></tr>
@@ -329,7 +329,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::map
 <tr class="memdesc:ga8e93ba4bdc9ad79de27fc14d9ce65343"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace all parameters in the given fact. <br /></td></tr>
 <tr class="separator:ga8e93ba4bdc9ad79de27fc14d9ce65343"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga48ebf4665c987a587f18c514c5285d0a" id="r_ga48ebf4665c987a587f18c514c5285d0a"><td class="memItemLeft" align="right" valign="top"><a id="ga48ebf4665c987a587f18c514c5285d0a" name="ga48ebf4665c987a587f18c514c5285d0a"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::map_params</b> (<a class="el" href="classCppClingo_1_1Input_1_1RewriteContext.html">RewriteContext</a> &amp;ctx, <a class="el" href="group__input__term.html#ga451cb369602c19edf9fd1e96802d4961">Term</a> const &amp;term) -&gt; std::optional&lt; <a class="el" href="group__input__term.html#ga451cb369602c19edf9fd1e96802d4961">Term</a> &gt;</td></tr>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::map_params</b> (<a class="el" href="classCppClingo_1_1Input_1_1RewriteContext.html">RewriteContext</a> &amp;ctx, <a class="el" href="group__input__term.html#gab1082566f069606f58c6153e01349324">Term</a> const &amp;term) -&gt; std::optional&lt; <a class="el" href="group__input__term.html#gab1082566f069606f58c6153e01349324">Term</a> &gt;</td></tr>
 <tr class="memdesc:ga48ebf4665c987a587f18c514c5285d0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace all parameters in the given term. <br /></td></tr>
 <tr class="separator:ga48ebf4665c987a587f18c514c5285d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0c78a0fec70a777819c780af479cdb8a" id="r_ga0c78a0fec70a777819c780af479cdb8a"><td class="memItemLeft" align="right" valign="top"><a id="ga0c78a0fec70a777819c780af479cdb8a" name="ga0c78a0fec70a777819c780af479cdb8a"></a>
@@ -365,7 +365,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::sub
 <tr class="memdesc:ga7ef5b75663d77421ae2155673ec7b112"><td class="mdescLeft">&#160;</td><td class="mdescRight">Substitute variables in terms of form <code>X=term</code> in the statement. <br /></td></tr>
 <tr class="separator:ga7ef5b75663d77421ae2155673ec7b112"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga08f65c9c26982d419ffe27c456c8c945" id="r_ga08f65c9c26982d419ffe27c456c8c945"><td class="memItemLeft" align="right" valign="top"><a id="ga08f65c9c26982d419ffe27c456c8c945" name="ga08f65c9c26982d419ffe27c456c8c945"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::unpool</b> (<a class="el" href="classCppClingo_1_1Input_1_1RewriteContext.html">RewriteContext</a> &amp;ctx, <a class="el" href="group__input__term.html#ga451cb369602c19edf9fd1e96802d4961">Term</a> const &amp;term) -&gt; std::optional&lt; std::vector&lt; <a class="el" href="group__input__term.html#ga451cb369602c19edf9fd1e96802d4961">Term</a> &gt; &gt;</td></tr>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::unpool</b> (<a class="el" href="classCppClingo_1_1Input_1_1RewriteContext.html">RewriteContext</a> &amp;ctx, <a class="el" href="group__input__term.html#gab1082566f069606f58c6153e01349324">Term</a> const &amp;term) -&gt; std::optional&lt; std::vector&lt; <a class="el" href="group__input__term.html#gab1082566f069606f58c6153e01349324">Term</a> &gt; &gt;</td></tr>
 <tr class="memdesc:ga08f65c9c26982d419ffe27c456c8c945"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all pooled arguments from the term. <br /></td></tr>
 <tr class="separator:ga08f65c9c26982d419ffe27c456c8c945"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga687b1c405c9942ea553079a1f23b9063" id="r_ga687b1c405c9942ea553079a1f23b9063"><td class="memItemLeft" align="right" valign="top"><a id="ga687b1c405c9942ea553079a1f23b9063" name="ga687b1c405c9942ea553079a1f23b9063"></a>
@@ -844,7 +844,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::unp
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__input__term.html#ga451cb369602c19edf9fd1e96802d4961">Term</a> const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="group__input__term.html#gab1082566f069606f58c6153e01349324">Term</a> const &amp;&#160;</td>
           <td class="paramname"><em>term</em>&#160;</td>
         </tr>
         <tr>
@@ -876,13 +876,13 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Input::unp
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__input__term.html#ga451cb369602c19edf9fd1e96802d4961">Term</a> const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="group__input__term.html#gab1082566f069606f58c6153e01349324">Term</a> const &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__input__term.html#ga451cb369602c19edf9fd1e96802d4961">Term</a> const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="group__input__term.html#gab1082566f069606f58c6153e01349324">Term</a> const &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>

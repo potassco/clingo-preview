@@ -351,6 +351,57 @@
 
             </li>
             <li>
+                    <a class="class" href="#FormatFieldExpression">FormatFieldExpression</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#FormatFieldExpression.__init__">FormatFieldExpression</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#FormatFieldExpression.transform">transform</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#FormatFieldExpression.update">update</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#FormatFieldExpression.visit">visit</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#FormatFieldExpression.left">left</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#FormatFieldExpression.location">location</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#FormatFieldExpression.right">right</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#FormatFieldLiteral">FormatFieldLiteral</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#FormatFieldLiteral.__init__">FormatFieldLiteral</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#FormatFieldLiteral.transform">transform</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#FormatFieldLiteral.update">update</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#FormatFieldLiteral.visit">visit</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#FormatFieldLiteral.location">location</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#FormatFieldLiteral.value">value</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
                     <a class="class" href="#HeadAggregate">HeadAggregate</a>
                             <ul class="memberlist">
                         <li>
@@ -1569,6 +1620,30 @@
 
             </li>
             <li>
+                    <a class="class" href="#TermFormatString">TermFormatString</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#TermFormatString.__init__">TermFormatString</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#TermFormatString.transform">transform</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#TermFormatString.update">update</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#TermFormatString.visit">visit</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#TermFormatString.elements">elements</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#TermFormatString.location">location</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
                     <a class="class" href="#TermFunction">TermFunction</a>
                             <ul class="memberlist">
                         <li>
@@ -2406,7 +2481,7 @@
                             <div id="ArgumentTuple.__init__" class="classattr">
                                 <div class="attr function">
             
-        <span class="name">ArgumentTuple</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">arguments</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#Projection">Projection</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span></span>)</span>
+        <span class="name">ArgumentTuple</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">arguments</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span> <span class="o">|</span> <span class="n"><a href="#Projection">Projection</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span></span>)</span>
 
         
     </div>
@@ -2506,7 +2581,7 @@
                             </div>
                             <div id="ArgumentTuple.arguments" class="classattr">
                                 <div class="attr variable">
-            <span class="name">arguments</span><span class="annotation">: Sequence[<a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#Projection">Projection</a>]</span>
+            <span class="name">arguments</span><span class="annotation">: Sequence[<a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a> | <a href="#Projection">Projection</a>]</span>
 
         
     </div>
@@ -2909,7 +2984,7 @@
                             <div id="BodyAggregateElement.__init__" class="classattr">
                                 <div class="attr function">
             
-        <span class="name">BodyAggregateElement</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="nb">tuple</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span><span class="p">]</span>,</span><span class="param">	<span class="n">condition</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#LiteralBoolean">LiteralBoolean</a></span> <span class="o">|</span> <span class="n"><a href="#LiteralComparison">LiteralComparison</a></span> <span class="o">|</span> <span class="n"><a href="#LiteralSymbolic">LiteralSymbolic</a></span><span class="p">]</span></span>)</span>
+        <span class="name">BodyAggregateElement</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="nb">tuple</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span><span class="p">]</span>,</span><span class="param">	<span class="n">condition</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#LiteralBoolean">LiteralBoolean</a></span> <span class="o">|</span> <span class="n"><a href="#LiteralComparison">LiteralComparison</a></span> <span class="o">|</span> <span class="n"><a href="#LiteralSymbolic">LiteralSymbolic</a></span><span class="p">]</span></span>)</span>
 
         
     </div>
@@ -3037,7 +3112,7 @@
                             </div>
                             <div id="BodyAggregateElement.tuple" class="classattr">
                                 <div class="attr variable">
-            <span class="name">tuple</span><span class="annotation">: Sequence[<a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a>]</span>
+            <span class="name">tuple</span><span class="annotation">: Sequence[<a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a>]</span>
 
         
     </div>
@@ -3537,7 +3612,7 @@
                             <div id="BodyTheoryAtom.__init__" class="classattr">
                                 <div class="attr function">
             
-        <span class="name">BodyTheoryAtom</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">sign</span><span class="p">:</span> <span class="n"><a href="#Sign">Sign</a></span>,</span><span class="param">	<span class="n">name</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span>,</span><span class="param">	<span class="n">elements</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#TheoryAtomElement">TheoryAtomElement</a></span><span class="p">]</span>,</span><span class="param">	<span class="n">right</span><span class="p">:</span> <span class="n"><a href="#TheoryRightGuard">TheoryRightGuard</a></span> <span class="o">|</span> <span class="kc">None</span></span>)</span>
+        <span class="name">BodyTheoryAtom</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">sign</span><span class="p">:</span> <span class="n"><a href="#Sign">Sign</a></span>,</span><span class="param">	<span class="n">name</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span>,</span><span class="param">	<span class="n">elements</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#TheoryAtomElement">TheoryAtomElement</a></span><span class="p">]</span>,</span><span class="param">	<span class="n">right</span><span class="p">:</span> <span class="n"><a href="#TheoryRightGuard">TheoryRightGuard</a></span> <span class="o">|</span> <span class="kc">None</span></span>)</span>
 
         
     </div>
@@ -3667,7 +3742,7 @@
                             </div>
                             <div id="BodyTheoryAtom.name" class="classattr">
                                 <div class="attr variable">
-            <span class="name">name</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a></span>
+            <span class="name">name</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a></span>
 
         
     </div>
@@ -3799,7 +3874,7 @@
                             <div id="Edge.__init__" class="classattr">
                                 <div class="attr function">
             
-        <span class="name">Edge</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">u</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span>,</span><span class="param">	<span class="n">v</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span></span>)</span>
+        <span class="name">Edge</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">u</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span>,</span><span class="param">	<span class="n">v</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span></span>)</span>
 
         
     </div>
@@ -3900,7 +3975,7 @@
                             </div>
                             <div id="Edge.u" class="classattr">
                                 <div class="attr variable">
-            <span class="name">u</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a></span>
+            <span class="name">u</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a></span>
 
         
     </div>
@@ -3913,13 +3988,313 @@
                             </div>
                             <div id="Edge.v" class="classattr">
                                 <div class="attr variable">
-            <span class="name">v</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a></span>
+            <span class="name">v</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a></span>
 
         
     </div>
     <a class="headerlink" href="#Edge.v"></a>
     
             <div class="docstring"><p>The end vertex.</p>
+</div>
+
+
+                            </div>
+                </section>
+                <section id="FormatFieldExpression">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">FormatFieldExpression</span>:
+
+        
+    </div>
+    <a class="headerlink" href="#FormatFieldExpression"></a>
+    
+            <div class="docstring"><p>An expression part of a format string.</p>
+</div>
+
+
+                            <div id="FormatFieldExpression.__init__" class="classattr">
+                                <div class="attr function">
+            
+        <span class="name">FormatFieldExpression</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">left</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span>,</span><span class="param">	<span class="n">right</span><span class="p">:</span> <span class="nb">str</span></span>)</span>
+
+        
+    </div>
+    <a class="headerlink" href="#FormatFieldExpression.__init__"></a>
+    
+            <div class="docstring"><p>Construct a FormatFieldExpression object.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>lib:</strong>  The library object for storing symbols.</li>
+<li><strong>location:</strong>  The location of the expression.</li>
+<li><strong>left:</strong>  The term of the expression.</li>
+<li><strong>right:</strong>  The format specifier of the expression.</li>
+</ul>
+</div>
+
+
+                            </div>
+                            <div id="FormatFieldExpression.transform" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">transform</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">transformer</span><span class="p">:</span> <span class="n">Any</span>,</span><span class="param">	<span class="o">*</span><span class="n">args</span>,</span><span class="param">	<span class="o">**</span><span class="n">kwargs</span></span><span class="return-annotation">) -> <span class="n"><a href="#FormatFieldExpression">FormatFieldExpression</a></span> <span class="o">|</span> <span class="kc">None</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#FormatFieldExpression.transform"></a>
+    
+            <div class="docstring"><p>Transform the expression.</p>
+
+<p>Additional arguments are passed to the transformer.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>lib:</strong>  The library object for storing symbols.</li>
+<li><strong>transformer:</strong>  The transformer accepting the sub expressions.</li>
+</ul>
+
+<h6 id="returns">Returns:</h6>
+
+<blockquote>
+  <p>The transformed object or None.</p>
+</blockquote>
+</div>
+
+
+                            </div>
+                            <div id="FormatFieldExpression.update" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">update</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="o">**</span><span class="n">kwargs</span></span><span class="return-annotation">) -> <span class="n"><a href="#FormatFieldExpression">FormatFieldExpression</a></span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#FormatFieldExpression.update"></a>
+    
+            <div class="docstring"><p>Update the expression.</p>
+
+<p>Accepts keyword arguments with attributes to update.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>lib:</strong>  The library object for storing symbols.</li>
+</ul>
+
+<h6 id="returns">Returns:</h6>
+
+<blockquote>
+  <p>The updated object.</p>
+</blockquote>
+</div>
+
+
+                            </div>
+                            <div id="FormatFieldExpression.visit" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">visit</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">visitor</span><span class="p">:</span> <span class="n">Any</span>, </span><span class="param"><span class="o">*</span><span class="n">args</span>, </span><span class="param"><span class="o">**</span><span class="n">kwargs</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#FormatFieldExpression.visit"></a>
+    
+            <div class="docstring"><p>Visit the children of the expression.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>visitor:</strong>  The visitor accepting the sub expressions.</li>
+</ul>
+</div>
+
+
+                            </div>
+                            <div id="FormatFieldExpression.left" class="classattr">
+                                <div class="attr variable">
+            <span class="name">left</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a></span>
+
+        
+    </div>
+    <a class="headerlink" href="#FormatFieldExpression.left"></a>
+    
+            <div class="docstring"><p>The term of the expression.</p>
+</div>
+
+
+                            </div>
+                            <div id="FormatFieldExpression.location" class="classattr">
+                                <div class="attr variable">
+            <span class="name">location</span><span class="annotation">: <a href="core.html#Location">clingo.core.Location</a></span>
+
+        
+    </div>
+    <a class="headerlink" href="#FormatFieldExpression.location"></a>
+    
+            <div class="docstring"><p>The location of the expression.</p>
+</div>
+
+
+                            </div>
+                            <div id="FormatFieldExpression.right" class="classattr">
+                                <div class="attr variable">
+            <span class="name">right</span><span class="annotation">: str</span>
+
+        
+    </div>
+    <a class="headerlink" href="#FormatFieldExpression.right"></a>
+    
+            <div class="docstring"><p>The format specifier of the expression.</p>
+</div>
+
+
+                            </div>
+                </section>
+                <section id="FormatFieldLiteral">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">FormatFieldLiteral</span>:
+
+        
+    </div>
+    <a class="headerlink" href="#FormatFieldLiteral"></a>
+    
+            <div class="docstring"><p>A literal part of a format string.</p>
+</div>
+
+
+                            <div id="FormatFieldLiteral.__init__" class="classattr">
+                                <div class="attr function">
+            
+        <span class="name">FormatFieldLiteral</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>, </span><span class="param"><span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>, </span><span class="param"><span class="n">value</span><span class="p">:</span> <span class="nb">str</span></span>)</span>
+
+        
+    </div>
+    <a class="headerlink" href="#FormatFieldLiteral.__init__"></a>
+    
+            <div class="docstring"><p>Construct a FormatFieldLiteral object.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>lib:</strong>  The library object for storing symbols.</li>
+<li><strong>location:</strong>  The location of the literal.</li>
+<li><strong>value:</strong>  The value of the literal.</li>
+</ul>
+</div>
+
+
+                            </div>
+                            <div id="FormatFieldLiteral.transform" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">transform</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">transformer</span><span class="p">:</span> <span class="n">Any</span>,</span><span class="param">	<span class="o">*</span><span class="n">args</span>,</span><span class="param">	<span class="o">**</span><span class="n">kwargs</span></span><span class="return-annotation">) -> <span class="n"><a href="#FormatFieldLiteral">FormatFieldLiteral</a></span> <span class="o">|</span> <span class="kc">None</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#FormatFieldLiteral.transform"></a>
+    
+            <div class="docstring"><p>Transform the expression.</p>
+
+<p>Additional arguments are passed to the transformer.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>lib:</strong>  The library object for storing symbols.</li>
+<li><strong>transformer:</strong>  The transformer accepting the sub expressions.</li>
+</ul>
+
+<h6 id="returns">Returns:</h6>
+
+<blockquote>
+  <p>The transformed object or None.</p>
+</blockquote>
+</div>
+
+
+                            </div>
+                            <div id="FormatFieldLiteral.update" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">update</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="o">**</span><span class="n">kwargs</span></span><span class="return-annotation">) -> <span class="n"><a href="#FormatFieldLiteral">FormatFieldLiteral</a></span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#FormatFieldLiteral.update"></a>
+    
+            <div class="docstring"><p>Update the expression.</p>
+
+<p>Accepts keyword arguments with attributes to update.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>lib:</strong>  The library object for storing symbols.</li>
+</ul>
+
+<h6 id="returns">Returns:</h6>
+
+<blockquote>
+  <p>The updated object.</p>
+</blockquote>
+</div>
+
+
+                            </div>
+                            <div id="FormatFieldLiteral.visit" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">visit</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">visitor</span><span class="p">:</span> <span class="n">Any</span>, </span><span class="param"><span class="o">*</span><span class="n">args</span>, </span><span class="param"><span class="o">**</span><span class="n">kwargs</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#FormatFieldLiteral.visit"></a>
+    
+            <div class="docstring"><p>Visit the children of the expression.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>visitor:</strong>  The visitor accepting the sub expressions.</li>
+</ul>
+</div>
+
+
+                            </div>
+                            <div id="FormatFieldLiteral.location" class="classattr">
+                                <div class="attr variable">
+            <span class="name">location</span><span class="annotation">: <a href="core.html#Location">clingo.core.Location</a></span>
+
+        
+    </div>
+    <a class="headerlink" href="#FormatFieldLiteral.location"></a>
+    
+            <div class="docstring"><p>The location of the literal.</p>
+</div>
+
+
+                            </div>
+                            <div id="FormatFieldLiteral.value" class="classattr">
+                                <div class="attr variable">
+            <span class="name">value</span><span class="annotation">: str</span>
+
+        
+    </div>
+    <a class="headerlink" href="#FormatFieldLiteral.value"></a>
+    
+            <div class="docstring"><p>The value of the literal.</p>
 </div>
 
 
@@ -4127,7 +4502,7 @@
                             <div id="HeadAggregateElement.__init__" class="classattr">
                                 <div class="attr function">
             
-        <span class="name">HeadAggregateElement</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="nb">tuple</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span><span class="p">]</span>,</span><span class="param">	<span class="n">literal</span><span class="p">:</span> <span class="n"><a href="#LiteralBoolean">LiteralBoolean</a></span> <span class="o">|</span> <span class="n"><a href="#LiteralComparison">LiteralComparison</a></span> <span class="o">|</span> <span class="n"><a href="#LiteralSymbolic">LiteralSymbolic</a></span>,</span><span class="param">	<span class="n">condition</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#LiteralBoolean">LiteralBoolean</a></span> <span class="o">|</span> <span class="n"><a href="#LiteralComparison">LiteralComparison</a></span> <span class="o">|</span> <span class="n"><a href="#LiteralSymbolic">LiteralSymbolic</a></span><span class="p">]</span></span>)</span>
+        <span class="name">HeadAggregateElement</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="nb">tuple</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span><span class="p">]</span>,</span><span class="param">	<span class="n">literal</span><span class="p">:</span> <span class="n"><a href="#LiteralBoolean">LiteralBoolean</a></span> <span class="o">|</span> <span class="n"><a href="#LiteralComparison">LiteralComparison</a></span> <span class="o">|</span> <span class="n"><a href="#LiteralSymbolic">LiteralSymbolic</a></span>,</span><span class="param">	<span class="n">condition</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#LiteralBoolean">LiteralBoolean</a></span> <span class="o">|</span> <span class="n"><a href="#LiteralComparison">LiteralComparison</a></span> <span class="o">|</span> <span class="n"><a href="#LiteralSymbolic">LiteralSymbolic</a></span><span class="p">]</span></span>)</span>
 
         
     </div>
@@ -4269,7 +4644,7 @@
                             </div>
                             <div id="HeadAggregateElement.tuple" class="classattr">
                                 <div class="attr variable">
-            <span class="name">tuple</span><span class="annotation">: Sequence[<a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a>]</span>
+            <span class="name">tuple</span><span class="annotation">: Sequence[<a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a>]</span>
 
         
     </div>
@@ -4898,7 +5273,7 @@
                             <div id="HeadTheoryAtom.__init__" class="classattr">
                                 <div class="attr function">
             
-        <span class="name">HeadTheoryAtom</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">name</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span>,</span><span class="param">	<span class="n">elements</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#TheoryAtomElement">TheoryAtomElement</a></span><span class="p">]</span>,</span><span class="param">	<span class="n">right</span><span class="p">:</span> <span class="n"><a href="#TheoryRightGuard">TheoryRightGuard</a></span> <span class="o">|</span> <span class="kc">None</span></span>)</span>
+        <span class="name">HeadTheoryAtom</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">name</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span>,</span><span class="param">	<span class="n">elements</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#TheoryAtomElement">TheoryAtomElement</a></span><span class="p">]</span>,</span><span class="param">	<span class="n">right</span><span class="p">:</span> <span class="n"><a href="#TheoryRightGuard">TheoryRightGuard</a></span> <span class="o">|</span> <span class="kc">None</span></span>)</span>
 
         
     </div>
@@ -5027,7 +5402,7 @@
                             </div>
                             <div id="HeadTheoryAtom.name" class="classattr">
                                 <div class="attr variable">
-            <span class="name">name</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a></span>
+            <span class="name">name</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a></span>
 
         
     </div>
@@ -5146,7 +5521,7 @@
                             <div id="LeftGuard.__init__" class="classattr">
                                 <div class="attr function">
             
-        <span class="name">LeftGuard</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">term</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span>,</span><span class="param">	<span class="n">relation</span><span class="p">:</span> <span class="n"><a href="#Relation">Relation</a></span></span>)</span>
+        <span class="name">LeftGuard</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">term</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span>,</span><span class="param">	<span class="n">relation</span><span class="p">:</span> <span class="n"><a href="#Relation">Relation</a></span></span>)</span>
 
         
     </div>
@@ -5260,7 +5635,7 @@
                             </div>
                             <div id="LeftGuard.term" class="classattr">
                                 <div class="attr variable">
-            <span class="name">term</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a></span>
+            <span class="name">term</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a></span>
 
         
     </div>
@@ -5446,7 +5821,7 @@
                             <div id="LiteralComparison.__init__" class="classattr">
                                 <div class="attr function">
             
-        <span class="name">LiteralComparison</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">sign</span><span class="p">:</span> <span class="n"><a href="#Sign">Sign</a></span>,</span><span class="param">	<span class="n">left</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span>,</span><span class="param">	<span class="n">right</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#RightGuard">RightGuard</a></span><span class="p">]</span></span>)</span>
+        <span class="name">LiteralComparison</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">sign</span><span class="p">:</span> <span class="n"><a href="#Sign">Sign</a></span>,</span><span class="param">	<span class="n">left</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span>,</span><span class="param">	<span class="n">right</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#RightGuard">RightGuard</a></span><span class="p">]</span></span>)</span>
 
         
     </div>
@@ -5551,7 +5926,7 @@
                             </div>
                             <div id="LiteralComparison.left" class="classattr">
                                 <div class="attr variable">
-            <span class="name">left</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a></span>
+            <span class="name">left</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a></span>
 
         
     </div>
@@ -5620,7 +5995,7 @@ Note that the chain must have at least length one.</p>
                             <div id="LiteralSymbolic.__init__" class="classattr">
                                 <div class="attr function">
             
-        <span class="name">LiteralSymbolic</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">sign</span><span class="p">:</span> <span class="n"><a href="#Sign">Sign</a></span>,</span><span class="param">	<span class="n">atom</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span></span>)</span>
+        <span class="name">LiteralSymbolic</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">sign</span><span class="p">:</span> <span class="n"><a href="#Sign">Sign</a></span>,</span><span class="param">	<span class="n">atom</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span></span>)</span>
 
         
     </div>
@@ -5722,7 +6097,7 @@ Note that the chain must have at least length one.</p>
                             </div>
                             <div id="LiteralSymbolic.atom" class="classattr">
                                 <div class="attr variable">
-            <span class="name">atom</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a></span>
+            <span class="name">atom</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a></span>
 
         
     </div>
@@ -5920,7 +6295,7 @@ Note that the chain must have at least length one.</p>
                             <div id="OptimizeTuple.__init__" class="classattr">
                                 <div class="attr function">
             
-        <span class="name">OptimizeTuple</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">weight</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span>,</span><span class="param">	<span class="n">priority</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">terms</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span><span class="p">]</span></span>)</span>
+        <span class="name">OptimizeTuple</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">weight</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span>,</span><span class="param">	<span class="n">priority</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span> <span class="o">|</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">terms</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span><span class="p">]</span></span>)</span>
 
         
     </div>
@@ -6022,7 +6397,7 @@ Note that the chain must have at least length one.</p>
                             </div>
                             <div id="OptimizeTuple.priority" class="classattr">
                                 <div class="attr variable">
-            <span class="name">priority</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | None</span>
+            <span class="name">priority</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a> | None</span>
 
         
     </div>
@@ -6035,7 +6410,7 @@ Note that the chain must have at least length one.</p>
                             </div>
                             <div id="OptimizeTuple.terms" class="classattr">
                                 <div class="attr variable">
-            <span class="name">terms</span><span class="annotation">: Sequence[<a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a>]</span>
+            <span class="name">terms</span><span class="annotation">: Sequence[<a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a>]</span>
 
         
     </div>
@@ -6048,7 +6423,7 @@ Note that the chain must have at least length one.</p>
                             </div>
                             <div id="OptimizeTuple.weight" class="classattr">
                                 <div class="attr variable">
-            <span class="name">weight</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a></span>
+            <span class="name">weight</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a></span>
 
         
     </div>
@@ -6905,7 +7280,7 @@ Note that the chain must have at least length one.</p>
                             <div id="RightGuard.__init__" class="classattr">
                                 <div class="attr function">
             
-        <span class="name">RightGuard</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">relation</span><span class="p">:</span> <span class="n"><a href="#Relation">Relation</a></span>,</span><span class="param">	<span class="n">term</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span></span>)</span>
+        <span class="name">RightGuard</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">relation</span><span class="p">:</span> <span class="n"><a href="#Relation">Relation</a></span>,</span><span class="param">	<span class="n">term</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span></span>)</span>
 
         
     </div>
@@ -7019,7 +7394,7 @@ Note that the chain must have at least length one.</p>
                             </div>
                             <div id="RightGuard.term" class="classattr">
                                 <div class="attr variable">
-            <span class="name">term</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a></span>
+            <span class="name">term</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a></span>
 
         
     </div>
@@ -7453,7 +7828,7 @@ Note that the chain must have at least length one.</p>
                             <div id="StatementConst.__init__" class="classattr">
                                 <div class="attr function">
             
-        <span class="name">StatementConst</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">name</span><span class="p">:</span> <span class="nb">str</span>,</span><span class="param">	<span class="n">value</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span>,</span><span class="param">	<span class="n">precedence</span><span class="p">:</span> <span class="n"><a href="#Precedence">Precedence</a></span></span>)</span>
+        <span class="name">StatementConst</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">name</span><span class="p">:</span> <span class="nb">str</span>,</span><span class="param">	<span class="n">value</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span>,</span><span class="param">	<span class="n">precedence</span><span class="p">:</span> <span class="n"><a href="#Precedence">Precedence</a></span></span>)</span>
 
         
     </div>
@@ -7595,7 +7970,7 @@ Note that the chain must have at least length one.</p>
                             </div>
                             <div id="StatementConst.value" class="classattr">
                                 <div class="attr variable">
-            <span class="name">value</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a></span>
+            <span class="name">value</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a></span>
 
         
     </div>
@@ -7952,7 +8327,7 @@ Note that the chain must have at least length one.</p>
                             <div id="StatementExternal.__init__" class="classattr">
                                 <div class="attr function">
             
-        <span class="name">StatementExternal</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">atom</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span>,</span><span class="param">	<span class="n">body</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#BodySimpleLiteral">BodySimpleLiteral</a></span> <span class="o">|</span> <span class="n"><a href="#BodyAggregate">BodyAggregate</a></span> <span class="o">|</span> <span class="n"><a href="#BodySetAggregate">BodySetAggregate</a></span> <span class="o">|</span> <span class="n"><a href="#BodyTheoryAtom">BodyTheoryAtom</a></span> <span class="o">|</span> <span class="n"><a href="#BodyConditionalLiteral">BodyConditionalLiteral</a></span><span class="p">]</span>,</span><span class="param">	<span class="n">external_type</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></span>)</span>
+        <span class="name">StatementExternal</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">atom</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span>,</span><span class="param">	<span class="n">body</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#BodySimpleLiteral">BodySimpleLiteral</a></span> <span class="o">|</span> <span class="n"><a href="#BodyAggregate">BodyAggregate</a></span> <span class="o">|</span> <span class="n"><a href="#BodySetAggregate">BodySetAggregate</a></span> <span class="o">|</span> <span class="n"><a href="#BodyTheoryAtom">BodyTheoryAtom</a></span> <span class="o">|</span> <span class="n"><a href="#BodyConditionalLiteral">BodyConditionalLiteral</a></span><span class="p">]</span>,</span><span class="param">	<span class="n">external_type</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></span>)</span>
 
         
     </div>
@@ -8055,7 +8430,7 @@ Note that the chain must have at least length one.</p>
                             </div>
                             <div id="StatementExternal.atom" class="classattr">
                                 <div class="attr variable">
-            <span class="name">atom</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a></span>
+            <span class="name">atom</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a></span>
 
         
     </div>
@@ -8081,7 +8456,7 @@ Note that the chain must have at least length one.</p>
                             </div>
                             <div id="StatementExternal.external_type" class="classattr">
                                 <div class="attr variable">
-            <span class="name">external_type</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | None</span>
+            <span class="name">external_type</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a> | None</span>
 
         
     </div>
@@ -8123,7 +8498,7 @@ Note that the chain must have at least length one.</p>
                             <div id="StatementHeuristic.__init__" class="classattr">
                                 <div class="attr function">
             
-        <span class="name">StatementHeuristic</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">atom</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span>,</span><span class="param">	<span class="n">body</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#BodySimpleLiteral">BodySimpleLiteral</a></span> <span class="o">|</span> <span class="n"><a href="#BodyAggregate">BodyAggregate</a></span> <span class="o">|</span> <span class="n"><a href="#BodySetAggregate">BodySetAggregate</a></span> <span class="o">|</span> <span class="n"><a href="#BodyTheoryAtom">BodyTheoryAtom</a></span> <span class="o">|</span> <span class="n"><a href="#BodyConditionalLiteral">BodyConditionalLiteral</a></span><span class="p">]</span>,</span><span class="param">	<span class="n">weight</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span>,</span><span class="param">	<span class="n">modifier</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span>,</span><span class="param">	<span class="n">priority</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></span>)</span>
+        <span class="name">StatementHeuristic</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">atom</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span>,</span><span class="param">	<span class="n">body</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#BodySimpleLiteral">BodySimpleLiteral</a></span> <span class="o">|</span> <span class="n"><a href="#BodyAggregate">BodyAggregate</a></span> <span class="o">|</span> <span class="n"><a href="#BodySetAggregate">BodySetAggregate</a></span> <span class="o">|</span> <span class="n"><a href="#BodyTheoryAtom">BodyTheoryAtom</a></span> <span class="o">|</span> <span class="n"><a href="#BodyConditionalLiteral">BodyConditionalLiteral</a></span><span class="p">]</span>,</span><span class="param">	<span class="n">weight</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span>,</span><span class="param">	<span class="n">modifier</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span>,</span><span class="param">	<span class="n">priority</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></span>)</span>
 
         
     </div>
@@ -8228,7 +8603,7 @@ Note that the chain must have at least length one.</p>
                             </div>
                             <div id="StatementHeuristic.atom" class="classattr">
                                 <div class="attr variable">
-            <span class="name">atom</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a></span>
+            <span class="name">atom</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a></span>
 
         
     </div>
@@ -8267,7 +8642,7 @@ Note that the chain must have at least length one.</p>
                             </div>
                             <div id="StatementHeuristic.modifier" class="classattr">
                                 <div class="attr variable">
-            <span class="name">modifier</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a></span>
+            <span class="name">modifier</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a></span>
 
         
     </div>
@@ -8280,7 +8655,7 @@ Note that the chain must have at least length one.</p>
                             </div>
                             <div id="StatementHeuristic.priority" class="classattr">
                                 <div class="attr variable">
-            <span class="name">priority</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | None</span>
+            <span class="name">priority</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a> | None</span>
 
         
     </div>
@@ -8293,7 +8668,7 @@ Note that the chain must have at least length one.</p>
                             </div>
                             <div id="StatementHeuristic.weight" class="classattr">
                                 <div class="attr variable">
-            <span class="name">weight</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a></span>
+            <span class="name">weight</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a></span>
 
         
     </div>
@@ -8950,7 +9325,7 @@ Note that the chain must have at least length one.</p>
                             <div id="StatementProject.__init__" class="classattr">
                                 <div class="attr function">
             
-        <span class="name">StatementProject</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">atom</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span>,</span><span class="param">	<span class="n">body</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#BodySimpleLiteral">BodySimpleLiteral</a></span> <span class="o">|</span> <span class="n"><a href="#BodyAggregate">BodyAggregate</a></span> <span class="o">|</span> <span class="n"><a href="#BodySetAggregate">BodySetAggregate</a></span> <span class="o">|</span> <span class="n"><a href="#BodyTheoryAtom">BodyTheoryAtom</a></span> <span class="o">|</span> <span class="n"><a href="#BodyConditionalLiteral">BodyConditionalLiteral</a></span><span class="p">]</span></span>)</span>
+        <span class="name">StatementProject</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">atom</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span>,</span><span class="param">	<span class="n">body</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#BodySimpleLiteral">BodySimpleLiteral</a></span> <span class="o">|</span> <span class="n"><a href="#BodyAggregate">BodyAggregate</a></span> <span class="o">|</span> <span class="n"><a href="#BodySetAggregate">BodySetAggregate</a></span> <span class="o">|</span> <span class="n"><a href="#BodyTheoryAtom">BodyTheoryAtom</a></span> <span class="o">|</span> <span class="n"><a href="#BodyConditionalLiteral">BodyConditionalLiteral</a></span><span class="p">]</span></span>)</span>
 
         
     </div>
@@ -9052,7 +9427,7 @@ Note that the chain must have at least length one.</p>
                             </div>
                             <div id="StatementProject.atom" class="classattr">
                                 <div class="attr variable">
-            <span class="name">atom</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a></span>
+            <span class="name">atom</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a></span>
 
         
     </div>
@@ -9592,7 +9967,7 @@ Note that the chain must have at least length one.</p>
                             <div id="StatementShow.__init__" class="classattr">
                                 <div class="attr function">
             
-        <span class="name">StatementShow</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">term</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span>,</span><span class="param">	<span class="n">body</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#BodySimpleLiteral">BodySimpleLiteral</a></span> <span class="o">|</span> <span class="n"><a href="#BodyAggregate">BodyAggregate</a></span> <span class="o">|</span> <span class="n"><a href="#BodySetAggregate">BodySetAggregate</a></span> <span class="o">|</span> <span class="n"><a href="#BodyTheoryAtom">BodyTheoryAtom</a></span> <span class="o">|</span> <span class="n"><a href="#BodyConditionalLiteral">BodyConditionalLiteral</a></span><span class="p">]</span></span>)</span>
+        <span class="name">StatementShow</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">term</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span>,</span><span class="param">	<span class="n">body</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#BodySimpleLiteral">BodySimpleLiteral</a></span> <span class="o">|</span> <span class="n"><a href="#BodyAggregate">BodyAggregate</a></span> <span class="o">|</span> <span class="n"><a href="#BodySetAggregate">BodySetAggregate</a></span> <span class="o">|</span> <span class="n"><a href="#BodyTheoryAtom">BodyTheoryAtom</a></span> <span class="o">|</span> <span class="n"><a href="#BodyConditionalLiteral">BodyConditionalLiteral</a></span><span class="p">]</span></span>)</span>
 
         
     </div>
@@ -9720,7 +10095,7 @@ Note that the chain must have at least length one.</p>
                             </div>
                             <div id="StatementShow.term" class="classattr">
                                 <div class="attr variable">
-            <span class="name">term</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a></span>
+            <span class="name">term</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a></span>
 
         
     </div>
@@ -10377,7 +10752,7 @@ Note that the chain must have at least length one.</p>
                             <div id="TermAbsolute.__init__" class="classattr">
                                 <div class="attr function">
             
-        <span class="name">TermAbsolute</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">pool</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span><span class="p">]</span></span>)</span>
+        <span class="name">TermAbsolute</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">pool</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span><span class="p">]</span></span>)</span>
 
         
     </div>
@@ -10494,7 +10869,7 @@ unpooled during preprocessing.</p></li>
                             </div>
                             <div id="TermAbsolute.pool" class="classattr">
                                 <div class="attr variable">
-            <span class="name">pool</span><span class="annotation">: Sequence[<a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a>]</span>
+            <span class="name">pool</span><span class="annotation">: Sequence[<a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a>]</span>
 
         
     </div>
@@ -10524,7 +10899,7 @@ If there is more than one argument in the pool, the term is unpooled during prep
                             <div id="TermBinaryOperation.__init__" class="classattr">
                                 <div class="attr function">
             
-        <span class="name">TermBinaryOperation</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">left</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span>,</span><span class="param">	<span class="n">operator_type</span><span class="p">:</span> <span class="n"><a href="#BinaryOperator">BinaryOperator</a></span>,</span><span class="param">	<span class="n">right</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span></span>)</span>
+        <span class="name">TermBinaryOperation</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">left</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span>,</span><span class="param">	<span class="n">operator_type</span><span class="p">:</span> <span class="n"><a href="#BinaryOperator">BinaryOperator</a></span>,</span><span class="param">	<span class="n">right</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span></span>)</span>
 
         
     </div>
@@ -10627,7 +11002,7 @@ If there is more than one argument in the pool, the term is unpooled during prep
                             </div>
                             <div id="TermBinaryOperation.left" class="classattr">
                                 <div class="attr variable">
-            <span class="name">left</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a></span>
+            <span class="name">left</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a></span>
 
         
     </div>
@@ -10666,13 +11041,156 @@ If there is more than one argument in the pool, the term is unpooled during prep
                             </div>
                             <div id="TermBinaryOperation.right" class="classattr">
                                 <div class="attr variable">
-            <span class="name">right</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a></span>
+            <span class="name">right</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a></span>
 
         
     </div>
     <a class="headerlink" href="#TermBinaryOperation.right"></a>
     
             <div class="docstring"><p>The right argument of the operation.</p>
+</div>
+
+
+                            </div>
+                </section>
+                <section id="TermFormatString">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">TermFormatString</span>:
+
+        
+    </div>
+    <a class="headerlink" href="#TermFormatString"></a>
+    
+            <div class="docstring"><p>A term representing a format string.</p>
+</div>
+
+
+                            <div id="TermFormatString.__init__" class="classattr">
+                                <div class="attr function">
+            
+        <span class="name">TermFormatString</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">elements</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#FormatFieldLiteral">FormatFieldLiteral</a></span> <span class="o">|</span> <span class="n"><a href="#FormatFieldExpression">FormatFieldExpression</a></span><span class="p">]</span></span>)</span>
+
+        
+    </div>
+    <a class="headerlink" href="#TermFormatString.__init__"></a>
+    
+            <div class="docstring"><p>Construct a TermFormatString object.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>lib:</strong>  The library object for storing symbols.</li>
+<li><strong>location:</strong>  The location of the format string.</li>
+<li><strong>elements:</strong>  The elements of the format string.</li>
+</ul>
+</div>
+
+
+                            </div>
+                            <div id="TermFormatString.transform" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">transform</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">transformer</span><span class="p">:</span> <span class="n">Any</span>,</span><span class="param">	<span class="o">*</span><span class="n">args</span>,</span><span class="param">	<span class="o">**</span><span class="n">kwargs</span></span><span class="return-annotation">) -> <span class="n"><a href="#TermFormatString">TermFormatString</a></span> <span class="o">|</span> <span class="kc">None</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#TermFormatString.transform"></a>
+    
+            <div class="docstring"><p>Transform the expression.</p>
+
+<p>Additional arguments are passed to the transformer.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>lib:</strong>  The library object for storing symbols.</li>
+<li><strong>transformer:</strong>  The transformer accepting the sub expressions.</li>
+</ul>
+
+<h6 id="returns">Returns:</h6>
+
+<blockquote>
+  <p>The transformed object or None.</p>
+</blockquote>
+</div>
+
+
+                            </div>
+                            <div id="TermFormatString.update" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">update</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>, </span><span class="param"><span class="o">**</span><span class="n">kwargs</span></span><span class="return-annotation">) -> <span class="n"><a href="#TermFormatString">TermFormatString</a></span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#TermFormatString.update"></a>
+    
+            <div class="docstring"><p>Update the expression.</p>
+
+<p>Accepts keyword arguments with attributes to update.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>lib:</strong>  The library object for storing symbols.</li>
+</ul>
+
+<h6 id="returns">Returns:</h6>
+
+<blockquote>
+  <p>The updated object.</p>
+</blockquote>
+</div>
+
+
+                            </div>
+                            <div id="TermFormatString.visit" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">visit</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">visitor</span><span class="p">:</span> <span class="n">Any</span>, </span><span class="param"><span class="o">*</span><span class="n">args</span>, </span><span class="param"><span class="o">**</span><span class="n">kwargs</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#TermFormatString.visit"></a>
+    
+            <div class="docstring"><p>Visit the children of the expression.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>visitor:</strong>  The visitor accepting the sub expressions.</li>
+</ul>
+</div>
+
+
+                            </div>
+                            <div id="TermFormatString.elements" class="classattr">
+                                <div class="attr variable">
+            <span class="name">elements</span><span class="annotation">: Sequence[<a href="#FormatFieldLiteral">FormatFieldLiteral</a> | <a href="#FormatFieldExpression">FormatFieldExpression</a>]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#TermFormatString.elements"></a>
+    
+            <div class="docstring"><p>The elements of the format string.</p>
+</div>
+
+
+                            </div>
+                            <div id="TermFormatString.location" class="classattr">
+                                <div class="attr variable">
+            <span class="name">location</span><span class="annotation">: <a href="core.html#Location">clingo.core.Location</a></span>
+
+        
+    </div>
+    <a class="headerlink" href="#TermFormatString.location"></a>
+    
+            <div class="docstring"><p>The location of the format string.</p>
 </div>
 
 
@@ -11013,7 +11531,7 @@ If there is more than one element in the pool, the term is unpooled during prepr
                             <div id="TermTuple.__init__" class="classattr">
                                 <div class="attr function">
             
-        <span class="name">TermTuple</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">pool</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#ArgumentTuple">ArgumentTuple</a></span><span class="p">]</span></span>)</span>
+        <span class="name">TermTuple</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">pool</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span> <span class="o">|</span> <span class="n"><a href="#ArgumentTuple">ArgumentTuple</a></span><span class="p">]</span></span>)</span>
 
         
     </div>
@@ -11130,7 +11648,7 @@ unpooled during preprocessing.</p></li>
                             </div>
                             <div id="TermTuple.pool" class="classattr">
                                 <div class="attr variable">
-            <span class="name">pool</span><span class="annotation">: Sequence[<a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#ArgumentTuple">ArgumentTuple</a>]</span>
+            <span class="name">pool</span><span class="annotation">: Sequence[<a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a> | <a href="#ArgumentTuple">ArgumentTuple</a>]</span>
 
         
     </div>
@@ -11160,7 +11678,7 @@ If there is more than one element in the pool, the term is unpooled during prepr
                             <div id="TermUnaryOperation.__init__" class="classattr">
                                 <div class="attr function">
             
-        <span class="name">TermUnaryOperation</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">operator_type</span><span class="p">:</span> <span class="n"><a href="#UnaryOperator">UnaryOperator</a></span>,</span><span class="param">	<span class="n">right</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span></span>)</span>
+        <span class="name">TermUnaryOperation</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">location</span><span class="p">:</span> <span class="n"><a href="core.html#Location">clingo.core.Location</a></span>,</span><span class="param">	<span class="n">operator_type</span><span class="p">:</span> <span class="n"><a href="#UnaryOperator">UnaryOperator</a></span>,</span><span class="param">	<span class="n">right</span><span class="p">:</span> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span></span>)</span>
 
         
     </div>
@@ -11288,7 +11806,7 @@ If there is more than one element in the pool, the term is unpooled during prepr
                             </div>
                             <div id="TermUnaryOperation.right" class="classattr">
                                 <div class="attr variable">
-            <span class="name">right</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a></span>
+            <span class="name">right</span><span class="annotation">: <a href="#TermVariable">TermVariable</a> | <a href="#TermSymbolic">TermSymbolic</a> | <a href="#TermAbsolute">TermAbsolute</a> | <a href="#TermUnaryOperation">TermUnaryOperation</a> | <a href="#TermBinaryOperation">TermBinaryOperation</a> | <a href="#TermTuple">TermTuple</a> | <a href="#TermFunction">TermFunction</a> | <a href="#TermFormatString">TermFormatString</a></span>
 
         
     </div>
@@ -13868,7 +14386,7 @@ read from "STDIN".</p>
                     <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">parse_term</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">string</span><span class="p">:</span> <span class="nb">str</span></span><span class="return-annotation">) -> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span>:</span></span>
+        <span class="name">parse_term</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">lib</span><span class="p">:</span> <span class="n"><a href="core.html#Library">clingo.core.Library</a></span>,</span><span class="param">	<span class="n">string</span><span class="p">:</span> <span class="nb">str</span></span><span class="return-annotation">) -> <span class="n"><a href="#TermVariable">TermVariable</a></span> <span class="o">|</span> <span class="n"><a href="#TermSymbolic">TermSymbolic</a></span> <span class="o">|</span> <span class="n"><a href="#TermAbsolute">TermAbsolute</a></span> <span class="o">|</span> <span class="n"><a href="#TermUnaryOperation">TermUnaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermBinaryOperation">TermBinaryOperation</a></span> <span class="o">|</span> <span class="n"><a href="#TermTuple">TermTuple</a></span> <span class="o">|</span> <span class="n"><a href="#TermFunction">TermFunction</a></span> <span class="o">|</span> <span class="n"><a href="#TermFormatString">TermFormatString</a></span>:</span></span>
 
         
     </div>

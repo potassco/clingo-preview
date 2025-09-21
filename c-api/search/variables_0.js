@@ -32,10 +32,13 @@ var searchData=
   ['a_5ftype_29',['a_type',['../group__input__language.html#gadf121e0bba9e23c0139dc1ef6bad5832',1,'CppClingo::Input']]],
   ['a_5fvalue_30',['a_value',['../group__input__language.html#gaf48160ff7ac8158f5d93fb268320fd45',1,'CppClingo::Input']]],
   ['a_5fweight_31',['a_weight',['../group__input__language.html#gac0360fc596566fe8590982b470bc1d75',1,'CppClingo::Input']]],
-  ['acyc_5fedge_32',['acyc_edge',['../structclingo__observer.html#ad1d1df7fafa96b2364432dace6c357e9',1,'clingo_observer']]],
-  ['arity_33',['arity',['../structclingo__signature.html#ae84a6206edbac53b0a10eca0d44ad113',1,'clingo_signature']]],
-  ['assignment_5fget_5fvalue_34',['assignment_get_value',['../structclingo__theory.html#a080af6da1f70a3ab018ddfed9e7905c3',1,'clingo_theory']]],
-  ['assignment_5fnext_35',['assignment_next',['../structclingo__theory.html#a28012620349062fe455a2695dd30340e',1,'clingo_theory']]],
-  ['assume_36',['assume',['../structclingo__observer.html#a3d7ded94dd3103a73f17fc601ba8d909',1,'clingo_observer']]],
-  ['attach_37',['attach',['../structclingo__propagator.html#a1421565211e5fe569071b06abe145ebb',1,'clingo_propagator']]]
+  ['accessors_32',['accessors',['../structCppClingo_1_1FormatSpec.html#a6f70fe41a2daa411d2c1c6d9065db87d',1,'CppClingo::FormatSpec']]],
+  ['acyc_5fedge_33',['acyc_edge',['../structclingo__observer.html#ad1d1df7fafa96b2364432dace6c357e9',1,'clingo_observer']]],
+  ['align_34',['align',['../structCppClingo_1_1FormatSpec.html#adeeec170057de0239c3442f12b5209e8',1,'CppClingo::FormatSpec']]],
+  ['alternate_5fform_35',['alternate_form',['../structCppClingo_1_1FormatSpec.html#ab02dd24ccc4bdf332492218c4f6b8bf0',1,'CppClingo::FormatSpec']]],
+  ['arity_36',['arity',['../structclingo__signature.html#ae84a6206edbac53b0a10eca0d44ad113',1,'clingo_signature']]],
+  ['assignment_5fget_5fvalue_37',['assignment_get_value',['../structclingo__theory.html#a080af6da1f70a3ab018ddfed9e7905c3',1,'clingo_theory']]],
+  ['assignment_5fnext_38',['assignment_next',['../structclingo__theory.html#a28012620349062fe455a2695dd30340e',1,'clingo_theory']]],
+  ['assume_39',['assume',['../structclingo__observer.html#a3d7ded94dd3103a73f17fc601ba8d909',1,'clingo_observer']]],
+  ['attach_40',['attach',['../structclingo__propagator.html#a1421565211e5fe569071b06abe145ebb',1,'clingo_propagator']]]
 ];

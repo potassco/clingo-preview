@@ -1,12 +1,7 @@
 var searchData=
 [
-  ['hdelem_0',['HdElem',['../classCppClingo_1_1OutputStm.html#a19f91616bf8fa9931f78a207f7c6c625',1,'CppClingo::OutputStm']]],
-  ['hdelemspan_1',['HdElemSpan',['../classCppClingo_1_1OutputStm.html#a8e74260575b118aa464792ee343e53c1',1,'CppClingo::OutputStm']]],
-  ['hdlit_2',['HdLit',['../group__input__head.html#ga3d7a50ab606237c85f3759bf2b0290eb',1,'CppClingo::Input']]],
-  ['hdlitaggregateelementarray_3',['HdLitAggregateElementArray',['../group__input__head.html#ga1dc28b643cd91b4a0626f5880e04eb5c',1,'CppClingo::Input']]],
-  ['hdlitarray_4',['HdLitArray',['../group__input__head.html#ga99b532784d05a541acc10ab937a86fa8',1,'CppClingo::Input']]],
-  ['hdlitdisjunctionelement_5',['HdLitDisjunctionElement',['../group__input__head.html#ga3bfcdc89beb5a63e00447c470d9fd75f',1,'CppClingo::Input']]],
-  ['hdlitdisjunctionelementarray_6',['HdLitDisjunctionElementArray',['../group__input__head.html#gad5ac0dd9b6a60d48f5525f761ffbc1ae',1,'CppClingo::Input']]],
-  ['hdlitsetaggregate_7',['HdLitSetAggregate',['../group__input__aggregate.html#ga2847664143eff7e63008496b7762906b',1,'CppClingo::Input']]],
-  ['hdlittheoryatom_8',['HdLitTheoryAtom',['../group__input__theory.html#ga824f36c1ceaeebec16da42266f974407',1,'CppClingo::Input']]]
+  ['guard_0',['guard',['../classCppClingo_1_1OutputStm.html#a6d4ba69c00b7afcbd707360b14db2e04',1,'CppClingo::OutputStm::Guard'],['../classCppClingo_1_1Input_1_1RewriteContext.html#a21fbb8944c77fbd452654a40baeaac36',1,'CppClingo::Input::RewriteContext::Guard'],['../group__input__literal.html#ga115b70d4436528b3a197c746b74beabf',1,'CppClingo::Input::Guard']]],
+  ['guardarray_1',['GuardArray',['../group__input__literal.html#gae437cb5ce8c9341548bf4b030e636c71',1,'CppClingo::Input']]],
+  ['guardspan_2',['GuardSpan',['../classCppClingo_1_1OutputStm.html#ab70e767d25d6b12b99c3fb47b67068b0',1,'CppClingo::OutputStm']]],
+  ['guardvec_3',['GuardVec',['../group__ground__term.html#ga1b18f1edd8811d1dbc5a9bea8640f8cc',1,'CppClingo::Ground']]]
 ];

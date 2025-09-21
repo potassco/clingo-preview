@@ -35,5 +35,6 @@ var searchData=
   ['componenttype_32',['ComponentType',['../group__input__program.html#ga0f7c9c32244ca3f4bec475f3f4fbd284',1,'CppClingo::Input']]],
   ['configtype_33',['ConfigType',['../group__cpp__config.html#ga14b7804c314db5fccda3492d7fad52f2',1,'Clingo']]],
   ['consequencetype_34',['ConsequenceType',['../group__control.html#gab7071bb38770e5afcf1fc85f23c1f55b',1,'CppClingo::Control']]],
-  ['controlmode_35',['ControlMode',['../group__cpp__control.html#ga702af514f321bd741ddeb074bc8f7107',1,'Clingo']]]
+  ['controlmode_35',['ControlMode',['../group__cpp__control.html#ga702af514f321bd741ddeb074bc8f7107',1,'Clingo']]],
+  ['conversion_36',['Conversion',['../structCppClingo_1_1FormatSpec.html#a7d28127e82be403316199def8f58dd72',1,'CppClingo::FormatSpec']]]
 ];

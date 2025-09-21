@@ -100,6 +100,7 @@ $(document).ready(function(){initNavTree('classCppClingo_1_1Util_1_1OutputBuffer
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classCppClingo_1_1Util_1_1OutputBuffer-members.html">List of all members</a>  </div>
@@ -112,6 +113,13 @@ $(document).ready(function(){initNavTree('classCppClingo_1_1Util_1_1OutputBuffer
 
 <p><code>#include &lt;<a class="el" href="util_2include_2clingo_2util_2print_8hh_source.html">print.hh</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ad1aa66d7d944d48445c01458f293ddba" id="r_ad1aa66d7d944d48445c01458f293ddba"><td class="memItemLeft" align="right" valign="top"><a id="ad1aa66d7d944d48445c01458f293ddba" name="ad1aa66d7d944d48445c01458f293ddba"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>value_type</b> = char</td></tr>
+<tr class="memdesc:ad1aa66d7d944d48445c01458f293ddba"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value type of the buffer. <br /></td></tr>
+<tr class="separator:ad1aa66d7d944d48445c01458f293ddba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac7d3d76d834dcf533fa7c2aa5f5d97b3" id="r_ac7d3d76d834dcf533fa7c2aa5f5d97b3"><td class="memItemLeft" align="right" valign="top"><a id="ac7d3d76d834dcf533fa7c2aa5f5d97b3" name="ac7d3d76d834dcf533fa7c2aa5f5d97b3"></a>
@@ -136,6 +144,10 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><b>empty</b> () const -&
 auto&#160;</td><td class="memItemRight" valign="bottom"><b>view</b> () const -&gt; std::string_view</td></tr>
 <tr class="memdesc:a4de2101ba1162f6472a48eb8111954eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a string view of the current buffer content. <br /></td></tr>
 <tr class="separator:a4de2101ba1162f6472a48eb8111954eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23fcbd473a0d76a6c8544feb729aed58" id="r_a23fcbd473a0d76a6c8544feb729aed58"><td class="memItemLeft" align="right" valign="top"><a id="a23fcbd473a0d76a6c8544feb729aed58" name="a23fcbd473a0d76a6c8544feb729aed58"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>span</b> () -&gt; std::span&lt; char &gt;</td></tr>
+<tr class="memdesc:a23fcbd473a0d76a6c8544feb729aed58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a char span of the current buffer content. <br /></td></tr>
+<tr class="separator:a23fcbd473a0d76a6c8544feb729aed58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95f81cd2c7d8504e7668d8d191353487" id="r_a95f81cd2c7d8504e7668d8d191353487"><td class="memItemLeft" align="right" valign="top"><a id="a95f81cd2c7d8504e7668d8d191353487" name="a95f81cd2c7d8504e7668d8d191353487"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><b>str</b> () const -&gt; std::string</td></tr>
 <tr class="memdesc:a95f81cd2c7d8504e7668d8d191353487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a string with the current buffer content. <br /></td></tr>
@@ -164,15 +176,19 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>append</b> (std::stri
 void&#160;</td><td class="memItemRight" valign="bottom"><b>append</b> (char c)</td></tr>
 <tr class="memdesc:a5b3f7c4547299c1a32a4e973d5c2b581"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a char to the buffer. <br /></td></tr>
 <tr class="separator:a5b3f7c4547299c1a32a4e973d5c2b581"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac25fe3fafd6fbb141fc9fedc1d90c1c2" id="r_ac25fe3fafd6fbb141fc9fedc1d90c1c2"><td class="memItemLeft" align="right" valign="top"><a id="ac25fe3fafd6fbb141fc9fedc1d90c1c2" name="ac25fe3fafd6fbb141fc9fedc1d90c1c2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>push_back</b> (char c)</td></tr>
+<tr class="memdesc:ac25fe3fafd6fbb141fc9fedc1d90c1c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for <a class="el" href="classCppClingo_1_1Util_1_1OutputBuffer.html#a5b3f7c4547299c1a32a4e973d5c2b581" title="Append a char to the buffer.">append(char)</a> to support std::back_inserter. <br /></td></tr>
+<tr class="separator:ac25fe3fafd6fbb141fc9fedc1d90c1c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f82c28e21973c588a920ce218ab8469" id="r_a6f82c28e21973c588a920ce218ab8469"><td class="memItemLeft" align="right" valign="top"><a id="a6f82c28e21973c588a920ce218ab8469" name="a6f82c28e21973c588a920ce218ab8469"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>pop</b> ()</td></tr>
 <tr class="memdesc:a6f82c28e21973c588a920ce218ab8469"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pop a char from the buffer. <br /></td></tr>
 <tr class="separator:a6f82c28e21973c588a920ce218ab8469"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adea555152e1d4465eea6d579b301938d" id="r_adea555152e1d4465eea6d579b301938d"><td class="memTemplParams" colspan="2"><a id="adea555152e1d4465eea6d579b301938d" name="adea555152e1d4465eea6d579b301938d"></a>
+<tr class="memitem:a19915447c3a83a2879565d512b255122" id="r_a19915447c3a83a2879565d512b255122"><td class="memTemplParams" colspan="2"><a id="a19915447c3a83a2879565d512b255122" name="a19915447c3a83a2879565d512b255122"></a>
 template&lt;std::integral T&gt; </td></tr>
-<tr class="memitem:adea555152e1d4465eea6d579b301938d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>append</b> (T num)</td></tr>
-<tr class="memdesc:adea555152e1d4465eea6d579b301938d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append an integral to the buffer. <br /></td></tr>
-<tr class="separator:adea555152e1d4465eea6d579b301938d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19915447c3a83a2879565d512b255122"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>append</b> (T num, int base=10)</td></tr>
+<tr class="memdesc:a19915447c3a83a2879565d512b255122"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append an integral to the buffer. <br /></td></tr>
+<tr class="separator:a19915447c3a83a2879565d512b255122"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8cae002aa8f8a80c7d096ce3dcd10e9" id="r_ab8cae002aa8f8a80c7d096ce3dcd10e9"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Util_1_1OutputBuffer.html#ab8cae002aa8f8a80c7d096ce3dcd10e9">reserve</a> (std::ptrdiff_t n) -&gt; std::span&lt; char &gt;</td></tr>
 <tr class="memdesc:ab8cae002aa8f8a80c7d096ce3dcd10e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append n bytes at the end of the buffer.  <br /></td></tr>
 <tr class="separator:ab8cae002aa8f8a80c7d096ce3dcd10e9"><td class="memSeparator" colspan="2">&#160;</td></tr>

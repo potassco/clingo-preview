@@ -140,83 +140,87 @@ typedef struct clingo_program&#160;</td><td class="memItemRight" valign="bottom"
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:ga7765c708da7a13dd380e64b10f5270d5" id="r_ga7765c708da7a13dd380e64b10f5270d5"><td class="memItemLeft" align="right" valign="top"><a id="ga7765c708da7a13dd380e64b10f5270d5" name="ga7765c708da7a13dd380e64b10f5270d5"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__ast.html#ga7765c708da7a13dd380e64b10f5270d5">clingo_ast_type_e</a> { <br />
-&#160;&#160;<b>clingo_ast_type_projection</b>
+&#160;&#160;<b>clingo_ast_type_format_field_literal</b>
+, <b>clingo_ast_type_format_field_expression</b>
+, <b>clingo_ast_type_projection</b>
 , <b>clingo_ast_type_term_variable</b>
-, <b>clingo_ast_type_term_symbolic</b>
-, <b>clingo_ast_type_term_absolute</b>
 , <br />
-&#160;&#160;<b>clingo_ast_type_term_unary_operation</b>
-, <b>clingo_ast_type_term_binary_operation</b>
+&#160;&#160;<b>clingo_ast_type_term_symbolic</b>
+, <b>clingo_ast_type_term_format_string</b>
+, <b>clingo_ast_type_term_absolute</b>
+, <b>clingo_ast_type_term_unary_operation</b>
+, <br />
+&#160;&#160;<b>clingo_ast_type_term_binary_operation</b>
 , <b>clingo_ast_type_term_tuple</b>
 , <b>clingo_ast_type_term_function</b>
+, <b>clingo_ast_type_argument_tuple</b>
 , <br />
-&#160;&#160;<b>clingo_ast_type_argument_tuple</b>
-, <b>clingo_ast_type_unparsed_element</b>
+&#160;&#160;<b>clingo_ast_type_unparsed_element</b>
 , <b>clingo_ast_type_theory_term_variable</b>
 , <b>clingo_ast_type_theory_term_symbolic</b>
+, <b>clingo_ast_type_theory_term_tuple</b>
 , <br />
-&#160;&#160;<b>clingo_ast_type_theory_term_tuple</b>
-, <b>clingo_ast_type_theory_term_function</b>
+&#160;&#160;<b>clingo_ast_type_theory_term_function</b>
 , <b>clingo_ast_type_theory_term_unparsed</b>
 , <b>clingo_ast_type_left_guard</b>
+, <b>clingo_ast_type_right_guard</b>
 , <br />
-&#160;&#160;<b>clingo_ast_type_right_guard</b>
-, <b>clingo_ast_type_literal_boolean</b>
+&#160;&#160;<b>clingo_ast_type_literal_boolean</b>
 , <b>clingo_ast_type_literal_comparison</b>
 , <b>clingo_ast_type_literal_symbolic</b>
+, <b>clingo_ast_type_set_aggregate_element</b>
 , <br />
-&#160;&#160;<b>clingo_ast_type_set_aggregate_element</b>
-, <b>clingo_ast_type_theory_atom_element</b>
+&#160;&#160;<b>clingo_ast_type_theory_atom_element</b>
 , <b>clingo_ast_type_theory_right_guard</b>
 , <b>clingo_ast_type_body_simple_literal</b>
+, <b>clingo_ast_type_body_aggregate_element</b>
 , <br />
-&#160;&#160;<b>clingo_ast_type_body_aggregate_element</b>
-, <b>clingo_ast_type_body_aggregate</b>
+&#160;&#160;<b>clingo_ast_type_body_aggregate</b>
 , <b>clingo_ast_type_body_set_aggregate</b>
 , <b>clingo_ast_type_body_theory_atom</b>
+, <b>clingo_ast_type_body_conditional_literal</b>
 , <br />
-&#160;&#160;<b>clingo_ast_type_body_conditional_literal</b>
-, <b>clingo_ast_type_head_simple_literal</b>
+&#160;&#160;<b>clingo_ast_type_head_simple_literal</b>
 , <b>clingo_ast_type_head_aggregate_element</b>
 , <b>clingo_ast_type_head_aggregate</b>
+, <b>clingo_ast_type_head_set_aggregate</b>
 , <br />
-&#160;&#160;<b>clingo_ast_type_head_set_aggregate</b>
-, <b>clingo_ast_type_head_theory_atom</b>
+&#160;&#160;<b>clingo_ast_type_head_theory_atom</b>
 , <b>clingo_ast_type_head_conditional_literal</b>
 , <b>clingo_ast_type_head_disjunction</b>
+, <b>clingo_ast_type_theory_operator_definition</b>
 , <br />
-&#160;&#160;<b>clingo_ast_type_theory_operator_definition</b>
-, <b>clingo_ast_type_theory_term_definition</b>
+&#160;&#160;<b>clingo_ast_type_theory_term_definition</b>
 , <b>clingo_ast_type_theory_guard_definition</b>
 , <b>clingo_ast_type_theory_atom_definition</b>
+, <b>clingo_ast_type_optimize_tuple</b>
 , <br />
-&#160;&#160;<b>clingo_ast_type_optimize_tuple</b>
-, <b>clingo_ast_type_optimize_element</b>
+&#160;&#160;<b>clingo_ast_type_optimize_element</b>
 , <b>clingo_ast_type_edge</b>
 , <b>clingo_ast_type_program_part</b>
+, <b>clingo_ast_type_statement_rule</b>
 , <br />
-&#160;&#160;<b>clingo_ast_type_statement_rule</b>
-, <b>clingo_ast_type_statement_theory</b>
+&#160;&#160;<b>clingo_ast_type_statement_theory</b>
 , <b>clingo_ast_type_statement_optimize</b>
 , <b>clingo_ast_type_statement_weak_constraint</b>
+, <b>clingo_ast_type_statement_show</b>
 , <br />
-&#160;&#160;<b>clingo_ast_type_statement_show</b>
-, <b>clingo_ast_type_statement_show_nothing</b>
+&#160;&#160;<b>clingo_ast_type_statement_show_nothing</b>
 , <b>clingo_ast_type_statement_show_signature</b>
 , <b>clingo_ast_type_statement_project</b>
+, <b>clingo_ast_type_statement_project_signature</b>
 , <br />
-&#160;&#160;<b>clingo_ast_type_statement_project_signature</b>
-, <b>clingo_ast_type_statement_defined</b>
+&#160;&#160;<b>clingo_ast_type_statement_defined</b>
 , <b>clingo_ast_type_statement_external</b>
 , <b>clingo_ast_type_statement_edge</b>
+, <b>clingo_ast_type_statement_heuristic</b>
 , <br />
-&#160;&#160;<b>clingo_ast_type_statement_heuristic</b>
-, <b>clingo_ast_type_statement_script</b>
+&#160;&#160;<b>clingo_ast_type_statement_script</b>
 , <b>clingo_ast_type_statement_program</b>
 , <b>clingo_ast_type_statement_include</b>
+, <b>clingo_ast_type_statement_const</b>
 , <br />
-&#160;&#160;<b>clingo_ast_type_statement_const</b>
-, <b>clingo_ast_type_statement_parts</b>
+&#160;&#160;<b>clingo_ast_type_statement_parts</b>
 , <b>clingo_ast_type_statement_comment</b>
 <br />
  }</td></tr>

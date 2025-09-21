@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['optimizetype_0',['OptimizeType',['../group__input__statement.html#ga918b65c67526ecf9b7e5e3b8d092b5d0',1,'statement.hh']]]
+  ['nodetype_0',['NodeType',['../group__cpp__ast.html#gaceb3fb295f91d3d152732a09f5806909',1,'Clingo::AST']]]
 ];

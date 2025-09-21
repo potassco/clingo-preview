@@ -122,6 +122,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Ground_1_1TermSymbol.html">CppClingo::Ground::TermSymbol</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A term capturing a symbol.  <a href="classCppClingo_1_1Ground_1_1TermSymbol.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Ground_1_1TermFormatString.html">CppClingo::Ground::TermFormatString</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A term capturing a symbol.  <a href="classCppClingo_1_1Ground_1_1TermFormatString.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Ground_1_1TermVariable.html">CppClingo::Ground::TermVariable</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A term capturing a variable.  <a href="classCppClingo_1_1Ground_1_1TermVariable.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -155,6 +158,13 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Ground::U
 using&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Ground::GuardVec</b> = std::vector&lt; std::pair&lt; <a class="el" href="group__core.html#ga935e9938bd363dd0147e23ca56cd17ea">Relation</a>, <a class="el" href="group__ground__term.html#ga318ae223e66d9f04f129fcc7d83e07e1">UTerm</a> &gt; &gt;</td></tr>
 <tr class="memdesc:ga1b18f1edd8811d1dbc5a9bea8640f8cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vector of guards. <br /></td></tr>
 <tr class="separator:ga1b18f1edd8811d1dbc5a9bea8640f8cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga88cea3472e387c2ead9ce03c0a4b252f" id="r_ga88cea3472e387c2ead9ce03c0a4b252f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ground__term.html#ga88cea3472e387c2ead9ce03c0a4b252f">CppClingo::Ground::FormatField</a> = std::variant&lt; <a class="el" href="classCppClingo_1_1SharedString.html">SharedString</a>, std::pair&lt; <a class="el" href="group__ground__term.html#ga318ae223e66d9f04f129fcc7d83e07e1">UTerm</a>, <a class="el" href="structCppClingo_1_1FormatSpec.html">FormatSpec</a> &gt; &gt;</td></tr>
+<tr class="memdesc:ga88cea3472e387c2ead9ce03c0a4b252f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A format specification.  <br /></td></tr>
+<tr class="separator:ga88cea3472e387c2ead9ce03c0a4b252f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga06af75b60a921fc137b24e411ba6ac7c" id="r_ga06af75b60a921fc137b24e411ba6ac7c"><td class="memItemLeft" align="right" valign="top"><a id="ga06af75b60a921fc137b24e411ba6ac7c" name="ga06af75b60a921fc137b24e411ba6ac7c"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Ground::FormatFieldVec</b> = std::vector&lt; <a class="el" href="group__ground__term.html#ga88cea3472e387c2ead9ce03c0a4b252f">FormatField</a> &gt;</td></tr>
+<tr class="memdesc:ga06af75b60a921fc137b24e411ba6ac7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vector of format fields. <br /></td></tr>
+<tr class="separator:ga06af75b60a921fc137b24e411ba6ac7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -209,6 +219,24 @@ template&lt;class... T&gt; </td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Data structures and functions to ground terms. </p>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ga88cea3472e387c2ead9ce03c0a4b252f" name="ga88cea3472e387c2ead9ce03c0a4b252f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga88cea3472e387c2ead9ce03c0a4b252f">&#9670;&#160;</a></span>FormatField</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__ground__term.html#ga88cea3472e387c2ead9ce03c0a4b252f">CppClingo::Ground::FormatField</a> = typedef std::variant&lt;<a class="el" href="classCppClingo_1_1SharedString.html">SharedString</a>, std::pair&lt;<a class="el" href="group__ground__term.html#ga318ae223e66d9f04f129fcc7d83e07e1">UTerm</a>, <a class="el" href="structCppClingo_1_1FormatSpec.html">FormatSpec</a>&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A format specification. </p>
+<p>It is either a fixed string or a variable with format flags. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="ga309c43a0dac8a738555420b48369582d" name="ga309c43a0dac8a738555420b48369582d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga309c43a0dac8a738555420b48369582d">&#9670;&#160;</a></span>BinaryOperator</h2>

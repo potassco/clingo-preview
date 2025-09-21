@@ -14,6 +14,7 @@ var classCppClingo_1_1Number =
     [ "swap", "classCppClingo_1_1Number.html#acbd0455c74bb14e55b78902e6b6dbdf4", null ],
     [ "abs", "classCppClingo_1_1Number.html#a27a41f64e80d2d9ac6b4f47c6e2d7249", null ],
     [ "abs", "classCppClingo_1_1Number.html#a1aad29de95e958dc8a34e62ebd52b081", null ],
+    [ "append", "classCppClingo_1_1Number.html#a08026a6383543a5bce06c4a0f746fcba", null ],
     [ "compare", "classCppClingo_1_1Number.html#a87afa61e66a5311baca3e98f5a356e06", null ],
     [ "compare", "classCppClingo_1_1Number.html#a59a678e389171c28ebc37f21ac36347e", null ],
     [ "compare", "classCppClingo_1_1Number.html#ae823443a789bff5ac112eebece846866", null ],
