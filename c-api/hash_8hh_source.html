@@ -287,14 +287,14 @@ $(document).ready(function(){initNavTree('hash_8hh_source.html',''); initResizab
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        seed *= 0x4cf5ad432745937f;</div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        seed ^= h;</div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        seed = (seed &gt;&gt; 27) | (seed &lt;&lt; 37);</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        seed = seed * 5 + 0x52dce729;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        seed = (seed * 5) + 0x52dce729;</div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        seed *= 0xcc9e2d51;</div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        seed = (seed &gt;&gt; 17) | (seed &lt;&lt; 15);</div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        seed *= 0x1b873593;</div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        seed ^= h;</div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        seed = (seed &gt;&gt; 19) | (seed &lt;&lt; 13);</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        seed = seed * 5 + 0xe6546b64;</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        seed = (seed * 5) + 0xe6546b64;</div>
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    }</div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <span class="keywordflow">return</span> seed;</div>
 <div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <span class="comment">// NOLINTEND(readability-magic-numbers)</span></div>

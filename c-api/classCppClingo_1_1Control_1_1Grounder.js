@@ -8,7 +8,7 @@ var classCppClingo_1_1Control_1_1Grounder =
     [ "base", "classCppClingo_1_1Control_1_1Grounder.html#a1c28251c3aad2a2d08e7c2c5a78c1ccd", null ],
     [ "const_map", "classCppClingo_1_1Control_1_1Grounder.html#ad7ba7530faf189d6d7d1e0f9b6f73ca4", null ],
     [ "get_parts", "classCppClingo_1_1Control_1_1Grounder.html#ae0ee9ad75c4c16c4e1f44d40501ffbbb", null ],
-    [ "ground", "classCppClingo_1_1Control_1_1Grounder.html#a67439deb763e91302b048ccc9ece734c", null ],
+    [ "ground", "classCppClingo_1_1Control_1_1Grounder.html#ab6093c6c14e3c5096197aebaf7ffd38b", null ],
     [ "join", "classCppClingo_1_1Control_1_1Grounder.html#a341d8df75a8b12fc085e9017b244a350", null ],
     [ "log", "classCppClingo_1_1Control_1_1Grounder.html#aca1816899db57260632f385da83afd40", null ],
     [ "mark_sig", "classCppClingo_1_1Control_1_1Grounder.html#a9056d26568c8e408ee5fa01184d3e61d", null ],

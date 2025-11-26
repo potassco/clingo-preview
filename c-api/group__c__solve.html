@@ -179,9 +179,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga3ca184768ef788ca10f0f76bb7ad1353" id="r_ga3ca184768ef788ca10f0f76bb7ad1353"><td class="memItemLeft" align="right" valign="top">CLINGO_VISIBILITY_DEFAULT bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__solve.html#ga3ca184768ef788ca10f0f76bb7ad1353">clingo_solve_handle_cancel</a> (<a class="el" href="group__c__solve.html#ga023c1084a4c01ea6e121a8310efba045">clingo_solve_handle_t</a> *handle)</td></tr>
 <tr class="memdesc:ga3ca184768ef788ca10f0f76bb7ad1353"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the running search and block until done.  <br /></td></tr>
 <tr class="separator:ga3ca184768ef788ca10f0f76bb7ad1353"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga488b76e7240d625bd4066e68a33ab23e" id="r_ga488b76e7240d625bd4066e68a33ab23e"><td class="memItemLeft" align="right" valign="top">CLINGO_VISIBILITY_DEFAULT bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__solve.html#ga488b76e7240d625bd4066e68a33ab23e">clingo_solve_handle_close</a> (<a class="el" href="group__c__solve.html#ga023c1084a4c01ea6e121a8310efba045">clingo_solve_handle_t</a> *handle)</td></tr>
-<tr class="memdesc:ga488b76e7240d625bd4066e68a33ab23e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the running search and releases the handle.  <br /></td></tr>
-<tr class="separator:ga488b76e7240d625bd4066e68a33ab23e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf45b246d8a91322b9080535392761fb3" id="r_gaf45b246d8a91322b9080535392761fb3"><td class="memItemLeft" align="right" valign="top">CLINGO_VISIBILITY_DEFAULT void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__solve.html#gaf45b246d8a91322b9080535392761fb3">clingo_solve_handle_close</a> (<a class="el" href="group__c__solve.html#ga023c1084a4c01ea6e121a8310efba045">clingo_solve_handle_t</a> *handle)</td></tr>
+<tr class="memdesc:gaf45b246d8a91322b9080535392761fb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the running search and releases the handle.  <br /></td></tr>
+<tr class="separator:gaf45b246d8a91322b9080535392761fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga853dd2b6fc7c545d4f4d521080bbd014" id="r_ga853dd2b6fc7c545d4f4d521080bbd014"><td class="memItemLeft" align="right" valign="top">CLINGO_VISIBILITY_DEFAULT bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__solve.html#ga853dd2b6fc7c545d4f4d521080bbd014">clingo_control_solve</a> (clingo_control_t *control, <a class="el" href="group__c__solve.html#gad429252492888205c9de9a295a724496">clingo_solve_mode_bitset_t</a> mode, <a class="el" href="group__c__core.html#gaa95dd19334e536397bbad174c8fa4ff8">clingo_literal_t</a> const *assumptions, size_t assumptions_size, <a class="el" href="group__c__solve.html#gaf4a75963866bc9d1fcc7e78b03134c46">clingo_solve_event_handler_t</a> const *handler, void *data, <a class="el" href="group__c__solve.html#ga023c1084a4c01ea6e121a8310efba045">clingo_solve_handle_t</a> **handle)</td></tr>
 <tr class="memdesc:ga853dd2b6fc7c545d4f4d521080bbd014"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve the currently grounded logic program enumerating its models.  <br /></td></tr>
 <tr class="separator:ga853dd2b6fc7c545d4f4d521080bbd014"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -369,14 +369,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga488b76e7240d625bd4066e68a33ab23e" name="ga488b76e7240d625bd4066e68a33ab23e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga488b76e7240d625bd4066e68a33ab23e">&#9670;&#160;</a></span>clingo_solve_handle_close()</h2>
+<a id="gaf45b246d8a91322b9080535392761fb3" name="gaf45b246d8a91322b9080535392761fb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf45b246d8a91322b9080535392761fb3">&#9670;&#160;</a></span>clingo_solve_handle_close()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">CLINGO_VISIBILITY_DEFAULT bool clingo_solve_handle_close </td>
+          <td class="memname">CLINGO_VISIBILITY_DEFAULT void clingo_solve_handle_close </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__c__solve.html#ga023c1084a4c01ea6e121a8310efba045">clingo_solve_handle_t</a> *&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -393,7 +393,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>whether the call was successful </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="ast_8c-example.html#a30">ast.c</a>, and <a class="el" href="backend_8c-example.html#a14">backend.c</a>.</dd>
 </dl>
 

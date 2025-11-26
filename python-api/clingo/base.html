@@ -201,9 +201,6 @@
                     <a class="class" href="#TheoryTermType">TheoryTermType</a>
                             <ul class="memberlist">
                         <li>
-                                <a class="function" href="#TheoryTermType.__init__">TheoryTermType</a>
-                        </li>
-                        <li>
                                 <a class="variable" href="#TheoryTermType.Function">Function</a>
                         </li>
                         <li>
@@ -220,12 +217,6 @@
                         </li>
                         <li>
                                 <a class="variable" href="#TheoryTermType.Tuple">Tuple</a>
-                        </li>
-                        <li>
-                                <a class="variable" href="#TheoryTermType.name">name</a>
-                        </li>
-                        <li>
-                                <a class="variable" href="#TheoryTermType.value">value</a>
                         </li>
                 </ul>
 
@@ -1012,7 +1003,7 @@ from a previous step.</p>
                     <div class="attr class">
             
     <span class="def">class</span>
-    <span class="name">TheoryTermType</span>:
+    <span class="name">TheoryTermType</span><wbr>(<span class="base">enum.IntEnum</span>):
 
         
     </div>
@@ -1022,120 +1013,74 @@ from a previous step.</p>
 </div>
 
 
-                            <div id="TheoryTermType.__init__" class="classattr">
-                                <div class="attr function">
-            
-        <span class="name">TheoryTermType</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">value</span><span class="p">:</span> <span class="nb">int</span></span>)</span>
-
-        
-    </div>
-    <a class="headerlink" href="#TheoryTermType.__init__"></a>
-    
-    
-
-                            </div>
                             <div id="TheoryTermType.Function" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Function</span><span class="annotation">: ClassVar[<a href="#TheoryTermType">TheoryTermType</a>]</span>        =
-<span class="default_value"><a href="#TheoryTermType.Function">TheoryTermType.Function</a></span>
+            <span class="name">Function</span>        =
+<span class="default_value">&lt;<a href="#TheoryTermType.Function">TheoryTermType.Function</a>: 3&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#TheoryTermType.Function"></a>
     
-            <div class="docstring"><p>For function theory terms.</p>
-</div>
-
+    
 
                             </div>
                             <div id="TheoryTermType.List" class="classattr">
                                 <div class="attr variable">
-            <span class="name">List</span><span class="annotation">: ClassVar[<a href="#TheoryTermType">TheoryTermType</a>]</span>        =
-<span class="default_value"><a href="#TheoryTermType.List">TheoryTermType.List</a></span>
+            <span class="name">List</span>        =
+<span class="default_value">&lt;<a href="#TheoryTermType.List">TheoryTermType.List</a>: 1&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#TheoryTermType.List"></a>
     
-            <div class="docstring"><p>For list theory term.</p>
-</div>
-
+    
 
                             </div>
                             <div id="TheoryTermType.Number" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Number</span><span class="annotation">: ClassVar[<a href="#TheoryTermType">TheoryTermType</a>]</span>        =
-<span class="default_value"><a href="#TheoryTermType.Number">TheoryTermType.Number</a></span>
+            <span class="name">Number</span>        =
+<span class="default_value">&lt;<a href="#TheoryTermType.Number">TheoryTermType.Number</a>: 4&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#TheoryTermType.Number"></a>
     
-            <div class="docstring"><p>For numeric theory terms.</p>
-</div>
-
+    
 
                             </div>
                             <div id="TheoryTermType.Set" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Set</span><span class="annotation">: ClassVar[<a href="#TheoryTermType">TheoryTermType</a>]</span>        =
-<span class="default_value"><a href="#TheoryTermType.Set">TheoryTermType.Set</a></span>
+            <span class="name">Set</span>        =
+<span class="default_value">&lt;<a href="#TheoryTermType.Set">TheoryTermType.Set</a>: 2&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#TheoryTermType.Set"></a>
     
-            <div class="docstring"><p>For set theory terms.</p>
-</div>
-
+    
 
                             </div>
                             <div id="TheoryTermType.Symbol" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Symbol</span><span class="annotation">: ClassVar[<a href="#TheoryTermType">TheoryTermType</a>]</span>        =
-<span class="default_value"><a href="#TheoryTermType.Symbol">TheoryTermType.Symbol</a></span>
+            <span class="name">Symbol</span>        =
+<span class="default_value">&lt;<a href="#TheoryTermType.Symbol">TheoryTermType.Symbol</a>: 5&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#TheoryTermType.Symbol"></a>
     
-            <div class="docstring"><p>For symbolic theory terms (simple strings).</p>
-</div>
-
+    
 
                             </div>
                             <div id="TheoryTermType.Tuple" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Tuple</span><span class="annotation">: ClassVar[<a href="#TheoryTermType">TheoryTermType</a>]</span>        =
-<span class="default_value"><a href="#TheoryTermType.Tuple">TheoryTermType.Tuple</a></span>
+            <span class="name">Tuple</span>        =
+<span class="default_value">&lt;<a href="#TheoryTermType.Tuple">TheoryTermType.Tuple</a>: 0&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#TheoryTermType.Tuple"></a>
-    
-            <div class="docstring"><p>For tuple theory terms.</p>
-</div>
-
-
-                            </div>
-                            <div id="TheoryTermType.name" class="classattr">
-                                <div class="attr variable">
-            <span class="name">name</span><span class="annotation">: str</span>
-
-        
-    </div>
-    <a class="headerlink" href="#TheoryTermType.name"></a>
-    
-    
-
-                            </div>
-                            <div id="TheoryTermType.value" class="classattr">
-                                <div class="attr variable">
-            <span class="name">value</span><span class="annotation">: int</span>
-
-        
-    </div>
-    <a class="headerlink" href="#TheoryTermType.value"></a>
     
     
 

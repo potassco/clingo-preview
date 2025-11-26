@@ -11,5 +11,6 @@ var group__cpp__script =
       [ "name", "classClingo_1_1Script.html#a166007079d2833cbc6510209b3be20f8", null ],
       [ "operator=", "classClingo_1_1Script.html#ab94d42da0db869a6cae02cc06f3dc566", null ],
       [ "version", "classClingo_1_1Script.html#a139f63b07e3d4d5fb05560a97d6c10b0", null ]
-    ] ]
+    ] ],
+    [ "Clingo::register_script", "group__cpp__script.html#ga0d281d4413739d7389201f5ad2a1a685", null ]
 ];

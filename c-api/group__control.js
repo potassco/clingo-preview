@@ -42,7 +42,7 @@ var group__control =
       [ "base", "classCppClingo_1_1Control_1_1Grounder.html#a1c28251c3aad2a2d08e7c2c5a78c1ccd", null ],
       [ "const_map", "classCppClingo_1_1Control_1_1Grounder.html#ad7ba7530faf189d6d7d1e0f9b6f73ca4", null ],
       [ "get_parts", "classCppClingo_1_1Control_1_1Grounder.html#ae0ee9ad75c4c16c4e1f44d40501ffbbb", null ],
-      [ "ground", "classCppClingo_1_1Control_1_1Grounder.html#a67439deb763e91302b048ccc9ece734c", null ],
+      [ "ground", "classCppClingo_1_1Control_1_1Grounder.html#ab6093c6c14e3c5096197aebaf7ffd38b", null ],
       [ "join", "classCppClingo_1_1Control_1_1Grounder.html#a341d8df75a8b12fc085e9017b244a350", null ],
       [ "log", "classCppClingo_1_1Control_1_1Grounder.html#aca1816899db57260632f385da83afd40", null ],
       [ "mark_sig", "classCppClingo_1_1Control_1_1Grounder.html#a9056d26568c8e408ee5fa01184d3e61d", null ],
@@ -124,12 +124,12 @@ var group__control =
       [ "resume", "classCppClingo_1_1Control_1_1SolveHandle.html#a1ca17c0f28450cd55a8a88243963dd6e", null ],
       [ "wait", "classCppClingo_1_1Control_1_1SolveHandle.html#a1fdc0378744b9d67bb53bb4d07beca63", null ]
     ] ],
-    [ "CppClingo::Control::EventHandler", "classCppClingo_1_1Control_1_1EventHandler.html", [
-      [ "on_core", "classCppClingo_1_1Control_1_1EventHandler.html#a841aa767f5d2c583161633ae2fe415b7", null ],
-      [ "on_finish", "classCppClingo_1_1Control_1_1EventHandler.html#a4a1f9ee632808e3e43cbfc13aa843b53", null ],
-      [ "on_model", "classCppClingo_1_1Control_1_1EventHandler.html#ae40634752c847a4e4bcc0bba3fad51d6", null ],
-      [ "on_stats", "classCppClingo_1_1Control_1_1EventHandler.html#a79e41008f02fa1069bceca5e19efd456", null ],
-      [ "on_unsat", "classCppClingo_1_1Control_1_1EventHandler.html#a817033e3cc90bd91d7084754609e73e9", null ]
+    [ "CppClingo::Control::SolveEventHandler", "classCppClingo_1_1Control_1_1SolveEventHandler.html", [
+      [ "on_core", "classCppClingo_1_1Control_1_1SolveEventHandler.html#a6f9dcb159238da828d4af0827b7b7584", null ],
+      [ "on_finish", "classCppClingo_1_1Control_1_1SolveEventHandler.html#a3dec5dc24e95e23e3a54630cd6bcbcc8", null ],
+      [ "on_model", "classCppClingo_1_1Control_1_1SolveEventHandler.html#a677e3b34a3bce6b28a5bac8541bdfc06", null ],
+      [ "on_stats", "classCppClingo_1_1Control_1_1SolveEventHandler.html#aa3b00fc8d303c25ae83b95bcf389293e", null ],
+      [ "on_unsat", "classCppClingo_1_1Control_1_1SolveEventHandler.html#a3b43a478a66bbb6816c6160dedfb47ee", null ]
     ] ],
     [ "CppClingo::Control::BackendHandle", "classCppClingo_1_1Control_1_1BackendHandle.html", [
       [ "~BackendHandle", "classCppClingo_1_1Control_1_1BackendHandle.html#ab22b411e1208cda75e90fbbc5dbbdde0", null ],
@@ -161,6 +161,20 @@ var group__control =
       [ "Grounded", "classCppClingo_1_1Control_1_1Grounded.html#a525a307fedd0b39485e5ea57d803142d", null ],
       [ "params", "classCppClingo_1_1Control_1_1Grounded.html#a4e3b365835a56b92b38b9821e4fe1d3a", null ]
     ] ],
+    [ "CppClingo::Control::GroundEventHandler", "classCppClingo_1_1Control_1_1GroundEventHandler.html", [
+      [ "finish", "classCppClingo_1_1Control_1_1GroundEventHandler.html#a7e0f0df0621ec4bd3bdf49382492439d", null ]
+    ] ],
+    [ "CppClingo::Control::GroundHandle", "classCppClingo_1_1Control_1_1GroundHandle.html", [
+      [ "GroundHandle", "classCppClingo_1_1Control_1_1GroundHandle.html#a301ad6801d9d5d5718caba4fe07d6bbd", null ],
+      [ "~GroundHandle", "classCppClingo_1_1Control_1_1GroundHandle.html#a465aa27138254f12abef17c7f482eeb0", null ],
+      [ "GroundHandle", "classCppClingo_1_1Control_1_1GroundHandle.html#a9f422400bb16d0ad2c8278c217872dad", null ],
+      [ "GroundHandle", "classCppClingo_1_1Control_1_1GroundHandle.html#abfd48d88b2e3aadbef7bd347c34498ee", null ],
+      [ "cancel", "classCppClingo_1_1Control_1_1GroundHandle.html#a576db19aefd1ca583fa3ff40cd8c7ef1", null ],
+      [ "get", "classCppClingo_1_1Control_1_1GroundHandle.html#a983a43096f17221b7a18d0021d75a7e5", null ],
+      [ "operator=", "classCppClingo_1_1Control_1_1GroundHandle.html#a89f64a0d71c2b5aa04b76583b5618ee3", null ],
+      [ "operator=", "classCppClingo_1_1Control_1_1GroundHandle.html#adae6a09047a66e2675652ac28b186bd9", null ],
+      [ "wait", "classCppClingo_1_1Control_1_1GroundHandle.html#a300f388a3ab5650c01dc421f129c700a", null ]
+    ] ],
     [ "CppClingo::Control::Solver", "classCppClingo_1_1Control_1_1Solver.html", [
       [ "Solver", "classCppClingo_1_1Control_1_1Solver.html#a9e73aab76ddfbff99251f8bab496b333", null ],
       [ "accept", "classCppClingo_1_1Control_1_1Solver.html#a83638d794f719660b482c1c6806371a7", null ],
@@ -176,7 +190,7 @@ var group__control =
       [ "get_lock", "classCppClingo_1_1Control_1_1Solver.html#a7f932a5b27c0eacaf64899ef5390cee5", null ],
       [ "get_mode", "classCppClingo_1_1Control_1_1Solver.html#afa66f3c11d4780d8783fd02c360e23b2", null ],
       [ "get_parts", "classCppClingo_1_1Control_1_1Solver.html#a19f7ee83676f55b33c89dee86282908d", null ],
-      [ "ground", "classCppClingo_1_1Control_1_1Solver.html#a4089ac2f4c6e53f1ffa24e1e6c913d19", null ],
+      [ "ground", "classCppClingo_1_1Control_1_1Solver.html#a6359c054072da3e889571bf600a4875d", null ],
       [ "interrupt", "classCppClingo_1_1Control_1_1Solver.html#a33ad7993c1b9ffb85fe10de018d02ea9", null ],
       [ "join", "classCppClingo_1_1Control_1_1Solver.html#a1764e64b99abdc5a979be79f158235dc", null ],
       [ "main", "classCppClingo_1_1Control_1_1Solver.html#a43e2c5e54bcd96bd05cbf5c69546caba", null ],
@@ -192,7 +206,8 @@ var group__control =
       [ "set_parts", "classCppClingo_1_1Control_1_1Solver.html#a1faf98d21ab0a2fcae45c9cb1e9c23cf", null ],
       [ "set_parts", "classCppClingo_1_1Control_1_1Solver.html#ab3b0ff1bc9abc6bdd2cb6cdde8672545", null ],
       [ "show", "classCppClingo_1_1Control_1_1Solver.html#adef3c3c85c397467f431c9f86ee329ea", null ],
-      [ "solve", "classCppClingo_1_1Control_1_1Solver.html#a01a83fd00ef415dd45203bbf88790003", null ],
+      [ "solve", "classCppClingo_1_1Control_1_1Solver.html#ad60f80fe0dc8e8895aa4011e8119a445", null ],
+      [ "start_ground", "classCppClingo_1_1Control_1_1Solver.html#aed12ace36ec8a655a210703b5d2757f7", null ],
       [ "sym_tab", "classCppClingo_1_1Control_1_1Solver.html#a9938aea4f5e68e07ff5088805a4864b9", null ],
       [ "user_data", "classCppClingo_1_1Control_1_1Solver.html#af1654092f6e73dc2f37eb2d30e240fa3", null ]
     ] ],
@@ -201,10 +216,11 @@ var group__control =
     [ "CppClingo::Control::ProgramParams", "group__control.html#ga22d03e5139cccfd3537c9db9c293c697", null ],
     [ "CppClingo::Control::ProjectMap", "group__control.html#gaba6797530bb107ebad8ee4e2a10c7b68", null ],
     [ "CppClingo::Control::UBackendHandle", "group__control.html#gae0457da1fc1091d82b31246a481abba7", null ],
-    [ "CppClingo::Control::UEventHandler", "group__control.html#ga109d7af1cc4e5aec2a63acee893783dc", null ],
+    [ "CppClingo::Control::UGroundEventHandler", "group__control.html#gaebb2e576832a7041208fde64444b9022", null ],
     [ "CppClingo::Control::UModel", "group__control.html#gab67e7ad9cb7edfde3cd5d8ee643a183d", null ],
     [ "CppClingo::Control::UPropagator", "group__control.html#ga11043fa2a770493b321662a03f17b89d", null ],
     [ "CppClingo::Control::UScript", "group__control.html#gae5314e9987fc415b85fd57668dbc2ab5", null ],
+    [ "CppClingo::Control::USolveEventHandler", "group__control.html#ga6d7c83f39ec17960603f0b783f20a6cd", null ],
     [ "CppClingo::Control::USolveHandle", "group__control.html#ga215895d93e51be3b336f13a5cde9bdfa", null ],
     [ "CppClingo::Control::USymbolTable", "group__control.html#ga6d2fa6890f21e08f8075a970ed94c672", null ],
     [ "CppClingo::Control::VarMap", "group__control.html#ga577bbef3ca685465f36f78cc515ddd77", null ],

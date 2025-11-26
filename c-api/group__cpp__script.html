@@ -100,7 +100,8 @@ $(document).ready(function(){initNavTree('group__cpp__script.html',''); initResi
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Scripting Support for Grounding<div class="ingroups"><a class="el" href="group__cpp__api.html">C++ API</a></div></div></div>
 </div><!--header-->
 <div class="contents">
@@ -113,10 +114,59 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Script.html">Clingo::Script</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface for custom scripts.  <a href="classClingo_1_1Script.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga0d281d4413739d7389201f5ad2a1a685" id="r_ga0d281d4413739d7389201f5ad2a1a685"><td class="memTemplParams" colspan="2">template&lt;Detail::UserData&lt; <a class="el" href="classClingo_1_1Script.html">Script</a>, false &gt; T&gt; </td></tr>
+<tr class="memitem:ga0d281d4413739d7389201f5ad2a1a685"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__cpp__script.html#ga0d281d4413739d7389201f5ad2a1a685">Clingo::register_script</a> (<a class="el" href="classClingo_1_1Library.html">Library</a> const &amp;lib, T &amp;&amp;script) -&gt; decltype(auto)</td></tr>
+<tr class="memdesc:ga0d281d4413739d7389201f5ad2a1a685"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register the given script with the library.  <br /></td></tr>
+<tr class="separator:ga0d281d4413739d7389201f5ad2a1a685"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for external functions solving customizations. </p>
 <p>This module provides an interface to implement custom scripts that can be used to provide external functions callable during grounding and to customize the main application flow. </p>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga0d281d4413739d7389201f5ad2a1a685" name="ga0d281d4413739d7389201f5ad2a1a685"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0d281d4413739d7389201f5ad2a1a685">&#9670;&#160;</a></span>register_script()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;Detail::UserData&lt; <a class="el" href="classClingo_1_1Script.html">Script</a>, false &gt; T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Clingo::register_script </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classClingo_1_1Library.html">Library</a> const &amp;&#160;</td>
+          <td class="paramname"><em>lib</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramname"><em>script</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; decltype(auto) </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register the given script with the library. </p>
+<p>The script can be passed by value, std::ref, or std::unique_ptr.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lib</td><td>the library to register the script with </td></tr>
+    <tr><td class="paramname">script</td><td>the script to register </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a reference to the registered script </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

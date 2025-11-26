@@ -63,9 +63,6 @@
                     <a class="class" href="#LogLevel">LogLevel</a>
                             <ul class="memberlist">
                         <li>
-                                <a class="function" href="#LogLevel.__init__">LogLevel</a>
-                        </li>
-                        <li>
                                 <a class="variable" href="#LogLevel.Debug">Debug</a>
                         </li>
                         <li>
@@ -80,21 +77,12 @@
                         <li>
                                 <a class="variable" href="#LogLevel.Warn">Warn</a>
                         </li>
-                        <li>
-                                <a class="variable" href="#LogLevel.name">name</a>
-                        </li>
-                        <li>
-                                <a class="variable" href="#LogLevel.value">value</a>
-                        </li>
                 </ul>
 
             </li>
             <li>
                     <a class="class" href="#MessageType">MessageType</a>
                             <ul class="memberlist">
-                        <li>
-                                <a class="function" href="#MessageType.__init__">MessageType</a>
-                        </li>
                         <li>
                                 <a class="variable" href="#MessageType.AtomUndefined">AtomUndefined</a>
                         </li>
@@ -121,12 +109,6 @@
                         </li>
                         <li>
                                 <a class="variable" href="#MessageType.Warn">Warn</a>
-                        </li>
-                        <li>
-                                <a class="variable" href="#MessageType.name">name</a>
-                        </li>
-                        <li>
-                                <a class="variable" href="#MessageType.value">value</a>
                         </li>
                 </ul>
 
@@ -206,7 +188,7 @@ Functions and classes that need to create symbols require an instance of this cl
                             <div id="Library.__init__" class="classattr">
                                 <div class="attr function">
             
-        <span class="name">Library</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">shared</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>,</span><span class="param">	<span class="n">slotted</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>,</span><span class="param">	<span class="n">log_level</span><span class="p">:</span> <span class="n"><a href="#LogLevel">LogLevel</a></span> <span class="o">=</span> <span class="n"><a href="#LogLevel.Info">LogLevel.Info</a></span>,</span><span class="param">	<span class="n">logger</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n"><a href="#MessageType">MessageType</a></span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="n">NoneType</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">message_limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">25</span></span>)</span>
+        <span class="name">Library</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">shared</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>,</span><span class="param">	<span class="n">slotted</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>,</span><span class="param">	<span class="n">log_level</span><span class="p">:</span> <span class="n"><a href="#LogLevel">LogLevel</a></span> <span class="o">=</span> <span class="o">&lt;</span><span class="n"><a href="#LogLevel.Info">LogLevel.Info</a></span><span class="p">:</span> <span class="mi">2</span><span class="o">&gt;</span>,</span><span class="param">	<span class="n">logger</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n"><a href="#MessageType">MessageType</a></span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">message_limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">25</span></span>)</span>
 
         
     </div>
@@ -301,7 +283,7 @@ the source of the program elements.</p>
                     <div class="attr class">
             
     <span class="def">class</span>
-    <span class="name">LogLevel</span>:
+    <span class="name">LogLevel</span><wbr>(<span class="base">enum.IntEnum</span>):
 
         
     </div>
@@ -311,106 +293,62 @@ the source of the program elements.</p>
 </div>
 
 
-                            <div id="LogLevel.__init__" class="classattr">
-                                <div class="attr function">
-            
-        <span class="name">LogLevel</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">value</span><span class="p">:</span> <span class="nb">int</span></span>)</span>
-
-        
-    </div>
-    <a class="headerlink" href="#LogLevel.__init__"></a>
-    
-    
-
-                            </div>
                             <div id="LogLevel.Debug" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Debug</span><span class="annotation">: ClassVar[<a href="#LogLevel">LogLevel</a>]</span>        =
-<span class="default_value"><a href="#LogLevel.Debug">LogLevel.Debug</a></span>
+            <span class="name">Debug</span>        =
+<span class="default_value">&lt;<a href="#LogLevel.Debug">LogLevel.Debug</a>: 1&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#LogLevel.Debug"></a>
     
-            <div class="docstring"><p>Report debug messages (includes info level).</p>
-</div>
-
+    
 
                             </div>
                             <div id="LogLevel.Error" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Error</span><span class="annotation">: ClassVar[<a href="#LogLevel">LogLevel</a>]</span>        =
-<span class="default_value"><a href="#LogLevel.Error">LogLevel.Error</a></span>
+            <span class="name">Error</span>        =
+<span class="default_value">&lt;<a href="#LogLevel.Error">LogLevel.Error</a>: 8&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#LogLevel.Error"></a>
     
-            <div class="docstring"><p>Report error messages.</p>
-</div>
-
+    
 
                             </div>
                             <div id="LogLevel.Info" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Info</span><span class="annotation">: ClassVar[<a href="#LogLevel">LogLevel</a>]</span>        =
-<span class="default_value"><a href="#LogLevel.Info">LogLevel.Info</a></span>
+            <span class="name">Info</span>        =
+<span class="default_value">&lt;<a href="#LogLevel.Info">LogLevel.Info</a>: 2&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#LogLevel.Info"></a>
     
-            <div class="docstring"><p>Report info messages (includes warning level).</p>
-</div>
-
+    
 
                             </div>
                             <div id="LogLevel.Trace" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Trace</span><span class="annotation">: ClassVar[<a href="#LogLevel">LogLevel</a>]</span>        =
-<span class="default_value"><a href="#LogLevel.Trace">LogLevel.Trace</a></span>
+            <span class="name">Trace</span>        =
+<span class="default_value">&lt;<a href="#LogLevel.Trace">LogLevel.Trace</a>: 0&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#LogLevel.Trace"></a>
     
-            <div class="docstring"><p>Report trace messages (includes debug level).</p>
-</div>
-
+    
 
                             </div>
                             <div id="LogLevel.Warn" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Warn</span><span class="annotation">: ClassVar[<a href="#LogLevel">LogLevel</a>]</span>        =
-<span class="default_value"><a href="#LogLevel.Warn">LogLevel.Warn</a></span>
+            <span class="name">Warn</span>        =
+<span class="default_value">&lt;<a href="#LogLevel.Warn">LogLevel.Warn</a>: 7&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#LogLevel.Warn"></a>
-    
-            <div class="docstring"><p>Report warning messages (includes error level).</p>
-</div>
-
-
-                            </div>
-                            <div id="LogLevel.name" class="classattr">
-                                <div class="attr variable">
-            <span class="name">name</span><span class="annotation">: str</span>
-
-        
-    </div>
-    <a class="headerlink" href="#LogLevel.name"></a>
-    
-    
-
-                            </div>
-                            <div id="LogLevel.value" class="classattr">
-                                <div class="attr variable">
-            <span class="name">value</span><span class="annotation">: int</span>
-
-        
-    </div>
-    <a class="headerlink" href="#LogLevel.value"></a>
     
     
 
@@ -420,7 +358,7 @@ the source of the program elements.</p>
                     <div class="attr class">
             
     <span class="def">class</span>
-    <span class="name">MessageType</span>:
+    <span class="name">MessageType</span><wbr>(<span class="base">enum.IntEnum</span>):
 
         
     </div>
@@ -430,162 +368,110 @@ the source of the program elements.</p>
 </div>
 
 
-                            <div id="MessageType.__init__" class="classattr">
-                                <div class="attr function">
-            
-        <span class="name">MessageType</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">value</span><span class="p">:</span> <span class="nb">int</span></span>)</span>
-
-        
-    </div>
-    <a class="headerlink" href="#MessageType.__init__"></a>
-    
-    
-
-                            </div>
                             <div id="MessageType.AtomUndefined" class="classattr">
                                 <div class="attr variable">
-            <span class="name">AtomUndefined</span><span class="annotation">: ClassVar[<a href="#MessageType">MessageType</a>]</span>        =
-<span class="default_value"><a href="#MessageType.AtomUndefined">MessageType.AtomUndefined</a></span>
+            <span class="name">AtomUndefined</span>        =
+<span class="default_value">&lt;<a href="#MessageType.AtomUndefined">MessageType.AtomUndefined</a>: 4&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#MessageType.AtomUndefined"></a>
     
-            <div class="docstring"><p>An info message about an undefined atom.</p>
-</div>
-
+    
 
                             </div>
                             <div id="MessageType.Debug" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Debug</span><span class="annotation">: ClassVar[<a href="#MessageType">MessageType</a>]</span>        =
-<span class="default_value"><a href="#MessageType.Debug">MessageType.Debug</a></span>
+            <span class="name">Debug</span>        =
+<span class="default_value">&lt;<a href="#MessageType.Debug">MessageType.Debug</a>: 1&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#MessageType.Debug"></a>
     
-            <div class="docstring"><p>A debug message.</p>
-</div>
-
+    
 
                             </div>
                             <div id="MessageType.Error" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Error</span><span class="annotation">: ClassVar[<a href="#MessageType">MessageType</a>]</span>        =
-<span class="default_value"><a href="#MessageType.Error">MessageType.Error</a></span>
+            <span class="name">Error</span>        =
+<span class="default_value">&lt;<a href="#MessageType.Error">MessageType.Error</a>: 8&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#MessageType.Error"></a>
     
-            <div class="docstring"><p>An error message.</p>
-</div>
-
+    
 
                             </div>
                             <div id="MessageType.FileIncluded" class="classattr">
                                 <div class="attr variable">
-            <span class="name">FileIncluded</span><span class="annotation">: ClassVar[<a href="#MessageType">MessageType</a>]</span>        =
-<span class="default_value"><a href="#MessageType.FileIncluded">MessageType.FileIncluded</a></span>
+            <span class="name">FileIncluded</span>        =
+<span class="default_value">&lt;<a href="#MessageType.FileIncluded">MessageType.FileIncluded</a>: 5&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#MessageType.FileIncluded"></a>
     
-            <div class="docstring"><p>An info message about an already included file.</p>
-</div>
-
+    
 
                             </div>
                             <div id="MessageType.GlobalVariable" class="classattr">
                                 <div class="attr variable">
-            <span class="name">GlobalVariable</span><span class="annotation">: ClassVar[<a href="#MessageType">MessageType</a>]</span>        =
-<span class="default_value"><a href="#MessageType.GlobalVariable">MessageType.GlobalVariable</a></span>
+            <span class="name">GlobalVariable</span>        =
+<span class="default_value">&lt;<a href="#MessageType.GlobalVariable">MessageType.GlobalVariable</a>: 6&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#MessageType.GlobalVariable"></a>
     
-            <div class="docstring"><p>An info message about a global variable in the tuple of an aggregate.</p>
-</div>
-
+    
 
                             </div>
                             <div id="MessageType.Info" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Info</span><span class="annotation">: ClassVar[<a href="#MessageType">MessageType</a>]</span>        =
-<span class="default_value"><a href="#MessageType.Info">MessageType.Info</a></span>
+            <span class="name">Info</span>        =
+<span class="default_value">&lt;<a href="#MessageType.Info">MessageType.Info</a>: 2&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#MessageType.Info"></a>
     
-            <div class="docstring"><p>A generic info message.</p>
-</div>
-
+    
 
                             </div>
                             <div id="MessageType.OperationUndefined" class="classattr">
                                 <div class="attr variable">
-            <span class="name">OperationUndefined</span><span class="annotation">: ClassVar[<a href="#MessageType">MessageType</a>]</span>        =
-<span class="default_value"><a href="#MessageType.OperationUndefined">MessageType.OperationUndefined</a></span>
+            <span class="name">OperationUndefined</span>        =
+<span class="default_value">&lt;<a href="#MessageType.OperationUndefined">MessageType.OperationUndefined</a>: 3&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#MessageType.OperationUndefined"></a>
     
-            <div class="docstring"><p>An info message about an undefined operation.</p>
-</div>
-
+    
 
                             </div>
                             <div id="MessageType.Trace" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Trace</span><span class="annotation">: ClassVar[<a href="#MessageType">MessageType</a>]</span>        =
-<span class="default_value"><a href="#MessageType.Trace">MessageType.Trace</a></span>
+            <span class="name">Trace</span>        =
+<span class="default_value">&lt;<a href="#MessageType.Trace">MessageType.Trace</a>: 0&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#MessageType.Trace"></a>
     
-            <div class="docstring"><p>A trace message.</p>
-</div>
-
+    
 
                             </div>
                             <div id="MessageType.Warn" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Warn</span><span class="annotation">: ClassVar[<a href="#MessageType">MessageType</a>]</span>        =
-<span class="default_value"><a href="#MessageType.Warn">MessageType.Warn</a></span>
+            <span class="name">Warn</span>        =
+<span class="default_value">&lt;<a href="#MessageType.Warn">MessageType.Warn</a>: 7&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#MessageType.Warn"></a>
-    
-            <div class="docstring"><p>A warning message.</p>
-</div>
-
-
-                            </div>
-                            <div id="MessageType.name" class="classattr">
-                                <div class="attr variable">
-            <span class="name">name</span><span class="annotation">: str</span>
-
-        
-    </div>
-    <a class="headerlink" href="#MessageType.name"></a>
-    
-    
-
-                            </div>
-                            <div id="MessageType.value" class="classattr">
-                                <div class="attr variable">
-            <span class="name">value</span><span class="annotation">: int</span>
-
-        
-    </div>
-    <a class="headerlink" href="#MessageType.value"></a>
     
     
 

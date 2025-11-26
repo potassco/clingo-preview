@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Clingo: CppClingo::Control::EventHandler Class Reference</title>
+<title>Clingo: CppClingo::Control::SolveEventHandler Class Reference</title>
 <!--BEGIN PROJECT_ICON-->
 <link rel="icon" href="$projecticon" type="image/x-icon" />
 <!--END PROJECT_ICON-->
@@ -73,7 +73,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classCppClingo_1_1Control_1_1EventHandler.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('classCppClingo_1_1Control_1_1SolveEventHandler.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -101,39 +101,39 @@ $(document).ready(function(){initNavTree('classCppClingo_1_1Control_1_1EventHand
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="classCppClingo_1_1Control_1_1EventHandler-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">CppClingo::Control::EventHandler Class Reference<div class="ingroups"><a class="el" href="group__API.html">Internal C++ API</a> &raquo; <a class="el" href="group__control.html">Control</a></div></div></div>
+<a href="classCppClingo_1_1Control_1_1SolveEventHandler-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">CppClingo::Control::SolveEventHandler Class Reference<div class="ingroups"><a class="el" href="group__API.html">Internal C++ API</a> &raquo; <a class="el" href="group__control.html">Control</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>The event handler interface.  
- <a href="classCppClingo_1_1Control_1_1EventHandler.html#details">More...</a></p>
+ <a href="classCppClingo_1_1Control_1_1SolveEventHandler.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="solver_8hh_source.html">solver.hh</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae40634752c847a4e4bcc0bba3fad51d6" id="r_ae40634752c847a4e4bcc0bba3fad51d6"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Control_1_1EventHandler.html#ae40634752c847a4e4bcc0bba3fad51d6">on_model</a> (<a class="el" href="classCppClingo_1_1Control_1_1Model.html">Model</a> &amp;mdl) -&gt; bool</td></tr>
-<tr class="memdesc:ae40634752c847a4e4bcc0bba3fad51d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback to intercept models.  <br /></td></tr>
-<tr class="separator:ae40634752c847a4e4bcc0bba3fad51d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79e41008f02fa1069bceca5e19efd456" id="r_a79e41008f02fa1069bceca5e19efd456"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Control_1_1EventHandler.html#a79e41008f02fa1069bceca5e19efd456">on_stats</a> (Potassco::AbstractStatistics &amp;stats)</td></tr>
-<tr class="memdesc:a79e41008f02fa1069bceca5e19efd456"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback to update statistics.  <br /></td></tr>
-<tr class="separator:a79e41008f02fa1069bceca5e19efd456"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a817033e3cc90bd91d7084754609e73e9" id="r_a817033e3cc90bd91d7084754609e73e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Control_1_1EventHandler.html#a817033e3cc90bd91d7084754609e73e9">on_unsat</a> (Clasp::SumView bound)</td></tr>
-<tr class="memdesc:a817033e3cc90bd91d7084754609e73e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback to intercept lower bounds.  <br /></td></tr>
-<tr class="separator:a817033e3cc90bd91d7084754609e73e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a841aa767f5d2c583161633ae2fe415b7" id="r_a841aa767f5d2c583161633ae2fe415b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Control_1_1EventHandler.html#a841aa767f5d2c583161633ae2fe415b7">on_core</a> (Potassco::LitSpan core)</td></tr>
-<tr class="memdesc:a841aa767f5d2c583161633ae2fe415b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unsatisfiable core of the current problem.  <br /></td></tr>
-<tr class="separator:a841aa767f5d2c583161633ae2fe415b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a1f9ee632808e3e43cbfc13aa843b53" id="r_a4a1f9ee632808e3e43cbfc13aa843b53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Control_1_1EventHandler.html#a4a1f9ee632808e3e43cbfc13aa843b53">on_finish</a> (<a class="el" href="group__control.html#gaa0093c6cf15fb4085eaf65e2a9e4908d">SolveResult</a> result)</td></tr>
-<tr class="memdesc:a4a1f9ee632808e3e43cbfc13aa843b53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback to inform that the search has finished.  <br /></td></tr>
-<tr class="separator:a4a1f9ee632808e3e43cbfc13aa843b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a677e3b34a3bce6b28a5bac8541bdfc06" id="r_a677e3b34a3bce6b28a5bac8541bdfc06"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Control_1_1SolveEventHandler.html#a677e3b34a3bce6b28a5bac8541bdfc06">on_model</a> (<a class="el" href="classCppClingo_1_1Control_1_1Model.html">Model</a> &amp;mdl) -&gt; bool</td></tr>
+<tr class="memdesc:a677e3b34a3bce6b28a5bac8541bdfc06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback to intercept models.  <br /></td></tr>
+<tr class="separator:a677e3b34a3bce6b28a5bac8541bdfc06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3b00fc8d303c25ae83b95bcf389293e" id="r_aa3b00fc8d303c25ae83b95bcf389293e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Control_1_1SolveEventHandler.html#aa3b00fc8d303c25ae83b95bcf389293e">on_stats</a> (Potassco::AbstractStatistics &amp;stats)</td></tr>
+<tr class="memdesc:aa3b00fc8d303c25ae83b95bcf389293e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback to update statistics.  <br /></td></tr>
+<tr class="separator:aa3b00fc8d303c25ae83b95bcf389293e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b43a478a66bbb6816c6160dedfb47ee" id="r_a3b43a478a66bbb6816c6160dedfb47ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Control_1_1SolveEventHandler.html#a3b43a478a66bbb6816c6160dedfb47ee">on_unsat</a> (Clasp::SumView bound)</td></tr>
+<tr class="memdesc:a3b43a478a66bbb6816c6160dedfb47ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback to intercept lower bounds.  <br /></td></tr>
+<tr class="separator:a3b43a478a66bbb6816c6160dedfb47ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f9dcb159238da828d4af0827b7b7584" id="r_a6f9dcb159238da828d4af0827b7b7584"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Control_1_1SolveEventHandler.html#a6f9dcb159238da828d4af0827b7b7584">on_core</a> (Potassco::LitSpan core)</td></tr>
+<tr class="memdesc:a6f9dcb159238da828d4af0827b7b7584"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unsatisfiable core of the current problem.  <br /></td></tr>
+<tr class="separator:a6f9dcb159238da828d4af0827b7b7584"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dec5dc24e95e23e3a54630cd6bcbcc8" id="r_a3dec5dc24e95e23e3a54630cd6bcbcc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Control_1_1SolveEventHandler.html#a3dec5dc24e95e23e3a54630cd6bcbcc8">on_finish</a> (<a class="el" href="group__control.html#gaa0093c6cf15fb4085eaf65e2a9e4908d">SolveResult</a> result)</td></tr>
+<tr class="memdesc:a3dec5dc24e95e23e3a54630cd6bcbcc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback to inform that the search has finished.  <br /></td></tr>
+<tr class="separator:a3dec5dc24e95e23e3a54630cd6bcbcc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The event handler interface. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a841aa767f5d2c583161633ae2fe415b7" name="a841aa767f5d2c583161633ae2fe415b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a841aa767f5d2c583161633ae2fe415b7">&#9670;&#160;</a></span>on_core()</h2>
+<a id="a6f9dcb159238da828d4af0827b7b7584" name="a6f9dcb159238da828d4af0827b7b7584"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f9dcb159238da828d4af0827b7b7584">&#9670;&#160;</a></span>on_core()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -142,7 +142,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void CppClingo::Control::EventHandler::on_core </td>
+          <td class="memname">void CppClingo::Control::SolveEventHandler::on_core </td>
           <td>(</td>
           <td class="paramtype">Potassco::LitSpan&#160;</td>
           <td class="paramname"><em>core</em></td><td>)</td>
@@ -167,8 +167,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a4a1f9ee632808e3e43cbfc13aa843b53" name="a4a1f9ee632808e3e43cbfc13aa843b53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a1f9ee632808e3e43cbfc13aa843b53">&#9670;&#160;</a></span>on_finish()</h2>
+<a id="a3dec5dc24e95e23e3a54630cd6bcbcc8" name="a3dec5dc24e95e23e3a54630cd6bcbcc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dec5dc24e95e23e3a54630cd6bcbcc8">&#9670;&#160;</a></span>on_finish()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -177,7 +177,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void CppClingo::Control::EventHandler::on_finish </td>
+          <td class="memname">void CppClingo::Control::SolveEventHandler::on_finish </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__control.html#gaa0093c6cf15fb4085eaf65e2a9e4908d">SolveResult</a>&#160;</td>
           <td class="paramname"><em>result</em></td><td>)</td>
@@ -202,8 +202,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae40634752c847a4e4bcc0bba3fad51d6" name="ae40634752c847a4e4bcc0bba3fad51d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae40634752c847a4e4bcc0bba3fad51d6">&#9670;&#160;</a></span>on_model()</h2>
+<a id="a677e3b34a3bce6b28a5bac8541bdfc06" name="a677e3b34a3bce6b28a5bac8541bdfc06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a677e3b34a3bce6b28a5bac8541bdfc06">&#9670;&#160;</a></span>on_model()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -212,7 +212,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto CppClingo::Control::EventHandler::on_model </td>
+          <td class="memname">auto CppClingo::Control::SolveEventHandler::on_model </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classCppClingo_1_1Control_1_1Model.html">Model</a> &amp;&#160;</td>
           <td class="paramname"><em>mdl</em></td><td>)</td>
@@ -238,8 +238,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a79e41008f02fa1069bceca5e19efd456" name="a79e41008f02fa1069bceca5e19efd456"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79e41008f02fa1069bceca5e19efd456">&#9670;&#160;</a></span>on_stats()</h2>
+<a id="aa3b00fc8d303c25ae83b95bcf389293e" name="aa3b00fc8d303c25ae83b95bcf389293e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3b00fc8d303c25ae83b95bcf389293e">&#9670;&#160;</a></span>on_stats()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -248,7 +248,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void CppClingo::Control::EventHandler::on_stats </td>
+          <td class="memname">void CppClingo::Control::SolveEventHandler::on_stats </td>
           <td>(</td>
           <td class="paramtype">Potassco::AbstractStatistics &amp;&#160;</td>
           <td class="paramname"><em>stats</em></td><td>)</td>
@@ -273,8 +273,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a817033e3cc90bd91d7084754609e73e9" name="a817033e3cc90bd91d7084754609e73e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a817033e3cc90bd91d7084754609e73e9">&#9670;&#160;</a></span>on_unsat()</h2>
+<a id="a3b43a478a66bbb6816c6160dedfb47ee" name="a3b43a478a66bbb6816c6160dedfb47ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b43a478a66bbb6816c6160dedfb47ee">&#9670;&#160;</a></span>on_unsat()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -283,7 +283,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void CppClingo::Control::EventHandler::on_unsat </td>
+          <td class="memname">void CppClingo::Control::SolveEventHandler::on_unsat </td>
           <td>(</td>
           <td class="paramtype">Clasp::SumView&#160;</td>
           <td class="paramname"><em>bound</em></td><td>)</td>
@@ -316,7 +316,7 @@ Public Member Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>CppClingo</b></li><li class="navelem"><b>Control</b></li><li class="navelem"><a class="el" href="classCppClingo_1_1Control_1_1EventHandler.html">EventHandler</a></li>
+    <li class="navelem"><b>CppClingo</b></li><li class="navelem"><b>Control</b></li><li class="navelem"><a class="el" href="classCppClingo_1_1Control_1_1SolveEventHandler.html">SolveEventHandler</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

@@ -139,9 +139,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a573adcdbe85e3d2d152173753c584818" id="r_a573adcdbe85e3d2d152173753c584818"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Ground_1_1Instantiator.html#a573adcdbe85e3d2d152173753c584818">enqueue</a> () -&gt; bool</td></tr>
 <tr class="memdesc:a573adcdbe85e3d2d152173753c584818"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark enqueued for instantiation.  <br /></td></tr>
 <tr class="separator:a573adcdbe85e3d2d152173753c584818"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44230fe8fae3faa301a94489a33ad277" id="r_a44230fe8fae3faa301a94489a33ad277"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Ground_1_1Instantiator.html#a44230fe8fae3faa301a94489a33ad277">instantiate</a> (<a class="el" href="classCppClingo_1_1Logger.html">Logger</a> &amp;log, <a class="el" href="classCppClingo_1_1SymbolStore.html">SymbolStore</a> &amp;store, <a class="el" href="classCppClingo_1_1OutputStm.html">OutputStm</a> &amp;out) -&gt; bool</td></tr>
-<tr class="memdesc:a44230fe8fae3faa301a94489a33ad277"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find all assignments for the added matchers.  <br /></td></tr>
-<tr class="separator:a44230fe8fae3faa301a94489a33ad277"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb89ead586517ffb1dabbdcd8f8a1000" id="r_acb89ead586517ffb1dabbdcd8f8a1000"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Ground_1_1Instantiator.html#acb89ead586517ffb1dabbdcd8f8a1000">instantiate</a> (<a class="el" href="classCppClingo_1_1Logger.html">Logger</a> &amp;log, <a class="el" href="classCppClingo_1_1SymbolStore.html">SymbolStore</a> &amp;store, <a class="el" href="classCppClingo_1_1OutputStm.html">OutputStm</a> &amp;out, <a class="el" href="classCppClingo_1_1Util_1_1StopFlag.html">Util::StopFlag</a> *stop) -&gt; <a class="el" href="group__core.html#ga15ead71e3414d45b62ce659bea75db10">GroundResult</a></td></tr>
+<tr class="memdesc:acb89ead586517ffb1dabbdcd8f8a1000"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find all assignments for the added matchers.  <br /></td></tr>
+<tr class="separator:acb89ead586517ffb1dabbdcd8f8a1000"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cb4979a89e2b7f9cfcd92d9fc9bc4e7" id="r_a1cb4979a89e2b7f9cfcd92d9fc9bc4e7"><td class="memItemLeft" align="right" valign="top"><a id="a1cb4979a89e2b7f9cfcd92d9fc9bc4e7" name="a1cb4979a89e2b7f9cfcd92d9fc9bc4e7"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>propagate</b> (<a class="el" href="classCppClingo_1_1SymbolStore.html">SymbolStore</a> &amp;store, <a class="el" href="classCppClingo_1_1OutputStm.html">OutputStm</a> &amp;out, <a class="el" href="classCppClingo_1_1Ground_1_1Queue.html">Queue</a> &amp;queue)</td></tr>
 <tr class="memdesc:a1cb4979a89e2b7f9cfcd92d9fc9bc4e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add instantiators that need grounding to queue. <br /></td></tr>
@@ -268,8 +268,8 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> 
 
 </div>
 </div>
-<a id="a44230fe8fae3faa301a94489a33ad277" name="a44230fe8fae3faa301a94489a33ad277"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44230fe8fae3faa301a94489a33ad277">&#9670;&#160;</a></span>instantiate()</h2>
+<a id="acb89ead586517ffb1dabbdcd8f8a1000" name="acb89ead586517ffb1dabbdcd8f8a1000"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb89ead586517ffb1dabbdcd8f8a1000">&#9670;&#160;</a></span>instantiate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -290,12 +290,18 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> 
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classCppClingo_1_1OutputStm.html">OutputStm</a> &amp;&#160;</td>
-          <td class="paramname"><em>out</em>&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classCppClingo_1_1Util_1_1StopFlag.html">Util::StopFlag</a> *&#160;</td>
+          <td class="paramname"><em>stop</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt;  bool</td>
+          <td></td><td> -&gt;  <a class="el" href="group__core.html#ga15ead71e3414d45b62ce659bea75db10">GroundResult</a></td>
         </tr>
       </table>
 </div><div class="memdoc">

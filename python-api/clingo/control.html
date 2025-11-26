@@ -28,7 +28,7 @@
 
             <h2>Contents</h2>
             <ul>
-  <li><a href="#examples">Examples</a></li>
+  <li><a href="#example">Example</a></li>
 </ul>
 
 
@@ -72,6 +72,12 @@
                                 <a class="function" href="#Control.solve">solve</a>
                         </li>
                         <li>
+                                <a class="function" href="#Control.start_ground">start_ground</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Control.start_solve">start_solve</a>
+                        </li>
+                        <li>
                                 <a class="function" href="#Control.write_aspif">write_aspif</a>
                         </li>
                         <li>
@@ -108,9 +114,6 @@
                     <a class="class" href="#ControlMode">ControlMode</a>
                             <ul class="memberlist">
                         <li>
-                                <a class="function" href="#ControlMode.__init__">ControlMode</a>
-                        </li>
-                        <li>
                                 <a class="variable" href="#ControlMode.Ground">Ground</a>
                         </li>
                         <li>
@@ -121,12 +124,6 @@
                         </li>
                         <li>
                                 <a class="variable" href="#ControlMode.Solve">Solve</a>
-                        </li>
-                        <li>
-                                <a class="variable" href="#ControlMode.name">name</a>
-                        </li>
-                        <li>
-                                <a class="variable" href="#ControlMode.value">value</a>
                         </li>
                 </ul>
 
@@ -149,9 +146,9 @@
 
                         <div class="docstring"><p>Module containing the Control class responsible for grounding and solving.</p>
 
-<h1 id="examples">Examples</h1>
+<h1 id="example">Example</h1>
 
-<p>The first example shows the most straightforward way to ground and solve a
+<p>The example shows the most straightforward way to ground and solve a
 small test program:</p>
 
 <div class="pdoc-code codehilite">
@@ -162,37 +159,8 @@ small test program:</p>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ctl</span> <span class="o">=</span> <span class="n">Control</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ctl</span><span class="o">.</span><span class="n">parse_string</span><span class="p">(</span><span class="s2">&quot;1 { a; b }.&quot;</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ctl</span><span class="o">.</span><span class="n">ground</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">ctl</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">on_model</span><span class="o">=</span><span class="nb">print</span><span class="p">)</span> <span class="k">as</span> <span class="n">hnd</span><span class="p">:</span>
-<span class="o">...</span>     <span class="n">hnd</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">ctl</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">on_model</span><span class="o">=</span><span class="nb">print</span><span class="p">))</span>
 <span class="n">a</span>
-</code></pre>
-</div>
-
-<p>The second example shows how to call functions from within a program:</p>
-
-<div class="pdoc-code codehilite">
-<pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn"><a href="core.html">clingo.core</a></span> <span class="kn">import</span> <span class="n">Library</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn"><a href="symbol.html">clingo.symbol</a></span> <span class="kn">import</span> <span class="n">Number</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn"><a href="">clingo.control</a></span> <span class="kn">import</span> <span class="n">Control</span>
-<span class="o">&gt;&gt;&gt;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Context</span><span class="p">:</span>
-<span class="o">...</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lib</span><span class="p">):</span>
-<span class="o">...</span>       <span class="bp">self</span><span class="o">.</span><span class="n">lib</span> <span class="o">=</span> <span class="n">lib</span>
-<span class="o">...</span>     <span class="k">def</span> <span class="nf">inc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-<span class="o">...</span>         <span class="k">return</span> <span class="n">Number</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lib</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">number</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-<span class="o">...</span>     <span class="k">def</span> <span class="nf">seq</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-<span class="o">...</span>         <span class="k">return</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">lib</span> <span class="o">=</span> <span class="n">Library</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">ctl</span> <span class="o">=</span> <span class="n">Control</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">ctl</span><span class="o">.</span><span class="n">parse_string</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">... p(@inc(10)).</span>
-<span class="s2">... q(@seq(1,2)).</span>
-<span class="s2">... &quot;&quot;&quot;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">ctl</span><span class="o">.</span><span class="n">ground</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="n">Context</span><span class="p">(</span><span class="n">lib</span><span class="p">))</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">ctl</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">on_model</span><span class="o">=</span><span class="nb">print</span><span class="p">)</span> <span class="k">as</span> <span class="n">hnd</span><span class="p">:</span>
-<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">hnd</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-<span class="n">p</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="n">q</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">q</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">SAT</span>
 </code></pre>
 </div>
@@ -450,11 +418,78 @@ preprocess:
                                 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">solve</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">assumptions</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span><span class="p">,</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">|</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>,</span><span class="param">	<span class="n">on_model</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n"><a href="solve.html#Model">clingo.solve.Model</a></span><span class="p">],</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">on_unsat</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">NoneType</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">on_stats</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n"><a href="stats.html#Stats">clingo.stats.Stats</a></span><span class="p">,</span> <span class="n"><a href="stats.html#Stats">clingo.stats.Stats</a></span><span class="p">],</span> <span class="n">NoneType</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">on_finish</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n"><a href="solve.html#SolveResult">clingo.solve.SolveResult</a></span><span class="p">],</span> <span class="n">NoneType</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">yield_</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>,</span><span class="param">	<span class="n">async_</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span></span><span class="return-annotation">) -> <span class="n"><a href="solve.html#SolveHandle">clingo.solve.SolveHandle</a></span>:</span></span>
+        <span class="name">solve</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">assumptions</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span><span class="p">,</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">|</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>,</span><span class="param">	<span class="n">on_model</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n"><a href="solve.html#Model">clingo.solve.Model</a></span><span class="p">],</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">on_unsat</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">typing</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">on_stats</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n"><a href="stats.html#Stats">clingo.stats.Stats</a></span><span class="p">,</span> <span class="n"><a href="stats.html#Stats">clingo.stats.Stats</a></span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">on_finish</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n"><a href="solve.html#SolveResult">clingo.solve.SolveResult</a></span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="n"><a href="solve.html#SolveResult">clingo.solve.SolveResult</a></span>:</span></span>
 
         
     </div>
     <a class="headerlink" href="#Control.solve"></a>
+    
+            <div class="docstring"><p>Solve the current ground program.</p>
+
+<p>This function is semantically equivalent to the following <code><a href="#Control.start_solve">start_solve</a></code> call:</p>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code><span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_solve</span><span class="p">(</span><span class="n">assumptions</span><span class="p">,</span> <span class="n">on_model</span><span class="p">,</span> <span class="n">on_unsat</span><span class="p">,</span> <span class="n">on_stats</span><span class="p">,</span> <span class="n">on_finish</span><span class="p">)</span> <span class="k">as</span> <span class="n">hnd</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">hnd</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>assumptions:</strong>  A list of assumptions.</li>
+<li><strong>on_model:</strong>  Optional callback to intercept models.</li>
+<li><strong>on_unsat:</strong>  Optional callback to intercept lower bounds during optimization.</li>
+<li><strong>on_stats:</strong>  Optional callback extend statistics.</li>
+<li><strong>on_finish:</strong>  Optional callback called once search has finished.</li>
+</ul>
+
+<h6 id="returns">Returns:</h6>
+
+<blockquote>
+  <p>A <code><a href="solve.html#SolveResult">clingo.solve.SolveResult</a></code> representing the result of the search.</p>
+</blockquote>
+</div>
+
+
+                            </div>
+                            <div id="Control.start_ground" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">start_ground</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">parts</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span><span class="p">]]]]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">context</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">on_finish</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n"><a href="ground.html#GroundResult">clingo.ground.GroundResult</a></span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="n"><a href="ground.html#GroundHandle">clingo.ground.GroundHandle</a></span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Control.start_ground"></a>
+    
+            <div class="docstring"><p>Ground the given program parts.</p>
+
+<p>Starts grounding in the background and returns a <code><a href="ground.html#GroundHandle">clingo.ground.GroundHandle</a></code>
+to the running grounding. See <code><a href="#Control.ground">Control.ground</a></code> for details on grounding program
+parts.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>parts:</strong>  A sequence of parts to ground.</li>
+<li><strong>context:</strong>  An optional object providing functions that can be called during
+grounding.</li>
+<li><strong>on_finish:</strong>  An optional callback called once grounding has finished.</li>
+</ul>
+</div>
+
+
+                            </div>
+                            <div id="Control.start_solve" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">start_solve</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">assumptions</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n"><a href="symbol.html#Symbol">clingo.symbol.Symbol</a></span><span class="p">,</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">|</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>,</span><span class="param">	<span class="n">on_model</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n"><a href="solve.html#Model">clingo.solve.Model</a></span><span class="p">],</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">on_unsat</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">typing</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">on_stats</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n"><a href="stats.html#Stats">clingo.stats.Stats</a></span><span class="p">,</span> <span class="n"><a href="stats.html#Stats">clingo.stats.Stats</a></span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">on_finish</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n"><a href="solve.html#SolveResult">clingo.solve.SolveResult</a></span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">yield_</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>,</span><span class="param">	<span class="n">async_</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span></span><span class="return-annotation">) -> <span class="n"><a href="solve.html#SolveHandle">clingo.solve.SolveHandle</a></span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Control.start_solve"></a>
     
             <div class="docstring"><p>Solve the current ground program.</p>
 
@@ -667,7 +702,7 @@ profiling tree.</p>
                     <div class="attr class">
             
     <span class="def">class</span>
-    <span class="name">ControlMode</span>:
+    <span class="name">ControlMode</span><wbr>(<span class="base">enum.IntEnum</span>):
 
         
     </div>
@@ -677,92 +712,50 @@ profiling tree.</p>
 </div>
 
 
-                            <div id="ControlMode.__init__" class="classattr">
-                                <div class="attr function">
-            
-        <span class="name">ControlMode</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">value</span><span class="p">:</span> <span class="nb">int</span></span>)</span>
-
-        
-    </div>
-    <a class="headerlink" href="#ControlMode.__init__"></a>
-    
-    
-
-                            </div>
                             <div id="ControlMode.Ground" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Ground</span><span class="annotation">: ClassVar[<a href="#ControlMode">ControlMode</a>]</span>        =
-<span class="default_value"><a href="#ControlMode.Ground">ControlMode.Ground</a></span>
+            <span class="name">Ground</span>        =
+<span class="default_value">&lt;<a href="#ControlMode.Ground">ControlMode.Ground</a>: 2&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#ControlMode.Ground"></a>
     
-            <div class="docstring"><p>Parse, rewrite, and ground.</p>
-</div>
-
+    
 
                             </div>
                             <div id="ControlMode.Parse" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Parse</span><span class="annotation">: ClassVar[<a href="#ControlMode">ControlMode</a>]</span>        =
-<span class="default_value"><a href="#ControlMode.Parse">ControlMode.Parse</a></span>
+            <span class="name">Parse</span>        =
+<span class="default_value">&lt;<a href="#ControlMode.Parse">ControlMode.Parse</a>: 0&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#ControlMode.Parse"></a>
     
-            <div class="docstring"><p>Parse only.</p>
-</div>
-
+    
 
                             </div>
                             <div id="ControlMode.Rewrite" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Rewrite</span><span class="annotation">: ClassVar[<a href="#ControlMode">ControlMode</a>]</span>        =
-<span class="default_value"><a href="#ControlMode.Rewrite">ControlMode.Rewrite</a></span>
+            <span class="name">Rewrite</span>        =
+<span class="default_value">&lt;<a href="#ControlMode.Rewrite">ControlMode.Rewrite</a>: 1&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#ControlMode.Rewrite"></a>
     
-            <div class="docstring"><p>Parse and rewrite.</p>
-</div>
-
+    
 
                             </div>
                             <div id="ControlMode.Solve" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Solve</span><span class="annotation">: ClassVar[<a href="#ControlMode">ControlMode</a>]</span>        =
-<span class="default_value"><a href="#ControlMode.Solve">ControlMode.Solve</a></span>
+            <span class="name">Solve</span>        =
+<span class="default_value">&lt;<a href="#ControlMode.Solve">ControlMode.Solve</a>: 3&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#ControlMode.Solve"></a>
-    
-            <div class="docstring"><p>Parse, rewrite, ground, and solve.</p>
-</div>
-
-
-                            </div>
-                            <div id="ControlMode.name" class="classattr">
-                                <div class="attr variable">
-            <span class="name">name</span><span class="annotation">: str</span>
-
-        
-    </div>
-    <a class="headerlink" href="#ControlMode.name"></a>
-    
-    
-
-                            </div>
-                            <div id="ControlMode.value" class="classattr">
-                                <div class="attr variable">
-            <span class="name">value</span><span class="annotation">: int</span>
-
-        
-    </div>
-    <a class="headerlink" href="#ControlMode.value"></a>
     
     
 

@@ -99,9 +99,6 @@
                     <a class="class" href="#ExternalType">ExternalType</a>
                             <ul class="memberlist">
                         <li>
-                                <a class="function" href="#ExternalType.__init__">ExternalType</a>
-                        </li>
-                        <li>
                                 <a class="variable" href="#ExternalType.False_">False_</a>
                         </li>
                         <li>
@@ -113,21 +110,12 @@
                         <li>
                                 <a class="variable" href="#ExternalType.True_">True_</a>
                         </li>
-                        <li>
-                                <a class="variable" href="#ExternalType.name">name</a>
-                        </li>
-                        <li>
-                                <a class="variable" href="#ExternalType.value">value</a>
-                        </li>
                 </ul>
 
             </li>
             <li>
                     <a class="class" href="#HeuristicType">HeuristicType</a>
                             <ul class="memberlist">
-                        <li>
-                                <a class="function" href="#HeuristicType.__init__">HeuristicType</a>
-                        </li>
                         <li>
                                 <a class="variable" href="#HeuristicType.Factor">Factor</a>
                         </li>
@@ -145,12 +133,6 @@
                         </li>
                         <li>
                                 <a class="variable" href="#HeuristicType.True_">True_</a>
-                        </li>
-                        <li>
-                                <a class="variable" href="#HeuristicType.name">name</a>
-                        </li>
-                        <li>
-                                <a class="variable" href="#HeuristicType.value">value</a>
                         </li>
                 </ul>
 
@@ -198,9 +180,6 @@
                     <a class="class" href="#TheorySequenceType">TheorySequenceType</a>
                             <ul class="memberlist">
                         <li>
-                                <a class="function" href="#TheorySequenceType.__init__">TheorySequenceType</a>
-                        </li>
-                        <li>
                                 <a class="variable" href="#TheorySequenceType.List">List</a>
                         </li>
                         <li>
@@ -208,12 +187,6 @@
                         </li>
                         <li>
                                 <a class="variable" href="#TheorySequenceType.Tuple">Tuple</a>
-                        </li>
-                        <li>
-                                <a class="variable" href="#TheorySequenceType.name">name</a>
-                        </li>
-                        <li>
-                                <a class="variable" href="#TheorySequenceType.value">value</a>
                         </li>
                 </ul>
 
@@ -253,8 +226,7 @@
 <span class="o">...</span>     <span class="n">bck</span><span class="o">.</span><span class="n">rule</span><span class="p">([</span><span class="n">atm_a</span><span class="p">])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ctl</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">is_fact</span><span class="p">(</span><span class="n">ctl</span><span class="o">.</span><span class="n">base</span><span class="p">[</span><span class="n">sym</span><span class="p">]</span><span class="o">.</span><span class="n">literal</span><span class="p">)</span>
 <span class="kc">True</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">ctl</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">on_model</span><span class="o">=</span><span class="nb">print</span><span class="p">)</span> <span class="k">as</span> <span class="n">hnd</span><span class="p">:</span>
-<span class="o">...</span>     <span class="n">hnd</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">ctl</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">on_model</span><span class="o">=</span><span class="nb">print</span><span class="p">))</span>
 <span class="n">a</span>
 <span class="n">SAT</span>
 </code></pre>
@@ -813,7 +785,7 @@ meets or exceeds the lower bound.</p>
                     <div class="attr class">
             
     <span class="def">class</span>
-    <span class="name">ExternalType</span>:
+    <span class="name">ExternalType</span><wbr>(<span class="base">enum.IntEnum</span>):
 
         
     </div>
@@ -823,92 +795,50 @@ meets or exceeds the lower bound.</p>
 </div>
 
 
-                            <div id="ExternalType.__init__" class="classattr">
-                                <div class="attr function">
-            
-        <span class="name">ExternalType</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">value</span><span class="p">:</span> <span class="nb">int</span></span>)</span>
-
-        
-    </div>
-    <a class="headerlink" href="#ExternalType.__init__"></a>
-    
-    
-
-                            </div>
                             <div id="ExternalType.False_" class="classattr">
                                 <div class="attr variable">
-            <span class="name">False_</span><span class="annotation">: ClassVar[<a href="#ExternalType">ExternalType</a>]</span>        =
-<span class="default_value"><a href="#ExternalType.False_">ExternalType.False_</a></span>
+            <span class="name">False_</span>        =
+<span class="default_value">&lt;<a href="#ExternalType.False_">ExternalType.False_</a>: 2&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#ExternalType.False_"></a>
     
-            <div class="docstring"><p>Make an external atom false.</p>
-</div>
-
+    
 
                             </div>
                             <div id="ExternalType.Free" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Free</span><span class="annotation">: ClassVar[<a href="#ExternalType">ExternalType</a>]</span>        =
-<span class="default_value"><a href="#ExternalType.Free">ExternalType.Free</a></span>
+            <span class="name">Free</span>        =
+<span class="default_value">&lt;<a href="#ExternalType.Free">ExternalType.Free</a>: 0&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#ExternalType.Free"></a>
     
-            <div class="docstring"><p>Make an external atom a choice.</p>
-</div>
-
+    
 
                             </div>
                             <div id="ExternalType.Release" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Release</span><span class="annotation">: ClassVar[<a href="#ExternalType">ExternalType</a>]</span>        =
-<span class="default_value"><a href="#ExternalType.Release">ExternalType.Release</a></span>
+            <span class="name">Release</span>        =
+<span class="default_value">&lt;<a href="#ExternalType.Release">ExternalType.Release</a>: 3&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#ExternalType.Release"></a>
     
-            <div class="docstring"><p>Release an external atom.</p>
-</div>
-
+    
 
                             </div>
                             <div id="ExternalType.True_" class="classattr">
                                 <div class="attr variable">
-            <span class="name">True_</span><span class="annotation">: ClassVar[<a href="#ExternalType">ExternalType</a>]</span>        =
-<span class="default_value"><a href="#ExternalType.True_">ExternalType.True_</a></span>
+            <span class="name">True_</span>        =
+<span class="default_value">&lt;<a href="#ExternalType.True_">ExternalType.True_</a>: 1&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#ExternalType.True_"></a>
-    
-            <div class="docstring"><p>Make an external atom true.</p>
-</div>
-
-
-                            </div>
-                            <div id="ExternalType.name" class="classattr">
-                                <div class="attr variable">
-            <span class="name">name</span><span class="annotation">: str</span>
-
-        
-    </div>
-    <a class="headerlink" href="#ExternalType.name"></a>
-    
-    
-
-                            </div>
-                            <div id="ExternalType.value" class="classattr">
-                                <div class="attr variable">
-            <span class="name">value</span><span class="annotation">: int</span>
-
-        
-    </div>
-    <a class="headerlink" href="#ExternalType.value"></a>
     
     
 
@@ -918,7 +848,7 @@ meets or exceeds the lower bound.</p>
                     <div class="attr class">
             
     <span class="def">class</span>
-    <span class="name">HeuristicType</span>:
+    <span class="name">HeuristicType</span><wbr>(<span class="base">enum.IntEnum</span>):
 
         
     </div>
@@ -928,120 +858,74 @@ meets or exceeds the lower bound.</p>
 </div>
 
 
-                            <div id="HeuristicType.__init__" class="classattr">
-                                <div class="attr function">
-            
-        <span class="name">HeuristicType</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">value</span><span class="p">:</span> <span class="nb">int</span></span>)</span>
-
-        
-    </div>
-    <a class="headerlink" href="#HeuristicType.__init__"></a>
-    
-    
-
-                            </div>
                             <div id="HeuristicType.Factor" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Factor</span><span class="annotation">: ClassVar[<a href="#HeuristicType">HeuristicType</a>]</span>        =
-<span class="default_value"><a href="#HeuristicType.Factor">HeuristicType.Factor</a></span>
+            <span class="name">Factor</span>        =
+<span class="default_value">&lt;<a href="#HeuristicType.Factor">HeuristicType.Factor</a>: 2&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#HeuristicType.Factor"></a>
     
-            <div class="docstring"><p>The factor modifier.</p>
-</div>
-
+    
 
                             </div>
                             <div id="HeuristicType.False_" class="classattr">
                                 <div class="attr variable">
-            <span class="name">False_</span><span class="annotation">: ClassVar[<a href="#HeuristicType">HeuristicType</a>]</span>        =
-<span class="default_value"><a href="#HeuristicType.False_">HeuristicType.False_</a></span>
+            <span class="name">False_</span>        =
+<span class="default_value">&lt;<a href="#HeuristicType.False_">HeuristicType.False_</a>: 5&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#HeuristicType.False_"></a>
     
-            <div class="docstring"><p>The false modifier.</p>
-</div>
-
+    
 
                             </div>
                             <div id="HeuristicType.Init" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Init</span><span class="annotation">: ClassVar[<a href="#HeuristicType">HeuristicType</a>]</span>        =
-<span class="default_value"><a href="#HeuristicType.Init">HeuristicType.Init</a></span>
+            <span class="name">Init</span>        =
+<span class="default_value">&lt;<a href="#HeuristicType.Init">HeuristicType.Init</a>: 3&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#HeuristicType.Init"></a>
     
-            <div class="docstring"><p>The init modifier.</p>
-</div>
-
+    
 
                             </div>
                             <div id="HeuristicType.Level" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Level</span><span class="annotation">: ClassVar[<a href="#HeuristicType">HeuristicType</a>]</span>        =
-<span class="default_value"><a href="#HeuristicType.Level">HeuristicType.Level</a></span>
+            <span class="name">Level</span>        =
+<span class="default_value">&lt;<a href="#HeuristicType.Level">HeuristicType.Level</a>: 0&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#HeuristicType.Level"></a>
     
-            <div class="docstring"><p>The level modifier.</p>
-</div>
-
+    
 
                             </div>
                             <div id="HeuristicType.Sign" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Sign</span><span class="annotation">: ClassVar[<a href="#HeuristicType">HeuristicType</a>]</span>        =
-<span class="default_value"><a href="#HeuristicType.Sign">HeuristicType.Sign</a></span>
+            <span class="name">Sign</span>        =
+<span class="default_value">&lt;<a href="#HeuristicType.Sign">HeuristicType.Sign</a>: 1&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#HeuristicType.Sign"></a>
     
-            <div class="docstring"><p>The sign modifier.</p>
-</div>
-
+    
 
                             </div>
                             <div id="HeuristicType.True_" class="classattr">
                                 <div class="attr variable">
-            <span class="name">True_</span><span class="annotation">: ClassVar[<a href="#HeuristicType">HeuristicType</a>]</span>        =
-<span class="default_value"><a href="#HeuristicType.True_">HeuristicType.True_</a></span>
+            <span class="name">True_</span>        =
+<span class="default_value">&lt;<a href="#HeuristicType.True_">HeuristicType.True_</a>: 4&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#HeuristicType.True_"></a>
-    
-            <div class="docstring"><p>The true modifier.</p>
-</div>
-
-
-                            </div>
-                            <div id="HeuristicType.name" class="classattr">
-                                <div class="attr variable">
-            <span class="name">name</span><span class="annotation">: str</span>
-
-        
-    </div>
-    <a class="headerlink" href="#HeuristicType.name"></a>
-    
-    
-
-                            </div>
-                            <div id="HeuristicType.value" class="classattr">
-                                <div class="attr variable">
-            <span class="name">value</span><span class="annotation">: int</span>
-
-        
-    </div>
-    <a class="headerlink" href="#HeuristicType.value"></a>
     
     
 
@@ -1326,7 +1210,7 @@ than one step.</p>
                     <div class="attr class">
             
     <span class="def">class</span>
-    <span class="name">TheorySequenceType</span>:
+    <span class="name">TheorySequenceType</span><wbr>(<span class="base">enum.IntEnum</span>):
 
         
     </div>
@@ -1336,78 +1220,38 @@ than one step.</p>
 </div>
 
 
-                            <div id="TheorySequenceType.__init__" class="classattr">
-                                <div class="attr function">
-            
-        <span class="name">TheorySequenceType</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">value</span><span class="p">:</span> <span class="nb">int</span></span>)</span>
-
-        
-    </div>
-    <a class="headerlink" href="#TheorySequenceType.__init__"></a>
-    
-    
-
-                            </div>
                             <div id="TheorySequenceType.List" class="classattr">
                                 <div class="attr variable">
-            <span class="name">List</span><span class="annotation">: ClassVar[<a href="#TheorySequenceType">TheorySequenceType</a>]</span>        =
-<span class="default_value"><a href="#TheorySequenceType.List">TheorySequenceType.List</a></span>
+            <span class="name">List</span>        =
+<span class="default_value">&lt;<a href="#TheorySequenceType.List">TheorySequenceType.List</a>: 2&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#TheorySequenceType.List"></a>
     
-            <div class="docstring"><p>Sequences enclosed in brackets.</p>
-</div>
-
+    
 
                             </div>
                             <div id="TheorySequenceType.Set" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Set</span><span class="annotation">: ClassVar[<a href="#TheorySequenceType">TheorySequenceType</a>]</span>        =
-<span class="default_value"><a href="#TheorySequenceType.Set">TheorySequenceType.Set</a></span>
+            <span class="name">Set</span>        =
+<span class="default_value">&lt;<a href="#TheorySequenceType.Set">TheorySequenceType.Set</a>: 1&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#TheorySequenceType.Set"></a>
     
-            <div class="docstring"><p>Sequences enclosed in braces.</p>
-</div>
-
+    
 
                             </div>
                             <div id="TheorySequenceType.Tuple" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Tuple</span><span class="annotation">: ClassVar[<a href="#TheorySequenceType">TheorySequenceType</a>]</span>        =
-<span class="default_value"><a href="#TheorySequenceType.Tuple">TheorySequenceType.Tuple</a></span>
+            <span class="name">Tuple</span>        =
+<span class="default_value">&lt;<a href="#TheorySequenceType.Tuple">TheorySequenceType.Tuple</a>: 0&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#TheorySequenceType.Tuple"></a>
-    
-            <div class="docstring"><p>Sequences enclosed in parentheses.</p>
-</div>
-
-
-                            </div>
-                            <div id="TheorySequenceType.name" class="classattr">
-                                <div class="attr variable">
-            <span class="name">name</span><span class="annotation">: str</span>
-
-        
-    </div>
-    <a class="headerlink" href="#TheorySequenceType.name"></a>
-    
-    
-
-                            </div>
-                            <div id="TheorySequenceType.value" class="classattr">
-                                <div class="attr variable">
-            <span class="name">value</span><span class="annotation">: int</span>
-
-        
-    </div>
-    <a class="headerlink" href="#TheorySequenceType.value"></a>
     
     
 

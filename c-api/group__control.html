@@ -149,8 +149,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Control_1_1SolveHandle.html">CppClingo::Control::SolveHandle</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A handle to control a running search.  <a href="classCppClingo_1_1Control_1_1SolveHandle.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Control_1_1EventHandler.html">CppClingo::Control::EventHandler</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The event handler interface.  <a href="classCppClingo_1_1Control_1_1EventHandler.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Control_1_1SolveEventHandler.html">CppClingo::Control::SolveEventHandler</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The event handler interface.  <a href="classCppClingo_1_1Control_1_1SolveEventHandler.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Control_1_1BackendHandle.html">CppClingo::Control::BackendHandle</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Object to provide access to the backend.  <a href="classCppClingo_1_1Control_1_1BackendHandle.html#details">More...</a><br /></td></tr>
@@ -169,6 +169,12 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Control_1_1Grounded.html">CppClingo::Control::Grounded</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event emitted by a solver after the program is grounded.  <a href="classCppClingo_1_1Control_1_1Grounded.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Control_1_1GroundEventHandler.html">CppClingo::Control::GroundEventHandler</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This callback interface provides grounding events.  <a href="classCppClingo_1_1Control_1_1GroundEventHandler.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Control_1_1GroundHandle.html">CppClingo::Control::GroundHandle</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A handle for asynchronous grounding.  <a href="classCppClingo_1_1Control_1_1GroundHandle.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Control_1_1Solver.html">CppClingo::Control::Solver</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A grounder and solver for logic programs.  <a href="classCppClingo_1_1Control_1_1Solver.html#details">More...</a><br /></td></tr>
@@ -207,10 +213,10 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Control::
 using&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Control::USolveHandle</b> = std::unique_ptr&lt; <a class="el" href="classCppClingo_1_1Control_1_1SolveHandle.html">SolveHandle</a> &gt;</td></tr>
 <tr class="memdesc:ga215895d93e51be3b336f13a5cde9bdfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">A unique pointer for a solve handle. <br /></td></tr>
 <tr class="separator:ga215895d93e51be3b336f13a5cde9bdfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga109d7af1cc4e5aec2a63acee893783dc" id="r_ga109d7af1cc4e5aec2a63acee893783dc"><td class="memItemLeft" align="right" valign="top"><a id="ga109d7af1cc4e5aec2a63acee893783dc" name="ga109d7af1cc4e5aec2a63acee893783dc"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Control::UEventHandler</b> = std::unique_ptr&lt; <a class="el" href="classCppClingo_1_1Control_1_1EventHandler.html">EventHandler</a> &gt;</td></tr>
-<tr class="memdesc:ga109d7af1cc4e5aec2a63acee893783dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">A unique pointer for an event handler. <br /></td></tr>
-<tr class="separator:ga109d7af1cc4e5aec2a63acee893783dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6d7c83f39ec17960603f0b783f20a6cd" id="r_ga6d7c83f39ec17960603f0b783f20a6cd"><td class="memItemLeft" align="right" valign="top"><a id="ga6d7c83f39ec17960603f0b783f20a6cd" name="ga6d7c83f39ec17960603f0b783f20a6cd"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Control::USolveEventHandler</b> = std::unique_ptr&lt; <a class="el" href="classCppClingo_1_1Control_1_1SolveEventHandler.html">SolveEventHandler</a> &gt;</td></tr>
+<tr class="memdesc:ga6d7c83f39ec17960603f0b783f20a6cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">A unique pointer for an event handler. <br /></td></tr>
+<tr class="separator:ga6d7c83f39ec17960603f0b783f20a6cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae0457da1fc1091d82b31246a481abba7" id="r_gae0457da1fc1091d82b31246a481abba7"><td class="memItemLeft" align="right" valign="top"><a id="gae0457da1fc1091d82b31246a481abba7" name="gae0457da1fc1091d82b31246a481abba7"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Control::UBackendHandle</b> = std::unique_ptr&lt; <a class="el" href="classCppClingo_1_1Control_1_1BackendHandle.html">BackendHandle</a> &gt;</td></tr>
 <tr class="memdesc:gae0457da1fc1091d82b31246a481abba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">A unique pointer to a backend handle. <br /></td></tr>
@@ -223,6 +229,10 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Control::
 using&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Control::USymbolTable</b> = std::unique_ptr&lt; <a class="el" href="classCppClingo_1_1Control_1_1SymbolTable.html">SymbolTable</a> &gt;</td></tr>
 <tr class="memdesc:ga6d2fa6890f21e08f8075a970ed94c672"><td class="mdescLeft">&#160;</td><td class="mdescRight">A unique pointer to a symbol table. <br /></td></tr>
 <tr class="separator:ga6d2fa6890f21e08f8075a970ed94c672"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaebb2e576832a7041208fde64444b9022" id="r_gaebb2e576832a7041208fde64444b9022"><td class="memItemLeft" align="right" valign="top"><a id="gaebb2e576832a7041208fde64444b9022" name="gaebb2e576832a7041208fde64444b9022"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>CppClingo::Control::UGroundEventHandler</b> = std::unique_ptr&lt; <a class="el" href="classCppClingo_1_1Control_1_1GroundEventHandler.html">GroundEventHandler</a> &gt;</td></tr>
+<tr class="memdesc:gaebb2e576832a7041208fde64444b9022"><td class="mdescLeft">&#160;</td><td class="mdescRight">A unique pointer to a ground event handler. <br /></td></tr>
+<tr class="separator:gaebb2e576832a7041208fde64444b9022"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>

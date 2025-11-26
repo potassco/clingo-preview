@@ -311,6 +311,7 @@ var hierarchy =
     [ "CppClingo::Input::CheckTypeResult", "structCppClingo_1_1Input_1_1CheckTypeResult.html", null ],
     [ "clingo_application", "structclingo__application.html", null ],
     [ "clingo_config_entry", "structclingo__config__entry.html", null ],
+    [ "clingo_ground_event_handler", "structclingo__ground__event__handler.html", null ],
     [ "clingo_logger", "structclingo__logger.html", null ],
     [ "clingo_observer", "structclingo__observer.html", null ],
     [ "clingo_part", "structclingo__part.html", null ],
@@ -365,13 +366,15 @@ var hierarchy =
     [ "Clasp::Event", null, [
       [ "CppClingo::Control::Grounded", "classCppClingo_1_1Control_1_1Grounded.html", null ]
     ] ],
-    [ "CppClingo::Control::EventHandler", "classCppClingo_1_1Control_1_1EventHandler.html", null ],
     [ "CppClingo::Util::fill", "classCppClingo_1_1Util_1_1fill.html", null ],
     [ "CppClingo::FormatSpec", "structCppClingo_1_1FormatSpec.html", null ],
     [ "CppClingo::GCLock", "classCppClingo_1_1GCLock.html", null ],
     [ "CppClingo::Ground::GenerationCounts", "classCppClingo_1_1Ground_1_1GenerationCounts.html", null ],
     [ "CppClingo::Util::Graph", "classCppClingo_1_1Util_1_1Graph.html", null ],
     [ "CppClingo::Control::Grounder", "classCppClingo_1_1Control_1_1Grounder.html", null ],
+    [ "Clingo::GroundEventHandler", "classClingo_1_1GroundEventHandler.html", null ],
+    [ "Clingo::GroundHandle", "classClingo_1_1GroundHandle.html", null ],
+    [ "CppClingo::Control::GroundHandle", "classCppClingo_1_1Control_1_1GroundHandle.html", null ],
     [ "CppClingo::Input::IE", "structCppClingo_1_1Input_1_1IE.html", null ],
     [ "CppClingo::Input::IEInterval", "classCppClingo_1_1Input_1_1IEInterval.html", null ],
     [ "CppClingo::Input::IESolver", "classCppClingo_1_1Input_1_1IESolver.html", null ],
@@ -539,6 +542,7 @@ var hierarchy =
     ] ],
     [ "Clingo::Script", "classClingo_1_1Script.html", null ],
     [ "CppClingo::Ground::ScriptCallback", "classCppClingo_1_1Ground_1_1ScriptCallback.html", [
+      [ "CppClingo::Control::GroundEventHandler", "classCppClingo_1_1Control_1_1GroundEventHandler.html", null ],
       [ "CppClingo::Control::Script", "classCppClingo_1_1Control_1_1Script.html", null ],
       [ "CppClingo::Control::Scripts", "classCppClingo_1_1Control_1_1Scripts.html", null ]
     ] ],
@@ -555,6 +559,7 @@ var hierarchy =
     [ "CppClingo::Util::small_vector< size_t >", "classCppClingo_1_1Util_1_1small__vector.html", null ],
     [ "Clingo::SolveControl", "classClingo_1_1SolveControl.html", null ],
     [ "Clingo::SolveEventHandler", "classClingo_1_1SolveEventHandler.html", null ],
+    [ "CppClingo::Control::SolveEventHandler", "classCppClingo_1_1Control_1_1SolveEventHandler.html", null ],
     [ "Clingo::SolveHandle", "classClingo_1_1SolveHandle.html", null ],
     [ "CppClingo::Control::SolveHandle", "classCppClingo_1_1Control_1_1SolveHandle.html", null ],
     [ "Clingo::SolveResult", "classClingo_1_1SolveResult.html", null ],
@@ -569,6 +574,7 @@ var hierarchy =
     ] ],
     [ "CppClingo::Ground::StateAtomCondLit", "classCppClingo_1_1Ground_1_1StateAtomCondLit.html", null ],
     [ "CppClingo::Ground::StateCondLitElem", "structCppClingo_1_1Ground_1_1StateCondLitElem.html", null ],
+    [ "CppClingo::Util::StopFlag", "classCppClingo_1_1Util_1_1StopFlag.html", null ],
     [ "CppClingo::String", "classCppClingo_1_1String.html", null ],
     [ "Clingo::StringBuilder", "classClingo_1_1StringBuilder.html", null ],
     [ "Clingo::Symbol", "classClingo_1_1Symbol.html", null ],

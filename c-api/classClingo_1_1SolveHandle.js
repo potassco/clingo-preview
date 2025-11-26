@@ -9,7 +9,6 @@ var classClingo_1_1SolveHandle =
     [ "SolveHandle", "classClingo_1_1SolveHandle.html#abfb6a1ba54cda9963ab33965918319ce", null ],
     [ "begin", "classClingo_1_1SolveHandle.html#a410c5c68534289a95a2ad0ed5da534aa", null ],
     [ "cancel", "classClingo_1_1SolveHandle.html#a24837e04a174ec05181fabcf27a53dd2", null ],
-    [ "close", "classClingo_1_1SolveHandle.html#af57eaefb2faddc307a2439356ad273e5", null ],
     [ "core", "classClingo_1_1SolveHandle.html#aa643483be6cacdbec497ffa7b319f9e0", null ],
     [ "end", "classClingo_1_1SolveHandle.html#a56bce407fee662dde2c036733586fc4a", null ],
     [ "get", "classClingo_1_1SolveHandle.html#a7f1dcc765795a758e0323edbd99f71c3", null ],

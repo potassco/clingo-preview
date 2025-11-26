@@ -90,9 +90,6 @@
                     <a class="class" href="#CheckMode">CheckMode</a>
                             <ul class="memberlist">
                         <li>
-                                <a class="function" href="#CheckMode.__init__">CheckMode</a>
-                        </li>
-                        <li>
                                 <a class="variable" href="#CheckMode.Both">Both</a>
                         </li>
                         <li>
@@ -103,12 +100,6 @@
                         </li>
                         <li>
                                 <a class="variable" href="#CheckMode.Total">Total</a>
-                        </li>
-                        <li>
-                                <a class="variable" href="#CheckMode.name">name</a>
-                        </li>
-                        <li>
-                                <a class="variable" href="#CheckMode.value">value</a>
                         </li>
                 </ul>
 
@@ -222,19 +213,10 @@
                     <a class="class" href="#UndoMode">UndoMode</a>
                             <ul class="memberlist">
                         <li>
-                                <a class="function" href="#UndoMode.__init__">UndoMode</a>
-                        </li>
-                        <li>
                                 <a class="variable" href="#UndoMode.Always">Always</a>
                         </li>
                         <li>
                                 <a class="variable" href="#UndoMode.Default">Default</a>
-                        </li>
-                        <li>
-                                <a class="variable" href="#UndoMode.name">name</a>
-                        </li>
-                        <li>
-                                <a class="variable" href="#UndoMode.value">value</a>
                         </li>
                 </ul>
 
@@ -243,9 +225,6 @@
                     <a class="class" href="#WeightConstraintType">WeightConstraintType</a>
                             <ul class="memberlist">
                         <li>
-                                <a class="function" href="#WeightConstraintType.__init__">WeightConstraintType</a>
-                        </li>
-                        <li>
                                 <a class="variable" href="#WeightConstraintType.Equivalence">Equivalence</a>
                         </li>
                         <li>
@@ -253,12 +232,6 @@
                         </li>
                         <li>
                                 <a class="variable" href="#WeightConstraintType.RightImplication">RightImplication</a>
-                        </li>
-                        <li>
-                                <a class="variable" href="#WeightConstraintType.name">name</a>
-                        </li>
-                        <li>
-                                <a class="variable" href="#WeightConstraintType.value">value</a>
                         </li>
                 </ul>
 
@@ -328,8 +301,7 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ctl</span><span class="o">.</span><span class="n">register_propagator</span><span class="p">(</span><span class="n">AIFFB</span><span class="p">())</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ctl</span><span class="o">.</span><span class="n">parse_string</span><span class="p">(</span><span class="s2">&quot;1 { a; b }.&quot;</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ctl</span><span class="o">.</span><span class="n">ground</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">ctl</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">on_model</span><span class="o">=</span><span class="nb">print</span><span class="p">)</span> <span class="k">as</span> <span class="n">hnd</span><span class="p">:</span>
-<span class="o">&gt;&gt;&gt;</span>     <span class="nb">print</span><span class="p">(</span><span class="n">hnd</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">ctl</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">on_model</span><span class="o">=</span><span class="nb">print</span><span class="p">))</span>
 <span class="n">a</span> <span class="n">b</span>
 <span class="n">SAT</span>
 </code></pre>
@@ -685,7 +657,7 @@ They include, for example, assumptions.</p>
                     <div class="attr class">
             
     <span class="def">class</span>
-    <span class="name">CheckMode</span>:
+    <span class="name">CheckMode</span><wbr>(<span class="base">enum.IntEnum</span>):
 
         
     </div>
@@ -695,92 +667,50 @@ They include, for example, assumptions.</p>
 </div>
 
 
-                            <div id="CheckMode.__init__" class="classattr">
-                                <div class="attr function">
-            
-        <span class="name">CheckMode</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">value</span><span class="p">:</span> <span class="nb">int</span></span>)</span>
-
-        
-    </div>
-    <a class="headerlink" href="#CheckMode.__init__"></a>
-    
-    
-
-                            </div>
                             <div id="CheckMode.Both" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Both</span><span class="annotation">: ClassVar[<a href="#CheckMode">CheckMode</a>]</span>        =
-<span class="default_value"><a href="#CheckMode.Both">CheckMode.Both</a></span>
+            <span class="name">Both</span>        =
+<span class="default_value">&lt;<a href="#CheckMode.Both">CheckMode.Both</a>: 3&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#CheckMode.Both"></a>
     
-            <div class="docstring"><p>Call <code><a href="#Propagator.check">Propagator.check()</a></code> on propagation fixpoints and total assignments.</p>
-</div>
-
+    
 
                             </div>
                             <div id="CheckMode.Fixpoint" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Fixpoint</span><span class="annotation">: ClassVar[<a href="#CheckMode">CheckMode</a>]</span>        =
-<span class="default_value"><a href="#CheckMode.Fixpoint">CheckMode.Fixpoint</a></span>
+            <span class="name">Fixpoint</span>        =
+<span class="default_value">&lt;<a href="#CheckMode.Fixpoint">CheckMode.Fixpoint</a>: 2&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#CheckMode.Fixpoint"></a>
     
-            <div class="docstring"><p>Call <code><a href="#Propagator.check">Propagator.check()</a></code> on propagation fixpoints.</p>
-</div>
-
+    
 
                             </div>
                             <div id="CheckMode.Off" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Off</span><span class="annotation">: ClassVar[<a href="#CheckMode">CheckMode</a>]</span>        =
-<span class="default_value"><a href="#CheckMode.Off">CheckMode.Off</a></span>
+            <span class="name">Off</span>        =
+<span class="default_value">&lt;<a href="#CheckMode.Off">CheckMode.Off</a>: 0&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#CheckMode.Off"></a>
     
-            <div class="docstring"><p>Do not call <code><a href="#Propagator.check">Propagator.check()</a></code> at all.</p>
-</div>
-
+    
 
                             </div>
                             <div id="CheckMode.Total" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Total</span><span class="annotation">: ClassVar[<a href="#CheckMode">CheckMode</a>]</span>        =
-<span class="default_value"><a href="#CheckMode.Total">CheckMode.Total</a></span>
+            <span class="name">Total</span>        =
+<span class="default_value">&lt;<a href="#CheckMode.Total">CheckMode.Total</a>: 1&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#CheckMode.Total"></a>
-    
-            <div class="docstring"><p>Call <code><a href="#Propagator.check">Propagator.check()</a></code> on total assignments.</p>
-</div>
-
-
-                            </div>
-                            <div id="CheckMode.name" class="classattr">
-                                <div class="attr variable">
-            <span class="name">name</span><span class="annotation">: str</span>
-
-        
-    </div>
-    <a class="headerlink" href="#CheckMode.name"></a>
-    
-    
-
-                            </div>
-                            <div id="CheckMode.value" class="classattr">
-                                <div class="attr variable">
-            <span class="name">value</span><span class="annotation">: int</span>
-
-        
-    </div>
-    <a class="headerlink" href="#CheckMode.value"></a>
     
     
 
@@ -921,7 +851,7 @@ that thread and deleted after the active solve call.</p>
                                 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">add_weight_constraint</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">literal</span><span class="p">:</span> <span class="nb">int</span>,</span><span class="param">	<span class="n">literals</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span>,</span><span class="param">	<span class="n">bound</span><span class="p">:</span> <span class="nb">int</span>,</span><span class="param">	<span class="nb">type</span><span class="p">:</span> <span class="n"><a href="#WeightConstraintType">WeightConstraintType</a></span> <span class="o">=</span> <span class="n"><a href="#WeightConstraintType.Equivalence">WeightConstraintType.Equivalence</a></span></span><span class="return-annotation">) -> <span class="nb">bool</span>:</span></span>
+        <span class="name">add_weight_constraint</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">literal</span><span class="p">:</span> <span class="nb">int</span>,</span><span class="param">	<span class="n">literals</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span>,</span><span class="param">	<span class="n">bound</span><span class="p">:</span> <span class="nb">int</span>,</span><span class="param">	<span class="nb">type</span><span class="p">:</span> <span class="n"><a href="#WeightConstraintType">WeightConstraintType</a></span> <span class="o">=</span> <span class="o">&lt;</span><span class="n"><a href="#WeightConstraintType.Equivalence">WeightConstraintType.Equivalence</a></span><span class="p">:</span> <span class="mi">0</span><span class="o">&gt;</span></span><span class="return-annotation">) -> <span class="nb">bool</span>:</span></span>
 
         
     </div>
@@ -1527,7 +1457,7 @@ order, with the decision literal at the beginning of the sequence.</p>
                     <div class="attr class">
             
     <span class="def">class</span>
-    <span class="name">UndoMode</span>:
+    <span class="name">UndoMode</span><wbr>(<span class="base">enum.IntEnum</span>):
 
         
     </div>
@@ -1537,64 +1467,26 @@ order, with the decision literal at the beginning of the sequence.</p>
 </div>
 
 
-                            <div id="UndoMode.__init__" class="classattr">
-                                <div class="attr function">
-            
-        <span class="name">UndoMode</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">value</span><span class="p">:</span> <span class="nb">int</span></span>)</span>
-
-        
-    </div>
-    <a class="headerlink" href="#UndoMode.__init__"></a>
-    
-    
-
-                            </div>
                             <div id="UndoMode.Always" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Always</span><span class="annotation">: ClassVar[<a href="#UndoMode">UndoMode</a>]</span>        =
-<span class="default_value"><a href="#UndoMode.Always">UndoMode.Always</a></span>
+            <span class="name">Always</span>        =
+<span class="default_value">&lt;<a href="#UndoMode.Always">UndoMode.Always</a>: 1&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#UndoMode.Always"></a>
     
-            <div class="docstring"><p>Additionally call <code><a href="#Propagator.undo">Propagator.undo()</a></code> when check has been called.</p>
-</div>
-
+    
 
                             </div>
                             <div id="UndoMode.Default" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Default</span><span class="annotation">: ClassVar[<a href="#UndoMode">UndoMode</a>]</span>        =
-<span class="default_value"><a href="#UndoMode.Default">UndoMode.Default</a></span>
+            <span class="name">Default</span>        =
+<span class="default_value">&lt;<a href="#UndoMode.Default">UndoMode.Default</a>: 0&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#UndoMode.Default"></a>
-    
-            <div class="docstring"><p>Call <code><a href="#Propagator.undo">Propagator.undo()</a></code> for decision levels with non-emty changes.</p>
-</div>
-
-
-                            </div>
-                            <div id="UndoMode.name" class="classattr">
-                                <div class="attr variable">
-            <span class="name">name</span><span class="annotation">: str</span>
-
-        
-    </div>
-    <a class="headerlink" href="#UndoMode.name"></a>
-    
-    
-
-                            </div>
-                            <div id="UndoMode.value" class="classattr">
-                                <div class="attr variable">
-            <span class="name">value</span><span class="annotation">: int</span>
-
-        
-    </div>
-    <a class="headerlink" href="#UndoMode.value"></a>
     
     
 
@@ -1604,7 +1496,7 @@ order, with the decision literal at the beginning of the sequence.</p>
                     <div class="attr class">
             
     <span class="def">class</span>
-    <span class="name">WeightConstraintType</span>:
+    <span class="name">WeightConstraintType</span><wbr>(<span class="base">enum.IntEnum</span>):
 
         
     </div>
@@ -1614,78 +1506,38 @@ order, with the decision literal at the beginning of the sequence.</p>
 </div>
 
 
-                            <div id="WeightConstraintType.__init__" class="classattr">
-                                <div class="attr function">
-            
-        <span class="name">WeightConstraintType</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">value</span><span class="p">:</span> <span class="nb">int</span></span>)</span>
-
-        
-    </div>
-    <a class="headerlink" href="#WeightConstraintType.__init__"></a>
-    
-    
-
-                            </div>
                             <div id="WeightConstraintType.Equivalence" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Equivalence</span><span class="annotation">: ClassVar[<a href="#WeightConstraintType">WeightConstraintType</a>]</span>        =
-<span class="default_value"><a href="#WeightConstraintType.Equivalence">WeightConstraintType.Equivalence</a></span>
+            <span class="name">Equivalence</span>        =
+<span class="default_value">&lt;<a href="#WeightConstraintType.Equivalence">WeightConstraintType.Equivalence</a>: 0&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#WeightConstraintType.Equivalence"></a>
     
-            <div class="docstring"><p>The weight constraint is equal to its literal.</p>
-</div>
-
+    
 
                             </div>
                             <div id="WeightConstraintType.LeftImplication" class="classattr">
                                 <div class="attr variable">
-            <span class="name">LeftImplication</span><span class="annotation">: ClassVar[<a href="#WeightConstraintType">WeightConstraintType</a>]</span>        =
-<span class="default_value"><a href="#WeightConstraintType.LeftImplication">WeightConstraintType.LeftImplication</a></span>
+            <span class="name">LeftImplication</span>        =
+<span class="default_value">&lt;<a href="#WeightConstraintType.LeftImplication">WeightConstraintType.LeftImplication</a>: -1&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#WeightConstraintType.LeftImplication"></a>
     
-            <div class="docstring"><p>The weight constraint implies its literal.</p>
-</div>
-
+    
 
                             </div>
                             <div id="WeightConstraintType.RightImplication" class="classattr">
                                 <div class="attr variable">
-            <span class="name">RightImplication</span><span class="annotation">: ClassVar[<a href="#WeightConstraintType">WeightConstraintType</a>]</span>        =
-<span class="default_value"><a href="#WeightConstraintType.RightImplication">WeightConstraintType.RightImplication</a></span>
+            <span class="name">RightImplication</span>        =
+<span class="default_value">&lt;<a href="#WeightConstraintType.RightImplication">WeightConstraintType.RightImplication</a>: 1&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#WeightConstraintType.RightImplication"></a>
-    
-            <div class="docstring"><p>The literal implies the weight constraint.</p>
-</div>
-
-
-                            </div>
-                            <div id="WeightConstraintType.name" class="classattr">
-                                <div class="attr variable">
-            <span class="name">name</span><span class="annotation">: str</span>
-
-        
-    </div>
-    <a class="headerlink" href="#WeightConstraintType.name"></a>
-    
-    
-
-                            </div>
-                            <div id="WeightConstraintType.value" class="classattr">
-                                <div class="attr variable">
-            <span class="name">value</span><span class="annotation">: int</span>
-
-        
-    </div>
-    <a class="headerlink" href="#WeightConstraintType.value"></a>
     
     
 

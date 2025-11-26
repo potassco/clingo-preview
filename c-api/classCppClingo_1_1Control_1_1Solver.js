@@ -14,7 +14,7 @@ var classCppClingo_1_1Control_1_1Solver =
     [ "get_lock", "classCppClingo_1_1Control_1_1Solver.html#a7f932a5b27c0eacaf64899ef5390cee5", null ],
     [ "get_mode", "classCppClingo_1_1Control_1_1Solver.html#afa66f3c11d4780d8783fd02c360e23b2", null ],
     [ "get_parts", "classCppClingo_1_1Control_1_1Solver.html#a19f7ee83676f55b33c89dee86282908d", null ],
-    [ "ground", "classCppClingo_1_1Control_1_1Solver.html#a4089ac2f4c6e53f1ffa24e1e6c913d19", null ],
+    [ "ground", "classCppClingo_1_1Control_1_1Solver.html#a6359c054072da3e889571bf600a4875d", null ],
     [ "interrupt", "classCppClingo_1_1Control_1_1Solver.html#a33ad7993c1b9ffb85fe10de018d02ea9", null ],
     [ "join", "classCppClingo_1_1Control_1_1Solver.html#a1764e64b99abdc5a979be79f158235dc", null ],
     [ "main", "classCppClingo_1_1Control_1_1Solver.html#a43e2c5e54bcd96bd05cbf5c69546caba", null ],
@@ -30,7 +30,8 @@ var classCppClingo_1_1Control_1_1Solver =
     [ "set_parts", "classCppClingo_1_1Control_1_1Solver.html#a1faf98d21ab0a2fcae45c9cb1e9c23cf", null ],
     [ "set_parts", "classCppClingo_1_1Control_1_1Solver.html#ab3b0ff1bc9abc6bdd2cb6cdde8672545", null ],
     [ "show", "classCppClingo_1_1Control_1_1Solver.html#adef3c3c85c397467f431c9f86ee329ea", null ],
-    [ "solve", "classCppClingo_1_1Control_1_1Solver.html#a01a83fd00ef415dd45203bbf88790003", null ],
+    [ "solve", "classCppClingo_1_1Control_1_1Solver.html#ad60f80fe0dc8e8895aa4011e8119a445", null ],
+    [ "start_ground", "classCppClingo_1_1Control_1_1Solver.html#aed12ace36ec8a655a210703b5d2757f7", null ],
     [ "sym_tab", "classCppClingo_1_1Control_1_1Solver.html#a9938aea4f5e68e07ff5088805a4864b9", null ],
     [ "user_data", "classCppClingo_1_1Control_1_1Solver.html#af1654092f6e73dc2f37eb2d30e240fa3", null ]
 ];

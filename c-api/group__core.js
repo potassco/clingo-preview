@@ -62,6 +62,11 @@ var group__core =
       [ "CppClingo::AggregateFunction::max", "group__core.html#ggaecaa8b35eff7e55a148b48f1ffb9569ba2ffe4e77325d9a7152f7086ea7aa5114", null ]
     ] ],
     [ "CppClingo::ExternalType", "group__core.html#gaa397064acee7bd7cc0b77221363918d1", null ],
+    [ "CppClingo::GroundResult", "group__core.html#ga15ead71e3414d45b62ce659bea75db10", [
+      [ "CppClingo::GroundResult::ok", "group__core.html#gga15ead71e3414d45b62ce659bea75db10a444bcb3a3fcf8389296c49467f27e1d6", null ],
+      [ "CppClingo::GroundResult::unsatisfiable", "group__core.html#gga15ead71e3414d45b62ce659bea75db10ac96c3b9644f1609709c073a02cce0f7c", null ],
+      [ "CppClingo::GroundResult::interrupted", "group__core.html#gga15ead71e3414d45b62ce659bea75db10afadb76763385627e57ec386c9b6038f0", null ]
+    ] ],
     [ "CppClingo::HeuristicType", "group__core.html#ga83d6a5fb75d18644b1e50124ea09c1df", null ],
     [ "CppClingo::Relation", "group__core.html#ga935e9938bd363dd0147e23ca56cd17ea", [
       [ "CppClingo::Relation::equal", "group__core.html#gga935e9938bd363dd0147e23ca56cd17eaa465289687a70db7aa7217cc240c29f0f", null ],

@@ -90,9 +90,6 @@
                     <a class="class" href="#SymbolType">SymbolType</a>
                             <ul class="memberlist">
                         <li>
-                                <a class="function" href="#SymbolType.__init__">SymbolType</a>
-                        </li>
-                        <li>
                                 <a class="variable" href="#SymbolType.Function">Function</a>
                         </li>
                         <li>
@@ -109,12 +106,6 @@
                         </li>
                         <li>
                                 <a class="variable" href="#SymbolType.Tuple">Tuple</a>
-                        </li>
-                        <li>
-                                <a class="variable" href="#SymbolType.name">name</a>
-                        </li>
-                        <li>
-                                <a class="variable" href="#SymbolType.value">value</a>
                         </li>
                 </ul>
 
@@ -429,7 +420,7 @@ preconstructed symbols <code><a href="#Infimum">Infimum</a></code> and <code><a 
                     <div class="attr class">
             
     <span class="def">class</span>
-    <span class="name">SymbolType</span>:
+    <span class="name">SymbolType</span><wbr>(<span class="base">enum.IntEnum</span>):
 
         
     </div>
@@ -439,120 +430,74 @@ preconstructed symbols <code><a href="#Infimum">Infimum</a></code> and <code><a 
 </div>
 
 
-                            <div id="SymbolType.__init__" class="classattr">
-                                <div class="attr function">
-            
-        <span class="name">SymbolType</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">value</span><span class="p">:</span> <span class="nb">int</span></span>)</span>
-
-        
-    </div>
-    <a class="headerlink" href="#SymbolType.__init__"></a>
-    
-    
-
-                            </div>
                             <div id="SymbolType.Function" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Function</span><span class="annotation">: ClassVar[<a href="#SymbolType">SymbolType</a>]</span>        =
-<span class="default_value"><a href="#SymbolType.Function">SymbolType.Function</a></span>
+            <span class="name">Function</span>        =
+<span class="default_value">&lt;<a href="#SymbolType.Function">SymbolType.Function</a>: 5&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#SymbolType.Function"></a>
     
-            <div class="docstring"><p>A function symbol, e.g., <code>c</code>, <code>-c</code>, or <code>f(1,"a")</code>.</p>
-</div>
-
+    
 
                             </div>
                             <div id="SymbolType.Infimum" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Infimum</span><span class="annotation">: ClassVar[<a href="#SymbolType">SymbolType</a>]</span>        =
-<span class="default_value"><a href="#SymbolType.Infimum">SymbolType.Infimum</a></span>
+            <span class="name">Infimum</span>        =
+<span class="default_value">&lt;<a href="#SymbolType.Infimum">SymbolType.Infimum</a>: 2&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#SymbolType.Infimum"></a>
     
-            <div class="docstring"><p>The <code>#inf</code> symbol.</p>
-</div>
-
+    
 
                             </div>
                             <div id="SymbolType.Number" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Number</span><span class="annotation">: ClassVar[<a href="#SymbolType">SymbolType</a>]</span>        =
-<span class="default_value"><a href="#SymbolType.Number">SymbolType.Number</a></span>
+            <span class="name">Number</span>        =
+<span class="default_value">&lt;<a href="#SymbolType.Number">SymbolType.Number</a>: 0&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#SymbolType.Number"></a>
     
-            <div class="docstring"><p>A numeric symbol, e.g., <code>1</code>.</p>
-</div>
-
+    
 
                             </div>
                             <div id="SymbolType.String" class="classattr">
                                 <div class="attr variable">
-            <span class="name">String</span><span class="annotation">: ClassVar[<a href="#SymbolType">SymbolType</a>]</span>        =
-<span class="default_value"><a href="#SymbolType.String">SymbolType.String</a></span>
+            <span class="name">String</span>        =
+<span class="default_value">&lt;<a href="#SymbolType.String">SymbolType.String</a>: 3&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#SymbolType.String"></a>
     
-            <div class="docstring"><p>A string symbol, e.g., <code>"a"</code>.</p>
-</div>
-
+    
 
                             </div>
                             <div id="SymbolType.Supremum" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Supremum</span><span class="annotation">: ClassVar[<a href="#SymbolType">SymbolType</a>]</span>        =
-<span class="default_value"><a href="#SymbolType.Supremum">SymbolType.Supremum</a></span>
+            <span class="name">Supremum</span>        =
+<span class="default_value">&lt;<a href="#SymbolType.Supremum">SymbolType.Supremum</a>: 1&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#SymbolType.Supremum"></a>
     
-            <div class="docstring"><p>The <code>#sup</code> symbol.</p>
-</div>
-
+    
 
                             </div>
                             <div id="SymbolType.Tuple" class="classattr">
                                 <div class="attr variable">
-            <span class="name">Tuple</span><span class="annotation">: ClassVar[<a href="#SymbolType">SymbolType</a>]</span>        =
-<span class="default_value"><a href="#SymbolType.Tuple">SymbolType.Tuple</a></span>
+            <span class="name">Tuple</span>        =
+<span class="default_value">&lt;<a href="#SymbolType.Tuple">SymbolType.Tuple</a>: 4&gt;</span>
 
         
     </div>
     <a class="headerlink" href="#SymbolType.Tuple"></a>
-    
-            <div class="docstring"><p>"A tuple symbol <code>(1,a)</code>."</p>
-</div>
-
-
-                            </div>
-                            <div id="SymbolType.name" class="classattr">
-                                <div class="attr variable">
-            <span class="name">name</span><span class="annotation">: str</span>
-
-        
-    </div>
-    <a class="headerlink" href="#SymbolType.name"></a>
-    
-    
-
-                            </div>
-                            <div id="SymbolType.value" class="classattr">
-                                <div class="attr variable">
-            <span class="name">value</span><span class="annotation">: int</span>
-
-        
-    </div>
-    <a class="headerlink" href="#SymbolType.value"></a>
     
     
 

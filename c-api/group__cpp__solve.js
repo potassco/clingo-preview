@@ -37,12 +37,9 @@ var group__cpp__solve =
       [ "c_cast", "classClingo_1_1Model.html#ad4a5fc09cbaffe7bf6966be383511413", null ]
     ] ],
     [ "Clingo::SolveEventHandler", "classClingo_1_1SolveEventHandler.html", [
-      [ "SolveEventHandler", "classClingo_1_1SolveEventHandler.html#a6bf4636b82ddf7e75df8e18de9be43fd", null ],
-      [ "SolveEventHandler", "classClingo_1_1SolveEventHandler.html#a2c86c606709fb95eca08301f5a6b8c75", null ],
       [ "~SolveEventHandler", "classClingo_1_1SolveEventHandler.html#acb865b89f7a309228e0b22a98fd61846", null ],
       [ "finish", "classClingo_1_1SolveEventHandler.html#a6023bfdec7db44ccbc9582bfb7399b69", null ],
       [ "model", "classClingo_1_1SolveEventHandler.html#ac2b88c56eb856a5663e77bb9397acc22", null ],
-      [ "operator=", "classClingo_1_1SolveEventHandler.html#af3a9eb74c59c4e197213f8fc5fb46fb2", null ],
       [ "stats", "classClingo_1_1SolveEventHandler.html#a52642d7ff57c603f299c8122fa374abd", null ],
       [ "unsat", "classClingo_1_1SolveEventHandler.html#a4e0de86f58ef6103ebdd6609e3abdebb", null ]
     ] ],
@@ -69,7 +66,6 @@ var group__cpp__solve =
       [ "SolveHandle", "classClingo_1_1SolveHandle.html#abfb6a1ba54cda9963ab33965918319ce", null ],
       [ "begin", "classClingo_1_1SolveHandle.html#a410c5c68534289a95a2ad0ed5da534aa", null ],
       [ "cancel", "classClingo_1_1SolveHandle.html#a24837e04a174ec05181fabcf27a53dd2", null ],
-      [ "close", "classClingo_1_1SolveHandle.html#af57eaefb2faddc307a2439356ad273e5", null ],
       [ "core", "classClingo_1_1SolveHandle.html#aa643483be6cacdbec497ffa7b319f9e0", null ],
       [ "end", "classClingo_1_1SolveHandle.html#a56bce407fee662dde2c036733586fc4a", null ],
       [ "get", "classClingo_1_1SolveHandle.html#a7f1dcc765795a758e0323edbd99f71c3", null ],

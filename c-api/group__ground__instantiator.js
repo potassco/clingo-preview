@@ -35,16 +35,16 @@ var group__ground__instantiator =
       [ "enqueue", "classCppClingo_1_1Ground_1_1Instantiator.html#a573adcdbe85e3d2d152173753c584818", null ],
       [ "finalize", "classCppClingo_1_1Ground_1_1Instantiator.html#ad59018a4a61befd127e404d782aa7aae", null ],
       [ "init", "classCppClingo_1_1Ground_1_1Instantiator.html#adcfafd7e06ab5d55403413fefb266ed5", null ],
-      [ "instantiate", "classCppClingo_1_1Ground_1_1Instantiator.html#a44230fe8fae3faa301a94489a33ad277", null ],
+      [ "instantiate", "classCppClingo_1_1Ground_1_1Instantiator.html#acb89ead586517ffb1dabbdcd8f8a1000", null ],
       [ "print", "classCppClingo_1_1Ground_1_1Instantiator.html#a1045a98309b213710152a905f4a2ba11", null ],
       [ "priority", "classCppClingo_1_1Ground_1_1Instantiator.html#a3be0fe37f6e3158dd9181c95f393b911", null ],
       [ "propagate", "classCppClingo_1_1Ground_1_1Instantiator.html#a1cb4979a89e2b7f9cfcd92d9fc9bc4e7", null ],
       [ "operator<<", "classCppClingo_1_1Ground_1_1Instantiator.html#a35404074a9b66bbfb5808339481f6267", null ]
     ] ],
     [ "CppClingo::Ground::Queue", "classCppClingo_1_1Ground_1_1Queue.html", [
-      [ "Queue", "classCppClingo_1_1Ground_1_1Queue.html#a1acee54a2fddba88550dc5fd9e2ed186", null ],
+      [ "Queue", "classCppClingo_1_1Ground_1_1Queue.html#a317adfbdece7ab336a80b4231533bb7c", null ],
       [ "insert", "classCppClingo_1_1Ground_1_1Queue.html#a8f63be73f96af78af271608e099069de", null ],
-      [ "process", "classCppClingo_1_1Ground_1_1Queue.html#a6fa96572a8eb72f9cd57cd7f7cf470ba", null ],
+      [ "process", "classCppClingo_1_1Ground_1_1Queue.html#a24cfff42a237cb450dd63c48364afb5f", null ],
       [ "propagate", "classCppClingo_1_1Ground_1_1Queue.html#a83e005c8465511032a3520319dafb707", null ],
       [ "release", "classCppClingo_1_1Ground_1_1Queue.html#a733e07a84146ed0df49e0dcf23caed91", null ]
     ] ],

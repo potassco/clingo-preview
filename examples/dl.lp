@@ -382,8 +382,7 @@ def main(lib: Library, control: Control):
     # proceed with normal solving if no variable is to be minimized
     if minimize is None:
         control.ground(control.parts)
-        with control.solve(on_model=propagator.on_model) as hnd:
-            hnd.get()
+        control.solve(on_model=propagator.on_model)
         return
     # minimize the given variable
     control.ground(control.parts)
@@ -401,12 +400,7 @@ def main(lib: Library, control: Control):
                     return False
         return True
 
-    while True:
-        with control.solve(on_model=on_model) as hnd:
-            if not hnd.get().satisfiable:
-                break
-        if bound is None:
-            break
+    while control.solve(on_model=on_model).satisfiable and bound is not None:
         print(f"Found new bound: {bound}")
         num = Number(lib, bound - 1)
         control.ground([("__bound", [num, minimize])])

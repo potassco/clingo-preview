@@ -26,7 +26,7 @@ var group__c__solve =
     ] ],
     [ "clingo_control_solve", "group__c__solve.html#ga853dd2b6fc7c545d4f4d521080bbd014", null ],
     [ "clingo_solve_handle_cancel", "group__c__solve.html#ga3ca184768ef788ca10f0f76bb7ad1353", null ],
-    [ "clingo_solve_handle_close", "group__c__solve.html#ga488b76e7240d625bd4066e68a33ab23e", null ],
+    [ "clingo_solve_handle_close", "group__c__solve.html#gaf45b246d8a91322b9080535392761fb3", null ],
     [ "clingo_solve_handle_core", "group__c__solve.html#gab6a690f01b18670afbc788ff650543a9", null ],
     [ "clingo_solve_handle_get", "group__c__solve.html#gae4270b7d4d0174a479307438680007c5", null ],
     [ "clingo_solve_handle_last", "group__c__solve.html#gadb77de214f7dff6fd3923f9db51c5cf4", null ],

@@ -158,13 +158,17 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>add_const</b> (<a cla
 auto&#160;</td><td class="memItemRight" valign="bottom"><b>const_map</b> () -&gt; <a class="el" href="group__input__program.html#gac11254b6e15eed5cde4f19e1717d9beb">Input::ConstMap</a> const &amp;</td></tr>
 <tr class="memdesc:a4f1a21f308ee315addec4a9779a1ec80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the const map. <br /></td></tr>
 <tr class="separator:a4f1a21f308ee315addec4a9779a1ec80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4089ac2f4c6e53f1ffa24e1e6c913d19" id="r_a4089ac2f4c6e53f1ffa24e1e6c913d19"><td class="memItemLeft" align="right" valign="top"><a id="a4089ac2f4c6e53f1ffa24e1e6c913d19" name="a4089ac2f4c6e53f1ffa24e1e6c913d19"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ground</b> (ProgramParamVec const &amp;params, <a class="el" href="classCppClingo_1_1Ground_1_1ScriptCallback.html">Ground::ScriptCallback</a> *ctx)</td></tr>
-<tr class="memdesc:a4089ac2f4c6e53f1ffa24e1e6c913d19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ground the program. <br /></td></tr>
-<tr class="separator:a4089ac2f4c6e53f1ffa24e1e6c913d19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01a83fd00ef415dd45203bbf88790003" id="r_a01a83fd00ef415dd45203bbf88790003"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Control_1_1Solver.html#a01a83fd00ef415dd45203bbf88790003">solve</a> (<a class="el" href="group__control.html#ga109d7af1cc4e5aec2a63acee893783dc">UEventHandler</a> handler={}, <a class="el" href="group__core__output.html#ga49ddb61ddc6353b686dca61aa7e0ac19">PrgLitSpan</a> assumptions={}, <a class="el" href="group__control.html#ga486c16bce80ca8dbea9d8778040f1c11">SolveMode</a> mode=<a class="el" href="group__control.html#gga486c16bce80ca8dbea9d8778040f1c11a334c4a4c42fdb79d7ebc3e73b517e6f8">SolveMode::none</a>) -&gt; <a class="el" href="group__control.html#ga215895d93e51be3b336f13a5cde9bdfa">USolveHandle</a></td></tr>
-<tr class="memdesc:a01a83fd00ef415dd45203bbf88790003"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve the program.  <br /></td></tr>
-<tr class="separator:a01a83fd00ef415dd45203bbf88790003"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed12ace36ec8a655a210703b5d2757f7" id="r_aed12ace36ec8a655a210703b5d2757f7"><td class="memItemLeft" align="right" valign="top"><a id="aed12ace36ec8a655a210703b5d2757f7" name="aed12ace36ec8a655a210703b5d2757f7"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>start_ground</b> (ProgramParamVec params, <a class="el" href="group__control.html#gaebb2e576832a7041208fde64444b9022">UGroundEventHandler</a> handler) -&gt; <a class="el" href="classCppClingo_1_1Control_1_1GroundHandle.html">GroundHandle</a></td></tr>
+<tr class="memdesc:aed12ace36ec8a655a210703b5d2757f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ground the program asynchronously. <br /></td></tr>
+<tr class="separator:aed12ace36ec8a655a210703b5d2757f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6359c054072da3e889571bf600a4875d" id="r_a6359c054072da3e889571bf600a4875d"><td class="memItemLeft" align="right" valign="top"><a id="a6359c054072da3e889571bf600a4875d" name="a6359c054072da3e889571bf600a4875d"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>ground</b> (ProgramParamVec const &amp;params, <a class="el" href="classCppClingo_1_1Ground_1_1ScriptCallback.html">Ground::ScriptCallback</a> *ctx, <a class="el" href="classCppClingo_1_1Util_1_1StopFlag.html">Util::StopFlag</a> *stop=nullptr) -&gt; <a class="el" href="group__core.html#ga15ead71e3414d45b62ce659bea75db10">GroundResult</a></td></tr>
+<tr class="memdesc:a6359c054072da3e889571bf600a4875d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ground the program. <br /></td></tr>
+<tr class="separator:a6359c054072da3e889571bf600a4875d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad60f80fe0dc8e8895aa4011e8119a445" id="r_ad60f80fe0dc8e8895aa4011e8119a445"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppClingo_1_1Control_1_1Solver.html#ad60f80fe0dc8e8895aa4011e8119a445">solve</a> (<a class="el" href="group__control.html#ga6d7c83f39ec17960603f0b783f20a6cd">USolveEventHandler</a> handler={}, <a class="el" href="group__core__output.html#ga49ddb61ddc6353b686dca61aa7e0ac19">PrgLitSpan</a> assumptions={}, <a class="el" href="group__control.html#ga486c16bce80ca8dbea9d8778040f1c11">SolveMode</a> mode=<a class="el" href="group__control.html#gga486c16bce80ca8dbea9d8778040f1c11a334c4a4c42fdb79d7ebc3e73b517e6f8">SolveMode::none</a>) -&gt; <a class="el" href="group__control.html#ga215895d93e51be3b336f13a5cde9bdfa">USolveHandle</a></td></tr>
+<tr class="memdesc:ad60f80fe0dc8e8895aa4011e8119a445"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve the program.  <br /></td></tr>
+<tr class="separator:ad60f80fe0dc8e8895aa4011e8119a445"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae33b96681ada72598ac3ebcdcc27dea3" id="r_ae33b96681ada72598ac3ebcdcc27dea3"><td class="memItemLeft" align="right" valign="top"><a id="ae33b96681ada72598ac3ebcdcc27dea3" name="ae33b96681ada72598ac3ebcdcc27dea3"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>output_unprocessed_program</b> (std::ostream &amp;out)</td></tr>
 <tr class="memdesc:ae33b96681ada72598ac3ebcdcc27dea3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output the current unprocessed program. <br /></td></tr>
@@ -378,8 +382,8 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><b>clasp_theory</b> () c
 
 </div>
 </div>
-<a id="a01a83fd00ef415dd45203bbf88790003" name="a01a83fd00ef415dd45203bbf88790003"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01a83fd00ef415dd45203bbf88790003">&#9670;&#160;</a></span>solve()</h2>
+<a id="ad60f80fe0dc8e8895aa4011e8119a445" name="ad60f80fe0dc8e8895aa4011e8119a445"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad60f80fe0dc8e8895aa4011e8119a445">&#9670;&#160;</a></span>solve()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -387,7 +391,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><b>clasp_theory</b> () c
         <tr>
           <td class="memname">auto CppClingo::Control::Solver::solve </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__control.html#ga109d7af1cc4e5aec2a63acee893783dc">UEventHandler</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__control.html#ga6d7c83f39ec17960603f0b783f20a6cd">USolveEventHandler</a>&#160;</td>
           <td class="paramname"><em>handler</em> = <code>{}</code>, </td>
         </tr>
         <tr>

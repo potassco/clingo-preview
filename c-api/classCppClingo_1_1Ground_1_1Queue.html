@@ -113,10 +113,10 @@ $(document).ready(function(){initNavTree('classCppClingo_1_1Ground_1_1Queue.html
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1acee54a2fddba88550dc5fd9e2ed186" id="r_a1acee54a2fddba88550dc5fd9e2ed186"><td class="memItemLeft" align="right" valign="top"><a id="a1acee54a2fddba88550dc5fd9e2ed186" name="a1acee54a2fddba88550dc5fd9e2ed186"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Queue</b> ()=default</td></tr>
-<tr class="memdesc:a1acee54a2fddba88550dc5fd9e2ed186"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an empty queue. <br /></td></tr>
-<tr class="separator:a1acee54a2fddba88550dc5fd9e2ed186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a317adfbdece7ab336a80b4231533bb7c" id="r_a317adfbdece7ab336a80b4231533bb7c"><td class="memItemLeft" align="right" valign="top"><a id="a317adfbdece7ab336a80b4231533bb7c" name="a317adfbdece7ab336a80b4231533bb7c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Queue</b> (<a class="el" href="classCppClingo_1_1Util_1_1StopFlag.html">Util::StopFlag</a> *stop=nullptr)</td></tr>
+<tr class="memdesc:a317adfbdece7ab336a80b4231533bb7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an empty queue. <br /></td></tr>
+<tr class="separator:a317adfbdece7ab336a80b4231533bb7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f63be73f96af78af271608e099069de" id="r_a8f63be73f96af78af271608e099069de"><td class="memItemLeft" align="right" valign="top"><a id="a8f63be73f96af78af271608e099069de" name="a8f63be73f96af78af271608e099069de"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>insert</b> (<a class="el" href="classCppClingo_1_1Ground_1_1Instantiator.html">Instantiator</a> inst, std::optional&lt; size_t &gt; index)</td></tr>
 <tr class="memdesc:a8f63be73f96af78af271608e099069de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register an instantiator with the queue. <br /></td></tr>
@@ -125,10 +125,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>insert</b> (<a class=
 void&#160;</td><td class="memItemRight" valign="bottom"><b>propagate</b> (size_t index)</td></tr>
 <tr class="memdesc:a83e005c8465511032a3520319dafb707"><td class="mdescLeft">&#160;</td><td class="mdescRight">Propagate instantiators with the given index. <br /></td></tr>
 <tr class="separator:a83e005c8465511032a3520319dafb707"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fa96572a8eb72f9cd57cd7f7cf470ba" id="r_a6fa96572a8eb72f9cd57cd7f7cf470ba"><td class="memItemLeft" align="right" valign="top"><a id="a6fa96572a8eb72f9cd57cd7f7cf470ba" name="a6fa96572a8eb72f9cd57cd7f7cf470ba"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>process</b> (<a class="el" href="classCppClingo_1_1Logger.html">Logger</a> &amp;log, <a class="el" href="classCppClingo_1_1SymbolStore.html">SymbolStore</a> &amp;store, <a class="el" href="classCppClingo_1_1OutputStm.html">OutputStm</a> &amp;out) -&gt; bool</td></tr>
-<tr class="memdesc:a6fa96572a8eb72f9cd57cd7f7cf470ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process previously enqueued instantiators. <br /></td></tr>
-<tr class="separator:a6fa96572a8eb72f9cd57cd7f7cf470ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24cfff42a237cb450dd63c48364afb5f" id="r_a24cfff42a237cb450dd63c48364afb5f"><td class="memItemLeft" align="right" valign="top"><a id="a24cfff42a237cb450dd63c48364afb5f" name="a24cfff42a237cb450dd63c48364afb5f"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>process</b> (<a class="el" href="classCppClingo_1_1Logger.html">Logger</a> &amp;log, <a class="el" href="classCppClingo_1_1SymbolStore.html">SymbolStore</a> &amp;store, <a class="el" href="classCppClingo_1_1OutputStm.html">OutputStm</a> &amp;out) -&gt; <a class="el" href="group__core.html#ga15ead71e3414d45b62ce659bea75db10">GroundResult</a></td></tr>
+<tr class="memdesc:a24cfff42a237cb450dd63c48364afb5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process previously enqueued instantiators. <br /></td></tr>
+<tr class="separator:a24cfff42a237cb450dd63c48364afb5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a733e07a84146ed0df49e0dcf23caed91" id="r_a733e07a84146ed0df49e0dcf23caed91"><td class="memItemLeft" align="right" valign="top"><a id="a733e07a84146ed0df49e0dcf23caed91" name="a733e07a84146ed0df49e0dcf23caed91"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><b>release</b> () -&gt; std::vector&lt; <a class="el" href="classCppClingo_1_1Ground_1_1Instantiator.html">Instantiator</a> &gt;</td></tr>
 <tr class="memdesc:a733e07a84146ed0df49e0dcf23caed91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release the contained instantiators. <br /></td></tr>

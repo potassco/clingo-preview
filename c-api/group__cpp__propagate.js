@@ -87,9 +87,9 @@ var group__cpp__propagate =
       [ "decide", "classClingo_1_1Heuristic.html#a9088179bf71c59f9b3374434f29528b3", null ]
     ] ],
     [ "Clingo::ClauseFlags", "group__cpp__propagate.html#ga3496cb0a07cdb9bd13b49db7fd2ee8da", [
-      [ "Clingo::none", "group__cpp__propagate.html#gga3496cb0a07cdb9bd13b49db7fd2ee8daa72551a5b5a8e2e8381ec68e24e1307e9", null ],
-      [ "Clingo::lock", "group__cpp__propagate.html#gga3496cb0a07cdb9bd13b49db7fd2ee8daa1c5ac04dc81cad208c487cea31f404ab", null ],
-      [ "Clingo::tag", "group__cpp__propagate.html#gga3496cb0a07cdb9bd13b49db7fd2ee8daa20571183094a87bf62ce5e35f7844ca7", null ]
+      [ "Clingo::ClauseFlags::none", "group__cpp__propagate.html#gga3496cb0a07cdb9bd13b49db7fd2ee8daa334c4a4c42fdb79d7ebc3e73b517e6f8", null ],
+      [ "Clingo::ClauseFlags::lock", "group__cpp__propagate.html#gga3496cb0a07cdb9bd13b49db7fd2ee8daadce7c4174ce9323904a934a486c41288", null ],
+      [ "Clingo::ClauseFlags::tag", "group__cpp__propagate.html#gga3496cb0a07cdb9bd13b49db7fd2ee8daae4d23e841d8e8804190027bce3180fa5", null ]
     ] ],
     [ "Clingo::PropagatorCheckMode", "group__cpp__propagate.html#ga64cdaabee186410e187b8cae03402296", [
       [ "Clingo::PropagatorCheckMode::none", "group__cpp__propagate.html#gga64cdaabee186410e187b8cae03402296a334c4a4c42fdb79d7ebc3e73b517e6f8", null ],
@@ -102,9 +102,9 @@ var group__cpp__propagate =
       [ "Clingo::PropagatorUndoMode::always", "group__cpp__propagate.html#ggad78cdf1c37dfe3fa6a23d6aa91216688af9f90eeaf400d228facde6bc48da5cfb", null ]
     ] ],
     [ "Clingo::WeightConstraintType", "group__cpp__propagate.html#ga017aa793e466bc6febee50ec40e88ec5", [
-      [ "Clingo::implication_left", "group__cpp__propagate.html#gga017aa793e466bc6febee50ec40e88ec5a69b7c49f89f0fb6ba7a0f6a9fc16e9d2", null ],
-      [ "Clingo::implication_right", "group__cpp__propagate.html#gga017aa793e466bc6febee50ec40e88ec5ad9bdad63f66eb549763b5752a8dd3f3e", null ],
-      [ "Clingo::equivalence", "group__cpp__propagate.html#gga017aa793e466bc6febee50ec40e88ec5a2612cfc226daae92e4d499e18104bd50", null ]
+      [ "Clingo::WeightConstraintType::implication_left", "group__cpp__propagate.html#gga017aa793e466bc6febee50ec40e88ec5a510b73060516eeae982ed5055ee9d36a", null ],
+      [ "Clingo::WeightConstraintType::implication_right", "group__cpp__propagate.html#gga017aa793e466bc6febee50ec40e88ec5af36f6b6267b5bae3858e3d1866e45d3f", null ],
+      [ "Clingo::WeightConstraintType::equivalence", "group__cpp__propagate.html#gga017aa793e466bc6febee50ec40e88ec5a84a81000f28be28045da0d5725c0aeda", null ]
     ] ],
     [ "Clingo::CLINGO_ENABLE_BITSET_ENUM", "group__cpp__propagate.html#ga58c5ed6778efbc4d4511f8456664dff0", null ]
 ];

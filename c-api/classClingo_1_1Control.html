@@ -145,27 +145,45 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af96768aaa30bade62e847002a564b11b" id="r_af96768aaa30bade62e847002a564b11b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#af96768aaa30bade62e847002a564b11b">parse_string</a> (std::string_view program) const</td></tr>
 <tr class="memdesc:af96768aaa30bade62e847002a564b11b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a logic program from a string.  <br /></td></tr>
 <tr class="separator:af96768aaa30bade62e847002a564b11b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3f8d24272bc3f0ae82d403474cd6fe8" id="r_ad3f8d24272bc3f0ae82d403474cd6fe8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#ad3f8d24272bc3f0ae82d403474cd6fe8">ground</a> (std::optional&lt; <a class="el" href="group__cpp__control.html#gaafd17355813e7e29662188ee37ebb078">PartSpan</a> &gt; <a class="el" href="classClingo_1_1Control.html#a43b1ba1fee9b3edba4c0c6b3e9810f20">parts</a>=std::nullopt, <a class="el" href="classClingo_1_1Control.html#aeea6fd6fdd7fe3d1922b782d5c4e7c5f">Context</a> ctx=nullptr) const</td></tr>
-<tr class="memdesc:ad3f8d24272bc3f0ae82d403474cd6fe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ground the control object with the given parts.  <br /></td></tr>
+<tr class="memitem:ad3f8d24272bc3f0ae82d403474cd6fe8" id="r_ad3f8d24272bc3f0ae82d403474cd6fe8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#ad3f8d24272bc3f0ae82d403474cd6fe8">ground</a> (std::optional&lt; <a class="el" href="group__cpp__ground.html#gaafd17355813e7e29662188ee37ebb078">PartSpan</a> &gt; <a class="el" href="classClingo_1_1Control.html#a43b1ba1fee9b3edba4c0c6b3e9810f20">parts</a>=std::nullopt, <a class="el" href="classClingo_1_1Control.html#aeea6fd6fdd7fe3d1922b782d5c4e7c5f">Context</a> ctx=nullptr) const</td></tr>
+<tr class="memdesc:ad3f8d24272bc3f0ae82d403474cd6fe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ground the logic program with the given parameters.  <br /></td></tr>
 <tr class="separator:ad3f8d24272bc3f0ae82d403474cd6fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b123723122787e918e0da3727d7b0cc" id="r_a3b123723122787e918e0da3727d7b0cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#a3b123723122787e918e0da3727d7b0cc">ground</a> (std::initializer_list&lt; <a class="el" href="structClingo_1_1Part.html">Part</a> &gt; <a class="el" href="classClingo_1_1Control.html#a43b1ba1fee9b3edba4c0c6b3e9810f20">parts</a>, <a class="el" href="classClingo_1_1Control.html#aeea6fd6fdd7fe3d1922b782d5c4e7c5f">Context</a> ctx=nullptr) const</td></tr>
 <tr class="memdesc:a3b123723122787e918e0da3727d7b0cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ground the control object with the given parts.  <br /></td></tr>
 <tr class="separator:a3b123723122787e918e0da3727d7b0cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03164eccd585f35c7dc5ecea876e3de8" id="r_a03164eccd585f35c7dc5ecea876e3de8"><td class="memTemplParams" colspan="2">template&lt;Detail::UserData&lt; <a class="el" href="classClingo_1_1GroundEventHandler.html">GroundEventHandler</a> &gt; Handler = std::nullptr_t&gt; </td></tr>
+<tr class="memitem:a03164eccd585f35c7dc5ecea876e3de8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#a03164eccd585f35c7dc5ecea876e3de8">start_ground</a> (std::optional&lt; <a class="el" href="group__cpp__ground.html#gaafd17355813e7e29662188ee37ebb078">PartSpan</a> &gt; <a class="el" href="classClingo_1_1Control.html#a43b1ba1fee9b3edba4c0c6b3e9810f20">parts</a>=std::nullopt, Handler &amp;&amp;handler=nullptr) const -&gt; <a class="el" href="classClingo_1_1GroundHandle.html">GroundHandle</a></td></tr>
+<tr class="memdesc:a03164eccd585f35c7dc5ecea876e3de8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ground the logic program with the given parameters.  <br /></td></tr>
+<tr class="separator:a03164eccd585f35c7dc5ecea876e3de8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a405eb78a38bad95bb675344ea91fb154" id="r_a405eb78a38bad95bb675344ea91fb154"><td class="memTemplParams" colspan="2">template&lt;Detail::UserData&lt; <a class="el" href="classClingo_1_1GroundEventHandler.html">GroundEventHandler</a> &gt; Handler = std::nullptr_t&gt; </td></tr>
+<tr class="memitem:a405eb78a38bad95bb675344ea91fb154"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#a405eb78a38bad95bb675344ea91fb154">start_ground</a> (std::initializer_list&lt; <a class="el" href="structClingo_1_1Part.html">Part</a> &gt; <a class="el" href="classClingo_1_1Control.html#a43b1ba1fee9b3edba4c0c6b3e9810f20">parts</a>, Handler &amp;&amp;handler=nullptr) const -&gt; <a class="el" href="classClingo_1_1GroundHandle.html">GroundHandle</a></td></tr>
+<tr class="memdesc:a405eb78a38bad95bb675344ea91fb154"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ground the logic program with the given parameters.    <br /></td></tr>
+<tr class="separator:a405eb78a38bad95bb675344ea91fb154"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20e2fa9150e5d4ec0646635c50f021e7" id="r_a20e2fa9150e5d4ec0646635c50f021e7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#a20e2fa9150e5d4ec0646635c50f021e7">base</a> () const -&gt; <a class="el" href="classClingo_1_1Base.html">Base</a></td></tr>
 <tr class="memdesc:a20e2fa9150e5d4ec0646635c50f021e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the base of the program.  <br /></td></tr>
 <tr class="separator:a20e2fa9150e5d4ec0646635c50f021e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31f05f8e5e1a94a53794d52c4368a59a" id="r_a31f05f8e5e1a94a53794d52c4368a59a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#a31f05f8e5e1a94a53794d52c4368a59a">stats</a> () const -&gt; <a class="el" href="classClingo_1_1ConstStats.html">ConstStats</a></td></tr>
 <tr class="memdesc:a31f05f8e5e1a94a53794d52c4368a59a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the statistics of the control object.  <br /></td></tr>
 <tr class="separator:a31f05f8e5e1a94a53794d52c4368a59a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1ed6de6eace4fb6e94b1ec83ab8e571" id="r_af1ed6de6eace4fb6e94b1ec83ab8e571"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#af1ed6de6eace4fb6e94b1ec83ab8e571">profile</a> () -&gt; std::vector&lt; <a class="el" href="group__cpp__control.html#gad77e93c2dd72bbe1b91b99a155652b2c">ProfileNode</a> &gt;</td></tr>
+<tr class="memitem:af1ed6de6eace4fb6e94b1ec83ab8e571" id="r_af1ed6de6eace4fb6e94b1ec83ab8e571"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#af1ed6de6eace4fb6e94b1ec83ab8e571">profile</a> () -&gt; std::vector&lt; <a class="el" href="group__cpp__profile.html#gad77e93c2dd72bbe1b91b99a155652b2c">ProfileNode</a> &gt;</td></tr>
 <tr class="memdesc:af1ed6de6eace4fb6e94b1ec83ab8e571"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain the profiling data of the control object.  <br /></td></tr>
 <tr class="separator:af1ed6de6eace4fb6e94b1ec83ab8e571"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2bbc5dcb1c994af5a627e279ce6ab00" id="r_ab2bbc5dcb1c994af5a627e279ce6ab00"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#ab2bbc5dcb1c994af5a627e279ce6ab00">solve</a> (<a class="el" href="classClingo_1_1SolveEventHandler.html">SolveEventHandler</a> &amp;handler, <a class="el" href="group__cpp__core.html#gae2fd5bed61bbbd84fe1d50483b56d84f">ProgramLiteralSpan</a> const &amp;assumptions={}, <a class="el" href="group__cpp__control.html#ga278d545c260ce25ef53c588f758e1083">SolveFlags</a> flags=<a class="el" href="group__cpp__control.html#gga278d545c260ce25ef53c588f758e1083aa2e4822a98337283e39f7b60acf85ec9">SolveFlags::empty</a>) const -&gt; <a class="el" href="classClingo_1_1SolveHandle.html">SolveHandle</a></td></tr>
-<tr class="memdesc:ab2bbc5dcb1c994af5a627e279ce6ab00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve the grounded program with the given assumptions and flags.  <br /></td></tr>
-<tr class="separator:ab2bbc5dcb1c994af5a627e279ce6ab00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e3496bc5ddf62a413821c0fd4a50b5b" id="r_a4e3496bc5ddf62a413821c0fd4a50b5b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#a4e3496bc5ddf62a413821c0fd4a50b5b">solve</a> (<a class="el" href="group__cpp__core.html#gae2fd5bed61bbbd84fe1d50483b56d84f">ProgramLiteralSpan</a> const &amp;assumptions={}, <a class="el" href="group__cpp__control.html#ga278d545c260ce25ef53c588f758e1083">SolveFlags</a> flags=<a class="el" href="group__cpp__control.html#gga278d545c260ce25ef53c588f758e1083a16f10dfd541c23362492b4e513adf0a1">SolveFlags::yield</a>) const -&gt; <a class="el" href="classClingo_1_1SolveHandle.html">SolveHandle</a></td></tr>
-<tr class="memdesc:a4e3496bc5ddf62a413821c0fd4a50b5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve the grounded program with the given assumptions and flags.  <br /></td></tr>
-<tr class="separator:a4e3496bc5ddf62a413821c0fd4a50b5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90ab039a1f6f45a79047030bbf2963e1" id="r_a90ab039a1f6f45a79047030bbf2963e1"><td class="memTemplParams" colspan="2">template&lt;Detail::UserData&lt; <a class="el" href="classClingo_1_1SolveEventHandler.html">SolveEventHandler</a> &gt; Handler = std::nullptr_t&gt; </td></tr>
+<tr class="memitem:a90ab039a1f6f45a79047030bbf2963e1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#a90ab039a1f6f45a79047030bbf2963e1">solve</a> (<a class="el" href="group__cpp__core.html#gae2fd5bed61bbbd84fe1d50483b56d84f">ProgramLiteralSpan</a> assumptions={}, Handler &amp;&amp;handler=nullptr) const -&gt; <a class="el" href="classClingo_1_1SolveResult.html">SolveResult</a></td></tr>
+<tr class="memdesc:a90ab039a1f6f45a79047030bbf2963e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve the grounded program with the given assumptions.  <br /></td></tr>
+<tr class="separator:a90ab039a1f6f45a79047030bbf2963e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a889b21f67ac43da043b907386ffa128d" id="r_a889b21f67ac43da043b907386ffa128d"><td class="memTemplParams" colspan="2">template&lt;Detail::UserData&lt; <a class="el" href="classClingo_1_1SolveEventHandler.html">SolveEventHandler</a> &gt; Handler = std::nullptr_t&gt; </td></tr>
+<tr class="memitem:a889b21f67ac43da043b907386ffa128d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#a889b21f67ac43da043b907386ffa128d">solve</a> (std::initializer_list&lt; <a class="el" href="group__cpp__core.html#gabe799d16ce34b5ce2fa7932414c3cf73">ProgramLiteral</a> &gt; assumptions, Handler &amp;&amp;handler=nullptr) const -&gt; <a class="el" href="classClingo_1_1SolveResult.html">SolveResult</a></td></tr>
+<tr class="memdesc:a889b21f67ac43da043b907386ffa128d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve the grounded program with the given assumptions.    <br /></td></tr>
+<tr class="separator:a889b21f67ac43da043b907386ffa128d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76d40aa9bf891321922f90ae53687208" id="r_a76d40aa9bf891321922f90ae53687208"><td class="memTemplParams" colspan="2">template&lt;Detail::UserData&lt; <a class="el" href="classClingo_1_1SolveEventHandler.html">SolveEventHandler</a> &gt; Handler = std::nullptr_t&gt; </td></tr>
+<tr class="memitem:a76d40aa9bf891321922f90ae53687208"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#a76d40aa9bf891321922f90ae53687208">start_solve</a> (<a class="el" href="group__cpp__core.html#gae2fd5bed61bbbd84fe1d50483b56d84f">ProgramLiteralSpan</a> assumptions={}, <a class="el" href="group__cpp__control.html#ga278d545c260ce25ef53c588f758e1083">SolveFlags</a> flags=<a class="el" href="group__cpp__control.html#gga278d545c260ce25ef53c588f758e1083a16f10dfd541c23362492b4e513adf0a1">SolveFlags::yield</a>, Handler &amp;&amp;handler=nullptr) const -&gt; <a class="el" href="classClingo_1_1SolveHandle.html">SolveHandle</a></td></tr>
+<tr class="memdesc:a76d40aa9bf891321922f90ae53687208"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start solving the grounded program with the given assumptions and flags.  <br /></td></tr>
+<tr class="separator:a76d40aa9bf891321922f90ae53687208"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d2a452d739a1c9e88295021f21cdc32" id="r_a4d2a452d739a1c9e88295021f21cdc32"><td class="memTemplParams" colspan="2">template&lt;Detail::UserData&lt; <a class="el" href="classClingo_1_1SolveEventHandler.html">SolveEventHandler</a> &gt; Handler = std::nullptr_t&gt; </td></tr>
+<tr class="memitem:a4d2a452d739a1c9e88295021f21cdc32"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#a4d2a452d739a1c9e88295021f21cdc32">start_solve</a> (std::initializer_list&lt; <a class="el" href="group__cpp__core.html#gabe799d16ce34b5ce2fa7932414c3cf73">ProgramLiteral</a> &gt; assumptions, <a class="el" href="group__cpp__control.html#ga278d545c260ce25ef53c588f758e1083">SolveFlags</a> flags=<a class="el" href="group__cpp__control.html#gga278d545c260ce25ef53c588f758e1083a16f10dfd541c23362492b4e513adf0a1">SolveFlags::yield</a>, Handler &amp;&amp;handler=nullptr) const -&gt; <a class="el" href="classClingo_1_1SolveHandle.html">SolveHandle</a></td></tr>
+<tr class="memdesc:a4d2a452d739a1c9e88295021f21cdc32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start solving the grounded program with the given assumptions and flags.    <br /></td></tr>
+<tr class="separator:a4d2a452d739a1c9e88295021f21cdc32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1e85101738b5f6079a7546311be8cae" id="r_aa1e85101738b5f6079a7546311be8cae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#aa1e85101738b5f6079a7546311be8cae">main</a> () const</td></tr>
 <tr class="memdesc:aa1e85101738b5f6079a7546311be8cae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the default ground and solve flow.  <br /></td></tr>
 <tr class="separator:aa1e85101738b5f6079a7546311be8cae"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -178,13 +196,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a953437894ff3ef825c57dd8943ff9ba5" id="r_a953437894ff3ef825c57dd8943ff9ba5"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#a953437894ff3ef825c57dd8943ff9ba5">buffer</a> () const -&gt; std::string_view</td></tr>
 <tr class="memdesc:a953437894ff3ef825c57dd8943ff9ba5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the text buffer of the control object.  <br /></td></tr>
 <tr class="separator:a953437894ff3ef825c57dd8943ff9ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43b1ba1fee9b3edba4c0c6b3e9810f20" id="r_a43b1ba1fee9b3edba4c0c6b3e9810f20"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#a43b1ba1fee9b3edba4c0c6b3e9810f20">parts</a> () const -&gt; std::optional&lt; <a class="el" href="group__cpp__control.html#ga580361fedbd416b2a794e462715875b9">PartVector</a> &gt;</td></tr>
+<tr class="memitem:a43b1ba1fee9b3edba4c0c6b3e9810f20" id="r_a43b1ba1fee9b3edba4c0c6b3e9810f20"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#a43b1ba1fee9b3edba4c0c6b3e9810f20">parts</a> () const -&gt; std::optional&lt; <a class="el" href="group__cpp__ground.html#ga580361fedbd416b2a794e462715875b9">PartVector</a> &gt;</td></tr>
 <tr class="memdesc:a43b1ba1fee9b3edba4c0c6b3e9810f20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the parts to ground.  <br /></td></tr>
 <tr class="separator:a43b1ba1fee9b3edba4c0c6b3e9810f20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f721f3841de1e04baa3f81d6bbef74a" id="r_a6f721f3841de1e04baa3f81d6bbef74a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#a6f721f3841de1e04baa3f81d6bbef74a">parts</a> (<a class="el" href="group__cpp__control.html#gad5976e07379569aa656c286f6743ffec">PartList</a> parts) const</td></tr>
+<tr class="memitem:a6f721f3841de1e04baa3f81d6bbef74a" id="r_a6f721f3841de1e04baa3f81d6bbef74a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#a6f721f3841de1e04baa3f81d6bbef74a">parts</a> (<a class="el" href="group__cpp__ground.html#gad5976e07379569aa656c286f6743ffec">PartList</a> parts) const</td></tr>
 <tr class="memdesc:a6f721f3841de1e04baa3f81d6bbef74a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the parts to ground.  <br /></td></tr>
 <tr class="separator:a6f721f3841de1e04baa3f81d6bbef74a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d1a210bf2fdfe18e8383a192203a132" id="r_a0d1a210bf2fdfe18e8383a192203a132"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#a0d1a210bf2fdfe18e8383a192203a132">parts</a> (std::optional&lt; <a class="el" href="group__cpp__control.html#gaafd17355813e7e29662188ee37ebb078">PartSpan</a> &gt; parts) const</td></tr>
+<tr class="memitem:a0d1a210bf2fdfe18e8383a192203a132" id="r_a0d1a210bf2fdfe18e8383a192203a132"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#a0d1a210bf2fdfe18e8383a192203a132">parts</a> (std::optional&lt; <a class="el" href="group__cpp__ground.html#gaafd17355813e7e29662188ee37ebb078">PartSpan</a> &gt; parts) const</td></tr>
 <tr class="memdesc:a0d1a210bf2fdfe18e8383a192203a132"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the parts to ground.  <br /></td></tr>
 <tr class="separator:a0d1a210bf2fdfe18e8383a192203a132"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a085ed8962f7f80f327c26ce6bc488825" id="r_a085ed8962f7f80f327c26ce6bc488825"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#a085ed8962f7f80f327c26ce6bc488825">config</a> () const -&gt; <a class="el" href="classClingo_1_1Config.html">Config</a></td></tr>
@@ -199,10 +217,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a915d08af93970079767697c58dc0c874" id="r_a915d08af93970079767697c58dc0c874"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#a915d08af93970079767697c58dc0c874">backend</a> () const -&gt; <a class="el" href="classClingo_1_1ProgramBackend.html">ProgramBackend</a></td></tr>
 <tr class="memdesc:a915d08af93970079767697c58dc0c874"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the backend of the control object.  <br /></td></tr>
 <tr class="separator:a915d08af93970079767697c58dc0c874"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54105664e2973da8c683ee76e4a27446" id="r_a54105664e2973da8c683ee76e4a27446"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; <a class="el" href="classClingo_1_1Propagator.html">Propagator</a> &gt; T&gt; </td></tr>
-<tr class="memitem:a54105664e2973da8c683ee76e4a27446"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#a54105664e2973da8c683ee76e4a27446">register_propagator</a> (std::unique_ptr&lt; T &gt; propagator) const -&gt; T &amp;</td></tr>
-<tr class="memdesc:a54105664e2973da8c683ee76e4a27446"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a propagator with the control object.  <br /></td></tr>
-<tr class="separator:a54105664e2973da8c683ee76e4a27446"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac80c6979d99bac4632259495268733b7" id="r_ac80c6979d99bac4632259495268733b7"><td class="memTemplParams" colspan="2">template&lt;Detail::UserData&lt; <a class="el" href="classClingo_1_1Propagator.html">Propagator</a>, false &gt; P&gt; </td></tr>
+<tr class="memitem:ac80c6979d99bac4632259495268733b7"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#ac80c6979d99bac4632259495268733b7">register_propagator</a> (P &amp;&amp;propagator) const -&gt; decltype(auto)</td></tr>
+<tr class="memdesc:ac80c6979d99bac4632259495268733b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a propagator with the control object.  <br /></td></tr>
+<tr class="separator:ac80c6979d99bac4632259495268733b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aced8cc2a10efc1b15f4c2c8861117baf" id="r_aced8cc2a10efc1b15f4c2c8861117baf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClingo_1_1Control.html#aced8cc2a10efc1b15f4c2c8861117baf">join</a> (<a class="el" href="classClingo_1_1AST_1_1Program.html">AST::Program</a> const &amp;prg) const</td></tr>
 <tr class="memdesc:aced8cc2a10efc1b15f4c2c8861117baf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Join the given non-ground program to the current control object.  <br /></td></tr>
 <tr class="separator:aced8cc2a10efc1b15f4c2c8861117baf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -582,7 +600,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Ground the control object with the given parts. </p>
-<p>The given parts determine which program parts are grounded with which paramaters. If no parts are given, the parts given by the parts directive are grounded.</p>
+<p>The given parts determine which program parts are grounded with which parameters. If no parts are given, the parts given by the parts directive are grounded.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">parts</td><td>the parts to ground the control object with </td></tr>
@@ -605,7 +623,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">void Clingo::Control::ground </td>
           <td>(</td>
-          <td class="paramtype">std::optional&lt; <a class="el" href="group__cpp__control.html#gaafd17355813e7e29662188ee37ebb078">PartSpan</a> &gt;&#160;</td>
+          <td class="paramtype">std::optional&lt; <a class="el" href="group__cpp__ground.html#gaafd17355813e7e29662188ee37ebb078">PartSpan</a> &gt;&#160;</td>
           <td class="paramname"><em>parts</em> = <code>std::nullopt</code>, </td>
         </tr>
         <tr>
@@ -627,8 +645,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Ground the control object with the given parts. </p>
-<p>The given parts determine which program parts are grounded with which paramaters. If no parts are given, the parts given by the parts directive are grounded.</p>
+<p>Ground the logic program with the given parameters. </p>
+<p>The given parts determine which program parts are grounded with which parameters. If no parts are given, the parts given by the parts directive are grounded.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">parts</td><td>the parts to ground the control object with </td></tr>
@@ -919,7 +937,7 @@ Friends</h2></td></tr>
           <td class="memname">auto Clingo::Control::parts </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> const -&gt; std::optional&lt;<a class="el" href="group__cpp__control.html#ga580361fedbd416b2a794e462715875b9">PartVector</a>&gt; </td>
+          <td> const -&gt; std::optional&lt;<a class="el" href="group__cpp__ground.html#ga580361fedbd416b2a794e462715875b9">PartVector</a>&gt; </td>
         </tr>
       </table>
   </td>
@@ -947,7 +965,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">void Clingo::Control::parts </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__cpp__control.html#gad5976e07379569aa656c286f6743ffec">PartList</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__cpp__ground.html#gad5976e07379569aa656c286f6743ffec">PartList</a>&#160;</td>
           <td class="paramname"><em>parts</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -981,7 +999,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">void Clingo::Control::parts </td>
           <td>(</td>
-          <td class="paramtype">std::optional&lt; <a class="el" href="group__cpp__control.html#gaafd17355813e7e29662188ee37ebb078">PartSpan</a> &gt;&#160;</td>
+          <td class="paramtype">std::optional&lt; <a class="el" href="group__cpp__ground.html#gaafd17355813e7e29662188ee37ebb078">PartSpan</a> &gt;&#160;</td>
           <td class="paramname"><em>parts</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -1017,7 +1035,7 @@ Friends</h2></td></tr>
           <td class="memname">auto Clingo::Control::profile </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> -&gt; std::vector&lt;<a class="el" href="group__cpp__control.html#gad77e93c2dd72bbe1b91b99a155652b2c">ProfileNode</a>&gt; </td>
+          <td> -&gt; std::vector&lt;<a class="el" href="group__cpp__profile.html#gad77e93c2dd72bbe1b91b99a155652b2c">ProfileNode</a>&gt; </td>
         </tr>
       </table>
   </td>
@@ -1033,13 +1051,13 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a54105664e2973da8c683ee76e4a27446" name="a54105664e2973da8c683ee76e4a27446"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54105664e2973da8c683ee76e4a27446">&#9670;&#160;</a></span>register_propagator()</h2>
+<a id="ac80c6979d99bac4632259495268733b7" name="ac80c6979d99bac4632259495268733b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac80c6979d99bac4632259495268733b7">&#9670;&#160;</a></span>register_propagator()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;std::derived_from&lt; <a class="el" href="classClingo_1_1Propagator.html">Propagator</a> &gt; T&gt; </div>
+template&lt;Detail::UserData&lt; <a class="el" href="classClingo_1_1Propagator.html">Propagator</a>, false &gt; P&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1047,9 +1065,9 @@ template&lt;std::derived_from&lt; <a class="el" href="classClingo_1_1Propagator.
         <tr>
           <td class="memname">auto Clingo::Control::register_propagator </td>
           <td>(</td>
-          <td class="paramtype">std::unique_ptr&lt; T &gt;&#160;</td>
+          <td class="paramtype">P &amp;&amp;&#160;</td>
           <td class="paramname"><em>propagator</em></td><td>)</td>
-          <td> const -&gt; T &amp; </td>
+          <td> const -&gt; decltype(auto) </td>
         </tr>
       </table>
   </td>
@@ -1060,7 +1078,7 @@ template&lt;std::derived_from&lt; <a class="el" href="classClingo_1_1Propagator.
 </div><div class="memdoc">
 
 <p>Register a propagator with the control object. </p>
-<p>Can be used to register both propagators with and without heuristics.</p>
+<p>The propagator must implement the <a class="el" href="classClingo_1_1Propagator.html" title="Interface for user-defined propagators.">Propagator</a> or the <a class="el" href="classClingo_1_1Heuristic.html" title="Interface for user-defined propagators with a decision heuristic.">Heuristic</a> interface, it can be passed by value, std::ref, or std::unique_ptr.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">propagator</td><td>the propagator to register </td></tr>
@@ -1071,11 +1089,13 @@ template&lt;std::derived_from&lt; <a class="el" href="classClingo_1_1Propagator.
 
 </div>
 </div>
-<a id="a4e3496bc5ddf62a413821c0fd4a50b5b" name="a4e3496bc5ddf62a413821c0fd4a50b5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e3496bc5ddf62a413821c0fd4a50b5b">&#9670;&#160;</a></span>solve() <span class="overload">[1/2]</span></h2>
+<a id="a90ab039a1f6f45a79047030bbf2963e1" name="a90ab039a1f6f45a79047030bbf2963e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90ab039a1f6f45a79047030bbf2963e1">&#9670;&#160;</a></span>solve() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;Detail::UserData&lt; <a class="el" href="classClingo_1_1SolveEventHandler.html">SolveEventHandler</a> &gt; Handler = std::nullptr_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1083,19 +1103,19 @@ template&lt;std::derived_from&lt; <a class="el" href="classClingo_1_1Propagator.
         <tr>
           <td class="memname">auto Clingo::Control::solve </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__cpp__core.html#gae2fd5bed61bbbd84fe1d50483b56d84f">ProgramLiteralSpan</a> const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="group__cpp__core.html#gae2fd5bed61bbbd84fe1d50483b56d84f">ProgramLiteralSpan</a>&#160;</td>
           <td class="paramname"><em>assumptions</em> = <code>{}</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__cpp__control.html#ga278d545c260ce25ef53c588f758e1083">SolveFlags</a>&#160;</td>
-          <td class="paramname"><em>flags</em> = <code><a class="el" href="group__cpp__control.html#gga278d545c260ce25ef53c588f758e1083a16f10dfd541c23362492b4e513adf0a1">SolveFlags::yield</a></code>&#160;</td>
+          <td class="paramtype">Handler &amp;&amp;&#160;</td>
+          <td class="paramname"><em>handler</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> const -&gt; <a class="el" href="classClingo_1_1SolveHandle.html">SolveHandle</a> </td>
+          <td></td><td> const -&gt; <a class="el" href="classClingo_1_1SolveResult.html">SolveResult</a> </td>
         </tr>
       </table>
   </td>
@@ -1105,69 +1125,273 @@ template&lt;std::derived_from&lt; <a class="el" href="classClingo_1_1Propagator.
 </table>
 </div><div class="memdoc">
 
-<p>Solve the grounded program with the given assumptions and flags. </p>
-<p>This function does not take a solve event handler. Instead, the returned solve handle is configured to yield models as they are found.</p>
+<p>Solve the grounded program with the given assumptions. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">assumptions</td><td>the assumptions to use for solving </td></tr>
-    <tr><td class="paramname">flags</td><td>the flags to use for solving </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a handle to the solve operation </dd></dl>
-
-</div>
-</div>
-<a id="ab2bbc5dcb1c994af5a627e279ce6ab00" name="ab2bbc5dcb1c994af5a627e279ce6ab00"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2bbc5dcb1c994af5a627e279ce6ab00">&#9670;&#160;</a></span>solve() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto Clingo::Control::solve </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classClingo_1_1SolveEventHandler.html">SolveEventHandler</a> &amp;&#160;</td>
-          <td class="paramname"><em>handler</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__cpp__core.html#gae2fd5bed61bbbd84fe1d50483b56d84f">ProgramLiteralSpan</a> const &amp;&#160;</td>
-          <td class="paramname"><em>assumptions</em> = <code>{}</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__cpp__control.html#ga278d545c260ce25ef53c588f758e1083">SolveFlags</a>&#160;</td>
-          <td class="paramname"><em>flags</em> = <code><a class="el" href="group__cpp__control.html#gga278d545c260ce25ef53c588f758e1083aa2e4822a98337283e39f7b60acf85ec9">SolveFlags::empty</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const -&gt; <a class="el" href="classClingo_1_1SolveHandle.html">SolveHandle</a> </td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Solve the grounded program with the given assumptions and flags. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
     <tr><td class="paramname">handler</td><td>the solve event handler to report events to </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the solve result </dd></dl>
+
+</div>
+</div>
+<a id="a889b21f67ac43da043b907386ffa128d" name="a889b21f67ac43da043b907386ffa128d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a889b21f67ac43da043b907386ffa128d">&#9670;&#160;</a></span>solve() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;Detail::UserData&lt; <a class="el" href="classClingo_1_1SolveEventHandler.html">SolveEventHandler</a> &gt; Handler = std::nullptr_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Clingo::Control::solve </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; <a class="el" href="group__cpp__core.html#gabe799d16ce34b5ce2fa7932414c3cf73">ProgramLiteral</a> &gt;&#160;</td>
+          <td class="paramname"><em>assumptions</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Handler &amp;&amp;&#160;</td>
+          <td class="paramname"><em>handler</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const -&gt; <a class="el" href="classClingo_1_1SolveResult.html">SolveResult</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Solve the grounded program with the given assumptions.   </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">assumptions</td><td>the assumptions to use for solving </td></tr>
+    <tr><td class="paramname">handler</td><td>the solve event handler to report events to </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the solve result   </dd></dl>
+
+</div>
+</div>
+<a id="a405eb78a38bad95bb675344ea91fb154" name="a405eb78a38bad95bb675344ea91fb154"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a405eb78a38bad95bb675344ea91fb154">&#9670;&#160;</a></span>start_ground() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;Detail::UserData&lt; <a class="el" href="classClingo_1_1GroundEventHandler.html">GroundEventHandler</a> &gt; Handler = std::nullptr_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Clingo::Control::start_ground </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; <a class="el" href="structClingo_1_1Part.html">Part</a> &gt;&#160;</td>
+          <td class="paramname"><em>parts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Handler &amp;&amp;&#160;</td>
+          <td class="paramname"><em>handler</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const -&gt; <a class="el" href="classClingo_1_1GroundHandle.html">GroundHandle</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ground the logic program with the given parameters.   </p>
+<p>The given parts determine which program parts are grounded with which parameters. If no parts are given, those specified by the parts directive are grounded.</p>
+<p>A handler implementing the <a class="el" href="classClingo_1_1GroundEventHandler.html" title="An interface for handling grounding events.">GroundEventHandler</a> interface can be given to handle grounding events. The handler is passed by value; use std::ref if you want to manage its lifetime externally. The handler is optional and can be set to nullptr to ignore events.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parts</td><td>the parts to ground the control object with </td></tr>
+    <tr><td class="paramname">handler</td><td>the context to use for grounding   </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a03164eccd585f35c7dc5ecea876e3de8" name="a03164eccd585f35c7dc5ecea876e3de8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03164eccd585f35c7dc5ecea876e3de8">&#9670;&#160;</a></span>start_ground() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;Detail::UserData&lt; <a class="el" href="classClingo_1_1GroundEventHandler.html">GroundEventHandler</a> &gt; Handler = std::nullptr_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Clingo::Control::start_ground </td>
+          <td>(</td>
+          <td class="paramtype">std::optional&lt; <a class="el" href="group__cpp__ground.html#gaafd17355813e7e29662188ee37ebb078">PartSpan</a> &gt;&#160;</td>
+          <td class="paramname"><em>parts</em> = <code>std::nullopt</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Handler &amp;&amp;&#160;</td>
+          <td class="paramname"><em>handler</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const -&gt; <a class="el" href="classClingo_1_1GroundHandle.html">GroundHandle</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ground the logic program with the given parameters. </p>
+<p>The given parts determine which program parts are grounded with which parameters. If no parts are given, those specified by the parts directive are grounded.</p>
+<p>A handler implementing the <a class="el" href="classClingo_1_1GroundEventHandler.html" title="An interface for handling grounding events.">GroundEventHandler</a> interface can be given to handle grounding events. The handler is passed by value; use std::ref if you want to manage its lifetime externally. The handler is optional and can be set to nullptr to ignore events.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parts</td><td>the parts to ground the control object with </td></tr>
+    <tr><td class="paramname">handler</td><td>the context to use for grounding </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a76d40aa9bf891321922f90ae53687208" name="a76d40aa9bf891321922f90ae53687208"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76d40aa9bf891321922f90ae53687208">&#9670;&#160;</a></span>start_solve() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;Detail::UserData&lt; <a class="el" href="classClingo_1_1SolveEventHandler.html">SolveEventHandler</a> &gt; Handler = std::nullptr_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Clingo::Control::start_solve </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__cpp__core.html#gae2fd5bed61bbbd84fe1d50483b56d84f">ProgramLiteralSpan</a>&#160;</td>
+          <td class="paramname"><em>assumptions</em> = <code>{}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__cpp__control.html#ga278d545c260ce25ef53c588f758e1083">SolveFlags</a>&#160;</td>
+          <td class="paramname"><em>flags</em> = <code><a class="el" href="group__cpp__control.html#gga278d545c260ce25ef53c588f758e1083a16f10dfd541c23362492b4e513adf0a1">SolveFlags::yield</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Handler &amp;&amp;&#160;</td>
+          <td class="paramname"><em>handler</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const -&gt; <a class="el" href="classClingo_1_1SolveHandle.html">SolveHandle</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Start solving the grounded program with the given assumptions and flags. </p>
+<p>Depending on the flags, models can be yielded as they are found and search can be started in the background. By default models are yielded as they are found.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
     <tr><td class="paramname">assumptions</td><td>the assumptions to use for solving </td></tr>
     <tr><td class="paramname">flags</td><td>the flags to use for solving </td></tr>
+    <tr><td class="paramname">handler</td><td>the solve event handler to report events to </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a handle to the solve operation </dd></dl>
+
+</div>
+</div>
+<a id="a4d2a452d739a1c9e88295021f21cdc32" name="a4d2a452d739a1c9e88295021f21cdc32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d2a452d739a1c9e88295021f21cdc32">&#9670;&#160;</a></span>start_solve() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;Detail::UserData&lt; <a class="el" href="classClingo_1_1SolveEventHandler.html">SolveEventHandler</a> &gt; Handler = std::nullptr_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Clingo::Control::start_solve </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; <a class="el" href="group__cpp__core.html#gabe799d16ce34b5ce2fa7932414c3cf73">ProgramLiteral</a> &gt;&#160;</td>
+          <td class="paramname"><em>assumptions</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__cpp__control.html#ga278d545c260ce25ef53c588f758e1083">SolveFlags</a>&#160;</td>
+          <td class="paramname"><em>flags</em> = <code><a class="el" href="group__cpp__control.html#gga278d545c260ce25ef53c588f758e1083a16f10dfd541c23362492b4e513adf0a1">SolveFlags::yield</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Handler &amp;&amp;&#160;</td>
+          <td class="paramname"><em>handler</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const -&gt; <a class="el" href="classClingo_1_1SolveHandle.html">SolveHandle</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Start solving the grounded program with the given assumptions and flags.   </p>
+<p>Depending on the flags, models can be yielded as they are found and search can be started in the background. By default models are yielded as they are found.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">assumptions</td><td>the assumptions to use for solving </td></tr>
+    <tr><td class="paramname">flags</td><td>the flags to use for solving </td></tr>
+    <tr><td class="paramname">handler</td><td>the solve event handler to report events to </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a handle to the solve operation   </dd></dl>
 
 </div>
 </div>
