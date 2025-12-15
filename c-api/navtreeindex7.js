@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"classCppClingo_1_1Input_1_1StmHeuristic.html#a5c47e88e637479f9ffcd2cd1403392e6":[1,2,2,0,6,19,4],
 "classCppClingo_1_1Input_1_1StmHeuristic.html#a72c9f70afb2862af6c6cc95c34ebe796":[1,2,2,0,6,19,0],
 "classCppClingo_1_1Input_1_1StmHeuristic.html#a8ebe075ca548bdc5c71f7ff576df269d":[1,2,2,0,6,19,7],
 "classCppClingo_1_1Input_1_1StmHeuristic.html#a9fd7359d7d6558a2fa9141b1279c3554":[1,2,2,0,6,19,1],
@@ -58,8 +59,9 @@ var NAVTREEINDEX7 =
 "classCppClingo_1_1Input_1_1StmShowNothing.html#afff29b8662b566791e661bb0b8dbbcf8":[1,2,2,0,6,12,1],
 "classCppClingo_1_1Input_1_1StmShowSig.html":[1,2,2,0,6,11],
 "classCppClingo_1_1Input_1_1StmShowSig.html#a02eaf0de93b13b27a70a3fa587c5ab0c":[1,2,2,0,6,11,3],
+"classCppClingo_1_1Input_1_1StmShowSig.html#a0bfdfde3ea1e4df0d908c6a1d179c47e":[1,2,2,0,6,11,5],
 "classCppClingo_1_1Input_1_1StmShowSig.html#a44fd15cef649028352d1b3264bdc028f":[1,2,2,0,6,11,1],
-"classCppClingo_1_1Input_1_1StmShowSig.html#a4ae2a539de6057492ee7f94dbda03615":[1,2,2,0,6,11,0],
+"classCppClingo_1_1Input_1_1StmShowSig.html#a5e8c8572bda8f6f025ca9c1ed2fc3076":[1,2,2,0,6,11,0],
 "classCppClingo_1_1Input_1_1StmShowSig.html#ae52be59f8b9e640e4e325be05e860c45":[1,2,2,0,6,11,2],
 "classCppClingo_1_1Input_1_1StmShowSig.html#af7d20741cb5c2ce30454d7f482ab453b":[1,2,2,0,6,11,4],
 "classCppClingo_1_1Input_1_1StmTheory.html":[1,2,2,0,6,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX7 =
 "classCppClingo_1_1Number.html#a377d21cfbb99c7fe3245aea44a1804f7":[1,2,1,0,0,3],
 "classCppClingo_1_1Number.html#a3a3c337675d1ea91c7ac054911b0d6f4":[1,2,1,0,0,27],
 "classCppClingo_1_1Number.html#a3c8272e17134b4af47019008a52cbf7b":[1,2,1,0,0,41],
-"classCppClingo_1_1Number.html#a3e6e6bf99bb7daa44b0c44fecbaf978b":[1,2,1,0,0,81],
-"classCppClingo_1_1Number.html#a3f524c5dde44e20b2faf06733e607c5b":[1,2,1,0,0,66],
-"classCppClingo_1_1Number.html#a48e44e33e7c7d7526414e3ce9d7d159d":[1,2,1,0,0,77]
+"classCppClingo_1_1Number.html#a3e6e6bf99bb7daa44b0c44fecbaf978b":[1,2,1,0,0,81]
 };

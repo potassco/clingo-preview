@@ -1,5 +1,7 @@
 var NAVTREEINDEX8 =
 {
+"classCppClingo_1_1Number.html#a3f524c5dde44e20b2faf06733e607c5b":[1,2,1,0,0,66],
+"classCppClingo_1_1Number.html#a48e44e33e7c7d7526414e3ce9d7d159d":[1,2,1,0,0,77],
 "classCppClingo_1_1Number.html#a4b6a48923abf1f59da0c7989e69c0ad7":[1,2,1,0,0,61],
 "classCppClingo_1_1Number.html#a4d35bfa4f3c82e55272b4868d95df461":[1,2,1,0,0,0],
 "classCppClingo_1_1Number.html#a4d4a59f82b2f04538a8935183bdf1ff2":[1,2,1,0,0,39],
@@ -247,7 +249,5 @@ var NAVTREEINDEX8 =
 "classCppClingo_1_1Symbol.html#a52420ae1e2aaa73906729ed05e2cb19d":[1,2,1,1,2,18],
 "classCppClingo_1_1Symbol.html#a60bee1ff8f442803483189ca206ee55c":[1,2,1,1,2,2],
 "classCppClingo_1_1Symbol.html#a6ba64ba2e4359b67b84b4b246a11c0bc":[1,2,1,1,2,11],
-"classCppClingo_1_1Symbol.html#a71e7d901f61a2d863e3e8b61dc67ede0":[1,2,1,1,2,19],
-"classCppClingo_1_1Symbol.html#a9031bcdc3f213cd063c4c09125846137":[1,2,1,1,2,14],
-"classCppClingo_1_1Symbol.html#a93f328ddc4a343b7062321309bc1c319":[1,2,1,1,2,0]
+"classCppClingo_1_1Symbol.html#a71e7d901f61a2d863e3e8b61dc67ede0":[1,2,1,1,2,19]
 };

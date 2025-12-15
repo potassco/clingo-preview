@@ -52,7 +52,7 @@ var searchData=
   ['profilenodeinternal_49',['ProfileNodeInternal',['../structClingo_1_1ProfileNodeInternal.html#ab41188b5f13aec4b751fe61632c2a224',1,'Clingo::ProfileNodeInternal']]],
   ['profilenodeleaf_50',['ProfileNodeLeaf',['../structClingo_1_1ProfileNodeLeaf.html#ac1b7ac274883f3fed629e481d4f77700',1,'Clingo::ProfileNodeLeaf']]],
   ['profilestats_51',['ProfileStats',['../structCppClingo_1_1Ground_1_1ProfileStats.html#aebb74486055a976ded018b11f760fa82',1,'CppClingo::Ground::ProfileStats']]],
-  ['program_52',['program',['../classCppClingo_1_1Input_1_1Program.html#a1b8b45a21b82e3d7bdcba9752f2ac36d',1,'CppClingo::Input::Program::Program()'],['../classClingo_1_1AST_1_1Program.html#a659be5d21206965e5240e86ffa3cfdf6',1,'Clingo::AST::Program::Program()'],['../classCppClingo_1_1Control_1_1BackendHandle.html#a8b9a17fc86562e6fd12bf4d8402be12c',1,'CppClingo::Control::BackendHandle::program()']]],
+  ['program_52',['program',['../classClingo_1_1AST_1_1Program.html#a659be5d21206965e5240e86ffa3cfdf6',1,'Clingo::AST::Program::Program()'],['../classCppClingo_1_1Control_1_1BackendHandle.html#a8b9a17fc86562e6fd12bf4d8402be12c',1,'CppClingo::Control::BackendHandle::program()'],['../classCppClingo_1_1Input_1_1Program.html#a1b8b45a21b82e3d7bdcba9752f2ac36d',1,'CppClingo::Input::Program::Program()']]],
   ['program_5fname_53',['program_name',['../classClingo_1_1App.html#ac42996caf6b9781bce36458d6ca37e53',1,'Clingo::App']]],
   ['program_5fversion_54',['program_version',['../classClingo_1_1App.html#af41b4afb6348151030d81ca767256272',1,'Clingo::App']]],
   ['programbackend_55',['ProgramBackend',['../classClingo_1_1ProgramBackend.html#afe99f1e9fe18b4863dba3443edd2a21a',1,'Clingo::ProgramBackend']]],

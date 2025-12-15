@@ -1,5 +1,9 @@
 var NAVTREEINDEX17 =
 {
+"structCppClingo_1_1FormatSpec.html#a3a2c2dc5d92c1a5319bdf67f19897fb2":[1,2,1,5,10],
+"structCppClingo_1_1FormatSpec.html#a50cfc858ff40df7f6ad2edbbf1ad8776":[1,2,1,5,18],
+"structCppClingo_1_1FormatSpec.html#a5287c55a2db1e045a79f1716ca4af201":[1,2,1,5,2],
+"structCppClingo_1_1FormatSpec.html#a5287c55a2db1e045a79f1716ca4af201a334c4a4c42fdb79d7ebc3e73b517e6f8":[1,2,1,5,2,0],
 "structCppClingo_1_1FormatSpec.html#a5287c55a2db1e045a79f1716ca4af201ab6d00dc1ba038e5901cd6c06b2daa192":[1,2,1,5,2,1],
 "structCppClingo_1_1FormatSpec.html#a5287c55a2db1e045a79f1716ca4af201ab81453378a0c6e5389111178cf249c11":[1,2,1,5,2,2],
 "structCppClingo_1_1FormatSpec.html#a6f70fe41a2daa411d2c1c6d9065db87d":[1,2,1,5,11],

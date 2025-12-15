@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"classClingo_1_1StatsArray.html#ab7836994cb95b68e1e8f37ab0f2c8ea8":[1,1,3,7,3,2],
 "classClingo_1_1StatsArray.html#ac20878c7035cd88663c16b1bb3b7fe23":[1,1,3,7,3,3],
 "classClingo_1_1StatsArray.html#acca54c8a7409b1feacd03ba6b6dd3c7e":[1,1,3,7,3,8],
 "classClingo_1_1StatsArray.html#aeaacd7cf68379b0dc3c393ec3e09b274":[1,1,3,7,3,11],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "classCppClingo_1_1Control_1_1GroundEventHandler.html":[1,2,5,19],
 "classCppClingo_1_1Control_1_1GroundEventHandler.html#a7e0f0df0621ec4bd3bdf49382492439d":[1,2,5,19,0],
 "classCppClingo_1_1Control_1_1GroundHandle.html":[1,2,5,20],
-"classCppClingo_1_1Control_1_1GroundHandle.html#a300f388a3ab5650c01dc421f129c700a":[1,2,5,20,8],
-"classCppClingo_1_1Control_1_1GroundHandle.html#a301ad6801d9d5d5718caba4fe07d6bbd":[1,2,5,20,0]
+"classCppClingo_1_1Control_1_1GroundHandle.html#a300f388a3ab5650c01dc421f129c700a":[1,2,5,20,8]
 };

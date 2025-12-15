@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"classCppClingo_1_1Ground_1_1BaseCondLitEmpty.html#a734a8d96753b2497fd79d3ccf5b2c3f2":[1,2,3,4,3,2,1],
 "classCppClingo_1_1Ground_1_1BaseCondLitEmpty.html#ae2c8dd580f03fb21ca0cd7164ab829fb":[1,2,3,4,3,2,2],
 "classCppClingo_1_1Ground_1_1BaseCondLitEmpty.html#afde6407dd02842c6ef30b88597e0b716":[1,2,3,4,3,2,0],
 "classCppClingo_1_1Ground_1_1BaseCondLitPremise.html":[1,2,3,4,3,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "classCppClingo_1_1Ground_1_1ProjectState.html#adcc493db7a0ece48ad087e69d4152f18":[1,2,3,1,5,4],
 "classCppClingo_1_1Ground_1_1Queue.html":[1,2,3,3,5],
 "classCppClingo_1_1Ground_1_1Queue.html#a24cfff42a237cb450dd63c48364afb5f":[1,2,3,3,5,2],
-"classCppClingo_1_1Ground_1_1Queue.html#a317adfbdece7ab336a80b4231533bb7c":[1,2,3,3,5,0],
-"classCppClingo_1_1Ground_1_1Queue.html#a733e07a84146ed0df49e0dcf23caed91":[1,2,3,3,5,4]
+"classCppClingo_1_1Ground_1_1Queue.html#a317adfbdece7ab336a80b4231533bb7c":[1,2,3,3,5,0]
 };

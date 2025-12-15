@@ -1,5 +1,8 @@
 var NAVTREEINDEX16 =
 {
+"group__input__rewrite.html#gad3a53b00ae809d1121db7573b9e40f9c":[1,2,2,1,6,32],
+"group__input__rewrite.html#gad639198d72edc25125dcfbb0d95cedb9":[1,2,2,1,6,28],
+"group__input__rewrite.html#gad70707ce6bbcfeff6ad282dc40d558d1":[1,2,2,1,6,42],
 "group__input__rewrite.html#gad7804b88f3fa3848dd75333735b703f9":[1,2,2,1,6,38],
 "group__input__rewrite.html#gada342cb8e224b4b0ab344cd395a2ec33":[1,2,2,1,6,56],
 "group__input__rewrite.html#gadffac99fc5cacfdb37a44412c6bc12a8":[1,2,2,1,6,40],
@@ -236,18 +239,15 @@ var NAVTREEINDEX16 =
 "structClingo_1_1SolveHandle_1_1sentinel.html":[1,1,3,5,5,1],
 "structClingo_1_1TheoryAssignment_1_1sentinel.html":[1,1,6,0,1],
 "structCppClingo_1_1Control_1_1SolverOptions.html":[1,2,5,6],
+"structCppClingo_1_1Control_1_1SolverOptions.html#a2a6bcd8e9773b88311dbc038410dccb8":[1,2,5,6,2],
 "structCppClingo_1_1Control_1_1SolverOptions.html#a6856311976258fa9b4ea231dd44b4cb8":[1,2,5,6,1],
-"structCppClingo_1_1Control_1_1SolverOptions.html#a6c9fb559b4fb573e41d42cb1a8fc2f65":[1,2,5,6,4],
-"structCppClingo_1_1Control_1_1SolverOptions.html#a7939a72c24fcdeff116cf868c73deee4":[1,2,5,6,3],
+"structCppClingo_1_1Control_1_1SolverOptions.html#a6c9fb559b4fb573e41d42cb1a8fc2f65":[1,2,5,6,5],
+"structCppClingo_1_1Control_1_1SolverOptions.html#a7939a72c24fcdeff116cf868c73deee4":[1,2,5,6,4],
 "structCppClingo_1_1Control_1_1SolverOptions.html#aa286b3f19c34432d00008cc348cf858d":[1,2,5,6,0],
-"structCppClingo_1_1Control_1_1SolverOptions.html#ac7f2e8ddec645177a1f30a6b0ec0d775":[1,2,5,6,2],
+"structCppClingo_1_1Control_1_1SolverOptions.html#ac7f2e8ddec645177a1f30a6b0ec0d775":[1,2,5,6,3],
 "structCppClingo_1_1FormatSpec.html":[1,2,1,5],
 "structCppClingo_1_1FormatSpec.html#a001d760042f9547156eb3aa0cbd7966c":[1,2,1,5,8],
 "structCppClingo_1_1FormatSpec.html#a0a38881245e499297f471511eeb8c1c8":[1,2,1,5,19],
 "structCppClingo_1_1FormatSpec.html#a2a1b2c05991264fd01a0b5d6f11afa2b":[1,2,1,5,16],
-"structCppClingo_1_1FormatSpec.html#a2be2f5e6c101a908fba9614a183a1aed":[1,2,1,5,7],
-"structCppClingo_1_1FormatSpec.html#a3a2c2dc5d92c1a5319bdf67f19897fb2":[1,2,1,5,10],
-"structCppClingo_1_1FormatSpec.html#a50cfc858ff40df7f6ad2edbbf1ad8776":[1,2,1,5,18],
-"structCppClingo_1_1FormatSpec.html#a5287c55a2db1e045a79f1716ca4af201":[1,2,1,5,2],
-"structCppClingo_1_1FormatSpec.html#a5287c55a2db1e045a79f1716ca4af201a334c4a4c42fdb79d7ebc3e73b517e6f8":[1,2,1,5,2,0]
+"structCppClingo_1_1FormatSpec.html#a2be2f5e6c101a908fba9614a183a1aed":[1,2,1,5,7]
 };

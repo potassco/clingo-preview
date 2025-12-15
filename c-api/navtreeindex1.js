@@ -114,7 +114,8 @@ var NAVTREEINDEX1 =
 "classClingo_1_1Options.html#a26ac70963533cc96311a793d9f70c657":[1,1,5,0,3],
 "classClingo_1_1Options.html#a97a6fee374d6f0ece37430e0146ef299":[1,1,5,0,2],
 "classClingo_1_1Options.html#aa0097ecc6c4d3239c4a617ddc0b7b51f":[1,1,5,0,0],
-"classClingo_1_1Options.html#ab3605bac53c9b667e739abdf99199a42":[1,1,5,0,5],
+"classClingo_1_1Options.html#aa3973af573332a501fe9ebddbdcdcfc7":[1,1,5,0,5],
+"classClingo_1_1Options.html#ab3605bac53c9b667e739abdf99199a42":[1,1,5,0,6],
 "classClingo_1_1Options.html#abea65191993131d69df40e5c85adbd82":[1,1,5,0,1],
 "classClingo_1_1Options.html#ae44f2973a02d0ea49e21a21ee99e98d0":[1,1,5,0,4],
 "classClingo_1_1Position.html":[1,1,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "classClingo_1_1StatsArray.html#a729a308b3b480398abc65629ff7ffcd3":[1,1,3,7,3,1],
 "classClingo_1_1StatsArray.html#a7fa18b21c6560431f99d77b3f49cfc76":[1,1,3,7,3,7],
 "classClingo_1_1StatsArray.html#a93722f5c9dc8db94613d7fc0e3197720":[1,1,3,7,3,6],
-"classClingo_1_1StatsArray.html#aa9cbdb4a7c85a74ed86152197e1f531d":[1,1,3,7,3,5],
-"classClingo_1_1StatsArray.html#ab7836994cb95b68e1e8f37ab0f2c8ea8":[1,1,3,7,3,2]
+"classClingo_1_1StatsArray.html#aa9cbdb4a7c85a74ed86152197e1f531d":[1,1,3,7,3,5]
 };

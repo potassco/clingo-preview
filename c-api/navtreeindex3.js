@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"classCppClingo_1_1Control_1_1GroundHandle.html#a301ad6801d9d5d5718caba4fe07d6bbd":[1,2,5,20,0],
 "classCppClingo_1_1Control_1_1GroundHandle.html#a465aa27138254f12abef17c7f482eeb0":[1,2,5,20,1],
 "classCppClingo_1_1Control_1_1GroundHandle.html#a576db19aefd1ca583fa3ff40cd8c7ef1":[1,2,5,20,4],
 "classCppClingo_1_1Control_1_1GroundHandle.html#a89f64a0d71c2b5aa04b76583b5618ee3":[1,2,5,20,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "classCppClingo_1_1Ground_1_1BaseCondLit.html#ad09ca63af34394eb1e8c0aa615732b44":[1,2,3,4,3,4,4],
 "classCppClingo_1_1Ground_1_1BaseCondLitEmpty.html":[1,2,3,4,3,2],
 "classCppClingo_1_1Ground_1_1BaseCondLitEmpty.html#a1c65e93955bd1bf86d96931f2af8769b":[1,2,3,4,3,2,3],
-"classCppClingo_1_1Ground_1_1BaseCondLitEmpty.html#a2cd94ac5b93caa97e46fc50b5e53b620":[1,2,3,4,3,2,4],
-"classCppClingo_1_1Ground_1_1BaseCondLitEmpty.html#a734a8d96753b2497fd79d3ccf5b2c3f2":[1,2,3,4,3,2,1]
+"classCppClingo_1_1Ground_1_1BaseCondLitEmpty.html#a2cd94ac5b93caa97e46fc50b5e53b620":[1,2,3,4,3,2,4]
 };

@@ -6,6 +6,7 @@ var group__cpp__app =
       [ "Options", "classClingo_1_1Options.html#a97a6fee374d6f0ece37430e0146ef299", null ],
       [ "add", "classClingo_1_1Options.html#a26ac70963533cc96311a793d9f70c657", null ],
       [ "add_flag", "classClingo_1_1Options.html#ae44f2973a02d0ea49e21a21ee99e98d0", null ],
+      [ "set_default_value", "classClingo_1_1Options.html#aa3973af573332a501fe9ebddbdcdcfc7", null ],
       [ "c_cast", "classClingo_1_1Options.html#ab3605bac53c9b667e739abdf99199a42", null ]
     ] ],
     [ "Clingo::App", "classClingo_1_1App.html", [

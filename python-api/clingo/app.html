@@ -65,6 +65,9 @@
                         <li>
                                 <a class="function" href="#AppOptions.add_flag">add_flag</a>
                         </li>
+                        <li>
+                                <a class="function" href="#AppOptions.set_default_value">set_default_value</a>
+                        </li>
                 </ul>
 
             </li>
@@ -372,6 +375,31 @@ off.</p>
 <li><strong>option:</strong>  The option name or flag identifier.</li>
 <li><strong>description:</strong>  A brief description of the flag option.</li>
 <li><strong>flag:</strong>  A Flag object that holds the value of the flag.</li>
+</ul>
+</div>
+
+
+                            </div>
+                            <div id="AppOptions.set_default_value" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">set_default_value</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">option</span><span class="p">:</span> <span class="nb">str</span>, </span><span class="param"><span class="n">value</span><span class="p">:</span> <span class="nb">str</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#AppOptions.set_default_value"></a>
+    
+            <div class="docstring"><p>Set the default value for an existing clingo option.</p>
+
+<p>This function can be used to adjust the default value of a clingo option, which
+will be used if no value is given on the command-line.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>option:</strong>  The name of the option for which a default value should be set.</li>
+<li><strong>value:</strong>  The new default value to set.</li>
 </ul>
 </div>
 

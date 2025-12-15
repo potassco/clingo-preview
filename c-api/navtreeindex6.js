@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"classCppClingo_1_1Ground_1_1TheoryTerm.html#aed1b61ea2d650222365dd58477516b2d":[1,2,3,4,7,8,7],
 "classCppClingo_1_1Ground_1_1TheoryTerm.html#af2066a678a4dcd46093e817b53809b2d":[1,2,3,4,7,8,1],
 "classCppClingo_1_1Ground_1_1TheoryTermFunction.html":[1,2,3,4,7,12],
 "classCppClingo_1_1Ground_1_1TheoryTermFunction.html#a65e318aa5a8054c34f078c59c6adc703":[1,2,3,4,7,12,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "classCppClingo_1_1Input_1_1StmExternal.html#af9a322f8638d8e838c6e7c6dd8e1be2d":[1,2,2,0,6,16,0],
 "classCppClingo_1_1Input_1_1StmHeuristic.html":[1,2,2,0,6,19],
 "classCppClingo_1_1Input_1_1StmHeuristic.html#a40968eae179d89c072beeac1d46728d3":[1,2,2,0,6,19,5],
-"classCppClingo_1_1Input_1_1StmHeuristic.html#a4aea1b9abfa680f4461929e7929b1447":[1,2,2,0,6,19,8],
-"classCppClingo_1_1Input_1_1StmHeuristic.html#a5c47e88e637479f9ffcd2cd1403392e6":[1,2,2,0,6,19,4]
+"classCppClingo_1_1Input_1_1StmHeuristic.html#a4aea1b9abfa680f4461929e7929b1447":[1,2,2,0,6,19,8]
 };

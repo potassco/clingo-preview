@@ -16,5 +16,6 @@ var group__c__app =
     [ "clingo_options_t", "group__c__app.html#ga2b159cfef1bc326a9e25617095be39cf", null ],
     [ "clingo_main", "group__c__app.html#gab12267017f17328363c916249a2bad61", null ],
     [ "clingo_options_add", "group__c__app.html#gac7faf5ef02eafe5573b574e99c3d46d9", null ],
-    [ "clingo_options_add_flag", "group__c__app.html#gaa030815ddf9996de8a122d30f4d15ae7", null ]
+    [ "clingo_options_add_flag", "group__c__app.html#gaa030815ddf9996de8a122d30f4d15ae7", null ],
+    [ "clingo_options_set_default_value", "group__c__app.html#ga5ec695ba868a68b0a39ab5bfea2d4fab", null ]
 ];

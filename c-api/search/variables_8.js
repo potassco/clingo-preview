@@ -12,7 +12,8 @@ var searchData=
   ['instances_9',['instances',['../structCppClingo_1_1Ground_1_1ProfileStats.html#ab2284d69ce5bc5165ea637b631da3882',1,'CppClingo::Ground::ProfileStats::instances'],['../structclingo__profile__data.html#ade9b7a0d82f5337e2b045224f5d9d6f9',1,'clingo_profile_data::instances'],['../structClingo_1_1ProfileNodeLeaf.html#adbc9af6e5717fb87606fb77c0de1d45a',1,'Clingo::ProfileNodeLeaf::instances']]],
   ['int_5fnumber_10',['int_number',['../structclingo__theory__value.html#a26960f77b3a5d6bc4ed347ee60d18ce8',1,'clingo_theory_value']]],
   ['internal_11',['internal',['../structclingo__profile__visitor.html#a1da3d671a6746970edb5c6df8fe5a924',1,'clingo_profile_visitor']]],
-  ['is_5famong_5fv_12',['is_among_v',['../group__util__traits.html#gaecc11b26b6c6135359e18aece821fd5f',1,'CppClingo::Util']]],
-  ['is_5fpositive_13',['is_positive',['../structclingo__signature.html#aa6c4e397388105ad25e8daa9424f3870',1,'clingo_signature']]],
-  ['istop_14',['istop',['../structCppClingo_1_1Control_1_1SolverOptions.html#ac7f2e8ddec645177a1f30a6b0ec0d775',1,'CppClingo::Control::SolverOptions']]]
+  ['iquery_12',['iquery',['../structCppClingo_1_1Control_1_1SolverOptions.html#a2a6bcd8e9773b88311dbc038410dccb8',1,'CppClingo::Control::SolverOptions']]],
+  ['is_5famong_5fv_13',['is_among_v',['../group__util__traits.html#gaecc11b26b6c6135359e18aece821fd5f',1,'CppClingo::Util']]],
+  ['is_5fpositive_14',['is_positive',['../structclingo__signature.html#aa6c4e397388105ad25e8daa9424f3870',1,'clingo_signature']]],
+  ['istop_15',['istop',['../structCppClingo_1_1Control_1_1SolverOptions.html#ac7f2e8ddec645177a1f30a6b0ec0d775',1,'CppClingo::Control::SolverOptions']]]
 ];

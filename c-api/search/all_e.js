@@ -60,7 +60,7 @@ var searchData=
   ['optimizetype_57',['OptimizeType',['../group__input__statement.html#ga918b65c67526ecf9b7e5e3b8d092b5d0',1,'statement.hh']]],
   ['optional_20values_58',['Optional Values',['../group__util__optional.html',1,'']]],
   ['optional_5fnode_59',['optional_node',['../classClingo_1_1AST_1_1Node.html#ad9bbabf500c591a1c70ce5df1f099162',1,'Clingo::AST::Node']]],
-  ['options_60',['options',['../classClingo_1_1Options.html',1,'Clingo::Options'],['../classCppClingo_1_1Input_1_1RewriteContext.html#a39c8d1b7fc2ee5ff00ed827118674f1c',1,'CppClingo::Input::RewriteContext::options()'],['../classClingo_1_1Options.html#a97a6fee374d6f0ece37430e0146ef299',1,'Clingo::Options::Options()']]],
+  ['options_60',['options',['../classClingo_1_1Options.html',1,'Clingo::Options'],['../classClingo_1_1Options.html#a97a6fee374d6f0ece37430e0146ef299',1,'Clingo::Options::Options()'],['../classCppClingo_1_1Input_1_1RewriteContext.html#a39c8d1b7fc2ee5ff00ed827118674f1c',1,'CppClingo::Input::RewriteContext::options()']]],
   ['or_5f_61',['or_',['../group__ground__term.html#gga309c43a0dac8a738555420b48369582dacfc049a17faac959998820e7aaaf4329',1,'or_CppClingo::Ground'],['../group__input__term.html#gga777262b0d68c4ea17b24fb154820b5e2acfc049a17faac959998820e7aaaf4329',1,'or_CppClingo::Input']]],
   ['ordered_5fmap_62',['ordered_map',['../group__util__container.html#ga8b882c38d82c3c3019ce4aee06b90faf',1,'CppClingo::Util']]],
   ['ordered_5fset_63',['ordered_set',['../group__util__container.html#ga6fedffbc0e2e918fc7c523f524b90e88',1,'CppClingo::Util']]],
